@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tools & Utilities Hub - The Everything Gateway</title>
     <meta name="description" content="52 curated tools across 6 categories: AI tools, PDF utilities, creative design, developer resources, productivity apps, and file conversion">
+    <meta name="keywords" content="tools, utilities, AI, PDF, design, developer, productivity, apps, conversion, ChatGPT, Figma">
+    <meta name="author" content="The Everything Gateway">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Tools & Utilities Hub - The Everything Gateway">
+    <meta property="og:description" content="52 curated tools across 6 categories for productivity, creativity, and development">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="../../css/design-system.css">
     <link rel="stylesheet" href="../../css/components.css">
     <link rel="stylesheet" href="../../css/search.css">
@@ -704,6 +710,382 @@
         </div>
     </div>
     
-    <script src="../../js/gateway.js"></script>
+    <script src="../../js/gateway-enhanced.js"></script>
+    <script>
+        // Tools-specific fallback data - matches the structure in data.json
+        const fallbackToolsData = {
+            "ai_tools": {
+                "title": "AI & Machine Learning",
+                "description": "The latest AI tools for text, images, code, and productivity",
+                "icon": "🤖",
+                "platforms": [
+                    {
+                        "name": "ChatGPT",
+                        "url": "https://chat.openai.com",
+                        "description": "Most popular AI chatbot for text generation, Q&A, and creative writing",
+                        "icon": "🤖"
+                    },
+                    {
+                        "name": "Claude",
+                        "url": "https://claude.ai",
+                        "description": "Anthropic's AI assistant for complex reasoning and analysis",
+                        "icon": "🧠"
+                    },
+                    {
+                        "name": "Gemini",
+                        "url": "https://gemini.google.com",
+                        "description": "Google's multimodal AI for text, images, and data analysis",
+                        "icon": "💎"
+                    },
+                    {
+                        "name": "Midjourney",
+                        "url": "https://midjourney.com",
+                        "description": "Premium AI image generator with artistic focus",
+                        "icon": "🎨"
+                    },
+                    {
+                        "name": "Stable Diffusion",
+                        "url": "https://stablediffusionweb.com",
+                        "description": "Open-source AI image generation with full control",
+                        "icon": "🖼️"
+                    },
+                    {
+                        "name": "GitHub Copilot",
+                        "url": "https://copilot.github.com",
+                        "description": "AI pair programmer that writes code with you",
+                        "icon": "🚁"
+                    },
+                    {
+                        "name": "Replit AI",
+                        "url": "https://replit.com/ai",
+                        "description": "AI coding assistant integrated into online IDE",
+                        "icon": "🔧"
+                    },
+                    {
+                        "name": "Perplexity",
+                        "url": "https://perplexity.ai",
+                        "description": "AI-powered search with real-time answers and sources",
+                        "icon": "🔍"
+                    },
+                    {
+                        "name": "RunwayML",
+                        "url": "https://runwayml.com",
+                        "description": "AI video generation and editing tools",
+                        "icon": "🎬"
+                    },
+                    {
+                        "name": "Jasper",
+                        "url": "https://jasper.ai",
+                        "description": "AI writing assistant for marketing and content",
+                        "icon": "✍️"
+                    }
+                ]
+            },
+            "pdf_tools": {
+                "title": "PDF Tools",
+                "description": "Complete PDF toolkit for all your document needs",
+                "icon": "📄",
+                "platforms": [
+                    {
+                        "name": "SmallPDF",
+                        "url": "https://smallpdf.com",
+                        "description": "Complete PDF toolkit - merge, split, compress, convert",
+                        "icon": "📄"
+                    },
+                    {
+                        "name": "ILovePDF",
+                        "url": "https://ilovepdf.com",
+                        "description": "Free online PDF tools with no registration required",
+                        "icon": "💕"
+                    },
+                    {
+                        "name": "PDF24",
+                        "url": "https://tools.pdf24.org",
+                        "description": "Local processing PDF tools for security-conscious users",
+                        "icon": "🔒"
+                    },
+                    {
+                        "name": "Sejda PDF",
+                        "url": "https://sejda.com",
+                        "description": "Professional PDF editing with OCR and form features",
+                        "icon": "📊"
+                    },
+                    {
+                        "name": "PDFtk Server",
+                        "url": "https://www.pdflabs.com/tools/pdftk-server/",
+                        "description": "Powerful command-line PDF manipulation toolkit",
+                        "icon": "⚙️"
+                    },
+                    {
+                        "name": "PDF Arranger",
+                        "url": "https://github.com/pdfarranger/pdfarranger",
+                        "description": "Simple desktop application for merging and splitting PDFs",
+                        "icon": "🗿"
+                    }
+                ]
+            },
+            "creative_design": {
+                "title": "Creative & Design",
+                "description": "Professional design tools for creativity and visual content",
+                "icon": "🎨",
+                "platforms": [
+                    {
+                        "name": "Canva",
+                        "url": "https://canva.com",
+                        "description": "Easy-to-use design tool for social media, presentations, and more",
+                        "icon": "🎨"
+                    },
+                    {
+                        "name": "Figma",
+                        "url": "https://figma.com",
+                        "description": "Professional collaborative design tool for interfaces",
+                        "icon": "🖼️"
+                    },
+                    {
+                        "name": "Remove.bg",
+                        "url": "https://remove.bg",
+                        "description": "AI-powered background removal for images",
+                        "icon": "✂️"
+                    },
+                    {
+                        "name": "Photopea",
+                        "url": "https://photopea.com",
+                        "description": "Free browser-based Photoshop alternative",
+                        "icon": "🖼️"
+                    },
+                    {
+                        "name": "GIMP",
+                        "url": "https://gimp.org",
+                        "description": "Free and open-source image manipulation program",
+                        "icon": "🔧"
+                    },
+                    {
+                        "name": "Coolors",
+                        "url": "https://coolors.co",
+                        "description": "Generate and explore color palettes for your designs",
+                        "icon": "🎨"
+                    },
+                    {
+                        "name": "Unsplash",
+                        "url": "https://unsplash.com",
+                        "description": "High-quality free photos for any project",
+                        "icon": "📷"
+                    },
+                    {
+                        "name": "Iconify",
+                        "url": "https://iconify.design",
+                        "description": "Unified icon framework with thousands of icons",
+                        "icon": "✨"
+                    }
+                ]
+            },
+            "developer_tools": {
+                "title": "Developer Tools",
+                "description": "Essential development tools and coding utilities",
+                "icon": "💻",
+                "platforms": [
+                    {
+                        "name": "CodePen",
+                        "url": "https://codepen.io",
+                        "description": "Online code editor for HTML, CSS, and JavaScript",
+                        "icon": "🖋️"
+                    },
+                    {
+                        "name": "JSFiddle",
+                        "url": "https://jsfiddle.net",
+                        "description": "Test and share JavaScript, HTML, CSS code snippets",
+                        "icon": "🧪"
+                    },
+                    {
+                        "name": "Regex101",
+                        "url": "https://regex101.com",
+                        "description": "Build, test, and debug regular expressions with explanations",
+                        "icon": "🔍"
+                    },
+                    {
+                        "name": "JSONLint",
+                        "url": "https://jsonlint.com",
+                        "description": "Validate and format JSON data",
+                        "icon": "📜"
+                    },
+                    {
+                        "name": "Can I Use",
+                        "url": "https://caniuse.com",
+                        "description": "Check browser support for web technologies",
+                        "icon": "🌍"
+                    },
+                    {
+                        "name": "Postman",
+                        "url": "https://postman.com",
+                        "description": "Complete API development and testing platform",
+                        "icon": "🚀"
+                    },
+                    {
+                        "name": "VS Code Online",
+                        "url": "https://vscode.dev",
+                        "description": "Visual Studio Code running in your browser",
+                        "icon": "💻"
+                    },
+                    {
+                        "name": "GitPod",
+                        "url": "https://gitpod.io",
+                        "description": "Ready-to-code dev environments in the cloud",
+                        "icon": "☁️"
+                    },
+                    {
+                        "name": "Replit",
+                        "url": "https://replit.com",
+                        "description": "Code, compile and run programs online in 50+ languages",
+                        "icon": "🔄"
+                    }
+                ]
+            },
+            "productivity": {
+                "title": "Productivity & Organization",
+                "description": "Boost your productivity with powerful organization tools",
+                "icon": "⚡",
+                "platforms": [
+                    {
+                        "name": "Notion",
+                        "url": "https://notion.so",
+                        "description": "Workspace combining notes, tasks, wiki, and databases",
+                        "icon": "📝"
+                    },
+                    {
+                        "name": "Obsidian",
+                        "url": "https://obsidian.md",
+                        "description": "Powerful note-taking with linked thought networks",
+                        "icon": "🕸️"
+                    },
+                    {
+                        "name": "Todoist",
+                        "url": "https://todoist.com",
+                        "description": "Intelligent task manager and to-do list app",
+                        "icon": "✅"
+                    },
+                    {
+                        "name": "Calendly",
+                        "url": "https://calendly.com",
+                        "description": "Easy scheduling without back-and-forth emails",
+                        "icon": "📅"
+                    },
+                    {
+                        "name": "Grammarly",
+                        "url": "https://grammarly.com",
+                        "description": "AI-powered writing assistant for grammar and style",
+                        "icon": "✍️"
+                    },
+                    {
+                        "name": "Forest",
+                        "url": "https://forestapp.cc",
+                        "description": "Stay focused and beat phone addiction with virtual trees",
+                        "icon": "🌳"
+                    },
+                    {
+                        "name": "RescueTime",
+                        "url": "https://rescuetime.com",
+                        "description": "Automatic time tracking and productivity analysis",
+                        "icon": "⏱️"
+                    }
+                ]
+            },
+            "file_conversion": {
+                "title": "File Conversion",
+                "description": "Convert files between formats easily and securely",
+                "icon": "🔄",
+                "platforms": [
+                    {
+                        "name": "CloudConvert",
+                        "url": "https://cloudconvert.com",
+                        "description": "Convert between 200+ file formats including audio, video, documents",
+                        "icon": "☁️"
+                    },
+                    {
+                        "name": "Online-Convert",
+                        "url": "https://online-convert.com",
+                        "description": "Convert images, audio, video, documents, and ebooks",
+                        "icon": "🔄"
+                    },
+                    {
+                        "name": "Convertio",
+                        "url": "https://convertio.co",
+                        "description": "Simple online converter for files, images, videos, and audio",
+                        "icon": "✨"
+                    },
+                    {
+                        "name": "Zamzar",
+                        "url": "https://zamzar.com",
+                        "description": "File conversion with email delivery for large files",
+                        "icon": "📧"
+                    },
+                    {
+                        "name": "FreeConvert",
+                        "url": "https://freeconvert.com",
+                        "description": "Free online file converter with no registration",
+                        "icon": "🆓"
+                    }
+                ]
+            }
+        };
+
+        // Initialize the page with enhanced features
+        document.addEventListener('DOMContentLoaded', function() {
+            // Try to fetch data from JSON first, fall back to hardcoded data
+            fetchCategoryData('tools')
+                .then(data => {
+                    if (data) {
+                        console.log('✅ Loaded tools data from JSON');
+                        // Data is already populated in the HTML, just update stats if needed
+                        updateStats(data);
+                    } else {
+                        console.log('📋 Using fallback tools data');
+                        // Use fallback data and update stats
+                        updateStats(fallbackToolsData);
+                    }
+                })
+                .catch(error => {
+                    console.warn('⚠️ Error loading tools data, using fallback:', error);
+                    updateStats(fallbackToolsData);
+                });
+        });
+
+        // Function to update stats display
+        function updateStats(data) {
+            try {
+                let totalPlatforms = 0;
+                let totalCategories = 0;
+
+                for (const category in data) {
+                    totalCategories++;
+                    if (data[category].platforms) {
+                        totalPlatforms += data[category].platforms.length;
+                    }
+                }
+
+                // Update the subtitle with actual counts if different from hardcoded
+                const subtitle = document.querySelector('.subtitle');
+                if (subtitle && (totalPlatforms !== 52 || totalCategories !== 6)) {
+                    subtitle.textContent = `${totalPlatforms} curated tools across ${totalCategories} categories to supercharge your productivity, creativity, and development workflow`;
+                }
+            } catch (error) {
+                console.warn('Error updating stats:', error);
+            }
+        }
+
+        // Function to attempt fetching category data
+        async function fetchCategoryData(category) {
+            try {
+                const response = await fetch(`../../data/${category}.json`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.log(`Could not fetch ${category} data:`, error.message);
+                return null;
+            }
+        }
+    </script>
 </body>
 </html>
