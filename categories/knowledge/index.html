@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knowledge & Learning Hub - The Everything Gateway</title>
     <meta name="description" content="Educational resources, online courses, and learning platforms for curious minds - from Harvard and MIT to Wikipedia and Khan Academy">
+    <meta name="keywords" content="education, learning, online courses, knowledge, Coursera, edX, Khan Academy, Duolingo">
+    <meta name="author" content="The Everything Gateway">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Knowledge & Learning Hub - The Everything Gateway">
+    <meta property="og:description" content="Educational resources, online courses, and learning platforms for curious minds">
+    <meta property="og:type" content="website">
     <meta name="theme-color" content="#11998e">
     <link rel="stylesheet" href="../../css/shared.css">
     <link rel="stylesheet" href="../../css/search.css">
@@ -358,11 +364,20 @@
             }
             
             async loadPlatforms() {
-                const response = await fetch('../../data/knowledge.json');
-                const data = await response.json();
-                
-                this.renderPlatforms(data);
-                this.animateIn();
+                try {
+                    const response = await fetch('../../data/knowledge.json');
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const data = await response.json();
+                    
+                    this.renderPlatforms(data);
+                    this.updateStats(data);
+                    this.animateIn();
+                } catch (error) {
+                    console.log('Fetch failed, using fallback data for development:', error);
+                    this.loadFallbackData();
+                }
             }
             
             renderPlatforms(data) {
@@ -431,6 +446,93 @@
                         section.style.transform = 'translateY(0)';
                     }, index * 150);
                 });
+            }
+            
+            loadFallbackData() {
+                // Fallback data for development when JSON can't be fetched
+                const data = {
+                    meta: {
+                        title: "Knowledge & Learning Hub",
+                        totalPlatforms: 32,
+                        lastUpdated: "2025-01-09"
+                    },
+                    sections: [
+                        {
+                            id: "online-courses",
+                            title: "🎓 Online Courses",
+                            description: "Top-tier educational platforms offering courses from leading universities and institutions",
+                            colorClass: "academic-gradient",
+                            resources: [
+                                { name: "Coursera", url: "https://www.coursera.org", description: "University courses from top institutions like Stanford, Yale, and Google" },
+                                { name: "edX", url: "https://www.edx.org", description: "Free online courses from Harvard, MIT, Berkeley and other top universities" },
+                                { name: "Khan Academy", url: "https://www.khanacademy.org", description: "Free world-class education for anyone, anywhere" },
+                                { name: "Udemy", url: "https://www.udemy.com", description: "Online courses in technology, business, and creative skills" },
+                                { name: "MIT OpenCourseWare", url: "https://ocw.mit.edu", description: "Free lecture notes, exams, and videos from MIT" },
+                                { name: "Stanford Online", url: "https://online.stanford.edu", description: "Stanford University's online learning platform" }
+                            ]
+                        },
+                        {
+                            id: "language-learning",
+                            title: "🌍 Language Learning",
+                            description: "Master new languages with interactive lessons and native speaker practice",
+                            colorClass: "international-gradient",
+                            resources: [
+                                { name: "Duolingo", url: "https://www.duolingo.com", description: "Free language learning app with gamified lessons" },
+                                { name: "Babbel", url: "https://www.babbel.com", description: "Practical conversation skills in 13 languages" },
+                                { name: "Rosetta Stone", url: "https://www.rosettastone.com", description: "Immersive language learning with speech recognition" },
+                                { name: "italki", url: "https://www.italki.com", description: "Learn languages with native speaker tutors" },
+                                { name: "HelloTalk", url: "https://www.hellotalk.com", description: "Practice languages with native speakers worldwide" }
+                            ]
+                        },
+                        {
+                            id: "research-reference",
+                            title: "📖 Research & Reference",
+                            description: "Comprehensive knowledge bases and academic research resources",
+                            colorClass: "privacy-gradient",
+                            resources: [
+                                { name: "Wikipedia", url: "https://www.wikipedia.org", description: "The free encyclopedia that anyone can edit" },
+                                { name: "Google Scholar", url: "https://scholar.google.com", description: "Academic papers and scholarly literature search" },
+                                { name: "Internet Archive", url: "https://archive.org", description: "Digital library of books, movies, music, and websites" },
+                                { name: "Wolfram Alpha", url: "https://www.wolframalpha.com", description: "Computational knowledge engine and calculator" },
+                                { name: "Britannica", url: "https://www.britannica.com", description: "Trusted encyclopedia and reference resource" }
+                            ]
+                        },
+                        {
+                            id: "skill-development",
+                            title: "🛠️ Skills & Professional Development",
+                            description: "Build practical skills and advance your career with expert instruction",
+                            colorClass: "creative-gradient",
+                            resources: [
+                                { name: "MasterClass", url: "https://www.masterclass.com", description: "Learn from the world's best in various fields" },
+                                { name: "Skillshare", url: "https://www.skillshare.com", description: "Creative and business skills through online classes" },
+                                { name: "LinkedIn Learning", url: "https://www.linkedin.com/learning", description: "Professional development courses and certifications" },
+                                { name: "Codecademy", url: "https://www.codecademy.com", description: "Interactive coding lessons and programming skills" },
+                                { name: "Brilliant", url: "https://brilliant.org", description: "Learn math, science, and computer science interactively" }
+                            ]
+                        }
+                    ]
+                };
+                
+                this.renderPlatforms(data);
+                this.updateStats(data);
+                this.animateIn();
+            }
+            
+            updateStats(data) {
+                const totalPlatforms = data.meta.totalPlatforms || this.countTotalPlatforms(data.sections);
+                const totalSections = data.sections.length;
+                
+                document.getElementById('platform-count').textContent = totalPlatforms;
+                
+                // Update other stats if elements exist
+                const sectionsElement = document.querySelector('.hero-stat:nth-child(2) .hero-stat-number');
+                if (sectionsElement) {
+                    sectionsElement.textContent = totalSections;
+                }
+            }
+            
+            countTotalPlatforms(sections) {
+                return sections.reduce((total, section) => total + section.resources.length, 0);
             }
             
             showError() {

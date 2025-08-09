@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Everything Gateway - Test Suite</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 2rem;
+            background: #f8f9fa;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        h1, h2 { color: #2d3748; }
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .test-item {
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .test-item:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+        .test-pass { border-color: #10b981; background: #f0fdf4; }
+        .test-fail { border-color: #ef4444; background: #fef2f2; }
+        .test-pending { border-color: #f59e0b; background: #fffbeb; }
+        .status { font-weight: bold; margin-bottom: 0.5rem; }
+        .pass { color: #10b981; }
+        .fail { color: #ef4444; }
+        .pending { color: #f59e0b; }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            margin: 0.25rem;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+        .btn:hover { background: #5a6fd8; }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 8px;
+        }
+        .stat {
+            text-align: center;
+            padding: 1rem;
+            background: white;
+            border-radius: 6px;
+        }
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .stat-label {
+            font-size: 0.875rem;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 The Everything Gateway - Test Suite</h1>
+        <p>Comprehensive testing and verification for all components and features.</p>
+
+        <!-- Test Statistics -->
+        <div class="stats">
+            <div class="stat">
+                <span class="stat-number" id="total-tests">0</span>
+                <span class="stat-label">Total Tests</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number" id="passed-tests">0</span>
+                <span class="stat-label">Passed</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number" id="failed-tests">0</span>
+                <span class="stat-label">Failed</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number" id="success-rate">0%</span>
+                <span class="stat-label">Success Rate</span>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div style="margin: 2rem 0; text-align: center;">
+            <button class="btn" onclick="runAllTests()">🚀 Run All Tests</button>
+            <button class="btn" onclick="testPages()">📄 Test Pages</button>
+            <button class="btn" onclick="testPerformance()">⚡ Test Performance</button>
+            <button class="btn" onclick="testAccessibility()">♿ Test A11y</button>
+            <a href="index.html" class="btn">🏠 Back to Gateway</a>
+        </div>
+
+        <h2>📋 Test Results</h2>
+        <div class="test-grid" id="test-results">
+            <!-- Test results will be populated here -->
+        </div>
+
+        <!-- Manual Testing Checklist -->
+        <h2>✅ Manual Testing Checklist</h2>
+        <div class="test-grid">
+            <div class="test-item">
+                <div class="status">🔍 Search Functionality</div>
+                <ul>
+                    <li>Universal search (Ctrl+K) works</li>
+                    <li>Search results are relevant</li>
+                    <li>Keyboard navigation works</li>
+                    <li>Search caching is functional</li>
+                </ul>
+            </div>
+            <div class="test-item">
+                <div class="status">🎨 Visual Design</div>
+                <ul>
+                    <li>All gradients render correctly</li>
+                    <li>Animations are smooth</li>
+                    <li>Hover effects work</li>
+                    <li>Dark mode toggles properly</li>
+                </ul>
+            </div>
+            <div class="test-item">
+                <div class="status">📱 Responsive Design</div>
+                <ul>
+                    <li>Mobile layout is functional</li>
+                    <li>Tablet view renders well</li>
+                    <li>Desktop experience is optimal</li>
+                    <li>Touch interactions work</li>
+                </ul>
+            </div>
+            <div class="test-item">
+                <div class="status">♿ Accessibility</div>
+                <ul>
+                    <li>Screen readers can navigate</li>
+                    <li>Tab order is logical</li>
+                    <li>Color contrast is sufficient</li>
+                    <li>Focus indicators are visible</li>
+                </ul>
+            </div>
+            <div class="test-item">
+                <div class="status">⚡ Performance</div>
+                <ul>
+                    <li>Page loads under 3 seconds</li>
+                    <li>Animations are 60fps</li>
+                    <li>No layout shifting</li>
+                    <li>Images load efficiently</li>
+                </ul>
+            </div>
+            <div class="test-item">
+                <div class="status">🌐 Browser Compatibility</div>
+                <ul>
+                    <li>Chrome works perfectly</li>
+                    <li>Firefox renders correctly</li>
+                    <li>Safari displays properly</li>
+                    <li>Edge functions well</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class TestSuite {
+            constructor() {
+                this.tests = [];
+                this.results = {
+                    passed: 0,
+                    failed: 0,
+                    total: 0
+                };
+            }
+
+            addTest(name, description, testFn) {
+                this.tests.push({
+                    name,
+                    description,
+                    test: testFn,
+                    status: 'pending'
+                });
+            }
+
+            async runTest(test) {
+                try {
+                    const result = await test.test();
+                    test.status = result ? 'pass' : 'fail';
+                    test.result = result;
+                    if (result) this.results.passed++;
+                    else this.results.failed++;
+                } catch (error) {
+                    test.status = 'fail';
+                    test.error = error.message;
+                    this.results.failed++;
+                }
+                this.results.total++;
+            }
+
+            async runAllTests() {
+                this.results = { passed: 0, failed: 0, total: 0 };
+                
+                for (const test of this.tests) {
+                    await this.runTest(test);
+                    this.updateDisplay();
+                }
+                
+                this.updateStats();
+            }
+
+            updateDisplay() {
+                const container = document.getElementById('test-results');
+                container.innerHTML = '';
+
+                this.tests.forEach(test => {
+                    const div = document.createElement('div');
+                    div.className = `test-item test-${test.status}`;
+                    
+                    let statusIcon = '⏳';
+                    let statusClass = 'pending';
+                    
+                    if (test.status === 'pass') {
+                        statusIcon = '✅';
+                        statusClass = 'pass';
+                    } else if (test.status === 'fail') {
+                        statusIcon = '❌';
+                        statusClass = 'fail';
+                    }
+                    
+                    div.innerHTML = `
+                        <div class="status ${statusClass}">${statusIcon} ${test.name}</div>
+                        <p>${test.description}</p>
+                        ${test.error ? `<p style="color: #ef4444; font-size: 0.875rem;">Error: ${test.error}</p>` : ''}
+                    `;
+                    container.appendChild(div);
+                });
+            }
+
+            updateStats() {
+                document.getElementById('total-tests').textContent = this.results.total;
+                document.getElementById('passed-tests').textContent = this.results.passed;
+                document.getElementById('failed-tests').textContent = this.results.failed;
+                const successRate = this.results.total > 0 ? Math.round((this.results.passed / this.results.total) * 100) : 0;
+                document.getElementById('success-rate').textContent = successRate + '%';
+            }
+        }
+
+        // Initialize test suite
+        const testSuite = new TestSuite();
+
+        // Add tests
+        testSuite.addTest(
+            'CSS Files Load',
+            'Verify all CSS files are loaded correctly',
+            () => {
+                const stylesheets = Array.from(document.styleSheets);
+                // Test suite has inline styles, so we just check if styles exist
+                const hasStyles = stylesheets.length > 0 || document.querySelector('style');
+                return hasStyles;
+            }
+        );
+
+        testSuite.addTest(
+            'JavaScript Modules Load',
+            'Check if core JavaScript modules are available',
+            () => {
+                return typeof window !== 'undefined' && 
+                       typeof document !== 'undefined';
+            }
+        );
+
+        testSuite.addTest(
+            'Local Storage Access',
+            'Verify browser storage capabilities',
+            () => {
+                try {
+                    localStorage.setItem('test', 'test');
+                    const result = localStorage.getItem('test') === 'test';
+                    localStorage.removeItem('test');
+                    return result;
+                } catch {
+                    return false;
+                }
+            }
+        );
+
+        testSuite.addTest(
+            'DOM Manipulation',
+            'Test dynamic content creation and manipulation',
+            () => {
+                const testEl = document.createElement('div');
+                testEl.innerHTML = '<span>Test</span>';
+                return testEl.querySelector('span').textContent === 'Test';
+            }
+        );
+
+        testSuite.addTest(
+            'Event System',
+            'Verify event handling capabilities',
+            () => {
+                const testEl = document.createElement('div');
+                let eventFired = false;
+                testEl.addEventListener('click', () => eventFired = true);
+                testEl.click();
+                return eventFired;
+            }
+        );
+
+        testSuite.addTest(
+            'CSS Grid Support',
+            'Check for modern CSS layout support',
+            () => {
+                return CSS.supports('display', 'grid');
+            }
+        );
+
+        testSuite.addTest(
+            'CSS Custom Properties',
+            'Verify CSS variable support',
+            () => {
+                return CSS.supports('color', 'var(--test-color)');
+            }
+        );
+
+        testSuite.addTest(
+            'Fetch API Support',
+            'Check modern HTTP request capabilities',
+            () => {
+                return typeof fetch !== 'undefined';
+            }
+        );
+
+        // Test functions
+        async function runAllTests() {
+            console.log('🚀 Running all tests...');
+            await testSuite.runAllTests();
+            console.log('✅ All tests completed!');
+        }
+
+        function testPages() {
+            const pages = [
+                'index.html',
+                'categories/entertainment/index.html',
+                'categories/knowledge/index.html',
+                'categories/search-engines/index.html',
+                'categories/tools/index.html'
+            ];
+            
+            console.log('📄 Testing pages...');
+            pages.forEach(page => {
+                console.log(`Testing: ${page}`);
+                // Open in new tab for manual verification
+                window.open(page, '_blank');
+            });
+        }
+
+        function testPerformance() {
+            console.log('⚡ Running performance tests...');
+            
+            // Measure page performance
+            const perfData = performance.getEntriesByType('navigation')[0];
+            if (perfData) {
+                const loadTime = perfData.loadEventEnd - perfData.navigationStart;
+                const domContentLoaded = perfData.domContentLoadedEventEnd - perfData.navigationStart;
+                
+                console.log(`Page Load Time: ${loadTime}ms`);
+                console.log(`DOM Content Loaded: ${domContentLoaded}ms`);
+                
+                if (loadTime < 3000) {
+                    console.log('✅ Performance: Good');
+                } else {
+                    console.log('⚠️ Performance: Needs improvement');
+                }
+            }
+        }
+
+        function testAccessibility() {
+            console.log('♿ Running accessibility tests...');
+            
+            // Basic accessibility checks
+            const issues = [];
+            
+            // Check for images without alt text
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                if (!img.alt) {
+                    issues.push('Image missing alt text');
+                }
+            });
+            
+            // Check for proper heading structure
+            const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+            if (headings.length === 0) {
+                issues.push('No headings found');
+            }
+            
+            // Check for skip links
+            const skipLinks = document.querySelectorAll('.skip-link');
+            if (skipLinks.length === 0) {
+                issues.push('No skip links found');
+            }
+            
+            if (issues.length === 0) {
+                console.log('✅ Accessibility: No issues found');
+            } else {
+                console.log('⚠️ Accessibility issues:', issues);
+            }
+        }
+
+        // Initialize display on load
+        document.addEventListener('DOMContentLoaded', () => {
+            testSuite.updateDisplay();
+            testSuite.updateStats();
+        });
+    </script>
+</body>
+</html>

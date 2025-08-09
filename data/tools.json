@@ -236,47 +236,47 @@
       "title": "⚡ Productivity & Organization",
       "description": "Note-taking, planning, and productivity enhancement tools",
       "colorClass": "academic",
-      "tools": [
+      "platforms": [
         {
           "name": "Notion",
           "url": "https://notion.so",
-          "category": "All-in-One",
+          "icon": "📝",
           "description": "Workspace combining notes, tasks, wiki, and databases"
         },
         {
           "name": "Obsidian",
           "url": "https://obsidian.md",
-          "category": "Knowledge Graph",
+          "icon": "🧠",
           "description": "Powerful note-taking with linked thought networks"
         },
         {
           "name": "Todoist",
           "url": "https://todoist.com",
-          "category": "Task Management",
+          "icon": "✅",
           "description": "Intelligent task manager and to-do list app"
         },
         {
           "name": "Calendly",
           "url": "https://calendly.com",
-          "category": "Scheduling",
+          "icon": "📅",
           "description": "Easy scheduling without back-and-forth emails"
         },
         {
           "name": "Grammarly",
           "url": "https://grammarly.com",
-          "category": "Writing Assistant",
+          "icon": "✍️",
           "description": "AI-powered writing assistant for grammar and style"
         },
         {
           "name": "Forest",
           "url": "https://forestapp.cc",
-          "category": "Focus",
+          "icon": "🌳",
           "description": "Stay focused and beat phone addiction with virtual trees"
         },
         {
           "name": "RescueTime",
           "url": "https://rescuetime.com",
-          "category": "Time Tracking",
+          "icon": "⏰",
           "description": "Automatic time tracking and productivity analysis"
         }
       ]
@@ -286,35 +286,35 @@
       "title": "🔄 File Conversion",
       "description": "Convert between different file formats easily",
       "colorClass": "shopping",
-      "tools": [
+      "platforms": [
         {
           "name": "CloudConvert",
           "url": "https://cloudconvert.com",
-          "category": "Universal Converter",
+          "icon": "☁️",
           "description": "Convert between 200+ file formats including audio, video, documents"
         },
         {
           "name": "Online-Convert",
           "url": "https://online-convert.com",
-          "category": "Multi-Format",
+          "icon": "🔄",
           "description": "Convert images, audio, video, documents, and ebooks"
         },
         {
           "name": "Convertio",
           "url": "https://convertio.co",
-          "category": "Easy Conversion",
+          "icon": "⚡",
           "description": "Simple online converter for files, images, videos, and audio"
         },
         {
           "name": "Zamzar",
           "url": "https://zamzar.com",
-          "category": "Email Delivery",
+          "icon": "📧",
           "description": "File conversion with email delivery for large files"
         },
         {
           "name": "FreeConvert",
           "url": "https://freeconvert.com",
-          "category": "Free Service",
+          "icon": "🆓",
           "description": "Free online file converter with no registration"
         }
       ]
@@ -323,7 +323,7 @@
   "metadata": {
     "version": "1.0",
     "lastUpdated": "2025-08-09",
-    "totalTools": 52,
+    "totalTools": 45,
     "totalSections": 6,
     "description": "Comprehensive collection of online tools for productivity, creativity, and development"
   }

@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entertainment & Media - The Everything Gateway</title>
     <meta name="description" content="Your gateway to streaming, music, gaming, and entertainment platforms">
+    <meta name="keywords" content="streaming, music, gaming, entertainment, Netflix, Spotify, Steam, YouTube">
+    <meta name="author" content="The Everything Gateway">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Entertainment & Media - The Everything Gateway">
+    <meta property="og:description" content="Your gateway to streaming, music, gaming, and entertainment platforms">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="../../css/shared.css">
     <link rel="stylesheet" href="../../css/search.css">
     <style>
@@ -192,6 +198,30 @@
             opacity: 0.9;
         }
         
+        /* Loading state */
+        .platforms-loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 2rem;
+            color: #666;
+        }
+        
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
         /* Animation for entertainment cards */
         @keyframes fadeInUp {
             from {
@@ -261,11 +291,11 @@
             <p class="hero-subtitle">Your gateway to streaming, music, gaming, and entertainment platforms</p>
             <div class="hero-stats">
                 <div class="stat-item">
-                    <span class="stat-number">51</span>
+                    <span class="stat-number" id="total-platforms">51</span>
                     <span class="stat-label">Platforms</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">6</span>
+                    <span class="stat-number" id="total-sections">6</span>
                     <span class="stat-label">Categories</span>
                 </div>
                 <div class="stat-item">
@@ -278,7 +308,7 @@
             <div style="margin-top: 2rem; text-align: center;">
                 <button class="search-trigger" onclick="window.gateway && window.gateway.openSearch()">
                     <span class="search-trigger-icon">🔍</span>
-                    <span>Search all 142+ platforms</span>
+                    <span>Search entertainment platforms</span>
                     <span class="search-trigger-shortcut">Ctrl+K</span>
                 </button>
             </div>
@@ -287,306 +317,13 @@
 
     <!-- Main Content -->
     <main class="main-content">
-
-        <!-- Video Streaming Section -->
-        <section class="platform-section">
-            <div class="section-header streaming-gradient">
-                <h2 class="section-title">🎬 Video Streaming</h2>
-                <p class="section-description">Movies, TV shows, and video content</p>
+        <!-- Entertainment Content Container -->
+        <div id="entertainment-content">
+            <div class="platforms-loading">
+                <div class="loading-spinner"></div>
+                <span>Loading entertainment platforms...</span>
             </div>
-            <div class="platforms-grid">
-                <a href="https://www.netflix.com" target="_blank" class="platform-card">
-                    <div class="platform-logo">
-                        <img src="https://www.google.com/s2/favicons?domain=netflix.com&sz=32" alt="Netflix" onerror="this.parentElement.innerHTML='🎬'">
-                    </div>
-                    <div class="platform-content">
-                        <h3 class="platform-name">Netflix</h3>
-                        <p class="platform-description">Global streaming service with original content and movies</p>
-                    </div>
-                </a>
-                <a href="https://www.youtube.com" target="_blank" class="platform-card">
-                    <div class="platform-logo">
-                        <img src="https://www.google.com/s2/favicons?domain=youtube.com&sz=32" alt="YouTube" onerror="this.parentElement.innerHTML='📺'">
-                    </div>
-                    <div class="platform-content">
-                        <h3 class="platform-name">YouTube</h3>
-                        <p class="platform-description">World's largest video sharing platform</p>
-                    </div>
-                </a>
-                <a href="https://www.disneyplus.com" target="_blank" class="platform-card">
-                    <div class="platform-logo">
-                        <img src="https://www.google.com/s2/favicons?domain=disneyplus.com&sz=32" alt="Disney+" onerror="this.parentElement.innerHTML='🏰'">
-                    </div>
-                    <div class="platform-content">
-                        <h3 class="platform-name">Disney+</h3>
-                        <p class="platform-description">Disney, Marvel, Star Wars, and Pixar content</p>
-                    </div>
-                </a>
-                <a href="https://www.primevideo.com" target="_blank" class="platform-card">
-                    <div class="platform-logo">
-                        <img src="https://www.google.com/s2/favicons?domain=primevideo.com&sz=32" alt="Prime Video" onerror="this.parentElement.innerHTML='📦'">
-                    </div>
-                    <div class="platform-content">
-                        <h3 class="platform-name">Amazon Prime Video</h3>
-                        <p class="platform-description">Amazon's streaming service with originals and movies</p>
-                    </div>
-                </a>
-                <a href="https://www.hbomax.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">HBO Max</h3>
-                    <p class="platform-description">Premium content from HBO and Warner Bros</p>
-                </a>
-                <a href="https://www.hulu.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Hulu</h3>
-                    <p class="platform-description">US streaming with TV shows and next-day episodes</p>
-                </a>
-                <a href="https://tv.apple.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Apple TV+</h3>
-                    <p class="platform-description">Apple's premium original content platform</p>
-                </a>
-                <a href="https://www.paramountplus.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Paramount+</h3>
-                    <p class="platform-description">CBS, Paramount, and Nickelodeon content</p>
-                </a>
-                <a href="https://www.peacocktv.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Peacock</h3>
-                    <p class="platform-description">NBCUniversal's streaming platform</p>
-                </a>
-                <a href="https://www.twitch.tv" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Twitch</h3>
-                    <p class="platform-description">Live streaming platform for gaming and entertainment</p>
-                </a>
-            </div>
-        </section>
-
-        <!-- Music & Audio Section -->
-        <section class="platform-section">
-            <div class="section-header music-gradient">
-                <h2 class="section-title">🎵 Music & Audio</h2>
-                <p class="section-description">Music streaming, podcasts, and audio content</p>
-            </div>
-            <div class="platforms-grid">
-                <a href="https://www.spotify.com" target="_blank" class="platform-card">
-                    <div class="platform-logo">
-                        <img src="https://www.google.com/s2/favicons?domain=spotify.com&sz=32" alt="Spotify" onerror="this.parentElement.innerHTML='🎵'">
-                    </div>
-                    <div class="platform-content">
-                        <h3 class="platform-name">Spotify</h3>
-                        <p class="platform-description">World's largest music streaming platform</p>
-                    </div>
-                </a>
-                <a href="https://music.apple.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Apple Music</h3>
-                    <p class="platform-description">Apple's premium music streaming service</p>
-                </a>
-                <a href="https://music.youtube.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">YouTube Music</h3>
-                    <p class="platform-description">Google's music streaming platform</p>
-                </a>
-                <a href="https://soundcloud.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">SoundCloud</h3>
-                    <p class="platform-description">Platform for independent artists and creators</p>
-                </a>
-                <a href="https://music.amazon.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Amazon Music</h3>
-                    <p class="platform-description">Amazon's music streaming service</p>
-                </a>
-                <a href="https://www.pandora.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Pandora</h3>
-                    <p class="platform-description">Personalized radio and music discovery</p>
-                </a>
-                <a href="https://tidal.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Tidal</h3>
-                    <p class="platform-description">High-fidelity music streaming platform</p>
-                </a>
-                <a href="https://bandcamp.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Bandcamp</h3>
-                    <p class="platform-description">Platform supporting independent musicians directly</p>
-                </a>
-                <a href="https://www.audible.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Audible</h3>
-                    <p class="platform-description">Amazon's audiobook and podcast platform</p>
-                </a>
-            </div>
-        </section>
-
-        <!-- Gaming Platforms Section -->
-        <section class="platform-section">
-            <div class="section-header gaming-gradient">
-                <h2 class="section-title">🎮 Gaming Platforms</h2>
-                <p class="section-description">Game stores, streaming, and gaming communities</p>
-            </div>
-            <div class="platforms-grid">
-                <a href="https://store.steampowered.com" target="_blank" class="platform-card">
-                    <div class="platform-logo">
-                        <img src="https://www.google.com/s2/favicons?domain=steampowered.com&sz=32" alt="Steam" onerror="this.parentElement.innerHTML='🎮'">
-                    </div>
-                    <div class="platform-content">
-                        <h3 class="platform-name">Steam</h3>
-                        <p class="platform-description">World's largest PC gaming platform</p>
-                    </div>
-                </a>
-                <a href="https://www.epicgames.com/store" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Epic Games Store</h3>
-                    <p class="platform-description">PC gaming platform with free weekly games</p>
-                </a>
-                <a href="https://store.playstation.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">PlayStation Store</h3>
-                    <p class="platform-description">Official PlayStation games and content</p>
-                </a>
-                <a href="https://www.xbox.com/xbox-game-pass" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Xbox Game Pass</h3>
-                    <p class="platform-description">Microsoft's gaming subscription service</p>
-                </a>
-                <a href="https://www.nintendo.com/store" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Nintendo eShop</h3>
-                    <p class="platform-description">Nintendo Switch and 3DS game store</p>
-                </a>
-                <a href="https://www.gog.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">GOG</h3>
-                    <p class="platform-description">DRM-free games and classic titles</p>
-                </a>
-                <a href="https://itch.io" target="_blank" class="platform-card">
-                    <h3 class="platform-name">itch.io</h3>
-                    <p class="platform-description">Independent game marketplace and creator platform</p>
-                </a>
-                <a href="https://discord.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Discord</h3>
-                    <p class="platform-description">Gaming communication and community platform</p>
-                </a>
-                <a href="https://www.roblox.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Roblox</h3>
-                    <p class="platform-description">User-generated gaming and creation platform</p>
-                </a>
-            </div>
-        </section>
-
-        <!-- Social Entertainment Section -->
-        <section class="platform-section">
-            <div class="section-header social-gradient">
-                <h2 class="section-title">📱 Social Entertainment</h2>
-                <p class="section-description">Social media and content sharing platforms</p>
-            </div>
-            <div class="platforms-grid">
-                <a href="https://www.tiktok.com" target="_blank" class="platform-card">
-                    <div class="platform-logo">
-                        <img src="https://www.google.com/s2/favicons?domain=tiktok.com&sz=32" alt="TikTok" onerror="this.parentElement.innerHTML='📱'">
-                    </div>
-                    <div class="platform-content">
-                        <h3 class="platform-name">TikTok</h3>
-                        <p class="platform-description">Short-form video sharing platform</p>
-                    </div>
-                </a>
-                <a href="https://www.instagram.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Instagram</h3>
-                    <p class="platform-description">Photo and video sharing social network</p>
-                </a>
-                <a href="https://twitter.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Twitter</h3>
-                    <p class="platform-description">Microblogging and real-time information platform</p>
-                </a>
-                <a href="https://www.snapchat.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Snapchat</h3>
-                    <p class="platform-description">Multimedia messaging and stories platform</p>
-                </a>
-                <a href="https://www.reddit.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Reddit</h3>
-                    <p class="platform-description">Community discussion and content aggregation</p>
-                </a>
-                <a href="https://www.pinterest.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Pinterest</h3>
-                    <p class="platform-description">Visual discovery and inspiration platform</p>
-                </a>
-                <a href="https://www.tumblr.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Tumblr</h3>
-                    <p class="platform-description">Microblogging and multimedia platform</p>
-                </a>
-                <a href="https://www.facebook.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Facebook</h3>
-                    <p class="platform-description">World's largest social networking platform</p>
-                </a>
-            </div>
-        </section>
-
-        <!-- Fun & Interactive Section -->
-        <section class="platform-section">
-            <div class="section-header interactive-gradient">
-                <h2 class="section-title">🎪 Fun & Interactive</h2>
-                <p class="section-description">Games, quizzes, and interactive entertainment</p>
-            </div>
-            <div class="platforms-grid">
-                <a href="https://kahoot.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Kahoot!</h3>
-                    <p class="platform-description">Interactive quiz and learning games platform</p>
-                </a>
-                <a href="https://www.sporcle.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Sporcle</h3>
-                    <p class="platform-description">Trivia quizzes and brain games</p>
-                </a>
-                <a href="https://www.nytimes.com/games/wordle" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Wordle</h3>
-                    <p class="platform-description">Daily word puzzle game by New York Times</p>
-                </a>
-                <a href="https://www.chess.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Chess.com</h3>
-                    <p class="platform-description">Online chess platform with lessons and tournaments</p>
-                </a>
-                <a href="https://lichess.org" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Lichess</h3>
-                    <p class="platform-description">Free and open-source chess platform</p>
-                </a>
-                <a href="https://www.geoguessr.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Geoguessr</h3>
-                    <p class="platform-description">Geography guessing game using street view</p>
-                </a>
-                <a href="https://www.innersloth.com/games/among-us" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Among Us</h3>
-                    <p class="platform-description">Popular multiplayer social deduction game</p>
-                </a>
-            </div>
-        </section>
-
-        <!-- Alternative Platforms Section -->
-        <section class="platform-section">
-            <div class="section-header alternative-gradient">
-                <h2 class="section-title">📺 Alternative Platforms</h2>
-                <p class="section-description">Independent and niche entertainment platforms</p>
-            </div>
-            <div class="platforms-grid">
-                <a href="https://vimeo.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Vimeo</h3>
-                    <p class="platform-description">High-quality video platform for creators</p>
-                </a>
-                <a href="https://www.crunchyroll.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Crunchyroll</h3>
-                    <p class="platform-description">Anime and Asian content streaming platform</p>
-                </a>
-                <a href="https://www.funimation.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Funimation</h3>
-                    <p class="platform-description">Anime streaming and dubbing platform</p>
-                </a>
-                <a href="https://www.plex.tv" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Plex</h3>
-                    <p class="platform-description">Personal media server and streaming platform</p>
-                </a>
-                <a href="https://jellyfin.org" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Jellyfin</h3>
-                    <p class="platform-description">Free and open-source media system</p>
-                </a>
-                <a href="https://archive.org" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Internet Archive</h3>
-                    <p class="platform-description">Digital library with movies, books, and software</p>
-                </a>
-                <a href="https://www.newgrounds.com" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Newgrounds</h3>
-                    <p class="platform-description">Independent games, animations, and art platform</p>
-                </a>
-                <a href="https://archive.today" target="_blank" class="platform-card">
-                    <h3 class="platform-name">Archive.today</h3>
-                    <p class="platform-description">Web page archiving and preservation service</p>
-                </a>
-            </div>
-        </section>
-
+        </div>
     </main>
 
     <!-- Footer -->
@@ -595,14 +332,206 @@
             <p class="footer-text">
                 🎭 Entertainment & Media Hub - Part of <strong>The Everything Gateway</strong>
             </p>
-            <p class="footer-stats">
-                51 Platforms • 6 Categories • Updated 2025-08-09
+            <p class="footer-stats" id="footer-stats">
+                Loading stats...
             </p>
             <a href="../../index.html" class="footer-home-link">← Back to Gateway Home</a>
         </div>
     </footer>
     
     <!-- JavaScript -->
-    <script src="../../js/gateway.js"></script>
+    <script src="../../js/gateway-enhanced.js"></script>
+    <script>
+        // Entertainment Platform Loader
+        class EntertainmentPlatformLoader {
+            constructor() {
+                this.contentContainer = document.getElementById('entertainment-content');
+                this.init();
+            }
+            
+            async init() {
+                try {
+                    await this.loadPlatforms();
+                } catch (error) {
+                    console.error('Failed to load entertainment platforms:', error);
+                    this.showError();
+                }
+            }
+            
+            async loadPlatforms() {
+                try {
+                    const response = await fetch('../../data/entertainment.json');
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const data = await response.json();
+                    
+                    this.renderPlatforms(data);
+                    this.updateStats(data);
+                    this.animateIn();
+                } catch (error) {
+                    console.log('Fetch failed, using fallback data for development:', error);
+                    this.loadFallbackData();
+                }
+            }
+            
+            renderPlatforms(data) {
+                const sectionsHTML = data.sections.map(section => `
+                    <section class="platform-section" data-section="${section.title}">
+                        <div class="section-header ${section.colorClass}">
+                            <h2 class="section-title">${section.title}</h2>
+                            <p class="section-description">${section.description}</p>
+                        </div>
+                        <div class="platforms-grid">
+                            ${section.platforms.map(platform => `
+                                <a href="${platform.url}" 
+                                   class="platform-card"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Visit ${platform.name} - ${platform.description}">
+                                    <div class="platform-logo">
+                                        <img src="https://www.google.com/s2/favicons?domain=${this.extractDomain(platform.url)}&sz=32" 
+                                             alt="${platform.name}" 
+                                             onerror="this.parentElement.innerHTML='${platform.icon}'">
+                                    </div>
+                                    <div class="platform-content">
+                                        <h3 class="platform-name">${platform.name}</h3>
+                                        <p class="platform-description">${platform.description}</p>
+                                    </div>
+                                </a>
+                            `).join('')}
+                        </div>
+                    </section>
+                `).join('');
+                
+                this.contentContainer.innerHTML = sectionsHTML;
+            }
+            
+            updateStats(data) {
+                const totalPlatforms = data.meta.totalPlatforms || this.countTotalPlatforms(data.sections);
+                const totalSections = data.sections.length;
+                
+                // Update stats with null checks
+                const platformCountEl = document.getElementById('total-platforms');
+                const sectionsCountEl = document.getElementById('total-sections');
+                const footerStatsEl = document.getElementById('footer-stats');
+                
+                if (platformCountEl) platformCountEl.textContent = totalPlatforms;
+                if (sectionsCountEl) sectionsCountEl.textContent = totalSections;
+                if (footerStatsEl) {
+                    footerStatsEl.textContent = 
+                        `${totalPlatforms} Platforms • ${totalSections} Categories • Updated ${data.meta.lastUpdated}`;
+                }
+            }
+            
+            countTotalPlatforms(sections) {
+                return sections.reduce((total, section) => total + (section.platforms?.length || 0), 0);
+            }
+            
+            extractDomain(url) {
+                try {
+                    const urlObj = new URL(url);
+                    return urlObj.hostname.replace('www.', '');
+                } catch (e) {
+                    return url.replace(/https?:\/\/(www\.)?/, '').split('/')[0];
+                }
+            }
+            
+            animateIn() {
+                const sections = document.querySelectorAll('.platform-section');
+                sections.forEach((section, index) => {
+                    section.style.opacity = '0';
+                    section.style.transform = 'translateY(20px)';
+                    
+                    setTimeout(() => {
+                        section.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                        section.style.opacity = '1';
+                        section.style.transform = 'translateY(0)';
+                    }, index * 150);
+                });
+            }
+            
+            loadFallbackData() {
+                // Fallback data for development when JSON can't be fetched
+                const data = {
+                    meta: {
+                        title: "Entertainment & Media",
+                        totalPlatforms: 51,
+                        lastUpdated: "2025-08-09"
+                    },
+                    sections: [
+                        {
+                            title: "🎬 Video Streaming",
+                            description: "Movies, TV shows, and video content",
+                            colorClass: "streaming-gradient",
+                            platforms: [
+                                { name: "Netflix", url: "https://www.netflix.com", icon: "🎬", description: "Global streaming service with original content and movies" },
+                                { name: "YouTube", url: "https://www.youtube.com", icon: "📹", description: "World's largest video sharing platform" },
+                                { name: "Disney+", url: "https://www.disneyplus.com", icon: "🏰", description: "Disney, Marvel, Star Wars, and Pixar content" },
+                                { name: "Amazon Prime Video", url: "https://www.primevideo.com", icon: "📦", description: "Amazon's streaming service with originals and movies" },
+                                { name: "HBO Max", url: "https://www.hbomax.com", icon: "🎭", description: "Premium content from HBO and Warner Bros" },
+                                { name: "Hulu", url: "https://www.hulu.com", icon: "📺", description: "US streaming with TV shows and next-day episodes" },
+                                { name: "Apple TV+", url: "https://tv.apple.com", icon: "🍎", description: "Apple's premium original content platform" },
+                                { name: "Twitch", url: "https://www.twitch.tv", icon: "🟣", description: "Live streaming platform for gaming and entertainment" }
+                            ]
+                        },
+                        {
+                            title: "🎵 Music & Audio",
+                            description: "Music streaming, podcasts, and audio content",
+                            colorClass: "music-gradient",
+                            platforms: [
+                                { name: "Spotify", url: "https://www.spotify.com", icon: "🎵", description: "World's largest music streaming platform" },
+                                { name: "Apple Music", url: "https://music.apple.com", icon: "🍎", description: "Apple's premium music streaming service" },
+                                { name: "YouTube Music", url: "https://music.youtube.com", icon: "🎤", description: "Google's music streaming platform" },
+                                { name: "SoundCloud", url: "https://soundcloud.com", icon: "☁️", description: "Platform for independent artists and creators" },
+                                { name: "Audible", url: "https://www.audible.com", icon: "🎧", description: "Amazon's audiobook and podcast platform" }
+                            ]
+                        },
+                        {
+                            title: "🎮 Gaming Platforms",
+                            description: "Game stores, streaming, and gaming communities",
+                            colorClass: "gaming-gradient",
+                            platforms: [
+                                { name: "Steam", url: "https://store.steampowered.com", icon: "🚂", description: "World's largest PC gaming platform" },
+                                { name: "Epic Games Store", url: "https://www.epicgames.com/store", icon: "🎮", description: "PC gaming platform with free weekly games" },
+                                { name: "PlayStation Store", url: "https://store.playstation.com", icon: "🎮", description: "Official PlayStation games and content" },
+                                { name: "Xbox Game Pass", url: "https://www.xbox.com/xbox-game-pass", icon: "🎩", description: "Microsoft's gaming subscription service" },
+                                { name: "Discord", url: "https://discord.com", icon: "💬", description: "Gaming communication and community platform" }
+                            ]
+                        },
+                        {
+                            title: "📱 Social Entertainment",
+                            description: "Social media and content sharing platforms",
+                            colorClass: "social-gradient",
+                            platforms: [
+                                { name: "TikTok", url: "https://www.tiktok.com", icon: "📱", description: "Short-form video sharing platform" },
+                                { name: "Instagram", url: "https://www.instagram.com", icon: "📷", description: "Photo and video sharing social network" },
+                                { name: "Twitter", url: "https://twitter.com", icon: "🐦", description: "Microblogging and real-time information platform" },
+                                { name: "Reddit", url: "https://www.reddit.com", icon: "🤖", description: "Community discussion and content aggregation" }
+                            ]
+                        }
+                    ]
+                };
+                
+                this.renderPlatforms(data);
+                this.updateStats(data);
+                this.animateIn();
+            }
+            
+            showError() {
+                this.contentContainer.innerHTML = `
+                    <div class="platforms-loading">
+                        <span style="color: #ff5722;">❌ Failed to load entertainment platforms</span>
+                        <button onclick="location.reload()" style="margin-top: 1rem; padding: 0.5rem 1rem; border: none; background: #667eea; color: white; border-radius: 4px; cursor: pointer;">Retry</button>
+                    </div>
+                `;
+            }
+        }
+        
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            new EntertainmentPlatformLoader();
+        });
+    </script>
 </body>
 </html>
