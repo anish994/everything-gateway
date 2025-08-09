@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Engines Hub - The Everything Gateway</title>
+    <meta name="description" content="Your gateway to the entire search universe - mainstream, privacy-focused, academic, and hidden gems">
+    <link rel="stylesheet" href="../../css/shared.css">
+    <link rel="stylesheet" href="../../css/search.css">
+    <style>
+        /* Search Engines Category Specific Gradients */
+        .mainstream-gradient {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+        
+        .privacy-gradient {
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+        }
+        
+        .academic-gradient {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+        }
+        
+        .international-gradient {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+        
+        .developer-gradient {
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+        }
+        
+        .creative-gradient {
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+        }
+        
+        .shopping-gradient {
+            background: linear-gradient(135deg, #f8ca78, #f19d48);
+        }
+        
+        .social-gradient {
+            background: linear-gradient(135deg, #ff8a80, #ff5722);
+        }
+        
+        .indie-gradient {
+            background: linear-gradient(135deg, #9c27b0, #673ab7);
+        }
+        
+        /* Search engines-specific hero styling */
+        .category-hero {
+            background: linear-gradient(135deg, #667eea, #764ba2, #4facfe);
+            position: relative;
+            overflow: hidden;
+            padding: 4rem 2rem;
+        }
+        
+        .category-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="white" fill-opacity="0.1"/><circle cx="60" cy="40" r="0.8" fill="white" fill-opacity="0.08"/><circle cx="80" cy="80" r="1.2" fill="white" fill-opacity="0.06"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            pointer-events: none;
+        }
+        
+        /* Enhanced platform cards with logos */
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .platform-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            text-decoration: none;
+            color: #2d3748;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .platform-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .platform-card:hover::before {
+            opacity: 1;
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            background: rgba(255, 255, 255, 1);
+        }
+        
+        .platform-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(45deg, #f1f1f1, #e1e1e1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .platform-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .platform-content {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .platform-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 0 0.5rem 0;
+            color: #1a202c;
+            line-height: 1.3;
+        }
+        
+        .platform-description {
+            font-size: 0.9rem;
+            color: #4a5568;
+            margin: 0;
+            line-height: 1.5;
+            opacity: 0.8;
+        }
+        
+        .platform-card:hover .platform-name {
+            color: #667eea;
+        }
+        
+        .platform-card:hover .platform-description {
+            opacity: 1;
+        }
+        
+        /* Section headers with better styling */
+        .platform-section {
+            margin-bottom: 3rem;
+        }
+        
+        .section-header {
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .section-title, .section-description {
+            position: relative;
+            z-index: 1;
+            color: white;
+            margin: 0;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .section-description {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Animation for search engine cards */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .platform-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .platform-card:nth-child(2n) {
+            animation-delay: 0.1s;
+        }
+        
+        .platform-card:nth-child(3n) {
+            animation-delay: 0.2s;
+        }
+        
+        .platform-card:nth-child(4n) {
+            animation-delay: 0.3s;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .platforms-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .platform-card {
+                padding: 1.25rem;
+            }
+            
+            .platform-logo {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .section-header {
+                padding: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <!-- Global Search Button -->
+        <button class="search-button" id="globalSearchBtn">
+            <span class="search-icon">🔍</span>
+            <span class="search-text">Search Everything</span>
+            <span class="search-shortcut">Ctrl+K</span>
+        </button>
+        
+        <main class="main-content">
+            <!-- Navigation Breadcrumb -->
+            <nav class="breadcrumb" style="margin-bottom: var(--spacing-lg); text-align: center;">
+                <a href="../../" style="color: var(--text-secondary); text-decoration: none; font-size: var(--font-size-sm);">← Back to Everything Gateway</a>
+            </nav>
+            
+            <!-- Hero Section -->
+            <div class="category-hero">
+                <div style="position: relative; z-index: 1;">
+                    <h1 class="heading-primary" style="color: white; margin: 0 0 1rem 0; font-size: 3.5rem; text-shadow: 0 4px 8px rgba(0,0,0,0.3);">Search Engines Hub</h1>
+                    <p class="subtitle" style="color: rgba(255,255,255,0.9); font-size: 1.3rem; max-width: 600px; margin: 0 auto;">Your gateway to the entire search universe - from mainstream giants to privacy-focused alternatives and specialized search engines</p>
+                </div>
+            </div>
+            
+            <!-- Popular & Mainstream -->
+            <section class="platform-section">
+                <div class="section-header mainstream-gradient">
+                    <h2 class="section-title">🌟 Popular & Mainstream</h2>
+                    <p class="section-description">The search engines everyone knows and uses daily</p>
+                </div>
+                <div class="platforms-grid">
+                    <a href="https://google.com" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://www.google.com/favicon.ico" alt="Google" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🔍</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Google</h3>
+                            <p class="platform-description">The world's most popular search engine with comprehensive results and advanced features</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://bing.com" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://www.bing.com/favicon.ico" alt="Bing" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🅱️</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Bing</h3>
+                            <p class="platform-description">Microsoft's search engine with integrated AI chat and visual search capabilities</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://yahoo.com" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://www.yahoo.com/favicon.ico" alt="Yahoo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🟣</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Yahoo</h3>
+                            <p class="platform-description">Classic search engine with news, email, and comprehensive web portal features</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://ask.com" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://www.ask.com/favicon.ico" alt="Ask" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">❓</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Ask</h3>
+                            <p class="platform-description">Question-and-answer focused search with natural language processing</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- Privacy & Security Focused -->
+            <section class="platform-section">
+                <div class="section-header privacy-gradient">
+                    <h2 class="section-title">🔒 Privacy & Security Focused</h2>
+                    <p class="section-description">Search without being tracked or having your data collected</p>
+                </div>
+                <div class="platforms-grid">
+                    <a href="https://duckduckgo.com" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://duckduckgo.com/favicon.ico" alt="DuckDuckGo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🦆</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">DuckDuckGo</h3>
+                            <p class="platform-description">The privacy-first search engine that doesn't track users or store search history</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://search.brave.com" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://brave.com/favicon.ico" alt="Brave Search" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🦁</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Brave Search</h3>
+                            <p class="platform-description">Independent search index with privacy protection and no data collection</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://startpage.com" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://www.startpage.com/favicon.ico" alt="Startpage" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🛡️</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Startpage</h3>
+                            <p class="platform-description">Privacy-focused proxy for Google results without tracking or data storage</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://swisscows.com" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://swisscows.com/favicon.ico" alt="Swisscows" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🐄</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Swisscows</h3>
+                            <p class="platform-description">Family-friendly search engine with privacy protection and no data storage</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://metager.org" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://metager.org/favicon.ico" alt="MetaGer" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🔎</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">MetaGer</h3>
+                            <p class="platform-description">Open-source metasearch engine that protects privacy and anonymizes searches</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://kagi.com" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://kagi.com/favicon.ico" alt="Kagi" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🔐</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Kagi</h3>
+                            <p class="platform-description">Premium ad-free search with personalized results and advanced privacy features</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- Academic & Research -->
+            <section class="platform-section">
+                <div class="section-header academic-gradient">
+                    <h2 class="section-title">📚 Academic & Research</h2>
+                    <p class="section-description">Specialized engines for scholarly articles, papers, and research materials</p>
+                </div>
+                <div class="platforms-grid">
+                    <a href="https://scholar.google.com" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://scholar.google.com/favicon.ico" alt="Google Scholar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🎓</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Google Scholar</h3>
+                            <p class="platform-description">Academic search engine for scholarly literature, theses, books, and citations</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://academic.microsoft.com" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://academic.microsoft.com/favicon.ico" alt="Microsoft Academic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">📊</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Microsoft Academic</h3>
+                            <p class="platform-description">Academic research platform with knowledge graph and citation analysis</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://semanticscholar.org" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://www.semanticscholar.org/favicon.ico" alt="Semantic Scholar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🧠</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Semantic Scholar</h3>
+                            <p class="platform-description">AI-powered academic search with paper insights and research recommendations</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://arxiv.org/search" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://arxiv.org/favicon.ico" alt="arXiv" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">📄</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">arXiv</h3>
+                            <p class="platform-description">Repository of preprint research papers in physics, math, computer science, and more</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://pubmed.ncbi.nlm.nih.gov" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://pubmed.ncbi.nlm.nih.gov/favicon.ico" alt="PubMed" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">⚕️</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">PubMed</h3>
+                            <p class="platform-description">Biomedical literature database with millions of research citations and abstracts</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- International & Regional -->
+            <section class="platform-section">
+                <div class="section-header international-gradient">
+                    <h2 class="section-title">🌍 International & Regional</h2>
+                    <p class="section-description">Search engines popular in specific countries and regions worldwide</p>
+                </div>
+                <div class="platforms-grid">
+                    <a href="https://yandex.com" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://yandex.com/favicon.ico" alt="Yandex" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🇷🇺</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Yandex</h3>
+                            <p class="platform-description">Russia's leading search engine with strong regional content and language support</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://baidu.com" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://www.baidu.com/favicon.ico" alt="Baidu" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🇨🇳</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Baidu</h3>
+                            <p class="platform-description">China's dominant search engine with AI features and comprehensive Chinese content</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://naver.com" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://www.naver.com/favicon.ico" alt="Naver" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🇰🇷</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Naver</h3>
+                            <p class="platform-description">South Korea's top search engine with integrated social features and services</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://qwant.com" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://www.qwant.com/favicon.ico" alt="Qwant" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🇫🇷</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Qwant</h3>
+                            <p class="platform-description">French privacy-focused search engine that doesn't track users or personalize results</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://ecosia.org" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://www.ecosia.org/favicon.ico" alt="Ecosia" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🌱</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Ecosia</h3>
+                            <p class="platform-description">The eco-friendly search engine that plants trees with every search you make</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- Developer & Technical -->
+            <section class="platform-section">
+                <div class="section-header developer-gradient">
+                    <h2 class="section-title">💻 Developer & Technical</h2>
+                    <p class="section-description">Specialized search for code, technical documentation, and developer resources</p>
+                </div>
+                <div class="platforms-grid">
+                    <a href="https://github.com/search" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://github.com/favicon.ico" alt="GitHub" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🐱</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">GitHub</h3>
+                            <p class="platform-description">Search millions of code repositories, issues, pull requests, and developer profiles</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://stackoverflow.com/search" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://stackoverflow.com/favicon.ico" alt="Stack Overflow" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">📚</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Stack Overflow</h3>
+                            <p class="platform-description">Programming Q&A community with answers to almost every coding question</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://codepen.io/search" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://codepen.io/favicon.ico" alt="CodePen" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🖊️</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">CodePen</h3>
+                            <p class="platform-description">Frontend code snippets, demos, and experiments from the web development community</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://searchcode.com" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://searchcode.com/favicon.ico" alt="Searchcode" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🔍</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Searchcode</h3>
+                            <p class="platform-description">Search across millions of open source code repositories and find examples</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://gitlab.com/search" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://gitlab.com/favicon.ico" alt="GitLab" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🦊</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">GitLab</h3>
+                            <p class="platform-description">DevOps platform with integrated code search, CI/CD, and project management</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- Creative & Visual -->
+            <section class="platform-section">
+                <div class="section-header creative-gradient">
+                    <h2 class="section-title">🎨 Creative & Visual</h2>
+                    <p class="section-description">Search for images, design inspiration, and creative assets</p>
+                </div>
+                <div class="platforms-grid">
+                    <a href="https://unsplash.com/s/photos" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://unsplash.com/favicon.ico" alt="Unsplash" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">📷</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Unsplash</h3>
+                            <p class="platform-description">High-quality, royalty-free photography from talented creators worldwide</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://pixabay.com" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://pixabay.com/favicon.ico" alt="Pixabay" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🖼️</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Pixabay</h3>
+                            <p class="platform-description">Free images, vectors, illustrations, and videos for commercial and personal use</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://dribbble.com/search" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://dribbble.com/favicon.ico" alt="Dribbble" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🏀</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Dribbble</h3>
+                            <p class="platform-description">Design inspiration and creative work from the world's leading designers</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://behance.net/search" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://www.behance.net/favicon.ico" alt="Behance" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🎨</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Behance</h3>
+                            <p class="platform-description">Adobe's creative portfolio platform showcasing professional design work</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://flickr.com/search" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://www.flickr.com/favicon.ico" alt="Flickr" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">📸</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Flickr</h3>
+                            <p class="platform-description">Photo hosting and sharing community with billions of images and active photographers</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- Shopping & Commerce -->
+            <section class="platform-section">
+                <div class="section-header shopping-gradient">
+                    <h2 class="section-title">🛒 Shopping & Commerce</h2>
+                    <p class="section-description">Find and compare products across major e-commerce platforms</p>
+                </div>
+                <div class="platforms-grid">
+                    <a href="https://amazon.com/s" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://www.amazon.com/favicon.ico" alt="Amazon" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">📦</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Amazon</h3>
+                            <p class="platform-description">World's largest online marketplace with millions of products and fast delivery</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://ebay.com/sch" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://www.ebay.com/favicon.ico" alt="eBay" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🔨</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">eBay</h3>
+                            <p class="platform-description">Online auctions and fixed-price sales for new, used, and collectible items</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://etsy.com/search" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://www.etsy.com/favicon.ico" alt="Etsy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🎭</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Etsy</h3>
+                            <p class="platform-description">Marketplace for handmade, vintage, and unique creative goods from independent sellers</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://aliexpress.com/wholesale" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://www.aliexpress.com/favicon.ico" alt="AliExpress" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🌏</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">AliExpress</h3>
+                            <p class="platform-description">Global retail marketplace with competitive prices and international shipping</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- Social & Community -->
+            <section class="platform-section">
+                <div class="section-header social-gradient">
+                    <h2 class="section-title">💬 Social & Community</h2>
+                    <p class="section-description">Search social media, forums, and community-driven content</p>
+                </div>
+                <div class="platforms-grid">
+                    <a href="https://twitter.com/search" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://twitter.com/favicon.ico" alt="Twitter/X" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🐦</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Twitter/X</h3>
+                            <p class="platform-description">Real-time social media platform for news, opinions, and trending topics</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://reddit.com/search" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://www.reddit.com/favicon.ico" alt="Reddit" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🤖</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Reddit</h3>
+                            <p class="platform-description">Community-driven platform with discussions, news, and content across countless topics</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://discord.com/channels/@me" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://discord.com/favicon.ico" alt="Discord" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">💬</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Discord</h3>
+                            <p class="platform-description">Gaming and community chat platform with voice, text, and multimedia features</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://linkedin.com/search" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://www.linkedin.com/favicon.ico" alt="LinkedIn" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">💼</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">LinkedIn</h3>
+                            <p class="platform-description">Professional networking platform for career opportunities and business connections</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- Indie & Alternative -->
+            <section class="platform-section">
+                <div class="section-header indie-gradient">
+                    <h2 class="section-title">💎 Indie & Alternative</h2>
+                    <p class="section-description">Unique and independent search engines offering different perspectives</p>
+                </div>
+                <div class="platforms-grid">
+                    <a href="https://wiby.me" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://wiby.me/favicon.ico" alt="Wiby" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🕸️</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Wiby</h3>
+                            <p class="platform-description">Discover the classic web with this search engine for retro and non-commercial sites</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://search.marginalia.nu" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://search.marginalia.nu/favicon.ico" alt="Marginalia" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">📝</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Marginalia</h3>
+                            <p class="platform-description">Independent search engine focusing on text-heavy, non-commercial websites</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://gigablast.com" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://gigablast.com/favicon.ico" alt="Gigablast" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">💥</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Gigablast</h3>
+                            <p class="platform-description">Open-source search engine with privacy features and real-time indexing</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://mojeek.com" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://www.mojeek.com/favicon.ico" alt="Mojeek" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🔍</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Mojeek</h3>
+                            <p class="platform-description">Independent search engine with its own web crawling and indexing technology</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://searx.space" target="_blank" class="platform-card">
+                        <div class="platform-logo">
+                            <img src="https://searx.space/favicon.ico" alt="Searx" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <span style="display:none;">🔄</span>
+                        </div>
+                        <div class="platform-content">
+                            <h3 class="platform-name">Searx</h3>
+                            <p class="platform-description">Open-source metasearch engine that aggregates results without storing data</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Search Overlay -->
+        <div class="search-overlay" id="searchOverlay">
+            <div class="search-container">
+                <div class="search-input-container">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search all platforms...">
+                    <button class="search-close" id="searchClose">×</button>
+                </div>
+                <div class="search-results" id="searchResults"></div>
+                <div class="search-footer">
+                    <div class="search-tips">
+                        <span class="tip">↑↓ Navigate</span>
+                        <span class="tip">↵ Open</span>
+                        <span class="tip">Esc Close</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../../js/gateway.js"></script>
+</body>
+</html>

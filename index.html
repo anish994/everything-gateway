@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Everything Gateway - Your Portal to the Internet</title>
+    <meta name="description" content="Your gateway to the entire internet - search engines, tools, entertainment, knowledge, and more, all organized and accessible">
+    <meta name="theme-color" content="#667eea">
+    <link rel="preload" href="css/design-system.css" as="style">
+    <link rel="preload" href="css/components.css" as="style">
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/search.css">
+    <style>
+        /* Page-specific styles */
+        .hero {
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+        }
+        
+        .hero-subtitle {
+            font-size: var(--font-size-lg);
+            color: var(--text-secondary);
+            margin: var(--spacing-md) 0 var(--spacing-2xl);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-2xl);
+        }
+        
+        .category-card {
+            display: block;
+            padding: var(--spacing-xl) var(--spacing-lg);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            transition: var(--transition-normal);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            min-height: 180px;
+            text-align: center;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .category-card:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+        }
+        
+        .category-emoji {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .category-title {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .category-description {
+            font-size: var(--font-size-base);
+            opacity: 0.9;
+            line-height: 1.6;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .category-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: var(--spacing-md);
+            font-size: var(--font-size-sm);
+        }
+        
+        .category-status {
+            padding: var(--spacing-xs) var(--spacing-sm);
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .category-count {
+            font-weight: 600;
+        }
+        
+        .coming-soon {
+            opacity: 0.8;
+            cursor: not-allowed;
+        }
+        
+        .coming-soon:hover {
+            transform: none;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .stats-section {
+            text-align: center;
+            margin: var(--spacing-3xl) 0;
+            padding: var(--spacing-xl);
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: var(--radius-md);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            color: var(--text-primary);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: var(--spacing-xs);
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content link for screen readers -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <div class="page-container">
+        <main id="main-content" class="main-content" role="main">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1 class="heading-primary">The Everything Gateway</h1>
+                <p class="hero-subtitle">
+                    Your single portal to the entire internet. Discover search engines, productivity tools, 
+                    entertainment platforms, and knowledge resources — all organized, curated, and accessible 
+                    in one beautiful interface.
+                </p>
+                
+                <!-- Universal Search Button -->
+                <div style="margin-top: 2rem; text-align: center;">
+                    <button class="search-trigger" onclick="window.gateway && window.gateway.openSearch()">
+                        <span class="search-trigger-icon">🔍</span>
+                        <span>Search across all platforms</span>
+                        <span class="search-trigger-shortcut">Ctrl+K</span>
+                    </button>
+                </div>
+            </section>
+            
+            <!-- Stats Section -->
+            <section class="stats-section">
+                <h2 class="heading-secondary">Gateway Overview</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">6</span>
+                        <span class="stat-label">Categories</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">195+</span>
+                        <span class="stat-label">Total Resources</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Free Access</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">Possibilities</span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Categories Grid -->
+            <section class="categories-section">
+                <h2 class="heading-secondary">Choose Your Gateway</h2>
+                
+                <div class="categories-grid">
+                    <!-- Search Engines - Active -->
+                    <a href="categories/search-engines/" class="category-card mainstream focus-outline" 
+                       aria-label="Search Engines category with 39 search engines available">
+                        <span class="category-emoji" aria-hidden="true">🔍</span>
+                        <div class="category-title">Search Engines</div>
+                        <div class="category-description">
+                            Your gateway to the entire search universe - mainstream, privacy-focused, academic, and hidden gems
+                        </div>
+                        <div class="category-meta">
+                            <span class="category-status">Active</span>
+                            <span class="category-count">39 engines</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Tools & Utilities - Active -->
+                    <a href="categories/tools/" class="category-card academic focus-outline"
+                       aria-label="Tools & Utilities category with 52 productivity tools available">
+                        <span class="category-emoji" aria-hidden="true">🛠️</span>
+                        <div class="category-title">Tools & Utilities</div>
+                        <div class="category-description">
+                            52 curated tools across 6 categories: AI tools, PDF utilities, creative design, developer resources, productivity apps, and file conversion
+                        </div>
+                        <div class="category-meta">
+                            <span class="category-status">Active</span>
+                            <span class="category-count">52 tools</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Entertainment & Media - Active -->
+                    <a href="categories/entertainment/" class="category-card international focus-outline"
+                       aria-label="Entertainment & Media category with 51 streaming and gaming platforms available">
+                        <span class="category-emoji" aria-hidden="true">🎭</span>
+                        <div class="category-title">Entertainment & Media</div>
+                        <div class="category-description">
+                            Your gateway to streaming, music, gaming, and entertainment platforms
+                        </div>
+                        <div class="category-meta">
+                            <span class="category-status">Active</span>
+                            <span class="category-count">51 platforms</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Knowledge & Learning - Active -->
+                    <a href="categories/knowledge/" class="category-card privacy focus-outline"
+                       aria-label="Knowledge & Learning category with 53 educational platforms available">
+                        <span class="category-emoji" aria-hidden="true">📚</span>
+                        <div class="category-title">Knowledge & Learning</div>
+                        <div class="category-description">
+                            Educational resources, online courses, and learning platforms from Harvard and MIT to Wikipedia and Khan Academy
+                        </div>
+                        <div class="category-meta">
+                            <span class="category-status">Active</span>
+                            <span class="category-count">53 platforms</span>
+                        </div>
+                    </a>
+                    
+                    <!-- News & Trends - Planned -->
+                    <div class="category-card creative coming-soon">
+                        <span class="category-emoji">📰</span>
+                        <div class="category-title">News & Trends</div>
+                        <div class="category-description">
+                            Global news, tech updates, niche topics, and real-time trend tracking
+                        </div>
+                        <div class="category-meta">
+                            <span class="category-status">Planned</span>
+                            <span class="category-count">0 sources</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Networks - Planned -->
+                    <div class="category-card developer coming-soon">
+                        <span class="category-emoji">🌐</span>
+                        <div class="category-title">Social Networks</div>
+                        <div class="category-description">
+                            Social platforms, community forums, professional networks, and communication tools
+                        </div>
+                        <div class="category-meta">
+                            <span class="category-status">Planned</span>
+                            <span class="category-count">0 networks</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Footer -->
+            <section class="footer-section" style="text-align: center; margin-top: var(--spacing-3xl); padding-top: var(--spacing-xl); border-top: 1px solid var(--border-color);">
+                <p class="description">
+                    <strong>The Everything Gateway</strong> - Making the internet organized and accessible.<br>
+                    New categories and features are added regularly. Bookmark this page and never lose track of great resources again.
+                </p>
+            </section>
+        </main>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="js/gateway-enhanced.js"></script>
+    <script src="js/analytics.js"></script>
+</body>
+</html>

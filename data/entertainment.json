@@ -1,0 +1,359 @@
+{
+  "meta": {
+    "title": "Entertainment & Media",
+    "description": "Your gateway to streaming, music, gaming, and entertainment platforms",
+    "emoji": "🎭",
+    "totalResources": 51,
+    "lastUpdated": "2025-08-09"
+  },
+  "sections": [
+    {
+      "title": "🎬 Video Streaming",
+      "description": "Movies, TV shows, and video content",
+      "colorClass": "streaming-gradient",
+      "resources": [
+        {
+          "name": "Netflix",
+          "url": "https://www.netflix.com",
+          "category": "streaming",
+          "description": "Global streaming service with original content and movies"
+        },
+        {
+          "name": "YouTube",
+          "url": "https://www.youtube.com",
+          "category": "streaming",
+          "description": "World's largest video sharing platform"
+        },
+        {
+          "name": "Disney+",
+          "url": "https://www.disneyplus.com",
+          "category": "streaming",
+          "description": "Disney, Marvel, Star Wars, and Pixar content"
+        },
+        {
+          "name": "Amazon Prime Video",
+          "url": "https://www.primevideo.com",
+          "category": "streaming",
+          "description": "Amazon's streaming service with originals and movies"
+        },
+        {
+          "name": "HBO Max",
+          "url": "https://www.hbomax.com",
+          "category": "streaming",
+          "description": "Premium content from HBO and Warner Bros"
+        },
+        {
+          "name": "Hulu",
+          "url": "https://www.hulu.com",
+          "category": "streaming",
+          "description": "US streaming with TV shows and next-day episodes"
+        },
+        {
+          "name": "Apple TV+",
+          "url": "https://tv.apple.com",
+          "category": "streaming",
+          "description": "Apple's premium original content platform"
+        },
+        {
+          "name": "Paramount+",
+          "url": "https://www.paramountplus.com",
+          "category": "streaming",
+          "description": "CBS, Paramount, and Nickelodeon content"
+        },
+        {
+          "name": "Peacock",
+          "url": "https://www.peacocktv.com",
+          "category": "streaming",
+          "description": "NBCUniversal's streaming platform"
+        },
+        {
+          "name": "Twitch",
+          "url": "https://www.twitch.tv",
+          "category": "streaming",
+          "description": "Live streaming platform for gaming and entertainment"
+        }
+      ]
+    },
+    {
+      "title": "🎵 Music & Audio",
+      "description": "Music streaming, podcasts, and audio content",
+      "colorClass": "music-gradient",
+      "resources": [
+        {
+          "name": "Spotify",
+          "url": "https://www.spotify.com",
+          "category": "music",
+          "description": "World's largest music streaming platform"
+        },
+        {
+          "name": "Apple Music",
+          "url": "https://music.apple.com",
+          "category": "music",
+          "description": "Apple's premium music streaming service"
+        },
+        {
+          "name": "YouTube Music",
+          "url": "https://music.youtube.com",
+          "category": "music",
+          "description": "Google's music streaming platform"
+        },
+        {
+          "name": "SoundCloud",
+          "url": "https://soundcloud.com",
+          "category": "music",
+          "description": "Platform for independent artists and creators"
+        },
+        {
+          "name": "Amazon Music",
+          "url": "https://music.amazon.com",
+          "category": "music",
+          "description": "Amazon's music streaming service"
+        },
+        {
+          "name": "Pandora",
+          "url": "https://www.pandora.com",
+          "category": "music",
+          "description": "Personalized radio and music discovery"
+        },
+        {
+          "name": "Tidal",
+          "url": "https://tidal.com",
+          "category": "music",
+          "description": "High-fidelity music streaming platform"
+        },
+        {
+          "name": "Bandcamp",
+          "url": "https://bandcamp.com",
+          "category": "music",
+          "description": "Platform supporting independent musicians directly"
+        },
+        {
+          "name": "Audible",
+          "url": "https://www.audible.com",
+          "category": "audio",
+          "description": "Amazon's audiobook and podcast platform"
+        }
+      ]
+    },
+    {
+      "title": "🎮 Gaming Platforms",
+      "description": "Game stores, streaming, and gaming communities",
+      "colorClass": "gaming-gradient",
+      "resources": [
+        {
+          "name": "Steam",
+          "url": "https://store.steampowered.com",
+          "category": "gaming",
+          "description": "World's largest PC gaming platform"
+        },
+        {
+          "name": "Epic Games Store",
+          "url": "https://www.epicgames.com/store",
+          "category": "gaming",
+          "description": "PC gaming platform with free weekly games"
+        },
+        {
+          "name": "PlayStation Store",
+          "url": "https://store.playstation.com",
+          "category": "gaming",
+          "description": "Official PlayStation games and content"
+        },
+        {
+          "name": "Xbox Game Pass",
+          "url": "https://www.xbox.com/xbox-game-pass",
+          "category": "gaming",
+          "description": "Microsoft's gaming subscription service"
+        },
+        {
+          "name": "Nintendo eShop",
+          "url": "https://www.nintendo.com/store",
+          "category": "gaming",
+          "description": "Nintendo Switch and 3DS game store"
+        },
+        {
+          "name": "GOG",
+          "url": "https://www.gog.com",
+          "category": "gaming",
+          "description": "DRM-free games and classic titles"
+        },
+        {
+          "name": "itch.io",
+          "url": "https://itch.io",
+          "category": "gaming",
+          "description": "Independent game marketplace and creator platform"
+        },
+        {
+          "name": "Discord",
+          "url": "https://discord.com",
+          "category": "gaming",
+          "description": "Gaming communication and community platform"
+        },
+        {
+          "name": "Roblox",
+          "url": "https://www.roblox.com",
+          "category": "gaming",
+          "description": "User-generated gaming and creation platform"
+        }
+      ]
+    },
+    {
+      "title": "📱 Social Entertainment",
+      "description": "Social media and content sharing platforms",
+      "colorClass": "social-gradient",
+      "resources": [
+        {
+          "name": "TikTok",
+          "url": "https://www.tiktok.com",
+          "category": "social",
+          "description": "Short-form video sharing platform"
+        },
+        {
+          "name": "Instagram",
+          "url": "https://www.instagram.com",
+          "category": "social",
+          "description": "Photo and video sharing social network"
+        },
+        {
+          "name": "Twitter",
+          "url": "https://twitter.com",
+          "category": "social",
+          "description": "Microblogging and real-time information platform"
+        },
+        {
+          "name": "Snapchat",
+          "url": "https://www.snapchat.com",
+          "category": "social",
+          "description": "Multimedia messaging and stories platform"
+        },
+        {
+          "name": "Reddit",
+          "url": "https://www.reddit.com",
+          "category": "social",
+          "description": "Community discussion and content aggregation"
+        },
+        {
+          "name": "Pinterest",
+          "url": "https://www.pinterest.com",
+          "category": "social",
+          "description": "Visual discovery and inspiration platform"
+        },
+        {
+          "name": "Tumblr",
+          "url": "https://www.tumblr.com",
+          "category": "social",
+          "description": "Microblogging and multimedia platform"
+        },
+        {
+          "name": "Facebook",
+          "url": "https://www.facebook.com",
+          "category": "social",
+          "description": "World's largest social networking platform"
+        }
+      ]
+    },
+    {
+      "title": "🎪 Fun & Interactive",
+      "description": "Games, quizzes, and interactive entertainment",
+      "colorClass": "interactive-gradient",
+      "resources": [
+        {
+          "name": "Kahoot!",
+          "url": "https://kahoot.com",
+          "category": "interactive",
+          "description": "Interactive quiz and learning games platform"
+        },
+        {
+          "name": "Sporcle",
+          "url": "https://www.sporcle.com",
+          "category": "interactive",
+          "description": "Trivia quizzes and brain games"
+        },
+        {
+          "name": "Wordle",
+          "url": "https://www.nytimes.com/games/wordle",
+          "category": "interactive",
+          "description": "Daily word puzzle game by New York Times"
+        },
+        {
+          "name": "Chess.com",
+          "url": "https://www.chess.com",
+          "category": "interactive",
+          "description": "Online chess platform with lessons and tournaments"
+        },
+        {
+          "name": "Lichess",
+          "url": "https://lichess.org",
+          "category": "interactive",
+          "description": "Free and open-source chess platform"
+        },
+        {
+          "name": "Geoguessr",
+          "url": "https://www.geoguessr.com",
+          "category": "interactive",
+          "description": "Geography guessing game using street view"
+        },
+        {
+          "name": "Among Us",
+          "url": "https://www.innersloth.com/games/among-us",
+          "category": "interactive",
+          "description": "Popular multiplayer social deduction game"
+        }
+      ]
+    },
+    {
+      "title": "📺 Alternative Platforms",
+      "description": "Independent and niche entertainment platforms",
+      "colorClass": "alternative-gradient",
+      "resources": [
+        {
+          "name": "Vimeo",
+          "url": "https://vimeo.com",
+          "category": "alternative",
+          "description": "High-quality video platform for creators"
+        },
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com",
+          "category": "alternative",
+          "description": "Anime and Asian content streaming platform"
+        },
+        {
+          "name": "Funimation",
+          "url": "https://www.funimation.com",
+          "category": "alternative",
+          "description": "Anime streaming and dubbing platform"
+        },
+        {
+          "name": "Plex",
+          "url": "https://www.plex.tv",
+          "category": "alternative",
+          "description": "Personal media server and streaming platform"
+        },
+        {
+          "name": "Jellyfin",
+          "url": "https://jellyfin.org",
+          "category": "alternative",
+          "description": "Free and open-source media system"
+        },
+        {
+          "name": "Internet Archive",
+          "url": "https://archive.org",
+          "category": "alternative",
+          "description": "Digital library with movies, books, and software"
+        },
+        {
+          "name": "Newgrounds",
+          "url": "https://www.newgrounds.com",
+          "category": "alternative",
+          "description": "Independent games, animations, and art platform"
+        },
+        {
+          "name": "Archive.today",
+          "url": "https://archive.today",
+          "category": "alternative",
+          "description": "Web page archiving and preservation service"
+        }
+      ]
+    }
+  ]
+}

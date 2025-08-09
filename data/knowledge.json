@@ -1,0 +1,287 @@
+{
+  "category": "knowledge",
+  "title": "Knowledge & Learning",
+  "description": "Educational resources, online courses, and learning platforms for curious minds",
+  "emoji": "📚",
+  "totalCount": 53,
+  "sections": [
+    {
+      "id": "online-learning",
+      "title": "Online Learning Platforms",
+      "description": "Comprehensive courses and degree programs from top universities and institutions",
+      "colorClass": "academic-gradient",
+      "resources": [
+        {
+          "name": "Coursera",
+          "url": "https://coursera.org",
+          "description": "University courses and degrees from Yale, Stanford, Google, and more"
+        },
+        {
+          "name": "edX",
+          "url": "https://edx.org",
+          "description": "Free online courses from Harvard, MIT, Berkeley and other top universities"
+        },
+        {
+          "name": "Khan Academy",
+          "url": "https://khanacademy.org",
+          "description": "Free world-class education for anyone, anywhere - math, science, history, and more"
+        },
+        {
+          "name": "Udemy",
+          "url": "https://udemy.com",
+          "description": "Online courses in technology, business, design, and personal development"
+        },
+        {
+          "name": "FutureLearn",
+          "url": "https://futurelearn.com",
+          "description": "Online courses and degrees from leading universities and cultural institutions"
+        },
+        {
+          "name": "MIT OpenCourseWare",
+          "url": "https://ocw.mit.edu",
+          "description": "Free MIT course materials - lecture notes, exams, and videos from 2,400+ courses"
+        },
+        {
+          "name": "Stanford Online",
+          "url": "https://online.stanford.edu",
+          "description": "Stanford courses and programs in engineering, medicine, business, and education"
+        },
+        {
+          "name": "Harvard Extension",
+          "url": "https://extension.harvard.edu",
+          "description": "Harvard University courses and degree programs for lifelong learners"
+        }
+      ]
+    },
+    {
+      "id": "language-learning",
+      "title": "Language Learning",
+      "description": "Master new languages with interactive courses and practice tools",
+      "colorClass": "international-gradient",
+      "resources": [
+        {
+          "name": "Duolingo",
+          "url": "https://duolingo.com",
+          "description": "Fun, gamified language learning for 40+ languages - completely free"
+        },
+        {
+          "name": "Babbel",
+          "url": "https://babbel.com",
+          "description": "Practical conversation skills in 14 languages with real-life topics"
+        },
+        {
+          "name": "Rosetta Stone",
+          "url": "https://rosettastone.com",
+          "description": "Immersive language learning method trusted by millions worldwide"
+        },
+        {
+          "name": "Busuu",
+          "url": "https://busuu.com",
+          "description": "AI-powered language learning with personalized study plans"
+        },
+        {
+          "name": "italki",
+          "url": "https://italki.com",
+          "description": "1-on-1 online language lessons with native speakers and certified teachers"
+        },
+        {
+          "name": "Memrise",
+          "url": "https://memrise.com",
+          "description": "Learn languages with real native speaker videos and spaced repetition"
+        },
+        {
+          "name": "HelloTalk",
+          "url": "https://hellotalk.com",
+          "description": "Connect with native speakers worldwide for language exchange"
+        }
+      ]
+    },
+    {
+      "id": "reference-research",
+      "title": "Reference & Research",
+      "description": "Encyclopedias, databases, and research tools for academic and personal inquiry",
+      "colorClass": "privacy-gradient",
+      "resources": [
+        {
+          "name": "Wikipedia",
+          "url": "https://wikipedia.org",
+          "description": "Free encyclopedia with 60+ million articles in 300+ languages"
+        },
+        {
+          "name": "Britannica",
+          "url": "https://britannica.com",
+          "description": "Trusted encyclopedia and reference source for students and researchers"
+        },
+        {
+          "name": "Google Scholar",
+          "url": "https://scholar.google.com",
+          "description": "Search across scholarly articles, theses, patents, and academic publications"
+        },
+        {
+          "name": "Internet Archive",
+          "url": "https://archive.org",
+          "description": "Digital library with millions of books, movies, music, and websites"
+        },
+        {
+          "name": "JSTOR",
+          "url": "https://jstor.org",
+          "description": "Digital library of academic journals, books, and primary sources"
+        },
+        {
+          "name": "ResearchGate",
+          "url": "https://researchgate.net",
+          "description": "Social network for scientists and researchers to share publications"
+        },
+        {
+          "name": "Wolfram Alpha",
+          "url": "https://wolframalpha.com",
+          "description": "Computational knowledge engine for math, science, and factual queries"
+        },
+        {
+          "name": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov",
+          "description": "Database of biomedical and life science literature from MEDLINE"
+        }
+      ]
+    },
+    {
+      "id": "skill-development",
+      "title": "Skill Development",
+      "description": "Creative and professional skills training from industry experts",
+      "colorClass": "creative-gradient",
+      "resources": [
+        {
+          "name": "MasterClass",
+          "url": "https://masterclass.com",
+          "description": "Learn from the world's best in cooking, writing, acting, and more"
+        },
+        {
+          "name": "Skillshare",
+          "url": "https://skillshare.com",
+          "description": "Creative classes in design, photography, writing, and business"
+        },
+        {
+          "name": "LinkedIn Learning",
+          "url": "https://linkedin.com/learning",
+          "description": "Professional development courses for business, technology, and creative skills"
+        },
+        {
+          "name": "Pluralsight",
+          "url": "https://pluralsight.com",
+          "description": "Technology skills platform for developers, IT, and data professionals"
+        },
+        {
+          "name": "Codecademy",
+          "url": "https://codecademy.com",
+          "description": "Interactive coding lessons in Python, JavaScript, HTML, CSS, and more"
+        },
+        {
+          "name": "CreativeLive",
+          "url": "https://creativelive.com",
+          "description": "Photography, design, business, and music classes from industry pros"
+        },
+        {
+          "name": "Udacity",
+          "url": "https://udacity.com",
+          "description": "Tech-focused nanodegrees in AI, data science, programming, and autonomous systems"
+        },
+        {
+          "name": "Domestic CEO",
+          "url": "https://domesticceo.com",
+          "description": "Home organization, cooking, and life skills training"
+        }
+      ]
+    },
+    {
+      "id": "libraries-archives",
+      "title": "Libraries & Archives",
+      "description": "Digital libraries, historical archives, and document collections",
+      "colorClass": "developer-gradient",
+      "resources": [
+        {
+          "name": "Project Gutenberg",
+          "url": "https://gutenberg.org",
+          "description": "Over 70,000 free ebooks of classic literature and historical documents"
+        },
+        {
+          "name": "HathiTrust",
+          "url": "https://hathitrust.org",
+          "description": "Digital library of millions of books from research libraries worldwide"
+        },
+        {
+          "name": "Digital Public Library",
+          "url": "https://dp.la",
+          "description": "Millions of photographs, manuscripts, books, and more from American libraries"
+        },
+        {
+          "name": "Europeana",
+          "url": "https://europeana.eu",
+          "description": "Digital platform for European cultural heritage - art, books, music, and films"
+        },
+        {
+          "name": "Library of Congress",
+          "url": "https://loc.gov",
+          "description": "Digital collections from America's national library - maps, photos, recordings"
+        },
+        {
+          "name": "Open Library",
+          "url": "https://openlibrary.org",
+          "description": "Open access to millions of books - borrow and read online for free"
+        },
+        {
+          "name": "Smithsonian Learning",
+          "url": "https://learninglab.si.edu",
+          "description": "Educational resources from Smithsonian museums and research centers"
+        }
+      ]
+    },
+    {
+      "id": "specialized-learning",
+      "title": "Specialized Learning",
+      "description": "Niche platforms for specific subjects and professional fields",
+      "colorClass": "shopping-gradient",
+      "resources": [
+        {
+          "name": "Brilliant",
+          "url": "https://brilliant.org",
+          "description": "Interactive courses in math, science, and computer science with problem-solving focus"
+        },
+        {
+          "name": "DataCamp",
+          "url": "https://datacamp.com",
+          "description": "Learn data science and analytics with Python, R, SQL, and more"
+        },
+        {
+          "name": "Coursera for Business",
+          "url": "https://coursera.org/business",
+          "description": "Professional certificates and skills training for teams and enterprises"
+        },
+        {
+          "name": "edX for Business",
+          "url": "https://business.edx.org",
+          "description": "Corporate training and professional development from top universities"
+        },
+        {
+          "name": "TED-Ed",
+          "url": "https://ed.ted.com",
+          "description": "Short educational videos and lessons on fascinating topics"
+        },
+        {
+          "name": "Crash Course",
+          "url": "https://crashcourse.com",
+          "description": "Fast-paced, entertaining educational videos covering history, science, literature"
+        },
+        {
+          "name": "Great Courses",
+          "url": "https://thegreatcourses.com",
+          "description": "University-level courses taught by award-winning professors"
+        },
+        {
+          "name": "Academic Earth",
+          "url": "https://academicearth.org",
+          "description": "Free online college courses from world's top universities"
+        }
+      ]
+    }
+  ]
+}

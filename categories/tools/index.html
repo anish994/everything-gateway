@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools & Utilities Hub - The Everything Gateway</title>
+    <meta name="description" content="52 curated tools across 6 categories: AI tools, PDF utilities, creative design, developer resources, productivity apps, and file conversion">
+    <link rel="stylesheet" href="../../css/shared.css">
+    <link rel="stylesheet" href="../../css/search.css">
+    <style>
+        /* Tools Category Specific Gradients */
+        .ai-gradient {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+        
+        .pdf-gradient {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+        
+        .creative-gradient {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+        }
+        
+        .developer-gradient {
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+        }
+        
+        .productivity-gradient {
+            background: linear-gradient(135deg, #fa709a, #fee140);
+        }
+        
+        .conversion-gradient {
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+        }
+        
+        /* Tools-specific hero styling */
+        .category-hero {
+            background: linear-gradient(135deg, #667eea, #764ba2, #4facfe);
+            position: relative;
+            overflow: hidden;
+            padding: 4rem 2rem;
+        }
+        
+        .category-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="white" fill-opacity="0.1"/><circle cx="60" cy="40" r="0.8" fill="white" fill-opacity="0.08"/><circle cx="80" cy="80" r="1.2" fill="white" fill-opacity="0.06"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            pointer-events: none;
+        }
+        
+        /* Enhanced platform cards with logos */
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .platform-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            text-decoration: none;
+            color: #2d3748;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .platform-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .platform-card:hover::before {
+            opacity: 1;
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            background: rgba(255, 255, 255, 1);
+        }
+        
+        .platform-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(45deg, #f1f1f1, #e1e1e1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .platform-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .platform-content {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .platform-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 0 0.5rem 0;
+            color: #1a202c;
+            line-height: 1.3;
+        }
+        
+        .platform-description {
+            font-size: 0.9rem;
+            color: #4a5568;
+            margin: 0;
+            line-height: 1.5;
+            opacity: 0.8;
+        }
+        
+        .platform-card:hover .platform-name {
+            color: #667eea;
+        }
+        
+        .platform-card:hover .platform-description {
+            opacity: 1;
+        }
+        
+        /* Section headers with better styling */
+        .platform-section {
+            margin-bottom: 3rem;
+        }
+        
+        .section-header {
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .section-title, .section-description {
+            position: relative;
+            z-index: 1;
+            color: white;
+            margin: 0;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .section-description {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Animation for tool cards */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .platform-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .platform-card:nth-child(2n) {
+            animation-delay: 0.1s;
+        }
+        
+        .platform-card:nth-child(3n) {
+            animation-delay: 0.2s;
+        }
+        
+        .platform-card:nth-child(4n) {
+            animation-delay: 0.3s;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .platforms-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .platform-card {
+                padding: 1.25rem;
+            }
+            
+            .platform-logo {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .section-header {
+                padding: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <!-- Global Search Button -->
+        <button class="search-button" id="globalSearchBtn">
+            <span class="search-icon">🔍</span>
+            <span class="search-text">Search Everything</span>
+            <span class="search-shortcut">Ctrl+K</span>
+        </button>
+        
+        <main class="main-content">
+            <!-- Navigation Breadcrumb -->
+            <nav class="breadcrumb" style="margin-bottom: var(--spacing-lg); text-align: center;">
+                <a href="../../" style="color: var(--text-secondary); text-decoration: none; font-size: var(--font-size-sm);">← Back to Everything Gateway</a>
+            </nav>
+            
+            <!-- Hero Section -->
+            <div class="category-hero">
+                <div style="position: relative; z-index: 1;">
+                    <h1 class="heading-primary" style="color: white; margin: 0 0 1rem 0; font-size: 3.5rem; text-shadow: 0 4px 8px rgba(0,0,0,0.3);">Tools & Utilities Hub</h1>
+                    <p class="subtitle" style="color: rgba(255,255,255,0.9); font-size: 1.3rem; max-width: 600px; margin: 0 auto;">52 curated tools to supercharge your productivity, creativity, and development workflow</p>
+                </div>
+            </div>
+            
+            <!-- AI & Machine Learning -->
+            <section class="platform-section">
+                <div class="section-header ai-gradient">
+                    <h2 class="section-title">🤖 AI & Machine Learning</h2>
+                    <p class="section-description">The latest AI tools for text, images, code, and productivity</p>
+                </div>
+                <div class="platforms-grid">
+                    <a href="https://chat.openai.com" target="_blank" class="tool-btn developer">
+                        <div class="tool-name">ChatGPT</div>
+                        <div class="tool-category">Conversational AI</div>
+                        <div class="tool-description">Most popular AI chatbot for text generation, Q&A, and creative writing</div>
+                    </a>
+                    
+                    <a href="https://claude.ai" target="_blank" class="tool-btn developer">
+                        <div class="tool-name">Claude</div>
+                        <div class="tool-category">Advanced AI</div>
+                        <div class="tool-description">Anthropic's AI assistant for complex reasoning and analysis</div>
+                    </a>
+                    
+                    <a href="https://gemini.google.com" target="_blank" class="tool-btn developer">
+                        <div class="tool-name">Gemini</div>
+                        <div class="tool-category">Google AI</div>
+                        <div class="tool-description">Google's multimodal AI for text, images, and data analysis</div>
+                    </a>
+                    
+                    <a href="https://midjourney.com" target="_blank" class="tool-btn developer">
+                        <div class="tool-name">Midjourney</div>
+                        <div class="tool-category">AI Art</div>
+                        <div class="tool-description">Premium AI image generator with artistic focus</div>
+                    </a>
+                    
+                    <a href="https://stablediffusionweb.com" target="_blank" class="tool-btn developer">
+                        <div class="tool-name">Stable Diffusion</div>
+                        <div class="tool-category">Open AI Art</div>
+                        <div class="tool-description">Open-source AI image generation with full control</div>
+                    </a>
+                    
+                    <a href="https://copilot.github.com" target="_blank" class="tool-btn developer">
+                        <div class="tool-name">GitHub Copilot</div>
+                        <div class="tool-category">Code AI</div>
+                        <div class="tool-description">AI pair programmer that writes code with you</div>
+                    </a>
+                    
+                    <a href="https://replit.com/ai" target="_blank" class="tool-btn developer">
+                        <div class="tool-name">Replit AI</div>
+                        <div class="tool-category">Code AI</div>
+                        <div class="tool-description">AI coding assistant integrated into online IDE</div>
+                    </a>
+                    
+                    <a href="https://perplexity.ai" target="_blank" class="tool-btn developer">
+                        <div class="tool-name">Perplexity</div>
+                        <div class="tool-category">AI Search</div>
+                        <div class="tool-description">AI-powered search with real-time answers and sources</div>
+                    </a>
+                    
+                    <a href="https://runwayml.com" target="_blank" class="tool-btn developer">
+                        <div class="tool-name">RunwayML</div>
+                        <div class="tool-category">AI Video</div>
+                        <div class="tool-description">AI video generation and editing tools</div>
+                    </a>
+                    
+                    <a href="https://jasper.ai" target="_blank" class="tool-btn developer">
+                        <div class="tool-name">Jasper</div>
+                        <div class="tool-category">AI Writing</div>
+                        <div class="tool-description">AI writing assistant for marketing and content</div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- PDF Tools -->
+            <section class="tool-section">
+                <h2 class="section-title">📄 PDF Tools</h2>
+                <div class="tools-grid">
+                    <a href="https://smallpdf.com" target="_blank" class="tool-btn creative">
+                        <div class="tool-name">SmallPDF</div>
+                        <div class="tool-category">All-in-One</div>
+                        <div class="tool-description">Complete PDF toolkit - merge, split, compress, convert</div>
+                    </a>
+                    
+                    <a href="https://ilovepdf.com" target="_blank" class="tool-btn creative">
+                        <div class="tool-name">ILovePDF</div>
+                        <div class="tool-category">Free Tools</div>
+                        <div class="tool-description">Free online PDF tools with no registration required</div>
+                    </a>
+                    
+                    <a href="https://tools.pdf24.org" target="_blank" class="tool-btn creative">
+                        <div class="tool-name">PDF24</div>
+                        <div class="tool-category">Privacy-Focused</div>
+                        <div class="tool-description">Local processing PDF tools for security-conscious users</div>
+                    </a>
+                    
+                    <a href="https://sejda.com" target="_blank" class="tool-btn creative">
+                        <div class="tool-name">Sejda PDF</div>
+                        <div class="tool-category">Advanced</div>
+                        <div class="tool-description">Professional PDF editing with OCR and form features</div>
+                    </a>
+                    
+                    <a href="https://www.pdflabs.com/tools/pdftk-server/" target="_blank" class="tool-btn creative">
+                        <div class="tool-name">PDFtk Server</div>
+                        <div class="tool-category">Command Line</div>
+                        <div class="tool-description">Powerful command-line PDF manipulation toolkit</div>
+                    </a>
+                    
+                    <a href="https://github.com/pdfarranger/pdfarranger" target="_blank" class="tool-btn creative">
+                        <div class="tool-name">PDF Arranger</div>
+                        <div class="tool-category">Open Source</div>
+                        <div class="tool-description">Simple desktop application for merging and splitting PDFs</div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- Creative & Design Tools -->
+            <section class="tool-section">
+                <h2 class="section-title">🎨 Creative & Design</h2>
+                <div class="tools-grid">
+                    <a href="https://canva.com" target="_blank" class="tool-btn creative">
+                        <div class="tool-name">Canva</div>
+                        <div class="tool-category">Design Platform</div>
+                        <div class="tool-description">Easy-to-use design tool for social media, presentations, and more</div>
+                    </a>
+                    
+                    <a href="https://figma.com" target="_blank" class="tool-btn creative">
+                        <div class="tool-name">Figma</div>
+                        <div class="tool-category">UI/UX Design</div>
+                        <div class="tool-description">Professional collaborative design tool for interfaces</div>
+                    </a>
+                    
+                    <a href="https://remove.bg" target="_blank" class="tool-btn creative">
+                        <div class="tool-name">Remove.bg</div>
+                        <div class="tool-category">Background Removal</div>
+                        <div class="tool-description">AI-powered background removal for images</div>
+                    </a>
+                    
+                    <a href="https://photopea.com" target="_blank" class="tool-btn creative">
+                        <div class="tool-name">Photopea</div>
+                        <div class="tool-category">Photo Editor</div>
+                        <div class="tool-description">Free browser-based Photoshop alternative</div>
+                    </a>
+                    
+                    <a href="https://gimp.org" target="_blank" class="tool-btn creative">
+                        <div class="tool-name">GIMP</div>
+                        <div class="tool-category">Open Source</div>
+                        <div class="tool-description">Free and open-source image manipulation program</div>
+                    </a>
+                    
+                    <a href="https://coolors.co" target="_blank" class="tool-btn creative">
+                        <div class="tool-name">Coolors</div>
+                        <div class="tool-category">Color Palettes</div>
+                        <div class="tool-description">Generate and explore color palettes for your designs</div>
+                    </a>
+                    
+                    <a href="https://unsplash.com" target="_blank" class="tool-btn creative">
+                        <div class="tool-name">Unsplash</div>
+                        <div class="tool-category">Stock Photos</div>
+                        <div class="tool-description">High-quality free photos for any project</div>
+                    </a>
+                    
+                    <a href="https://iconify.design" target="_blank" class="tool-btn creative">
+                        <div class="tool-name">Iconify</div>
+                        <div class="tool-category">Icons</div>
+                        <div class="tool-description">Unified icon framework with thousands of icons</div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- Developer Tools -->
+            <section class="tool-section">
+                <h2 class="section-title">💻 Developer Tools</h2>
+                <div class="tools-grid">
+                    <a href="https://codepen.io" target="_blank" class="tool-btn developer">
+                        <div class="tool-name">CodePen</div>
+                        <div class="tool-category">Code Playground</div>
+                        <div class="tool-description">Online code editor for HTML, CSS, and JavaScript</div>
+                    </a>
+                    
+                    <a href="https://jsfiddle.net" target="_blank" class="tool-btn developer">
+                        <div class="tool-name">JSFiddle</div>
+                        <div class="tool-category">Code Testing</div>
+                        <div class="tool-description">Test and share JavaScript, HTML, CSS code snippets</div>
+                    </a>
+                    
+                    <a href="https://regex101.com" target="_blank" class="tool-btn developer">
+                        <div class="tool-name">Regex101</div>
+                        <div class="tool-category">Regex Testing</div>
+                        <div class="tool-description">Build, test, and debug regular expressions with explanations</div>
+                    </a>
+                    
+                    <a href="https://jsonlint.com" target="_blank" class="tool-btn developer">
+                        <div class="tool-name">JSONLint</div>
+                        <div class="tool-category">JSON Validator</div>
+                        <div class="tool-description">Validate and format JSON data</div>
+                    </a>
+                    
+                    <a href="https://caniuse.com" target="_blank" class="tool-btn developer">
+                        <div class="tool-name">Can I Use</div>
+                        <div class="tool-category">Browser Support</div>
+                        <div class="tool-description">Check browser support for web technologies</div>
+                    </a>
+                    
+                    <a href="https://postman.com" target="_blank" class="tool-btn developer">
+                        <div class="tool-name">Postman</div>
+                        <div class="tool-category">API Testing</div>
+                        <div class="tool-description">Complete API development and testing platform</div>
+                    </a>
+                    
+                    <a href="https://vscode.dev" target="_blank" class="tool-btn developer">
+                        <div class="tool-name">VS Code Online</div>
+                        <div class="tool-category">Code Editor</div>
+                        <div class="tool-description">Visual Studio Code running in your browser</div>
+                    </a>
+                    
+                    <a href="https://gitpod.io" target="_blank" class="tool-btn developer">
+                        <div class="tool-name">GitPod</div>
+                        <div class="tool-category">Cloud IDE</div>
+                        <div class="tool-description">Ready-to-code dev environments in the cloud</div>
+                    </a>
+                    
+                    <a href="https://replit.com" target="_blank" class="tool-btn developer">
+                        <div class="tool-name">Replit</div>
+                        <div class="tool-category">Online IDE</div>
+                        <div class="tool-description">Code, compile and run programs online in 50+ languages</div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- Productivity & Organization -->
+            <section class="tool-section">
+                <h2 class="section-title">⚡ Productivity & Organization</h2>
+                <div class="tools-grid">
+                    <a href="https://notion.so" target="_blank" class="tool-btn academic">
+                        <div class="tool-name">Notion</div>
+                        <div class="tool-category">All-in-One</div>
+                        <div class="tool-description">Workspace combining notes, tasks, wiki, and databases</div>
+                    </a>
+                    
+                    <a href="https://obsidian.md" target="_blank" class="tool-btn academic">
+                        <div class="tool-name">Obsidian</div>
+                        <div class="tool-category">Knowledge Graph</div>
+                        <div class="tool-description">Powerful note-taking with linked thought networks</div>
+                    </a>
+                    
+                    <a href="https://todoist.com" target="_blank" class="tool-btn academic">
+                        <div class="tool-name">Todoist</div>
+                        <div class="tool-category">Task Management</div>
+                        <div class="tool-description">Intelligent task manager and to-do list app</div>
+                    </a>
+                    
+                    <a href="https://calendly.com" target="_blank" class="tool-btn academic">
+                        <div class="tool-name">Calendly</div>
+                        <div class="tool-category">Scheduling</div>
+                        <div class="tool-description">Easy scheduling without back-and-forth emails</div>
+                    </a>
+                    
+                    <a href="https://grammarly.com" target="_blank" class="tool-btn academic">
+                        <div class="tool-name">Grammarly</div>
+                        <div class="tool-category">Writing Assistant</div>
+                        <div class="tool-description">AI-powered writing assistant for grammar and style</div>
+                    </a>
+                    
+                    <a href="https://forestapp.cc" target="_blank" class="tool-btn academic">
+                        <div class="tool-name">Forest</div>
+                        <div class="tool-category">Focus</div>
+                        <div class="tool-description">Stay focused and beat phone addiction with virtual trees</div>
+                    </a>
+                    
+                    <a href="https://rescuetime.com" target="_blank" class="tool-btn academic">
+                        <div class="tool-name">RescueTime</div>
+                        <div class="tool-category">Time Tracking</div>
+                        <div class="tool-description">Automatic time tracking and productivity analysis</div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- File Conversion -->
+            <section class="tool-section">
+                <h2 class="section-title">🔄 File Conversion</h2>
+                <div class="tools-grid">
+                    <a href="https://cloudconvert.com" target="_blank" class="tool-btn shopping">
+                        <div class="tool-name">CloudConvert</div>
+                        <div class="tool-category">Universal Converter</div>
+                        <div class="tool-description">Convert between 200+ file formats including audio, video, documents</div>
+                    </a>
+                    
+                    <a href="https://online-convert.com" target="_blank" class="tool-btn shopping">
+                        <div class="tool-name">Online-Convert</div>
+                        <div class="tool-category">Multi-Format</div>
+                        <div class="tool-description">Convert images, audio, video, documents, and ebooks</div>
+                    </a>
+                    
+                    <a href="https://convertio.co" target="_blank" class="tool-btn shopping">
+                        <div class="tool-name">Convertio</div>
+                        <div class="tool-category">Easy Conversion</div>
+                        <div class="tool-description">Simple online converter for files, images, videos, and audio</div>
+                    </a>
+                    
+                    <a href="https://zamzar.com" target="_blank" class="tool-btn shopping">
+                        <div class="tool-name">Zamzar</div>
+                        <div class="tool-category">Email Delivery</div>
+                        <div class="tool-description">File conversion with email delivery for large files</div>
+                    </a>
+                    
+                    <a href="https://freeconvert.com" target="_blank" class="tool-btn shopping">
+                        <div class="tool-name">FreeConvert</div>
+                        <div class="tool-category">Free Service</div>
+                        <div class="tool-description">Free online file converter with no registration</div>
+                    </a>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Search Overlay -->
+        <div class="search-overlay" id="searchOverlay">
+            <div class="search-container">
+                <div class="search-input-container">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search all platforms...">
+                    <button class="search-close" id="searchClose">×</button>
+                </div>
+                <div class="search-results" id="searchResults"></div>
+                <div class="search-footer">
+                    <div class="search-tips">
+                        <span class="tip">↑↓ Navigate</span>
+                        <span class="tip">↵ Open</span>
+                        <span class="tip">Esc Close</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../../js/gateway.js"></script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+{
+  "sections": [
+    {
+      "id": "ai-tools",
+      "title": "🤖 AI & Machine Learning",
+      "description": "The latest AI tools for text, images, code, and productivity",
+      "colorClass": "developer",
+      "featured": true,
+      "tools": [
+        {
+          "name": "ChatGPT",
+          "url": "https://chat.openai.com",
+          "category": "Conversational AI",
+          "description": "Most popular AI chatbot for text generation, Q&A, and creative writing"
+        },
+        {
+          "name": "Claude",
+          "url": "https://claude.ai",
+          "category": "Advanced AI",
+          "description": "Anthropic's AI assistant for complex reasoning and analysis"
+        },
+        {
+          "name": "Gemini",
+          "url": "https://gemini.google.com",
+          "category": "Google AI",
+          "description": "Google's multimodal AI for text, images, and data analysis"
+        },
+        {
+          "name": "Midjourney",
+          "url": "https://midjourney.com",
+          "category": "AI Art",
+          "description": "Premium AI image generator with artistic focus"
+        },
+        {
+          "name": "Stable Diffusion",
+          "url": "https://stablediffusionweb.com",
+          "category": "Open AI Art", 
+          "description": "Open-source AI image generation with full control"
+        },
+        {
+          "name": "GitHub Copilot",
+          "url": "https://copilot.github.com",
+          "category": "Code AI",
+          "description": "AI pair programmer that writes code with you"
+        },
+        {
+          "name": "Replit AI",
+          "url": "https://replit.com/ai",
+          "category": "Code AI",
+          "description": "AI coding assistant integrated into online IDE"
+        },
+        {
+          "name": "Perplexity",
+          "url": "https://perplexity.ai",
+          "category": "AI Search",
+          "description": "AI-powered search with real-time answers and sources"
+        },
+        {
+          "name": "RunwayML",
+          "url": "https://runwayml.com",
+          "category": "AI Video",
+          "description": "AI video generation and editing tools"
+        },
+        {
+          "name": "Jasper",
+          "url": "https://jasper.ai",
+          "category": "AI Writing",
+          "description": "AI writing assistant for marketing and content"
+        }
+      ]
+    },
+    {
+      "id": "pdf-tools",
+      "title": "📄 PDF Tools",
+      "description": "Merge, split, compress, and edit PDF files online",
+      "colorClass": "creative",
+      "tools": [
+        {
+          "name": "SmallPDF",
+          "url": "https://smallpdf.com",
+          "category": "All-in-One",
+          "description": "Complete PDF toolkit - merge, split, compress, convert"
+        },
+        {
+          "name": "ILovePDF",
+          "url": "https://ilovepdf.com",
+          "category": "Free Tools",
+          "description": "Free online PDF tools with no registration required"
+        },
+        {
+          "name": "PDF24",
+          "url": "https://tools.pdf24.org",
+          "category": "Privacy-Focused",
+          "description": "Local processing PDF tools for security-conscious users"
+        },
+        {
+          "name": "Sejda PDF",
+          "url": "https://sejda.com",
+          "category": "Advanced",
+          "description": "Professional PDF editing with OCR and form features"
+        },
+        {
+          "name": "PDFtk Server",
+          "url": "https://www.pdflabs.com/tools/pdftk-server/",
+          "category": "Command Line",
+          "description": "Powerful command-line PDF manipulation toolkit"
+        },
+        {
+          "name": "PDF Arranger",
+          "url": "https://github.com/pdfarranger/pdfarranger",
+          "category": "Open Source",
+          "description": "Simple desktop application for merging and splitting PDFs"
+        }
+      ]
+    },
+    {
+      "id": "creative-tools",
+      "title": "🎨 Creative & Design",
+      "description": "Design tools, image editors, and creative resources",
+      "colorClass": "creative",
+      "tools": [
+        {
+          "name": "Canva",
+          "url": "https://canva.com",
+          "category": "Design Platform",
+          "description": "Easy-to-use design tool for social media, presentations, and more"
+        },
+        {
+          "name": "Figma",
+          "url": "https://figma.com",
+          "category": "UI/UX Design",
+          "description": "Professional collaborative design tool for interfaces"
+        },
+        {
+          "name": "Remove.bg",
+          "url": "https://remove.bg",
+          "category": "Background Removal",
+          "description": "AI-powered background removal for images"
+        },
+        {
+          "name": "Photopea",
+          "url": "https://photopea.com",
+          "category": "Photo Editor",
+          "description": "Free browser-based Photoshop alternative"
+        },
+        {
+          "name": "GIMP",
+          "url": "https://gimp.org",
+          "category": "Open Source",
+          "description": "Free and open-source image manipulation program"
+        },
+        {
+          "name": "Coolors",
+          "url": "https://coolors.co",
+          "category": "Color Palettes",
+          "description": "Generate and explore color palettes for your designs"
+        },
+        {
+          "name": "Unsplash",
+          "url": "https://unsplash.com",
+          "category": "Stock Photos",
+          "description": "High-quality free photos for any project"
+        },
+        {
+          "name": "Iconify",
+          "url": "https://iconify.design",
+          "category": "Icons",
+          "description": "Unified icon framework with thousands of icons"
+        }
+      ]
+    },
+    {
+      "id": "developer-tools", 
+      "title": "💻 Developer Tools",
+      "description": "Code editors, testing tools, and development utilities",
+      "colorClass": "developer",
+      "tools": [
+        {
+          "name": "CodePen",
+          "url": "https://codepen.io",
+          "category": "Code Playground",
+          "description": "Online code editor for HTML, CSS, and JavaScript"
+        },
+        {
+          "name": "JSFiddle",
+          "url": "https://jsfiddle.net",
+          "category": "Code Testing",
+          "description": "Test and share JavaScript, HTML, CSS code snippets"
+        },
+        {
+          "name": "Regex101",
+          "url": "https://regex101.com",
+          "category": "Regex Testing",
+          "description": "Build, test, and debug regular expressions with explanations"
+        },
+        {
+          "name": "JSONLint",
+          "url": "https://jsonlint.com",
+          "category": "JSON Validator",
+          "description": "Validate and format JSON data"
+        },
+        {
+          "name": "Can I Use",
+          "url": "https://caniuse.com",
+          "category": "Browser Support",
+          "description": "Check browser support for web technologies"
+        },
+        {
+          "name": "Postman",
+          "url": "https://postman.com",
+          "category": "API Testing",
+          "description": "Complete API development and testing platform"
+        },
+        {
+          "name": "VS Code Online",
+          "url": "https://vscode.dev",
+          "category": "Code Editor",
+          "description": "Visual Studio Code running in your browser"
+        },
+        {
+          "name": "GitPod",
+          "url": "https://gitpod.io",
+          "category": "Cloud IDE",
+          "description": "Ready-to-code dev environments in the cloud"
+        },
+        {
+          "name": "Replit",
+          "url": "https://replit.com",
+          "category": "Online IDE",
+          "description": "Code, compile and run programs online in 50+ languages"
+        }
+      ]
+    },
+    {
+      "id": "productivity-tools",
+      "title": "⚡ Productivity & Organization",
+      "description": "Note-taking, planning, and productivity enhancement tools",
+      "colorClass": "academic",
+      "tools": [
+        {
+          "name": "Notion",
+          "url": "https://notion.so",
+          "category": "All-in-One",
+          "description": "Workspace combining notes, tasks, wiki, and databases"
+        },
+        {
+          "name": "Obsidian",
+          "url": "https://obsidian.md",
+          "category": "Knowledge Graph",
+          "description": "Powerful note-taking with linked thought networks"
+        },
+        {
+          "name": "Todoist",
+          "url": "https://todoist.com",
+          "category": "Task Management",
+          "description": "Intelligent task manager and to-do list app"
+        },
+        {
+          "name": "Calendly",
+          "url": "https://calendly.com",
+          "category": "Scheduling",
+          "description": "Easy scheduling without back-and-forth emails"
+        },
+        {
+          "name": "Grammarly",
+          "url": "https://grammarly.com",
+          "category": "Writing Assistant",
+          "description": "AI-powered writing assistant for grammar and style"
+        },
+        {
+          "name": "Forest",
+          "url": "https://forestapp.cc",
+          "category": "Focus",
+          "description": "Stay focused and beat phone addiction with virtual trees"
+        },
+        {
+          "name": "RescueTime",
+          "url": "https://rescuetime.com",
+          "category": "Time Tracking",
+          "description": "Automatic time tracking and productivity analysis"
+        }
+      ]
+    },
+    {
+      "id": "conversion-tools",
+      "title": "🔄 File Conversion",
+      "description": "Convert between different file formats easily",
+      "colorClass": "shopping",
+      "tools": [
+        {
+          "name": "CloudConvert",
+          "url": "https://cloudconvert.com",
+          "category": "Universal Converter",
+          "description": "Convert between 200+ file formats including audio, video, documents"
+        },
+        {
+          "name": "Online-Convert",
+          "url": "https://online-convert.com",
+          "category": "Multi-Format",
+          "description": "Convert images, audio, video, documents, and ebooks"
+        },
+        {
+          "name": "Convertio",
+          "url": "https://convertio.co",
+          "category": "Easy Conversion",
+          "description": "Simple online converter for files, images, videos, and audio"
+        },
+        {
+          "name": "Zamzar",
+          "url": "https://zamzar.com",
+          "category": "Email Delivery",
+          "description": "File conversion with email delivery for large files"
+        },
+        {
+          "name": "FreeConvert",
+          "url": "https://freeconvert.com",
+          "category": "Free Service",
+          "description": "Free online file converter with no registration"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "2025-08-09",
+    "totalTools": 52,
+    "totalSections": 6,
+    "description": "Comprehensive collection of online tools for productivity, creativity, and development"
+  }
+}

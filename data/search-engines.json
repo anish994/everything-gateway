@@ -1,0 +1,341 @@
+{
+  "sections": [
+    {
+      "id": "mainstream",
+      "title": "🌟 Popular & Mainstream",
+      "description": "The search engines everyone knows and uses daily",
+      "colorClass": "mainstream",
+      "engines": [
+        {
+          "name": "Google",
+          "url": "https://google.com",
+          "category": "Most Popular",
+          "description": "The world's most popular search engine"
+        },
+        {
+          "name": "Bing", 
+          "url": "https://bing.com",
+          "category": "Microsoft",
+          "description": "Microsoft's search engine with AI integration"
+        },
+        {
+          "name": "Yahoo",
+          "url": "https://yahoo.com", 
+          "category": "Classic",
+          "description": "One of the original web portals and search engines"
+        },
+        {
+          "name": "Ask",
+          "url": "https://ask.com",
+          "category": "Q&A Style", 
+          "description": "Question and answer focused search approach"
+        }
+      ]
+    },
+    {
+      "id": "privacy",
+      "title": "🔒 Privacy & Security Focused", 
+      "description": "Search engines that prioritize your privacy and don't track you",
+      "colorClass": "privacy",
+      "engines": [
+        {
+          "name": "DuckDuckGo",
+          "url": "https://duckduckgo.com",
+          "category": "No Tracking",
+          "description": "The most popular privacy-focused search engine"
+        },
+        {
+          "name": "Brave Search",
+          "url": "https://search.brave.com", 
+          "category": "Independent",
+          "description": "Independent search index from the Brave browser team"
+        },
+        {
+          "name": "Startpage",
+          "url": "https://startpage.com",
+          "category": "Google Proxy",
+          "description": "Private Google search results without tracking"
+        },
+        {
+          "name": "Swisscows",
+          "url": "https://swisscows.com",
+          "category": "Family Safe",
+          "description": "Family-friendly search with strong privacy focus"
+        },
+        {
+          "name": "MetaGer",
+          "url": "https://metager.org", 
+          "category": "Meta Search",
+          "description": "German non-profit meta search engine"
+        },
+        {
+          "name": "Kagi",
+          "url": "https://kagi.com",
+          "category": "Premium",
+          "description": "Ad-free premium search with personalization"
+        }
+      ]
+    },
+    {
+      "id": "academic",
+      "title": "📚 Academic & Research",
+      "description": "Specialized search engines for scholarly papers, research, and academic content",
+      "colorClass": "academic", 
+      "engines": [
+        {
+          "name": "Google Scholar",
+          "url": "https://scholar.google.com",
+          "category": "Papers & Citations",
+          "description": "Search scholarly literature across disciplines"
+        },
+        {
+          "name": "Microsoft Academic",
+          "url": "https://academic.microsoft.com",
+          "category": "Research Graph", 
+          "description": "Academic knowledge graph and paper search"
+        },
+        {
+          "name": "Semantic Scholar",
+          "url": "https://semanticscholar.org",
+          "category": "AI-Powered",
+          "description": "AI-powered academic search with paper insights"
+        },
+        {
+          "name": "arXiv",
+          "url": "https://arxiv.org/search",
+          "category": "Preprints",
+          "description": "Physics, mathematics, and computer science preprints"
+        },
+        {
+          "name": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov",
+          "category": "Medical",
+          "description": "Medical and life sciences literature database"
+        }
+      ]
+    },
+    {
+      "id": "international", 
+      "title": "🌍 International & Regional",
+      "description": "Search engines popular in specific countries and regions worldwide",
+      "colorClass": "international",
+      "engines": [
+        {
+          "name": "Yandex",
+          "url": "https://yandex.com", 
+          "category": "Russia",
+          "description": "Russia's most popular search engine"
+        },
+        {
+          "name": "Baidu",
+          "url": "https://baidu.com",
+          "category": "China", 
+          "description": "China's dominant search engine"
+        },
+        {
+          "name": "Naver",
+          "url": "https://naver.com",
+          "category": "South Korea",
+          "description": "South Korea's leading search portal"
+        },
+        {
+          "name": "Qwant", 
+          "url": "https://qwant.com",
+          "category": "France",
+          "description": "French search engine with privacy focus"
+        },
+        {
+          "name": "Ecosia",
+          "url": "https://ecosia.org",
+          "category": "Plant Trees", 
+          "description": "Search engine that plants trees with ad revenue"
+        }
+      ]
+    },
+    {
+      "id": "developer",
+      "title": "💻 Developer & Technical",
+      "description": "Search engines specialized for code, documentation, and technical resources", 
+      "colorClass": "developer",
+      "engines": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/search",
+          "category": "Code Search",
+          "description": "Search millions of code repositories"
+        },
+        {
+          "name": "Stack Overflow", 
+          "url": "https://stackoverflow.com/search",
+          "category": "Q&A Programming",
+          "description": "Programming questions and answers"
+        },
+        {
+          "name": "CodePen",
+          "url": "https://codepen.io/search",
+          "category": "Frontend Code",
+          "description": "Frontend code snippets and demos"
+        },
+        {
+          "name": "Searchcode",
+          "url": "https://searchcode.com",
+          "category": "Source Code",
+          "description": "Search code across multiple repositories"
+        },
+        {
+          "name": "GitLab",
+          "url": "https://gitlab.com/search", 
+          "category": "DevOps Platform",
+          "description": "GitLab repository and project search"
+        }
+      ]
+    },
+    {
+      "id": "creative",
+      "title": "🎨 Creative & Visual",
+      "description": "Search engines for images, design inspiration, and creative content",
+      "colorClass": "creative",
+      "engines": [
+        {
+          "name": "Unsplash", 
+          "url": "https://unsplash.com/s/photos",
+          "category": "High-Quality Photos",
+          "description": "Beautiful high-resolution photos for any project"
+        },
+        {
+          "name": "Pixabay",
+          "url": "https://pixabay.com",
+          "category": "Free Images",
+          "description": "Free images, vectors, and illustrations"
+        },
+        {
+          "name": "Dribbble",
+          "url": "https://dribbble.com/search", 
+          "category": "Design Inspiration",
+          "description": "Design inspiration and creative showcases"
+        },
+        {
+          "name": "Behance",
+          "url": "https://behance.net/search",
+          "category": "Creative Portfolio",
+          "description": "Creative portfolios and project showcases"
+        },
+        {
+          "name": "Flickr",
+          "url": "https://flickr.com/search",
+          "category": "Photo Community",
+          "description": "Photography community and image sharing"
+        }
+      ]
+    },
+    {
+      "id": "shopping", 
+      "title": "🛒 Shopping & Commerce",
+      "description": "Search engines for products, shopping, and e-commerce",
+      "colorClass": "shopping",
+      "engines": [
+        {
+          "name": "Amazon",
+          "url": "https://amazon.com/s",
+          "category": "Everything Store", 
+          "description": "The world's largest online marketplace"
+        },
+        {
+          "name": "eBay",
+          "url": "https://ebay.com/sch",
+          "category": "Auctions & Buy It Now",
+          "description": "Online auctions and marketplace"
+        },
+        {
+          "name": "Etsy",
+          "url": "https://etsy.com/search",
+          "category": "Handmade & Vintage",
+          "description": "Handmade, vintage, and unique items"
+        },
+        {
+          "name": "AliExpress", 
+          "url": "https://aliexpress.com/wholesale",
+          "category": "Global Marketplace",
+          "description": "Global marketplace for affordable goods"
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "title": "💬 Social & Community", 
+      "description": "Search engines for social media content and community discussions",
+      "colorClass": "social",
+      "engines": [
+        {
+          "name": "Twitter/X",
+          "url": "https://twitter.com/search",
+          "category": "Real-time Social",
+          "description": "Real-time social media and news updates"
+        },
+        {
+          "name": "Reddit",
+          "url": "https://reddit.com/search", 
+          "category": "Communities",
+          "description": "Community discussions and forum content"
+        },
+        {
+          "name": "Discord",
+          "url": "https://discord.com/channels/@me",
+          "category": "Gaming & Chat",
+          "description": "Gaming communities and chat servers"
+        },
+        {
+          "name": "LinkedIn",
+          "url": "https://linkedin.com/search",
+          "category": "Professional",
+          "description": "Professional networking and career content"
+        }
+      ]
+    },
+    {
+      "id": "indie",
+      "title": "💎 Indie & Alternative",
+      "description": "Independent and alternative search engines with unique approaches",
+      "colorClass": "gem",
+      "engines": [
+        {
+          "name": "Wiby",
+          "url": "https://wiby.me",
+          "category": "Retro Web",
+          "description": "Search for old-school, non-commercial websites"
+        },
+        {
+          "name": "Marginalia", 
+          "url": "https://search.marginalia.nu",
+          "category": "Independent", 
+          "description": "Independent search focused on text-heavy sites"
+        },
+        {
+          "name": "Gigablast",
+          "url": "https://gigablast.com",
+          "category": "Open Source",
+          "description": "Open-source web search engine"
+        },
+        {
+          "name": "Mojeek",
+          "url": "https://mojeek.com",
+          "category": "Independent Index",
+          "description": "Independent search with own web crawler"
+        },
+        {
+          "name": "Searx", 
+          "url": "https://searx.space",
+          "category": "Open Source Meta",
+          "description": "Open-source metasearch engine instances"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "2025-08-09", 
+    "totalEngines": 39,
+    "totalSections": 9,
+    "description": "Comprehensive collection of search engines across all categories"
+  }
+}

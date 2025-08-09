@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Test - The Everything Gateway</title>
+    <link rel="stylesheet" href="../../css/design-system.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <style>
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--spacing-8);
+            font-family: var(--font-family-base);
+        }
+        
+        .test-hero {
+            background: var(--gradient-privacy);
+            color: var(--text-on-primary);
+            padding: var(--spacing-8);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            margin-bottom: var(--spacing-8);
+        }
+        
+        .test-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-6);
+            margin: var(--spacing-4) 0;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .test-card h3 {
+            color: var(--text-primary);
+            font-size: var(--font-size-xl);
+            margin: 0 0 var(--spacing-2) 0;
+        }
+        
+        .test-card p {
+            color: var(--text-secondary);
+            font-size: var(--font-size-base);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-hero">
+            <h1>📚 Knowledge & Learning Test</h1>
+            <p>Testing if basic styles and variables work correctly</p>
+        </div>
+        
+        <div class="test-card">
+            <h3>Coursera</h3>
+            <p>University courses and degrees from Yale, Stanford, Google, and more</p>
+        </div>
+        
+        <div class="test-card">
+            <h3>Khan Academy</h3>
+            <p>Free world-class education for anyone, anywhere - math, science, history, and more</p>
+        </div>
+        
+        <div class="test-card">
+            <h3>Wikipedia</h3>
+            <p>Free encyclopedia with 60+ million articles in 300+ languages</p>
+        </div>
+        
+        <div id="json-test">
+            <h2>JSON Data Test</h2>
+            <p id="json-status">Loading knowledge.json...</p>
+        </div>
+    </div>
+    
+    <script>
+        // Test JSON loading
+        fetch('../../data/knowledge.json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('json-status').textContent = 
+                    `✅ JSON loaded successfully! Found ${data.sections.length} sections with ${data.totalCount} total resources.`;
+            })
+            .catch(error => {
+                document.getElementById('json-status').textContent = 
+                    `❌ Error loading JSON: ${error.message}`;
+            });
+    </script>
+</body>
+</html>
