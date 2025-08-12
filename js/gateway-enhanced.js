@@ -1068,3 +1068,140 @@ const enhancedStyles = `
 
 // Inject enhanced styles
 document.head.insertAdjacentHTML('beforeend', enhancedStyles);
+
+// Category-specific initialization system
+window.GatewayApp = {
+    init: function(config) {
+        if (config && config.category && config.fallbackData) {
+            const loader = new CategoryLoader(config);
+            loader.init();
+        }
+    }
+};
+
+// Category platform loader for individual category pages
+class CategoryLoader {
+    constructor(config) {
+        this.config = config;
+        this.category = config.category;
+        this.dataPath = config.dataPath;
+        this.fallbackData = config.fallbackData;
+    }
+    
+    async init() {
+        try {
+            await this.loadPlatforms();
+        } catch (error) {
+            console.error('Failed to load platforms:', error);
+            this.showError();
+        }
+    }
+    
+    async loadPlatforms() {
+        try {
+            const response = await fetch(this.dataPath);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            
+            this.renderPlatforms(data);
+            this.updateStats(data);
+            this.hideLoading();
+        } catch (error) {
+            console.log('Fetch failed, using fallback data for development:', error);
+            this.renderPlatforms(this.fallbackData);
+            this.updateStats(this.fallbackData);
+            this.hideLoading();
+        }
+    }
+    
+    renderPlatforms(data) {
+        const sectionsHTML = data.sections.map(section => `
+            <section class="platform-section" data-section="${section.title}">
+                <div class="section-header">
+                    <h2 class="section-title">${section.title}</h2>
+                    <p class="section-description">${section.description}</p>
+                    <div class="section-count">${section.platforms.length} platforms</div>
+                </div>
+                <div class="platforms-grid">
+                    ${section.platforms.map((platform, index) => `
+                        <a href="${platform.url}" 
+                           class="platform-card"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           style="animation-delay: ${index * 0.1}s"
+                           aria-label="Visit ${platform.name} - ${platform.description}">
+                            <div class="platform-logo">
+                                <img src="https://www.google.com/s2/favicons?domain=${this.extractDomain(platform.url)}&sz=32" 
+                                     alt="${platform.name}" 
+                                     onerror="this.parentElement.innerHTML='${platform.icon || '📰'}'"/>
+                            </div>
+                            <div class="platform-content">
+                                <h3 class="platform-name">${platform.name}</h3>
+                                <p class="platform-description">${platform.description}</p>
+                            </div>
+                        </a>
+                    `).join('')}
+                </div>
+            </section>
+        `).join('');
+        
+        const platformsSection = document.getElementById('platforms-section');
+        if (platformsSection) {
+            platformsSection.innerHTML = sectionsHTML;
+            platformsSection.style.display = 'block';
+            
+            // Trigger animations
+            setTimeout(() => this.animateCards(), 100);
+        }
+    }
+    
+    animateCards() {
+        const cards = document.querySelectorAll('.platform-card');
+        cards.forEach((card, index) => {
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, index * 50);
+        });
+    }
+    
+    updateStats(data) {
+        const totalPlatforms = data.metadata?.totalPlatforms || 
+                              data.sections.reduce((sum, section) => sum + section.platforms.length, 0);
+        const totalCategories = data.metadata?.totalSections || data.sections.length;
+        
+        // Update stats in hero section
+        const platformsElement = document.getElementById('total-platforms');
+        const categoriesElement = document.getElementById('total-categories');
+        
+        if (platformsElement) platformsElement.textContent = totalPlatforms;
+        if (categoriesElement) categoriesElement.textContent = totalCategories;
+        
+        console.log(`📊 ${this.category} category loaded: ${totalPlatforms} platforms in ${totalCategories} sections`);
+    }
+    
+    hideLoading() {
+        const loadingState = document.getElementById('loading-state');
+        if (loadingState) {
+            loadingState.style.display = 'none';
+        }
+    }
+    
+    showError() {
+        const loadingState = document.getElementById('loading-state');
+        const errorState = document.getElementById('error-state');
+        
+        if (loadingState) loadingState.style.display = 'none';
+        if (errorState) errorState.style.display = 'block';
+    }
+    
+    extractDomain(url) {
+        try {
+            return new URL(url).hostname;
+        } catch {
+            return 'example.com';
+        }
+    }
+}
