@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Gaming & Esports - The Everything Gateway</title>
+    <meta name="description" content="Discover the best gaming platforms, game stores, streaming services, and esports communities. Your gateway to PC gaming, console gaming, mobile games, and competitive esports.">
+    <meta name="keywords" content="gaming, esports, game stores, steam, epic games, twitch, gaming communities, pc gaming, console gaming, mobile gaming, game streaming, competitive gaming">
+    <meta name="author" content="The Everything Gateway">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://everything-gateway.netlify.app/categories/gaming/">
+    <meta property="og:title" content="Gaming & Esports - The Everything Gateway">
+    <meta property="og:description" content="Discover the best gaming platforms, game stores, streaming services, and esports communities. Your ultimate gaming hub.">
+    <meta property="og:image" content="https://everything-gateway.netlify.app/assets/og-gaming.jpg">
+    <meta property="og:site_name" content="The Everything Gateway">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://everything-gateway.netlify.app/categories/gaming/">
+    <meta property="twitter:title" content="Gaming & Esports - The Everything Gateway">
+    <meta property="twitter:description" content="Discover the best gaming platforms, game stores, and esports communities worldwide.">
+    <meta property="twitter:image" content="https://everything-gateway.netlify.app/assets/og-gaming.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../css/design-system.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/shared.css">
+    <link rel="stylesheet" href="../../css/search.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Gaming & Esports - The Everything Gateway",
+        "description": "Discover the best gaming platforms, game stores, and esports communities",
+        "url": "https://everything-gateway.netlify.app/categories/gaming/",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "The Everything Gateway",
+            "url": "https://everything-gateway.netlify.app"
+        },
+        "about": {
+            "@type": "Thing",
+            "name": "Gaming and Esports Platforms",
+            "description": "Curated collection of gaming stores, streaming platforms, and esports communities"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip Links for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#platform-grid" class="skip-link">Skip to platforms</a>
+    
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <div class="header-content">
+            <div class="header-left">
+                <a href="../../" class="logo-link" aria-label="Return to The Everything Gateway homepage">
+                    <h1 class="site-title">
+                        <span class="gateway-text">The Everything</span>
+                        <span class="highlight">Gateway</span>
+                    </h1>
+                </a>
+            </div>
+            <div class="header-right">
+                <button class="search-btn" aria-label="Open universal search" title="Search (Ctrl+K)">
+                    <span class="search-icon">🔍</span>
+                    <span class="search-text">Search</span>
+                    <span class="search-shortcut">Ctrl+K</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content" role="main">
+        <!-- Category Hero Section -->
+        <section class="category-hero gaming-hero" role="banner">
+            <div class="hero-content">
+                <div class="hero-icon" aria-hidden="true">🎮</div>
+                <h1 class="hero-title">Gaming & Esports</h1>
+                <p class="hero-description">
+                    Level up your gaming experience! Discover game stores, streaming platforms, esports communities, 
+                    and everything you need for PC gaming, console gaming, mobile games, and competitive esports.
+                </p>
+                <div class="hero-stats" aria-label="Category statistics">
+                    <div class="stat">
+                        <span class="stat-number" id="total-platforms">0</span>
+                        <span class="stat-label">Platforms</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="total-categories">0</span>
+                        <span class="stat-label">Categories</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Epic</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading State -->
+        <div id="loading-state" class="loading-state" aria-live="polite">
+            <div class="loading-spinner" aria-hidden="true"></div>
+            <p class="loading-text">Loading gaming platforms...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="error-state" class="error-state" style="display: none;" role="alert">
+            <div class="error-content">
+                <h2 class="error-title">Unable to Load Gaming Platforms</h2>
+                <p class="error-message">We're having trouble loading the gaming platforms. Please try again.</p>
+                <button class="retry-btn" onclick="window.location.reload()">
+                    <span class="retry-icon">🔄</span>
+                    Try Again
+                </button>
+            </div>
+        </div>
+
+        <!-- Platforms Grid -->
+        <section id="platforms-section" class="platforms-section" style="display: none;">
+            <!-- Dynamic content will be inserted here -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-left">
+                <p class="footer-text">
+                    <span class="gateway-text">The Everything</span>
+                    <span class="highlight">Gateway</span>
+                </p>
+                <p class="footer-tagline">Your portal to curated internet resources</p>
+            </div>
+            <div class="footer-right">
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <a href="../../" class="footer-link">Home</a>
+                    <a href="../search-engines/" class="footer-link">Search Engines</a>
+                    <a href="../tools/" class="footer-link">Tools</a>
+                    <a href="../entertainment/" class="footer-link">Entertainment</a>
+                    <a href="../knowledge/" class="footer-link">Knowledge</a>
+                    <a href="../news/" class="footer-link">News</a>
+                    <a href="../social/" class="footer-link">Social</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../js/gateway-enhanced.js"></script>
+    <script src="../../performance.config.js"></script>
+    <script>
+        // Gaming & Esports specific initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 Gaming & Esports page DOMContentLoaded');
+            console.log('GatewayApp available:', typeof window.GatewayApp !== 'undefined');
+            
+            // Initialize the gaming category
+            if (typeof window.GatewayApp !== 'undefined') {
+                console.log('🎮 Initializing Gaming & Esports category...');
+                window.GatewayApp.init({
+                    category: 'gaming',
+                    dataPath: '../../data/gaming.json',
+                    fallbackData: getGamingFallbackData()
+                });
+            } else {
+                console.error('❌ GatewayApp not available, falling back to manual initialization');
+                // Manual fallback if GatewayApp isn't loaded yet
+                setTimeout(() => {
+                    if (typeof window.GatewayApp !== 'undefined') {
+                        console.log('⏰ Delayed GatewayApp initialization');
+                        window.GatewayApp.init({
+                            category: 'gaming',
+                            dataPath: '../../data/gaming.json',
+                            fallbackData: getGamingFallbackData()
+                        });
+                    } else {
+                        console.log('🔄 Using immediate fallback rendering');
+                        renderFallbackData();
+                    }
+                }, 1000);
+            }
+        });
+        
+        // Emergency fallback rendering function
+        function renderFallbackData() {
+            console.log('🆘 Emergency fallback rendering');
+            const loadingState = document.getElementById('loading-state');
+            const platformsSection = document.getElementById('platforms-section');
+            const totalPlatforms = document.getElementById('total-platforms');
+            const totalCategories = document.getElementById('total-categories');
+            
+            if (loadingState) loadingState.style.display = 'none';
+            if (totalPlatforms) totalPlatforms.textContent = '42';
+            if (totalCategories) totalCategories.textContent = '4';
+            
+            if (platformsSection) {
+                const fallbackData = getGamingFallbackData();
+                const sectionsHTML = fallbackData.sections.map(section => `
+                    <section class="platform-section">
+                        <div class="section-header">
+                            <h2 class="section-title">${section.title}</h2>
+                            <p class="section-description">${section.description}</p>
+                            <div class="section-count">${section.platforms.length} platforms</div>
+                        </div>
+                        <div class="platforms-grid">
+                            ${section.platforms.map(platform => `
+                                <a href="${platform.url}" class="platform-card" target="_blank" rel="noopener noreferrer">
+                                    <div class="platform-logo">${platform.icon}</div>
+                                    <div class="platform-content">
+                                        <h3 class="platform-name">${platform.name}</h3>
+                                        <p class="platform-description">${platform.description}</p>
+                                    </div>
+                                </a>
+                            `).join('')}
+                        </div>
+                    </section>
+                `).join('');
+                
+                platformsSection.innerHTML = sectionsHTML;
+                platformsSection.style.display = 'block';
+                console.log('✅ Emergency fallback rendering complete');
+            }
+        }
+
+        // Comprehensive fallback data for Gaming & Esports
+        function getGamingFallbackData() {
+            return {
+                "category": "Gaming & Esports",
+                "description": "Level up your gaming experience with the best platforms and communities",
+                "sections": [
+                    {
+                        "title": "Game Stores & Platforms",
+                        "description": "Digital game stores and gaming platforms",
+                        "platforms": [
+                            {
+                                "name": "Steam",
+                                "url": "https://store.steampowered.com",
+                                "description": "World's largest PC gaming platform with thousands of games and community features",
+                                "icon": "🚂"
+                            },
+                            {
+                                "name": "Epic Games Store",
+                                "url": "https://store.epicgames.com",
+                                "description": "Digital game store featuring exclusive titles and free weekly games",
+                                "icon": "🏛️"
+                            },
+                            {
+                                "name": "Xbox Game Pass",
+                                "url": "https://xbox.com/game-pass",
+                                "description": "Netflix for games - subscription service with hundreds of games",
+                                "icon": "🎯"
+                            },
+                            {
+                                "name": "PlayStation Store",
+                                "url": "https://store.playstation.com",
+                                "description": "Official PlayStation digital game store for PS4 and PS5",
+                                "icon": "🎮"
+                            },
+                            {
+                                "name": "Nintendo eShop",
+                                "url": "https://nintendo.com/us/eshop",
+                                "description": "Nintendo's digital marketplace for Switch, 3DS, and Wii U games",
+                                "icon": "🔴"
+                            },
+                            {
+                                "name": "GOG",
+                                "url": "https://gog.com",
+                                "description": "DRM-free games store specializing in classic and indie titles",
+                                "icon": "🏆"
+                            },
+                            {
+                                "name": "Origin",
+                                "url": "https://origin.com",
+                                "description": "EA's digital distribution platform for PC and mobile games",
+                                "icon": "🔥"
+                            },
+                            {
+                                "name": "Ubisoft Connect",
+                                "url": "https://ubisoftconnect.com",
+                                "description": "Ubisoft's gaming platform for PC featuring their latest titles",
+                                "icon": "🌀"
+                            },
+                            {
+                                "name": "itch.io",
+                                "url": "https://itch.io",
+                                "description": "Indie game marketplace and hosting platform for creative game developers",
+                                "icon": "🎨"
+                            },
+                            {
+                                "name": "Humble Bundle",
+                                "url": "https://humblebundle.com",
+                                "description": "Pay-what-you-want game bundles supporting charity",
+                                "icon": "💝"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Streaming & Content",
+                        "description": "Gaming streams, videos, and content platforms",
+                        "platforms": [
+                            {
+                                "name": "Twitch",
+                                "url": "https://twitch.tv",
+                                "description": "World's leading live streaming platform for gamers and esports",
+                                "icon": "💜"
+                            },
+                            {
+                                "name": "YouTube Gaming",
+                                "url": "https://gaming.youtube.com",
+                                "description": "YouTube's dedicated gaming section for streams and videos",
+                                "icon": "📹"
+                            },
+                            {
+                                "name": "Facebook Gaming",
+                                "url": "https://fb.gg",
+                                "description": "Facebook's gaming platform for streams and community",
+                                "icon": "📱"
+                            },
+                            {
+                                "name": "Mixer",
+                                "url": "https://mixer.com",
+                                "description": "Interactive live streaming platform with low latency",
+                                "icon": "🎬"
+                            },
+                            {
+                                "name": "GamesDoneQuick",
+                                "url": "https://gamesdonequick.com",
+                                "description": "Speedrunning marathon events raising money for charity",
+                                "icon": "⚡"
+                            },
+                            {
+                                "name": "StreamElements",
+                                "url": "https://streamelements.com",
+                                "description": "Tools and services for content creators and streamers",
+                                "icon": "🛠️"
+                            },
+                            {
+                                "name": "OBS Studio",
+                                "url": "https://obsproject.com",
+                                "description": "Free and open-source software for live streaming and recording",
+                                "icon": "📡"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Communities & Forums",
+                        "description": "Gaming communities, forums, and social platforms",
+                        "platforms": [
+                            {
+                                "name": "Reddit Gaming",
+                                "url": "https://reddit.com/r/gaming",
+                                "description": "Massive gaming community with news, discussions, and memes",
+                                "icon": "🤖"
+                            },
+                            {
+                                "name": "Discord",
+                                "url": "https://discord.com",
+                                "description": "Voice and text chat platform popular among gaming communities",
+                                "icon": "💬"
+                            },
+                            {
+                                "name": "GameFAQs",
+                                "url": "https://gamefaqs.gamespot.com",
+                                "description": "Game guides, walkthroughs, and community discussions",
+                                "icon": "❓"
+                            },
+                            {
+                                "name": "NeoGAF",
+                                "url": "https://neogaf.com",
+                                "description": "Gaming enthusiast community with industry discussions",
+                                "icon": "🗣️"
+                            },
+                            {
+                                "name": "ResetEra",
+                                "url": "https://resetera.com",
+                                "description": "Gaming discussion forum covering industry news and analysis",
+                                "icon": "🔄"
+                            },
+                            {
+                                "name": "Steam Community",
+                                "url": "https://steamcommunity.com",
+                                "description": "Steam's built-in social platform for gamers",
+                                "icon": "👥"
+                            },
+                            {
+                                "name": "Giant Bomb",
+                                "url": "https://giantbomb.com",
+                                "description": "Gaming website with reviews, videos, and community features",
+                                "icon": "💣"
+                            },
+                            {
+                                "name": "TrueAchievements",
+                                "url": "https://trueachievements.com",
+                                "description": "Xbox achievement tracking and gaming community",
+                                "icon": "🏅"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Esports & Competitive",
+                        "description": "Professional esports, tournaments, and competitive gaming",
+                        "platforms": [
+                            {
+                                "name": "ESL Gaming",
+                                "url": "https://esl-gaming.com",
+                                "description": "World's largest esports company organizing tournaments and leagues",
+                                "icon": "🏆"
+                            },
+                            {
+                                "name": "Liquipedia",
+                                "url": "https://liquipedia.net",
+                                "description": "Comprehensive esports wiki covering all major competitive games",
+                                "icon": "📚"
+                            },
+                            {
+                                "name": "HLTV",
+                                "url": "https://hltv.org",
+                                "description": "Leading Counter-Strike esports news, rankings, and statistics",
+                                "icon": "🎯"
+                            },
+                            {
+                                "name": "Lolesports",
+                                "url": "https://lolesports.com",
+                                "description": "Official League of Legends esports hub with live matches",
+                                "icon": "⚔️"
+                            },
+                            {
+                                "name": "FACEIT",
+                                "url": "https://faceit.com",
+                                "description": "Competitive gaming platform for organized matches and tournaments",
+                                "icon": "⚡"
+                            },
+                            {
+                                "name": "ESEA",
+                                "url": "https://esea.net",
+                                "description": "Premium competitive gaming service for serious players",
+                                "icon": "🔝"
+                            },
+                            {
+                                "name": "Dotabuff",
+                                "url": "https://dotabuff.com",
+                                "description": "Dota 2 statistics, match analysis, and pro player tracking",
+                                "icon": "📊"
+                            },
+                            {
+                                "name": "VLR.gg",
+                                "url": "https://vlr.gg",
+                                "description": "Valorant esports coverage, rankings, and match results",
+                                "icon": "🎮"
+                            },
+                            {
+                                "name": "Smash.gg",
+                                "url": "https://smash.gg",
+                                "description": "Tournament bracket management and esports event organization",
+                                "icon": "🥊"
+                            },
+                            {
+                                "name": "BLAST",
+                                "url": "https://blast.tv",
+                                "description": "Premier esports tournament organizer and broadcasting",
+                                "icon": "💥"
+                            }
+                        ]
+                    }
+                ],
+                "metadata": {
+                    "totalPlatforms": 42,
+                    "totalSections": 4,
+                    "lastUpdated": "2025-01-09"
+                }
+            };
+        }
+    </script>
+</body>
+</html>
