@@ -165,7 +165,7 @@
 
     <!-- Scripts -->
     <script src="../../js/gateway-enhanced.js"></script>
-    <script src="../../js/analytics.js"></script>
+    <script src="../../performance.config.js"></script>
     <script>
         // Health & Fitness specific initialization
         document.addEventListener('DOMContentLoaded', function() {
@@ -182,6 +182,7 @@
                 });
             } else {
                 console.error('❌ GatewayApp not available, falling back to manual initialization');
+                // Manual fallback if GatewayApp isn't loaded yet
                 setTimeout(() => {
                     if (typeof window.GatewayApp !== 'undefined') {
                         console.log('⏰ Delayed GatewayApp initialization');
@@ -197,6 +198,47 @@
                 }, 1000);
             }
         });
+        
+        // Emergency fallback rendering function
+        function renderFallbackData() {
+            console.log('🆘 Emergency fallback rendering');
+            const loadingState = document.getElementById('loading-state');
+            const platformsSection = document.getElementById('platforms-section');
+            const totalPlatforms = document.getElementById('total-platforms');
+            const totalCategories = document.getElementById('total-categories');
+            
+            if (loadingState) loadingState.style.display = 'none';
+            if (totalPlatforms) totalPlatforms.textContent = '43';
+            if (totalCategories) totalCategories.textContent = '4';
+            
+            if (platformsSection) {
+                const fallbackData = getHealthFallbackData();
+                const sectionsHTML = fallbackData.sections.map(section => `
+                    <section class="platform-section">
+                        <div class="section-header">
+                            <h2 class="section-title">${section.title}</h2>
+                            <p class="section-description">${section.description}</p>
+                            <div class="section-count">${section.platforms.length} platforms</div>
+                        </div>
+                        <div class="platforms-grid">
+                            ${section.platforms.map(platform => `
+                                <a href="${platform.url}" class="platform-card" target="_blank" rel="noopener noreferrer">
+                                    <div class="platform-logo">${platform.icon}</div>
+                                    <div class="platform-content">
+                                        <h3 class="platform-name">${platform.name}</h3>
+                                        <p class="platform-description">${platform.description}</p>
+                                    </div>
+                                </a>
+                            `).join('')}
+                        </div>
+                    </section>
+                `).join('');
+                
+                platformsSection.innerHTML = sectionsHTML;
+                platformsSection.style.display = 'block';
+                console.log('✅ Emergency fallback rendering complete');
+            }
+        }
         
         function getHealthFallbackData() {
             return {
