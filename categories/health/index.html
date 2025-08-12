@@ -211,21 +211,44 @@
     <script src="../../js/gateway-enhanced.js"></script>
     <script src="../../performance.config.js"></script>
     <script>
-        // Health & Fitness specific initialization
+        // Health & Fitness specific initialization - ENHANCED DEBUGGING
         document.addEventListener('DOMContentLoaded', function() {
             console.log('💪 Health & Fitness page DOMContentLoaded');
-            console.log('GatewayApp available:', typeof window.GatewayApp !== 'undefined');
+            console.log('🔍 DEBUG: Checking all elements...');
             
-            // Initialize the health category
+            // Check if all required DOM elements exist
+            const loadingState = document.getElementById('loading-state');
+            const platformsSection = document.getElementById('platforms-section');
+            const totalPlatforms = document.getElementById('total-platforms');
+            const totalCategories = document.getElementById('total-categories');
+            
+            console.log('🔍 DEBUG: DOM Elements Check:', {
+                loadingState: !!loadingState,
+                platformsSection: !!platformsSection,
+                totalPlatforms: !!totalPlatforms,
+                totalCategories: !!totalCategories
+            });
+            
+            console.log('🔍 DEBUG: GatewayApp available:', typeof window.GatewayApp !== 'undefined');
+            
+            // Always try fallback first to see if basic rendering works
+            console.log('🔧 TESTING: Trying immediate fallback rendering...');
+            renderFallbackData();
+            
+            // Also try GatewayApp if available
             if (typeof window.GatewayApp !== 'undefined') {
-                console.log('💪 Initializing Health & Fitness category...');
-                window.GatewayApp.init({
-                    category: 'health',
-                    dataPath: '../../data/health.json',
-                    fallbackData: getHealthFallbackData()
-                });
+                console.log('💪 TESTING: Also trying GatewayApp initialization...');
+                try {
+                    window.GatewayApp.init({
+                        category: 'health',
+                        dataPath: '../../data/health.json',
+                        fallbackData: getHealthFallbackData()
+                    });
+                } catch (error) {
+                    console.error('❌ GatewayApp.init failed:', error);
+                }
             } else {
-                console.error('❌ GatewayApp not available, falling back to manual initialization');
+                console.error('❌ GatewayApp not available');
                 // Manual fallback if GatewayApp isn't loaded yet
                 setTimeout(() => {
                     if (typeof window.GatewayApp !== 'undefined') {
@@ -236,10 +259,9 @@
                             fallbackData: getHealthFallbackData()
                         });
                     } else {
-                        console.log('🔄 Using immediate fallback rendering');
-                        renderFallbackData();
+                        console.log('🔄 Still no GatewayApp, fallback already ran');
                     }
-                }, 1000);
+                }, 2000);
             }
         });
         
