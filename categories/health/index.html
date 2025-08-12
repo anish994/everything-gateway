@@ -3,35 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
     <title>Health & Fitness - The Everything Gateway</title>
-    <meta name="description" content="Transform your wellness journey with the best fitness apps, nutrition tracking, mental health resources, and workout platforms all in one place.">
-    <meta name="keywords" content="fitness apps, health tracking, myfitnesspal, strava, headspace, peloton, nutrition, mental health, wellness, workout">
+    <meta name="description" content="Transform your wellness journey with the best fitness apps, nutrition tracking, mental health resources, and workout platforms. Your gateway to comprehensive health and wellness platforms.">
+    <meta name="keywords" content="fitness apps, health tracking, myfitnesspal, strava, headspace, peloton, nutrition, mental health, wellness, workout platforms">
     <meta name="author" content="The Everything Gateway">
     <meta name="robots" content="index, follow">
     
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Health & Fitness - The Everything Gateway">
-    <meta property="og:description" content="Your complete wellness gateway featuring fitness tracking, nutrition apps, mental health resources, and workout platforms.">
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://everything-gateway.com/categories/health/">
+    <meta property="og:url" content="https://everything-gateway.netlify.app/categories/health/">
+    <meta property="og:title" content="Health & Fitness - The Everything Gateway">
+    <meta property="og:description" content="Transform your wellness journey with the best fitness apps, nutrition tracking, and health platforms. Your ultimate wellness hub.">
+    <meta property="og:image" content="https://everything-gateway.netlify.app/assets/og-health.jpg">
     <meta property="og:site_name" content="The Everything Gateway">
     
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Health & Fitness - The Everything Gateway">
-    <meta name="twitter:description" content="Transform your wellness with the best health and fitness platforms">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://everything-gateway.netlify.app/categories/health/">
+    <meta property="twitter:title" content="Health & Fitness - The Everything Gateway">
+    <meta property="twitter:description" content="Transform your wellness journey with the best fitness apps and health platforms.">
+    <meta property="twitter:image" content="https://everything-gateway.netlify.app/assets/og-health.jpg">
     
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://everything-gateway.com/categories/health/">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     
-    <!-- Theme and Icons -->
-    <meta name="theme-color" content="#22c55e">
-    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
-    
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="../../css/design-system.css" as="style">
-    <link rel="preload" href="../../css/components.css" as="style">
-    <link rel="preload" href="../../data/health.json" as="fetch" crossorigin="anonymous">
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../css/design-system.css">
@@ -43,212 +44,142 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        "name": "Health & Fitness",
-        "description": "Comprehensive collection of fitness apps, nutrition tracking, mental health resources, and workout platforms",
-        "url": "https://everything-gateway.com/categories/health/",
+        "@type": "WebPage",
+        "name": "Health & Fitness - The Everything Gateway",
+        "description": "Transform your wellness journey with the best fitness apps, nutrition tracking, and health platforms",
+        "url": "https://everything-gateway.netlify.app/categories/health/",
         "isPartOf": {
             "@type": "WebSite",
             "name": "The Everything Gateway",
-            "url": "https://everything-gateway.com"
+            "url": "https://everything-gateway.netlify.app"
+        },
+        "about": {
+            "@type": "Thing",
+            "name": "Health and Fitness Platforms",
+            "description": "Curated collection of fitness apps, nutrition tracking, and wellness platforms"
         }
     }
     </script>
 </head>
-<body class="health-theme">
-    <!-- Skip to main content link -->
+<body>
+    <!-- Skip Links for Accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#platform-grid" class="skip-link">Skip to platforms</a>
     
-    <div class="page-container">
-        <!-- Header -->
-        <header class="page-header" role="banner">
-            <div class="header-content">
-                <nav class="breadcrumb" role="navigation" aria-label="Breadcrumb">
-                    <a href="../../" class="breadcrumb-link">🏠 Home</a>
-                    <span class="breadcrumb-separator" aria-hidden="true">›</span>
-                    <span class="breadcrumb-current" aria-current="page">Health & Fitness</span>
-                </nav>
-                
-                <div class="category-header">
-                    <div class="category-icon" aria-hidden="true">💪</div>
-                    <div class="category-info">
-                        <h1 class="category-title">Health & Fitness</h1>
-                        <p class="category-description">
-                            Transform your wellness journey with fitness apps, nutrition tracking, 
-                            mental health resources, and workout platforms
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <main id="main-content" class="main-content" role="main">
-            <!-- Category Hero Section -->
-            <section class="category-hero health-hero" role="banner">
-                <div class="hero-content">
-                    <div class="hero-icon" aria-hidden="true">💪</div>
-                    <h1 class="hero-title">Health & Fitness</h1>
-                    <p class="hero-description">
-                        Transform your wellness journey with fitness apps, nutrition tracking, mental health resources, 
-                        and workout platforms designed to help you achieve your health goals.
-                    </p>
-                    <div class="hero-stats" aria-label="Category statistics">
-                        <div class="stat">
-                            <span class="stat-number" id="total-platforms">0</span>
-                            <span class="stat-label">Platforms</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number" id="total-categories">0</span>
-                            <span class="stat-label">Categories</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Healthy</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Loading State -->
-            <div id="loading-state" class="loading-state" aria-live="polite">
-                <div class="loading-spinner" aria-hidden="true"></div>
-                <p class="loading-text">Loading health platforms...</p>
-            </div>
-
-            <!-- Error State -->
-            <div id="error-state" class="error-state" style="display: none;" role="alert">
-                <div class="error-content">
-                    <h2 class="error-title">Unable to Load Health Platforms</h2>
-                    <p class="error-message">We're having trouble loading the health platforms. Please try again.</p>
-                    <button class="retry-btn" onclick="window.location.reload()">
-                        <span class="retry-icon">🔄</span>
-                        Try Again
-                    </button>
-                </div>
-            </div>
-
-            <!-- Platforms Grid -->
-            <section id="platforms-section" class="platforms-section" style="display: none;">
-                <!-- Dynamic content will be inserted here -->
-            </section>
-        </main>
-
-        <!-- Footer -->
-        <footer class="site-footer" role="contentinfo">
-            <div class="footer-content">
-                <div class="footer-left">
-                    <p class="footer-text">
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <div class="header-content">
+            <div class="header-left">
+                <a href="../../" class="logo-link" aria-label="Return to The Everything Gateway homepage">
+                    <h1 class="site-title">
                         <span class="gateway-text">The Everything</span>
                         <span class="highlight">Gateway</span>
-                    </p>
-                    <p class="footer-tagline">Your portal to curated internet resources</p>
-                </div>
-                <div class="footer-right">
-                    <nav class="footer-nav" aria-label="Footer navigation">
-                        <a href="../../" class="footer-link">Home</a>
-                        <a href="../search-engines/" class="footer-link">Search Engines</a>
-                        <a href="../tools/" class="footer-link">Tools</a>
-                        <a href="../entertainment/" class="footer-link">Entertainment</a>
-                        <a href="../knowledge/" class="footer-link">Knowledge</a>
-                        <a href="../news/" class="footer-link">News</a>
-                        <a href="../social/" class="footer-link">Social</a>
-                    </nav>
+                    </h1>
+                </a>
+            </div>
+            <div class="header-right">
+                <button class="search-btn" aria-label="Open universal search" title="Search (Ctrl+K)">
+                    <span class="search-icon">🔍</span>
+                    <span class="search-text">Search</span>
+                    <span class="search-shortcut">Ctrl+K</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content" role="main">
+        <!-- Category Hero Section -->
+        <section class="category-hero health-hero" role="banner">
+            <div class="hero-content">
+                <div class="hero-icon" aria-hidden="true">💪</div>
+                <h1 class="hero-title">Health & Fitness</h1>
+                <p class="hero-description">
+                    Transform your wellness journey with the best fitness apps, nutrition tracking, mental health resources,
+                    and workout platforms designed to help you achieve your health goals.
+                </p>
+                <div class="hero-stats" aria-label="Category statistics">
+                    <div class="stat">
+                        <span class="stat-number" id="total-platforms">0</span>
+                        <span class="stat-label">Platforms</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="total-categories">0</span>
+                        <span class="stat-label">Categories</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Healthy</span>
+                    </div>
                 </div>
             </div>
-        </footer>
-    </div>
+        </section>
 
-    <!-- Fallback Content (No JavaScript) -->
-    <noscript>
-        <div class="fallback-content">
-                    <section class="platforms-section">
-                        <h2>📱 Fitness Tracking</h2>
-                        <div class="platforms-grid">
-                            <a href="https://myfitnesspal.com" class="platform-card" target="_blank" rel="noopener">
-                                <div class="platform-icon">📱</div>
-                                <div class="platform-info">
-                                    <h3>MyFitnessPal</h3>
-                                    <p>Leading calorie counting and nutrition tracking app</p>
-                                </div>
-                            </a>
-                            <a href="https://strava.com" class="platform-card" target="_blank" rel="noopener">
-                                <div class="platform-icon">🏃</div>
-                                <div class="platform-info">
-                                    <h3>Strava</h3>
-                                    <p>Social fitness network for runners and cyclists</p>
-                                </div>
-                            </a>
-                        </div>
-                    </section>
-
-                    <section class="platforms-section">
-                        <h2>🧘 Mental Health</h2>
-                        <div class="platforms-grid">
-                            <a href="https://headspace.com" class="platform-card" target="_blank" rel="noopener">
-                                <div class="platform-icon">🧘</div>
-                                <div class="platform-info">
-                                    <h3>Headspace</h3>
-                                    <p>Meditation and mindfulness app with guided sessions</p>
-                                </div>
-                            </a>
-                            <a href="https://calm.com" class="platform-card" target="_blank" rel="noopener">
-                                <div class="platform-icon">😌</div>
-                                <div class="platform-info">
-                                    <h3>Calm</h3>
-                                    <p>Meditation, sleep stories, and relaxation app</p>
-                                </div>
-                            </a>
-                        </div>
-                    </section>
-
-                    <div class="category-note">
-                        <p><strong>Note:</strong> This is a simplified view. Enable JavaScript for the full interactive experience.</p>
-                    </div>
+        <!-- Loading State -->
+        <div id="loading-state" class="loading-state" aria-live="polite">
+            <div class="loading-spinner" aria-hidden="true"></div>
+            <p class="loading-text">Loading health platforms...</p>
         </div>
-    </noscript>
+
+        <!-- Error State -->
+        <div id="error-state" class="error-state" style="display: none;" role="alert">
+            <div class="error-content">
+                <h2 class="error-title">Unable to Load Health Platforms</h2>
+                <p class="error-message">We're having trouble loading the health platforms. Please try again.</p>
+                <button class="retry-btn" onclick="window.location.reload()">
+                    <span class="retry-icon">🔄</span>
+                    Try Again
+                </button>
+            </div>
+        </div>
+
+        <!-- Platforms Grid -->
+        <section id="platforms-section" class="platforms-section" style="display: none;">
+            <!-- Dynamic content will be inserted here -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-left">
+                <p class="footer-text">
+                    <span class="gateway-text">The Everything</span>
+                    <span class="highlight">Gateway</span>
+                </p>
+                <p class="footer-tagline">Your portal to curated internet resources</p>
+            </div>
+            <div class="footer-right">
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <a href="../../" class="footer-link">Home</a>
+                    <a href="../search-engines/" class="footer-link">Search Engines</a>
+                    <a href="../tools/" class="footer-link">Tools</a>
+                    <a href="../entertainment/" class="footer-link">Entertainment</a>
+                    <a href="../knowledge/" class="footer-link">Knowledge</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="../../js/gateway-enhanced.js"></script>
     <script src="../../performance.config.js"></script>
     <script>
-        // Health & Fitness specific initialization - ENHANCED DEBUGGING
+        // Health & Fitness specific initialization
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('💪 Health & Fitness page DOMContentLoaded');
-            console.log('🔍 DEBUG: Checking all elements...');
+            console.log('🚀 Health page DOMContentLoaded');
+            console.log('GatewayApp available:', typeof window.GatewayApp !== 'undefined');
             
-            // Check if all required DOM elements exist
-            const loadingState = document.getElementById('loading-state');
-            const platformsSection = document.getElementById('platforms-section');
-            const totalPlatforms = document.getElementById('total-platforms');
-            const totalCategories = document.getElementById('total-categories');
-            
-            console.log('🔍 DEBUG: DOM Elements Check:', {
-                loadingState: !!loadingState,
-                platformsSection: !!platformsSection,
-                totalPlatforms: !!totalPlatforms,
-                totalCategories: !!totalCategories
-            });
-            
-            console.log('🔍 DEBUG: GatewayApp available:', typeof window.GatewayApp !== 'undefined');
-            
-            // Always try fallback first to see if basic rendering works
-            console.log('🔧 TESTING: Trying immediate fallback rendering...');
-            renderFallbackData();
-            
-            // Also try GatewayApp if available
+            // Initialize the health category
             if (typeof window.GatewayApp !== 'undefined') {
-                console.log('💪 TESTING: Also trying GatewayApp initialization...');
-                try {
-                    window.GatewayApp.init({
-                        category: 'health',
-                        dataPath: '../../data/health.json',
-                        fallbackData: getHealthFallbackData()
-                    });
-                } catch (error) {
-                    console.error('❌ GatewayApp.init failed:', error);
-                }
+                console.log('💪 Initializing Health category...');
+                window.GatewayApp.init({
+                    category: 'health',
+                    dataPath: '../../data/health.json',
+                    fallbackData: getHealthFallbackData()
+                });
             } else {
-                console.error('❌ GatewayApp not available');
+                console.error('❌ GatewayApp not available, falling back to manual initialization');
                 // Manual fallback if GatewayApp isn't loaded yet
                 setTimeout(() => {
                     if (typeof window.GatewayApp !== 'undefined') {
@@ -259,9 +190,10 @@
                             fallbackData: getHealthFallbackData()
                         });
                     } else {
-                        console.log('🔄 Still no GatewayApp, fallback already ran');
+                        console.log('🔄 Using immediate fallback rendering');
+                        renderFallbackData();
                     }
-                }, 2000);
+                }, 1000);
             }
         });
         
@@ -289,7 +221,11 @@
                         <div class="platforms-grid">
                             ${section.platforms.map(platform => `
                                 <a href="${platform.url}" class="platform-card" target="_blank" rel="noopener noreferrer">
-                                    <div class="platform-logo">${platform.icon}</div>
+                                    <div class="platform-logo">
+                                        <img src="https://www.google.com/s2/favicons?domain=${this.extractDomain ? this.extractDomain(platform.url) : new URL(platform.url).hostname}&sz=32" 
+                                             alt="${platform.name}" 
+                                             onerror="this.parentElement.innerHTML='${platform.icon || '💪'}'"/>
+                                    </div>
                                     <div class="platform-content">
                                         <h3 class="platform-name">${platform.name}</h3>
                                         <p class="platform-description">${platform.description}</p>
@@ -306,10 +242,11 @@
             }
         }
         
+        // Comprehensive fallback data for Health & Fitness
         function getHealthFallbackData() {
             return {
                 "category": "Health & Fitness",
-                "description": "Transform your wellness journey with fitness apps, nutrition tracking, mental health resources, and workout platforms",
+                "description": "Transform your wellness journey with the best fitness apps, nutrition tracking, mental health resources, and workout platforms",
                 "sections": [
                     {
                         "title": "Fitness Tracking & Apps",
@@ -318,7 +255,7 @@
                             {
                                 "name": "MyFitnessPal",
                                 "url": "https://myfitnesspal.com",
-                                "description": "Leading calorie counting and nutrition tracking app with massive food database",
+                                "description": "Leading calorie counting and nutrition tracking app with comprehensive food database",
                                 "icon": "📱"
                             },
                             {
@@ -326,6 +263,18 @@
                                 "url": "https://strava.com",
                                 "description": "Social fitness network for runners and cyclists with performance tracking",
                                 "icon": "🏃"
+                            },
+                            {
+                                "name": "Fitbit",
+                                "url": "https://fitbit.com",
+                                "description": "Comprehensive health and fitness tracking with wearable devices",
+                                "icon": "⏱️"
+                            },
+                            {
+                                "name": "Nike Training Club",
+                                "url": "https://nike.com/ntc-app",
+                                "description": "Free workouts and training programs from Nike",
+                                "icon": "👟"
                             }
                         ]
                     },
@@ -336,14 +285,20 @@
                             {
                                 "name": "Headspace",
                                 "url": "https://headspace.com",
-                                "description": "Meditation and mindfulness app with guided sessions",
+                                "description": "Meditation and mindfulness app with guided sessions for stress relief",
                                 "icon": "🧘"
                             },
                             {
                                 "name": "Calm",
                                 "url": "https://calm.com",
-                                "description": "Meditation, sleep stories, and relaxation app",
+                                "description": "Meditation, sleep stories, and relaxation app for better mental health",
                                 "icon": "😌"
+                            },
+                            {
+                                "name": "BetterHelp",
+                                "url": "https://betterhelp.com",
+                                "description": "Online therapy and counseling platform with licensed therapists",
+                                "icon": "💬"
                             }
                         ]
                     }
