@@ -1,0 +1,323 @@
+{
+    "category": "News & Trends",
+    "description": "Stay informed with trusted news sources and trend tracking platforms",
+    "sections": [
+        {
+            "title": "Global News",
+            "description": "Major international news sources and newspapers",
+            "platforms": [
+                {
+                    "name": "BBC News",
+                    "url": "https://www.bbc.com/news",
+                    "description": "Comprehensive global news coverage from the British Broadcasting Corporation",
+                    "icon": "🌍"
+                },
+                {
+                    "name": "Reuters",
+                    "url": "https://www.reuters.com",
+                    "description": "International news agency providing business and world news",
+                    "icon": "📡"
+                },
+                {
+                    "name": "Associated Press",
+                    "url": "https://apnews.com",
+                    "description": "Independent global news organization with comprehensive coverage",
+                    "icon": "📰"
+                },
+                {
+                    "name": "The Guardian",
+                    "url": "https://www.theguardian.com",
+                    "description": "British daily newspaper with international perspective",
+                    "icon": "🗞️"
+                },
+                {
+                    "name": "CNN",
+                    "url": "https://www.cnn.com",
+                    "description": "Cable news network with breaking news and analysis",
+                    "icon": "📺"
+                },
+                {
+                    "name": "Al Jazeera",
+                    "url": "https://www.aljazeera.com",
+                    "description": "Qatar-based news network with Middle Eastern perspective",
+                    "icon": "🌍"
+                },
+                {
+                    "name": "NPR",
+                    "url": "https://www.npr.org",
+                    "description": "American public radio with in-depth news coverage",
+                    "icon": "📻"
+                },
+                {
+                    "name": "The New York Times",
+                    "url": "https://www.nytimes.com",
+                    "description": "American newspaper with comprehensive national and international news",
+                    "icon": "📄"
+                },
+                {
+                    "name": "Washington Post",
+                    "url": "https://www.washingtonpost.com",
+                    "description": "American daily newspaper focusing on politics and government",
+                    "icon": "🏛️"
+                },
+                {
+                    "name": "Financial Times",
+                    "url": "https://www.ft.com",
+                    "description": "British business and economic news publication",
+                    "icon": "💼"
+                },
+                {
+                    "name": "Wall Street Journal",
+                    "url": "https://www.wsj.com",
+                    "description": "American business-focused daily newspaper",
+                    "icon": "📊"
+                },
+                {
+                    "name": "Bloomberg",
+                    "url": "https://www.bloomberg.com",
+                    "description": "Business and financial news, data, and analysis",
+                    "icon": "💹"
+                }
+            ]
+        },
+        {
+            "title": "Technology News",
+            "description": "Latest tech trends, startups, and industry analysis",
+            "platforms": [
+                {
+                    "name": "TechCrunch",
+                    "url": "https://techcrunch.com",
+                    "description": "Leading technology media platform covering startups and innovation",
+                    "icon": "🚀"
+                },
+                {
+                    "name": "Ars Technica",
+                    "url": "https://arstechnica.com",
+                    "description": "Technology news and information for IT professionals",
+                    "icon": "💻"
+                },
+                {
+                    "name": "The Verge",
+                    "url": "https://www.theverge.com",
+                    "description": "Technology, science, art, and culture intersection coverage",
+                    "icon": "📱"
+                },
+                {
+                    "name": "Wired",
+                    "url": "https://www.wired.com",
+                    "description": "Technology and culture magazine with future-focused perspective",
+                    "icon": "🔮"
+                },
+                {
+                    "name": "Hacker News",
+                    "url": "https://news.ycombinator.com",
+                    "description": "Social news website focusing on computer science and entrepreneurship",
+                    "icon": "👨‍💻"
+                },
+                {
+                    "name": "VentureBeat",
+                    "url": "https://venturebeat.com",
+                    "description": "Technology news with focus on innovation and business transformation",
+                    "icon": "⚡"
+                },
+                {
+                    "name": "TechRadar",
+                    "url": "https://www.techradar.com",
+                    "description": "Consumer technology news, reviews, and buying guides",
+                    "icon": "📡"
+                },
+                {
+                    "name": "ZDNet",
+                    "url": "https://www.zdnet.com",
+                    "description": "Business technology news and analysis for IT decision-makers",
+                    "icon": "🏢"
+                },
+                {
+                    "name": "Engadget",
+                    "url": "https://www.engadget.com",
+                    "description": "Consumer electronics and gadget news platform",
+                    "icon": "🎮"
+                },
+                {
+                    "name": "9to5Mac",
+                    "url": "https://9to5mac.com",
+                    "description": "Apple news, rumors, and analysis platform",
+                    "icon": "🍎"
+                },
+                {
+                    "name": "Android Police",
+                    "url": "https://www.androidpolice.com",
+                    "description": "Android news, reviews, apps, and how-to guides",
+                    "icon": "🤖"
+                },
+                {
+                    "name": "The Information",
+                    "url": "https://www.theinformation.com",
+                    "description": "Premium technology news and analysis for industry professionals",
+                    "icon": "🔍"
+                }
+            ]
+        },
+        {
+            "title": "Specialized & Niche",
+            "description": "Industry-specific news and specialized publications",
+            "platforms": [
+                {
+                    "name": "MIT Technology Review",
+                    "url": "https://www.technologyreview.com",
+                    "description": "Emerging technology analysis from MIT's independent media company",
+                    "icon": "🔬"
+                },
+                {
+                    "name": "Harvard Business Review",
+                    "url": "https://hbr.org",
+                    "description": "Management ideas and insights for business leaders",
+                    "icon": "📊"
+                },
+                {
+                    "name": "Scientific American",
+                    "url": "https://www.scientificamerican.com",
+                    "description": "Science news and discoveries for general audience",
+                    "icon": "🧬"
+                },
+                {
+                    "name": "The Economist",
+                    "url": "https://www.economist.com",
+                    "description": "International affairs, politics, business, and economics coverage",
+                    "icon": "📈"
+                },
+                {
+                    "name": "Politico",
+                    "url": "https://www.politico.com",
+                    "description": "Political news and analysis covering government and policy",
+                    "icon": "🏛️"
+                },
+                {
+                    "name": "Foreign Affairs",
+                    "url": "https://www.foreignaffairs.com",
+                    "description": "International relations and foreign policy analysis",
+                    "icon": "🌐"
+                },
+                {
+                    "name": "The Atlantic",
+                    "url": "https://www.theatlantic.com",
+                    "description": "American magazine covering politics, foreign affairs, and culture",
+                    "icon": "🗽"
+                },
+                {
+                    "name": "Nature",
+                    "url": "https://www.nature.com",
+                    "description": "International journal of science and research",
+                    "icon": "🔬"
+                },
+                {
+                    "name": "IEEE Spectrum",
+                    "url": "https://spectrum.ieee.org",
+                    "description": "Engineering and technology magazine from IEEE",
+                    "icon": "⚙️"
+                },
+                {
+                    "name": "Variety",
+                    "url": "https://variety.com",
+                    "description": "Entertainment industry news and analysis",
+                    "icon": "🎬"
+                },
+                {
+                    "name": "Forbes",
+                    "url": "https://www.forbes.com",
+                    "description": "Business magazine covering finance, industry, investing, and marketing",
+                    "icon": "💰"
+                },
+                {
+                    "name": "Fast Company",
+                    "url": "https://www.fastcompany.com",
+                    "description": "Business media focusing on innovation in technology, leadership, and design",
+                    "icon": "⚡"
+                }
+            ]
+        },
+        {
+            "title": "Newsletters & Blogs",
+            "description": "Independent writers, newsletters, and blog platforms",
+            "platforms": [
+                {
+                    "name": "Substack",
+                    "url": "https://substack.com",
+                    "description": "Newsletter platform with independent writers and journalists",
+                    "icon": "✉️"
+                },
+                {
+                    "name": "Medium",
+                    "url": "https://medium.com",
+                    "description": "Publishing platform for diverse perspectives and stories",
+                    "icon": "📝"
+                },
+                {
+                    "name": "Morning Brew",
+                    "url": "https://www.morningbrew.com",
+                    "description": "Business news newsletter with engaging format",
+                    "icon": "☕"
+                },
+                {
+                    "name": "The Hustle",
+                    "url": "https://thehustle.co",
+                    "description": "Daily newsletter covering business and tech news",
+                    "icon": "💪"
+                },
+                {
+                    "name": "Axios",
+                    "url": "https://www.axios.com",
+                    "description": "News and information platform with smart brevity",
+                    "icon": "⚡"
+                },
+                {
+                    "name": "Stratechery",
+                    "url": "https://stratechery.com",
+                    "description": "Technology strategy analysis by Ben Thompson",
+                    "icon": "🎯"
+                },
+                {
+                    "name": "Punchbowl News",
+                    "url": "https://punchbowl.news",
+                    "description": "Inside Washington political news and analysis",
+                    "icon": "🥊"
+                },
+                {
+                    "name": "Platformer",
+                    "url": "https://www.platformer.news",
+                    "description": "Newsletter about big tech and online platforms by Casey Newton",
+                    "icon": "🌐"
+                },
+                {
+                    "name": "Benedict Evans",
+                    "url": "https://www.ben-evans.com",
+                    "description": "Technology trends and venture capital insights",
+                    "icon": "📊"
+                },
+                {
+                    "name": "All Things Distributed",
+                    "url": "https://www.allthingsdistributed.com",
+                    "description": "Werner Vogels' blog on distributed computing and cloud architecture",
+                    "icon": "☁️"
+                },
+                {
+                    "name": "Signal v. Noise",
+                    "url": "https://m.signalvnoise.com",
+                    "description": "Business and design insights from the makers of Basecamp",
+                    "icon": "📡"
+                },
+                {
+                    "name": "First Round Review",
+                    "url": "https://review.firstround.com",
+                    "description": "Startup and venture capital insights from First Round Capital",
+                    "icon": "🎯"
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "totalPlatforms": 48,
+        "totalSections": 4,
+        "lastUpdated": "2025-01-09"
+    }
+}

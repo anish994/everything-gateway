@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>News & Trends - The Everything Gateway</title>
+    <meta name="description" content="Discover the best news sources, tech blogs, trend tracking platforms, and industry publications. Stay informed with curated global news, technology updates, and emerging trends across all topics.">
+    <meta name="keywords" content="news, trends, tech news, global news, journalism, media, blogs, newsletters, industry news, breaking news, analysis">
+    <meta name="author" content="The Everything Gateway">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://everything-gateway.netlify.app/categories/news/">
+    <meta property="og:title" content="News & Trends - The Everything Gateway">
+    <meta property="og:description" content="Discover the best news sources, tech blogs, and trend tracking platforms. Stay informed with curated global and technology news from trusted sources.">
+    <meta property="og:image" content="https://everything-gateway.netlify.app/assets/og-news.jpg">
+    <meta property="og:site_name" content="The Everything Gateway">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://everything-gateway.netlify.app/categories/news/">
+    <meta property="twitter:title" content="News & Trends - The Everything Gateway">
+    <meta property="twitter:description" content="Discover the best news sources, tech blogs, and trend tracking platforms. Stay informed with curated global and technology news.">
+    <meta property="twitter:image" content="https://everything-gateway.netlify.app/assets/og-news.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../css/design-system.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/shared.css">
+    <link rel="stylesheet" href="../../css/search.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "News & Trends - The Everything Gateway",
+        "description": "Discover the best news sources, tech blogs, and trend tracking platforms",
+        "url": "https://everything-gateway.netlify.app/categories/news/",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "The Everything Gateway",
+            "url": "https://everything-gateway.netlify.app"
+        },
+        "about": {
+            "@type": "Thing",
+            "name": "News and Media Platforms",
+            "description": "Curated collection of news sources and trend tracking platforms"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip Links for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#platform-grid" class="skip-link">Skip to platforms</a>
+    
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <div class="header-content">
+            <div class="header-left">
+                <a href="../../" class="logo-link" aria-label="Return to The Everything Gateway homepage">
+                    <h1 class="site-title">
+                        <span class="gateway-text">The Everything</span>
+                        <span class="highlight">Gateway</span>
+                    </h1>
+                </a>
+            </div>
+            <div class="header-right">
+                <button class="search-btn" aria-label="Open universal search" title="Search (Ctrl+K)">
+                    <span class="search-icon">🔍</span>
+                    <span class="search-text">Search</span>
+                    <span class="search-shortcut">Ctrl+K</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content" role="main">
+        <!-- Category Hero Section -->
+        <section class="category-hero news-hero" role="banner">
+            <div class="hero-content">
+                <div class="hero-icon" aria-hidden="true">📰</div>
+                <h1 class="hero-title">News & Trends</h1>
+                <p class="hero-description">
+                    Stay informed with the world's best news sources, tech blogs, and trend tracking platforms. 
+                    From breaking news to industry analysis, discover trusted journalism and emerging trends.
+                </p>
+                <div class="hero-stats" aria-label="Category statistics">
+                    <div class="stat">
+                        <span class="stat-number" id="total-platforms">0</span>
+                        <span class="stat-label">News Sources</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="total-categories">0</span>
+                        <span class="stat-label">Categories</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Free Access</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading State -->
+        <div id="loading-state" class="loading-state" aria-live="polite">
+            <div class="loading-spinner" aria-hidden="true"></div>
+            <p class="loading-text">Loading news sources...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="error-state" class="error-state" style="display: none;" role="alert">
+            <div class="error-content">
+                <h2 class="error-title">Unable to Load News Sources</h2>
+                <p class="error-message">We're having trouble loading the news platforms. Please try again.</p>
+                <button class="retry-btn" onclick="window.location.reload()">
+                    <span class="retry-icon">🔄</span>
+                    Try Again
+                </button>
+            </div>
+        </div>
+
+        <!-- Platforms Grid -->
+        <section id="platforms-section" class="platforms-section" style="display: none;">
+            <!-- Dynamic content will be inserted here -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-left">
+                <p class="footer-text">
+                    <span class="gateway-text">The Everything</span>
+                    <span class="highlight">Gateway</span>
+                </p>
+                <p class="footer-tagline">Your portal to curated internet resources</p>
+            </div>
+            <div class="footer-right">
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <a href="../../" class="footer-link">Home</a>
+                    <a href="../search-engines/" class="footer-link">Search Engines</a>
+                    <a href="../tools/" class="footer-link">Tools</a>
+                    <a href="../entertainment/" class="footer-link">Entertainment</a>
+                    <a href="../knowledge/" class="footer-link">Knowledge</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../js/gateway-enhanced.js"></script>
+    <script src="../../performance.config.js"></script>
+    <script>
+        // News & Trends specific initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize the news category
+            if (typeof window.GatewayApp !== 'undefined') {
+                window.GatewayApp.init({
+                    category: 'news',
+                    dataPath: '../../data/news.json',
+                    fallbackData: getNewsFallbackData()
+                });
+            }
+        });
+
+        // Comprehensive fallback data for News & Trends
+        function getNewsFallbackData() {
+            return {
+                "category": "News & Trends",
+                "description": "Stay informed with trusted news sources and trend tracking platforms",
+                "sections": [
+                    {
+                        "title": "Global News",
+                        "description": "Major international news sources and newspapers",
+                        "platforms": [
+                            {
+                                "name": "BBC News",
+                                "url": "https://www.bbc.com/news",
+                                "description": "Comprehensive global news coverage from the British Broadcasting Corporation",
+                                "icon": "🌍"
+                            },
+                            {
+                                "name": "Reuters",
+                                "url": "https://www.reuters.com",
+                                "description": "International news agency providing business and world news",
+                                "icon": "📡"
+                            },
+                            {
+                                "name": "Associated Press",
+                                "url": "https://apnews.com",
+                                "description": "Independent global news organization with comprehensive coverage",
+                                "icon": "📰"
+                            },
+                            {
+                                "name": "The Guardian",
+                                "url": "https://www.theguardian.com",
+                                "description": "British daily newspaper with international perspective",
+                                "icon": "🗞️"
+                            },
+                            {
+                                "name": "CNN",
+                                "url": "https://www.cnn.com",
+                                "description": "Cable news network with breaking news and analysis",
+                                "icon": "📺"
+                            },
+                            {
+                                "name": "Al Jazeera",
+                                "url": "https://www.aljazeera.com",
+                                "description": "Qatar-based news network with Middle Eastern perspective",
+                                "icon": "🌍"
+                            },
+                            {
+                                "name": "NPR",
+                                "url": "https://www.npr.org",
+                                "description": "American public radio with in-depth news coverage",
+                                "icon": "📻"
+                            },
+                            {
+                                "name": "The New York Times",
+                                "url": "https://www.nytimes.com",
+                                "description": "American newspaper with comprehensive national and international news",
+                                "icon": "📄"
+                            },
+                            {
+                                "name": "Washington Post",
+                                "url": "https://www.washingtonpost.com",
+                                "description": "American daily newspaper focusing on politics and government",
+                                "icon": "🏛️"
+                            },
+                            {
+                                "name": "Financial Times",
+                                "url": "https://www.ft.com",
+                                "description": "British business and economic news publication",
+                                "icon": "💼"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Technology News",
+                        "description": "Latest tech trends, startups, and industry analysis",
+                        "platforms": [
+                            {
+                                "name": "TechCrunch",
+                                "url": "https://techcrunch.com",
+                                "description": "Leading technology media platform covering startups and innovation",
+                                "icon": "🚀"
+                            },
+                            {
+                                "name": "Ars Technica",
+                                "url": "https://arstechnica.com",
+                                "description": "Technology news and information for IT professionals",
+                                "icon": "💻"
+                            },
+                            {
+                                "name": "The Verge",
+                                "url": "https://www.theverge.com",
+                                "description": "Technology, science, art, and culture intersection coverage",
+                                "icon": "📱"
+                            },
+                            {
+                                "name": "Wired",
+                                "url": "https://www.wired.com",
+                                "description": "Technology and culture magazine with future-focused perspective",
+                                "icon": "🔮"
+                            },
+                            {
+                                "name": "Hacker News",
+                                "url": "https://news.ycombinator.com",
+                                "description": "Social news website focusing on computer science and entrepreneurship",
+                                "icon": "👨‍💻"
+                            },
+                            {
+                                "name": "VentureBeat",
+                                "url": "https://venturebeat.com",
+                                "description": "Technology news with focus on innovation and business transformation",
+                                "icon": "⚡"
+                            },
+                            {
+                                "name": "TechRadar",
+                                "url": "https://www.techradar.com",
+                                "description": "Consumer technology news, reviews, and buying guides",
+                                "icon": "📡"
+                            },
+                            {
+                                "name": "ZDNet",
+                                "url": "https://www.zdnet.com",
+                                "description": "Business technology news and analysis for IT decision-makers",
+                                "icon": "🏢"
+                            },
+                            {
+                                "name": "Engadget",
+                                "url": "https://www.engadget.com",
+                                "description": "Consumer electronics and gadget news platform",
+                                "icon": "🎮"
+                            },
+                            {
+                                "name": "9to5Mac",
+                                "url": "https://9to5mac.com",
+                                "description": "Apple news, rumors, and analysis platform",
+                                "icon": "🍎"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Specialized & Niche",
+                        "description": "Industry-specific news and specialized publications",
+                        "platforms": [
+                            {
+                                "name": "MIT Technology Review",
+                                "url": "https://www.technologyreview.com",
+                                "description": "Emerging technology analysis from MIT's independent media company",
+                                "icon": "🔬"
+                            },
+                            {
+                                "name": "Harvard Business Review",
+                                "url": "https://hbr.org",
+                                "description": "Management ideas and insights for business leaders",
+                                "icon": "📊"
+                            },
+                            {
+                                "name": "Scientific American",
+                                "url": "https://www.scientificamerican.com",
+                                "description": "Science news and discoveries for general audience",
+                                "icon": "🧬"
+                            },
+                            {
+                                "name": "The Economist",
+                                "url": "https://www.economist.com",
+                                "description": "International affairs, politics, business, and economics coverage",
+                                "icon": "📈"
+                            },
+                            {
+                                "name": "Politico",
+                                "url": "https://www.politico.com",
+                                "description": "Political news and analysis covering government and policy",
+                                "icon": "🏛️"
+                            },
+                            {
+                                "name": "Foreign Affairs",
+                                "url": "https://www.foreignaffairs.com",
+                                "description": "International relations and foreign policy analysis",
+                                "icon": "🌐"
+                            },
+                            {
+                                "name": "The Atlantic",
+                                "url": "https://www.theatlantic.com",
+                                "description": "American magazine covering politics, foreign affairs, and culture",
+                                "icon": "🗽"
+                            },
+                            {
+                                "name": "Nature",
+                                "url": "https://www.nature.com",
+                                "description": "International journal of science and research",
+                                "icon": "🔬"
+                            },
+                            {
+                                "name": "IEEE Spectrum",
+                                "url": "https://spectrum.ieee.org",
+                                "description": "Engineering and technology magazine from IEEE",
+                                "icon": "⚙️"
+                            },
+                            {
+                                "name": "Variety",
+                                "url": "https://variety.com",
+                                "description": "Entertainment industry news and analysis",
+                                "icon": "🎬"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Newsletters & Blogs",
+                        "description": "Independent writers, newsletters, and blog platforms",
+                        "platforms": [
+                            {
+                                "name": "Substack",
+                                "url": "https://substack.com",
+                                "description": "Newsletter platform with independent writers and journalists",
+                                "icon": "✉️"
+                            },
+                            {
+                                "name": "Medium",
+                                "url": "https://medium.com",
+                                "description": "Publishing platform for diverse perspectives and stories",
+                                "icon": "📝"
+                            },
+                            {
+                                "name": "Morning Brew",
+                                "url": "https://www.morningbrew.com",
+                                "description": "Business news newsletter with engaging format",
+                                "icon": "☕"
+                            },
+                            {
+                                "name": "The Hustle",
+                                "url": "https://thehustle.co",
+                                "description": "Daily newsletter covering business and tech news",
+                                "icon": "💪"
+                            },
+                            {
+                                "name": "Axios",
+                                "url": "https://www.axios.com",
+                                "description": "News and information platform with smart brevity",
+                                "icon": "⚡"
+                            },
+                            {
+                                "name": "Stratechery",
+                                "url": "https://stratechery.com",
+                                "description": "Technology strategy analysis by Ben Thompson",
+                                "icon": "🎯"
+                            },
+                            {
+                                "name": "Punchbowl News",
+                                "url": "https://punchbowl.news",
+                                "description": "Inside Washington political news and analysis",
+                                "icon": "🥊"
+                            },
+                            {
+                                "name": "Casey Newton's Platformer",
+                                "url": "https://www.platformer.news",
+                                "description": "Newsletter about big tech and online platforms",
+                                "icon": "🌐"
+                            },
+                            {
+                                "name": "Benedict Evans",
+                                "url": "https://www.ben-evans.com",
+                                "description": "Technology trends and venture capital insights",
+                                "icon": "📊"
+                            },
+                            {
+                                "name": "All Things Distributed",
+                                "url": "https://www.allthingsdistributed.com",
+                                "description": "Werner Vogels' blog on distributed computing",
+                                "icon": "☁️"
+                            }
+                        ]
+                    }
+                ],
+                "metadata": {
+                    "totalPlatforms": 40,
+                    "totalSections": 4,
+                    "lastUpdated": "2025-01-09"
+                }
+            };
+        }
+    </script>
+</body>
+</html>
