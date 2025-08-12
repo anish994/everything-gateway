@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Social Networks - The Everything Gateway</title>
+    <meta name="description" content="Discover the best social media platforms, community forums, professional networks, and communication tools. Connect, share, and engage with communities worldwide.">
+    <meta name="keywords" content="social media, social networks, forums, communities, professional networks, communication, chat, messaging, platforms, twitter, linkedin, discord, reddit">
+    <meta name="author" content="The Everything Gateway">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://everything-gateway.netlify.app/categories/social/">
+    <meta property="og:title" content="Social Networks - The Everything Gateway">
+    <meta property="og:description" content="Discover the best social media platforms, community forums, and professional networks. Connect and engage with communities worldwide.">
+    <meta property="og:image" content="https://everything-gateway.netlify.app/assets/og-social.jpg">
+    <meta property="og:site_name" content="The Everything Gateway">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://everything-gateway.netlify.app/categories/social/">
+    <meta property="twitter:title" content="Social Networks - The Everything Gateway">
+    <meta property="twitter:description" content="Discover the best social media platforms, community forums, and professional networks worldwide.">
+    <meta property="twitter:image" content="https://everything-gateway.netlify.app/assets/og-social.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../css/design-system.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/shared.css">
+    <link rel="stylesheet" href="../../css/search.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Social Networks - The Everything Gateway",
+        "description": "Discover the best social media platforms, community forums, and professional networks",
+        "url": "https://everything-gateway.netlify.app/categories/social/",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "The Everything Gateway",
+            "url": "https://everything-gateway.netlify.app"
+        },
+        "about": {
+            "@type": "Thing",
+            "name": "Social Media and Networking Platforms",
+            "description": "Curated collection of social networks, forums, and communication platforms"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip Links for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#platform-grid" class="skip-link">Skip to platforms</a>
+    
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <div class="header-content">
+            <div class="header-left">
+                <a href="../../" class="logo-link" aria-label="Return to The Everything Gateway homepage">
+                    <h1 class="site-title">
+                        <span class="gateway-text">The Everything</span>
+                        <span class="highlight">Gateway</span>
+                    </h1>
+                </a>
+            </div>
+            <div class="header-right">
+                <button class="search-btn" aria-label="Open universal search" title="Search (Ctrl+K)">
+                    <span class="search-icon">🔍</span>
+                    <span class="search-text">Search</span>
+                    <span class="search-shortcut">Ctrl+K</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content" role="main">
+        <!-- Category Hero Section -->
+        <section class="category-hero social-hero" role="banner">
+            <div class="hero-content">
+                <div class="hero-icon" aria-hidden="true">🌐</div>
+                <h1 class="hero-title">Social Networks</h1>
+                <p class="hero-description">
+                    Connect, share, and engage with communities worldwide. Discover social media platforms, 
+                    professional networks, forums, and communication tools that bring people together.
+                </p>
+                <div class="hero-stats" aria-label="Category statistics">
+                    <div class="stat">
+                        <span class="stat-number" id="total-platforms">0</span>
+                        <span class="stat-label">Platforms</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="total-categories">0</span>
+                        <span class="stat-label">Categories</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Connected</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading State -->
+        <div id="loading-state" class="loading-state" aria-live="polite">
+            <div class="loading-spinner" aria-hidden="true"></div>
+            <p class="loading-text">Loading social platforms...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="error-state" class="error-state" style="display: none;" role="alert">
+            <div class="error-content">
+                <h2 class="error-title">Unable to Load Social Platforms</h2>
+                <p class="error-message">We're having trouble loading the social platforms. Please try again.</p>
+                <button class="retry-btn" onclick="window.location.reload()">
+                    <span class="retry-icon">🔄</span>
+                    Try Again
+                </button>
+            </div>
+        </div>
+
+        <!-- Platforms Grid -->
+        <section id="platforms-section" class="platforms-section" style="display: none;">
+            <!-- Dynamic content will be inserted here -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-left">
+                <p class="footer-text">
+                    <span class="gateway-text">The Everything</span>
+                    <span class="highlight">Gateway</span>
+                </p>
+                <p class="footer-tagline">Your portal to curated internet resources</p>
+            </div>
+            <div class="footer-right">
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <a href="../../" class="footer-link">Home</a>
+                    <a href="../search-engines/" class="footer-link">Search Engines</a>
+                    <a href="../tools/" class="footer-link">Tools</a>
+                    <a href="../entertainment/" class="footer-link">Entertainment</a>
+                    <a href="../knowledge/" class="footer-link">Knowledge</a>
+                    <a href="../news/" class="footer-link">News</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../js/gateway-enhanced.js"></script>
+    <script src="../../performance.config.js"></script>
+    <script>
+        // Social Networks specific initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 Social Networks page DOMContentLoaded');
+            console.log('GatewayApp available:', typeof window.GatewayApp !== 'undefined');
+            
+            // Initialize the social category
+            if (typeof window.GatewayApp !== 'undefined') {
+                console.log('🌐 Initializing Social Networks category...');
+                window.GatewayApp.init({
+                    category: 'social',
+                    dataPath: '../../data/social.json',
+                    fallbackData: getSocialFallbackData()
+                });
+            } else {
+                console.error('❌ GatewayApp not available, falling back to manual initialization');
+                // Manual fallback if GatewayApp isn't loaded yet
+                setTimeout(() => {
+                    if (typeof window.GatewayApp !== 'undefined') {
+                        console.log('⏰ Delayed GatewayApp initialization');
+                        window.GatewayApp.init({
+                            category: 'social',
+                            dataPath: '../../data/social.json',
+                            fallbackData: getSocialFallbackData()
+                        });
+                    } else {
+                        console.log('🔄 Using immediate fallback rendering');
+                        renderFallbackData();
+                    }
+                }, 1000);
+            }
+        });
+        
+        // Emergency fallback rendering function
+        function renderFallbackData() {
+            console.log('🆘 Emergency fallback rendering');
+            const loadingState = document.getElementById('loading-state');
+            const platformsSection = document.getElementById('platforms-section');
+            const totalPlatforms = document.getElementById('total-platforms');
+            const totalCategories = document.getElementById('total-categories');
+            
+            if (loadingState) loadingState.style.display = 'none';
+            if (totalPlatforms) totalPlatforms.textContent = '36';
+            if (totalCategories) totalCategories.textContent = '4';
+            
+            if (platformsSection) {
+                const fallbackData = getSocialFallbackData();
+                const sectionsHTML = fallbackData.sections.map(section => `
+                    <section class="platform-section">
+                        <div class="section-header">
+                            <h2 class="section-title">${section.title}</h2>
+                            <p class="section-description">${section.description}</p>
+                            <div class="section-count">${section.platforms.length} platforms</div>
+                        </div>
+                        <div class="platforms-grid">
+                            ${section.platforms.map(platform => `
+                                <a href="${platform.url}" class="platform-card" target="_blank" rel="noopener noreferrer">
+                                    <div class="platform-logo">${platform.icon}</div>
+                                    <div class="platform-content">
+                                        <h3 class="platform-name">${platform.name}</h3>
+                                        <p class="platform-description">${platform.description}</p>
+                                    </div>
+                                </a>
+                            `).join('')}
+                        </div>
+                    </section>
+                `).join('');
+                
+                platformsSection.innerHTML = sectionsHTML;
+                platformsSection.style.display = 'block';
+                console.log('✅ Emergency fallback rendering complete');
+            }
+        }
+
+        // Comprehensive fallback data for Social Networks
+        function getSocialFallbackData() {
+            return {
+                "category": "Social Networks",
+                "description": "Connect and engage with communities worldwide through social platforms",
+                "sections": [
+                    {
+                        "title": "Social Media",
+                        "description": "Major social media platforms for sharing and connecting",
+                        "platforms": [
+                            {
+                                "name": "Twitter",
+                                "url": "https://twitter.com",
+                                "description": "Microblogging platform for real-time news, thoughts, and conversations",
+                                "icon": "🐦"
+                            },
+                            {
+                                "name": "Facebook",
+                                "url": "https://facebook.com",
+                                "description": "World's largest social networking platform connecting friends and family",
+                                "icon": "📘"
+                            },
+                            {
+                                "name": "Instagram",
+                                "url": "https://instagram.com",
+                                "description": "Photo and video sharing platform with stories and reels",
+                                "icon": "📷"
+                            },
+                            {
+                                "name": "TikTok",
+                                "url": "https://tiktok.com",
+                                "description": "Short-form video platform for creative content and entertainment",
+                                "icon": "🎵"
+                            },
+                            {
+                                "name": "YouTube",
+                                "url": "https://youtube.com",
+                                "description": "Video sharing platform for creators, education, and entertainment",
+                                "icon": "📺"
+                            },
+                            {
+                                "name": "Snapchat",
+                                "url": "https://snapchat.com",
+                                "description": "Multimedia messaging app with disappearing messages and AR filters",
+                                "icon": "👻"
+                            },
+                            {
+                                "name": "Pinterest",
+                                "url": "https://pinterest.com",
+                                "description": "Visual discovery platform for ideas, inspiration, and planning",
+                                "icon": "📌"
+                            },
+                            {
+                                "name": "Twitch",
+                                "url": "https://twitch.tv",
+                                "description": "Live streaming platform primarily for gaming and creative content",
+                                "icon": "🎮"
+                            },
+                            {
+                                "name": "Mastodon",
+                                "url": "https://mastodon.social",
+                                "description": "Decentralized social network with privacy and freedom focus",
+                                "icon": "🐘"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Professional Networks",
+                        "description": "Career-focused platforms for networking and opportunities",
+                        "platforms": [
+                            {
+                                "name": "LinkedIn",
+                                "url": "https://linkedin.com",
+                                "description": "Professional networking platform for career growth and business connections",
+                                "icon": "💼"
+                            },
+                            {
+                                "name": "AngelList",
+                                "url": "https://angel.co",
+                                "description": "Platform connecting startups, investors, and job seekers in tech",
+                                "icon": "👼"
+                            },
+                            {
+                                "name": "Behance",
+                                "url": "https://behance.net",
+                                "description": "Creative portfolio platform for designers and artists",
+                                "icon": "🎨"
+                            },
+                            {
+                                "name": "Dribbble",
+                                "url": "https://dribbble.com",
+                                "description": "Community of designers showcasing their work and finding opportunities",
+                                "icon": "🏀"
+                            },
+                            {
+                                "name": "GitHub",
+                                "url": "https://github.com",
+                                "description": "Developer platform for code collaboration and open source projects",
+                                "icon": "🐱"
+                            },
+                            {
+                                "name": "Stack Overflow",
+                                "url": "https://stackoverflow.com",
+                                "description": "Question and answer community for programmers and developers",
+                                "icon": "📚"
+                            },
+                            {
+                                "name": "Product Hunt",
+                                "url": "https://producthunt.com",
+                                "description": "Community for discovering and launching new products",
+                                "icon": "🚀"
+                            },
+                            {
+                                "name": "Indie Hackers",
+                                "url": "https://indiehackers.com",
+                                "description": "Community of entrepreneurs building profitable online businesses",
+                                "icon": "🛠️"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Forums & Communities",
+                        "description": "Discussion platforms and community spaces",
+                        "platforms": [
+                            {
+                                "name": "Reddit",
+                                "url": "https://reddit.com",
+                                "description": "Community-driven platform with discussion forums on every topic",
+                                "icon": "🤖"
+                            },
+                            {
+                                "name": "Hacker News",
+                                "url": "https://news.ycombinator.com",
+                                "description": "Social news website focusing on computer science and entrepreneurship",
+                                "icon": "🧡"
+                            },
+                            {
+                                "name": "Quora",
+                                "url": "https://quora.com",
+                                "description": "Question and answer platform where people share knowledge",
+                                "icon": "❓"
+                            },
+                            {
+                                "name": "4chan",
+                                "url": "https://4chan.org",
+                                "description": "Anonymous imageboard for discussing various topics",
+                                "icon": "🍀"
+                            },
+                            {
+                                "name": "Voat",
+                                "url": "https://voat.co",
+                                "description": "User-driven content aggregation and discussion platform",
+                                "icon": "🗳️"
+                            },
+                            {
+                                "name": "Lobste.rs",
+                                "url": "https://lobste.rs",
+                                "description": "Technology-focused community with high-quality discussions",
+                                "icon": "🦞"
+                            },
+                            {
+                                "name": "Designer News",
+                                "url": "https://designernews.co",
+                                "description": "Community for design professionals to share and discuss",
+                                "icon": "📐"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Communication Tools",
+                        "description": "Messaging and communication platforms",
+                        "platforms": [
+                            {
+                                "name": "Discord",
+                                "url": "https://discord.com",
+                                "description": "Voice, video, and text communication platform for communities",
+                                "icon": "🎮"
+                            },
+                            {
+                                "name": "Slack",
+                                "url": "https://slack.com",
+                                "description": "Business communication platform for teams and organizations",
+                                "icon": "💬"
+                            },
+                            {
+                                "name": "Telegram",
+                                "url": "https://telegram.org",
+                                "description": "Cloud-based messaging app with privacy and security focus",
+                                "icon": "✈️"
+                            },
+                            {
+                                "name": "WhatsApp",
+                                "url": "https://whatsapp.com",
+                                "description": "Instant messaging app for personal and business communication",
+                                "icon": "💚"
+                            },
+                            {
+                                "name": "Signal",
+                                "url": "https://signal.org",
+                                "description": "Privacy-focused messaging app with end-to-end encryption",
+                                "icon": "🔒"
+                            },
+                            {
+                                "name": "Matrix",
+                                "url": "https://matrix.org",
+                                "description": "Open standard for decentralized, encrypted communication",
+                                "icon": "🔗"
+                            },
+                            {
+                                "name": "Microsoft Teams",
+                                "url": "https://teams.microsoft.com",
+                                "description": "Collaboration platform combining chat, video meetings, and file storage",
+                                "icon": "🏢"
+                            },
+                            {
+                                "name": "Zoom",
+                                "url": "https://zoom.us",
+                                "description": "Video conferencing platform for meetings and webinars",
+                                "icon": "📹"
+                            },
+                            {
+                                "name": "Clubhouse",
+                                "url": "https://clubhouse.com",
+                                "description": "Audio-based social networking app for live conversations",
+                                "icon": "🎙️"
+                            },
+                            {
+                                "name": "Element",
+                                "url": "https://element.io",
+                                "description": "Secure collaboration and messaging based on Matrix protocol",
+                                "icon": "💎"
+                            }
+                        ]
+                    }
+                ],
+                "metadata": {
+                    "totalPlatforms": 36,
+                    "totalSections": 4,
+                    "lastUpdated": "2025-01-09"
+                }
+            };
+        }
+    </script>
+</body>
+</html>

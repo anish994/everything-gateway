@@ -1,0 +1,269 @@
+{
+    "category": "Social Networks",
+    "description": "Connect and engage with communities worldwide through social platforms",
+    "sections": [
+        {
+            "title": "Social Media",
+            "description": "Major social media platforms for sharing and connecting",
+            "platforms": [
+                {
+                    "name": "Twitter",
+                    "url": "https://twitter.com",
+                    "description": "Microblogging platform for real-time news, thoughts, and conversations",
+                    "icon": "🐦"
+                },
+                {
+                    "name": "Facebook",
+                    "url": "https://facebook.com",
+                    "description": "World's largest social networking platform connecting friends and family",
+                    "icon": "📘"
+                },
+                {
+                    "name": "Instagram",
+                    "url": "https://instagram.com",
+                    "description": "Photo and video sharing platform with stories and reels",
+                    "icon": "📷"
+                },
+                {
+                    "name": "TikTok",
+                    "url": "https://tiktok.com",
+                    "description": "Short-form video platform for creative content and entertainment",
+                    "icon": "🎵"
+                },
+                {
+                    "name": "YouTube",
+                    "url": "https://youtube.com",
+                    "description": "Video sharing platform for creators, education, and entertainment",
+                    "icon": "📺"
+                },
+                {
+                    "name": "Snapchat",
+                    "url": "https://snapchat.com",
+                    "description": "Multimedia messaging app with disappearing messages and AR filters",
+                    "icon": "👻"
+                },
+                {
+                    "name": "Pinterest",
+                    "url": "https://pinterest.com",
+                    "description": "Visual discovery platform for ideas, inspiration, and planning",
+                    "icon": "📌"
+                },
+                {
+                    "name": "Twitch",
+                    "url": "https://twitch.tv",
+                    "description": "Live streaming platform primarily for gaming and creative content",
+                    "icon": "🎮"
+                },
+                {
+                    "name": "Mastodon",
+                    "url": "https://mastodon.social",
+                    "description": "Decentralized social network with privacy and freedom focus",
+                    "icon": "🐘"
+                },
+                {
+                    "name": "BlueSky",
+                    "url": "https://bsky.app",
+                    "description": "Decentralized social media protocol and app",
+                    "icon": "🦋"
+                },
+                {
+                    "name": "Threads",
+                    "url": "https://threads.net",
+                    "description": "Text-based conversation app by Instagram",
+                    "icon": "🧵"
+                }
+            ]
+        },
+        {
+            "title": "Professional Networks",
+            "description": "Career-focused platforms for networking and opportunities",
+            "platforms": [
+                {
+                    "name": "LinkedIn",
+                    "url": "https://linkedin.com",
+                    "description": "Professional networking platform for career growth and business connections",
+                    "icon": "💼"
+                },
+                {
+                    "name": "AngelList",
+                    "url": "https://angel.co",
+                    "description": "Platform connecting startups, investors, and job seekers in tech",
+                    "icon": "👼"
+                },
+                {
+                    "name": "Behance",
+                    "url": "https://behance.net",
+                    "description": "Creative portfolio platform for designers and artists",
+                    "icon": "🎨"
+                },
+                {
+                    "name": "Dribbble",
+                    "url": "https://dribbble.com",
+                    "description": "Community of designers showcasing their work and finding opportunities",
+                    "icon": "🏀"
+                },
+                {
+                    "name": "GitHub",
+                    "url": "https://github.com",
+                    "description": "Developer platform for code collaboration and open source projects",
+                    "icon": "🐱"
+                },
+                {
+                    "name": "Stack Overflow",
+                    "url": "https://stackoverflow.com",
+                    "description": "Question and answer community for programmers and developers",
+                    "icon": "📚"
+                },
+                {
+                    "name": "Product Hunt",
+                    "url": "https://producthunt.com",
+                    "description": "Community for discovering and launching new products",
+                    "icon": "🚀"
+                },
+                {
+                    "name": "Indie Hackers",
+                    "url": "https://indiehackers.com",
+                    "description": "Community of entrepreneurs building profitable online businesses",
+                    "icon": "🛠️"
+                },
+                {
+                    "name": "DeviantArt",
+                    "url": "https://deviantart.com",
+                    "description": "Online community for artists to showcase and discover digital art",
+                    "icon": "🎭"
+                },
+                {
+                    "name": "Upwork",
+                    "url": "https://upwork.com",
+                    "description": "Freelancing platform connecting professionals with businesses",
+                    "icon": "💰"
+                }
+            ]
+        },
+        {
+            "title": "Forums & Communities",
+            "description": "Discussion platforms and community spaces",
+            "platforms": [
+                {
+                    "name": "Reddit",
+                    "url": "https://reddit.com",
+                    "description": "Community-driven platform with discussion forums on every topic",
+                    "icon": "🤖"
+                },
+                {
+                    "name": "Hacker News",
+                    "url": "https://news.ycombinator.com",
+                    "description": "Social news website focusing on computer science and entrepreneurship",
+                    "icon": "🧡"
+                },
+                {
+                    "name": "Quora",
+                    "url": "https://quora.com",
+                    "description": "Question and answer platform where people share knowledge",
+                    "icon": "❓"
+                },
+                {
+                    "name": "4chan",
+                    "url": "https://4chan.org",
+                    "description": "Anonymous imageboard for discussing various topics",
+                    "icon": "🍀"
+                },
+                {
+                    "name": "Lobste.rs",
+                    "url": "https://lobste.rs",
+                    "description": "Technology-focused community with high-quality discussions",
+                    "icon": "🦞"
+                },
+                {
+                    "name": "Designer News",
+                    "url": "https://designernews.co",
+                    "description": "Community for design professionals to share and discuss",
+                    "icon": "📐"
+                },
+                {
+                    "name": "Polywork",
+                    "url": "https://polywork.com",
+                    "description": "Professional network highlighting side projects and interests",
+                    "icon": "🎯"
+                },
+                {
+                    "name": "Clubhouse",
+                    "url": "https://clubhouse.com",
+                    "description": "Audio-based social networking app for live conversations",
+                    "icon": "🎙️"
+                }
+            ]
+        },
+        {
+            "title": "Communication Tools",
+            "description": "Messaging and communication platforms",
+            "platforms": [
+                {
+                    "name": "Discord",
+                    "url": "https://discord.com",
+                    "description": "Voice, video, and text communication platform for communities",
+                    "icon": "🎮"
+                },
+                {
+                    "name": "Slack",
+                    "url": "https://slack.com",
+                    "description": "Business communication platform for teams and organizations",
+                    "icon": "💬"
+                },
+                {
+                    "name": "Telegram",
+                    "url": "https://telegram.org",
+                    "description": "Cloud-based messaging app with privacy and security focus",
+                    "icon": "✈️"
+                },
+                {
+                    "name": "WhatsApp",
+                    "url": "https://whatsapp.com",
+                    "description": "Instant messaging app for personal and business communication",
+                    "icon": "💚"
+                },
+                {
+                    "name": "Signal",
+                    "url": "https://signal.org",
+                    "description": "Privacy-focused messaging app with end-to-end encryption",
+                    "icon": "🔒"
+                },
+                {
+                    "name": "Matrix",
+                    "url": "https://matrix.org",
+                    "description": "Open standard for decentralized, encrypted communication",
+                    "icon": "🔗"
+                },
+                {
+                    "name": "Microsoft Teams",
+                    "url": "https://teams.microsoft.com",
+                    "description": "Collaboration platform combining chat, video meetings, and file storage",
+                    "icon": "🏢"
+                },
+                {
+                    "name": "Zoom",
+                    "url": "https://zoom.us",
+                    "description": "Video conferencing platform for meetings and webinars",
+                    "icon": "📹"
+                },
+                {
+                    "name": "Element",
+                    "url": "https://element.io",
+                    "description": "Secure collaboration and messaging based on Matrix protocol",
+                    "icon": "💎"
+                },
+                {
+                    "name": "Keybase",
+                    "url": "https://keybase.io",
+                    "description": "Secure messaging and file sharing with cryptographic identity verification",
+                    "icon": "🔐"
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "totalPlatforms": 39,
+        "totalSections": 4,
+        "lastUpdated": "2025-01-09"
+    }
+}
