@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifestyle & Shopping - Everything Gateway</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <meta name="description" content="Transform your daily life with e-commerce giants, travel platforms, food delivery, and home services that make modern living seamless.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Lifestyle & Shopping - Everything Gateway">
+    <meta property="og:description" content="Transform your daily life with e-commerce giants, travel platforms, food delivery, and home services that make modern living seamless.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://everything-gateway.netlify.app/categories/lifestyle.html">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lifestyle & Shopping - Everything Gateway">
+    <meta name="twitter:description" content="Transform your daily life with e-commerce giants, travel platforms, food delivery, and home services that make modern living seamless.">
+</head>
+<body class="category-page">
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="../index.html" class="nav-logo">
+                    🌐 Everything Gateway
+                </a>
+                <div class="nav-menu">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="#" class="nav-link">Categories</a>
+                    <a href="#" class="nav-link">About</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="category-hero">
+            <div class="container">
+                <h1 class="category-title">
+                    <span class="category-icon">🛍️</span>
+                    Lifestyle & Shopping
+                </h1>
+                <p class="category-description">
+                    Transform your daily life with e-commerce giants, travel platforms, food delivery, and home services that make modern living seamless
+                </p>
+                <div class="category-stats">
+                    <span class="stat-item">
+                        <strong id="total-platforms">48</strong> Platforms
+                    </span>
+                    <span class="stat-item">
+                        <strong id="total-sections">4</strong> Categories
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="platforms-grid" id="platforms-container">
+                <!-- Platforms will be loaded dynamically -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Everything Gateway. Streamlining your digital lifestyle.</p>
+        </div>
+    </footer>
+
+    <script src="../js/gateway-enhanced.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            GatewayApp.init('lifestyle');
+        });
+    </script>
+</body>
+</html>

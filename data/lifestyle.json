@@ -1,0 +1,323 @@
+{
+    "category": "Lifestyle & Shopping",
+    "description": "Transform your daily life with e-commerce giants, travel platforms, food delivery, and home services that make modern living seamless",
+    "sections": [
+        {
+            "title": "E-commerce Giants",
+            "description": "Major online shopping platforms and marketplaces",
+            "platforms": [
+                {
+                    "name": "Amazon",
+                    "url": "https://amazon.com",
+                    "description": "World's largest e-commerce platform with everything from A to Z",
+                    "icon": "📦"
+                },
+                {
+                    "name": "eBay",
+                    "url": "https://ebay.com",
+                    "description": "Global online auction and marketplace for new and used items",
+                    "icon": "🏷️"
+                },
+                {
+                    "name": "Walmart",
+                    "url": "https://walmart.com",
+                    "description": "America's largest retailer with grocery pickup and delivery",
+                    "icon": "🛒"
+                },
+                {
+                    "name": "Target",
+                    "url": "https://target.com",
+                    "description": "Popular department store with style, home goods, and essentials",
+                    "icon": "🎯"
+                },
+                {
+                    "name": "Best Buy",
+                    "url": "https://bestbuy.com",
+                    "description": "Electronics retailer with tech products and Geek Squad services",
+                    "icon": "🔌"
+                },
+                {
+                    "name": "Costco",
+                    "url": "https://costco.com",
+                    "description": "Membership warehouse club with bulk shopping and services",
+                    "icon": "🏪"
+                },
+                {
+                    "name": "Etsy",
+                    "url": "https://etsy.com",
+                    "description": "Marketplace for handmade, vintage, and unique creative goods",
+                    "icon": "🎨"
+                },
+                {
+                    "name": "AliExpress",
+                    "url": "https://aliexpress.com",
+                    "description": "Global marketplace for affordable products from Asian suppliers",
+                    "icon": "🌏"
+                },
+                {
+                    "name": "Shopify",
+                    "url": "https://shopify.com",
+                    "description": "E-commerce platform enabling anyone to create online stores",
+                    "icon": "🏬"
+                },
+                {
+                    "name": "Wayfair",
+                    "url": "https://wayfair.com",
+                    "description": "Home goods and furniture marketplace with vast selection",
+                    "icon": "🏡"
+                },
+                {
+                    "name": "Newegg",
+                    "url": "https://newegg.com",
+                    "description": "Electronics and computer hardware retailer for tech enthusiasts",
+                    "icon": "💻"
+                },
+                {
+                    "name": "Overstock",
+                    "url": "https://overstock.com",
+                    "description": "Discount retailer for home decor, furniture, and more",
+                    "icon": "🏷️"
+                }
+            ]
+        },
+        {
+            "title": "Food Delivery & Dining",
+            "description": "Food delivery services and dining platforms",
+            "platforms": [
+                {
+                    "name": "DoorDash",
+                    "url": "https://doordash.com",
+                    "description": "Leading food delivery service connecting restaurants to customers",
+                    "icon": "🚗"
+                },
+                {
+                    "name": "Uber Eats",
+                    "url": "https://ubereats.com",
+                    "description": "Fast food delivery from local restaurants via Uber's platform",
+                    "icon": "🍕"
+                },
+                {
+                    "name": "Grubhub",
+                    "url": "https://grubhub.com",
+                    "description": "Food ordering and delivery from local restaurants",
+                    "icon": "🥡"
+                },
+                {
+                    "name": "Postmates",
+                    "url": "https://postmates.com",
+                    "description": "On-demand delivery service for food and essentials",
+                    "icon": "📱"
+                },
+                {
+                    "name": "Seamless",
+                    "url": "https://seamless.com",
+                    "description": "Food delivery service popular in major US cities",
+                    "icon": "🍔"
+                },
+                {
+                    "name": "Instacart",
+                    "url": "https://instacart.com",
+                    "description": "Grocery delivery and pickup service from local stores",
+                    "icon": "🛒"
+                },
+                {
+                    "name": "HelloFresh",
+                    "url": "https://hellofresh.com",
+                    "description": "Meal kit delivery service with pre-portioned ingredients and recipes",
+                    "icon": "📦"
+                },
+                {
+                    "name": "Blue Apron",
+                    "url": "https://blueapron.com",
+                    "description": "Meal kit subscription service with chef-designed recipes",
+                    "icon": "👨‍🍳"
+                },
+                {
+                    "name": "OpenTable",
+                    "url": "https://opentable.com",
+                    "description": "Restaurant reservation platform with reviews and availability",
+                    "icon": "🍽️"
+                },
+                {
+                    "name": "Yelp",
+                    "url": "https://yelp.com",
+                    "description": "Local business reviews and recommendations platform",
+                    "icon": "⭐"
+                },
+                {
+                    "name": "Zomato",
+                    "url": "https://zomato.com",
+                    "description": "Restaurant discovery and food delivery platform",
+                    "icon": "🍴"
+                },
+                {
+                    "name": "Deliveroo",
+                    "url": "https://deliveroo.com",
+                    "description": "Premium food delivery service popular in Europe and Asia",
+                    "icon": "🏍️"
+                }
+            ]
+        },
+        {
+            "title": "Travel & Transportation",
+            "description": "Travel booking, accommodation, and transportation platforms",
+            "platforms": [
+                {
+                    "name": "Airbnb",
+                    "url": "https://airbnb.com",
+                    "description": "Home-sharing platform for unique accommodations worldwide",
+                    "icon": "🏠"
+                },
+                {
+                    "name": "Booking.com",
+                    "url": "https://booking.com",
+                    "description": "World's largest hotel and accommodation booking platform",
+                    "icon": "🏨"
+                },
+                {
+                    "name": "Expedia",
+                    "url": "https://expedia.com",
+                    "description": "Comprehensive travel booking for flights, hotels, and packages",
+                    "icon": "✈️"
+                },
+                {
+                    "name": "Uber",
+                    "url": "https://uber.com",
+                    "description": "Ride-sharing service connecting drivers with passengers globally",
+                    "icon": "🚗"
+                },
+                {
+                    "name": "Lyft",
+                    "url": "https://lyft.com",
+                    "description": "Friendly ride-sharing service with community-focused approach",
+                    "icon": "🎀"
+                },
+                {
+                    "name": "Kayak",
+                    "url": "https://kayak.com",
+                    "description": "Travel search engine comparing flights, hotels, and car rentals",
+                    "icon": "🛩️"
+                },
+                {
+                    "name": "Priceline",
+                    "url": "https://priceline.com",
+                    "description": "Travel deals and name-your-price booking platform",
+                    "icon": "💰"
+                },
+                {
+                    "name": "Hotels.com",
+                    "url": "https://hotels.com",
+                    "description": "Hotel booking platform with rewards program",
+                    "icon": "🏩"
+                },
+                {
+                    "name": "TripAdvisor",
+                    "url": "https://tripadvisor.com",
+                    "description": "Travel reviews, recommendations, and booking platform",
+                    "icon": "🗺️"
+                },
+                {
+                    "name": "Skyscanner",
+                    "url": "https://skyscanner.com",
+                    "description": "Flight comparison and booking platform with flexible search",
+                    "icon": "🔍"
+                },
+                {
+                    "name": "Car2Go",
+                    "url": "https://car2go.com",
+                    "description": "Car-sharing service for short-term urban transportation",
+                    "icon": "🚙"
+                },
+                {
+                    "name": "Lime",
+                    "url": "https://li.me",
+                    "description": "Electric scooter and bike sharing for last-mile transportation",
+                    "icon": "🛴"
+                }
+            ]
+        },
+        {
+            "title": "Home Services & Daily Life",
+            "description": "Home improvement, services, and daily life convenience platforms",
+            "platforms": [
+                {
+                    "name": "TaskRabbit",
+                    "url": "https://taskrabbit.com",
+                    "description": "On-demand handyman and home services marketplace",
+                    "icon": "🔨"
+                },
+                {
+                    "name": "Thumbtack",
+                    "url": "https://thumbtack.com",
+                    "description": "Local service professionals for home projects and events",
+                    "icon": "👍"
+                },
+                {
+                    "name": "Angie's List",
+                    "url": "https://angieslist.com",
+                    "description": "Reviews and hiring platform for home service professionals",
+                    "icon": "📋"
+                },
+                {
+                    "name": "Home Depot",
+                    "url": "https://homedepot.com",
+                    "description": "Home improvement retailer with tools, materials, and services",
+                    "icon": "🔧"
+                },
+                {
+                    "name": "Lowe's",
+                    "url": "https://lowes.com",
+                    "description": "Home improvement and appliances with installation services",
+                    "icon": "🏗️"
+                },
+                {
+                    "name": "IKEA",
+                    "url": "https://ikea.com",
+                    "description": "Swedish furniture and home goods with assembly services",
+                    "icon": "🪑"
+                },
+                {
+                    "name": "Rover",
+                    "url": "https://rover.com",
+                    "description": "Pet sitting, dog walking, and pet care services marketplace",
+                    "icon": "🐕"
+                },
+                {
+                    "name": "Care.com",
+                    "url": "https://care.com",
+                    "description": "Caregiving services for children, seniors, and pets",
+                    "icon": "👶"
+                },
+                {
+                    "name": "Handy",
+                    "url": "https://handy.com",
+                    "description": "Home cleaning and handyman services on-demand",
+                    "icon": "🧹"
+                },
+                {
+                    "name": "Urban Company",
+                    "url": "https://urbancompany.com",
+                    "description": "Home services platform for beauty, cleaning, and repairs",
+                    "icon": "🏙️"
+                },
+                {
+                    "name": "Fiverr",
+                    "url": "https://fiverr.com",
+                    "description": "Freelance services marketplace for digital and creative tasks",
+                    "icon": "💼"
+                },
+                {
+                    "name": "Upwork",
+                    "url": "https://upwork.com",
+                    "description": "Professional freelancing platform for skilled remote work",
+                    "icon": "💻"
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "totalPlatforms": 48,
+        "totalSections": 4,
+        "lastUpdated": "2025-01-09"
+    }
+}
