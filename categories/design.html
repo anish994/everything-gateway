@@ -72,7 +72,28 @@
     <script src="../js/gateway-enhanced.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            GatewayApp.init('design');
+            if (typeof window.GatewayApp !== 'undefined') {
+                window.GatewayApp.init({
+                    category: 'design',
+                    dataPath: '../data/design.json',
+                    fallbackData: {
+                        "category": "Design & Creativity",
+                        "description": "Unleash your creative potential with professional design tools, stock resources, inspiration platforms, and collaboration spaces",
+                        "sections": [
+                            {
+                                "title": "Design Tools",
+                                "description": "Professional design software and creative applications",
+                                "platforms": [
+                                    {"name": "Figma", "url": "https://figma.com", "description": "Collaborative interface design tool", "icon": "🎨"},
+                                    {"name": "Adobe Creative Cloud", "url": "https://adobe.com/creativecloud", "description": "Complete creative suite", "icon": "🔶"},
+                                    {"name": "Canva", "url": "https://canva.com", "description": "User-friendly design platform", "icon": "🌈"}
+                                ]
+                            }
+                        ],
+                        "metadata": {"totalPlatforms": 40, "totalSections": 4}
+                    }
+                });
+            }
         });
     </script>
 </body>

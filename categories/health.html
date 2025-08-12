@@ -72,7 +72,28 @@
     <script src="../js/gateway-enhanced.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            GatewayApp.init('health');
+            if (typeof window.GatewayApp !== 'undefined') {
+                window.GatewayApp.init({
+                    category: 'health',
+                    dataPath: '../data/health.json',
+                    fallbackData: {
+                        "category": "Health & Fitness",
+                        "description": "Transform your wellness journey with fitness apps, nutrition tracking, mental health resources, and workout platforms",
+                        "sections": [
+                            {
+                                "title": "Fitness Tracking & Apps",
+                                "description": "Comprehensive fitness tracking applications",
+                                "platforms": [
+                                    {"name": "MyFitnessPal", "url": "https://myfitnesspal.com", "description": "Leading calorie counting app", "icon": "📱"},
+                                    {"name": "Strava", "url": "https://strava.com", "description": "Social fitness network", "icon": "🏃"},
+                                    {"name": "Fitbit", "url": "https://fitbit.com", "description": "Health and fitness tracking", "icon": "⌚"}
+                                ]
+                            }
+                        ],
+                        "metadata": {"totalPlatforms": 43, "totalSections": 4}
+                    }
+                });
+            }
         });
     </script>
 </body>

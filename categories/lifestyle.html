@@ -72,7 +72,28 @@
     <script src="../js/gateway-enhanced.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            GatewayApp.init('lifestyle');
+            if (typeof window.GatewayApp !== 'undefined') {
+                window.GatewayApp.init({
+                    category: 'lifestyle',
+                    dataPath: '../data/lifestyle.json',
+                    fallbackData: {
+                        "category": "Lifestyle & Shopping",
+                        "description": "Transform your daily life with e-commerce giants, travel platforms, food delivery, and home services that make modern living seamless",
+                        "sections": [
+                            {
+                                "title": "E-commerce Giants",
+                                "description": "Major online shopping platforms",
+                                "platforms": [
+                                    {"name": "Amazon", "url": "https://amazon.com", "description": "World's largest e-commerce platform", "icon": "📦"},
+                                    {"name": "eBay", "url": "https://ebay.com", "description": "Global online auction marketplace", "icon": "🏷️"},
+                                    {"name": "Walmart", "url": "https://walmart.com", "description": "America's largest retailer", "icon": "🛍️"}
+                                ]
+                            }
+                        ],
+                        "metadata": {"totalPlatforms": 48, "totalSections": 4}
+                    }
+                });
+            }
         });
     </script>
 </body>

@@ -1147,7 +1147,7 @@ class CategoryLoader {
             </section>
         `).join('');
         
-        const platformsSection = document.getElementById('platforms-section');
+        const platformsSection = document.getElementById('platforms-container');
         if (platformsSection) {
             platformsSection.innerHTML = sectionsHTML;
             platformsSection.style.display = 'block';
