@@ -1,0 +1,293 @@
+{
+    "category": "Health & Fitness",
+    "description": "Transform your wellness journey with fitness apps, nutrition tracking, mental health resources, and workout platforms",
+    "sections": [
+        {
+            "title": "Fitness Tracking & Apps",
+            "description": "Comprehensive fitness tracking and workout applications",
+            "platforms": [
+                {
+                    "name": "MyFitnessPal",
+                    "url": "https://myfitnesspal.com",
+                    "description": "Leading calorie counting and nutrition tracking app with massive food database",
+                    "icon": "📱"
+                },
+                {
+                    "name": "Strava",
+                    "url": "https://strava.com",
+                    "description": "Social fitness network for runners and cyclists with performance tracking",
+                    "icon": "🏃"
+                },
+                {
+                    "name": "Fitbit",
+                    "url": "https://fitbit.com",
+                    "description": "Comprehensive health and fitness tracking with wearable integration",
+                    "icon": "⌚"
+                },
+                {
+                    "name": "Nike Training Club",
+                    "url": "https://nike.com/ntc-app",
+                    "description": "Free workouts from Nike with personalized training programs",
+                    "icon": "👟"
+                },
+                {
+                    "name": "Apple Fitness+",
+                    "url": "https://fitness.apple.com",
+                    "description": "Studio-style fitness classes integrated with Apple Watch",
+                    "icon": "🍎"
+                },
+                {
+                    "name": "Garmin Connect",
+                    "url": "https://connect.garmin.com",
+                    "description": "Advanced fitness tracking and analytics for Garmin device users",
+                    "icon": "🛰️"
+                },
+                {
+                    "name": "Under Armour MapMyFitness",
+                    "url": "https://mapmyfitness.com",
+                    "description": "Activity tracking and route mapping for various fitness activities",
+                    "icon": "🗺️"
+                },
+                {
+                    "name": "Adidas Training",
+                    "url": "https://adidas.com/app",
+                    "description": "Free workouts and training plans from Adidas",
+                    "icon": "👕"
+                },
+                {
+                    "name": "Seven",
+                    "url": "https://seven.app",
+                    "description": "Quick 7-minute workouts designed for busy schedules",
+                    "icon": "⏰"
+                },
+                {
+                    "name": "Freeletics",
+                    "url": "https://freeletics.com",
+                    "description": "AI-powered bodyweight training with personalized workout plans",
+                    "icon": "🤖"
+                },
+                {
+                    "name": "Sweat",
+                    "url": "https://sweat.com",
+                    "description": "Women-focused fitness app with programs from top trainers",
+                    "icon": "💪"
+                }
+            ]
+        },
+        {
+            "title": "Nutrition & Diet",
+            "description": "Nutrition tracking, meal planning, and dietary guidance platforms",
+            "platforms": [
+                {
+                    "name": "Cronometer",
+                    "url": "https://cronometer.com",
+                    "description": "Precise nutrition tracking with micronutrient analysis",
+                    "icon": "🥗"
+                },
+                {
+                    "name": "Lose It!",
+                    "url": "https://loseit.com",
+                    "description": "Simple calorie counting and weight loss tracking app",
+                    "icon": "📉"
+                },
+                {
+                    "name": "Yazio",
+                    "url": "https://yazio.com",
+                    "description": "Calorie counter and nutrition tracker with meal planning",
+                    "icon": "🍎"
+                },
+                {
+                    "name": "Noom",
+                    "url": "https://noom.com",
+                    "description": "Psychology-based approach to weight loss with coaching",
+                    "icon": "🧠"
+                },
+                {
+                    "name": "WW (Weight Watchers)",
+                    "url": "https://weightwatchers.com",
+                    "description": "Points-based weight loss system with community support",
+                    "icon": "⚖️"
+                },
+                {
+                    "name": "PlateJoy",
+                    "url": "https://platejoy.com",
+                    "description": "Personalized meal planning with grocery list integration",
+                    "icon": "🍽️"
+                },
+                {
+                    "name": "Eat This Much",
+                    "url": "https://eatthismuch.com",
+                    "description": "Automatic meal planning based on your diet and goals",
+                    "icon": "🥘"
+                },
+                {
+                    "name": "Nutrients",
+                    "url": "https://nutrients.app",
+                    "description": "Detailed nutrient analysis and tracking for optimal health",
+                    "icon": "📊"
+                },
+                {
+                    "name": "Lifesum",
+                    "url": "https://lifesum.com",
+                    "description": "Nutrition tracking with various diet plan options",
+                    "icon": "🌿"
+                },
+                {
+                    "name": "Fooducate",
+                    "url": "https://fooducate.com",
+                    "description": "Food grading system to help make healthier choices",
+                    "icon": "🏆"
+                }
+            ]
+        },
+        {
+            "title": "Mental Health & Wellness",
+            "description": "Mental health support, meditation, and wellness platforms",
+            "platforms": [
+                {
+                    "name": "Headspace",
+                    "url": "https://headspace.com",
+                    "description": "Meditation and mindfulness app with guided sessions",
+                    "icon": "🧘"
+                },
+                {
+                    "name": "Calm",
+                    "url": "https://calm.com",
+                    "description": "Meditation, sleep stories, and relaxation app",
+                    "icon": "😌"
+                },
+                {
+                    "name": "Insight Timer",
+                    "url": "https://insighttimer.com",
+                    "description": "Free meditation app with the world's largest library",
+                    "icon": "⏲️"
+                },
+                {
+                    "name": "Ten Percent Happier",
+                    "url": "https://tenpercent.com",
+                    "description": "Meditation app with practical approach to mindfulness",
+                    "icon": "📈"
+                },
+                {
+                    "name": "Waking Up",
+                    "url": "https://wakingup.com",
+                    "description": "Meditation and philosophy app by Sam Harris",
+                    "icon": "🌅"
+                },
+                {
+                    "name": "BetterHelp",
+                    "url": "https://betterhelp.com",
+                    "description": "Online therapy and counseling platform",
+                    "icon": "💬"
+                },
+                {
+                    "name": "Talkspace",
+                    "url": "https://talkspace.com",
+                    "description": "Text-based therapy with licensed therapists",
+                    "icon": "💭"
+                },
+                {
+                    "name": "PTSD Coach",
+                    "url": "https://ptsd.va.gov/appvid/mobile/ptsdcoach_app.asp",
+                    "description": "Evidence-based app for PTSD symptom management",
+                    "icon": "🛡️"
+                },
+                {
+                    "name": "Sanvello",
+                    "url": "https://sanvello.com",
+                    "description": "Anxiety and depression support with mood tracking",
+                    "icon": "💙"
+                },
+                {
+                    "name": "Youper",
+                    "url": "https://youper.ai",
+                    "description": "AI-powered emotional health assistant",
+                    "icon": "🤖"
+                },
+                {
+                    "name": "Shine",
+                    "url": "https://theshineapp.com",
+                    "description": "Daily motivation and self-care app for BIPOC community",
+                    "icon": "✨"
+                }
+            ]
+        },
+        {
+            "title": "Workout & Training Platforms",
+            "description": "Online workout platforms, personal training, and fitness classes",
+            "platforms": [
+                {
+                    "name": "Peloton Digital",
+                    "url": "https://onepeloton.com",
+                    "description": "Live and on-demand fitness classes from cycling to yoga",
+                    "icon": "🚴"
+                },
+                {
+                    "name": "Daily Burn",
+                    "url": "https://dailyburn.com",
+                    "description": "Streaming workout videos with new content daily",
+                    "icon": "🔥"
+                },
+                {
+                    "name": "Beachbody On Demand",
+                    "url": "https://beachbodyondemand.com",
+                    "description": "Home fitness programs including P90X, Insanity, and more",
+                    "icon": "🏖️"
+                },
+                {
+                    "name": "Les Mills On Demand",
+                    "url": "https://lesmillsondemand.com",
+                    "description": "World-renowned group fitness classes at home",
+                    "icon": "💃"
+                },
+                {
+                    "name": "ClassPass",
+                    "url": "https://classpass.com",
+                    "description": "Access to fitness studios and gyms worldwide",
+                    "icon": "🎫"
+                },
+                {
+                    "name": "Alo Moves",
+                    "url": "https://alomoves.com",
+                    "description": "Yoga, fitness, and mindfulness classes from Alo Yoga",
+                    "icon": "🧘‍♀️"
+                },
+                {
+                    "name": "Down Dog Yoga",
+                    "url": "https://downdogapp.com",
+                    "description": "Customizable yoga practices with different styles and levels",
+                    "icon": "🐕"
+                },
+                {
+                    "name": "CorePower Yoga On Demand",
+                    "url": "https://corepoweryoga.com",
+                    "description": "Heated power yoga classes you can stream at home",
+                    "icon": "🔥"
+                },
+                {
+                    "name": "Obé Fitness",
+                    "url": "https://obefitness.com",
+                    "description": "Live and on-demand dance, HIIT, yoga, and strength classes",
+                    "icon": "💫"
+                },
+                {
+                    "name": "Mirror Home Gym",
+                    "url": "https://mirror.co",
+                    "description": "Interactive home gym with live and on-demand classes",
+                    "icon": "🪞"
+                },
+                {
+                    "name": "Tonal",
+                    "url": "https://tonal.com",
+                    "description": "AI-powered strength training with electromagnetic resistance",
+                    "icon": "⚡"
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "totalPlatforms": 43,
+        "totalSections": 4,
+        "lastUpdated": "2025-01-09"
+    }
+}
