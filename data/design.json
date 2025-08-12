@@ -1,0 +1,275 @@
+{
+    "category": "Design & Creativity",
+    "description": "Unleash your creative potential with professional design tools, stock resources, inspiration platforms, and collaboration spaces",
+    "sections": [
+        {
+            "title": "Design Tools",
+            "description": "Professional design software and creative applications",
+            "platforms": [
+                {
+                    "name": "Figma",
+                    "url": "https://figma.com",
+                    "description": "Collaborative interface design tool with real-time editing and prototyping",
+                    "icon": "🎨"
+                },
+                {
+                    "name": "Adobe Creative Cloud",
+                    "url": "https://adobe.com/creativecloud",
+                    "description": "Complete suite of creative applications including Photoshop, Illustrator, and more",
+                    "icon": "🔶"
+                },
+                {
+                    "name": "Canva",
+                    "url": "https://canva.com",
+                    "description": "User-friendly design platform with templates for social media, presentations, and more",
+                    "icon": "🌈"
+                },
+                {
+                    "name": "Sketch",
+                    "url": "https://sketch.com",
+                    "description": "Professional vector graphics editor for digital design on Mac",
+                    "icon": "💎"
+                },
+                {
+                    "name": "Adobe XD",
+                    "url": "https://adobe.com/products/xd",
+                    "description": "UX/UI design and prototyping tool with collaboration features",
+                    "icon": "🟣"
+                },
+                {
+                    "name": "Framer",
+                    "url": "https://framer.com",
+                    "description": "Interactive design tool for creating high-fidelity prototypes and animations",
+                    "icon": "⚡"
+                },
+                {
+                    "name": "InVision",
+                    "url": "https://invisionapp.com",
+                    "description": "Digital product design platform with prototyping and collaboration tools",
+                    "icon": "👁️"
+                },
+                {
+                    "name": "Affinity Designer",
+                    "url": "https://affinity.serif.com/designer",
+                    "description": "Professional vector graphic design software alternative to Illustrator",
+                    "icon": "🔺"
+                },
+                {
+                    "name": "Procreate",
+                    "url": "https://procreate.art",
+                    "description": "Digital painting and illustration app for iPad with natural drawing feel",
+                    "icon": "🖌️"
+                },
+                {
+                    "name": "Blender",
+                    "url": "https://blender.org",
+                    "description": "Free and open-source 3D creation suite for modeling, animation, and rendering",
+                    "icon": "🌀"
+                }
+            ]
+        },
+        {
+            "title": "Stock Resources",
+            "description": "High-quality photos, videos, graphics, and design assets",
+            "platforms": [
+                {
+                    "name": "Unsplash",
+                    "url": "https://unsplash.com",
+                    "description": "Free high-resolution photos contributed by photographers worldwide",
+                    "icon": "📸"
+                },
+                {
+                    "name": "Shutterstock",
+                    "url": "https://shutterstock.com",
+                    "description": "Premium stock photos, videos, music, and editorial content library",
+                    "icon": "📷"
+                },
+                {
+                    "name": "Getty Images",
+                    "url": "https://gettyimages.com",
+                    "description": "Professional stock photography, editorial images, and video content",
+                    "icon": "🏛️"
+                },
+                {
+                    "name": "Pexels",
+                    "url": "https://pexels.com",
+                    "description": "Free stock photos and videos with simple licensing",
+                    "icon": "📹"
+                },
+                {
+                    "name": "Adobe Stock",
+                    "url": "https://stock.adobe.com",
+                    "description": "Integrated stock assets for Creative Cloud with photos, videos, and graphics",
+                    "icon": "🔸"
+                },
+                {
+                    "name": "Freepik",
+                    "url": "https://freepik.com",
+                    "description": "Free and premium vectors, photos, and PSD files for designers",
+                    "icon": "🎁"
+                },
+                {
+                    "name": "Pixabay",
+                    "url": "https://pixabay.com",
+                    "description": "Free images, videos, and music for commercial and personal use",
+                    "icon": "🎪"
+                },
+                {
+                    "name": "Envato Elements",
+                    "url": "https://elements.envato.com",
+                    "description": "Unlimited downloads of stock photos, graphics, templates, and more",
+                    "icon": "📦"
+                },
+                {
+                    "name": "Icons8",
+                    "url": "https://icons8.com",
+                    "description": "Icons, illustrations, photos, music, and design tools in one platform",
+                    "icon": "🔢"
+                },
+                {
+                    "name": "Creative Market",
+                    "url": "https://creativemarket.com",
+                    "description": "Marketplace for fonts, graphics, templates, and design assets",
+                    "icon": "🛒"
+                }
+            ]
+        },
+        {
+            "title": "Inspiration & Community",
+            "description": "Design inspiration platforms and creative communities",
+            "platforms": [
+                {
+                    "name": "Dribbble",
+                    "url": "https://dribbble.com",
+                    "description": "Design inspiration showcase and community for creative professionals",
+                    "icon": "🏀"
+                },
+                {
+                    "name": "Behance",
+                    "url": "https://behance.net",
+                    "description": "Adobe's creative portfolio platform for showcasing design work",
+                    "icon": "🎭"
+                },
+                {
+                    "name": "Pinterest",
+                    "url": "https://pinterest.com",
+                    "description": "Visual discovery platform perfect for design inspiration and mood boards",
+                    "icon": "📌"
+                },
+                {
+                    "name": "Awwwards",
+                    "url": "https://awwwards.com",
+                    "description": "Website awards recognizing the best in web design and user experience",
+                    "icon": "🏆"
+                },
+                {
+                    "name": "Designer Hangout",
+                    "url": "https://designerhangout.co",
+                    "description": "Slack community for UX/UI designers to network and share knowledge",
+                    "icon": "💬"
+                },
+                {
+                    "name": "Muzli",
+                    "url": "https://muz.li",
+                    "description": "Design inspiration feed with curated content for creative professionals",
+                    "icon": "📰"
+                },
+                {
+                    "name": "Collect UI",
+                    "url": "https://collectui.com",
+                    "description": "Daily handpicked UI design inspiration collected from Dribbble",
+                    "icon": "🗂️"
+                },
+                {
+                    "name": "UI Movement",
+                    "url": "https://uimovement.com",
+                    "description": "UI design inspiration with animated GIFs showcasing interactions",
+                    "icon": "📱"
+                },
+                {
+                    "name": "Page Flows",
+                    "url": "https://pageflows.com",
+                    "description": "User flow design patterns and inspiration for product designers",
+                    "icon": "🔀"
+                },
+                {
+                    "name": "Really Good UX",
+                    "url": "https://reallygoodux.io",
+                    "description": "UX writing and design patterns with detailed breakdowns",
+                    "icon": "✍️"
+                }
+            ]
+        },
+        {
+            "title": "Collaboration & Feedback",
+            "description": "Design collaboration, feedback, and project management tools",
+            "platforms": [
+                {
+                    "name": "Abstract",
+                    "url": "https://abstract.com",
+                    "description": "Design collaboration platform with version control for Sketch files",
+                    "icon": "🔄"
+                },
+                {
+                    "name": "Zeplin",
+                    "url": "https://zeplin.io",
+                    "description": "Collaboration tool between designers and developers for design handoff",
+                    "icon": "🔗"
+                },
+                {
+                    "name": "Marvel",
+                    "url": "https://marvelapp.com",
+                    "description": "Design platform for creating wireframes, prototypes, and user testing",
+                    "icon": "🦸"
+                },
+                {
+                    "name": "Principle",
+                    "url": "https://principleformac.com",
+                    "description": "Animation and interaction design tool for creating realistic prototypes",
+                    "icon": "🎬"
+                },
+                {
+                    "name": "Notion",
+                    "url": "https://notion.so",
+                    "description": "All-in-one workspace for notes, docs, and project management for creative teams",
+                    "icon": "📋"
+                },
+                {
+                    "name": "Miro",
+                    "url": "https://miro.com",
+                    "description": "Online collaborative whiteboard for brainstorming and visual thinking",
+                    "icon": "🏳️"
+                },
+                {
+                    "name": "UserVoice",
+                    "url": "https://uservoice.com",
+                    "description": "Customer feedback and product management platform for design validation",
+                    "icon": "🗣️"
+                },
+                {
+                    "name": "Loom",
+                    "url": "https://loom.com",
+                    "description": "Screen recording tool perfect for design presentations and feedback",
+                    "icon": "🎥"
+                },
+                {
+                    "name": "ProtoPie",
+                    "url": "https://protopie.io",
+                    "description": "Advanced prototyping tool for creating realistic interactions without code",
+                    "icon": "🥧"
+                },
+                {
+                    "name": "Avocode",
+                    "url": "https://avocode.com",
+                    "description": "Design handoff tool that exports code, assets, and specs from designs",
+                    "icon": "⚙️"
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "totalPlatforms": 40,
+        "totalSections": 4,
+        "lastUpdated": "2025-01-09"
+    }
+}

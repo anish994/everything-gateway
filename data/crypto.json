@@ -1,0 +1,305 @@
+{
+    "category": "Crypto & Blockchain",
+    "description": "Navigate the digital economy with the best cryptocurrency exchanges, DeFi protocols, NFT marketplaces, and blockchain analytics platforms",
+    "sections": [
+        {
+            "title": "Trading Platforms",
+            "description": "Cryptocurrency exchanges and trading platforms",
+            "platforms": [
+                {
+                    "name": "Coinbase",
+                    "url": "https://coinbase.com",
+                    "description": "Leading cryptocurrency exchange with beginner-friendly interface and secure storage",
+                    "icon": "🏦"
+                },
+                {
+                    "name": "Binance",
+                    "url": "https://binance.com",
+                    "description": "World's largest cryptocurrency exchange by trading volume with advanced features",
+                    "icon": "🔶"
+                },
+                {
+                    "name": "Kraken",
+                    "url": "https://kraken.com",
+                    "description": "Secure cryptocurrency exchange with advanced trading features and regulatory compliance",
+                    "icon": "🐙"
+                },
+                {
+                    "name": "Gemini",
+                    "url": "https://gemini.com",
+                    "description": "Regulated cryptocurrency exchange founded by the Winklevoss twins",
+                    "icon": "♊"
+                },
+                {
+                    "name": "FTX",
+                    "url": "https://ftx.com",
+                    "description": "Advanced cryptocurrency exchange with derivatives and institutional trading",
+                    "icon": "📈"
+                },
+                {
+                    "name": "KuCoin",
+                    "url": "https://kucoin.com",
+                    "description": "Global cryptocurrency exchange with wide selection of altcoins",
+                    "icon": "🎯"
+                },
+                {
+                    "name": "Huobi",
+                    "url": "https://huobi.com",
+                    "description": "Major cryptocurrency exchange with global presence and advanced trading tools",
+                    "icon": "🔥"
+                },
+                {
+                    "name": "Crypto.com",
+                    "url": "https://crypto.com",
+                    "description": "Comprehensive crypto platform with exchange, card, and DeFi services",
+                    "icon": "💳"
+                },
+                {
+                    "name": "Bitfinex",
+                    "url": "https://bitfinex.com",
+                    "description": "Professional cryptocurrency trading platform with advanced order types",
+                    "icon": "⚡"
+                },
+                {
+                    "name": "OKX",
+                    "url": "https://okx.com",
+                    "description": "Global crypto exchange with spot, futures, and Web3 trading",
+                    "icon": "🌐"
+                },
+                {
+                    "name": "Bybit",
+                    "url": "https://bybit.com",
+                    "description": "Cryptocurrency derivatives exchange focused on futures and options trading",
+                    "icon": "🚀"
+                },
+                {
+                    "name": "Bittrex",
+                    "url": "https://bittrex.com",
+                    "description": "US-based cryptocurrency exchange with strong security and compliance",
+                    "icon": "🛡️"
+                }
+            ]
+        },
+        {
+            "title": "DeFi Protocols",
+            "description": "Decentralized finance protocols and applications",
+            "platforms": [
+                {
+                    "name": "Uniswap",
+                    "url": "https://uniswap.org",
+                    "description": "Leading decentralized exchange protocol for automated market making",
+                    "icon": "🦄"
+                },
+                {
+                    "name": "Aave",
+                    "url": "https://aave.com",
+                    "description": "Decentralized lending and borrowing protocol with flash loans",
+                    "icon": "👻"
+                },
+                {
+                    "name": "Compound",
+                    "url": "https://compound.finance",
+                    "description": "Algorithmic, autonomous interest rate protocol for borrowing and lending",
+                    "icon": "🏛️"
+                },
+                {
+                    "name": "SushiSwap",
+                    "url": "https://sushi.com",
+                    "description": "Community-driven decentralized exchange with additional DeFi features",
+                    "icon": "🍣"
+                },
+                {
+                    "name": "PancakeSwap",
+                    "url": "https://pancakeswap.finance",
+                    "description": "Leading DEX on Binance Smart Chain with yield farming and NFTs",
+                    "icon": "🥞"
+                },
+                {
+                    "name": "Curve Finance",
+                    "url": "https://curve.fi",
+                    "description": "Decentralized exchange optimized for stablecoin and similar asset trading",
+                    "icon": "📈"
+                },
+                {
+                    "name": "MakerDAO",
+                    "url": "https://makerdao.com",
+                    "description": "Decentralized credit platform that created the DAI stablecoin",
+                    "icon": "🏗️"
+                },
+                {
+                    "name": "Yearn Finance",
+                    "url": "https://yearn.finance",
+                    "description": "Yield optimization protocol that maximizes returns on crypto deposits",
+                    "icon": "🌾"
+                },
+                {
+                    "name": "1inch",
+                    "url": "https://1inch.io",
+                    "description": "DEX aggregator that finds the best trading routes across multiple DEXs",
+                    "icon": "📏"
+                },
+                {
+                    "name": "Balancer",
+                    "url": "https://balancer.fi",
+                    "description": "Automated portfolio manager and liquidity provider protocol",
+                    "icon": "⚖️"
+                },
+                {
+                    "name": "Synthetix",
+                    "url": "https://synthetix.io",
+                    "description": "Derivatives liquidity protocol for trading synthetic assets",
+                    "icon": "🔗"
+                }
+            ]
+        },
+        {
+            "title": "NFT Marketplaces",
+            "description": "Non-fungible token trading and creation platforms",
+            "platforms": [
+                {
+                    "name": "OpenSea",
+                    "url": "https://opensea.io",
+                    "description": "World's largest NFT marketplace for buying, selling, and creating NFTs",
+                    "icon": "🌊"
+                },
+                {
+                    "name": "Blur",
+                    "url": "https://blur.io",
+                    "description": "Professional NFT marketplace with advanced trading features",
+                    "icon": "💨"
+                },
+                {
+                    "name": "Magic Eden",
+                    "url": "https://magiceden.io",
+                    "description": "Leading Solana NFT marketplace with cross-chain support",
+                    "icon": "🪄"
+                },
+                {
+                    "name": "SuperRare",
+                    "url": "https://superrare.com",
+                    "description": "Curated NFT art marketplace for digital art collectors",
+                    "icon": "💎"
+                },
+                {
+                    "name": "Foundation",
+                    "url": "https://foundation.app",
+                    "description": "Invite-only NFT platform for digital art and creative work",
+                    "icon": "🏛️"
+                },
+                {
+                    "name": "Rarible",
+                    "url": "https://rarible.com",
+                    "description": "Community-owned NFT marketplace with governance token",
+                    "icon": "🎨"
+                },
+                {
+                    "name": "Nifty Gateway",
+                    "url": "https://niftygateway.com",
+                    "description": "Premium NFT marketplace owned by Gemini with drops and auctions",
+                    "icon": "🚪"
+                },
+                {
+                    "name": "Async Art",
+                    "url": "https://async.art",
+                    "description": "Programmable art platform where you can own and influence artworks",
+                    "icon": "🎭"
+                },
+                {
+                    "name": "LooksRare",
+                    "url": "https://looksrare.org",
+                    "description": "Community-first NFT marketplace with trading rewards",
+                    "icon": "👀"
+                },
+                {
+                    "name": "X2Y2",
+                    "url": "https://x2y2.io",
+                    "description": "Decentralized NFT marketplace with competitive fees and rewards",
+                    "icon": "❌"
+                }
+            ]
+        },
+        {
+            "title": "Blockchain Analytics & Tools",
+            "description": "Blockchain explorers, analytics platforms, and development tools",
+            "platforms": [
+                {
+                    "name": "Etherscan",
+                    "url": "https://etherscan.io",
+                    "description": "Leading Ethereum blockchain explorer and analytics platform",
+                    "icon": "🔍"
+                },
+                {
+                    "name": "Blockchain.info",
+                    "url": "https://blockchain.info",
+                    "description": "Bitcoin blockchain explorer and wallet service",
+                    "icon": "₿"
+                },
+                {
+                    "name": "CoinGecko",
+                    "url": "https://coingecko.com",
+                    "description": "Comprehensive cryptocurrency data aggregator with market analytics",
+                    "icon": "🦎"
+                },
+                {
+                    "name": "CoinMarketCap",
+                    "url": "https://coinmarketcap.com",
+                    "description": "World's most-referenced price-tracking website for cryptocurrencies",
+                    "icon": "📊"
+                },
+                {
+                    "name": "DeFiPulse",
+                    "url": "https://defipulse.com",
+                    "description": "Analytics platform tracking total value locked in DeFi protocols",
+                    "icon": "📈"
+                },
+                {
+                    "name": "Dune Analytics",
+                    "url": "https://dune.com",
+                    "description": "Community-driven analytics platform for blockchain data visualization",
+                    "icon": "📊"
+                },
+                {
+                    "name": "Messari",
+                    "url": "https://messari.io",
+                    "description": "Crypto research and data platform with fundamental analysis",
+                    "icon": "📋"
+                },
+                {
+                    "name": "The Graph",
+                    "url": "https://thegraph.com",
+                    "description": "Indexing protocol for querying networks like Ethereum and IPFS",
+                    "icon": "📊"
+                },
+                {
+                    "name": "Nansen",
+                    "url": "https://nansen.ai",
+                    "description": "Blockchain analytics platform with on-chain data and wallet labels",
+                    "icon": "🧭"
+                },
+                {
+                    "name": "Chainalysis",
+                    "url": "https://chainalysis.com",
+                    "description": "Blockchain analysis platform for compliance and investigation",
+                    "icon": "🔗"
+                },
+                {
+                    "name": "Solscan",
+                    "url": "https://solscan.io",
+                    "description": "Solana blockchain explorer with transaction and account analytics",
+                    "icon": "☀️"
+                },
+                {
+                    "name": "DeFiLlama",
+                    "url": "https://defillama.com",
+                    "description": "Multi-chain TVL and analytics dashboard for DeFi protocols",
+                    "icon": "🦙"
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "totalPlatforms": 45,
+        "totalSections": 4,
+        "lastUpdated": "2025-01-09"
+    }
+}

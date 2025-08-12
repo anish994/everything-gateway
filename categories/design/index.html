@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design & Creativity - The Everything Gateway</title>
+    <meta name="description" content="Unleash your creative potential with professional design tools, stock resources, inspiration platforms, and collaboration spaces for designers and creatives.">
+    <meta name="keywords" content="design tools, figma, adobe, canva, creativity, graphic design, UI UX, stock photos, design inspiration, dribbble, behance">
+    <meta name="author" content="The Everything Gateway">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Design & Creativity - The Everything Gateway">
+    <meta property="og:description" content="Professional design tools, stock resources, and creative inspiration platforms all in one place.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://everything-gateway.com/categories/design/">
+    <meta property="og:site_name" content="The Everything Gateway">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Design & Creativity - The Everything Gateway">
+    <meta name="twitter:description" content="Discover the best design tools and creative platforms">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://everything-gateway.com/categories/design/">
+    
+    <!-- Theme and Icons -->
+    <meta name="theme-color" content="#ff6b9d">
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="../../css/design-system.css" as="style">
+    <link rel="preload" href="../../css/components.css" as="style">
+    <link rel="preload" href="../../data/design.json" as="fetch" crossorigin="anonymous">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../css/design-system.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/search.css">
+    <link rel="stylesheet" href="../../css/category.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Design & Creativity",
+        "description": "Comprehensive collection of design tools, stock resources, inspiration platforms, and collaboration spaces",
+        "url": "https://everything-gateway.com/categories/design/",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "The Everything Gateway",
+            "url": "https://everything-gateway.com"
+        }
+    }
+    </script>
+</head>
+<body class="design-theme">
+    <!-- Skip to main content link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <div class="page-container">
+        <!-- Header -->
+        <header class="page-header" role="banner">
+            <div class="header-content">
+                <nav class="breadcrumb" role="navigation" aria-label="Breadcrumb">
+                    <a href="../../" class="breadcrumb-link">🏠 Home</a>
+                    <span class="breadcrumb-separator" aria-hidden="true">›</span>
+                    <span class="breadcrumb-current" aria-current="page">Design & Creativity</span>
+                </nav>
+                
+                <div class="category-header">
+                    <div class="category-icon" aria-hidden="true">🎨</div>
+                    <div class="category-info">
+                        <h1 class="category-title">Design & Creativity</h1>
+                        <p class="category-description">
+                            Unleash your creative potential with professional design tools, stock resources, 
+                            inspiration platforms, and collaboration spaces
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main id="main-content" class="main-content" role="main">
+            <!-- Search Section -->
+            <section class="search-section">
+                <button class="search-trigger" onclick="window.gateway && window.gateway.openSearch()">
+                    <span class="search-trigger-icon">🔍</span>
+                    <span>Search across all design platforms</span>
+                    <span class="search-trigger-shortcut">Ctrl+K</span>
+                </button>
+            </section>
+
+            <!-- Loading State -->
+            <div id="loading-state" class="loading-container" aria-live="polite">
+                <div class="loading-spinner"></div>
+                <p>Loading design and creativity platforms...</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="error-state" class="error-container" style="display: none;" role="alert">
+                <div class="error-content">
+                    <h2>Unable to Load Platforms</h2>
+                    <p>We're having trouble loading the design and creativity platforms right now.</p>
+                    <button onclick="location.reload()" class="retry-button">Try Again</button>
+                </div>
+            </div>
+
+            <!-- Platforms Grid -->
+            <section id="platforms-section" class="platforms-section" style="display: none;">
+                <!-- Dynamic content will be inserted here -->
+            </section>
+
+            <!-- Fallback Content (No JavaScript) -->
+            <noscript>
+                <div class="fallback-content">
+                    <section class="platforms-section">
+                        <h2>🎨 Design Tools</h2>
+                        <div class="platforms-grid">
+                            <a href="https://figma.com" class="platform-card" target="_blank" rel="noopener">
+                                <div class="platform-icon">🎨</div>
+                                <div class="platform-info">
+                                    <h3>Figma</h3>
+                                    <p>Collaborative interface design tool with real-time editing</p>
+                                </div>
+                            </a>
+                            <a href="https://canva.com" class="platform-card" target="_blank" rel="noopener">
+                                <div class="platform-icon">🌈</div>
+                                <div class="platform-info">
+                                    <h3>Canva</h3>
+                                    <p>User-friendly design platform with templates</p>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+
+                    <div class="category-note">
+                        <p><strong>Note:</strong> This is a simplified view. Enable JavaScript for the full interactive experience.</p>
+                    </div>
+                </div>
+            </noscript>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../js/gateway-enhanced.js"></script>
+    <script src="../../js/analytics.js"></script>
+    <script>
+        // Design & Creativity specific initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🎨 Design & Creativity page DOMContentLoaded');
+            console.log('GatewayApp available:', typeof window.GatewayApp !== 'undefined');
+            
+            // Initialize the design category
+            if (typeof window.GatewayApp !== 'undefined') {
+                console.log('🎨 Initializing Design & Creativity category...');
+                window.GatewayApp.init({
+                    category: 'design',
+                    dataPath: '../../data/design.json',
+                    fallbackData: getDesignFallbackData()
+                });
+            } else {
+                console.error('❌ GatewayApp not available, falling back to manual initialization');
+                setTimeout(() => {
+                    if (typeof window.GatewayApp !== 'undefined') {
+                        console.log('⏰ Delayed GatewayApp initialization');
+                        window.GatewayApp.init({
+                            category: 'design',
+                            dataPath: '../../data/design.json',
+                            fallbackData: getDesignFallbackData()
+                        });
+                    } else {
+                        console.log('🔄 Using immediate fallback rendering');
+                        renderFallbackData();
+                    }
+                }, 1000);
+            }
+        });
+        
+        function getDesignFallbackData() {
+            return {
+                "category": "Design & Creativity",
+                "description": "Unleash your creative potential with professional design tools, stock resources, inspiration platforms, and collaboration spaces",
+                "sections": [
+                    {
+                        "title": "Design Tools",
+                        "description": "Professional design software and creative applications",
+                        "platforms": [
+                            {
+                                "name": "Figma",
+                                "url": "https://figma.com",
+                                "description": "Collaborative interface design tool with real-time editing and prototyping",
+                                "icon": "🎨"
+                            },
+                            {
+                                "name": "Canva",
+                                "url": "https://canva.com",
+                                "description": "User-friendly design platform with templates for social media, presentations, and more",
+                                "icon": "🌈"
+                            }
+                        ]
+                    }
+                ],
+                "metadata": {
+                    "totalPlatforms": 40,
+                    "totalSections": 4,
+                    "lastUpdated": "2025-01-09"
+                }
+            };
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto & Blockchain - The Everything Gateway</title>
+    <meta name="description" content="Your gateway to cryptocurrency trading, DeFi protocols, NFT marketplaces, and blockchain analytics. Discover the best crypto platforms and tools.">
+    <meta name="keywords" content="cryptocurrency, blockchain, bitcoin, ethereum, DeFi, NFT, crypto trading, digital assets, web3, decentralized finance">
+    <meta name="author" content="The Everything Gateway">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Crypto & Blockchain - The Everything Gateway">
+    <meta property="og:description" content="Your complete gateway to cryptocurrency trading, DeFi, NFTs, and blockchain technology. Discover the best platforms and tools.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://everything-gateway.com/categories/crypto/">
+    <meta property="og:site_name" content="The Everything Gateway">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Crypto & Blockchain - The Everything Gateway">
+    <meta name="twitter:description" content="Discover the best cryptocurrency and blockchain platforms">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://everything-gateway.com/categories/crypto/">
+    
+    <!-- Theme and Icons -->
+    <meta name="theme-color" content="#f7931a">
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="../../css/design-system.css" as="style">
+    <link rel="preload" href="../../css/components.css" as="style">
+    <link rel="preload" href="../../data/crypto.json" as="fetch" crossorigin="anonymous">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../css/design-system.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/search.css">
+    <link rel="stylesheet" href="../../css/category.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Crypto & Blockchain",
+        "description": "Comprehensive collection of cryptocurrency trading platforms, DeFi protocols, NFT marketplaces, and blockchain analytics tools",
+        "url": "https://everything-gateway.com/categories/crypto/",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "The Everything Gateway",
+            "url": "https://everything-gateway.com"
+        }
+    }
+    </script>
+</head>
+<body class="crypto-theme">
+    <!-- Skip to main content link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <div class="page-container">
+        <!-- Header -->
+        <header class="page-header" role="banner">
+            <div class="header-content">
+                <nav class="breadcrumb" role="navigation" aria-label="Breadcrumb">
+                    <a href="../../" class="breadcrumb-link">🏠 Home</a>
+                    <span class="breadcrumb-separator" aria-hidden="true">›</span>
+                    <span class="breadcrumb-current" aria-current="page">Crypto & Blockchain</span>
+                </nav>
+                
+                <div class="category-header">
+                    <div class="category-icon" aria-hidden="true">₿</div>
+                    <div class="category-info">
+                        <h1 class="category-title">Crypto & Blockchain</h1>
+                        <p class="category-description">
+                            Navigate the digital economy with the best cryptocurrency exchanges, DeFi protocols, 
+                            NFT marketplaces, and blockchain analytics platforms
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main id="main-content" class="main-content" role="main">
+            <!-- Search Section -->
+            <section class="search-section">
+                <button class="search-trigger" onclick="window.gateway && window.gateway.openSearch()">
+                    <span class="search-trigger-icon">🔍</span>
+                    <span>Search across all crypto platforms</span>
+                    <span class="search-trigger-shortcut">Ctrl+K</span>
+                </button>
+            </section>
+
+            <!-- Loading State -->
+            <div id="loading-state" class="loading-container" aria-live="polite">
+                <div class="loading-spinner"></div>
+                <p>Loading cryptocurrency and blockchain platforms...</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="error-state" class="error-container" style="display: none;" role="alert">
+                <div class="error-content">
+                    <h2>Unable to Load Platforms</h2>
+                    <p>We're having trouble loading the crypto and blockchain platforms right now.</p>
+                    <button onclick="location.reload()" class="retry-button">Try Again</button>
+                </div>
+            </div>
+
+            <!-- Platforms Grid -->
+            <section id="platforms-section" class="platforms-section" style="display: none;">
+                <!-- Dynamic content will be inserted here -->
+            </section>
+
+            <!-- Fallback Content (No JavaScript) -->
+            <noscript>
+                <div class="fallback-content">
+                    <section class="platforms-section">
+                        <h2>💰 Trading Platforms</h2>
+                        <div class="platforms-grid">
+                            <a href="https://coinbase.com" class="platform-card" target="_blank" rel="noopener">
+                                <div class="platform-icon">🏦</div>
+                                <div class="platform-info">
+                                    <h3>Coinbase</h3>
+                                    <p>Leading cryptocurrency exchange with beginner-friendly interface</p>
+                                </div>
+                            </a>
+                            <a href="https://binance.com" class="platform-card" target="_blank" rel="noopener">
+                                <div class="platform-icon">🔶</div>
+                                <div class="platform-info">
+                                    <h3>Binance</h3>
+                                    <p>World's largest crypto exchange by trading volume</p>
+                                </div>
+                            </a>
+                            <a href="https://kraken.com" class="platform-card" target="_blank" rel="noopener">
+                                <div class="platform-icon">🐙</div>
+                                <div class="platform-info">
+                                    <h3>Kraken</h3>
+                                    <p>Secure cryptocurrency exchange with advanced trading features</p>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="platforms-section">
+                        <h2>🔗 DeFi Protocols</h2>
+                        <div class="platforms-grid">
+                            <a href="https://uniswap.org" class="platform-card" target="_blank" rel="noopener">
+                                <div class="platform-icon">🦄</div>
+                                <div class="platform-info">
+                                    <h3>Uniswap</h3>
+                                    <p>Leading decentralized exchange protocol</p>
+                                </div>
+                            </a>
+                            <a href="https://aave.com" class="platform-card" target="_blank" rel="noopener">
+                                <div class="platform-icon">👻</div>
+                                <div class="platform-info">
+                                    <h3>Aave</h3>
+                                    <p>Decentralized lending and borrowing protocol</p>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+
+                    <div class="category-note">
+                        <p><strong>Note:</strong> This is a simplified view. Enable JavaScript for the full interactive experience with search functionality and detailed platform information.</p>
+                    </div>
+                </div>
+            </noscript>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../js/gateway-enhanced.js"></script>
+    <script src="../../js/analytics.js"></script>
+    <script>
+        // Crypto & Blockchain specific initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('₿ Crypto & Blockchain page DOMContentLoaded');
+            console.log('GatewayApp available:', typeof window.GatewayApp !== 'undefined');
+            
+            // Initialize the crypto category
+            if (typeof window.GatewayApp !== 'undefined') {
+                console.log('₿ Initializing Crypto & Blockchain category...');
+                window.GatewayApp.init({
+                    category: 'crypto',
+                    dataPath: '../../data/crypto.json',
+                    fallbackData: getCryptoFallbackData()
+                });
+            } else {
+                console.error('❌ GatewayApp not available, falling back to manual initialization');
+                setTimeout(() => {
+                    if (typeof window.GatewayApp !== 'undefined') {
+                        console.log('⏰ Delayed GatewayApp initialization');
+                        window.GatewayApp.init({
+                            category: 'crypto',
+                            dataPath: '../../data/crypto.json',
+                            fallbackData: getCryptoFallbackData()
+                        });
+                    } else {
+                        console.log('🔄 Using immediate fallback rendering');
+                        renderFallbackData();
+                    }
+                }, 1000);
+            }
+        });
+        
+        // Emergency fallback rendering function
+        function renderFallbackData() {
+            console.log('🆘 Emergency fallback rendering');
+            const loadingState = document.getElementById('loading-state');
+            const platformsSection = document.getElementById('platforms-section');
+            
+            if (loadingState) loadingState.style.display = 'none';
+            
+            if (platformsSection) {
+                const fallbackData = getCryptoFallbackData();
+                const sectionsHTML = fallbackData.sections.map(section => `
+                    <section class="platform-section">
+                        <div class="section-header">
+                            <h2 class="section-title">${section.title}</h2>
+                            <p class="section-description">${section.description}</p>
+                            <div class="section-count">${section.platforms.length} platforms</div>
+                        </div>
+                        <div class="platforms-grid">
+                            ${section.platforms.map(platform => `
+                                <a href="${platform.url}" class="platform-card" target="_blank" rel="noopener noreferrer">
+                                    <div class="platform-logo">${platform.icon}</div>
+                                    <div class="platform-content">
+                                        <h3 class="platform-name">${platform.name}</h3>
+                                        <p class="platform-description">${platform.description}</p>
+                                    </div>
+                                </a>
+                            `).join('')}
+                        </div>
+                    </section>
+                `).join('');
+                
+                platformsSection.innerHTML = sectionsHTML;
+                platformsSection.style.display = 'block';
+                console.log('✅ Emergency fallback rendering complete');
+            }
+        }
+
+        // Comprehensive fallback data for Crypto & Blockchain
+        function getCryptoFallbackData() {
+            return {
+                "category": "Crypto & Blockchain",
+                "description": "Navigate the digital economy with the best cryptocurrency exchanges, DeFi protocols, NFT marketplaces, and blockchain analytics platforms",
+                "sections": [
+                    {
+                        "title": "Trading Platforms",
+                        "description": "Cryptocurrency exchanges and trading platforms",
+                        "platforms": [
+                            {
+                                "name": "Coinbase",
+                                "url": "https://coinbase.com",
+                                "description": "Leading cryptocurrency exchange with beginner-friendly interface",
+                                "icon": "🏦"
+                            },
+                            {
+                                "name": "Binance",
+                                "url": "https://binance.com",
+                                "description": "World's largest crypto exchange by trading volume",
+                                "icon": "🔶"
+                            },
+                            {
+                                "name": "Kraken",
+                                "url": "https://kraken.com",
+                                "description": "Secure cryptocurrency exchange with advanced trading features",
+                                "icon": "🐙"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "DeFi Protocols",
+                        "description": "Decentralized finance protocols and applications",
+                        "platforms": [
+                            {
+                                "name": "Uniswap",
+                                "url": "https://uniswap.org",
+                                "description": "Leading decentralized exchange protocol",
+                                "icon": "🦄"
+                            },
+                            {
+                                "name": "Aave",
+                                "url": "https://aave.com",
+                                "description": "Decentralized lending and borrowing protocol",
+                                "icon": "👻"
+                            }
+                        ]
+                    }
+                ],
+                "metadata": {
+                    "totalPlatforms": 45,
+                    "totalSections": 4,
+                    "lastUpdated": "2025-01-09"
+                }
+            };
+        }
+    </script>
+</body>
+</html>
