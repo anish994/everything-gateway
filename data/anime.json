@@ -1,0 +1,323 @@
+{
+    "category": "Anime & Manga",
+    "description": "Immerse yourself in Japanese animation and comics with the best streaming platforms, reading sites, and otaku communities",
+    "sections": [
+        {
+            "title": "Anime Streaming Platforms",
+            "description": "Legal anime streaming services and platforms",
+            "platforms": [
+                {
+                    "name": "Crunchyroll",
+                    "url": "https://crunchyroll.com",
+                    "description": "World's largest anime streaming platform with simulcasts and extensive library",
+                    "icon": "🍥"
+                },
+                {
+                    "name": "Funimation",
+                    "url": "https://funimation.com",
+                    "description": "Premium anime streaming with English dubs and exclusive content",
+                    "icon": "🎌"
+                },
+                {
+                    "name": "Netflix Anime",
+                    "url": "https://netflix.com/browse/genre/7424",
+                    "description": "Netflix's growing collection of anime series and original productions",
+                    "icon": "📺"
+                },
+                {
+                    "name": "Hulu Anime",
+                    "url": "https://hulu.com/hub/anime",
+                    "description": "Extensive anime library with simulcast episodes and classic series",
+                    "icon": "🎥"
+                },
+                {
+                    "name": "Disney+ Anime",
+                    "url": "https://disneyplus.com",
+                    "description": "Disney's anime collection including Studio Ghibli and original series",
+                    "icon": "🏰"
+                },
+                {
+                    "name": "VRV",
+                    "url": "https://vrv.co",
+                    "description": "Multi-platform streaming service featuring anime and geek culture content",
+                    "icon": "🎬"
+                },
+                {
+                    "name": "AnimeLab",
+                    "url": "https://animelab.com",
+                    "description": "Australian anime streaming platform with simulcasts and dubs",
+                    "icon": "🦘"
+                },
+                {
+                    "name": "Wakanim",
+                    "url": "https://wakanim.tv",
+                    "description": "European anime streaming platform with simulcasts in multiple languages",
+                    "icon": "🇪🇺"
+                },
+                {
+                    "name": "AnimePlanet",
+                    "url": "https://anime-planet.com",
+                    "description": "Legal anime streaming with database and recommendation features",
+                    "icon": "🪐"
+                },
+                {
+                    "name": "Tubi Anime",
+                    "url": "https://tubitv.com/category/anime",
+                    "description": "Free ad-supported anime streaming with classic and modern titles",
+                    "icon": "📱"
+                },
+                {
+                    "name": "Amazon Prime Video Anime",
+                    "url": "https://primevideo.com",
+                    "description": "Amazon's anime collection with exclusive series and movies",
+                    "icon": "📦"
+                },
+                {
+                    "name": "Hidive",
+                    "url": "https://hidive.com",
+                    "description": "Curated anime streaming platform with hard-to-find titles",
+                    "icon": "💎"
+                }
+            ]
+        },
+        {
+            "title": "Manga Reading Platforms",
+            "description": "Digital manga readers and official manga platforms",
+            "platforms": [
+                {
+                    "name": "MangaDex",
+                    "url": "https://mangadex.org",
+                    "description": "Community-driven manga reading platform with multiple languages",
+                    "icon": "📖"
+                },
+                {
+                    "name": "VIZ Shonen Jump",
+                    "url": "https://viz.com/shonenjump",
+                    "description": "Official digital manga subscription service for Shonen Jump titles",
+                    "icon": "⚡"
+                },
+                {
+                    "name": "MANGA Plus",
+                    "url": "https://mangaplus.shueisha.co.jp",
+                    "description": "Free official manga from Shueisha with latest chapters",
+                    "icon": "➕"
+                },
+                {
+                    "name": "ComiXology",
+                    "url": "https://comixology.com",
+                    "description": "Amazon's digital comics and manga platform with guided view",
+                    "icon": "💫"
+                },
+                {
+                    "name": "Crunchyroll Manga",
+                    "url": "https://crunchyroll.com/comics",
+                    "description": "Digital manga library from the anime streaming giant",
+                    "icon": "📚"
+                },
+                {
+                    "name": "Kodansha Comics",
+                    "url": "https://kodansha.us",
+                    "description": "Official digital manga from major Japanese publisher",
+                    "icon": "🏢"
+                },
+                {
+                    "name": "Seven Seas Entertainment",
+                    "url": "https://sevenseasentertainment.com",
+                    "description": "Digital manga and light novels from indie publisher",
+                    "icon": "🌊"
+                },
+                {
+                    "name": "Yen Press",
+                    "url": "https://yenpress.com",
+                    "description": "Digital manga and light novels with same-day releases",
+                    "icon": "💴"
+                },
+                {
+                    "name": "J-Novel Club",
+                    "url": "https://j-novel.club",
+                    "description": "Light novels and web novels translated from Japanese",
+                    "icon": "📝"
+                },
+                {
+                    "name": "BookWalker",
+                    "url": "https://bookwalker.jp",
+                    "description": "Kadokawa's digital manga and light novel platform",
+                    "icon": "🚶"
+                },
+                {
+                    "name": "MangaUp!",
+                    "url": "https://mangaup.square-enix.com",
+                    "description": "Square Enix's free manga app with original series",
+                    "icon": "⬆️"
+                },
+                {
+                    "name": "WebToon",
+                    "url": "https://webtoons.com",
+                    "description": "Digital comics platform including manga-style webcomics",
+                    "icon": "📱"
+                }
+            ]
+        },
+        {
+            "title": "Community & Databases",
+            "description": "Anime and manga communities, databases, and tracking platforms",
+            "platforms": [
+                {
+                    "name": "MyAnimeList",
+                    "url": "https://myanimelist.net",
+                    "description": "Comprehensive anime and manga database with user ratings and lists",
+                    "icon": "📋"
+                },
+                {
+                    "name": "AniList",
+                    "url": "https://anilist.co",
+                    "description": "Modern anime and manga tracking platform with social features",
+                    "icon": "📊"
+                },
+                {
+                    "name": "Kitsu",
+                    "url": "https://kitsu.io",
+                    "description": "Social platform for anime and manga discovery and tracking",
+                    "icon": "🐱"
+                },
+                {
+                    "name": "r/anime",
+                    "url": "https://reddit.com/r/anime",
+                    "description": "Massive anime community on Reddit with discussions and news",
+                    "icon": "🤖"
+                },
+                {
+                    "name": "r/manga",
+                    "url": "https://reddit.com/r/manga",
+                    "description": "Active manga community for discussions and recommendations",
+                    "icon": "📖"
+                },
+                {
+                    "name": "Anime-Planet",
+                    "url": "https://anime-planet.com",
+                    "description": "Anime and manga database with recommendation engine",
+                    "icon": "🪐"
+                },
+                {
+                    "name": "AniDB",
+                    "url": "https://anidb.net",
+                    "description": "Detailed anime database with episode information and file tracking",
+                    "icon": "💿"
+                },
+                {
+                    "name": "Shikimori",
+                    "url": "https://shikimori.one",
+                    "description": "Russian anime and manga community with tracking features",
+                    "icon": "🌟"
+                },
+                {
+                    "name": "AnimeForum",
+                    "url": "https://animeforum.com",
+                    "description": "Dedicated forum for anime discussions and community",
+                    "icon": "💭"
+                },
+                {
+                    "name": "MangaFox",
+                    "url": "https://mangafox.fun",
+                    "description": "Manga reading community with discussion forums",
+                    "icon": "🦊"
+                },
+                {
+                    "name": "4chan /a/",
+                    "url": "https://boards.4chan.org/a/",
+                    "description": "Anonymous anime and manga discussion board",
+                    "icon": "🎭"
+                },
+                {
+                    "name": "Discord Anime Servers",
+                    "url": "https://disboard.org/servers/tag/anime",
+                    "description": "Directory of anime and manga Discord communities",
+                    "icon": "💬"
+                }
+            ]
+        },
+        {
+            "title": "News & Industry Resources",
+            "description": "Anime and manga news, industry updates, and professional resources",
+            "platforms": [
+                {
+                    "name": "Anime News Network",
+                    "url": "https://animenewsnetwork.com",
+                    "description": "Leading source for anime and manga industry news and reviews",
+                    "icon": "📰"
+                },
+                {
+                    "name": "Crunchyroll News",
+                    "url": "https://crunchyroll.com/news",
+                    "description": "Latest anime news, interviews, and industry updates",
+                    "icon": "📢"
+                },
+                {
+                    "name": "Siliconera",
+                    "url": "https://siliconera.com",
+                    "description": "Gaming and anime news with focus on Japanese media",
+                    "icon": "🎮"
+                },
+                {
+                    "name": "Otaku USA",
+                    "url": "https://otakuusamagazine.com",
+                    "description": "North American otaku culture magazine and news",
+                    "icon": "🇺🇸"
+                },
+                {
+                    "name": "GoBoiano",
+                    "url": "https://goboiano.com",
+                    "description": "Anime and manga lifestyle content and news",
+                    "icon": "🌈"
+                },
+                {
+                    "name": "The Anime Man",
+                    "url": "https://youtube.com/c/TheAnimeMan",
+                    "description": "Popular anime YouTuber with reviews and industry insights",
+                    "icon": "👨"
+                },
+                {
+                    "name": "Gigguk",
+                    "url": "https://youtube.com/c/Gigguk",
+                    "description": "Anime analysis and comedy content creator",
+                    "icon": "😂"
+                },
+                {
+                    "name": "Mother's Basement",
+                    "url": "https://youtube.com/c/MothersBasement",
+                    "description": "Professional anime analysis and industry commentary",
+                    "icon": "🏠"
+                },
+                {
+                    "name": "Lost Pause",
+                    "url": "https://youtube.com/c/LostPause",
+                    "description": "Anime reactions, reviews, and otaku culture content",
+                    "icon": "⏸️"
+                },
+                {
+                    "name": "Anime Feminist",
+                    "url": "https://animefeminist.com",
+                    "description": "Critical analysis of anime from feminist perspectives",
+                    "icon": "♀️"
+                },
+                {
+                    "name": "Sakuga Blog",
+                    "url": "https://blog.sakugabooru.com",
+                    "description": "Deep analysis of anime production and animation techniques",
+                    "icon": "🎨"
+                },
+                {
+                    "name": "Wave Motion Cannon",
+                    "url": "https://wavemotioncannon.com",
+                    "description": "Thoughtful anime criticism and industry analysis",
+                    "icon": "🌊"
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "totalPlatforms": 48,
+        "totalSections": 4,
+        "lastUpdated": "2025-01-09"
+    }
+}

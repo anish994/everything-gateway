@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime & Manga - The Everything Gateway</title>
+    <meta name="description" content="Discover the best anime streaming platforms, manga reading sites, community forums, and otaku culture resources. Your gateway to Japanese animation and comics.">
+    <meta name="keywords" content="anime, manga, crunchyroll, funimation, manga reader, otaku, japanese animation, anime streaming, manga sites, anime community">
+    <meta name="author" content="The Everything Gateway">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Anime & Manga - The Everything Gateway">
+    <meta property="og:description" content="Your complete gateway to anime streaming, manga reading, and otaku culture. Discover the best platforms for Japanese animation and comics.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://everything-gateway.com/categories/anime/">
+    <meta property="og:site_name" content="The Everything Gateway">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Anime & Manga - The Everything Gateway">
+    <meta name="twitter:description" content="Discover the best anime streaming and manga reading platforms">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://everything-gateway.com/categories/anime/">
+    
+    <!-- Theme and Icons -->
+    <meta name="theme-color" content="#ff6b9d">
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="../../css/design-system.css" as="style">
+    <link rel="preload" href="../../css/components.css" as="style">
+    <link rel="preload" href="../../data/anime.json" as="fetch" crossorigin="anonymous">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../css/design-system.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/search.css">
+    <link rel="stylesheet" href="../../css/category.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Anime & Manga",
+        "description": "Comprehensive collection of anime streaming platforms, manga reading sites, and otaku culture resources",
+        "url": "https://everything-gateway.com/categories/anime/",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "The Everything Gateway",
+            "url": "https://everything-gateway.com"
+        }
+    }
+    </script>
+</head>
+<body class="anime-theme">
+    <!-- Skip to main content link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <div class="page-container">
+        <!-- Header -->
+        <header class="page-header" role="banner">
+            <div class="header-content">
+                <nav class="breadcrumb" role="navigation" aria-label="Breadcrumb">
+                    <a href="../../" class="breadcrumb-link">🏠 Home</a>
+                    <span class="breadcrumb-separator" aria-hidden="true">›</span>
+                    <span class="breadcrumb-current" aria-current="page">Anime & Manga</span>
+                </nav>
+                
+                <div class="category-header">
+                    <div class="category-icon" aria-hidden="true">🗾</div>
+                    <div class="category-info">
+                        <h1 class="category-title">Anime & Manga</h1>
+                        <p class="category-description">
+                            Immerse yourself in Japanese animation and comics with the best streaming platforms, 
+                            reading sites, and otaku communities
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main id="main-content" class="main-content" role="main">
+            <!-- Search Section -->
+            <section class="search-section">
+                <button class="search-trigger" onclick="window.gateway && window.gateway.openSearch()">
+                    <span class="search-trigger-icon">🔍</span>
+                    <span>Search across all anime platforms</span>
+                    <span class="search-trigger-shortcut">Ctrl+K</span>
+                </button>
+            </section>
+
+            <!-- Loading State -->
+            <div id="loading-state" class="loading-container" aria-live="polite">
+                <div class="loading-spinner"></div>
+                <p>Loading anime and manga platforms...</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="error-state" class="error-container" style="display: none;" role="alert">
+                <div class="error-content">
+                    <h2>Unable to Load Platforms</h2>
+                    <p>We're having trouble loading the anime and manga platforms right now.</p>
+                    <button onclick="location.reload()" class="retry-button">Try Again</button>
+                </div>
+            </div>
+
+            <!-- Main Content Container -->
+            <div id="platforms-container" style="display: none;">
+                <!-- Content will be loaded dynamically -->
+            </div>
+
+            <!-- Fallback Content (No JavaScript) -->
+            <noscript>
+                <div class="fallback-content">
+                    <section class="platforms-section">
+                        <h2>🎬 Anime Streaming Platforms</h2>
+                        <div class="platforms-grid">
+                            <a href="https://crunchyroll.com" class="platform-card" target="_blank" rel="noopener">
+                                <div class="platform-icon">🍥</div>
+                                <div class="platform-info">
+                                    <h3>Crunchyroll</h3>
+                                    <p>World's largest anime streaming platform with simulcasts</p>
+                                </div>
+                            </a>
+                            <a href="https://funimation.com" class="platform-card" target="_blank" rel="noopener">
+                                <div class="platform-icon">🎌</div>
+                                <div class="platform-info">
+                                    <h3>Funimation</h3>
+                                    <p>Premium anime streaming with English dubs</p>
+                                </div>
+                            </a>
+                            <a href="https://netflix.com/browse/genre/7424" class="platform-card" target="_blank" rel="noopener">
+                                <div class="platform-icon">📺</div>
+                                <div class="platform-info">
+                                    <h3>Netflix Anime</h3>
+                                    <p>Netflix's growing collection of anime series and films</p>
+                                </div>
+                            </a>
+                            <a href="https://hulu.com/hub/anime" class="platform-card" target="_blank" rel="noopener">
+                                <div class="platform-icon">🎥</div>
+                                <div class="platform-info">
+                                    <h3>Hulu Anime</h3>
+                                    <p>Extensive anime library with simulcast episodes</p>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="platforms-section">
+                        <h2>📚 Manga Reading Platforms</h2>
+                        <div class="platforms-grid">
+                            <a href="https://mangadex.org" class="platform-card" target="_blank" rel="noopener">
+                                <div class="platform-icon">📖</div>
+                                <div class="platform-info">
+                                    <h3>MangaDex</h3>
+                                    <p>Community-driven manga reading platform</p>
+                                </div>
+                            </a>
+                            <a href="https://viz.com/shonenjump" class="platform-card" target="_blank" rel="noopener">
+                                <div class="platform-icon">⚡</div>
+                                <div class="platform-info">
+                                    <h3>VIZ Shonen Jump</h3>
+                                    <p>Official digital manga subscription service</p>
+                                </div>
+                            </a>
+                            <a href="https://mangaplus.shueisha.co.jp" class="platform-card" target="_blank" rel="noopener">
+                                <div class="platform-icon">➕</div>
+                                <div class="platform-info">
+                                    <h3>MANGA Plus</h3>
+                                    <p>Free official manga from Shueisha</p>
+                                </div>
+                            </a>
+                            <a href="https://comixology.com" class="platform-card" target="_blank" rel="noopener">
+                                <div class="platform-icon">💫</div>
+                                <div class="platform-info">
+                                    <h3>ComiXology</h3>
+                                    <p>Digital comics and manga platform by Amazon</p>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="platforms-section">
+                        <h2>🌸 Community & Forums</h2>
+                        <div class="platforms-grid">
+                            <a href="https://myanimelist.net" class="platform-card" target="_blank" rel="noopener">
+                                <div class="platform-icon">📋</div>
+                                <div class="platform-info">
+                                    <h3>MyAnimeList</h3>
+                                    <p>Anime and manga database and community</p>
+                                </div>
+                            </a>
+                            <a href="https://anilist.co" class="platform-card" target="_blank" rel="noopener">
+                                <div class="platform-icon">📊</div>
+                                <div class="platform-info">
+                                    <h3>AniList</h3>
+                                    <p>Modern anime and manga tracking platform</p>
+                                </div>
+                            </a>
+                            <a href="https://reddit.com/r/anime" class="platform-card" target="_blank" rel="noopener">
+                                <div class="platform-icon">🤖</div>
+                                <div class="platform-info">
+                                    <h3>r/anime</h3>
+                                    <p>Massive anime community on Reddit</p>
+                                </div>
+                            </a>
+                            <a href="https://animenewsnetwork.com" class="platform-card" target="_blank" rel="noopener">
+                                <div class="platform-icon">📰</div>
+                                <div class="platform-info">
+                                    <h3>Anime News Network</h3>
+                                    <p>Latest anime and manga industry news</p>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+
+                    <div class="category-note">
+                        <p><strong>Note:</strong> This is a simplified view. Enable JavaScript for the full interactive experience with search functionality and detailed platform information.</p>
+                    </div>
+                </div>
+            </noscript>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../js/gateway-enhanced.js"></script>
+    <script src="../../js/category-loader.js"></script>
+    <script src="../../js/analytics.js"></script>
+    <script>
+        // Initialize category page
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.CategoryLoader) {
+                window.CategoryLoader.init('anime', {
+                    fallbackTitle: 'Anime & Manga',
+                    fallbackDescription: 'Discover anime streaming, manga reading, and otaku culture platforms'
+                });
+            }
+        });
+
+        // Emergency fallback for complete failure
+        setTimeout(function() {
+            const container = document.getElementById('platforms-container');
+            const loading = document.getElementById('loading-state');
+            const error = document.getElementById('error-state');
+            
+            if (container && container.style.display === 'none' && 
+                loading && loading.style.display !== 'none') {
+                console.warn('Emergency fallback activated for anime category');
+                loading.style.display = 'none';
+                error.style.display = 'block';
+            }
+        }, 10000);
+    </script>
+</body>
+</html>
