@@ -1,3 +1,104 @@
+/* Enhanced Mobile-First Search CSS v2.0 🔥 */
+
+/* Category Theming - THE ILLUSION LAYER! 🎭 */
+.search-theme-search-engines .search-input-container {
+    border-color: rgba(102, 126, 234, 0.3);
+}
+
+.search-theme-tools .search-input-container {
+    border-color: rgba(79, 172, 254, 0.3);
+}
+
+.search-theme-entertainment .search-input-container {
+    border-color: rgba(240, 147, 251, 0.3);
+}
+
+.search-theme-knowledge .search-input-container {
+    border-color: rgba(17, 153, 142, 0.3);
+}
+
+.search-theme-gaming .search-input-container {
+    border-color: rgba(145, 71, 255, 0.3);
+}
+
+.search-theme-anime .search-input-container {
+    border-color: rgba(255, 94, 125, 0.3);
+}
+
+.search-theme-crypto .search-input-container {
+    border-color: rgba(247, 147, 26, 0.3);
+}
+
+.search-theme-design .search-input-container {
+    border-color: rgba(155, 89, 182, 0.3);
+}
+
+.search-theme-health .search-input-container {
+    border-color: rgba(46, 204, 113, 0.3);
+}
+
+.search-theme-lifestyle .search-input-container {
+    border-color: rgba(32, 191, 85, 0.3);
+}
+
+.search-theme-news .search-input-container {
+    border-color: rgba(255, 236, 210, 0.5);
+}
+
+.search-theme-social .search-input-container {
+    border-color: rgba(210, 153, 194, 0.3);
+}
+
+/* Search History Styles */
+.search-history {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.search-history-title {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    font-weight: var(--font-weight-medium);
+}
+
+.search-history-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.search-history-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(0, 0, 0, 0.03);
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: var(--touch-target-min);
+    -webkit-tap-highlight-color: transparent;
+    text-align: left;
+    width: 100%;
+}
+
+.search-history-item:active {
+    background: rgba(102, 126, 234, 0.1);
+    transform: scale(0.98);
+}
+
+.history-icon {
+    opacity: 0.6;
+}
+
+.history-query {
+    flex: 1;
+}
 
 /* Toast Notifications for favorites */
 .toast {
@@ -12,7 +113,7 @@
     font-size: 0.9rem;
     font-weight: 500;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    z-index: 10001;
+    z-index: var(--z-toast);
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
@@ -49,7 +150,8 @@
     box-sizing: border-box;
 }
 
-.search-overlay.active {
+.search-overlay.active,
+.search-overlay.search-open {
     opacity: 1;
     visibility: visible;
 }
@@ -70,7 +172,8 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.search-overlay.active .search-modal {
+.search-overlay.active .search-modal,
+.search-overlay.search-open .search-modal {
     transform: translateY(0) scale(1);
 }
 

@@ -260,12 +260,16 @@
 </head>
 <body>
     <div class="page-container">
-        <!-- Global Search Button -->
-        <button class="search-button" id="globalSearchBtn">
-            <span class="search-icon">🔍</span>
-            <span class="search-text">Search Everything</span>
-            <span class="search-shortcut">Ctrl+K</span>
-        </button>
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav">
+            <a href="../../" class="back-link">
+                ← Back to Gateway
+            </a>
+            <div class="nav-title">Search Engines</div>
+            <button class="category-nav-search" onclick="window.universalSearch && window.universalSearch.openSearch()" aria-label="Search search engines">
+                🔍
+            </button>
+        </nav>
         
         <main class="main-content">
             <!-- Navigation Breadcrumb -->
@@ -277,7 +281,19 @@
             <div class="category-hero">
                 <div style="position: relative; z-index: 1;">
                     <h1 class="heading-primary" style="color: white; margin: 0 0 1rem 0; font-size: 3.5rem; text-shadow: 0 4px 8px rgba(0,0,0,0.3);">Search Engines Hub</h1>
-                    <p class="subtitle" style="color: rgba(255,255,255,0.9); font-size: 1.3rem; max-width: 600px; margin: 0 auto;">Your gateway to the entire search universe - from mainstream giants to privacy-focused alternatives and specialized search engines</p>
+                    <div class="collapsible-content" id="categorySubtitle">
+                        <p class="subtitle" style="color: rgba(255,255,255,0.9); font-size: 1.3rem; max-width: 600px; margin: 0 auto;">Your gateway to the entire search universe - from mainstream giants to privacy-focused alternatives and specialized search engines</p>
+                    </div>
+                    <button class="expand-toggle" id="categoryToggle" onclick="toggleCategoryContent()">Read more</button>
+                    
+                    <!-- Search Engines Specific Search -->
+                    <div style="margin-top: 2rem; text-align: center;">
+                        <button class="search-trigger" onclick="window.universalSearch && window.universalSearch.openSearch()">
+                            <span class="search-trigger-icon">🔍</span>
+                            <span>Search All Search Engines</span>
+                            <span class="search-trigger-shortcut">Ctrl+K</span>
+                        </button>
+                    </div>
                 </div>
             </div>
             
@@ -855,6 +871,33 @@
         </div>
     </div>
     
+    <script src="../../js/universal-search.js"></script>
     <script src="../../js/gateway.js"></script>
+    <script>
+        // Initialize the search engines category page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize universal search with search engines theming
+            if (window.UniversalSearchEngine) {
+                window.universalSearch = new UniversalSearchEngine({
+                    category: 'search-engines',
+                    placeholder: 'Search all search engines...'
+                });
+            }
+        });
+        
+        // Toggle category content function
+        function toggleCategoryContent() {
+            const content = document.getElementById('categorySubtitle');
+            const toggle = document.getElementById('categoryToggle');
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                toggle.textContent = 'Read more';
+            } else {
+                content.classList.add('expanded');
+                toggle.textContent = 'Read less';
+            }
+        }
+    </script>
 </body>
 </html>

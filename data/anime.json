@@ -1,10 +1,10 @@
 {
     "category": "Anime & Manga",
-    "description": "Immerse yourself in Japanese animation and comics with the best streaming platforms, reading sites, and otaku communities",
+    "description": "Complete gateway to Japanese animation and comics - streaming platforms, manga readers, tracking databases, and vibrant otaku communities",
     "sections": [
         {
-            "title": "Anime Streaming Platforms",
-            "description": "Legal anime streaming services and platforms",
+            "title": "🎬 Anime Streaming",
+            "description": "Premium anime streaming platforms with simulcasts, dubs, and exclusive content",
             "platforms": [
                 {
                     "name": "Crunchyroll",
@@ -81,8 +81,8 @@
             ]
         },
         {
-            "title": "Manga Reading Platforms",
-            "description": "Digital manga readers and official manga platforms",
+            "title": "📚 Manga Reading",
+            "description": "Official manga platforms, digital readers, and light novel publishers",
             "platforms": [
                 {
                     "name": "MangaDex",
@@ -159,8 +159,8 @@
             ]
         },
         {
-            "title": "Community & Databases",
-            "description": "Anime and manga communities, databases, and tracking platforms",
+            "title": "👥 Community & Tracking",
+            "description": "Anime databases, tracking platforms, and vibrant fan communities",
             "platforms": [
                 {
                     "name": "MyAnimeList",
@@ -237,8 +237,8 @@
             ]
         },
         {
-            "title": "News & Industry Resources",
-            "description": "Anime and manga news, industry updates, and professional resources",
+            "title": "📰 News & Industry",
+            "description": "Anime news, industry analysis, content creators, and professional insights",
             "platforms": [
                 {
                     "name": "Anime News Network",
@@ -318,6 +318,7 @@
     "metadata": {
         "totalPlatforms": 48,
         "totalSections": 4,
-        "lastUpdated": "2025-01-09"
+        "lastUpdated": "2025-08-12",
+        "version": "2.0"
     }
 }

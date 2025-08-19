@@ -63,8 +63,17 @@
   --gradient-developer: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
   --gradient-creative: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
   --gradient-shopping: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-  --gradient-social: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
-  --gradient-entertainment: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+  --gradient-social: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+  --gradient-entertainment: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  
+  /* New Category Gradients */
+  --gradient-anime: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+  --gradient-crypto: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+  --gradient-gaming: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+  --gradient-health: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+  --gradient-design: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+  --gradient-lifestyle: linear-gradient(135deg, #ff7675 0%, #fd79a8 100%);
+  --gradient-news: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
   
   /* Typography Scale */
   --font-family-base: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;

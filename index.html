@@ -23,27 +23,52 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/search.css">
     <style>
-        /* Page-specific styles */
+        /* Page-specific styles - Mobile-first */
         .hero {
             text-align: center;
-            margin-bottom: var(--spacing-3xl);
+            margin-bottom: var(--spacing-xl);
+            padding: var(--spacing-lg) 0;
         }
         
         .hero-subtitle {
-            font-size: var(--font-size-lg);
             color: var(--text-secondary);
-            margin: var(--spacing-md) 0 var(--spacing-2xl);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.8;
+            margin: var(--spacing-md) 0;
+            max-width: 100%;
+            padding: 0 var(--spacing-sm);
+            line-height: var(--line-height-normal);
+        }
+        
+        .hero-subtitle p {
+            margin: 0;
+            font-size: var(--font-size-base);
         }
         
         .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--spacing-lg);
-            margin-top: var(--spacing-2xl);
+            margin-top: var(--spacing-xl);
+        }
+        
+        /* Mobile optimizations */
+        @media (min-width: 768px) {
+            .hero {
+                margin-bottom: var(--spacing-2xl);
+                padding: var(--spacing-xl) 0;
+            }
+            
+            .hero-subtitle {
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+                margin: var(--spacing-lg) auto var(--spacing-xl);
+                padding: 0;
+            }
+            
+            .hero-subtitle p {
+                font-size: var(--font-size-lg);
+            }
+            
+            .categories-grid {
+                margin-top: var(--spacing-2xl);
+            }
         }
         
         .category-card {
@@ -164,20 +189,10 @@
             <!-- Hero Section -->
             <section class="hero">
                 <h1 class="heading-primary">The Everything Gateway</h1>
-                <p class="hero-subtitle">
-                    Your single portal to the entire internet. Discover search engines, productivity tools, 
-                    entertainment platforms, and knowledge resources — all organized, curated, and accessible 
-                    in one beautiful interface.
-                </p>
-                
-                <!-- Universal Search Button -->
-                <div style="margin-top: 2rem; text-align: center;">
-                    <button class="search-trigger" onclick="window.gateway && window.gateway.openSearch()">
-                        <span class="search-trigger-icon">🔍</span>
-                        <span>Search across all platforms</span>
-                        <span class="search-trigger-shortcut">Ctrl+K</span>
-                    </button>
+                <div class="hero-subtitle collapsible-content" id="heroSubtitle">
+                    <p>Your single portal to the entire internet. Discover search engines, productivity tools, entertainment platforms, and knowledge resources — all organized, curated, and accessible in one beautiful interface.</p>
                 </div>
+                <button class="expand-toggle" id="heroToggle" onclick="toggleHeroContent()">Read more</button>
             </section>
             
             <!-- Stats Section -->
@@ -185,11 +200,11 @@
                 <h2 class="heading-secondary">Gateway Overview</h2>
                 <div class="stats-grid">
                     <div class="stat-item">
-                        <span class="stat-number">14</span>
+                        <span class="stat-number">12</span>
                         <span class="stat-label">Categories</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">500+</span>
+                        <span class="stat-number">511+</span>
                         <span class="stat-label">Total Resources</span>
                     </div>
                     <div class="stat-item">
@@ -207,7 +222,7 @@
             <section class="categories-section">
                 <h2 class="heading-secondary">Choose Your Gateway</h2>
                 
-                <div class="categories-grid">
+                <div class="categories-grid grid grid-auto-fit">
                     <!-- Search Engines - Active -->
                     <a href="categories/search-engines/index.html" class="category-card mainstream focus-outline"
                        aria-label="Search Engines category with 39 search engines available">
@@ -361,6 +376,20 @@
                             <span class="category-count">43 platforms</span>
                         </div>
                     </a>
+                    
+                    <!-- Lifestyle & Shopping - NEW! -->
+                    <a href="categories/lifestyle/index.html" class="category-card lifestyle focus-outline"
+                       aria-label="Lifestyle & Shopping category with 44 e-commerce and lifestyle platforms available">
+                        <span class="category-emoji" aria-hidden="true">🛍️</span>
+                        <div class="category-title">Lifestyle & Shopping</div>
+                        <div class="category-description">
+                            Transform your daily life! E-commerce giants, travel platforms, food delivery, and home services for modern living
+                        </div>
+                        <div class="category-meta">
+                            <span class="category-status">New!</span>
+                            <span class="category-count">44 platforms</span>
+                        </div>
+                    </a>
                 </div>
             </section>
             
@@ -374,8 +403,49 @@
         </main>
     </div>
     
+    <!-- Mobile Search FAB -->
+    <button class="search-fab" id="searchFab" onclick="window.universalSearch && window.universalSearch.openSearch()"
+            aria-label="Open search across all platforms">
+        <span class="search-fab-icon">🔍</span>
+        <span class="search-fab-text">Search Everything</span>
+    </button>
+    
     <!-- JavaScript -->
-    <script src="js/gateway-enhanced.js"></script>
+    <script src="js/universal-search.js"></script>
     <script src="js/analytics.js"></script>
+    <script>
+        // Mobile-first interactive features
+        function toggleHeroContent() {
+            const content = document.getElementById('heroSubtitle');
+            const toggle = document.getElementById('heroToggle');
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                toggle.textContent = 'Read more';
+            } else {
+                content.classList.add('expanded');
+                toggle.textContent = 'Read less';
+            }
+        }
+        
+        // Enhanced touch feedback
+        document.addEventListener('touchstart', function() {}, {passive: true});
+        
+        // Optimize for mobile viewports
+        function setMobileViewport() {
+            const viewport = document.querySelector('meta[name="viewport"]');
+            if (viewport) {
+                viewport.content = 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes';
+            }
+        }
+        
+        // Add iOS-specific optimizations
+        if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+            document.body.style.webkitTouchCallout = 'none';
+            document.body.style.webkitTextSizeAdjust = '100%';
+        }
+        
+        setMobileViewport();
+    </script>
 </body>
 </html>

@@ -1,10 +1,10 @@
 {
     "category": "Gaming & Esports",
-    "description": "Level up your gaming experience with the best platforms and communities",
+    "description": "Complete gaming ecosystem - game stores, streaming platforms, competitive esports, and vibrant gaming communities worldwide",
     "sections": [
         {
-            "title": "Game Stores & Platforms",
-            "description": "Digital game stores and gaming platforms",
+            "title": "🛒 Game Stores & Platforms",
+            "description": "Digital game stores, subscription services, and gaming platforms",
             "platforms": [
                 {
                     "name": "Steam",
@@ -81,8 +81,8 @@
             ]
         },
         {
-            "title": "Streaming & Content",
-            "description": "Gaming streams, videos, and content platforms",
+            "title": "📺 Streaming & Content",
+            "description": "Live gaming streams, content creation tools, and video platforms",
             "platforms": [
                 {
                     "name": "Twitch",
@@ -135,8 +135,8 @@
             ]
         },
         {
-            "title": "Communities & Forums",
-            "description": "Gaming communities, forums, and social platforms",
+            "title": "👥 Communities & Forums",
+            "description": "Gaming communities, discussion forums, and social gaming platforms",
             "platforms": [
                 {
                     "name": "Reddit Gaming",
@@ -201,8 +201,8 @@
             ]
         },
         {
-            "title": "Esports & Competitive",
-            "description": "Professional esports, tournaments, and competitive gaming",
+            "title": "🏆 Esports & Competitive",
+            "description": "Professional esports, tournaments, competitive gaming, and player statistics",
             "platforms": [
                 {
                     "name": "ESL Gaming",
@@ -282,6 +282,7 @@
     "metadata": {
         "totalPlatforms": 42,
         "totalSections": 4,
-        "lastUpdated": "2025-01-09"
+        "lastUpdated": "2025-08-12",
+        "version": "2.0"
     }
 }

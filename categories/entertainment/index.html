@@ -3,535 +3,359 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
     <title>Entertainment & Media - The Everything Gateway</title>
-    <meta name="description" content="Your gateway to streaming, music, gaming, and entertainment platforms">
-    <meta name="keywords" content="streaming, music, gaming, entertainment, Netflix, Spotify, Steam, YouTube">
+    <meta name="description" content="Discover the best streaming platforms, music services, gaming stores, and entertainment content. Your gateway to Netflix, Spotify, Steam, YouTube, and more top entertainment destinations.">
+    <meta name="keywords" content="entertainment, streaming, music, gaming, Netflix, Spotify, Steam, YouTube, movies, TV shows, games, social media">
     <meta name="author" content="The Everything Gateway">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Entertainment & Media - The Everything Gateway">
-    <meta property="og:description" content="Your gateway to streaming, music, gaming, and entertainment platforms">
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://everything-gateway.netlify.app/categories/entertainment/">
+    <meta property="og:title" content="Entertainment & Media - The Everything Gateway">
+    <meta property="og:description" content="Discover the best streaming platforms, music services, gaming stores, and entertainment content from top providers.">
+    <meta property="og:image" content="https://everything-gateway.netlify.app/assets/og-entertainment.jpg">
+    <meta property="og:site_name" content="The Everything Gateway">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://everything-gateway.netlify.app/categories/entertainment/">
+    <meta property="twitter:title" content="Entertainment & Media - The Everything Gateway">
+    <meta property="twitter:description" content="Discover the best streaming platforms, music services, gaming stores, and entertainment content.">
+    <meta property="twitter:image" content="https://everything-gateway.netlify.app/assets/og-entertainment.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../css/design-system.css">
+    <link rel="stylesheet" href="../../css/components.css">
     <link rel="stylesheet" href="../../css/shared.css">
     <link rel="stylesheet" href="../../css/search.css">
-    <style>
-        /* Entertainment Category Specific Gradients */
-        .streaming-gradient {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Entertainment & Media - The Everything Gateway",
+        "description": "Discover the best streaming platforms, music services, gaming stores, and entertainment content",
+        "url": "https://everything-gateway.netlify.app/categories/entertainment/",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "The Everything Gateway",
+            "url": "https://everything-gateway.netlify.app"
+        },
+        "about": {
+            "@type": "Thing",
+            "name": "Entertainment and Media Platforms",
+            "description": "Curated collection of streaming, music, gaming, and entertainment platforms"
         }
-        
-        .music-gradient {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-        }
-        
-        .gaming-gradient {
-            background: linear-gradient(135deg, #11998e, #38ef7d);
-        }
-        
-        .social-gradient {
-            background: linear-gradient(135deg, #ff8a80, #ff5722);
-        }
-        
-        .interactive-gradient {
-            background: linear-gradient(135deg, #ffd54f, #ff9800);
-        }
-        
-        .alternative-gradient {
-            background: linear-gradient(135deg, #9c27b0, #673ab7);
-        }
-        
-        /* Entertainment-specific hero styling */
-        .category-hero {
-            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
-            position: relative;
-            overflow: hidden;
-            padding: 4rem 2rem;
-        }
-        
-        .category-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="white" fill-opacity="0.1"/><circle cx="60" cy="40" r="0.8" fill="white" fill-opacity="0.08"/><circle cx="80" cy="80" r="1.2" fill="white" fill-opacity="0.06"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
-            pointer-events: none;
-        }
-        
-        /* Enhanced platform cards with logos */
-        .platforms-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .platform-card {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 16px;
-            text-decoration: none;
-            color: #2d3748;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .platform-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .platform-card:hover::before {
-            opacity: 1;
-        }
-        
-        .platform-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-            background: rgba(255, 255, 255, 1);
-        }
-        
-        .platform-logo {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            background: linear-gradient(45deg, #f1f1f1, #e1e1e1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            flex-shrink: 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        
-        .platform-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .platform-content {
-            flex: 1;
-            min-width: 0;
-        }
-        
-        .platform-name {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin: 0 0 0.5rem 0;
-            color: #1a202c;
-            line-height: 1.3;
-        }
-        
-        .platform-description {
-            font-size: 0.9rem;
-            color: #4a5568;
-            margin: 0;
-            line-height: 1.5;
-            opacity: 0.8;
-        }
-        
-        .platform-card:hover .platform-name {
-            color: #667eea;
-        }
-        
-        .platform-card:hover .platform-description {
-            opacity: 1;
-        }
-        
-        /* Section headers with better styling */
-        .platform-section {
-            margin-bottom: 3rem;
-        }
-        
-        .section-header {
-            padding: 2rem;
-            border-radius: 16px;
-            margin-bottom: 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .section-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-        }
-        
-        .section-title, .section-description {
-            position: relative;
-            z-index: 1;
-            color: white;
-            margin: 0;
-        }
-        
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-        
-        .section-description {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        
-        /* Loading state */
-        .platforms-loading {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-            padding: 2rem;
-            color: #666;
-        }
-        
-        .loading-spinner {
-            width: 40px;
-            height: 40px;
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #667eea;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        /* Animation for entertainment cards */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .platform-card {
-            animation: fadeInUp 0.6s ease-out;
-        }
-        
-        .platform-card:nth-child(2n) {
-            animation-delay: 0.1s;
-        }
-        
-        .platform-card:nth-child(3n) {
-            animation-delay: 0.2s;
-        }
-        
-        .platform-card:nth-child(4n) {
-            animation-delay: 0.3s;
-        }
-        
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .platforms-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .platform-card {
-                padding: 1.25rem;
-            }
-            
-            .platform-logo {
-                width: 40px;
-                height: 40px;
-            }
-            
-            .section-header {
-                padding: 1.5rem;
-            }
-            
-            .section-title {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
+    }
+    </script>
 </head>
 <body>
-    <!-- Navigation Breadcrumb -->
-    <nav class="breadcrumb">
-        <a href="../../index.html" class="breadcrumb-home">🌟 Gateway</a>
-        <span class="breadcrumb-separator">→</span>
-        <span class="breadcrumb-current">🎭 Entertainment & Media</span>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="category-hero">
-        <div class="hero-content">
-            <h1 class="hero-title">🎭 Entertainment & Media</h1>
-            <p class="hero-subtitle">Your gateway to streaming, music, gaming, and entertainment platforms</p>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number" id="total-platforms">51</span>
-                    <span class="stat-label">Platforms</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" id="total-sections">6</span>
-                    <span class="stat-label">Categories</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Fun</span>
-                </div>
+    <!-- Skip Links for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#platform-grid" class="skip-link">Skip to platforms</a>
+    
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <div class="header-content">
+            <div class="header-left">
+                <a href="../../" class="logo-link" aria-label="Return to The Everything Gateway homepage">
+                    <h1 class="site-title">
+                        <span class="gateway-text">The Everything</span>
+                        <span class="highlight">Gateway</span>
+                    </h1>
+                </a>
             </div>
-            
-            <!-- Universal Search Button -->
-            <div style="margin-top: 2rem; text-align: center;">
-                <button class="search-trigger" onclick="window.gateway && window.gateway.openSearch()">
-                    <span class="search-trigger-icon">🔍</span>
-                    <span>Search entertainment platforms</span>
-                    <span class="search-trigger-shortcut">Ctrl+K</span>
+            <div class="header-right">
+                <button class="search-btn" aria-label="Open universal search" title="Search (Ctrl+K)">
+                    <span class="search-icon">🔍</span>
+                    <span class="search-text">Search</span>
+                    <span class="search-shortcut">Ctrl+K</span>
                 </button>
             </div>
         </div>
-    </section>
+    </header>
 
     <!-- Main Content -->
-    <main class="main-content">
-        <!-- Entertainment Content Container -->
-        <div id="entertainment-content">
-            <div class="platforms-loading">
-                <div class="loading-spinner"></div>
-                <span>Loading entertainment platforms...</span>
+    <main id="main-content" class="main-content" role="main">
+        <!-- Category Hero Section -->
+        <section class="category-hero entertainment-hero" role="banner">
+            <div class="hero-content">
+                <div class="hero-icon" aria-hidden="true">🎭</div>
+                <h1 class="hero-title">Entertainment & Media</h1>
+                <p class="hero-description">
+                    Your gateway to streaming, music, gaming, and entertainment platforms. 
+                    Discover top destinations for movies, TV shows, music, games, and social content.
+                </p>
+                <div class="hero-stats" aria-label="Category statistics">
+                    <div class="stat">
+                        <span class="stat-number" id="total-platforms">0</span>
+                        <span class="stat-label">Platforms</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="total-categories">0</span>
+                        <span class="stat-label">Categories</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Fun</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading State -->
+        <div id="loading-state" class="loading-state" aria-live="polite">
+            <div class="loading-spinner" aria-hidden="true"></div>
+            <p class="loading-text">Loading entertainment platforms...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="error-state" class="error-state" style="display: none;" role="alert">
+            <div class="error-content">
+                <h2 class="error-title">Unable to Load Entertainment Platforms</h2>
+                <p class="error-message">We're having trouble loading the entertainment platforms. Please try again.</p>
+                <button class="retry-btn" onclick="window.location.reload()">
+                    <span class="retry-icon">🔄</span>
+                    Try Again
+                </button>
             </div>
         </div>
+
+        <!-- Platforms Grid -->
+        <section id="platforms-section" class="platforms-section" style="display: none;">
+            <!-- Dynamic content will be inserted here -->
+        </section>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="site-footer" role="contentinfo">
         <div class="footer-content">
-            <p class="footer-text">
-                🎭 Entertainment & Media Hub - Part of <strong>The Everything Gateway</strong>
-            </p>
-            <p class="footer-stats" id="footer-stats">
-                Loading stats...
-            </p>
-            <a href="../../index.html" class="footer-home-link">← Back to Gateway Home</a>
+            <div class="footer-left">
+                <p class="footer-text">
+                    <span class="gateway-text">The Everything</span>
+                    <span class="highlight">Gateway</span>
+                </p>
+                <p class="footer-tagline">Your portal to curated internet resources</p>
+            </div>
+            <div class="footer-right">
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <a href="../../" class="footer-link">Home</a>
+                    <a href="../search-engines/" class="footer-link">Search Engines</a>
+                    <a href="../tools/" class="footer-link">Tools</a>
+                    <a href="../news/" class="footer-link">News</a>
+                    <a href="../knowledge/" class="footer-link">Knowledge</a>
+                </nav>
+            </div>
         </div>
     </footer>
-    
-    <!-- JavaScript -->
+
+    <!-- Scripts -->
     <script src="../../js/gateway-enhanced.js"></script>
+    <script src="../../performance.config.js"></script>
     <script>
-        // Entertainment Platform Loader
-        class EntertainmentPlatformLoader {
-            constructor() {
-                this.contentContainer = document.getElementById('entertainment-content');
-                this.init();
-            }
+        // Entertainment & Media specific initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 Entertainment page DOMContentLoaded');
+            console.log('GatewayApp available:', typeof window.GatewayApp !== 'undefined');
             
-            async init() {
-                try {
-                    await this.loadPlatforms();
-                } catch (error) {
-                    console.error('Failed to load entertainment platforms:', error);
-                    this.showError();
-                }
-            }
-            
-            async loadPlatforms() {
-                try {
-                    const response = await fetch('../../data/entertainment.json');
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    const data = await response.json();
-                    
-                    this.renderPlatforms(data);
-                    this.updateStats(data);
-                    this.animateIn();
-                } catch (error) {
-                    console.log('Fetch failed, using fallback data for development:', error);
-                    this.loadFallbackData();
-                }
-            }
-            
-            renderPlatforms(data) {
-                const sectionsHTML = data.sections.map(section => `
-                    <section class="platform-section" data-section="${section.title}">
-                        <div class="section-header ${section.colorClass}">
-                            <h2 class="section-title">${section.title}</h2>
-                            <p class="section-description">${section.description}</p>
-                        </div>
-                        <div class="platforms-grid">
-                            ${section.platforms.map(platform => `
-                                <a href="${platform.url}" 
-                                   class="platform-card"
-                                   target="_blank"
-                                   rel="noopener noreferrer"
-                                   aria-label="Visit ${platform.name} - ${platform.description}">
-                                    <div class="platform-logo">
-                                        <img src="https://www.google.com/s2/favicons?domain=${this.extractDomain(platform.url)}&sz=32" 
-                                             alt="${platform.name}" 
-                                             onerror="this.parentElement.innerHTML='${platform.icon}'">
-                                    </div>
-                                    <div class="platform-content">
-                                        <h3 class="platform-name">${platform.name}</h3>
-                                        <p class="platform-description">${platform.description}</p>
-                                    </div>
-                                </a>
-                            `).join('')}
-                        </div>
-                    </section>
-                `).join('');
-                
-                this.contentContainer.innerHTML = sectionsHTML;
-            }
-            
-            updateStats(data) {
-                const totalPlatforms = data.meta.totalPlatforms || this.countTotalPlatforms(data.sections);
-                const totalSections = data.sections.length;
-                
-                // Update stats with null checks
-                const platformCountEl = document.getElementById('total-platforms');
-                const sectionsCountEl = document.getElementById('total-sections');
-                const footerStatsEl = document.getElementById('footer-stats');
-                
-                if (platformCountEl) platformCountEl.textContent = totalPlatforms;
-                if (sectionsCountEl) sectionsCountEl.textContent = totalSections;
-                if (footerStatsEl) {
-                    footerStatsEl.textContent = 
-                        `${totalPlatforms} Platforms • ${totalSections} Categories • Updated ${data.meta.lastUpdated}`;
-                }
-            }
-            
-            countTotalPlatforms(sections) {
-                return sections.reduce((total, section) => total + (section.platforms?.length || 0), 0);
-            }
-            
-            extractDomain(url) {
-                try {
-                    const urlObj = new URL(url);
-                    return urlObj.hostname.replace('www.', '');
-                } catch (e) {
-                    return url.replace(/https?:\/\/(www\.)?/, '').split('/')[0];
-                }
-            }
-            
-            animateIn() {
-                const sections = document.querySelectorAll('.platform-section');
-                sections.forEach((section, index) => {
-                    section.style.opacity = '0';
-                    section.style.transform = 'translateY(20px)';
-                    
-                    setTimeout(() => {
-                        section.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-                        section.style.opacity = '1';
-                        section.style.transform = 'translateY(0)';
-                    }, index * 150);
+            // Initialize the entertainment category
+            if (typeof window.GatewayApp !== 'undefined') {
+                console.log('🎭 Initializing Entertainment category...');
+                window.GatewayApp.init({
+                    category: 'entertainment',
+                    dataPath: '../../data/entertainment.json',
+                    fallbackData: getEntertainmentFallbackData()
                 });
+            } else {
+                console.error('❌ GatewayApp not available, falling back to manual initialization');
+                // Manual fallback if GatewayApp isn't loaded yet
+                setTimeout(() => {
+                    if (typeof window.GatewayApp !== 'undefined') {
+                        console.log('⏰ Delayed GatewayApp initialization');
+                        window.GatewayApp.init({
+                            category: 'entertainment',
+                            dataPath: '../../data/entertainment.json',
+                            fallbackData: getEntertainmentFallbackData()
+                        });
+                    } else {
+                        console.log('🔄 Using immediate fallback rendering');
+                        renderFallbackData();
+                    }
+                }, 1000);
             }
+        });
+        
+        // Emergency fallback rendering function
+        function renderFallbackData() {
+            console.log('🎭 Rendering fallback entertainment data');
             
-            loadFallbackData() {
-                // Fallback data for development when JSON can't be fetched
-                const data = {
-                    meta: {
-                        title: "Entertainment & Media",
-                        totalPlatforms: 51,
-                        lastUpdated: "2025-08-09"
-                    },
-                    sections: [
-                        {
-                            title: "🎬 Video Streaming",
-                            description: "Movies, TV shows, and video content",
-                            colorClass: "streaming-gradient",
-                            platforms: [
-                                { name: "Netflix", url: "https://www.netflix.com", icon: "🎬", description: "Global streaming service with original content and movies" },
-                                { name: "YouTube", url: "https://www.youtube.com", icon: "📹", description: "World's largest video sharing platform" },
-                                { name: "Disney+", url: "https://www.disneyplus.com", icon: "🏰", description: "Disney, Marvel, Star Wars, and Pixar content" },
-                                { name: "Amazon Prime Video", url: "https://www.primevideo.com", icon: "📦", description: "Amazon's streaming service with originals and movies" },
-                                { name: "HBO Max", url: "https://www.hbomax.com", icon: "🎭", description: "Premium content from HBO and Warner Bros" },
-                                { name: "Hulu", url: "https://www.hulu.com", icon: "📺", description: "US streaming with TV shows and next-day episodes" },
-                                { name: "Apple TV+", url: "https://tv.apple.com", icon: "🍎", description: "Apple's premium original content platform" },
-                                { name: "Twitch", url: "https://www.twitch.tv", icon: "🟣", description: "Live streaming platform for gaming and entertainment" }
-                            ]
-                        },
-                        {
-                            title: "🎵 Music & Audio",
-                            description: "Music streaming, podcasts, and audio content",
-                            colorClass: "music-gradient",
-                            platforms: [
-                                { name: "Spotify", url: "https://www.spotify.com", icon: "🎵", description: "World's largest music streaming platform" },
-                                { name: "Apple Music", url: "https://music.apple.com", icon: "🍎", description: "Apple's premium music streaming service" },
-                                { name: "YouTube Music", url: "https://music.youtube.com", icon: "🎤", description: "Google's music streaming platform" },
-                                { name: "SoundCloud", url: "https://soundcloud.com", icon: "☁️", description: "Platform for independent artists and creators" },
-                                { name: "Audible", url: "https://www.audible.com", icon: "🎧", description: "Amazon's audiobook and podcast platform" }
-                            ]
-                        },
-                        {
-                            title: "🎮 Gaming Platforms",
-                            description: "Game stores, streaming, and gaming communities",
-                            colorClass: "gaming-gradient",
-                            platforms: [
-                                { name: "Steam", url: "https://store.steampowered.com", icon: "🚂", description: "World's largest PC gaming platform" },
-                                { name: "Epic Games Store", url: "https://www.epicgames.com/store", icon: "🎮", description: "PC gaming platform with free weekly games" },
-                                { name: "PlayStation Store", url: "https://store.playstation.com", icon: "🎮", description: "Official PlayStation games and content" },
-                                { name: "Xbox Game Pass", url: "https://www.xbox.com/xbox-game-pass", icon: "🎩", description: "Microsoft's gaming subscription service" },
-                                { name: "Discord", url: "https://discord.com", icon: "💬", description: "Gaming communication and community platform" }
-                            ]
-                        },
-                        {
-                            title: "📱 Social Entertainment",
-                            description: "Social media and content sharing platforms",
-                            colorClass: "social-gradient",
-                            platforms: [
-                                { name: "TikTok", url: "https://www.tiktok.com", icon: "📱", description: "Short-form video sharing platform" },
-                                { name: "Instagram", url: "https://www.instagram.com", icon: "📷", description: "Photo and video sharing social network" },
-                                { name: "Twitter", url: "https://twitter.com", icon: "🐦", description: "Microblogging and real-time information platform" },
-                                { name: "Reddit", url: "https://www.reddit.com", icon: "🤖", description: "Community discussion and content aggregation" }
-                            ]
-                        }
-                    ]
-                };
-                
-                this.renderPlatforms(data);
-                this.updateStats(data);
-                this.animateIn();
-            }
+            const platformsSection = document.getElementById('platforms-section');
+            const loadingState = document.getElementById('loading-state');
+            const errorState = document.getElementById('error-state');
             
-            showError() {
-                this.contentContainer.innerHTML = `
-                    <div class="platforms-loading">
-                        <span style="color: #ff5722;">❌ Failed to load entertainment platforms</span>
-                        <button onclick="location.reload()" style="margin-top: 1rem; padding: 0.5rem 1rem; border: none; background: #667eea; color: white; border-radius: 4px; cursor: pointer;">Retry</button>
+            if (!platformsSection) return;
+            
+            // Hide loading/error states
+            if (loadingState) loadingState.style.display = 'none';
+            if (errorState) errorState.style.display = 'none';
+            
+            const fallbackData = getEntertainmentFallbackData();
+            
+            // Update stats
+            const totalPlatformsEl = document.getElementById('total-platforms');
+            const totalCategoriesEl = document.getElementById('total-categories');
+            
+            const totalPlatforms = fallbackData.sections.reduce((sum, section) => sum + section.platforms.length, 0);
+            const totalCategories = fallbackData.sections.length;
+            
+            if (totalPlatformsEl) totalPlatformsEl.textContent = totalPlatforms;
+            if (totalCategoriesEl) totalCategoriesEl.textContent = totalCategories;
+            
+            // Render platforms
+            const sectionsHTML = fallbackData.sections.map(section => `
+                <div class="platform-section" data-section="${section.title}">
+                    <div class="section-header ${section.colorClass || 'gradient-primary'}">
+                        <h2 class="section-title">${section.title}</h2>
+                        <p class="section-description">${section.description}</p>
                     </div>
-                `;
-            }
+                    <div class="platforms-grid" id="platform-grid">
+                        ${section.platforms.map(platform => `
+                            <a href="${platform.url}" 
+                               class="platform-card"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="Visit ${platform.name} - ${platform.description}">
+                                <div class="platform-icon" aria-hidden="true">${platform.icon}</div>
+                                <div class="platform-content">
+                                    <h3 class="platform-name">${platform.name}</h3>
+                                    <p class="platform-description">${platform.description}</p>
+                                </div>
+                            </a>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+            
+            platformsSection.innerHTML = sectionsHTML;
+            platformsSection.style.display = 'block';
+            
+            console.log('✅ Fallback entertainment data rendered successfully');
         }
         
-        // Initialize when DOM is ready
-        document.addEventListener('DOMContentLoaded', () => {
-            new EntertainmentPlatformLoader();
-        });
+        // Entertainment fallback data
+        function getEntertainmentFallbackData() {
+            return {
+                meta: {
+                    title: "Entertainment & Media",
+                    description: "Your gateway to streaming, music, gaming, and entertainment platforms",
+                    totalPlatforms: 51,
+                    totalSections: 6,
+                    lastUpdated: "2025-01-16"
+                },
+                sections: [
+                    {
+                        title: "🎬 Video Streaming",
+                        description: "Movies, TV shows, and video content platforms",
+                        colorClass: "gradient-entertainment",
+                        platforms: [
+                            { name: "Netflix", url: "https://www.netflix.com", icon: "🎬", description: "Global streaming service with original content and movies" },
+                            { name: "YouTube", url: "https://www.youtube.com", icon: "📹", description: "World's largest video sharing platform" },
+                            { name: "Disney+", url: "https://www.disneyplus.com", icon: "🏰", description: "Disney, Marvel, Star Wars, and Pixar content" },
+                            { name: "Amazon Prime Video", url: "https://www.primevideo.com", icon: "📦", description: "Amazon's streaming service with originals and movies" },
+                            { name: "HBO Max", url: "https://www.hbomax.com", icon: "🎭", description: "Premium content from HBO and Warner Bros" },
+                            { name: "Hulu", url: "https://www.hulu.com", icon: "📺", description: "US streaming with TV shows and next-day episodes" },
+                            { name: "Apple TV+", url: "https://tv.apple.com", icon: "🍎", description: "Apple's premium original content platform" },
+                            { name: "Twitch", url: "https://www.twitch.tv", icon: "🟣", description: "Live streaming platform for gaming and entertainment" },
+                            { name: "Crunchyroll", url: "https://www.crunchyroll.com", icon: "🍥", description: "Anime and manga streaming platform" },
+                            { name: "Paramount+", url: "https://www.paramountplus.com", icon: "⭐", description: "CBS and Paramount content streaming" }
+                        ]
+                    },
+                    {
+                        title: "🎵 Music & Audio",
+                        description: "Music streaming, podcasts, and audio content",
+                        colorClass: "gradient-music",
+                        platforms: [
+                            { name: "Spotify", url: "https://www.spotify.com", icon: "🎵", description: "World's largest music streaming platform" },
+                            { name: "Apple Music", url: "https://music.apple.com", icon: "🍎", description: "Apple's premium music streaming service" },
+                            { name: "YouTube Music", url: "https://music.youtube.com", icon: "🎤", description: "Google's music streaming platform" },
+                            { name: "SoundCloud", url: "https://soundcloud.com", icon: "☁️", description: "Platform for independent artists and creators" },
+                            { name: "Audible", url: "https://www.audible.com", icon: "🎧", description: "Amazon's audiobook and podcast platform" },
+                            { name: "Pandora", url: "https://www.pandora.com", icon: "🎶", description: "Personalized internet radio service" },
+                            { name: "Tidal", url: "https://tidal.com", icon: "🌊", description: "High-fidelity music streaming platform" },
+                            { name: "Deezer", url: "https://www.deezer.com", icon: "🎼", description: "Global music streaming with local content" }
+                        ]
+                    },
+                    {
+                        title: "🎮 Gaming Platforms",
+                        description: "Game stores, streaming, and gaming communities",
+                        colorClass: "gradient-gaming",
+                        platforms: [
+                            { name: "Steam", url: "https://store.steampowered.com", icon: "🚂", description: "World's largest PC gaming platform" },
+                            { name: "Epic Games Store", url: "https://www.epicgames.com/store", icon: "🎮", description: "PC gaming platform with free weekly games" },
+                            { name: "PlayStation Store", url: "https://store.playstation.com", icon: "🎮", description: "Official PlayStation games and content" },
+                            { name: "Xbox Game Pass", url: "https://www.xbox.com/xbox-game-pass", icon: "🎯", description: "Microsoft's gaming subscription service" },
+                            { name: "Discord", url: "https://discord.com", icon: "💬", description: "Gaming communication and community platform" },
+                            { name: "Nintendo eShop", url: "https://www.nintendo.com/us/eshop/", icon: "🎯", description: "Official Nintendo digital game store" },
+                            { name: "GOG", url: "https://www.gog.com", icon: "🏛️", description: "DRM-free PC gaming platform" },
+                            { name: "Ubisoft Connect", url: "https://ubisoftconnect.ubisoft.com", icon: "🎪", description: "Ubisoft's PC gaming launcher" }
+                        ]
+                    },
+                    {
+                        title: "📱 Social Entertainment",
+                        description: "Social media and content sharing platforms",
+                        colorClass: "gradient-social",
+                        platforms: [
+                            { name: "TikTok", url: "https://www.tiktok.com", icon: "📱", description: "Short-form video sharing platform" },
+                            { name: "Instagram", url: "https://www.instagram.com", icon: "📷", description: "Photo and video sharing social network" },
+                            { name: "Twitter", url: "https://twitter.com", icon: "🐦", description: "Microblogging and real-time information platform" },
+                            { name: "Reddit", url: "https://www.reddit.com", icon: "🤖", description: "Community discussion and content aggregation" },
+                            { name: "Snapchat", url: "https://www.snapchat.com", icon: "👻", description: "Multimedia messaging and social platform" },
+                            { name: "Pinterest", url: "https://www.pinterest.com", icon: "📌", description: "Visual discovery and idea platform" },
+                            { name: "LinkedIn", url: "https://www.linkedin.com", icon: "💼", description: "Professional networking social platform" },
+                            { name: "Facebook", url: "https://www.facebook.com", icon: "📘", description: "Social networking and community platform" }
+                        ]
+                    },
+                    {
+                        title: "🎨 Interactive & Creative",
+                        description: "Creative tools and interactive entertainment",
+                        colorClass: "gradient-creative",
+                        platforms: [
+                            { name: "Roblox", url: "https://www.roblox.com", icon: "🧱", description: "Online platform for user-generated games" },
+                            { name: "Minecraft", url: "https://www.minecraft.net", icon: "⛏️", description: "Sandbox game and creative platform" },
+                            { name: "VRChat", url: "https://vrchat.com", icon: "🥽", description: "Social VR platform for virtual worlds" },
+                            { name: "Twitch Creative", url: "https://www.twitch.tv/directory/game/Creative", icon: "🎨", description: "Live streaming for artists and creators" },
+                            { name: "DeviantArt", url: "https://www.deviantart.com", icon: "🖼️", description: "Online art community and platform" },
+                            { name: "ArtStation", url: "https://www.artstation.com", icon: "🎭", description: "Professional art showcase platform" }
+                        ]
+                    },
+                    {
+                        title: "🌟 Alternative & Niche",
+                        description: "Specialized and alternative entertainment platforms",
+                        colorClass: "gradient-alternative",
+                        platforms: [
+                            { name: "Vimeo", url: "https://vimeo.com", icon: "📽️", description: "High-quality video hosting platform" },
+                            { name: "Bandcamp", url: "https://bandcamp.com", icon: "🎵", description: "Platform for independent music artists" },
+                            { name: "Newgrounds", url: "https://www.newgrounds.com", icon: "🚀", description: "Community for indie games and animations" },
+                            { name: "Archive.org", url: "https://archive.org", icon: "📚", description: "Internet archive with free media content" },
+                            { name: "Plex", url: "https://www.plex.tv", icon: "📺", description: "Personal media server and streaming" },
+                            { name: "Jellyfin", url: "https://jellyfin.org", icon: "🐙", description: "Free open-source media server" }
+                        ]
+                    }
+                ]
+            };
+        }
     </script>
 </body>
 </html>

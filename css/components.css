@@ -203,6 +203,15 @@
 .category-card.social { background: var(--gradient-social); }
 .category-card.entertainment { background: var(--gradient-entertainment); }
 
+/* New Category Variants */
+.category-card.anime { background: var(--gradient-anime); }
+.category-card.crypto { background: var(--gradient-crypto); }
+.category-card.gaming { background: var(--gradient-gaming); }
+.category-card.health { background: var(--gradient-health); }
+.category-card.design { background: var(--gradient-design); }
+.category-card.lifestyle { background: var(--gradient-lifestyle); }
+.category-card.news { background: var(--gradient-news); }
+
 .category-emoji {
   font-size: 3rem;
   display: block;

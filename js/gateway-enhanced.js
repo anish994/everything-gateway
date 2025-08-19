@@ -608,19 +608,42 @@ class EverythingGatewayEnhanced {
         try {
             const basePath = window.location.pathname.includes('/categories/') ? '../../data/' : 'data/';
             
-            const [searchEngines, tools, entertainment] = await Promise.all([
+            // Load all 12 categories
+            const [
+                searchEngines, tools, entertainment, knowledge, 
+                anime, crypto, gaming, health, design, lifestyle, news, social
+            ] = await Promise.all([
                 this.loadJSON(basePath + 'search-engines.json'),
                 this.loadJSON(basePath + 'tools.json'),
-                this.loadJSON(basePath + 'entertainment.json')
+                this.loadJSON(basePath + 'entertainment.json'),
+                this.loadJSON(basePath + 'knowledge.json'),
+                this.loadJSON(basePath + 'anime.json'),
+                this.loadJSON(basePath + 'crypto.json'),
+                this.loadJSON(basePath + 'gaming.json'),
+                this.loadJSON(basePath + 'health.json'),
+                this.loadJSON(basePath + 'design.json'),
+                this.loadJSON(basePath + 'lifestyle.json'),
+                this.loadJSON(basePath + 'news.json'),
+                this.loadJSON(basePath + 'social.json')
             ]);
             
             this.resources = [
                 ...this.processResources(searchEngines, 'search-engines', '🔍'),
                 ...this.processResources(tools, 'tools', '🛠️'),
-                ...this.processResources(entertainment, 'entertainment', '🎭')
+                ...this.processResources(entertainment, 'entertainment', '🎭'),
+                ...this.processResources(knowledge, 'knowledge', '📚'),
+                ...this.processResources(anime, 'anime', '🗾'),
+                ...this.processResources(crypto, 'crypto', '₿'),
+                ...this.processResources(gaming, 'gaming', '🎮'),
+                ...this.processResources(health, 'health', '💪'),
+                ...this.processResources(design, 'design', '🎨'),
+                ...this.processResources(lifestyle, 'lifestyle', '🛍️'),
+                ...this.processResources(news, 'news', '📰'),
+                ...this.processResources(social, 'social', '🌐')
             ];
             
-            console.log(`📚 Loaded ${this.resources.length} resources`);
+            console.log(`📚 Loaded ${this.resources.length} resources from 12 categories`);
+            this.updateSearchEmptyState();
             
         } catch (error) {
             console.error('Failed to load resources:', error);
@@ -745,7 +768,7 @@ class EverythingGatewayEnhanced {
                 <div class="search-results">
                     <div class="search-empty">
                         <div class="search-empty-icon">🌟</div>
-                        <div class="search-empty-text">Start typing to search across 142+ platforms</div>
+                        <div class="search-empty-text">Start typing to search across 511+ platforms</div>
                         <div class="search-empty-hint">Try: "netflix", "spotify", "github", or any platform name</div>
                     </div>
                 </div>
@@ -840,7 +863,7 @@ class EverythingGatewayEnhanced {
         this.searchResults.innerHTML = `
             <div class="search-empty">
                 <div class="search-empty-icon">🌟</div>
-                <div class="search-empty-text">Start typing to search across 142+ platforms</div>
+                <div class="search-empty-text">Start typing to search across ${this.resources.length}+ platforms</div>
                 <div class="search-empty-hint">Try: "netflix", "spotify", "github", or any platform name</div>
             </div>
         `;
@@ -890,6 +913,16 @@ class EverythingGatewayEnhanced {
     refreshCurrentResults() {
         if (this.searchInput.value) {
             this.performSearch(this.searchInput.value);
+        }
+    }
+    
+    /**
+     * Update search empty state with current resource count
+     */
+    updateSearchEmptyState() {
+        const emptyText = this.searchResults?.querySelector('.search-empty-text');
+        if (emptyText && this.resources.length > 0) {
+            emptyText.textContent = `Start typing to search across ${this.resources.length}+ platforms`;
         }
     }
     
