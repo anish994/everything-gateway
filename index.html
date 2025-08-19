@@ -47,7 +47,15 @@
             margin-top: var(--spacing-xl);
         }
         
-        /* Mobile optimizations */
+        /* Mobile grid fixes - Force single column on mobile */
+        @media (max-width: 767px) {
+            .categories-grid {
+                grid-template-columns: 1fr !important;
+                display: grid !important;
+            }
+        }
+        
+        /* Desktop optimizations */
         @media (min-width: 768px) {
             .hero {
                 margin-bottom: var(--spacing-2xl);
