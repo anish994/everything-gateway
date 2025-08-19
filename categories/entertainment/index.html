@@ -42,7 +42,6 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../css/shared.css">
     <link rel="stylesheet" href="../../css/search.css">
-    <link rel="stylesheet" href="../../css/category.css">
     <style>
         /* 🎬 ENTERTAINMENT & MEDIA - CINEMA & MEDIA THEME 🎬 */
         
@@ -69,9 +68,10 @@
                 radial-gradient(circle at 20% 20%, rgba(233, 69, 96, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(106, 76, 147, 0.08) 0%, transparent 50%),
                 radial-gradient(circle at 50% 100%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
-                linear-gradient(135deg, var(--cinema-primary) 0%, var(--cinema-secondary) 100%);
-            color: var(--cinema-text);
-            font-family: 'SF Pro Display', 'Cinzel', 'Georgia', serif;
+                linear-gradient(135deg, var(--cinema-primary) 0%, var(--cinema-secondary) 100%) !important;
+            color: var(--cinema-text) !important;
+            font-family: 'SF Pro Display', 'Cinzel', 'Georgia', serif !important;
+            line-height: 1.6 !important;
             position: relative;
             overflow-x: hidden;
             min-height: 100vh;
@@ -82,16 +82,21 @@
             position: relative;
             z-index: 1;
             background: transparent !important;
+            max-width: none !important;
+            margin: 0 !important;
+            padding: 2rem !important;
         }
         
         .main-content {
             position: relative;
             z-index: 2;
-            margin-top: 0;
+            margin-top: 0 !important;
             background: transparent !important;
-            border-radius: 0;
-            box-shadow: none;
-            backdrop-filter: none;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            backdrop-filter: none !important;
+            padding: 0 !important;
+            max-width: none !important;
         }
         
         /* Floating Cinema Elements */
