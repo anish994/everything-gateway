@@ -163,22 +163,23 @@
             }
         }
         
-        /* Luxury Premium Hero */
-        .category-hero {
+        /* Luxury Category Header */
+        .category-header {
             background: var(--luxury-premium);
             position: relative;
             overflow: hidden;
-            padding: 4rem 2rem;
-            border-radius: 24px;
-            margin: 2rem;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
             box-shadow: 
-                0 25px 80px rgba(212, 175, 55, 0.3),
+                0 20px 60px rgba(212, 175, 55, 0.3),
                 inset 0 2px 0 rgba(255, 255, 255, 0.8),
                 0 0 0 1px rgba(212, 175, 55, 0.2);
             border: 2px solid rgba(255, 215, 0, 0.3);
+            text-align: center;
         }
         
-        .category-hero::before {
+        .category-header::before {
             content: '';
             position: absolute;
             top: 0;
@@ -192,7 +193,7 @@
             pointer-events: none;
         }
         
-        .category-hero::after {
+        .category-header::after {
             content: '✨ Premium Shopping Experience ✨';
             position: absolute;
             top: 20px;
@@ -209,6 +210,33 @@
             letter-spacing: 0.5px;
             text-transform: uppercase;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .category-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: rgba(44, 24, 16, 0.9);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .category-description {
+            font-size: 1.2rem;
+            color: rgba(44, 24, 16, 0.8);
+            line-height: 1.6;
+            margin: 0;
+            position: relative;
+            z-index: 2;
         }
         
         /* Lifestyle Section Headers */
@@ -503,17 +531,6 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
     <div class="page-container">
-        <!-- Luxury Hero Section -->
-        <div class="category-hero">
-            <div class="category-icon" aria-hidden="true">🛍️</div>
-            <div class="category-info">
-                <h1 class="category-title" style="color: rgba(44, 24, 16, 0.9); font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">Lifestyle & Shopping</h1>
-                <p class="category-description" style="color: rgba(44, 24, 16, 0.8); font-size: 1.2rem; margin: 0; line-height: 1.6;">
-                    Transform your daily life with premium e-commerce platforms, luxury travel experiences, 
-                    gourmet food delivery, and exclusive lifestyle services
-                </p>
-            </div>
-        </div>
         <!-- Header -->
         <header class="page-header" role="banner">
             <div class="header-content">
@@ -522,6 +539,17 @@
                     <span class="breadcrumb-separator" aria-hidden="true">›</span>
                     <span class="breadcrumb-current" aria-current="page">Lifestyle & Shopping</span>
                 </nav>
+                
+                <div class="category-header">
+                    <div class="category-icon" aria-hidden="true">🛍️</div>
+                    <div class="category-info">
+                        <h1 class="category-title">Lifestyle & Shopping</h1>
+                        <p class="category-description">
+                            Transform your daily life with premium e-commerce platforms, luxury travel experiences, 
+                            gourmet food delivery, and exclusive lifestyle services
+                        </p>
+                    </div>
+                </div>
             </div>
         </header>
 
