@@ -39,6 +39,490 @@
     <link rel="stylesheet" href="../../css/components.css">
     <link rel="stylesheet" href="../../css/shared.css">
     <link rel="stylesheet" href="../../css/search.css">
+    <style>
+        /* 🎬 ENTERTAINMENT & MEDIA - CINEMA & MEDIA THEME 🎬 */
+        
+        /* Custom CSS Variables for Cinema Theme */
+        :root {
+            --cinema-primary: #0f0f23;
+            --cinema-secondary: #1a1a2e;
+            --cinema-accent: #e94560;
+            --cinema-gold: #ffd700;
+            --cinema-silver: #c0c0c0;
+            --cinema-dark: #16213e;
+            --cinema-purple: #6a4c93;
+            --cinema-text: #ffffff;
+            --cinema-text-light: #b8b8d1;
+            --cinema-text-dim: #8b8ba7;
+            --cinema-premium: linear-gradient(135deg, #0f0f23 0%, #e94560 50%, #ffd700 100%);
+            --cinema-spotlight: linear-gradient(135deg, #6a4c93 0%, #e94560 100%);
+            --cinema-theater: linear-gradient(135deg, #16213e 0%, #0f0f23 100%);
+        }
+        
+        /* Body Override for Cinema Theme */
+        body {
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(233, 69, 96, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(106, 76, 147, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 50% 100%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
+                linear-gradient(135deg, var(--cinema-primary) 0%, var(--cinema-secondary) 100%);
+            color: var(--cinema-text);
+            font-family: 'SF Pro Display', 'Cinzel', 'Georgia', serif;
+            position: relative;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        /* Fix main container layout */
+        .page-container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .main-content {
+            position: relative;
+            z-index: 2;
+            margin-top: 0;
+        }
+        
+        /* Floating Cinema Elements */
+        .cinema-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .cinema-element {
+            position: absolute;
+            font-size: 24px;
+            opacity: 0.3;
+            animation: cinema-float linear infinite;
+        }
+        
+        .cinema-element:nth-child(1) {
+            left: 15%;
+            font-size: 32px;
+            animation-duration: 22s;
+            animation-delay: 0s;
+        }
+        
+        .cinema-element:nth-child(2) {
+            left: 30%;
+            font-size: 26px;
+            animation-duration: 28s;
+            animation-delay: 7s;
+        }
+        
+        .cinema-element:nth-child(3) {
+            left: 50%;
+            font-size: 30px;
+            animation-duration: 20s;
+            animation-delay: 3s;
+        }
+        
+        .cinema-element:nth-child(4) {
+            left: 70%;
+            font-size: 28px;
+            animation-duration: 25s;
+            animation-delay: 12s;
+        }
+        
+        .cinema-element:nth-child(5) {
+            left: 85%;
+            font-size: 24px;
+            animation-duration: 30s;
+            animation-delay: 5s;
+        }
+        
+        @keyframes cinema-float {
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(0.8);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg) scale(1.3);
+                opacity: 0;
+            }
+        }
+        
+        /* Cinema Category Header */
+        .category-header {
+            background: var(--cinema-premium);
+            position: relative;
+            overflow: hidden;
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            box-shadow: 
+                0 30px 100px rgba(233, 69, 96, 0.4),
+                inset 0 2px 0 rgba(255, 255, 255, 0.1),
+                0 0 0 1px rgba(233, 69, 96, 0.3);
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            text-align: center;
+        }
+        
+        .category-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(255, 215, 0, 0.2) 0%, transparent 60%),
+                radial-gradient(circle at 70% 70%, rgba(233, 69, 96, 0.15) 0%, transparent 60%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"><rect x="10" y="40" width="80" height="20" rx="2"/><circle cx="20" cy="25" r="8"/><circle cx="50" cy="25" r="8"/><circle cx="80" cy="25" r="8"/></g></svg>');
+            pointer-events: none;
+        }
+        
+        .category-header::after {
+            content: '🎬 Hollywood Experience 🎬';
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            font-family: 'SF Pro Display', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--cinema-gold);
+            background: rgba(15, 15, 35, 0.8);
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            backdrop-filter: blur(15px);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .category-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(0 4px 8px rgba(233, 69, 96, 0.3));
+        }
+        
+        .category-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--cinema-text);
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            font-family: 'Cinzel', serif;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .category-description {
+            font-size: 1.3rem;
+            color: var(--cinema-text-light);
+            line-height: 1.6;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Cinema Section Headers */
+        .section-header {
+            padding: 3rem;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: var(--cinema-theater);
+            border: 2px solid rgba(233, 69, 96, 0.3);
+            box-shadow: 
+                0 25px 80px rgba(15, 15, 35, 0.6),
+                inset 0 1px 0 rgba(233, 69, 96, 0.2);
+        }
+        
+        .section-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(233, 69, 96, 0.15) 0%, transparent 60%),
+                radial-gradient(circle at 75% 75%, rgba(106, 76, 147, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0 0 0.8rem 0;
+            color: var(--cinema-gold);
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+            font-family: 'Cinzel', serif;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-description {
+            font-size: 1.2rem;
+            color: var(--cinema-text-light);
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-count {
+            color: var(--cinema-accent);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-top: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Platform Grid Layout */
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .platforms-grid {
+                grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            }
+        }
+        
+        /* Platform Cards - Cinema Style */
+        .platform-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.8rem;
+            background: linear-gradient(135deg, 
+                rgba(15, 15, 35, 0.95) 0%, 
+                rgba(26, 26, 46, 0.9) 100%);
+            border: 2px solid rgba(233, 69, 96, 0.3);
+            border-radius: 18px;
+            padding: 2.2rem;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 
+                0 15px 50px rgba(15, 15, 35, 0.8),
+                0 0 30px rgba(233, 69, 96, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+        }
+        
+        .platform-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: var(--cinema-spotlight);
+            transform: scaleY(0);
+            transition: transform 0.4s ease;
+            transform-origin: bottom;
+        }
+        
+        .platform-card::after {
+            content: '🌟';
+            position: absolute;
+            top: 18px;
+            right: 25px;
+            font-size: 1.6rem;
+            opacity: 0;
+            transform: scale(0) rotate(-15deg);
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        .platform-card:hover::before {
+            transform: scaleY(1);
+        }
+        
+        .platform-card:hover::after {
+            opacity: 0.8;
+            transform: scale(1) rotate(0deg);
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 
+                0 35px 100px rgba(15, 15, 35, 0.9),
+                0 0 60px rgba(233, 69, 96, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            border-color: rgba(233, 69, 96, 0.6);
+        }
+        
+        .platform-logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, 
+                rgba(233, 69, 96, 0.2) 0%, 
+                rgba(106, 76, 147, 0.2) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            flex-shrink: 0;
+            box-shadow: 
+                0 10px 40px rgba(233, 69, 96, 0.3),
+                inset 0 2px 0 rgba(255, 255, 255, 0.2),
+                0 0 0 1px rgba(233, 69, 96, 0.2);
+            position: relative;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(233, 69, 96, 0.3);
+        }
+        
+        .platform-logo::before {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: linear-gradient(135deg, 
+                rgba(15, 15, 35, 0.8), 
+                rgba(26, 26, 46, 0.9));
+            border-radius: 16px;
+            z-index: -1;
+        }
+        
+        .platform-card:hover .platform-logo {
+            transform: scale(1.15) rotate(8deg);
+            box-shadow: 
+                0 15px 50px rgba(233, 69, 96, 0.4),
+                inset 0 2px 0 rgba(255, 255, 255, 0.3),
+                0 0 0 2px rgba(233, 69, 96, 0.4);
+        }
+        
+        .platform-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 0 0 0.6rem 0;
+            color: var(--cinema-text);
+            line-height: 1.3;
+            font-family: 'SF Pro Display', sans-serif;
+        }
+        
+        .platform-description {
+            font-size: 1rem;
+            color: var(--cinema-text-light);
+            margin: 0;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        .platform-card:hover .platform-name {
+            color: var(--cinema-gold);
+            text-shadow: 0 2px 4px rgba(255, 215, 0, 0.3);
+        }
+        
+        .platform-card:hover .platform-description {
+            opacity: 1;
+            color: var(--cinema-text);
+        }
+        
+        /* Cinema Entrance Animations */
+        @keyframes cinema-entrance {
+            0% {
+                opacity: 0;
+                transform: translateY(40px) scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .platform-card {
+            animation: cinema-entrance 0.8s ease-out;
+        }
+        
+        .platform-card:nth-child(2n) {
+            animation-delay: 0.15s;
+        }
+        
+        .platform-card:nth-child(3n) {
+            animation-delay: 0.3s;
+        }
+        
+        .platform-card:nth-child(4n) {
+            animation-delay: 0.45s;
+        }
+        
+        /* Enhanced breadcrumbs for cinema theme */
+        .breadcrumb {
+            background: rgba(233, 69, 96, 0.15);
+            padding: 1.2rem 2.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(233, 69, 96, 0.3);
+        }
+        
+        .breadcrumb-link {
+            color: var(--cinema-gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .breadcrumb-current {
+            color: var(--cinema-text);
+            font-weight: 700;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .platform-card {
+                padding: 1.8rem;
+                gap: 1.5rem;
+            }
+            
+            .platform-logo {
+                width: 60px;
+                height: 60px;
+                font-size: 30px;
+            }
+            
+            .section-header {
+                padding: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .category-header {
+                padding: 3rem 1.8rem;
+                margin: 1.5rem 0;
+            }
+            
+            .category-title {
+                font-size: 2.2rem;
+            }
+            
+            .category-header::after {
+                font-size: 0.8rem;
+                padding: 0.5rem 1rem;
+                top: 20px;
+                right: 20px;
+            }
+        }
+    </style>
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -61,59 +545,51 @@
     }
     </script>
 </head>
-<body>
+<body class="entertainment-theme">
+    <!-- Floating Cinema Elements -->
+    <div class="cinema-elements">
+        <div class="cinema-element">🎬</div>
+        <div class="cinema-element">🎭</div>
+        <div class="cinema-element">🎵</div>
+        <div class="cinema-element">🎮</div>
+        <div class="cinema-element">⭐</div>
+    </div>
+    
     <!-- Skip Links for Accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <a href="#platform-grid" class="skip-link">Skip to platforms</a>
     
-    <!-- Header -->
-    <header class="site-header" role="banner">
-        <div class="header-content">
-            <div class="header-left">
-                <a href="../../" class="logo-link" aria-label="Return to The Everything Gateway homepage">
-                    <h1 class="site-title">
-                        <span class="gateway-text">The Everything</span>
-                        <span class="highlight">Gateway</span>
-                    </h1>
-                </a>
-            </div>
-            <div class="header-right">
-                <button class="search-btn" aria-label="Open universal search" title="Search (Ctrl+K)">
-                    <span class="search-icon">🔍</span>
-                    <span class="search-text">Search</span>
-                    <span class="search-shortcut">Ctrl+K</span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main id="main-content" class="main-content" role="main">
-        <!-- Category Hero Section -->
-        <section class="category-hero entertainment-hero" role="banner">
-            <div class="hero-content">
-                <div class="hero-icon" aria-hidden="true">🎭</div>
-                <h1 class="hero-title">Entertainment & Media</h1>
-                <p class="hero-description">
-                    Your gateway to streaming, music, gaming, and entertainment platforms. 
-                    Discover top destinations for movies, TV shows, music, games, and social content.
-                </p>
-                <div class="hero-stats" aria-label="Category statistics">
-                    <div class="stat">
-                        <span class="stat-number" id="total-platforms">0</span>
-                        <span class="stat-label">Platforms</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number" id="total-categories">0</span>
-                        <span class="stat-label">Categories</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Fun</span>
+    <div class="page-container">
+        <!-- Header -->
+        <header class="page-header" role="banner">
+            <div class="header-content">
+                <nav class="breadcrumb" role="navigation" aria-label="Breadcrumb">
+                    <a href="../../" class="breadcrumb-link">🏠 Home</a>
+                    <span class="breadcrumb-separator" aria-hidden="true">›</span>
+                    <span class="breadcrumb-current" aria-current="page">Entertainment & Media</span>
+                </nav>
+                
+                <div class="category-header">
+                    <div class="category-icon" aria-hidden="true">🎭</div>
+                    <div class="category-info">
+                        <h1 class="category-title">Entertainment & Media</h1>
+                        <p class="category-description">
+                            Your gateway to streaming, music, gaming, and entertainment platforms. 
+                            Discover top destinations for movies, TV shows, music, games, and social content.
+                        </p>
                     </div>
                 </div>
             </div>
-        </section>
+        </header>
+
+        <main id="main-content" class="main-content" role="main">
+            <!-- Search Section -->
+            <section class="search-section">
+                <button class="search-trigger" onclick="window.gateway && window.gateway.openSearch()">
+                    <span class="search-trigger-icon">🔍</span>
+                    <span>Search across all entertainment platforms</span>
+                    <span class="search-trigger-shortcut">Ctrl+K</span>
+                </button>
+            </section>
 
         <!-- Loading State -->
         <div id="loading-state" class="loading-state" aria-live="polite">
