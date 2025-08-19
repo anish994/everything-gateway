@@ -414,6 +414,22 @@
     <script src="js/universal-search.js"></script>
     <script src="js/analytics.js"></script>
     <script>
+        // Initialize Universal Search for main page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize universal search for main gateway page
+            if (window.UniversalSearchEngine) {
+                // Override the global instance with proper initialization
+                window.universalSearch = new UniversalSearchEngine({
+                    category: null, // All categories
+                    theme: 'mainstream',
+                    placeholder: 'Search across all platforms...'
+                });
+                console.log('🌟 Main page universal search initialized');
+            } else {
+                console.error('UniversalSearchEngine not found!');
+            }
+        });
+        
         // Mobile-first interactive features
         function toggleHeroContent() {
             const content = document.getElementById('heroSubtitle');

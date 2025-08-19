@@ -7,7 +7,7 @@
  */
 
 class UniversalSearchEngine {
-    constructor() {
+    constructor(options = {}) {
         this.resources = [];
         this.favorites = new Set();
         this.isSearchOpen = false;
@@ -15,15 +15,16 @@ class UniversalSearchEngine {
         this.selectedIndex = 0;
         this.searchCache = new Map();
         this.searchHistory = [];
-        this.currentCategory = null;
-        this.currentTheme = 'mainstream';
+        this.currentCategory = options.category || null;
+        this.currentTheme = options.theme || 'mainstream';
+        this.placeholder = options.placeholder || 'Search across all platforms...';
         
         // Touch gesture support
         this.touchStartY = 0;
         this.touchStartX = 0;
         this.gestureThreshold = 50;
         
-        this.init();
+        this.init(this.currentCategory, this.currentTheme);
     }
     
     /**
@@ -759,12 +760,6 @@ class UniversalSearchEngine {
         }
     }
 }
-
-// Create global instance
-window.universalSearch = new UniversalSearchEngine();
-
-// Backwards compatibility
-window.gateway = window.universalSearch;
 
 // Export for module systems
 if (typeof module !== 'undefined' && module.exports) {
