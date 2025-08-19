@@ -33,14 +33,25 @@
   grid-template-columns: 1fr; /* Single column on mobile */
 }
 
+/* Mobile-specific overrides */
+@media (max-width: 767px) {
+  .grid-auto-fit,
+  .grid-auto-fill,
+  .categories-grid,
+  .grid.grid-auto-fit {
+    grid-template-columns: 1fr !important;
+    display: grid !important;
+  }
+}
+
 /* Responsive grid - tablet and up */
 @media (min-width: 768px) {
   .grid-auto-fit {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
   }
   
   .grid-auto-fill {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
   }
 }
 
@@ -222,6 +233,7 @@
 .category-card.design { background: var(--gradient-design); }
 .category-card.lifestyle { background: var(--gradient-lifestyle); }
 .category-card.news { background: var(--gradient-news); }
+.category-card.treasure { background: var(--gradient-treasure); }
 
 .category-emoji {
   font-size: 3rem;
