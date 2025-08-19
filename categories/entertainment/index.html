@@ -60,14 +60,14 @@
         }
         
         /* Body Override for Cinema Theme */
-        body {
+        body.entertainment-theme {
             background: 
                 radial-gradient(circle at 20% 20%, rgba(233, 69, 96, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(106, 76, 147, 0.08) 0%, transparent 50%),
                 radial-gradient(circle at 50% 100%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
-                linear-gradient(135deg, var(--cinema-primary) 0%, var(--cinema-secondary) 100%);
-            color: var(--cinema-text);
-            font-family: 'SF Pro Display', 'Cinzel', 'Georgia', serif;
+                linear-gradient(135deg, var(--cinema-primary) 0%, var(--cinema-secondary) 100%) !important;
+            color: var(--cinema-text) !important;
+            font-family: 'SF Pro Display', 'Cinzel', 'Georgia', serif !important;
             position: relative;
             overflow-x: hidden;
             min-height: 100vh;
@@ -77,12 +77,17 @@
         .page-container {
             position: relative;
             z-index: 1;
+            background: transparent !important;
         }
         
         .main-content {
             position: relative;
             z-index: 2;
             margin-top: 0;
+            background: transparent !important;
+            border-radius: 0;
+            box-shadow: none;
+            backdrop-filter: none;
         }
         
         /* Floating Cinema Elements */
