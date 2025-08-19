@@ -34,11 +34,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="../../css/design-system.css" as="style">
+    <link rel="preload" href="../../css/components.css" as="style">
+    <link rel="preload" href="../../data/entertainment.json" as="fetch" crossorigin="anonymous">
+    
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="../../css/design-system.css">
-    <link rel="stylesheet" href="../../css/components.css">
     <link rel="stylesheet" href="../../css/shared.css">
     <link rel="stylesheet" href="../../css/search.css">
+    <link rel="stylesheet" href="../../css/category.css">
     <style>
         /* 🎬 ENTERTAINMENT & MEDIA - CINEMA & MEDIA THEME 🎬 */
         
@@ -60,14 +64,14 @@
         }
         
         /* Body Override for Cinema Theme */
-        body.entertainment-theme {
+        body {
             background: 
                 radial-gradient(circle at 20% 20%, rgba(233, 69, 96, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(106, 76, 147, 0.08) 0%, transparent 50%),
                 radial-gradient(circle at 50% 100%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
-                linear-gradient(135deg, var(--cinema-primary) 0%, var(--cinema-secondary) 100%) !important;
-            color: var(--cinema-text) !important;
-            font-family: 'SF Pro Display', 'Cinzel', 'Georgia', serif !important;
+                linear-gradient(135deg, var(--cinema-primary) 0%, var(--cinema-secondary) 100%);
+            color: var(--cinema-text);
+            font-family: 'SF Pro Display', 'Cinzel', 'Georgia', serif;
             position: relative;
             overflow-x: hidden;
             min-height: 100vh;
