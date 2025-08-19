@@ -55,6 +55,22 @@
             }
         }
         
+        /* Fix alignment for specific problematic categories */
+        .category-card.academic,
+        .category-card.anime,
+        .category-card.crypto,
+        .category-card.design,
+        .category-card.lifestyle {
+            margin: 0 !important;
+            padding: var(--spacing-xl) var(--spacing-lg) !important;
+            transform: none !important;
+            position: relative !important;
+            left: 0 !important;
+            right: 0 !important;
+            justify-self: stretch !important;
+            align-self: stretch !important;
+        }
+        
         /* Desktop optimizations */
         @media (min-width: 768px) {
             .hero {
