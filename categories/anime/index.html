@@ -37,6 +37,350 @@
     <link rel="stylesheet" href="../../css/shared.css">
     <link rel="stylesheet" href="../../css/search.css">
     <link rel="stylesheet" href="../../css/category.css">
+    <style>
+        /* 🌸 ANIME & MANGA - KAWAII JAPAN THEME 🌸 */
+        
+        /* Custom CSS Variables for Kawaii Theme */
+        :root {
+            --kawaii-primary: #ffeef8;
+            --kawaii-secondary: #ffe0f0;
+            --kawaii-accent: #ff6b9d;
+            --kawaii-pink: #ff85a1;
+            --kawaii-purple: #b794f6;
+            --kawaii-blue: #90cdf4;
+            --kawaii-mint: #68d391;
+            --kawaii-peach: #feb2b2;
+            --kawaii-gradient: linear-gradient(135deg, #ff6b9d, #c084fc, #60a5fa);
+            --kawaii-text: #2d3748;
+            --kawaii-text-light: #4a5568;
+        }
+        
+        /* Body Override for Kawaii Theme */
+        body {
+            background: linear-gradient(135deg, 
+                var(--kawaii-primary) 0%, 
+                var(--kawaii-secondary) 50%, 
+                #fff0f5 100%);
+            color: var(--kawaii-text);
+            font-family: 'Comic Neue', 'Nunito', 'Poppins', sans-serif;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Sakura Petals Animation */
+        .sakura-petals {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .sakura-petal {
+            position: absolute;
+            background: #ffb3d9;
+            border-radius: 50% 0 50% 0;
+            opacity: 0.7;
+            animation: sakura-fall linear infinite;
+        }
+        
+        .sakura-petal:nth-child(1) { left: 10%; animation-duration: 8s; animation-delay: 0s; width: 8px; height: 8px; }
+        .sakura-petal:nth-child(2) { left: 20%; animation-duration: 12s; animation-delay: 2s; width: 6px; height: 6px; }
+        .sakura-petal:nth-child(3) { left: 30%; animation-duration: 10s; animation-delay: 4s; width: 10px; height: 10px; }
+        .sakura-petal:nth-child(4) { left: 40%; animation-duration: 15s; animation-delay: 6s; width: 7px; height: 7px; }
+        .sakura-petal:nth-child(5) { left: 50%; animation-duration: 9s; animation-delay: 1s; width: 9px; height: 9px; }
+        .sakura-petal:nth-child(6) { left: 60%; animation-duration: 13s; animation-delay: 3s; width: 8px; height: 8px; }
+        .sakura-petal:nth-child(7) { left: 70%; animation-duration: 11s; animation-delay: 5s; width: 6px; height: 6px; }
+        .sakura-petal:nth-child(8) { left: 80%; animation-duration: 14s; animation-delay: 7s; width: 10px; height: 10px; }
+        .sakura-petal:nth-child(9) { left: 90%; animation-duration: 16s; animation-delay: 2s; width: 7px; height: 7px; }
+        
+        @keyframes sakura-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Kawaii Hero Section */
+        .category-hero {
+            background: var(--kawaii-gradient);
+            position: relative;
+            overflow: hidden;
+            padding: 4rem 2rem;
+            border-radius: 25px;
+            margin: 2rem;
+            box-shadow: 
+                0 20px 60px rgba(255, 107, 157, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .anime-hero {
+            background: var(--kawaii-gradient);
+        }
+        
+        .category-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 183, 217, 0.4) 0%, transparent 50%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="30" r="2" fill="white" fill-opacity="0.3"/><circle cx="70" cy="60" r="1.5" fill="white" fill-opacity="0.4"/><circle cx="50" cy="80" r="1" fill="white" fill-opacity="0.2"/></svg>');
+            pointer-events: none;
+        }
+        
+        .category-hero::after {
+            content: '✨ Kawaii Mode Activated! ✨';
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-family: 'Comic Neue', cursive;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Kawaii Platform Cards */
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .platforms-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        
+        .platform-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.9) 0%, 
+                rgba(255, 240, 245, 0.95) 100%);
+            border-radius: 20px;
+            text-decoration: none;
+            color: var(--kawaii-text);
+            box-shadow: 
+                0 10px 30px rgba(255, 107, 157, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid rgba(255, 183, 217, 0.3);
+            backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .platform-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--kawaii-gradient);
+            opacity: 0;
+            transition: all 0.3s ease;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .platform-card::after {
+            content: '💖';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 1.5rem;
+            opacity: 0;
+            transform: scale(0) rotate(-15deg);
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        .platform-card:hover::before {
+            opacity: 1;
+            width: 6px;
+        }
+        
+        .platform-card:hover::after {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 
+                0 20px 50px rgba(255, 107, 157, 0.3),
+                0 0 30px rgba(255, 183, 217, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 1);
+            border-color: rgba(255, 107, 157, 0.5);
+        }
+        
+        .platform-logo {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: var(--kawaii-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            flex-shrink: 0;
+            box-shadow: 
+                0 6px 20px rgba(255, 107, 157, 0.3),
+                inset 0 2px 0 rgba(255, 255, 255, 0.5);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .platform-logo::before {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.8), 
+                rgba(255, 240, 245, 0.9));
+            border-radius: 50%;
+            z-index: -1;
+        }
+        
+        .platform-card:hover .platform-logo {
+            transform: scale(1.1) rotate(-5deg);
+            box-shadow: 
+                0 8px 25px rgba(255, 107, 157, 0.4),
+                inset 0 2px 0 rgba(255, 255, 255, 0.7);
+        }
+        
+        .platform-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0 0 0.5rem 0;
+            color: var(--kawaii-text);
+            line-height: 1.3;
+            font-family: 'Comic Neue', 'Nunito', sans-serif;
+        }
+        
+        .platform-description {
+            font-size: 0.9rem;
+            color: var(--kawaii-text-light);
+            margin: 0;
+            line-height: 1.5;
+            opacity: 0.8;
+        }
+        
+        .platform-card:hover .platform-name {
+            color: var(--kawaii-accent);
+            text-shadow: 0 0 5px rgba(255, 107, 157, 0.3);
+        }
+        
+        .platform-card:hover .platform-description {
+            opacity: 1;
+            color: var(--kawaii-text);
+        }
+        
+        /* Section headers */
+        .section-header {
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: var(--kawaii-gradient);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 0 0.5rem 0;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            font-family: 'Comic Neue', sans-serif;
+        }
+        
+        .section-description {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+        }
+        
+        /* Kawaii Animations */
+        @keyframes kawaii-bounce {
+            0%, 20%, 53%, 80%, 100% {
+                transform: translate3d(0, 0, 0);
+            }
+            40%, 43% {
+                transform: translate3d(0, -8px, 0);
+            }
+            70% {
+                transform: translate3d(0, -4px, 0);
+            }
+            90% {
+                transform: translate3d(0, -2px, 0);
+            }
+        }
+        
+        .platform-card {
+            animation: kawaii-bounce 0.8s ease-out;
+        }
+        
+        .platform-card:nth-child(2n) {
+            animation-delay: 0.1s;
+        }
+        
+        .platform-card:nth-child(3n) {
+            animation-delay: 0.2s;
+        }
+        
+        .platform-card:nth-child(4n) {
+            animation-delay: 0.3s;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .platform-card {
+                padding: 1.25rem;
+            }
+            
+            .platform-logo {
+                width: 44px;
+                height: 44px;
+                font-size: 22px;
+            }
+            
+            .section-header {
+                padding: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -55,6 +399,18 @@
     </script>
 </head>
 <body class="anime-theme">
+    <!-- Sakura Petals Background -->
+    <div class="sakura-petals">
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+    </div>
     <!-- Skip to main content link -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
