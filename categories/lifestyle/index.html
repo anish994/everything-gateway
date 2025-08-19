@@ -69,6 +69,19 @@
             font-family: 'SF Pro Display', 'Playfair Display', 'Georgia', serif;
             position: relative;
             overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        /* Fix main container layout */
+        .page-container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .main-content {
+            position: relative;
+            z-index: 2;
+            margin-top: 0;
         }
         
         /* Floating Luxury Icons */
@@ -509,17 +522,6 @@
                     <span class="breadcrumb-separator" aria-hidden="true">›</span>
                     <span class="breadcrumb-current" aria-current="page">Lifestyle & Shopping</span>
                 </nav>
-                
-                <div class="category-header">
-                    <div class="category-icon" aria-hidden="true">🛍️</div>
-                    <div class="category-info">
-                        <h1 class="category-title">Lifestyle & Shopping</h1>
-                        <p class="category-description">
-                            Transform your daily life with e-commerce giants, travel platforms, 
-                            food delivery, and home services that make modern living seamless
-                        </p>
-                    </div>
-                </div>
             </div>
         </header>
 
