@@ -1,0 +1,352 @@
+{
+  "category": "hidden-treasures",
+  "title": "Hidden Treasures",
+  "description": "The internet's best-kept secrets. Powerful tools and hidden gems that insiders use but rarely share. Welcome to the underground.",
+  "icon": "💎",
+  "theme": "dark-treasure",
+  "sections": [
+    {
+      "id": "power-user-secrets",
+      "title": "🔐 Power User Secrets",
+      "description": "Advanced tools hiding in plain sight - for those who know where to look",
+      "resources": [
+        {
+          "name": "Regex101",
+          "url": "https://regex101.com",
+          "description": "The ultimate regex testing and debugging tool with real-time explanation - used by developers worldwide but unknown to most"
+        },
+        {
+          "name": "Carbon",
+          "url": "https://carbon.now.sh",
+          "description": "Turn your code into beautiful, shareable images. Create stunning code screenshots for presentations and social media"
+        },
+        {
+          "name": "Excalidraw",
+          "url": "https://excalidraw.com",
+          "description": "Mind-blowing collaborative whiteboarding tool that feels like magic. Hand-drawn style diagrams that actually look professional"
+        },
+        {
+          "name": "JSON Crack",
+          "url": "https://jsoncrack.com",
+          "description": "Visualize JSON data as interactive graphs. Turn complex data structures into beautiful, understandable diagrams"
+        },
+        {
+          "name": "Ray.so",
+          "url": "https://ray.so",
+          "description": "Create beautiful code images with customizable themes, backgrounds, and syntax highlighting"
+        },
+        {
+          "name": "Codeshot",
+          "url": "https://codeshot.app",
+          "description": "Screenshot your code with beautiful syntax highlighting and customizable themes"
+        }
+      ]
+    },
+    {
+      "id": "dev-underground",
+      "title": "🛠️ Developer Underground",
+      "description": "Secret weapons that developers use but rarely share with others",
+      "resources": [
+        {
+          "name": "Hoppscotch",
+          "url": "https://hoppscotch.io",
+          "description": "API testing tool that's faster and cleaner than Postman. Lightweight, beautiful, and completely free"
+        },
+        {
+          "name": "HTTPie",
+          "url": "https://httpie.io",
+          "description": "Modern command-line HTTP client with an intuitive UI. Makes API testing feel effortless"
+        },
+        {
+          "name": "JSONFormatter",
+          "url": "https://jsonformatter.org",
+          "description": "Format, validate, and beautify JSON data. Includes advanced features like JSON to CSV conversion"
+        },
+        {
+          "name": "Mockaroo",
+          "url": "https://mockaroo.com",
+          "description": "Generate massive amounts of realistic test data in CSV, JSON, SQL, and Excel formats"
+        },
+        {
+          "name": "Webhook.site",
+          "url": "https://webhook.site",
+          "description": "Test webhooks and HTTP requests with a unique URL. See requests in real-time with detailed logs"
+        },
+        {
+          "name": "Replit",
+          "url": "https://replit.com",
+          "description": "Code, compile, and run programs in 50+ languages directly in your browser. Collaborative coding made simple"
+        },
+        {
+          "name": "CodePen",
+          "url": "https://codepen.io",
+          "description": "Frontend playground for HTML, CSS, and JavaScript. Test ideas instantly and discover amazing demos"
+        }
+      ]
+    },
+    {
+      "id": "creative-black-market",
+      "title": "🎨 Creative Black Market",
+      "description": "Design resources and tools that creative professionals keep secret",
+      "resources": [
+        {
+          "name": "Remove.bg",
+          "url": "https://remove.bg",
+          "description": "AI-powered background removal that rivals Photoshop. One-click transparent backgrounds for any image"
+        },
+        {
+          "name": "Unscreen",
+          "url": "https://unscreen.com",
+          "description": "Remove video backgrounds automatically using AI. No green screen required"
+        },
+        {
+          "name": "Photopea",
+          "url": "https://photopea.com",
+          "description": "Full Photoshop alternative in your browser. Edit PSD files, create graphics, completely free"
+        },
+        {
+          "name": "Figma Community",
+          "url": "https://figma.com/community",
+          "description": "Thousands of free design resources, UI kits, and templates that designers gatekeep"
+        },
+        {
+          "name": "Coolors",
+          "url": "https://coolors.co",
+          "description": "Generate perfect color palettes with AI. Extract colors from images and create stunning combinations"
+        },
+        {
+          "name": "Unsplash",
+          "url": "https://unsplash.com",
+          "description": "High-quality, royalty-free photos from talented photographers worldwide"
+        },
+        {
+          "name": "Canva",
+          "url": "https://canva.com",
+          "description": "Design anything with drag-and-drop simplicity. Templates for everything from social media to presentations"
+        }
+      ]
+    },
+    {
+      "id": "data-alchemy",
+      "title": "📊 Data Alchemy",
+      "description": "Transform raw information into insights like magic",
+      "resources": [
+        {
+          "name": "Observable",
+          "url": "https://observablehq.com",
+          "description": "Interactive data visualization playground. Create stunning charts and analyses with live data"
+        },
+        {
+          "name": "Airtable",
+          "url": "https://airtable.com",
+          "description": "Database that looks like a spreadsheet but works like magic. Organize anything with custom views and automations"
+        },
+        {
+          "name": "Notion",
+          "url": "https://notion.so",
+          "description": "All-in-one workspace that replaces dozens of tools. Notes, databases, wikis, and project management in one place"
+        },
+        {
+          "name": "Retool",
+          "url": "https://retool.com",
+          "description": "Build internal tools and dashboards without coding. Connect to any database or API"
+        },
+        {
+          "name": "Zapier",
+          "url": "https://zapier.com",
+          "description": "Automate workflows between your favorite apps. Connect 5000+ apps without coding"
+        },
+        {
+          "name": "Google Data Studio",
+          "url": "https://datastudio.google.com",
+          "description": "Turn your data into informative, easy-to-read, and shareable dashboards and reports"
+        }
+      ]
+    },
+    {
+      "id": "automation-arsenal",
+      "title": "🤖 Automation Arsenal",
+      "description": "Automate anything and everything like a digital wizard",
+      "resources": [
+        {
+          "name": "IFTTT",
+          "url": "https://ifttt.com",
+          "description": "If This Then That - connect apps and devices to automate your digital life"
+        },
+        {
+          "name": "Make (Integromat)",
+          "url": "https://make.com",
+          "description": "Visual automation platform that's more powerful than Zapier. Build complex workflows with ease"
+        },
+        {
+          "name": "n8n",
+          "url": "https://n8n.io",
+          "description": "Open-source workflow automation tool. Self-hostable alternative to Zapier with unlimited possibilities"
+        },
+        {
+          "name": "Puppeteer",
+          "url": "https://pptr.dev",
+          "description": "Control Chrome headlessly to automate web tasks. Scraping, testing, and automation made simple"
+        },
+        {
+          "name": "Selenium",
+          "url": "https://selenium.dev",
+          "description": "Automate web browsers for testing and data extraction. The industry standard for web automation"
+        },
+        {
+          "name": "Tasker",
+          "url": "https://tasker.joaoapps.com",
+          "description": "Android automation app that can do literally anything on your phone"
+        }
+      ]
+    },
+    {
+      "id": "research-vault",
+      "title": "🕵️ Research Vault",
+      "description": "Find anything, anywhere on the internet - legal research superpowers",
+      "resources": [
+        {
+          "name": "Wayback Machine",
+          "url": "https://archive.org/web",
+          "description": "Browse the internet as it was in the past. See how websites looked years ago"
+        },
+        {
+          "name": "Google Scholar",
+          "url": "https://scholar.google.com",
+          "description": "Search academic papers, theses, books, and citations from the world's research"
+        },
+        {
+          "name": "Semantic Scholar",
+          "url": "https://semanticscholar.org",
+          "description": "AI-powered research tool for scientific literature with paper insights and recommendations"
+        },
+        {
+          "name": "ResearchGate",
+          "url": "https://researchgate.net",
+          "description": "Social network for researchers to share papers and collaborate"
+        },
+        {
+          "name": "Library Genesis",
+          "url": "https://libgen.is",
+          "description": "Massive digital library with millions of books and academic papers"
+        },
+        {
+          "name": "Sci-Hub",
+          "url": "https://sci-hub.se",
+          "description": "Free access to millions of research papers and scientific articles"
+        }
+      ]
+    },
+    {
+      "id": "free-premium",
+      "title": "💰 Free Premium Tools",
+      "description": "Tools that should cost hundreds but are completely free",
+      "resources": [
+        {
+          "name": "Figma",
+          "url": "https://figma.com",
+          "description": "Professional UI/UX design tool that rivals Sketch and Adobe XD. Collaborative design made simple"
+        },
+        {
+          "name": "Blender",
+          "url": "https://blender.org",
+          "description": "Professional 3D creation suite. Animation, modeling, rendering - completely free and open source"
+        },
+        {
+          "name": "DaVinci Resolve",
+          "url": "https://blackmagicdesign.com/products/davinciresolve",
+          "description": "Hollywood-grade video editing software that's completely free. Used in major films"
+        },
+        {
+          "name": "GIMP",
+          "url": "https://gimp.org",
+          "description": "Powerful image editor that rivals Photoshop. Professional photo retouching and graphic design"
+        },
+        {
+          "name": "OBS Studio",
+          "url": "https://obsproject.com",
+          "description": "Professional livestreaming and screen recording software used by top content creators"
+        },
+        {
+          "name": "Audacity",
+          "url": "https://audacityteam.org",
+          "description": "Free, open-source audio editing software for recording and editing sounds"
+        }
+      ]
+    },
+    {
+      "id": "future-tech",
+      "title": "🚀 Future Tech Preview",
+      "description": "Bleeding-edge tools that feel like they're from the future",
+      "resources": [
+        {
+          "name": "RunwayML",
+          "url": "https://runwayml.com",
+          "description": "AI-powered creative tools for video editing, image generation, and machine learning"
+        },
+        {
+          "name": "Midjourney",
+          "url": "https://midjourney.com",
+          "description": "AI art generator that creates stunning images from text descriptions"
+        },
+        {
+          "name": "ChatGPT",
+          "url": "https://chat.openai.com",
+          "description": "Conversational AI that can write, code, analyze, and solve complex problems"
+        },
+        {
+          "name": "GitHub Copilot",
+          "url": "https://github.com/features/copilot",
+          "description": "AI pair programmer that suggests code as you type. Autocomplete for entire functions"
+        },
+        {
+          "name": "Replit Ghostwriter",
+          "url": "https://replit.com/site/ghostwriter",
+          "description": "AI coding assistant that helps you write code faster and learn as you go"
+        },
+        {
+          "name": "Stable Diffusion",
+          "url": "https://stability.ai/blog/stable-diffusion-public-release",
+          "description": "Open-source AI model for generating images from text. Run locally or in the cloud"
+        }
+      ]
+    },
+    {
+      "id": "underground-utilities",
+      "title": "⚡ Underground Utilities",
+      "description": "Hidden productivity tools that power users swear by",
+      "resources": [
+        {
+          "name": "Temp Mail",
+          "url": "https://temp-mail.org",
+          "description": "Disposable email addresses for signups and privacy. Receive emails without revealing your real address"
+        },
+        {
+          "name": "10 Minute Mail",
+          "url": "https://10minutemail.com",
+          "description": "Temporary email that self-destructs after 10 minutes. Perfect for one-time signups"
+        },
+        {
+          "name": "Privacy.com",
+          "url": "https://privacy.com",
+          "description": "Generate virtual credit cards for online purchases. Protect your real card information"
+        },
+        {
+          "name": "Have I Been Pwned",
+          "url": "https://haveibeenpwned.com",
+          "description": "Check if your email or passwords have been compromised in data breaches"
+        },
+        {
+          "name": "VirusTotal",
+          "url": "https://virustotal.com",
+          "description": "Analyze suspicious files and URLs with 70+ antivirus scanners"
+        },
+        {
+          "name": "archive.today",
+          "url": "https://archive.today",
+          "description": "Take snapshots of web pages that will always be available even if the original page disappears"
+        }
+      ]
+    }
+  ]
+}

@@ -167,14 +167,29 @@
       "count": 39,
       "tags": ["social", "networking", "community", "forums", "communication", "professional"],
       "featured": true
+    },
+    {
+      "id": "hidden-treasures",
+      "name": "Hidden Treasures",
+      "emoji": "💎", 
+      "description": "The internet's best-kept secrets. Powerful tools and hidden gems that insiders use but rarely share. Welcome to the underground.",
+      "longDescription": "Discover 50+ hidden gems across 8 secret categories: power user tools, developer underground, creative black market, data alchemy, automation arsenal, research vault, free premium tools, and future tech preview.",
+      "color": "dark",
+      "gradient": "linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #667eea 100%)",
+      "status": "new",
+      "path": "/categories/hidden-treasures/",
+      "count": 50,
+      "tags": ["hidden", "secrets", "premium", "underground", "exclusive", "powerful", "insider"],
+      "featured": true,
+      "special": true
     }
   ],
   "metadata": {
-    "version": "2.0",
-    "lastUpdated": "2025-08-12",
-    "totalCategories": 12,
-    "activeCategories": 12,
-    "totalPlatforms": 511,
-    "description": "The Everything Gateway - Your complete portal to the entire internet, beautifully organized and instantly accessible"
+    "version": "2.1",
+    "lastUpdated": "2025-08-19",
+    "totalCategories": 13,
+    "activeCategories": 13,
+    "totalPlatforms": 561,
+    "description": "The Everything Gateway - Your complete portal to the entire internet, beautifully organized and instantly accessible. Now featuring Hidden Treasures - exclusive tools that insiders don't want you to know about."
   }
 }

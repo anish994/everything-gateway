@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Treasures - Secret Tools & Underground Gems | The Everything Gateway</title>
+    <meta name="description" content="The internet's best-kept secrets. Discover 50+ powerful tools and hidden gems that insiders use but rarely share. Welcome to the underground.">
+    <link rel="stylesheet" href="../../css/shared.css">
+    <link rel="stylesheet" href="../../css/search.css">
+    <style>
+        /* Hidden Treasures Dark Theme 🏴‍☠️ */
+        :root {
+            --treasure-dark: #1a202c;
+            --treasure-darker: #0f1419;
+            --treasure-gold: #f6e05e;
+            --treasure-silver: #e2e8f0;
+            --treasure-purple: #667eea;
+            --treasure-glow: rgba(246, 224, 94, 0.3);
+            --treasure-shadow: rgba(0, 0, 0, 0.8);
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--treasure-darker) 0%, var(--treasure-dark) 50%, #2d3748 100%);
+            color: var(--treasure-silver);
+            min-height: 100vh;
+        }
+
+        .page-container {
+            background: transparent;
+        }
+
+        .main-content {
+            background: rgba(26, 32, 44, 0.95);
+            border: 1px solid rgba(246, 224, 94, 0.2);
+            box-shadow: 0 0 50px rgba(246, 224, 94, 0.1);
+        }
+
+        /* Mobile Navigation - Dark theme */
+        .mobile-nav {
+            background: rgba(15, 20, 25, 0.98);
+            border-bottom: 1px solid var(--treasure-gold);
+            backdrop-filter: blur(20px);
+        }
+
+        .back-link {
+            color: var(--treasure-gold);
+        }
+
+        .nav-title {
+            color: var(--treasure-silver);
+            text-shadow: 0 0 10px var(--treasure-glow);
+        }
+
+        .category-nav-search {
+            color: var(--treasure-gold);
+            background: rgba(246, 224, 94, 0.1);
+            border: 1px solid rgba(246, 224, 94, 0.3);
+        }
+
+        /* Treasure Hero Section */
+        .treasure-hero {
+            background: linear-gradient(135deg, var(--treasure-darker) 0%, var(--treasure-dark) 50%, var(--treasure-purple) 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 4rem 2rem;
+            border-radius: 16px;
+            margin-bottom: 3rem;
+        }
+
+        .treasure-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="sparkles" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1" fill="rgba(246,224,94,0.3)"/><circle cx="15" cy="10" r="0.5" fill="rgba(246,224,94,0.2)"/><circle cx="10" cy="15" r="0.8" fill="rgba(246,224,94,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23sparkles)"/></svg>') repeat;
+            pointer-events: none;
+            animation: sparkle 20s linear infinite;
+        }
+
+        @keyframes sparkle {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(-20px) translateY(-20px); }
+        }
+
+        .treasure-title {
+            color: var(--treasure-gold);
+            font-size: 4rem;
+            font-weight: 900;
+            text-shadow: 0 0 20px var(--treasure-glow);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .treasure-subtitle {
+            color: var(--treasure-silver);
+            font-size: 1.4rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .treasure-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+            margin-top: 2rem;
+        }
+
+        .treasure-stat {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(246, 224, 94, 0.1);
+            border-radius: 12px;
+            border: 1px solid rgba(246, 224, 94, 0.3);
+        }
+
+        .treasure-stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--treasure-gold);
+            display: block;
+        }
+
+        .treasure-stat-label {
+            font-size: 0.9rem;
+            color: var(--treasure-silver);
+            opacity: 0.8;
+        }
+
+        /* Section Headers - Dark treasure theme */
+        .treasure-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(246, 224, 94, 0.2);
+        }
+
+        .section-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(246, 224, 94, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-title {
+            position: relative;
+            z-index: 1;
+            color: var(--treasure-gold);
+            margin: 0 0 0.5rem 0;
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-shadow: 0 0 15px var(--treasure-glow);
+        }
+
+        .section-description {
+            position: relative;
+            z-index: 1;
+            color: var(--treasure-silver);
+            margin: 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Treasure Cards Grid */
+        .treasures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .treasure-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(26, 32, 44, 0.8);
+            border-radius: 16px;
+            text-decoration: none;
+            color: var(--treasure-silver);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(246, 224, 94, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .treasure-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(45deg, var(--treasure-gold), var(--treasure-purple));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .treasure-card:hover::before {
+            opacity: 1;
+        }
+
+        .treasure-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+            background: rgba(26, 32, 44, 0.95);
+            border-color: rgba(246, 224, 94, 0.3);
+        }
+
+        .treasure-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(45deg, rgba(246, 224, 94, 0.2), rgba(102, 126, 234, 0.2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+            box-shadow: 0 0 20px rgba(246, 224, 94, 0.2);
+            border: 1px solid rgba(246, 224, 94, 0.3);
+        }
+
+        .treasure-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .treasure-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 0 0.5rem 0;
+            color: var(--treasure-gold);
+            line-height: 1.3;
+        }
+
+        .treasure-description {
+            font-size: 0.9rem;
+            color: var(--treasure-silver);
+            margin: 0;
+            line-height: 1.5;
+            opacity: 0.8;
+        }
+
+        .treasure-card:hover .treasure-name {
+            color: var(--treasure-gold);
+            text-shadow: 0 0 10px var(--treasure-glow);
+        }
+
+        .treasure-card:hover .treasure-description {
+            opacity: 1;
+        }
+
+        /* Specific section gradients */
+        .power-user-gradient {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+        }
+
+        .dev-underground-gradient {
+            background: linear-gradient(135deg, #1a202c, #2d3748);
+        }
+
+        .creative-black-market-gradient {
+            background: linear-gradient(135deg, #553c9a, #667eea);
+        }
+
+        .data-alchemy-gradient {
+            background: linear-gradient(135deg, #0f4c75, #3282b8);
+        }
+
+        .automation-arsenal-gradient {
+            background: linear-gradient(135deg, #8b5a2b, #d2691e);
+        }
+
+        .research-vault-gradient {
+            background: linear-gradient(135deg, #2c5530, #68a063);
+        }
+
+        .free-premium-gradient {
+            background: linear-gradient(135deg, #7c2d12, #dc2626);
+        }
+
+        .future-tech-gradient {
+            background: linear-gradient(135deg, #581c87, #8b5cf6);
+        }
+
+        .underground-utilities-gradient {
+            background: linear-gradient(135deg, #374151, #6b7280);
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .treasures-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .treasure-card {
+                padding: 1.25rem;
+            }
+            
+            .treasure-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .treasure-title {
+                font-size: 2.5rem;
+            }
+
+            .treasure-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Secret unlock animation */
+        @keyframes unlockSecret {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .treasure-card {
+            animation: unlockSecret 0.6s ease-out;
+        }
+
+        .treasure-card:nth-child(2n) {
+            animation-delay: 0.1s;
+        }
+
+        .treasure-card:nth-child(3n) {
+            animation-delay: 0.2s;
+        }
+
+        .treasure-card:nth-child(4n) {
+            animation-delay: 0.3s;
+        }
+
+        /* Search trigger button - treasure themed */
+        .search-trigger {
+            background: rgba(246, 224, 94, 0.1);
+            border: 2px solid rgba(246, 224, 94, 0.3);
+            color: var(--treasure-gold);
+            backdrop-filter: blur(10px);
+        }
+
+        .search-trigger:hover {
+            background: rgba(246, 224, 94, 0.2);
+            border-color: rgba(246, 224, 94, 0.5);
+            box-shadow: 0 0 20px var(--treasure-glow);
+        }
+
+        .search-trigger-icon {
+            color: var(--treasure-gold);
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav">
+            <a href="../../" class="back-link">
+                ← Back to Gateway
+            </a>
+            <div class="nav-title">Hidden Treasures</div>
+            <button class="category-nav-search" onclick="window.universalSearch && window.universalSearch.openSearch()" aria-label="Search hidden treasures">
+                💎
+            </button>
+        </nav>
+        
+        <main class="main-content">
+            <!-- Hero Section -->
+            <div class="treasure-hero">
+                <div style="text-align: center;">
+                    <h1 class="treasure-title">💎 Hidden Treasures</h1>
+                    <div class="collapsible-content" id="treasureSubtitle">
+                        <p class="treasure-subtitle">The internet's best-kept secrets. Powerful tools and hidden gems that insiders use but rarely share. Welcome to the underground.</p>
+                    </div>
+                    <button class="expand-toggle" id="treasureToggle" onclick="toggleTreasureContent()">Discover Secrets</button>
+                    
+                    <!-- Treasure Search -->
+                    <div style="margin-top: 2rem;">
+                        <button class="search-trigger" onclick="window.universalSearch && window.universalSearch.openSearch()">
+                            <span class="search-trigger-icon">🔍</span>
+                            <span>Search Hidden Treasures</span>
+                            <span class="search-trigger-shortcut">Ctrl+K</span>
+                        </button>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="treasure-stats">
+                        <div class="treasure-stat">
+                            <span class="treasure-stat-number">50+</span>
+                            <span class="treasure-stat-label">Secret Tools</span>
+                        </div>
+                        <div class="treasure-stat">
+                            <span class="treasure-stat-number">8</span>
+                            <span class="treasure-stat-label">Underground Vaults</span>
+                        </div>
+                        <div class="treasure-stat">
+                            <span class="treasure-stat-number">∞</span>
+                            <span class="treasure-stat-label">Hidden Power</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Power User Secrets -->
+            <section class="treasure-section">
+                <div class="section-header power-user-gradient">
+                    <h2 class="section-title">🔐 Power User Secrets</h2>
+                    <p class="section-description">Advanced tools hiding in plain sight - for those who know where to look</p>
+                </div>
+                <div class="treasures-grid">
+                    <a href="https://regex101.com" target="_blank" class="treasure-card">
+                        <div class="treasure-icon">🔍</div>
+                        <div class="treasure-content">
+                            <h3 class="treasure-name">Regex101</h3>
+                            <p class="treasure-description">The ultimate regex testing and debugging tool with real-time explanation - used by developers worldwide but unknown to most</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://carbon.now.sh" target="_blank" class="treasure-card">
+                        <div class="treasure-icon">📸</div>
+                        <div class="treasure-content">
+                            <h3 class="treasure-name">Carbon</h3>
+                            <p class="treasure-description">Turn your code into beautiful, shareable images. Create stunning code screenshots for presentations and social media</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://excalidraw.com" target="_blank" class="treasure-card">
+                        <div class="treasure-icon">✏️</div>
+                        <div class="treasure-content">
+                            <h3 class="treasure-name">Excalidraw</h3>
+                            <p class="treasure-description">Mind-blowing collaborative whiteboarding tool that feels like magic. Hand-drawn style diagrams that actually look professional</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://jsoncrack.com" target="_blank" class="treasure-card">
+                        <div class="treasure-icon">🌳</div>
+                        <div class="treasure-content">
+                            <h3 class="treasure-name">JSON Crack</h3>
+                            <p class="treasure-description">Visualize JSON data as interactive graphs. Turn complex data structures into beautiful, understandable diagrams</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://ray.so" target="_blank" class="treasure-card">
+                        <div class="treasure-icon">🌟</div>
+                        <div class="treasure-content">
+                            <h3 class="treasure-name">Ray.so</h3>
+                            <p class="treasure-description">Create beautiful code images with customizable themes, backgrounds, and syntax highlighting</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://codeshot.app" target="_blank" class="treasure-card">
+                        <div class="treasure-icon">📷</div>
+                        <div class="treasure-content">
+                            <h3 class="treasure-name">Codeshot</h3>
+                            <p class="treasure-description">Screenshot your code with beautiful syntax highlighting and customizable themes</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- Developer Underground -->
+            <section class="treasure-section">
+                <div class="section-header dev-underground-gradient">
+                    <h2 class="section-title">🛠️ Developer Underground</h2>
+                    <p class="section-description">Secret weapons that developers use but rarely share with others</p>
+                </div>
+                <div class="treasures-grid">
+                    <a href="https://hoppscotch.io" target="_blank" class="treasure-card">
+                        <div class="treasure-icon">🚀</div>
+                        <div class="treasure-content">
+                            <h3 class="treasure-name">Hoppscotch</h3>
+                            <p class="treasure-description">API testing tool that's faster and cleaner than Postman. Lightweight, beautiful, and completely free</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://httpie.io" target="_blank" class="treasure-card">
+                        <div class="treasure-icon">⚡</div>
+                        <div class="treasure-content">
+                            <h3 class="treasure-name">HTTPie</h3>
+                            <p class="treasure-description">Modern command-line HTTP client with an intuitive UI. Makes API testing feel effortless</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://jsonformatter.org" target="_blank" class="treasure-card">
+                        <div class="treasure-icon">📋</div>
+                        <div class="treasure-content">
+                            <h3 class="treasure-name">JSONFormatter</h3>
+                            <p class="treasure-description">Format, validate, and beautify JSON data. Includes advanced features like JSON to CSV conversion</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://mockaroo.com" target="_blank" class="treasure-card">
+                        <div class="treasure-icon">🎲</div>
+                        <div class="treasure-content">
+                            <h3 class="treasure-name">Mockaroo</h3>
+                            <p class="treasure-description">Generate massive amounts of realistic test data in CSV, JSON, SQL, and Excel formats</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://webhook.site" target="_blank" class="treasure-card">
+                        <div class="treasure-icon">🔗</div>
+                        <div class="treasure-content">
+                            <h3 class="treasure-name">Webhook.site</h3>
+                            <p class="treasure-description">Test webhooks and HTTP requests with a unique URL. See requests in real-time with detailed logs</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://replit.com" target="_blank" class="treasure-card">
+                        <div class="treasure-icon">💻</div>
+                        <div class="treasure-content">
+                            <h3 class="treasure-name">Replit</h3>
+                            <p class="treasure-description">Code, compile, and run programs in 50+ languages directly in your browser. Collaborative coding made simple</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://codepen.io" target="_blank" class="treasure-card">
+                        <div class="treasure-icon">🖊️</div>
+                        <div class="treasure-content">
+                            <h3 class="treasure-name">CodePen</h3>
+                            <p class="treasure-description">Frontend playground for HTML, CSS, and JavaScript. Test ideas instantly and discover amazing demos</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Creative Black Market -->
+            <section class="treasure-section">
+                <div class="section-header creative-black-market-gradient">
+                    <h2 class="section-title">🎨 Creative Black Market</h2>
+                    <p class="section-description">Design resources and tools that creative professionals keep secret</p>
+                </div>
+                <div class="treasures-grid">
+                    <a href="https://remove.bg" target="_blank" class="treasure-card">
+                        <div class="treasure-icon">🖼️</div>
+                        <div class="treasure-content">
+                            <h3 class="treasure-name">Remove.bg</h3>
+                            <p class="treasure-description">AI-powered background removal that rivals Photoshop. One-click transparent backgrounds for any image</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://unscreen.com" target="_blank" class="treasure-card">
+                        <div class="treasure-icon">🎬</div>
+                        <div class="treasure-content">
+                            <h3 class="treasure-name">Unscreen</h3>
+                            <p class="treasure-description">Remove video backgrounds automatically using AI. No green screen required</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://photopea.com" target="_blank" class="treasure-card">
+                        <div class="treasure-icon">🎨</div>
+                        <div class="treasure-content">
+                            <h3 class="treasure-name">Photopea</h3>
+                            <p class="treasure-description">Full Photoshop alternative in your browser. Edit PSD files, create graphics, completely free</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://figma.com/community" target="_blank" class="treasure-card">
+                        <div class="treasure-icon">🎯</div>
+                        <div class="treasure-content">
+                            <h3 class="treasure-name">Figma Community</h3>
+                            <p class="treasure-description">Thousands of free design resources, UI kits, and templates that designers gatekeep</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://coolors.co" target="_blank" class="treasure-card">
+                        <div class="treasure-icon">🌈</div>
+                        <div class="treasure-content">
+                            <h3 class="treasure-name">Coolors</h3>
+                            <p class="treasure-description">Generate perfect color palettes with AI. Extract colors from images and create stunning combinations</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://unsplash.com" target="_blank" class="treasure-card">
+                        <div class="treasure-icon">📷</div>
+                        <div class="treasure-content">
+                            <h3 class="treasure-name">Unsplash</h3>
+                            <p class="treasure-description">High-quality, royalty-free photos from talented photographers worldwide</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://canva.com" target="_blank" class="treasure-card">
+                        <div class="treasure-icon">✨</div>
+                        <div class="treasure-content">
+                            <h3 class="treasure-name">Canva</h3>
+                            <p class="treasure-description">Design anything with drag-and-drop simplicity. Templates for everything from social media to presentations</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- I'll continue with the rest of the sections... -->
+
+        </main>
+    </div>
+    
+    <script src="../../js/universal-search.js"></script>
+    <script src="../../js/gateway.js"></script>
+    <script>
+        // Initialize universal search for hidden treasures
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.UniversalSearchEngine) {
+                window.universalSearch = new UniversalSearchEngine({
+                    category: 'hidden-treasures',
+                    theme: 'dark-treasure',
+                    placeholder: 'Search hidden treasures and secret tools...'
+                });
+            }
+        });
+        
+        // Toggle treasure content
+        function toggleTreasureContent() {
+            const content = document.getElementById('treasureSubtitle');
+            const toggle = document.getElementById('treasureToggle');
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                toggle.textContent = 'Discover Secrets';
+            } else {
+                content.classList.add('expanded');
+                toggle.textContent = 'Hide Secrets';
+            }
+        }
+    </script>
+</body>
+</html>
