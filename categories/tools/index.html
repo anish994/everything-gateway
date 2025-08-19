@@ -62,9 +62,23 @@
         /* Enhanced platform cards with logos */
         .platforms-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: 1fr; /* Single column on mobile */
             gap: 1.5rem;
             margin-top: 2rem;
+        }
+        
+        /* Mobile override for platforms grid */
+        @media (max-width: 767px) {
+            .platforms-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        
+        /* Tablet and desktop */
+        @media (min-width: 768px) {
+            .platforms-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
         }
         
         .platform-card {
