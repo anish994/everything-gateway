@@ -1859,15 +1859,64 @@ What would you like to discover? 🌟`;
     
     // Auto-initialize when DOM is ready
     const initialize = () => {
+        console.log('🟡 Starting Gateway AI initialization...');
+        
+        // Force remove any existing instances
+        const existingHTML = document.getElementById('gateway-ai-mobile-html');
+        if (existingHTML) {
+            existingHTML.remove();
+            console.log('🗑️ Removed existing AI HTML');
+        }
+        
+        const existingStyles = document.getElementById('gateway-ai-mobile-styles');
+        if (existingStyles) {
+            existingStyles.remove();
+            console.log('🗑️ Removed existing AI styles');
+        }
+        
         injectMobileStyles();
+        console.log('✅ Styles injected');
+        
         createMobileHTML();
+        console.log('✅ HTML created');
+        
         initializeMobileAI();
+        console.log('✅ AI system initialized');
         
         setTimeout(() => {
             if (window.gatewayAI) {
                 console.log('🎯 Gateway AI 2.0 SUPERCHARGED Mobile-First System Ready!');
+                
+                // Test if elements exist
+                const fab = document.getElementById('aiFab');
+                const closeBtn = document.getElementById('aiClose');
+                const dragHandle = document.querySelector('.ai-drag-handle');
+                
+                console.log('🧪 Element test:', {
+                    FAB_exists: !!fab,
+                    Close_button_exists: !!closeBtn,
+                    Drag_handle_exists: !!dragHandle,
+                    FAB_visible: fab ? getComputedStyle(fab).display !== 'none' : false,
+                    Close_visible: closeBtn ? getComputedStyle(closeBtn).display !== 'none' : false
+                });
+                
+                // Force add a simple click test for X button
+                if (closeBtn) {
+                    console.log('🔧 Adding emergency X button handler');
+                    closeBtn.onclick = () => {
+                        console.log('🆘 Emergency X button clicked!');
+                        const modal = document.getElementById('aiModal');
+                        if (modal) {
+                            modal.classList.remove('active');
+                            document.body.classList.remove('ai-modal-open');
+                            console.log('🆘 Emergency close executed!');
+                        }
+                    };
+                }
+            } else {
+                console.error('❌ Gateway AI failed to initialize!');
             }
-        }, 100);
+        }, 200);
     };
     
     if (document.readyState === 'loading') {
