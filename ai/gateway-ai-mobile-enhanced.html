@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=3.0">
+    <title>Gateway AI 2.0 - Mobile Enhanced</title>
+    
+    <style>
+        /* Gateway AI 2.0 - Mobile-First Revolution */
+        :root {
+            --ai-primary: #667eea;
+            --ai-secondary: #764ba2;
+            --ai-accent: #4facfe;
+            --ai-success: #4ade80;
+            --ai-warning: #fbbf24;
+            --ai-error: #f87171;
+            
+            --ai-bg-primary: rgba(0, 0, 0, 0.95);
+            --ai-bg-secondary: #1a1a1a;
+            --ai-bg-card: #2a2a2a;
+            --ai-bg-command: rgba(102, 126, 234, 0.1);
+            --ai-bg-hover: rgba(102, 126, 234, 0.2);
+            
+            --ai-text-primary: #ffffff;
+            --ai-text-secondary: #cccccc;
+            --ai-text-muted: #888888;
+            
+            --ai-border: rgba(255, 255, 255, 0.1);
+            --ai-border-active: rgba(102, 126, 234, 0.5);
+            
+            --ai-radius-sm: 8px;
+            --ai-radius-md: 12px;
+            --ai-radius-lg: 16px;
+            --ai-radius-xl: 20px;
+            
+            --ai-spacing-xs: 8px;
+            --ai-spacing-sm: 12px;
+            --ai-spacing-md: 16px;
+            --ai-spacing-lg: 24px;
+            --ai-spacing-xl: 32px;
+            
+            --ai-shadow-sm: 0 4px 8px rgba(0, 0, 0, 0.2);
+            --ai-shadow-md: 0 8px 16px rgba(0, 0, 0, 0.3);
+            --ai-shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.4);
+            --ai-shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.5);
+            
+            --ai-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --ai-transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: var(--ai-text-primary);
+            overflow: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Enhanced Floating Action Button */
+        .ai-fab {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--ai-primary) 0%, var(--ai-secondary) 100%);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            box-shadow: var(--ai-shadow-lg);
+            transition: var(--ai-transition);
+            z-index: 10001;
+            user-select: none;
+            overflow: hidden;
+        }
+        
+        .ai-fab:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--ai-accent) 0%, var(--ai-primary) 100%);
+            opacity: 0;
+            transition: var(--ai-transition);
+        }
+        
+        .ai-fab:hover:before,
+        .ai-fab:active:before {
+            opacity: 1;
+        }
+        
+        .ai-fab:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: var(--ai-shadow-xl);
+        }
+        
+        .ai-fab:active {
+            transform: scale(0.95);
+        }
+        
+        .ai-fab-icon {
+            position: relative;
+            z-index: 1;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* Enhanced Modal Overlay */
+        .ai-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--ai-bg-primary);
+            backdrop-filter: blur(20px) saturate(180%);
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--ai-transition);
+            display: flex;
+            align-items: flex-end;
+            padding: 0;
+        }
+        
+        .ai-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Mobile-First Container */
+        .ai-container {
+            width: 100%;
+            height: 85vh;
+            max-height: 600px;
+            background: var(--ai-bg-secondary);
+            border-radius: var(--ai-radius-xl) var(--ai-radius-xl) 0 0;
+            box-shadow: var(--ai-shadow-xl);
+            transform: translateY(100%);
+            transition: var(--ai-transition);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .ai-modal-overlay.active .ai-container {
+            transform: translateY(0);
+        }
+        
+        /* Drag Handle */
+        .ai-drag-handle {
+            position: absolute;
+            top: var(--ai-spacing-sm);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 4px;
+            background: var(--ai-text-muted);
+            border-radius: 2px;
+            cursor: grab;
+            z-index: 100;
+        }
+        
+        .ai-drag-handle:active {
+            cursor: grabbing;
+        }
+        
+        /* Enhanced Header */
+        .ai-header {
+            padding: var(--ai-spacing-lg) var(--ai-spacing-lg) var(--ai-spacing-md);
+            background: linear-gradient(135deg, var(--ai-primary) 0%, var(--ai-secondary) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ai-header:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        
+        .ai-header-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .ai-title {
+            display: flex;
+            align-items: center;
+            gap: var(--ai-spacing-sm);
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        
+        .ai-status {
+            width: 12px;
+            height: 12px;
+            background: var(--ai-success);
+            border-radius: 50%;
+            animation: statusPulse 2s infinite;
+        }
+        
+        @keyframes statusPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.1); }
+        }
+        
+        .ai-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: var(--ai-spacing-xs);
+            border-radius: var(--ai-radius-sm);
+            transition: var(--ai-transition-fast);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+        }
+        
+        .ai-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+        
+        .ai-subtitle {
+            margin-top: var(--ai-spacing-sm);
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+        
+        /* Revolutionary Mobile Command Interface */
+        .ai-main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        /* Swipeable Command Categories */
+        .ai-categories {
+            padding: var(--ai-spacing-md) 0 var(--ai-spacing-sm);
+            background: var(--ai-bg-card);
+            border-bottom: 1px solid var(--ai-border);
+        }
+        
+        .ai-categories-scroll {
+            display: flex;
+            gap: var(--ai-spacing-sm);
+            padding: 0 var(--ai-spacing-lg);
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        
+        .ai-categories-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .ai-category-chip {
+            flex-shrink: 0;
+            background: var(--ai-bg-command);
+            border: 1px solid var(--ai-border);
+            border-radius: var(--ai-radius-xl);
+            padding: var(--ai-spacing-sm) var(--ai-spacing-md);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--ai-transition-fast);
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: var(--ai-spacing-xs);
+            user-select: none;
+        }
+        
+        .ai-category-chip.active {
+            background: var(--ai-primary);
+            border-color: var(--ai-primary);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .ai-category-chip:not(.active):hover {
+            background: var(--ai-bg-hover);
+            border-color: var(--ai-border-active);
+            transform: translateY(-2px);
+        }
+        
+        /* Enhanced Command Grid */
+        .ai-commands-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: var(--ai-spacing-lg);
+            background: var(--ai-bg-secondary);
+        }
+        
+        .ai-commands-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--ai-spacing-md);
+            margin-bottom: var(--ai-spacing-lg);
+        }
+        
+        .ai-command-card {
+            background: var(--ai-bg-card);
+            border: 1px solid var(--ai-border);
+            border-radius: var(--ai-radius-md);
+            padding: var(--ai-spacing-lg);
+            cursor: pointer;
+            transition: var(--ai-transition-fast);
+            position: relative;
+            overflow: hidden;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            user-select: none;
+        }
+        
+        .ai-command-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--ai-primary) 0%, var(--ai-secondary) 100%);
+            opacity: 0;
+            transition: var(--ai-transition-fast);
+        }
+        
+        .ai-command-card:hover:before {
+            opacity: 0.1;
+        }
+        
+        .ai-command-card:active {
+            transform: scale(0.98);
+        }
+        
+        .ai-command-card:hover {
+            border-color: var(--ai-border-active);
+            transform: translateY(-4px);
+            box-shadow: var(--ai-shadow-md);
+        }
+        
+        .ai-command-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .ai-command-icon {
+            font-size: 2rem;
+            margin-bottom: var(--ai-spacing-sm);
+            display: block;
+        }
+        
+        .ai-command-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: var(--ai-spacing-xs);
+            color: var(--ai-text-primary);
+        }
+        
+        .ai-command-desc {
+            font-size: 0.75rem;
+            color: var(--ai-text-secondary);
+            line-height: 1.4;
+        }
+        
+        .ai-command-badge {
+            position: absolute;
+            top: var(--ai-spacing-sm);
+            right: var(--ai-spacing-sm);
+            background: var(--ai-primary);
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: var(--ai-radius-sm);
+            font-weight: 600;
+        }
+        
+        .ai-command-badge.new {
+            background: var(--ai-success);
+        }
+        
+        .ai-command-badge.hot {
+            background: var(--ai-warning);
+        }
+        
+        /* Chat Messages Area */
+        .ai-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: var(--ai-spacing-lg);
+            display: none;
+        }
+        
+        .ai-messages.active {
+            display: flex;
+            flex-direction: column;
+            gap: var(--ai-spacing-md);
+        }
+        
+        .ai-message {
+            display: flex;
+            gap: var(--ai-spacing-sm);
+            max-width: 85%;
+            animation: messageSlideIn 0.3s ease;
+        }
+        
+        @keyframes messageSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .ai-message.user {
+            align-self: flex-end;
+            flex-direction: row-reverse;
+        }
+        
+        .ai-message-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        
+        .ai-message-avatar.user {
+            background: var(--ai-primary);
+        }
+        
+        .ai-message-avatar.assistant {
+            background: linear-gradient(135deg, var(--ai-accent) 0%, var(--ai-primary) 100%);
+        }
+        
+        .ai-message-content {
+            background: var(--ai-bg-card);
+            border: 1px solid var(--ai-border);
+            border-radius: var(--ai-radius-md);
+            padding: var(--ai-spacing-md);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            position: relative;
+        }
+        
+        .ai-message.user .ai-message-content {
+            background: var(--ai-primary);
+            border-color: var(--ai-primary);
+            color: white;
+        }
+        
+        /* Enhanced Input Area */
+        .ai-input-area {
+            padding: var(--ai-spacing-lg);
+            background: var(--ai-bg-card);
+            border-top: 1px solid var(--ai-border);
+            display: flex;
+            gap: var(--ai-spacing-sm);
+            align-items: flex-end;
+        }
+        
+        .ai-input {
+            flex: 1;
+            background: var(--ai-bg-secondary);
+            border: 1px solid var(--ai-border);
+            border-radius: var(--ai-radius-lg);
+            padding: var(--ai-spacing-md) var(--ai-spacing-lg);
+            font-size: 1rem;
+            color: var(--ai-text-primary);
+            resize: none;
+            max-height: 120px;
+            transition: var(--ai-transition-fast);
+            font-family: inherit;
+        }
+        
+        .ai-input:focus {
+            outline: none;
+            border-color: var(--ai-primary);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+        }
+        
+        .ai-input::placeholder {
+            color: var(--ai-text-muted);
+        }
+        
+        .ai-send {
+            width: 48px;
+            height: 48px;
+            background: var(--ai-primary);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+            transition: var(--ai-transition-fast);
+            flex-shrink: 0;
+        }
+        
+        .ai-send:hover {
+            background: var(--ai-secondary);
+            transform: scale(1.1);
+        }
+        
+        .ai-send:active {
+            transform: scale(0.95);
+        }
+        
+        .ai-send:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        /* Welcome State */
+        .ai-welcome {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--ai-spacing-xl);
+            height: 100%;
+        }
+        
+        .ai-welcome-icon {
+            font-size: 4rem;
+            margin-bottom: var(--ai-spacing-lg);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .ai-welcome-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--ai-spacing-sm);
+            color: var(--ai-text-primary);
+        }
+        
+        .ai-welcome-subtitle {
+            color: var(--ai-text-secondary);
+            margin-bottom: var(--ai-spacing-lg);
+            line-height: 1.5;
+        }
+        
+        .ai-welcome-hint {
+            background: var(--ai-bg-command);
+            border: 1px solid var(--ai-border);
+            border-radius: var(--ai-radius-md);
+            padding: var(--ai-spacing-md);
+            font-size: 0.85rem;
+            color: var(--ai-text-secondary);
+            max-width: 280px;
+        }
+        
+        /* Responsive Enhancements */
+        @media (min-width: 768px) {
+            .ai-modal-overlay {
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .ai-container {
+                width: 90vw;
+                max-width: 900px;
+                height: 85vh;
+                border-radius: var(--ai-radius-xl);
+            }
+            
+            .ai-commands-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .ai-fab {
+                bottom: 24px;
+                right: 24px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .ai-commands-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        /* Touch and Gesture Enhancements */
+        .ai-command-card,
+        .ai-category-chip,
+        .ai-send {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        /* Loading States */
+        .ai-loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--ai-text-muted);
+            border-radius: 50%;
+            border-top-color: var(--ai-primary);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Haptic Feedback Preparation */
+        .ai-haptic {
+            transition: transform 0.1s ease;
+        }
+        
+        .ai-haptic:active {
+            transform: scale(0.96);
+        }
+    </style>
+</head>
+<body>
+    <!-- Enhanced Floating Action Button -->
+    <button class="ai-fab" id="aiFab" aria-label="Open Gateway AI Assistant">
+        <span class="ai-fab-icon">🧠</span>
+    </button>
+    
+    <!-- Enhanced Modal -->
+    <div class="ai-modal-overlay" id="aiModal">
+        <div class="ai-container">
+            <!-- Drag Handle -->
+            <div class="ai-drag-handle"></div>
+            
+            <!-- Enhanced Header -->
+            <div class="ai-header">
+                <div class="ai-header-content">
+                    <div class="ai-title">
+                        <div class="ai-status"></div>
+                        Gateway AI 2.0
+                    </div>
+                    <button class="ai-close" id="aiClose" aria-label="Close AI Assistant">×</button>
+                </div>
+                <div class="ai-subtitle">Mobile-first intelligent assistant</div>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="ai-main-content">
+                <!-- Swipeable Categories -->
+                <div class="ai-categories">
+                    <div class="ai-categories-scroll" id="categoriesScroll">
+                        <div class="ai-category-chip active" data-category="navigation">
+                            🗂️ Navigation
+                        </div>
+                        <div class="ai-category-chip" data-category="explorer">
+                            🏷️ Explorer
+                        </div>
+                        <div class="ai-category-chip" data-category="actions">
+                            ⚡ Actions
+                        </div>
+                        <div class="ai-category-chip" data-category="personal">
+                            👤 Personal
+                        </div>
+                        <div class="ai-category-chip" data-category="advanced">
+                            🔮 Advanced
+                        </div>
+                        <div class="ai-category-chip" data-category="system">
+                            ⚙️ System
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Enhanced Commands Grid -->
+                <div class="ai-commands-container" id="commandsContainer">
+                    <div class="ai-commands-grid" id="commandsGrid">
+                        <!-- Commands will be dynamically populated -->
+                    </div>
+                </div>
+                
+                <!-- Chat Messages (Hidden by default) -->
+                <div class="ai-messages" id="aiMessages">
+                    <div class="ai-welcome">
+                        <div class="ai-welcome-icon">🎯</div>
+                        <div class="ai-welcome-title">Gateway AI 2.0</div>
+                        <div class="ai-welcome-subtitle">
+                            Tap any command above for instant, intelligent responses!
+                        </div>
+                        <div class="ai-welcome-hint">
+                            💡 Try swiping the categories or typing natural questions
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Enhanced Input Area -->
+                <div class="ai-input-area">
+                    <textarea class="ai-input" id="aiInput" 
+                              placeholder="Ask anything or type /help..." 
+                              rows="1"></textarea>
+                    <button class="ai-send ai-haptic" id="aiSend" aria-label="Send message">
+                        ➤
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Gateway AI 2.0 - Mobile-Enhanced System
+        class GatewayAIMobile {
+            constructor() {
+                this.isOpen = false;
+                this.currentCategory = 'navigation';
+                this.commandHistory = [];
+                this.touchStartY = 0;
+                this.isDragging = false;
+                
+                this.commands = this.getEnhancedCommands();
+                this.knowledgeBase = this.getKnowledgeBase();
+                
+                this.initializeElements();
+                this.initializeEventListeners();
+                this.renderCommands();
+                
+                console.log('🚀 Gateway AI 2.0 Mobile Enhanced - Ready!');
+            }
+            
+            initializeElements() {
+                this.fab = document.getElementById('aiFab');
+                this.modal = document.getElementById('aiModal');
+                this.close = document.getElementById('aiClose');
+                this.container = document.querySelector('.ai-container');
+                this.categoriesScroll = document.getElementById('categoriesScroll');
+                this.commandsGrid = document.getElementById('commandsGrid');
+                this.messages = document.getElementById('aiMessages');
+                this.input = document.getElementById('aiInput');
+                this.send = document.getElementById('aiSend');
+                
+                // Get category chips
+                this.categoryChips = document.querySelectorAll('.ai-category-chip');
+            }
+            
+            initializeEventListeners() {
+                // FAB and close
+                this.fab.addEventListener('click', () => this.open());
+                this.close.addEventListener('click', () => this.close());
+                this.modal.addEventListener('click', (e) => {
+                    if (e.target === this.modal) this.close();
+                });
+                
+                // Category selection
+                this.categoryChips.forEach(chip => {
+                    chip.addEventListener('click', () => {
+                        this.selectCategory(chip.dataset.category);
+                        this.addHapticFeedback();
+                    });
+                });
+                
+                // Input and send
+                this.input.addEventListener('input', () => this.autoResize());
+                this.input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        this.sendMessage();
+                    }
+                });
+                this.send.addEventListener('click', () => this.sendMessage());
+                
+                // Keyboard shortcuts
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && this.isOpen) this.close();
+                    if (e.ctrlKey && e.key === 'i' && !this.isOpen) {
+                        e.preventDefault();
+                        this.open();
+                    }
+                });
+                
+                // Touch gestures for drag-to-close
+                this.initializeTouchGestures();
+                
+                // Swipe gestures for categories
+                this.initializeCategorySwipe();
+            }
+            
+            initializeTouchGestures() {
+                const dragHandle = document.querySelector('.ai-drag-handle');
+                
+                dragHandle.addEventListener('touchstart', (e) => {
+                    this.touchStartY = e.touches[0].clientY;
+                    this.isDragging = true;
+                });
+                
+                dragHandle.addEventListener('touchmove', (e) => {
+                    if (!this.isDragging) return;
+                    
+                    const currentY = e.touches[0].clientY;
+                    const diff = currentY - this.touchStartY;
+                    
+                    if (diff > 0) {
+                        const progress = Math.min(diff / 200, 1);
+                        this.container.style.transform = `translateY(${diff}px)`;
+                        this.container.style.opacity = 1 - progress * 0.3;
+                    }
+                });
+                
+                dragHandle.addEventListener('touchend', (e) => {
+                    if (!this.isDragging) return;
+                    
+                    const currentY = e.changedTouches[0].clientY;
+                    const diff = currentY - this.touchStartY;
+                    
+                    if (diff > 100) {
+                        this.close();
+                    } else {
+                        this.container.style.transform = '';
+                        this.container.style.opacity = '';
+                    }
+                    
+                    this.isDragging = false;
+                });
+            }
+            
+            initializeCategorySwipe() {
+                let startX = 0;
+                
+                this.categoriesScroll.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                });
+                
+                this.categoriesScroll.addEventListener('touchend', (e) => {
+                    const endX = e.changedTouches[0].clientX;
+                    const diff = startX - endX;
+                    
+                    if (Math.abs(diff) > 50) {
+                        const categories = Array.from(this.categoryChips);
+                        const currentIndex = categories.findIndex(chip => chip.classList.contains('active'));
+                        
+                        if (diff > 0 && currentIndex < categories.length - 1) {
+                            // Swipe left - next category
+                            this.selectCategory(categories[currentIndex + 1].dataset.category);
+                        } else if (diff < 0 && currentIndex > 0) {
+                            // Swipe right - previous category
+                            this.selectCategory(categories[currentIndex - 1].dataset.category);
+                        }
+                    }
+                });
+            }
+            
+            getEnhancedCommands() {
+                return {
+                    navigation: [
+                        { id: 'list-categories', icon: '📋', title: 'All Categories', desc: 'Complete list of 13 categories', badge: '' },
+                        { id: 'site-stats', icon: '📊', title: 'Statistics', desc: '577+ resources overview', badge: '' },
+                        { id: 'whats-new', icon: '🆕', title: "What's New", desc: 'Latest updates & features', badge: 'hot' },
+                        { id: 'help-navigation', icon: '🧭', title: 'Navigation Help', desc: 'How to use the Gateway', badge: '' }
+                    ],
+                    explorer: [
+                        { id: 'explore-search', icon: '🔍', title: 'Search Engines', desc: '39 search platforms', badge: '' },
+                        { id: 'explore-tools', icon: '🛠️', title: 'Tools & Utilities', desc: '52 productivity tools', badge: '' },
+                        { id: 'explore-entertainment', icon: '🎭', title: 'Entertainment', desc: '51 media platforms', badge: '' },
+                        { id: 'explore-knowledge', icon: '📚', title: 'Learning', desc: '53 educational resources', badge: '' },
+                        { id: 'explore-more', icon: '➡️', title: 'More Categories', desc: 'All remaining categories', badge: '' },
+                        { id: 'trending-resources', icon: '📈', title: 'Trending Now', desc: 'Popular this week', badge: 'hot' }
+                    ],
+                    actions: [
+                        { id: 'find-ai-tools', icon: '🤖', title: 'AI Tools', desc: 'Discover AI platforms', badge: '' },
+                        { id: 'find-design-tools', icon: '🎨', title: 'Design Tools', desc: 'Creative resources', badge: '' },
+                        { id: 'search-tips', icon: '💡', title: 'Search Tips', desc: 'Power user tricks', badge: '' },
+                        { id: 'random-resource', icon: '🎲', title: 'Surprise Me', desc: 'Random discovery', badge: '' },
+                        { id: 'quick-compare', icon: '⚖️', title: 'Compare Tools', desc: 'Side-by-side analysis', badge: 'new' },
+                        { id: 'workflow-builder', icon: '🔗', title: 'Build Workflow', desc: 'Create tool chains', badge: 'new' }
+                    ],
+                    personal: [
+                        { id: 'my-favorites', icon: '❤️', title: 'My Favorites', desc: 'Your saved resources', badge: 'new' },
+                        { id: 'recent-visits', icon: '🕒', title: 'Recent', desc: 'Recently viewed', badge: 'new' },
+                        { id: 'personalized-feed', icon: '🎯', title: 'For You', desc: 'AI recommendations', badge: 'new' },
+                        { id: 'usage-stats', icon: '📊', title: 'My Stats', desc: 'Your activity summary', badge: 'new' }
+                    ],
+                    advanced: [
+                        { id: 'semantic-search', icon: '🔮', title: 'Smart Search', desc: 'AI-powered discovery', badge: 'new' },
+                        { id: 'voice-command', icon: '🎙️', title: 'Voice Control', desc: 'Speak your commands', badge: 'new' },
+                        { id: 'bulk-actions', icon: '📦', title: 'Bulk Actions', desc: 'Multiple operations', badge: 'new' },
+                        { id: 'api-access', icon: '🔌', title: 'API Access', desc: 'Developer integration', badge: 'new' }
+                    ],
+                    system: [
+                        { id: 'clear-chat', icon: '🧹', title: 'Clear Chat', desc: 'Reset conversation', badge: '' },
+                        { id: 'show-commands', icon: '📜', title: 'All Commands', desc: 'Complete command list', badge: '' },
+                        { id: 'settings', icon: '⚙️', title: 'Settings', desc: 'Customize experience', badge: 'new' },
+                        { id: 'feedback', icon: '💬', title: 'Feedback', desc: 'Share your thoughts', badge: 'new' }
+                    ]
+                };
+            }
+            
+            getKnowledgeBase() {
+                return {
+                    categories: {
+                        'search-engines': { name: 'Search Engines', count: 39, emoji: '🔍', description: 'Your gateway to the entire search universe' },
+                        'tools': { name: 'Tools & Utilities', count: 52, emoji: '🛠️', description: 'Productivity and utility tools' },
+                        'entertainment': { name: 'Entertainment', count: 51, emoji: '🎭', description: 'Streaming and media platforms' },
+                        'knowledge': { name: 'Knowledge', count: 53, emoji: '📚', description: 'Learning and educational resources' },
+                        'anime': { name: 'Anime & Manga', count: 48, emoji: '🗾', description: 'Japanese animation and comics' },
+                        'crypto': { name: 'Crypto & Blockchain', count: 45, emoji: '₿', description: 'Digital economy platforms' },
+                        'gaming': { name: 'Gaming & Esports', count: 42, emoji: '🎮', description: 'Gaming platforms and communities' },
+                        'health': { name: 'Health & Fitness', count: 43, emoji: '💪', description: 'Wellness and fitness resources' },
+                        'design': { name: 'Design & Creativity', count: 40, emoji: '🎨', description: 'Creative tools and inspiration' },
+                        'lifestyle': { name: 'Lifestyle & Shopping', count: 44, emoji: '🛍️', description: 'Shopping and lifestyle platforms' },
+                        'news': { name: 'News & Trends', count: 48, emoji: '📰', description: 'News sources and trend tracking' },
+                        'social': { name: 'Social Networks', count: 39, emoji: '🌐', description: 'Social media and communication' },
+                        'hidden-treasures': { name: 'Hidden Treasures', count: 50, emoji: '💎', description: 'Secret tools and hidden gems' }
+                    },
+                    totalResources: 577,
+                    totalCategories: 13
+                };
+            }
+            
+            selectCategory(categoryId) {
+                this.currentCategory = categoryId;
+                
+                // Update chip states
+                this.categoryChips.forEach(chip => {
+                    chip.classList.toggle('active', chip.dataset.category === categoryId);
+                });
+                
+                // Scroll to active chip
+                const activeChip = document.querySelector(`.ai-category-chip[data-category="${categoryId}"]`);
+                if (activeChip) {
+                    activeChip.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+                }
+                
+                // Re-render commands
+                this.renderCommands();
+            }
+            
+            renderCommands() {
+                const commands = this.commands[this.currentCategory] || [];
+                
+                this.commandsGrid.innerHTML = commands.map(cmd => `
+                    <div class="ai-command-card ai-haptic" onclick="window.gatewayAI.executeCommand('${cmd.id}')">
+                        ${cmd.badge ? `<div class="ai-command-badge ${cmd.badge}">${cmd.badge}</div>` : ''}
+                        <div class="ai-command-content">
+                            <div class="ai-command-icon">${cmd.icon}</div>
+                            <div class="ai-command-title">${cmd.title}</div>
+                            <div class="ai-command-desc">${cmd.desc}</div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+            
+            executeCommand(commandId) {
+                this.addHapticFeedback();
+                this.showMessages();
+                this.addMessage(`Command: /${commandId}`, 'system');
+                
+                // Command implementations
+                switch (commandId) {
+                    case 'list-categories':
+                        this.listCategories();
+                        break;
+                    case 'site-stats':
+                        this.showSiteStats();
+                        break;
+                    case 'trending-resources':
+                        this.showTrendingResources();
+                        break;
+                    case 'my-favorites':
+                        this.showFavorites();
+                        break;
+                    case 'voice-command':
+                        this.initializeVoiceCommand();
+                        break;
+                    case 'semantic-search':
+                        this.showSemanticSearch();
+                        break;
+                    case 'settings':
+                        this.showSettings();
+                        break;
+                    default:
+                        this.addMessage(`✨ Command "${commandId}" executed! This is a placeholder for the enhanced functionality.`, 'assistant');
+                }
+            }
+            
+            listCategories() {
+                const categories = Object.values(this.knowledgeBase.categories);
+                let response = `📋 **All ${this.knowledgeBase.totalCategories} Categories:**\n\n`;
+                
+                categories.forEach((cat, index) => {
+                    response += `${index + 1}. ${cat.emoji} **${cat.name}** (${cat.count})\n`;
+                });
+                
+                response += `\n🎯 Total: ${this.knowledgeBase.totalResources}+ resources`;
+                this.addMessage(response, 'assistant');
+            }
+            
+            showSiteStats() {
+                const response = `📊 **Gateway Statistics:**
+
+🏷️ Categories: ${this.knowledgeBase.totalCategories}
+📦 Resources: ${this.knowledgeBase.totalResources}+
+🆓 Access: Completely Free
+🌍 Reach: Global Availability
+📱 Mobile: Optimized Experience
+🚀 Speed: <100ms Load Time
+
+🏆 **Top Categories:**
+1. 📚 Knowledge (53) 
+2. 🛠️ Tools (52)
+3. 🎭 Entertainment (51)
+4. 💎 Hidden Treasures (50)`;
+
+                this.addMessage(response, 'assistant');
+            }
+            
+            showTrendingResources() {
+                const response = `📈 **Trending This Week:**
+
+🔥 **Hot Categories:**
+• 🤖 AI Tools - 40% increase
+• 🎨 Design Resources - 25% growth  
+• 💎 Hidden Treasures - Most explored
+• 📚 Learning Platforms - Study season peak
+
+⭐ **Popular Resources:**
+• ChatGPT & AI Assistants
+• Figma & Design Tools
+• Notion & Productivity Apps
+• YouTube & Learning Content
+
+💡 **Tip:** Try the /my-favorites command to save trending resources you discover!`;
+
+                this.addMessage(response, 'assistant');
+            }
+            
+            showFavorites() {
+                const response = `❤️ **Your Favorites:**
+
+🚀 **Getting Started:**
+Your favorite resources will appear here as you explore the Gateway!
+
+💡 **How to Save Favorites:**
+• Click the ❤️ icon on any resource
+• Use the "Add to Favorites" button
+• Say "save this to favorites"
+
+🎯 **Quick Actions:**
+• /recent-visits - See what you've viewed
+• /personalized-feed - Get AI recommendations
+• /my-stats - View your activity summary
+
+Start exploring to build your personal collection! 🌟`;
+
+                this.addMessage(response, 'assistant');
+            }
+            
+            initializeVoiceCommand() {
+                if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+                    this.addMessage('🎙️ **Voice Commands:**\n\nVoice recognition is not supported in your browser. Please try:\n• Chrome on desktop/mobile\n• Safari on iOS\n• Edge on Windows\n\nFor now, you can type commands or tap the buttons above! 😊', 'assistant');
+                    return;
+                }
+                
+                this.addMessage('🎙️ **Voice Commands Active!**\n\nTry saying:\n• "List all categories"\n• "Show me AI tools" \n• "What\'s trending"\n• "Open my favorites"\n\nSpeak clearly and wait for the response! 🎯', 'assistant');
+                
+                // Voice recognition would be implemented here
+                console.log('🎙️ Voice recognition feature ready for implementation');
+            }
+            
+            showSemanticSearch() {
+                const response = `🔮 **Smart Search:**
+
+🧠 **AI-Powered Discovery:**
+Instead of just keyword matching, I understand what you're looking for!
+
+💡 **Try These Examples:**
+• "Tools for building websites"
+• "Apps to improve productivity" 
+• "Platforms for learning coding"
+• "Resources for graphic design"
+
+🎯 **How It Works:**
+• Understands intent, not just words
+• Finds related resources across categories
+• Learns from your preferences
+• Suggests alternatives and combinations
+
+Type a natural question to experience the magic! ✨`;
+
+                this.addMessage(response, 'assistant');
+            }
+            
+            showSettings() {
+                const response = `⚙️ **Settings & Customization:**
+
+🎨 **Appearance:**
+• 🌙 Dark Mode (Current)
+• 🌞 Light Mode 
+• 🎨 Accent Colors
+• 📱 Mobile Optimizations
+
+🔔 **Notifications:**
+• 🆕 New Resource Alerts
+• 📈 Trending Updates
+• ❤️ Favorite Updates
+• 🎯 Personalized Recommendations
+
+🚀 **Features:**
+• 🎙️ Voice Commands
+• 📊 Usage Analytics
+• 🔒 Privacy Mode
+• ⌨️ Keyboard Shortcuts
+
+Settings panel coming in the next update! 🌟`;
+
+                this.addMessage(response, 'assistant');
+            }
+            
+            showMessages() {
+                document.getElementById('commandsContainer').style.display = 'none';
+                this.messages.style.display = 'flex';
+                this.messages.classList.add('active');
+            }
+            
+            hideMessages() {
+                document.getElementById('commandsContainer').style.display = 'block';
+                this.messages.style.display = 'none';
+                this.messages.classList.remove('active');
+            }
+            
+            addMessage(content, role) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `ai-message ${role}`;
+                
+                const avatar = document.createElement('div');
+                avatar.className = `ai-message-avatar ${role}`;
+                avatar.textContent = role === 'user' ? '👤' : role === 'system' ? '⚙️' : '🧠';
+                
+                const messageContent = document.createElement('div');
+                messageContent.className = 'ai-message-content';
+                messageContent.innerHTML = content.replace(/\n/g, '<br>');
+                
+                messageDiv.appendChild(avatar);
+                messageDiv.appendChild(messageContent);
+                
+                // Remove welcome screen if exists
+                const welcome = this.messages.querySelector('.ai-welcome');
+                if (welcome) welcome.remove();
+                
+                this.messages.appendChild(messageDiv);
+                this.messages.scrollTop = this.messages.scrollHeight;
+            }
+            
+            sendMessage() {
+                const message = this.input.value.trim();
+                if (!message) return;
+                
+                this.showMessages();
+                this.addMessage(message, 'user');
+                this.input.value = '';
+                this.autoResize();
+                
+                // Process message
+                if (message.startsWith('/')) {
+                    const command = message.substring(1);
+                    this.executeCommand(command);
+                } else {
+                    this.processNaturalLanguage(message);
+                }
+            }
+            
+            processNaturalLanguage(message) {
+                const msgLower = message.toLowerCase();
+                
+                // Smart routing based on intent
+                if (msgLower.includes('categories') || msgLower.includes('list')) {
+                    this.executeCommand('list-categories');
+                } else if (msgLower.includes('stats') || msgLower.includes('statistics')) {
+                    this.executeCommand('site-stats');
+                } else if (msgLower.includes('trending') || msgLower.includes('popular')) {
+                    this.executeCommand('trending-resources');
+                } else if (msgLower.includes('favorites') || msgLower.includes('saved')) {
+                    this.executeCommand('my-favorites');
+                } else if (msgLower.includes('voice') || msgLower.includes('speak')) {
+                    this.executeCommand('voice-command');
+                } else {
+                    // Enhanced natural language response
+                    const response = `🎯 I understand you're asking: "${message}"
+
+💡 **Suggested Actions:**
+• Try specific commands like /list-categories
+• Ask about trending resources or your favorites  
+• Use voice commands with /voice-command
+• Explore categories by tapping the chips above
+
+🚀 **Quick Tips:**
+• Swipe the category chips to explore
+• Tap any command card for instant results
+• Type /help to see all available commands
+
+What would you like to discover? 🌟`;
+                    
+                    this.addMessage(response, 'assistant');
+                }
+            }
+            
+            autoResize() {
+                this.input.style.height = 'auto';
+                this.input.style.height = Math.min(this.input.scrollHeight, 120) + 'px';
+            }
+            
+            addHapticFeedback() {
+                // Haptic feedback for supported devices
+                if ('vibrate' in navigator) {
+                    navigator.vibrate(10);
+                }
+            }
+            
+            open() {
+                this.isOpen = true;
+                this.modal.classList.add('active');
+                this.fab.style.transform = 'scale(0.8)';
+                
+                // Focus management
+                setTimeout(() => {
+                    if (this.messages.style.display === 'flex') {
+                        this.input.focus();
+                    }
+                }, 300);
+            }
+            
+            close() {
+                this.isOpen = false;
+                this.modal.classList.remove('active');
+                this.fab.style.transform = '';
+                
+                // Reset container position
+                this.container.style.transform = '';
+                this.container.style.opacity = '';
+                
+                // Hide messages and show commands
+                this.hideMessages();
+            }
+        }
+        
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            window.gatewayAI = new GatewayAIMobile();
+        });
+        
+        // Global command execution function
+        window.executeCommand = (command) => {
+            if (window.gatewayAI) {
+                window.gatewayAI.executeCommand(command);
+            }
+        };
+    </script>
+</body>
+</html>
