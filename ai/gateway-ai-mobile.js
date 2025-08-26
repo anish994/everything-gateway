@@ -819,7 +819,7 @@
             this.aiPatterns = this.getAdvancedAIPatterns();
             
             this.initializeElements();
-            this.initializeEventListeners();
+            // Event listeners will be initialized after elements are ready
             this.renderCommands();
             this.initializeAdvancedFeatures();
             
@@ -827,17 +827,33 @@
         }
         
         initializeElements() {
-            this.fab = document.getElementById('aiFab');
-            this.modal = document.getElementById('aiModal');
-            this.close = document.getElementById('aiClose');
-            this.container = document.querySelector('.ai-container');
-            this.categoriesScroll = document.getElementById('categoriesScroll');
-            this.commandsGrid = document.getElementById('commandsGrid');
-            this.messages = document.getElementById('aiMessages');
-            this.input = document.getElementById('aiInput');
-            this.send = document.getElementById('aiSend');
-            
-            this.categoryChips = document.querySelectorAll('.ai-category-chip');
+            // Use setTimeout to ensure DOM is ready
+            setTimeout(() => {
+                this.fab = document.getElementById('aiFab');
+                this.modal = document.getElementById('aiModal');
+                this.close = document.getElementById('aiClose');
+                this.container = document.querySelector('.ai-container');
+                this.categoriesScroll = document.getElementById('categoriesScroll');
+                this.commandsGrid = document.getElementById('commandsGrid');
+                this.messages = document.getElementById('aiMessages');
+                this.input = document.getElementById('aiInput');
+                this.send = document.getElementById('aiSend');
+                this.dragHandle = document.querySelector('.ai-drag-handle');
+                
+                this.categoryChips = document.querySelectorAll('.ai-category-chip');
+                
+                // Debug logging
+                console.log('🔧 Elements initialized:', {
+                    fab: !!this.fab,
+                    modal: !!this.modal,
+                    close: !!this.close,
+                    container: !!this.container,
+                    dragHandle: !!this.dragHandle
+                });
+                
+                // Re-initialize event listeners after elements are ready
+                this.initializeEventListeners();
+            }, 100);
         }
         
         initializeEventListeners() {
