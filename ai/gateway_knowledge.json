@@ -1,0 +1,249 @@
+{
+  "generated_at": "2025-08-26T08:15:51.703180",
+  "gateway_identity": {
+    "name": "The Everything Gateway",
+    "purpose": "Your single portal to the entire internet",
+    "total_categories": 13,
+    "total_resources": 577,
+    "url": "https://cheery-flan-dc1088.netlify.app",
+    "description": "Beautifully organized access to search engines, tools, entertainment, knowledge, and more"
+  },
+  "categories": {
+    "category_search-engines": {
+      "name": "Search Engines",
+      "description": "Your gateway to the entire search universe - mainstream, privacy-focused, academic, and hidden gems",
+      "emoji": "🔍",
+      "url": "/categories/search-engines/",
+      "resource_count": 39,
+      "tags": [
+        "search",
+        "discovery",
+        "privacy",
+        "academic",
+        "international"
+      ],
+      "status": "active"
+    },
+    "category_tools": {
+      "name": "Tools & Utilities",
+      "description": "Essential tools for productivity - PDF editors, AI assistants, image processors, and developer utilities",
+      "emoji": "🛠️",
+      "url": "/categories/tools/",
+      "resource_count": 52,
+      "tags": [
+        "productivity",
+        "PDF",
+        "AI",
+        "development",
+        "utilities",
+        "design",
+        "conversion"
+      ],
+      "status": "active"
+    },
+    "category_entertainment": {
+      "name": "Entertainment & Media",
+      "description": "Your gateway to streaming, music, gaming, and entertainment platforms",
+      "emoji": "🎭",
+      "url": "/categories/entertainment/",
+      "resource_count": 51,
+      "tags": [
+        "streaming",
+        "games",
+        "music",
+        "movies",
+        "creativity",
+        "social",
+        "interactive"
+      ],
+      "status": "active"
+    },
+    "category_knowledge": {
+      "name": "Knowledge & Learning",
+      "description": "Wikipedia, educational resources, archives, and learning platforms for curious minds",
+      "emoji": "📚",
+      "url": "/categories/knowledge/",
+      "resource_count": 53,
+      "tags": [
+        "education",
+        "wikipedia",
+        "learning",
+        "research",
+        "archives"
+      ],
+      "status": "active"
+    },
+    "category_anime": {
+      "name": "Anime & Manga",
+      "description": "Immerse yourself in Japanese animation and comics with streaming platforms, reading sites, and otaku communities",
+      "emoji": "🎌",
+      "url": "/categories/anime/",
+      "resource_count": 45,
+      "tags": [
+        "anime",
+        "manga",
+        "japanese",
+        "streaming",
+        "otaku",
+        "community"
+      ],
+      "status": "active"
+    },
+    "category_crypto": {
+      "name": "Crypto & Blockchain",
+      "description": "Navigate the digital economy with cryptocurrency exchanges, DeFi protocols, NFT marketplaces, and blockchain analytics",
+      "emoji": "₿",
+      "url": "/categories/crypto/",
+      "resource_count": 42,
+      "tags": [
+        "cryptocurrency",
+        "bitcoin",
+        "ethereum",
+        "defi",
+        "nft",
+        "blockchain"
+      ],
+      "status": "active"
+    },
+    "category_gaming": {
+      "name": "Gaming & Esports",
+      "description": "Level up your gaming experience with digital stores, streaming platforms, and gaming communities",
+      "emoji": "🎮",
+      "url": "/categories/gaming/",
+      "resource_count": 38,
+      "tags": [
+        "games",
+        "steam",
+        "esports",
+        "streaming",
+        "community",
+        "twitch"
+      ],
+      "status": "active"
+    },
+    "category_health": {
+      "name": "Health & Fitness",
+      "description": "Transform your wellness journey with fitness apps, nutrition tracking, mental health resources, and workout platforms",
+      "emoji": "💪",
+      "url": "/categories/health/",
+      "resource_count": 41,
+      "tags": [
+        "fitness",
+        "health",
+        "nutrition",
+        "mental health",
+        "wellness",
+        "workout"
+      ],
+      "status": "active"
+    },
+    "category_design": {
+      "name": "Design & Creativity",
+      "description": "Unleash your creative potential with professional design tools, stock resources, inspiration platforms, and collaboration spaces",
+      "emoji": "🎨",
+      "url": "/categories/design/",
+      "resource_count": 35,
+      "tags": [
+        "design",
+        "creativity",
+        "photoshop",
+        "figma",
+        "inspiration",
+        "portfolio"
+      ],
+      "status": "active"
+    },
+    "category_lifestyle": {
+      "name": "Lifestyle & Shopping",
+      "description": "Transform your daily life with e-commerce giants, travel platforms, food delivery, and home services",
+      "emoji": "🛍️",
+      "url": "/categories/lifestyle/",
+      "resource_count": 44,
+      "tags": [
+        "shopping",
+        "amazon",
+        "travel",
+        "food",
+        "delivery",
+        "lifestyle"
+      ],
+      "status": "active"
+    },
+    "category_news": {
+      "name": "News & Trends",
+      "description": "Stay informed with global news sources, tech publications, specialized journalism, and trend tracking platforms",
+      "emoji": "📰",
+      "url": "/categories/news/",
+      "resource_count": 48,
+      "tags": [
+        "news",
+        "journalism",
+        "technology",
+        "global",
+        "trends",
+        "analysis"
+      ],
+      "status": "active"
+    },
+    "category_social": {
+      "name": "Social Networks",
+      "description": "Connect and engage with communities through social platforms, professional networks, forums, and communication tools",
+      "emoji": "🌐",
+      "url": "/categories/social/",
+      "resource_count": 39,
+      "tags": [
+        "social",
+        "networking",
+        "community",
+        "forums",
+        "communication",
+        "professional"
+      ],
+      "status": "active"
+    },
+    "category_hidden-treasures": {
+      "name": "Hidden Treasures",
+      "description": "The internet's best-kept secrets. Powerful tools and hidden gems that insiders use but rarely share. Welcome to the underground.",
+      "emoji": "💎",
+      "url": "/categories/hidden-treasures/",
+      "resource_count": 50,
+      "tags": [
+        "hidden",
+        "secrets",
+        "premium",
+        "underground",
+        "exclusive",
+        "powerful",
+        "insider"
+      ],
+      "status": "new"
+    }
+  },
+  "quick_answers": {
+    "what_is_this": "The Everything Gateway is your single portal to the entire internet with 577+ resources across 13 categories.",
+    "how_many_categories": "We have 13 categories covering everything from search engines to entertainment to productivity tools.",
+    "how_many_resources": "Over 577 carefully curated resources across all categories.",
+    "whats_new": "Check our latest updates and new categories like Hidden Treasures with exclusive tools.",
+    "how_to_search": "Use Ctrl+K to open universal search, or click the search button to find anything across all platforms.",
+    "categories_list": "Search Engines, Tools & Utilities, Entertainment & Media, Knowledge & Learning, Anime & Manga, Crypto & Blockchain, Gaming & Esports, Health & Fitness, Design & Creativity, Lifestyle & Shopping, News & Trends, Social Networks, Hidden Treasures"
+  },
+  "navigation_help": {
+    "search_shortcut": "Press Ctrl+K to open universal search",
+    "mobile_search": "Tap the floating search button on mobile",
+    "category_access": "Click any category card to explore its resources",
+    "favorites": "Heart icon to save your favorite platforms",
+    "breadcrumbs": "Use breadcrumb navigation to go back"
+  },
+  "common_queries": {
+    "ai_tools": "You can find AI tools in the Tools & Utilities category, AI & ML section",
+    "search_engines": "The Search Engines category has 39+ search engines across 9 different types",
+    "entertainment": "Check Entertainment & Media for streaming, music, and gaming platforms",
+    "pdf_tools": "PDF utilities are in the Tools & Utilities category, PDF Tools section",
+    "design_tools": "Design & Creativity category has professional design tools and resources",
+    "crypto": "Crypto & Blockchain category covers trading, DeFi, NFTs, and analytics",
+    "anime": "Anime & Manga category has streaming platforms, manga readers, and databases",
+    "gaming": "Gaming & Esports category includes game stores, streaming, and communities",
+    "news": "News & Trends category has global news sources and tech publications",
+    "social": "Social Networks category includes social media, forums, and communication tools"
+  }
+}

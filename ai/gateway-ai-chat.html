@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gateway AI Assistant</title>
+    
+    <!-- Load the site's existing CSS framework -->
+    <link rel="stylesheet" href="../css/design-system.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/search.css">
+    
+    <!-- Load web search module -->
+    <script src="web-search-module.js"></script>
+    
+    <style>
+        /* Gateway AI Chat Interface Styles */
+        :root {
+            --ai-chat-bg: rgba(0, 0, 0, 0.95);
+            --ai-bubble-bg: var(--card-bg);
+            --ai-user-bg: var(--accent-primary);
+            --ai-border: var(--border-color);
+        }
+        
+        /* Chat Modal Overlay */
+        .ai-chat-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--ai-chat-bg);
+            backdrop-filter: blur(10px);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .ai-chat-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Chat Container */
+        .ai-chat-container {
+            background: var(--ai-bubble-bg);
+            border-radius: var(--radius-lg);
+            border: 2px solid var(--ai-border);
+            width: 90vw;
+            height: 80vh;
+            max-width: 800px;
+            max-height: 600px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        
+        .ai-chat-overlay.active .ai-chat-container {
+            transform: scale(1);
+        }
+        
+        /* Chat Header */
+        .ai-chat-header {
+            padding: var(--spacing-lg);
+            border-bottom: 1px solid var(--ai-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            color: white;
+        }
+        
+        .ai-chat-title {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+        }
+        
+        .ai-status-indicator {
+            width: 12px;
+            height: 12px;
+            background: #4ade80;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .ai-close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: var(--spacing-sm);
+            border-radius: var(--radius-sm);
+            transition: background 0.2s ease;
+        }
+        
+        .ai-close-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Chat Messages */
+        .ai-chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: var(--spacing-lg);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+        
+        .ai-message {
+            display: flex;
+            gap: var(--spacing-md);
+            max-width: 80%;
+            animation: fadeInUp 0.3s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .ai-message.user {
+            align-self: flex-end;
+            flex-direction: row-reverse;
+        }
+        
+        .ai-message.assistant {
+            align-self: flex-start;
+        }
+        
+        .ai-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        
+        .ai-avatar.user {
+            background: var(--ai-user-bg);
+            color: white;
+        }
+        
+        .ai-avatar.assistant {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .ai-message-content {
+            background: var(--card-bg);
+            padding: var(--spacing-md) var(--spacing-lg);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--ai-border);
+            line-height: 1.6;
+        }
+        
+        .ai-message.user .ai-message-content {
+            background: var(--ai-user-bg);
+            color: white;
+        }
+        
+        /* Chat Input */
+        .ai-chat-input-container {
+            padding: var(--spacing-lg);
+            border-top: 1px solid var(--ai-border);
+            display: flex;
+            gap: var(--spacing-md);
+            align-items: flex-end;
+        }
+        
+        .ai-chat-input {
+            flex: 1;
+            background: var(--input-bg);
+            border: 2px solid var(--ai-border);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md) var(--spacing-lg);
+            font-size: var(--font-size-base);
+            color: var(--text-primary);
+            resize: none;
+            min-height: 50px;
+            max-height: 150px;
+            transition: border-color 0.2s ease;
+        }
+        
+        .ai-chat-input:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+        }
+        
+        .ai-send-btn {
+            background: var(--accent-primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md) var(--spacing-lg);
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 50px;
+            height: 50px;
+        }
+        
+        .ai-send-btn:hover:not(:disabled) {
+            background: var(--accent-secondary);
+            transform: translateY(-1px);
+        }
+        
+        .ai-send-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        /* Floating Chat Button */
+        .ai-chat-fab {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .ai-chat-fab:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        /* Welcome Message */
+        .ai-welcome {
+            text-align: center;
+            padding: var(--spacing-xl);
+            color: var(--text-secondary);
+        }
+        
+        .ai-welcome-emoji {
+            font-size: 48px;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .ai-suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-lg);
+            justify-content: center;
+        }
+        
+        .ai-suggestion {
+            background: var(--card-bg);
+            border: 1px solid var(--ai-border);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-sm) var(--spacing-md);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: var(--font-size-sm);
+        }
+        
+        .ai-suggestion:hover {
+            background: var(--accent-primary);
+            color: white;
+            transform: translateY(-1px);
+        }
+        
+        /* Typing Indicator */
+        .ai-typing {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        
+        .ai-typing-dots {
+            display: flex;
+            gap: 2px;
+        }
+        
+        .ai-typing-dot {
+            width: 4px;
+            height: 4px;
+            background: var(--text-secondary);
+            border-radius: 50%;
+            animation: typingPulse 1.5s infinite ease-in-out;
+        }
+        
+        .ai-typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .ai-typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes typingPulse {
+            0%, 60%, 100% {
+                opacity: 0.3;
+            }
+            30% {
+                opacity: 1;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .ai-chat-container {
+                width: 95vw;
+                height: 90vh;
+            }
+            
+            .ai-chat-fab {
+                bottom: 80px; /* Above existing FAB */
+                right: 15px;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Chat Button -->
+    <button class="ai-chat-fab" id="aiChatFab" aria-label="Open Gateway AI Assistant">
+        🧠
+    </button>
+    
+    <!-- Chat Modal Overlay -->
+    <div class="ai-chat-overlay" id="aiChatOverlay">
+        <div class="ai-chat-container">
+            <!-- Chat Header -->
+            <div class="ai-chat-header">
+                <div class="ai-chat-title">
+                    <div class="ai-status-indicator"></div>
+                    <span>Gateway AI Assistant</span>
+                </div>
+                <button class="ai-close-btn" id="aiCloseBtn" aria-label="Close AI chat">
+                    ×
+                </button>
+            </div>
+            
+            <!-- Chat Messages -->
+            <div class="ai-chat-messages" id="aiMessages">
+                <!-- Welcome Message -->
+                <div class="ai-welcome">
+                    <div class="ai-welcome-emoji">🌟</div>
+                    <h3>Hi! I'm your Gateway AI Assistant</h3>
+                    <p>I know everything about this site - 577+ resources across 13 categories. Ask me anything!</p>
+                    
+                    <div class="ai-suggestions">
+                        <div class="ai-suggestion" onclick="sendSuggestion('What is this site?')">What is this site?</div>
+                        <div class="ai-suggestion" onclick="sendSuggestion('Show me AI tools')">Show me AI tools</div>
+                        <div class="ai-suggestion" onclick="sendSuggestion('How many categories?')">How many categories?</div>
+                        <div class="ai-suggestion" onclick="sendSuggestion('Find design resources')">Find design resources</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Chat Input -->
+            <div class="ai-chat-input-container">
+                <textarea 
+                    class="ai-chat-input" 
+                    id="aiInput" 
+                    placeholder="Ask me anything about the Gateway..."
+                    rows="1"
+                ></textarea>
+                <button class="ai-send-btn" id="aiSendBtn" aria-label="Send message">
+                    ➤
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Gateway AI Chat Interface JavaScript
+        class GatewayAIChat {
+            constructor() {
+                this.overlay = document.getElementById('aiChatOverlay');
+                this.messages = document.getElementById('aiMessages');
+                this.input = document.getElementById('aiInput');
+                this.sendBtn = document.getElementById('aiSendBtn');
+                this.fab = document.getElementById('aiChatFab');
+                this.closeBtn = document.getElementById('aiCloseBtn');
+                
+                this.isOpen = false;
+                this.isTyping = false;
+                
+                this.initializeEventListeners();
+                this.loadKnowledgeBase();
+                
+                // Initialize web search
+                if (window.GatewayWebSearch) {
+                    this.webSearch = new window.GatewayWebSearch();
+                    console.log('🌐 Web search enabled');
+                } else {
+                    console.warn('⚠️ Web search module not loaded');
+                }
+                
+                console.log('🧠 Gateway AI Chat initialized');
+            }
+            
+            initializeEventListeners() {
+                // Open/close chat
+                this.fab.addEventListener('click', () => this.openChat());
+                this.closeBtn.addEventListener('click', () => this.closeChat());
+                this.overlay.addEventListener('click', (e) => {
+                    if (e.target === this.overlay) this.closeChat();
+                });
+                
+                // Send message
+                this.sendBtn.addEventListener('click', () => this.sendMessage());
+                this.input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        this.sendMessage();
+                    }
+                });
+                
+                // Auto-resize input
+                this.input.addEventListener('input', () => this.autoResizeInput());
+                
+                // Keyboard shortcuts
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && this.isOpen) {
+                        this.closeChat();
+                    }
+                    if (e.ctrlKey && e.key === 'i' && !this.isOpen) {
+                        e.preventDefault();
+                        this.openChat();
+                    }
+                });
+            }
+            
+            async loadKnowledgeBase() {
+                try {
+                    const response = await fetch('gateway_knowledge.json');
+                    if (response.ok) {
+                        this.knowledgeBase = await response.json();
+                        console.log('🧠 Knowledge base loaded:', this.knowledgeBase);
+                    } else {
+                        console.warn('⚠️ Could not load knowledge base, using fallback');
+                        this.knowledgeBase = this.getFallbackKnowledge();
+                    }
+                } catch (error) {
+                    console.warn('⚠️ Knowledge base load failed, using fallback:', error);
+                    this.knowledgeBase = this.getFallbackKnowledge();
+                }
+            }
+            
+            getFallbackKnowledge() {
+                return {
+                    gateway_identity: {
+                        name: "The Everything Gateway",
+                        purpose: "Your single portal to the entire internet",
+                        total_categories: 13,
+                        total_resources: 577,
+                        description: "Beautifully organized access to search engines, tools, entertainment, knowledge, and more"
+                    },
+                    quick_answers: {
+                        "what_is_this": "The Everything Gateway is your single portal to the entire internet with 577+ resources across 13 categories.",
+                        "how_many_categories": "We have 13 categories covering everything from search engines to entertainment to productivity tools.",
+                        "categories_list": "Search Engines, Tools & Utilities, Entertainment & Media, Knowledge & Learning, Anime & Manga, Crypto & Blockchain, Gaming & Esports, Health & Fitness, Design & Creativity, Lifestyle & Shopping, News & Trends, Social Networks, Hidden Treasures"
+                    },
+                    common_queries: {
+                        "ai_tools": "You can find AI tools in the Tools & Utilities category, AI & ML section",
+                        "design_tools": "Design & Creativity category has professional design tools and resources",
+                        "search_engines": "The Search Engines category has 39+ search engines across 9 different types"
+                    }
+                };
+            }
+            
+            openChat() {
+                this.isOpen = true;
+                this.overlay.classList.add('active');
+                this.input.focus();
+                
+                // Remove welcome message after first open
+                const welcome = this.messages.querySelector('.ai-welcome');
+                if (welcome && this.messages.children.length > 1) {
+                    welcome.style.display = 'none';
+                }
+            }
+            
+            closeChat() {
+                this.isOpen = false;
+                this.overlay.classList.remove('active');
+            }
+            
+            autoResizeInput() {
+                this.input.style.height = 'auto';
+                this.input.style.height = Math.min(this.input.scrollHeight, 150) + 'px';
+            }
+            
+            async sendMessage() {
+                const message = this.input.value.trim();
+                if (!message || this.isTyping) return;
+                
+                // Add user message
+                this.addMessage(message, 'user');
+                this.input.value = '';
+                this.autoResizeInput();
+                
+                // Show typing indicator
+                this.showTypingIndicator();
+                
+                // Get AI response
+                try {
+                    const response = await this.getAIResponse(message);
+                    this.hideTypingIndicator();
+                    this.addMessage(response, 'assistant');
+                } catch (error) {
+                    this.hideTypingIndicator();
+                    this.addMessage("I'm having trouble right now. Please try again!", 'assistant');
+                    console.error('AI response error:', error);
+                }
+            }
+            
+            addMessage(content, role) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `ai-message ${role}`;
+                
+                const avatar = document.createElement('div');
+                avatar.className = `ai-avatar ${role}`;
+                avatar.textContent = role === 'user' ? '👤' : '🧠';
+                
+                const messageContent = document.createElement('div');
+                messageContent.className = 'ai-message-content';
+                messageContent.textContent = content;
+                
+                messageDiv.appendChild(avatar);
+                messageDiv.appendChild(messageContent);
+                
+                // Remove welcome message when first real message is added
+                const welcome = this.messages.querySelector('.ai-welcome');
+                if (welcome) {
+                    welcome.remove();
+                }
+                
+                this.messages.appendChild(messageDiv);
+                this.scrollToBottom();
+            }
+            
+            showTypingIndicator() {
+                this.isTyping = true;
+                this.sendBtn.disabled = true;
+                
+                const typingDiv = document.createElement('div');
+                typingDiv.className = 'ai-message assistant typing-indicator';
+                typingDiv.innerHTML = `
+                    <div class="ai-avatar assistant">🧠</div>
+                    <div class="ai-message-content">
+                        <div class="ai-typing">
+                            <span>Thinking</span>
+                            <div class="ai-typing-dots">
+                                <div class="ai-typing-dot"></div>
+                                <div class="ai-typing-dot"></div>
+                                <div class="ai-typing-dot"></div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                this.messages.appendChild(typingDiv);
+                this.scrollToBottom();
+            }
+            
+            hideTypingIndicator() {
+                this.isTyping = false;
+                this.sendBtn.disabled = false;
+                
+                const typingIndicator = this.messages.querySelector('.typing-indicator');
+                if (typingIndicator) {
+                    typingIndicator.remove();
+                }
+            }
+            
+            async getAIResponse(question) {
+                // Simulate network delay for realism
+                await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 2000));
+                
+                const questionLower = question.toLowerCase();
+                
+                // Track conversation context
+                if (!this.conversationContext) {
+                    this.conversationContext = {
+                        lastCategory: null,
+                        lastTopic: null,
+                        mentionedCategories: []
+                    };
+                }
+                
+                // Check quick answers first
+                for (const [key, answer] of Object.entries(this.knowledgeBase.quick_answers || {})) {
+                    if (this.matchesKeywords(questionLower, key.split('_'))) {
+                        return answer;
+                    }
+                }
+                
+                // Check common queries
+                for (const [key, answer] of Object.entries(this.knowledgeBase.common_queries || {})) {
+                    if (this.matchesKeywords(questionLower, key.split('_')) || 
+                        questionLower.includes(key.replace('_', ' '))) {
+                        
+                        // Update conversation context
+                        if (key === 'search_engines') this.conversationContext.lastCategory = 'search-engines';
+                        if (key === 'ai_tools') this.conversationContext.lastCategory = 'tools';
+                        if (key === 'entertainment') this.conversationContext.lastCategory = 'entertainment';
+                        if (key === 'crypto') this.conversationContext.lastCategory = 'crypto';
+                        if (key === 'design_tools') this.conversationContext.lastCategory = 'design';
+                        
+                        return answer;
+                    }
+                }
+                
+                // Handle follow-up questions about previous topics
+                if ((questionLower.includes('tell me about') || 
+                     questionLower.includes('what are') || 
+                     questionLower.includes('more') || 
+                     questionLower.includes('them')) && 
+                    this.conversationContext.lastCategory) {
+                    
+                    // Find category details
+                    const categoryId = `category_${this.conversationContext.lastCategory}`;
+                    const category = this.knowledgeBase.categories[categoryId];
+                    
+                    if (category) {
+                        return `The ${category.name} category has ${category.resource_count} resources. ${category.description}\n\nIt includes sections like ${category.tags.slice(0, 4).join(', ')}, and more. Would you like to explore a specific section?`;
+                    }
+                }
+                
+                // Handle direct category mentions
+                for (const [id, category] of Object.entries(this.knowledgeBase.categories || {})) {
+                    const categoryName = category.name.toLowerCase();
+                    const categoryId = id.split('_')[1]; // Remove 'category_' prefix
+                    
+                    if (questionLower.includes(categoryName) || 
+                        category.tags.some(tag => questionLower.includes(tag.toLowerCase()))) {
+                        
+                        // Update conversation context
+                        this.conversationContext.lastCategory = categoryId;
+                        this.conversationContext.mentionedCategories.push(categoryId);
+                        
+                        return `The ${category.name} category has ${category.resource_count} resources. ${category.description}\n\nYou'll find content organized into sections like ${category.tags.slice(0, 4).join(', ')}, and more. What would you like to know about it?`;
+                    }
+                }
+                
+                // Category-specific responses
+                if (questionLower.includes('categor')) {
+                    return `We have ${this.knowledgeBase.gateway_identity.total_categories} categories: ${this.knowledgeBase.quick_answers.categories_list}`;
+                }
+                
+                if (questionLower.includes('how many') || questionLower.includes('total')) {
+                    return `The Gateway has ${this.knowledgeBase.gateway_identity.total_resources}+ resources across ${this.knowledgeBase.gateway_identity.total_categories} categories. What specific area interests you?`;
+                }
+                
+                if (questionLower.includes('search') && questionLower.includes('how')) {
+                    return "Use Ctrl+K to open universal search, or click the search button. I can also help you find specific types of resources - just ask!";
+                }
+                
+                // Navigation help
+                if (questionLower.includes('find') || questionLower.includes('where') || questionLower.includes('show')) {
+                    return "I can help you find anything! Try asking for specific tools like 'AI tools', 'PDF utilities', 'design resources', or any category name. What are you looking for?";
+                }
+                
+                // Web search for external knowledge
+                if (this.webSearch && this.webSearch.shouldSearchWeb(question, this.knowledgeBase)) {
+                    console.log('🔍 Performing web search for:', question);
+                    try {
+                        const searchResults = await this.webSearch.search(question);
+                        return this.webSearch.formatSearchResponse(searchResults, question);
+                    } catch (error) {
+                        console.warn('⚠️ Web search failed:', error);
+                        // Fall through to default response
+                    }
+                }
+                
+                // Default response
+                return `I'm here to help you navigate The Everything Gateway with ${this.knowledgeBase.gateway_identity.total_resources}+ resources! You can ask me about categories, find specific tools, or get help with navigation. What would you like to explore?`;
+            }
+            
+            matchesKeywords(text, keywords) {
+                return keywords.some(keyword => text.includes(keyword));
+            }
+            
+            scrollToBottom() {
+                this.messages.scrollTop = this.messages.scrollHeight;
+            }
+        }
+        
+        // Global function for suggestion buttons
+        function sendSuggestion(message) {
+            if (window.gatewayAI) {
+                window.gatewayAI.input.value = message;
+                window.gatewayAI.sendMessage();
+            }
+        }
+        
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            window.gatewayAI = new GatewayAIChat();
+        });
+    </script>
+</body>
+</html>

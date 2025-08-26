@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gateway AI - Your Enhanced AI Assistant</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/shared.css">
+    <style>
+        /* 🤖 GATEWAY AI - UNIVERSAL BRIDGE THEME 🤖 */
+        
+        :root {
+            --ai-primary: #0f1115;
+            --ai-secondary: #1a1d23;
+            --ai-accent: #00d4ff;
+            --ai-purple: #8b5cf6;
+            --ai-green: #10b981;
+            --ai-gold: #f59e0b;
+            --ai-text: #f8fafc;
+            --ai-text-muted: #94a3b8;
+            --ai-border: rgba(0, 212, 255, 0.3);
+            --ai-gradient: linear-gradient(135deg, #0f1115 0%, #1a1d23 50%, #00d4ff 100%);
+            --ai-glow: rgba(0, 212, 255, 0.4);
+        }
+        
+        body {
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+                linear-gradient(135deg, var(--ai-primary) 0%, var(--ai-secondary) 100%) !important;
+            color: var(--ai-text) !important;
+            font-family: 'SF Pro Display', 'Inter', sans-serif !important;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .ai-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .ai-header {
+            background: var(--ai-gradient);
+            padding: 1rem 2rem;
+            border-bottom: 2px solid var(--ai-border);
+            box-shadow: 0 4px 20px var(--ai-glow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ai-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"><circle cx="25" cy="25" r="8"/><circle cx="75" cy="75" r="6"/><path d="M33 25h34M25 33v34"/><path d="M75 69v6M69 75h6"/></g></svg>');
+            pointer-events: none;
+        }
+        
+        .ai-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .ai-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .ai-title .highlight {
+            color: var(--ai-accent);
+            text-shadow: 0 0 10px var(--ai-glow);
+        }
+        
+        .ai-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            background: var(--ai-green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.2); }
+        }
+        
+        .ai-main {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .ai-sidebar {
+            width: 280px;
+            background: rgba(26, 29, 35, 0.8);
+            border-right: 1px solid var(--ai-border);
+            padding: 1.5rem;
+            overflow-y: auto;
+            backdrop-filter: blur(10px);
+        }
+        
+        .sidebar-section {
+            margin-bottom: 2rem;
+        }
+        
+        .sidebar-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--ai-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+        
+        .provider-selector {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .provider-option {
+            padding: 0.75rem 1rem;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid var(--ai-border);
+            border-radius: 8px;
+            color: var(--ai-text);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .provider-option:hover,
+        .provider-option.active {
+            background: rgba(0, 212, 255, 0.2);
+            border-color: var(--ai-accent);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 212, 255, 0.2);
+        }
+        
+        .provider-icon {
+            font-size: 1.2rem;
+        }
+        
+        .quick-commands {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .command-btn {
+            padding: 0.5rem 0.75rem;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            color: var(--ai-text-muted);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            text-align: left;
+        }
+        
+        .command-btn:hover {
+            background: rgba(139, 92, 246, 0.1);
+            border-color: var(--ai-purple);
+            color: var(--ai-text);
+        }
+        
+        .ai-chat-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        .chat-iframe-container {
+            flex: 1;
+            position: relative;
+            background: rgba(15, 17, 21, 0.5);
+            border-radius: 0;
+        }
+        
+        .chat-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 0;
+        }
+        
+        .connection-prompt {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            color: var(--ai-text-muted);
+        }
+        
+        .connection-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.6;
+        }
+        
+        .connection-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--ai-text);
+        }
+        
+        .connection-description {
+            max-width: 400px;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        
+        .connect-btn {
+            padding: 0.75rem 2rem;
+            background: var(--ai-gradient);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px var(--ai-glow);
+        }
+        
+        .connect-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--ai-glow);
+        }
+        
+        .floating-context {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--ai-border);
+            font-size: 0.8rem;
+            color: var(--ai-text-muted);
+            backdrop-filter: blur(10px);
+            z-index: 10;
+        }
+        
+        @media (max-width: 768px) {
+            .ai-sidebar {
+                width: 100%;
+                height: auto;
+                max-height: 200px;
+                border-right: none;
+                border-bottom: 1px solid var(--ai-border);
+            }
+            
+            .ai-main {
+                flex-direction: column;
+            }
+            
+            .provider-selector {
+                flex-direction: row;
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
+            }
+            
+            .provider-option {
+                min-width: 140px;
+                flex-shrink: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ai-container">
+        <!-- Header -->
+        <header class="ai-header">
+            <div class="ai-header-content">
+                <h1 class="ai-title">Gateway <span class="highlight">AI</span></h1>
+                <div class="ai-status">
+                    <div class="status-indicator"></div>
+                    <span id="connection-status">Ready to Connect</span>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <main class="ai-main">
+            <!-- Sidebar -->
+            <aside class="ai-sidebar">
+                <!-- Provider Selection -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">🔗 AI Provider</h3>
+                    <div class="provider-selector">
+                        <div class="provider-option" data-provider="chatgpt">
+                            <span class="provider-icon">🤖</span>
+                            <div>
+                                <div>ChatGPT</div>
+                                <small style="color: #94a3b8;">OpenAI</small>
+                            </div>
+                        </div>
+                        <div class="provider-option" data-provider="claude">
+                            <span class="provider-icon">🧠</span>
+                            <div>
+                                <div>Claude</div>
+                                <small style="color: #94a3b8;">Anthropic</small>
+                            </div>
+                        </div>
+                        <div class="provider-option" data-provider="poe">
+                            <span class="provider-icon">🎭</span>
+                            <div>
+                                <div>Poe</div>
+                                <small style="color: #94a3b8;">Quora</small>
+                            </div>
+                        </div>
+                        <div class="provider-option" data-provider="huggingface">
+                            <span class="provider-icon">🤗</span>
+                            <div>
+                                <div>HuggingFace</div>
+                                <small style="color: #94a3b8;">Open Models</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Commands -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">⚡ Quick Commands</h3>
+                    <div class="quick-commands">
+                        <button class="command-btn" data-command="!categories">!categories - List all Gateway categories</button>
+                        <button class="command-btn" data-command="!search">!search [query] - Search Gateway platforms</button>
+                        <button class="command-btn" data-command="!recommend">!recommend [category] - Get recommendations</button>
+                        <button class="command-btn" data-command="!bookmark">!bookmark - Save current conversation</button>
+                        <button class="command-btn" data-command="!navigate">!navigate [page] - Go to Gateway page</button>
+                    </div>
+                </div>
+                
+                <!-- Gateway Context -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">📊 Current Context</h3>
+                    <div style="font-size: 0.8rem; color: #94a3b8; line-height: 1.4;">
+                        <div>🏠 <strong>Page:</strong> <span id="current-page">AI Hub</span></div>
+                        <div>📂 <strong>Category:</strong> <span id="current-category">Universal</span></div>
+                        <div>🔖 <strong>Bookmarks:</strong> <span id="bookmark-count">0</span></div>
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Chat Area -->
+            <section class="ai-chat-area">
+                <!-- Connection Prompt (shown initially) -->
+                <div class="connection-prompt" id="connection-prompt">
+                    <div class="connection-icon">🚀</div>
+                    <h2 class="connection-title">Connect Your AI</h2>
+                    <p class="connection-description">
+                        Choose an AI provider to start chatting. Gateway will enhance your AI with site-aware capabilities, 
+                        smart commands, and seamless integration with our platform ecosystem.
+                    </p>
+                    <button class="connect-btn" onclick="showProviderInstructions()">Get Started</button>
+                </div>
+                
+                <!-- Chat iframe (hidden initially) -->
+                <div class="chat-iframe-container" id="chat-container" style="display: none;">
+                    <div class="floating-context">
+                        Gateway Context: <span id="context-info">AI Enhanced Mode</span>
+                    </div>
+                    <iframe id="chat-iframe" class="chat-iframe" src="" title="Gateway AI Chat"></iframe>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="gateway-ai.js"></script>
+</body>
+</html>

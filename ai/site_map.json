@@ -1,0 +1,2161 @@
+{
+  "timestamp": "2025-08-26T08:15:51.304712",
+  "categories_discovered": [],
+  "pages_discovered": [
+    {
+      "category": "anime",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\categories\\anime\\index.html",
+      "hash": "8223bb4bd41ab511579bac073c02f178",
+      "analysis": {
+        "title": "Anime & Manga - The Everything Gateway",
+        "meta_description": "Discover the best anime streaming platforms, manga reading sites, community forums, and otaku culture resources. Your gateway to Japanese animation and comics.",
+        "headings": [
+          {
+            "level": "h1",
+            "text": "Anime & Manga"
+          },
+          {
+            "level": "h1",
+            "text": "Anime & Manga"
+          },
+          {
+            "level": "h2",
+            "text": "Unable to Load Platforms"
+          },
+          {
+            "level": "h2",
+            "text": "🎬 Anime Streaming Platforms"
+          },
+          {
+            "level": "h3",
+            "text": "Crunchyroll"
+          },
+          {
+            "level": "h3",
+            "text": "Funimation"
+          },
+          {
+            "level": "h3",
+            "text": "Netflix Anime"
+          },
+          {
+            "level": "h3",
+            "text": "Hulu Anime"
+          },
+          {
+            "level": "h2",
+            "text": "📚 Manga Reading Platforms"
+          },
+          {
+            "level": "h3",
+            "text": "MangaDex"
+          },
+          {
+            "level": "h3",
+            "text": "VIZ Shonen Jump"
+          },
+          {
+            "level": "h3",
+            "text": "MANGA Plus"
+          },
+          {
+            "level": "h3",
+            "text": "ComiXology"
+          },
+          {
+            "level": "h2",
+            "text": "🌸 Community & Forums"
+          },
+          {
+            "level": "h3",
+            "text": "MyAnimeList"
+          },
+          {
+            "level": "h3",
+            "text": "AniList"
+          },
+          {
+            "level": "h3",
+            "text": "r/anime"
+          },
+          {
+            "level": "h3",
+            "text": "Anime News Network"
+          }
+        ],
+        "sections": [],
+        "links": [
+          {
+            "text": "🏠 Home",
+            "href": "../../",
+            "is_internal": true
+          },
+          {
+            "text": "🍥\n\nCrunchyroll\nWorld's largest anime streaming platform with simulcasts",
+            "href": "https://crunchyroll.com",
+            "is_internal": false
+          },
+          {
+            "text": "🎌\n\nFunimation\nPremium anime streaming with English dubs",
+            "href": "https://funimation.com",
+            "is_internal": false
+          },
+          {
+            "text": "📺\n\nNetflix Anime\nNetflix's growing collection of anime series and films",
+            "href": "https://netflix.com/browse/genre/7424",
+            "is_internal": false
+          },
+          {
+            "text": "🎥\n\nHulu Anime\nExtensive anime library with simulcast episodes",
+            "href": "https://hulu.com/hub/anime",
+            "is_internal": false
+          },
+          {
+            "text": "📖\n\nMangaDex\nCommunity-driven manga reading platform",
+            "href": "https://mangadex.org",
+            "is_internal": false
+          },
+          {
+            "text": "⚡\n\nVIZ Shonen Jump\nOfficial digital manga subscription service",
+            "href": "https://viz.com/shonenjump",
+            "is_internal": false
+          },
+          {
+            "text": "➕\n\nMANGA Plus\nFree official manga from Shueisha",
+            "href": "https://mangaplus.shueisha.co.jp",
+            "is_internal": false
+          },
+          {
+            "text": "💫\n\nComiXology\nDigital comics and manga platform by Amazon",
+            "href": "https://comixology.com",
+            "is_internal": false
+          },
+          {
+            "text": "📋\n\nMyAnimeList\nAnime and manga database and community",
+            "href": "https://myanimelist.net",
+            "is_internal": false
+          },
+          {
+            "text": "📊\n\nAniList\nModern anime and manga tracking platform",
+            "href": "https://anilist.co",
+            "is_internal": false
+          },
+          {
+            "text": "🤖\n\nr/anime\nMassive anime community on Reddit",
+            "href": "https://reddit.com/r/anime",
+            "is_internal": false
+          },
+          {
+            "text": "📰\n\nAnime News Network\nLatest anime and manga industry news",
+            "href": "https://animenewsnetwork.com",
+            "is_internal": false
+          }
+        ],
+        "categories_found": 7
+      }
+    },
+    {
+      "category": "crypto",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\categories\\crypto\\index.html",
+      "hash": "0876848be791c5632d5ebbe4eeaf67f9",
+      "analysis": {
+        "title": "Crypto & Blockchain - The Everything Gateway",
+        "meta_description": "Your gateway to cryptocurrency trading, DeFi protocols, NFT marketplaces, and blockchain analytics. Discover the best crypto platforms and tools.",
+        "headings": [
+          {
+            "level": "h1",
+            "text": "Crypto & Blockchain"
+          },
+          {
+            "level": "h2",
+            "text": "Unable to Load Platforms"
+          },
+          {
+            "level": "h2",
+            "text": "💰 Trading Platforms"
+          },
+          {
+            "level": "h3",
+            "text": "Coinbase"
+          },
+          {
+            "level": "h3",
+            "text": "Binance"
+          },
+          {
+            "level": "h3",
+            "text": "Kraken"
+          },
+          {
+            "level": "h2",
+            "text": "🔗 DeFi Protocols"
+          },
+          {
+            "level": "h3",
+            "text": "Uniswap"
+          },
+          {
+            "level": "h3",
+            "text": "Aave"
+          }
+        ],
+        "sections": [],
+        "links": [
+          {
+            "text": "🏠 Home",
+            "href": "../../",
+            "is_internal": true
+          },
+          {
+            "text": "🏦\n\nCoinbase\nLeading cryptocurrency exchange with beginner-friendly interface",
+            "href": "https://coinbase.com",
+            "is_internal": false
+          },
+          {
+            "text": "🔶\n\nBinance\nWorld's largest crypto exchange by trading volume",
+            "href": "https://binance.com",
+            "is_internal": false
+          },
+          {
+            "text": "🐙\n\nKraken\nSecure cryptocurrency exchange with advanced trading features",
+            "href": "https://kraken.com",
+            "is_internal": false
+          },
+          {
+            "text": "🦄\n\nUniswap\nLeading decentralized exchange protocol",
+            "href": "https://uniswap.org",
+            "is_internal": false
+          },
+          {
+            "text": "👻\n\nAave\nDecentralized lending and borrowing protocol",
+            "href": "https://aave.com",
+            "is_internal": false
+          }
+        ],
+        "categories_found": 6
+      }
+    },
+    {
+      "category": "design",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\categories\\design\\index.html",
+      "hash": "070f928939fae9ad03ac7a837fb430ba",
+      "analysis": {
+        "title": "Design & Creativity - The Everything Gateway",
+        "meta_description": "Unleash your creative potential with professional design tools, stock resources, inspiration platforms, and collaboration spaces for designers and creatives.",
+        "headings": [
+          {
+            "level": "h1",
+            "text": "Design & Creativity"
+          },
+          {
+            "level": "h2",
+            "text": "Unable to Load Platforms"
+          },
+          {
+            "level": "h2",
+            "text": "🎨 Design Tools"
+          },
+          {
+            "level": "h3",
+            "text": "Figma"
+          },
+          {
+            "level": "h3",
+            "text": "Canva"
+          }
+        ],
+        "sections": [],
+        "links": [
+          {
+            "text": "🏠 Home",
+            "href": "../../",
+            "is_internal": true
+          },
+          {
+            "text": "🎨\n\nFigma\nCollaborative interface design tool with real-time editing",
+            "href": "https://figma.com",
+            "is_internal": false
+          },
+          {
+            "text": "🌈\n\nCanva\nUser-friendly design platform with templates",
+            "href": "https://canva.com",
+            "is_internal": false
+          }
+        ],
+        "categories_found": 6
+      }
+    },
+    {
+      "category": "entertainment",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\categories\\entertainment\\index.html",
+      "hash": "ab26a07d019f275f5a7efd95d5768a72",
+      "analysis": {
+        "title": "Entertainment & Media - The Everything Gateway",
+        "meta_description": "Discover the best streaming platforms, music services, gaming stores, and entertainment content. Your gateway to Netflix, Spotify, Steam, YouTube, and more top entertainment destinations.",
+        "headings": [
+          {
+            "level": "h1",
+            "text": "Entertainment & Media"
+          },
+          {
+            "level": "h2",
+            "text": "Unable to Load Entertainment Platforms"
+          }
+        ],
+        "sections": [],
+        "links": [
+          {
+            "text": "🏠 Home",
+            "href": "../../",
+            "is_internal": true
+          },
+          {
+            "text": "Home",
+            "href": "../../",
+            "is_internal": true
+          },
+          {
+            "text": "Search Engines",
+            "href": "../search-engines/",
+            "is_internal": true
+          },
+          {
+            "text": "Tools",
+            "href": "../tools/",
+            "is_internal": true
+          },
+          {
+            "text": "News",
+            "href": "../news/",
+            "is_internal": true
+          },
+          {
+            "text": "Knowledge",
+            "href": "../knowledge/",
+            "is_internal": true
+          }
+        ],
+        "categories_found": 5
+      }
+    },
+    {
+      "category": "gaming",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\categories\\gaming\\index.html",
+      "hash": "224a17ba27173ec7327302b140af63e9",
+      "analysis": {
+        "title": "Gaming & Esports - The Everything Gateway",
+        "meta_description": "Discover the best gaming platforms, game stores, streaming services, and esports communities. Your gateway to PC gaming, console gaming, mobile games, and competitive esports.",
+        "headings": [
+          {
+            "level": "h1",
+            "text": "Gaming & Esports"
+          },
+          {
+            "level": "h2",
+            "text": "Unable to Load Gaming Platforms"
+          }
+        ],
+        "sections": [],
+        "links": [
+          {
+            "text": "🏠 Home",
+            "href": "../../",
+            "is_internal": true
+          },
+          {
+            "text": "Home",
+            "href": "../../",
+            "is_internal": true
+          },
+          {
+            "text": "Search Engines",
+            "href": "../search-engines/",
+            "is_internal": true
+          },
+          {
+            "text": "Tools",
+            "href": "../tools/",
+            "is_internal": true
+          },
+          {
+            "text": "Entertainment",
+            "href": "../entertainment/",
+            "is_internal": true
+          },
+          {
+            "text": "Knowledge",
+            "href": "../knowledge/",
+            "is_internal": true
+          },
+          {
+            "text": "News",
+            "href": "../news/",
+            "is_internal": true
+          },
+          {
+            "text": "Social",
+            "href": "../social/",
+            "is_internal": true
+          }
+        ],
+        "categories_found": 5
+      }
+    },
+    {
+      "category": "health",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\categories\\health\\index.html",
+      "hash": "09ed361267cdaa05050d17d309615006",
+      "analysis": {
+        "title": "Health & Fitness - The Everything Gateway",
+        "meta_description": "Transform your wellness journey with the best fitness apps, nutrition tracking, mental health resources, and workout platforms. Your gateway to comprehensive health and wellness platforms.",
+        "headings": [
+          {
+            "level": "h1",
+            "text": "The Everything\nGateway"
+          },
+          {
+            "level": "h1",
+            "text": "Health & Fitness"
+          },
+          {
+            "level": "h2",
+            "text": "Unable to Load Health Platforms"
+          }
+        ],
+        "sections": [],
+        "links": [
+          {
+            "text": "The Everything\nGateway",
+            "href": "../../",
+            "is_internal": true
+          },
+          {
+            "text": "Home",
+            "href": "../../",
+            "is_internal": true
+          },
+          {
+            "text": "Search Engines",
+            "href": "../search-engines/",
+            "is_internal": true
+          },
+          {
+            "text": "Tools",
+            "href": "../tools/",
+            "is_internal": true
+          },
+          {
+            "text": "Entertainment",
+            "href": "../entertainment/",
+            "is_internal": true
+          },
+          {
+            "text": "Knowledge",
+            "href": "../knowledge/",
+            "is_internal": true
+          }
+        ],
+        "categories_found": 1
+      }
+    },
+    {
+      "category": "hidden-treasures",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\categories\\hidden-treasures\\index.html",
+      "hash": "0b2767e99eab515a9488d1298b991c1e",
+      "analysis": {
+        "title": "Hidden Treasures - Secret Tools & Underground Gems | The Everything Gateway",
+        "meta_description": "The internet's best-kept secrets. Discover 50+ powerful tools and hidden gems that insiders use but rarely share. Welcome to the underground.",
+        "headings": [
+          {
+            "level": "h1",
+            "text": "💎 Hidden Treasures"
+          },
+          {
+            "level": "h2",
+            "text": "🔐 Power User Secrets"
+          },
+          {
+            "level": "h3",
+            "text": "Regex101"
+          },
+          {
+            "level": "h3",
+            "text": "Carbon"
+          },
+          {
+            "level": "h3",
+            "text": "Excalidraw"
+          },
+          {
+            "level": "h3",
+            "text": "JSON Crack"
+          },
+          {
+            "level": "h3",
+            "text": "Ray.so"
+          },
+          {
+            "level": "h3",
+            "text": "Codeshot"
+          },
+          {
+            "level": "h2",
+            "text": "🛠️ Developer Underground"
+          },
+          {
+            "level": "h3",
+            "text": "Hoppscotch"
+          },
+          {
+            "level": "h3",
+            "text": "HTTPie"
+          },
+          {
+            "level": "h3",
+            "text": "JSONFormatter"
+          },
+          {
+            "level": "h3",
+            "text": "Mockaroo"
+          },
+          {
+            "level": "h3",
+            "text": "Webhook.site"
+          },
+          {
+            "level": "h3",
+            "text": "Replit"
+          },
+          {
+            "level": "h3",
+            "text": "CodePen"
+          },
+          {
+            "level": "h2",
+            "text": "🎨 Creative Black Market"
+          },
+          {
+            "level": "h3",
+            "text": "Remove.bg"
+          },
+          {
+            "level": "h3",
+            "text": "Unscreen"
+          },
+          {
+            "level": "h3",
+            "text": "Photopea"
+          },
+          {
+            "level": "h3",
+            "text": "Figma Community"
+          },
+          {
+            "level": "h3",
+            "text": "Coolors"
+          },
+          {
+            "level": "h3",
+            "text": "Unsplash"
+          },
+          {
+            "level": "h3",
+            "text": "Canva"
+          }
+        ],
+        "sections": [],
+        "links": [
+          {
+            "text": "← Back to Gateway",
+            "href": "../../",
+            "is_internal": true
+          },
+          {
+            "text": "🔍\n\nRegex101\nThe ultimate regex testing and debugging tool with real-time explanation - used by developers worldwide but unknown to most",
+            "href": "https://regex101.com",
+            "is_internal": false
+          },
+          {
+            "text": "📸\n\nCarbon\nTurn your code into beautiful, shareable images. Create stunning code screenshots for presentations and social media",
+            "href": "https://carbon.now.sh",
+            "is_internal": false
+          },
+          {
+            "text": "✏️\n\nExcalidraw\nMind-blowing collaborative whiteboarding tool that feels like magic. Hand-drawn style diagrams that actually look professional",
+            "href": "https://excalidraw.com",
+            "is_internal": false
+          },
+          {
+            "text": "🌳\n\nJSON Crack\nVisualize JSON data as interactive graphs. Turn complex data structures into beautiful, understandable diagrams",
+            "href": "https://jsoncrack.com",
+            "is_internal": false
+          },
+          {
+            "text": "🌟\n\nRay.so\nCreate beautiful code images with customizable themes, backgrounds, and syntax highlighting",
+            "href": "https://ray.so",
+            "is_internal": false
+          },
+          {
+            "text": "📷\n\nCodeshot\nScreenshot your code with beautiful syntax highlighting and customizable themes",
+            "href": "https://codeshot.app",
+            "is_internal": false
+          },
+          {
+            "text": "🚀\n\nHoppscotch\nAPI testing tool that's faster and cleaner than Postman. Lightweight, beautiful, and completely free",
+            "href": "https://hoppscotch.io",
+            "is_internal": false
+          },
+          {
+            "text": "⚡\n\nHTTPie\nModern command-line HTTP client with an intuitive UI. Makes API testing feel effortless",
+            "href": "https://httpie.io",
+            "is_internal": false
+          },
+          {
+            "text": "📋\n\nJSONFormatter\nFormat, validate, and beautify JSON data. Includes advanced features like JSON to CSV conversion",
+            "href": "https://jsonformatter.org",
+            "is_internal": false
+          },
+          {
+            "text": "🎲\n\nMockaroo\nGenerate massive amounts of realistic test data in CSV, JSON, SQL, and Excel formats",
+            "href": "https://mockaroo.com",
+            "is_internal": false
+          },
+          {
+            "text": "🔗\n\nWebhook.site\nTest webhooks and HTTP requests with a unique URL. See requests in real-time with detailed logs",
+            "href": "https://webhook.site",
+            "is_internal": false
+          },
+          {
+            "text": "💻\n\nReplit\nCode, compile, and run programs in 50+ languages directly in your browser. Collaborative coding made simple",
+            "href": "https://replit.com",
+            "is_internal": false
+          },
+          {
+            "text": "🖊️\n\nCodePen\nFrontend playground for HTML, CSS, and JavaScript. Test ideas instantly and discover amazing demos",
+            "href": "https://codepen.io",
+            "is_internal": false
+          },
+          {
+            "text": "🖼️\n\nRemove.bg\nAI-powered background removal that rivals Photoshop. One-click transparent backgrounds for any image",
+            "href": "https://remove.bg",
+            "is_internal": false
+          },
+          {
+            "text": "🎬\n\nUnscreen\nRemove video backgrounds automatically using AI. No green screen required",
+            "href": "https://unscreen.com",
+            "is_internal": false
+          },
+          {
+            "text": "🎨\n\nPhotopea\nFull Photoshop alternative in your browser. Edit PSD files, create graphics, completely free",
+            "href": "https://photopea.com",
+            "is_internal": false
+          },
+          {
+            "text": "🎯\n\nFigma Community\nThousands of free design resources, UI kits, and templates that designers gatekeep",
+            "href": "https://figma.com/community",
+            "is_internal": false
+          },
+          {
+            "text": "🌈\n\nCoolors\nGenerate perfect color palettes with AI. Extract colors from images and create stunning combinations",
+            "href": "https://coolors.co",
+            "is_internal": false
+          },
+          {
+            "text": "📷\n\nUnsplash\nHigh-quality, royalty-free photos from talented photographers worldwide",
+            "href": "https://unsplash.com",
+            "is_internal": false
+          },
+          {
+            "text": "✨\n\nCanva\nDesign anything with drag-and-drop simplicity. Templates for everything from social media to presentations",
+            "href": "https://canva.com",
+            "is_internal": false
+          }
+        ],
+        "categories_found": 1
+      }
+    },
+    {
+      "category": "knowledge",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\categories\\knowledge\\index.html",
+      "hash": "293eecdc9f263080ac70a9dc642a0db3",
+      "analysis": {
+        "title": "Knowledge & Learning Hub - The Everything Gateway",
+        "meta_description": "Educational resources, online courses, and learning platforms for curious minds - from Harvard and MIT to Wikipedia and Khan Academy",
+        "headings": [
+          {
+            "level": "h1",
+            "text": "📚 Knowledge & Learning Hub"
+          }
+        ],
+        "sections": [],
+        "links": [
+          {
+            "text": "🌟 Everything Gateway",
+            "href": "../../",
+            "is_internal": true
+          }
+        ],
+        "categories_found": 1
+      }
+    },
+    {
+      "category": "lifestyle",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\categories\\lifestyle\\index.html",
+      "hash": "2030d7d24ffdeb702497ecf1fee7939a",
+      "analysis": {
+        "title": "Lifestyle & Shopping - The Everything Gateway",
+        "meta_description": "Transform your daily life with e-commerce giants, travel platforms, food delivery, and home services that make modern living seamless.",
+        "headings": [
+          {
+            "level": "h1",
+            "text": "Lifestyle & Shopping"
+          },
+          {
+            "level": "h2",
+            "text": "Unable to Load Platforms"
+          },
+          {
+            "level": "h2",
+            "text": "📦 E-commerce Giants"
+          },
+          {
+            "level": "h3",
+            "text": "Amazon"
+          },
+          {
+            "level": "h3",
+            "text": "eBay"
+          },
+          {
+            "level": "h2",
+            "text": "🍕 Food Delivery"
+          },
+          {
+            "level": "h3",
+            "text": "DoorDash"
+          },
+          {
+            "level": "h3",
+            "text": "Uber Eats"
+          }
+        ],
+        "sections": [],
+        "links": [
+          {
+            "text": "🏠 Home",
+            "href": "../../",
+            "is_internal": true
+          },
+          {
+            "text": "📦\n\nAmazon\nWorld's largest e-commerce platform with everything from A to Z",
+            "href": "https://amazon.com",
+            "is_internal": false
+          },
+          {
+            "text": "🏷️\n\neBay\nGlobal online auction and marketplace for new and used items",
+            "href": "https://ebay.com",
+            "is_internal": false
+          },
+          {
+            "text": "🚗\n\nDoorDash\nLeading food delivery service connecting restaurants to customers",
+            "href": "https://doordash.com",
+            "is_internal": false
+          },
+          {
+            "text": "🍕\n\nUber Eats\nFast food delivery from local restaurants via Uber's platform",
+            "href": "https://ubereats.com",
+            "is_internal": false
+          }
+        ],
+        "categories_found": 6
+      }
+    },
+    {
+      "category": "news",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\categories\\news\\index.html",
+      "hash": "3988d5ed874130e8794fb8a919730055",
+      "analysis": {
+        "title": "News & Trends - The Everything Gateway",
+        "meta_description": "Stay informed with the world's best news sources, tech blogs, and trend tracking platforms. From BBC and CNN to TechCrunch and Hacker News, discover trusted journalism and emerging trends.",
+        "headings": [
+          {
+            "level": "h1",
+            "text": "The Everything\nGateway"
+          },
+          {
+            "level": "h1",
+            "text": "News & Trends"
+          },
+          {
+            "level": "h2",
+            "text": "Unable to Load News Sources"
+          }
+        ],
+        "sections": [],
+        "links": [
+          {
+            "text": "The Everything\nGateway",
+            "href": "../../",
+            "is_internal": true
+          },
+          {
+            "text": "Home",
+            "href": "../../",
+            "is_internal": true
+          },
+          {
+            "text": "Search Engines",
+            "href": "../search-engines/",
+            "is_internal": true
+          },
+          {
+            "text": "Tools",
+            "href": "../tools/",
+            "is_internal": true
+          },
+          {
+            "text": "Entertainment",
+            "href": "../entertainment/",
+            "is_internal": true
+          },
+          {
+            "text": "Knowledge",
+            "href": "../knowledge/",
+            "is_internal": true
+          }
+        ],
+        "categories_found": 1
+      }
+    },
+    {
+      "category": "search-engines",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\categories\\search-engines\\index.html",
+      "hash": "f832b9131c9b8591dc8b341e3bc7119a",
+      "analysis": {
+        "title": "Search Engines Hub - The Everything Gateway",
+        "meta_description": "Your gateway to the entire search universe - mainstream, privacy-focused, academic, and hidden gems",
+        "headings": [
+          {
+            "level": "h1",
+            "text": "Search Engines Hub"
+          },
+          {
+            "level": "h2",
+            "text": "🌟 Popular & Mainstream"
+          },
+          {
+            "level": "h3",
+            "text": "Google"
+          },
+          {
+            "level": "h3",
+            "text": "Bing"
+          },
+          {
+            "level": "h3",
+            "text": "Yahoo"
+          },
+          {
+            "level": "h3",
+            "text": "Ask"
+          },
+          {
+            "level": "h2",
+            "text": "🔒 Privacy & Security Focused"
+          },
+          {
+            "level": "h3",
+            "text": "DuckDuckGo"
+          },
+          {
+            "level": "h3",
+            "text": "Brave Search"
+          },
+          {
+            "level": "h3",
+            "text": "Startpage"
+          },
+          {
+            "level": "h3",
+            "text": "Swisscows"
+          },
+          {
+            "level": "h3",
+            "text": "MetaGer"
+          },
+          {
+            "level": "h3",
+            "text": "Kagi"
+          },
+          {
+            "level": "h2",
+            "text": "📚 Academic & Research"
+          },
+          {
+            "level": "h3",
+            "text": "Google Scholar"
+          },
+          {
+            "level": "h3",
+            "text": "Microsoft Academic"
+          },
+          {
+            "level": "h3",
+            "text": "Semantic Scholar"
+          },
+          {
+            "level": "h3",
+            "text": "arXiv"
+          },
+          {
+            "level": "h3",
+            "text": "PubMed"
+          },
+          {
+            "level": "h2",
+            "text": "🌍 International & Regional"
+          },
+          {
+            "level": "h3",
+            "text": "Yandex"
+          },
+          {
+            "level": "h3",
+            "text": "Baidu"
+          },
+          {
+            "level": "h3",
+            "text": "Naver"
+          },
+          {
+            "level": "h3",
+            "text": "Qwant"
+          },
+          {
+            "level": "h3",
+            "text": "Ecosia"
+          },
+          {
+            "level": "h2",
+            "text": "💻 Developer & Technical"
+          },
+          {
+            "level": "h3",
+            "text": "GitHub"
+          },
+          {
+            "level": "h3",
+            "text": "Stack Overflow"
+          },
+          {
+            "level": "h3",
+            "text": "CodePen"
+          },
+          {
+            "level": "h3",
+            "text": "Searchcode"
+          },
+          {
+            "level": "h3",
+            "text": "GitLab"
+          },
+          {
+            "level": "h2",
+            "text": "🎨 Creative & Visual"
+          },
+          {
+            "level": "h3",
+            "text": "Unsplash"
+          },
+          {
+            "level": "h3",
+            "text": "Pixabay"
+          },
+          {
+            "level": "h3",
+            "text": "Dribbble"
+          },
+          {
+            "level": "h3",
+            "text": "Behance"
+          },
+          {
+            "level": "h3",
+            "text": "Flickr"
+          },
+          {
+            "level": "h2",
+            "text": "🛒 Shopping & Commerce"
+          },
+          {
+            "level": "h3",
+            "text": "Amazon"
+          },
+          {
+            "level": "h3",
+            "text": "eBay"
+          },
+          {
+            "level": "h3",
+            "text": "Etsy"
+          },
+          {
+            "level": "h3",
+            "text": "AliExpress"
+          },
+          {
+            "level": "h2",
+            "text": "💬 Social & Community"
+          },
+          {
+            "level": "h3",
+            "text": "Twitter/X"
+          },
+          {
+            "level": "h3",
+            "text": "Reddit"
+          },
+          {
+            "level": "h3",
+            "text": "Discord"
+          },
+          {
+            "level": "h3",
+            "text": "LinkedIn"
+          },
+          {
+            "level": "h2",
+            "text": "💎 Indie & Alternative"
+          },
+          {
+            "level": "h3",
+            "text": "Wiby"
+          },
+          {
+            "level": "h3",
+            "text": "Marginalia"
+          },
+          {
+            "level": "h3",
+            "text": "Gigablast"
+          },
+          {
+            "level": "h3",
+            "text": "Mojeek"
+          },
+          {
+            "level": "h3",
+            "text": "Searx"
+          }
+        ],
+        "sections": [],
+        "links": [
+          {
+            "text": "← Back to Gateway",
+            "href": "../../",
+            "is_internal": true
+          },
+          {
+            "text": "← Back to Everything Gateway",
+            "href": "../../",
+            "is_internal": true
+          },
+          {
+            "text": "🔍\n\n\nGoogle\nThe world's most popular search engine with comprehensive results and advanced features",
+            "href": "https://google.com",
+            "is_internal": false
+          },
+          {
+            "text": "🅱️\n\n\nBing\nMicrosoft's search engine with integrated AI chat and visual search capabilities",
+            "href": "https://bing.com",
+            "is_internal": false
+          },
+          {
+            "text": "🟣\n\n\nYahoo\nClassic search engine with news, email, and comprehensive web portal features",
+            "href": "https://yahoo.com",
+            "is_internal": false
+          },
+          {
+            "text": "❓\n\n\nAsk\nQuestion-and-answer focused search with natural language processing",
+            "href": "https://ask.com",
+            "is_internal": false
+          },
+          {
+            "text": "🦆\n\n\nDuckDuckGo\nThe privacy-first search engine that doesn't track users or store search history",
+            "href": "https://duckduckgo.com",
+            "is_internal": false
+          },
+          {
+            "text": "🦁\n\n\nBrave Search\nIndependent search index with privacy protection and no data collection",
+            "href": "https://search.brave.com",
+            "is_internal": false
+          },
+          {
+            "text": "🛡️\n\n\nStartpage\nPrivacy-focused proxy for Google results without tracking or data storage",
+            "href": "https://startpage.com",
+            "is_internal": false
+          },
+          {
+            "text": "🐄\n\n\nSwisscows\nFamily-friendly search engine with privacy protection and no data storage",
+            "href": "https://swisscows.com",
+            "is_internal": false
+          },
+          {
+            "text": "🔎\n\n\nMetaGer\nOpen-source metasearch engine that protects privacy and anonymizes searches",
+            "href": "https://metager.org",
+            "is_internal": false
+          },
+          {
+            "text": "🔐\n\n\nKagi\nPremium ad-free search with personalized results and advanced privacy features",
+            "href": "https://kagi.com",
+            "is_internal": false
+          },
+          {
+            "text": "🎓\n\n\nGoogle Scholar\nAcademic search engine for scholarly literature, theses, books, and citations",
+            "href": "https://scholar.google.com",
+            "is_internal": false
+          },
+          {
+            "text": "📊\n\n\nMicrosoft Academic\nAcademic research platform with knowledge graph and citation analysis",
+            "href": "https://academic.microsoft.com",
+            "is_internal": false
+          },
+          {
+            "text": "🧠\n\n\nSemantic Scholar\nAI-powered academic search with paper insights and research recommendations",
+            "href": "https://semanticscholar.org",
+            "is_internal": false
+          },
+          {
+            "text": "📄\n\n\narXiv\nRepository of preprint research papers in physics, math, computer science, and more",
+            "href": "https://arxiv.org/search",
+            "is_internal": false
+          },
+          {
+            "text": "⚕️\n\n\nPubMed\nBiomedical literature database with millions of research citations and abstracts",
+            "href": "https://pubmed.ncbi.nlm.nih.gov",
+            "is_internal": false
+          },
+          {
+            "text": "🇷🇺\n\n\nYandex\nRussia's leading search engine with strong regional content and language support",
+            "href": "https://yandex.com",
+            "is_internal": false
+          },
+          {
+            "text": "🇨🇳\n\n\nBaidu\nChina's dominant search engine with AI features and comprehensive Chinese content",
+            "href": "https://baidu.com",
+            "is_internal": false
+          },
+          {
+            "text": "🇰🇷\n\n\nNaver\nSouth Korea's top search engine with integrated social features and services",
+            "href": "https://naver.com",
+            "is_internal": false
+          },
+          {
+            "text": "🇫🇷\n\n\nQwant\nFrench privacy-focused search engine that doesn't track users or personalize results",
+            "href": "https://qwant.com",
+            "is_internal": false
+          },
+          {
+            "text": "🌱\n\n\nEcosia\nThe eco-friendly search engine that plants trees with every search you make",
+            "href": "https://ecosia.org",
+            "is_internal": false
+          },
+          {
+            "text": "🐱\n\n\nGitHub\nSearch millions of code repositories, issues, pull requests, and developer profiles",
+            "href": "https://github.com/search",
+            "is_internal": false
+          },
+          {
+            "text": "📚\n\n\nStack Overflow\nProgramming Q&A community with answers to almost every coding question",
+            "href": "https://stackoverflow.com/search",
+            "is_internal": false
+          },
+          {
+            "text": "🖊️\n\n\nCodePen\nFrontend code snippets, demos, and experiments from the web development community",
+            "href": "https://codepen.io/search",
+            "is_internal": false
+          },
+          {
+            "text": "🔍\n\n\nSearchcode\nSearch across millions of open source code repositories and find examples",
+            "href": "https://searchcode.com",
+            "is_internal": false
+          },
+          {
+            "text": "🦊\n\n\nGitLab\nDevOps platform with integrated code search, CI/CD, and project management",
+            "href": "https://gitlab.com/search",
+            "is_internal": false
+          },
+          {
+            "text": "📷\n\n\nUnsplash\nHigh-quality, royalty-free photography from talented creators worldwide",
+            "href": "https://unsplash.com/s/photos",
+            "is_internal": false
+          },
+          {
+            "text": "🖼️\n\n\nPixabay\nFree images, vectors, illustrations, and videos for commercial and personal use",
+            "href": "https://pixabay.com",
+            "is_internal": false
+          },
+          {
+            "text": "🏀\n\n\nDribbble\nDesign inspiration and creative work from the world's leading designers",
+            "href": "https://dribbble.com/search",
+            "is_internal": false
+          },
+          {
+            "text": "🎨\n\n\nBehance\nAdobe's creative portfolio platform showcasing professional design work",
+            "href": "https://behance.net/search",
+            "is_internal": false
+          },
+          {
+            "text": "📸\n\n\nFlickr\nPhoto hosting and sharing community with billions of images and active photographers",
+            "href": "https://flickr.com/search",
+            "is_internal": false
+          },
+          {
+            "text": "📦\n\n\nAmazon\nWorld's largest online marketplace with millions of products and fast delivery",
+            "href": "https://amazon.com/s",
+            "is_internal": false
+          },
+          {
+            "text": "🔨\n\n\neBay\nOnline auctions and fixed-price sales for new, used, and collectible items",
+            "href": "https://ebay.com/sch",
+            "is_internal": false
+          },
+          {
+            "text": "🎭\n\n\nEtsy\nMarketplace for handmade, vintage, and unique creative goods from independent sellers",
+            "href": "https://etsy.com/search",
+            "is_internal": false
+          },
+          {
+            "text": "🌏\n\n\nAliExpress\nGlobal retail marketplace with competitive prices and international shipping",
+            "href": "https://aliexpress.com/wholesale",
+            "is_internal": false
+          },
+          {
+            "text": "🐦\n\n\nTwitter/X\nReal-time social media platform for news, opinions, and trending topics",
+            "href": "https://twitter.com/search",
+            "is_internal": false
+          },
+          {
+            "text": "🤖\n\n\nReddit\nCommunity-driven platform with discussions, news, and content across countless topics",
+            "href": "https://reddit.com/search",
+            "is_internal": false
+          },
+          {
+            "text": "💬\n\n\nDiscord\nGaming and community chat platform with voice, text, and multimedia features",
+            "href": "https://discord.com/channels/@me",
+            "is_internal": false
+          },
+          {
+            "text": "💼\n\n\nLinkedIn\nProfessional networking platform for career opportunities and business connections",
+            "href": "https://linkedin.com/search",
+            "is_internal": false
+          },
+          {
+            "text": "🕸️\n\n\nWiby\nDiscover the classic web with this search engine for retro and non-commercial sites",
+            "href": "https://wiby.me",
+            "is_internal": false
+          },
+          {
+            "text": "📝\n\n\nMarginalia\nIndependent search engine focusing on text-heavy, non-commercial websites",
+            "href": "https://search.marginalia.nu",
+            "is_internal": false
+          },
+          {
+            "text": "💥\n\n\nGigablast\nOpen-source search engine with privacy features and real-time indexing",
+            "href": "https://gigablast.com",
+            "is_internal": false
+          },
+          {
+            "text": "🔍\n\n\nMojeek\nIndependent search engine with its own web crawling and indexing technology",
+            "href": "https://mojeek.com",
+            "is_internal": false
+          },
+          {
+            "text": "🔄\n\n\nSearx\nOpen-source metasearch engine that aggregates results without storing data",
+            "href": "https://searx.space",
+            "is_internal": false
+          }
+        ],
+        "categories_found": 2
+      }
+    },
+    {
+      "category": "social",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\categories\\social\\index.html",
+      "hash": "c6143709ae873397479ce066dbfcdfbb",
+      "analysis": {
+        "title": "Social Networks - The Everything Gateway",
+        "meta_description": "Discover the best social media platforms, community forums, professional networks, and communication tools. Connect, share, and engage with communities worldwide.",
+        "headings": [
+          {
+            "level": "h1",
+            "text": "The Everything\nGateway"
+          },
+          {
+            "level": "h1",
+            "text": "Social Networks"
+          },
+          {
+            "level": "h2",
+            "text": "Unable to Load Social Platforms"
+          }
+        ],
+        "sections": [],
+        "links": [
+          {
+            "text": "The Everything\nGateway",
+            "href": "../../",
+            "is_internal": true
+          },
+          {
+            "text": "Home",
+            "href": "../../",
+            "is_internal": true
+          },
+          {
+            "text": "Search Engines",
+            "href": "../search-engines/",
+            "is_internal": true
+          },
+          {
+            "text": "Tools",
+            "href": "../tools/",
+            "is_internal": true
+          },
+          {
+            "text": "Entertainment",
+            "href": "../entertainment/",
+            "is_internal": true
+          },
+          {
+            "text": "Knowledge",
+            "href": "../knowledge/",
+            "is_internal": true
+          },
+          {
+            "text": "News",
+            "href": "../news/",
+            "is_internal": true
+          }
+        ],
+        "categories_found": 1
+      }
+    },
+    {
+      "category": "tools",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\categories\\tools\\index.html",
+      "hash": "d94739b03c7af74a2353ece1b1bb9b3e",
+      "analysis": {
+        "title": "Tools & Utilities Hub - The Everything Gateway",
+        "meta_description": "52 curated tools across 6 categories: AI tools, PDF utilities, creative design, developer resources, productivity apps, and file conversion",
+        "headings": [
+          {
+            "level": "h1",
+            "text": "Tools & Utilities Hub"
+          },
+          {
+            "level": "h2",
+            "text": "🤖 AI & Machine Learning"
+          },
+          {
+            "level": "h3",
+            "text": "ChatGPT"
+          },
+          {
+            "level": "h3",
+            "text": "Claude"
+          },
+          {
+            "level": "h3",
+            "text": "Gemini"
+          },
+          {
+            "level": "h3",
+            "text": "Midjourney"
+          },
+          {
+            "level": "h3",
+            "text": "Stable Diffusion"
+          },
+          {
+            "level": "h3",
+            "text": "GitHub Copilot"
+          },
+          {
+            "level": "h3",
+            "text": "Replit AI"
+          },
+          {
+            "level": "h3",
+            "text": "Perplexity"
+          },
+          {
+            "level": "h3",
+            "text": "RunwayML"
+          },
+          {
+            "level": "h3",
+            "text": "Jasper"
+          },
+          {
+            "level": "h2",
+            "text": "📄 PDF Tools"
+          },
+          {
+            "level": "h3",
+            "text": "SmallPDF"
+          },
+          {
+            "level": "h3",
+            "text": "ILovePDF"
+          },
+          {
+            "level": "h3",
+            "text": "PDF24"
+          },
+          {
+            "level": "h3",
+            "text": "Sejda PDF"
+          },
+          {
+            "level": "h3",
+            "text": "PDFtk Server"
+          },
+          {
+            "level": "h3",
+            "text": "PDF Arranger"
+          },
+          {
+            "level": "h2",
+            "text": "🎨 Creative & Design"
+          },
+          {
+            "level": "h3",
+            "text": "Canva"
+          },
+          {
+            "level": "h3",
+            "text": "Figma"
+          },
+          {
+            "level": "h3",
+            "text": "Remove.bg"
+          },
+          {
+            "level": "h3",
+            "text": "Photopea"
+          },
+          {
+            "level": "h3",
+            "text": "GIMP"
+          },
+          {
+            "level": "h3",
+            "text": "Coolors"
+          },
+          {
+            "level": "h3",
+            "text": "Unsplash"
+          },
+          {
+            "level": "h3",
+            "text": "Iconify"
+          },
+          {
+            "level": "h2",
+            "text": "💻 Developer Tools"
+          },
+          {
+            "level": "h3",
+            "text": "CodePen"
+          },
+          {
+            "level": "h3",
+            "text": "JSFiddle"
+          },
+          {
+            "level": "h3",
+            "text": "Regex101"
+          },
+          {
+            "level": "h3",
+            "text": "JSONLint"
+          },
+          {
+            "level": "h3",
+            "text": "Can I Use"
+          },
+          {
+            "level": "h3",
+            "text": "Postman"
+          },
+          {
+            "level": "h3",
+            "text": "VS Code Online"
+          },
+          {
+            "level": "h3",
+            "text": "GitPod"
+          },
+          {
+            "level": "h3",
+            "text": "Replit"
+          },
+          {
+            "level": "h2",
+            "text": "⚡ Productivity & Organization"
+          },
+          {
+            "level": "h3",
+            "text": "Notion"
+          },
+          {
+            "level": "h3",
+            "text": "Obsidian"
+          },
+          {
+            "level": "h3",
+            "text": "Todoist"
+          },
+          {
+            "level": "h3",
+            "text": "Calendly"
+          },
+          {
+            "level": "h3",
+            "text": "Grammarly"
+          },
+          {
+            "level": "h3",
+            "text": "Forest"
+          },
+          {
+            "level": "h3",
+            "text": "RescueTime"
+          },
+          {
+            "level": "h2",
+            "text": "🔄 File Conversion"
+          },
+          {
+            "level": "h3",
+            "text": "CloudConvert"
+          },
+          {
+            "level": "h3",
+            "text": "Online-Convert"
+          },
+          {
+            "level": "h3",
+            "text": "Convertio"
+          },
+          {
+            "level": "h3",
+            "text": "Zamzar"
+          },
+          {
+            "level": "h3",
+            "text": "FreeConvert"
+          }
+        ],
+        "sections": [],
+        "links": [
+          {
+            "text": "← Back to Everything Gateway",
+            "href": "../../",
+            "is_internal": true
+          },
+          {
+            "text": "🤖\n\nChatGPT\nMost popular AI chatbot for text generation, Q&A, and creative writing",
+            "href": "https://chat.openai.com",
+            "is_internal": false
+          },
+          {
+            "text": "🧠\n\nClaude\nAnthropic's AI assistant for complex reasoning and analysis",
+            "href": "https://claude.ai",
+            "is_internal": false
+          },
+          {
+            "text": "💎\n\nGemini\nGoogle's multimodal AI for text, images, and data analysis",
+            "href": "https://gemini.google.com",
+            "is_internal": false
+          },
+          {
+            "text": "🎨\n\nMidjourney\nPremium AI image generator with artistic focus",
+            "href": "https://midjourney.com",
+            "is_internal": false
+          },
+          {
+            "text": "🖼️\n\nStable Diffusion\nOpen-source AI image generation with full control",
+            "href": "https://stablediffusionweb.com",
+            "is_internal": false
+          },
+          {
+            "text": "🚁\n\nGitHub Copilot\nAI pair programmer that writes code with you",
+            "href": "https://copilot.github.com",
+            "is_internal": false
+          },
+          {
+            "text": "🔧\n\nReplit AI\nAI coding assistant integrated into online IDE",
+            "href": "https://replit.com/ai",
+            "is_internal": false
+          },
+          {
+            "text": "🔍\n\nPerplexity\nAI-powered search with real-time answers and sources",
+            "href": "https://perplexity.ai",
+            "is_internal": false
+          },
+          {
+            "text": "🎬\n\nRunwayML\nAI video generation and editing tools",
+            "href": "https://runwayml.com",
+            "is_internal": false
+          },
+          {
+            "text": "✍️\n\nJasper\nAI writing assistant for marketing and content",
+            "href": "https://jasper.ai",
+            "is_internal": false
+          },
+          {
+            "text": "📄\n\nSmallPDF\nComplete PDF toolkit - merge, split, compress, convert",
+            "href": "https://smallpdf.com",
+            "is_internal": false
+          },
+          {
+            "text": "💕\n\nILovePDF\nFree online PDF tools with no registration required",
+            "href": "https://ilovepdf.com",
+            "is_internal": false
+          },
+          {
+            "text": "🔒\n\nPDF24\nLocal processing PDF tools for security-conscious users",
+            "href": "https://tools.pdf24.org",
+            "is_internal": false
+          },
+          {
+            "text": "📊\n\nSejda PDF\nProfessional PDF editing with OCR and form features",
+            "href": "https://sejda.com",
+            "is_internal": false
+          },
+          {
+            "text": "⚙️\n\nPDFtk Server\nPowerful command-line PDF manipulation toolkit",
+            "href": "https://www.pdflabs.com/tools/pdftk-server/",
+            "is_internal": false
+          },
+          {
+            "text": "🗿\n\nPDF Arranger\nSimple desktop application for merging and splitting PDFs",
+            "href": "https://github.com/pdfarranger/pdfarranger",
+            "is_internal": false
+          },
+          {
+            "text": "🎨\n\nCanva\nEasy-to-use design tool for social media, presentations, and more",
+            "href": "https://canva.com",
+            "is_internal": false
+          },
+          {
+            "text": "🖼️\n\nFigma\nProfessional collaborative design tool for interfaces",
+            "href": "https://figma.com",
+            "is_internal": false
+          },
+          {
+            "text": "✂️\n\nRemove.bg\nAI-powered background removal for images",
+            "href": "https://remove.bg",
+            "is_internal": false
+          },
+          {
+            "text": "🖼️\n\nPhotopea\nFree browser-based Photoshop alternative",
+            "href": "https://photopea.com",
+            "is_internal": false
+          },
+          {
+            "text": "🔧\n\nGIMP\nFree and open-source image manipulation program",
+            "href": "https://gimp.org",
+            "is_internal": false
+          },
+          {
+            "text": "🎨\n\nCoolors\nGenerate and explore color palettes for your designs",
+            "href": "https://coolors.co",
+            "is_internal": false
+          },
+          {
+            "text": "📷\n\nUnsplash\nHigh-quality free photos for any project",
+            "href": "https://unsplash.com",
+            "is_internal": false
+          },
+          {
+            "text": "✨\n\nIconify\nUnified icon framework with thousands of icons",
+            "href": "https://iconify.design",
+            "is_internal": false
+          },
+          {
+            "text": "🖋️\n\nCodePen\nOnline code editor for HTML, CSS, and JavaScript",
+            "href": "https://codepen.io",
+            "is_internal": false
+          },
+          {
+            "text": "🧪\n\nJSFiddle\nTest and share JavaScript, HTML, CSS code snippets",
+            "href": "https://jsfiddle.net",
+            "is_internal": false
+          },
+          {
+            "text": "🔍\n\nRegex101\nBuild, test, and debug regular expressions with explanations",
+            "href": "https://regex101.com",
+            "is_internal": false
+          },
+          {
+            "text": "📜\n\nJSONLint\nValidate and format JSON data",
+            "href": "https://jsonlint.com",
+            "is_internal": false
+          },
+          {
+            "text": "🌍\n\nCan I Use\nCheck browser support for web technologies",
+            "href": "https://caniuse.com",
+            "is_internal": false
+          },
+          {
+            "text": "🚀\n\nPostman\nComplete API development and testing platform",
+            "href": "https://postman.com",
+            "is_internal": false
+          },
+          {
+            "text": "💻\n\nVS Code Online\nVisual Studio Code running in your browser",
+            "href": "https://vscode.dev",
+            "is_internal": false
+          },
+          {
+            "text": "☁️\n\nGitPod\nReady-to-code dev environments in the cloud",
+            "href": "https://gitpod.io",
+            "is_internal": false
+          },
+          {
+            "text": "🔄\n\nReplit\nCode, compile and run programs online in 50+ languages",
+            "href": "https://replit.com",
+            "is_internal": false
+          },
+          {
+            "text": "📝\n\nNotion\nWorkspace combining notes, tasks, wiki, and databases",
+            "href": "https://notion.so",
+            "is_internal": false
+          },
+          {
+            "text": "🕸️\n\nObsidian\nPowerful note-taking with linked thought networks",
+            "href": "https://obsidian.md",
+            "is_internal": false
+          },
+          {
+            "text": "✅\n\nTodoist\nIntelligent task manager and to-do list app",
+            "href": "https://todoist.com",
+            "is_internal": false
+          },
+          {
+            "text": "📅\n\nCalendly\nEasy scheduling without back-and-forth emails",
+            "href": "https://calendly.com",
+            "is_internal": false
+          },
+          {
+            "text": "✍️\n\nGrammarly\nAI-powered writing assistant for grammar and style",
+            "href": "https://grammarly.com",
+            "is_internal": false
+          },
+          {
+            "text": "🌳\n\nForest\nStay focused and beat phone addiction with virtual trees",
+            "href": "https://forestapp.cc",
+            "is_internal": false
+          },
+          {
+            "text": "⏱️\n\nRescueTime\nAutomatic time tracking and productivity analysis",
+            "href": "https://rescuetime.com",
+            "is_internal": false
+          },
+          {
+            "text": "☁️\n\nCloudConvert\nConvert between 200+ file formats including audio, video, documents",
+            "href": "https://cloudconvert.com",
+            "is_internal": false
+          },
+          {
+            "text": "🔄\n\nOnline-Convert\nConvert images, audio, video, documents, and ebooks",
+            "href": "https://online-convert.com",
+            "is_internal": false
+          },
+          {
+            "text": "✨\n\nConvertio\nSimple online converter for files, images, videos, and audio",
+            "href": "https://convertio.co",
+            "is_internal": false
+          },
+          {
+            "text": "📧\n\nZamzar\nFile conversion with email delivery for large files",
+            "href": "https://zamzar.com",
+            "is_internal": false
+          },
+          {
+            "text": "🆓\n\nFreeConvert\nFree online file converter with no registration",
+            "href": "https://freeconvert.com",
+            "is_internal": false
+          }
+        ],
+        "categories_found": 1
+      }
+    },
+    {
+      "category": "main_gateway",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\index.html",
+      "hash": "e9c93fe590ea453ae1146ddee23207fa",
+      "analysis": {
+        "title": "The Everything Gateway - Your Portal to the Internet",
+        "meta_description": "Your gateway to the entire internet - search engines, tools, entertainment, knowledge, and more, all organized and accessible",
+        "headings": [
+          {
+            "level": "h1",
+            "text": "The Everything Gateway"
+          },
+          {
+            "level": "h2",
+            "text": "Gateway Overview"
+          },
+          {
+            "level": "h2",
+            "text": "Choose Your Gateway"
+          }
+        ],
+        "sections": [],
+        "links": [
+          {
+            "text": "🔍\nSearch Engines\n\n                            Your gateway to the entire search universe - mainstream, privacy-focused, academic, and hidden gems\n                        \n\nActive\n39 engines",
+            "href": "categories/search-engines/index.html",
+            "is_internal": true
+          },
+          {
+            "text": "🛠️\nTools & Utilities\n\n                            52 curated tools across 6 categories: AI tools, PDF utilities, creative design, developer resources, productivity apps, and file conversion\n                        \n\nActive\n52 tools",
+            "href": "categories/tools/index.html",
+            "is_internal": true
+          },
+          {
+            "text": "🎭\nEntertainment & Media\n\n                            Your gateway to streaming, music, gaming, and entertainment platforms\n                        \n\nActive\n51 platforms",
+            "href": "categories/entertainment/index.html",
+            "is_internal": true
+          },
+          {
+            "text": "📚\nKnowledge & Learning\n\n                            Educational resources, online courses, and learning platforms from Harvard and MIT to Wikipedia and Khan Academy\n                        \n\nActive\n53 platforms",
+            "href": "categories/knowledge/index.html",
+            "is_internal": true
+          },
+          {
+            "text": "📰\nNews & Trends\n\n                            Stay informed with trusted news sources, tech blogs, and trend tracking platforms from BBC to TechCrunch\n                        \n\nActive\n48 sources",
+            "href": "categories/news/index.html",
+            "is_internal": true
+          },
+          {
+            "text": "🌐\nSocial Networks\n\n                            Connect and engage with communities worldwide through social media, professional networks, forums, and communication tools\n                        \n\nActive\n39 platforms",
+            "href": "categories/social/index.html",
+            "is_internal": true
+          },
+          {
+            "text": "🎮\nGaming & Esports\n\n                            Level up your gaming experience! Game stores, streaming platforms, esports communities, and everything for PC, console, and competitive gaming\n                        \n\nActive\n42 platforms",
+            "href": "categories/gaming/index.html",
+            "is_internal": true
+          },
+          {
+            "text": "🗾\nAnime & Manga\n\n                            Immerse yourself in Japanese animation and comics! Streaming platforms, manga readers, databases, and otaku communities\n                        \n\nActive\n48 platforms",
+            "href": "categories/anime/index.html",
+            "is_internal": true
+          },
+          {
+            "text": "₿\nCrypto & Blockchain\n\n                            Navigate the digital economy! Trading platforms, DeFi protocols, NFT marketplaces, and blockchain analytics tools\n                        \n\nNew!\n45 platforms",
+            "href": "categories/crypto/index.html",
+            "is_internal": true
+          },
+          {
+            "text": "🎨\nDesign & Creativity\n\n                            Unleash your creative potential! Professional design tools, stock resources, inspiration platforms, and collaboration spaces\n                        \n\nNew!\n40 platforms",
+            "href": "categories/design/index.html",
+            "is_internal": true
+          },
+          {
+            "text": "💪\nHealth & Fitness\n\n                            Transform your wellness journey! Fitness apps, nutrition tracking, mental health resources, and workout platforms\n                        \n\nNew!\n43 platforms",
+            "href": "categories/health/index.html",
+            "is_internal": true
+          },
+          {
+            "text": "🛍️\nLifestyle & Shopping\n\n                            Transform your daily life! E-commerce giants, travel platforms, food delivery, and home services for modern living\n                        \n\nNew!\n44 platforms",
+            "href": "categories/lifestyle/index.html",
+            "is_internal": true
+          },
+          {
+            "text": "💎\nHidden Treasures\n\n                            The internet's best-kept secrets. Powerful tools and hidden gems that insiders use but rarely share. Welcome to the underground.\n                        \n\nExclusive!\n50+ secrets",
+            "href": "categories/hidden-treasures/index.html",
+            "is_internal": true
+          }
+        ],
+        "categories_found": 91
+      }
+    }
+  ],
+  "data_files_discovered": [
+    {
+      "file": "anime.json",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\data\\anime.json",
+      "hash": "a3f64df7e9ca5bf6f1c87bbde5b665e4",
+      "structure": {
+        "top_level_keys": [
+          "category",
+          "description",
+          "sections",
+          "metadata"
+        ],
+        "estimated_items": 4,
+        "data_types": {
+          "category": "str",
+          "description": "str",
+          "sections": "array[4]",
+          "metadata": "object[4]"
+        }
+      }
+    },
+    {
+      "file": "categories.json",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\data\\categories.json",
+      "hash": "9874748f35e0621302895773a8893f69",
+      "structure": {
+        "top_level_keys": [
+          "categories",
+          "metadata"
+        ],
+        "estimated_items": 13,
+        "data_types": {
+          "categories": "array[13]",
+          "metadata": "object[6]"
+        }
+      }
+    },
+    {
+      "file": "crypto.json",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\data\\crypto.json",
+      "hash": "ce97b4e84cb50599395847a60bdbb6de",
+      "structure": {
+        "top_level_keys": [
+          "category",
+          "description",
+          "sections",
+          "metadata"
+        ],
+        "estimated_items": 4,
+        "data_types": {
+          "category": "str",
+          "description": "str",
+          "sections": "array[4]",
+          "metadata": "object[4]"
+        }
+      }
+    },
+    {
+      "file": "design.json",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\data\\design.json",
+      "hash": "303c95d14ba615307a910305aae35bab",
+      "structure": {
+        "top_level_keys": [
+          "category",
+          "description",
+          "sections",
+          "metadata"
+        ],
+        "estimated_items": 4,
+        "data_types": {
+          "category": "str",
+          "description": "str",
+          "sections": "array[4]",
+          "metadata": "object[3]"
+        }
+      }
+    },
+    {
+      "file": "entertainment.json",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\data\\entertainment.json",
+      "hash": "39f5c9bcf29c7c6322c294f82562f531",
+      "structure": {
+        "top_level_keys": [
+          "meta",
+          "sections"
+        ],
+        "estimated_items": 6,
+        "data_types": {
+          "meta": "object[5]",
+          "sections": "array[6]"
+        }
+      }
+    },
+    {
+      "file": "gaming.json",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\data\\gaming.json",
+      "hash": "36485569554edc30cd9ad87903cbee00",
+      "structure": {
+        "top_level_keys": [
+          "category",
+          "description",
+          "sections",
+          "metadata"
+        ],
+        "estimated_items": 4,
+        "data_types": {
+          "category": "str",
+          "description": "str",
+          "sections": "array[4]",
+          "metadata": "object[4]"
+        }
+      }
+    },
+    {
+      "file": "health.json",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\data\\health.json",
+      "hash": "17a0240649b404d48ff7505e312b8fc4",
+      "structure": {
+        "top_level_keys": [
+          "category",
+          "description",
+          "sections",
+          "metadata"
+        ],
+        "estimated_items": 4,
+        "data_types": {
+          "category": "str",
+          "description": "str",
+          "sections": "array[4]",
+          "metadata": "object[3]"
+        }
+      }
+    },
+    {
+      "file": "hidden-treasures.json",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\data\\hidden-treasures.json",
+      "hash": "f0af13f9a06dd29a84ece1ceedcd349d",
+      "structure": {
+        "top_level_keys": [
+          "category",
+          "title",
+          "description",
+          "icon",
+          "theme",
+          "sections"
+        ],
+        "estimated_items": 9,
+        "data_types": {
+          "category": "str",
+          "title": "str",
+          "description": "str",
+          "icon": "str",
+          "theme": "str",
+          "sections": "array[9]"
+        }
+      }
+    },
+    {
+      "file": "knowledge.json",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\data\\knowledge.json",
+      "hash": "aa821e765e342aefc5feed7cbfcf1a73",
+      "structure": {
+        "top_level_keys": [
+          "category",
+          "title",
+          "description",
+          "emoji",
+          "totalCount",
+          "sections"
+        ],
+        "estimated_items": 6,
+        "data_types": {
+          "category": "str",
+          "title": "str",
+          "description": "str",
+          "emoji": "str",
+          "totalCount": "int",
+          "sections": "array[6]"
+        }
+      }
+    },
+    {
+      "file": "lifestyle.json",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\data\\lifestyle.json",
+      "hash": "b0cfa9ec60c77fd2409b985fb0b2238a",
+      "structure": {
+        "top_level_keys": [
+          "category",
+          "description",
+          "sections",
+          "metadata"
+        ],
+        "estimated_items": 4,
+        "data_types": {
+          "category": "str",
+          "description": "str",
+          "sections": "array[4]",
+          "metadata": "object[3]"
+        }
+      }
+    },
+    {
+      "file": "news.json",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\data\\news.json",
+      "hash": "65e31ac64ed5cbb7b0fd67d9e7e37536",
+      "structure": {
+        "top_level_keys": [
+          "meta",
+          "sections"
+        ],
+        "estimated_items": 4,
+        "data_types": {
+          "meta": "object[6]",
+          "sections": "array[4]"
+        }
+      }
+    },
+    {
+      "file": "search-engines.json",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\data\\search-engines.json",
+      "hash": "50f19f276d0c6331495de3cbca7e94d6",
+      "structure": {
+        "top_level_keys": [
+          "sections",
+          "metadata"
+        ],
+        "estimated_items": 9,
+        "data_types": {
+          "sections": "array[9]",
+          "metadata": "object[5]"
+        }
+      }
+    },
+    {
+      "file": "social.json",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\data\\social.json",
+      "hash": "6dfec2778789d712821f99a650360c2f",
+      "structure": {
+        "top_level_keys": [
+          "category",
+          "description",
+          "sections",
+          "metadata"
+        ],
+        "estimated_items": 4,
+        "data_types": {
+          "category": "str",
+          "description": "str",
+          "sections": "array[4]",
+          "metadata": "object[3]"
+        }
+      }
+    },
+    {
+      "file": "tools.json",
+      "path": "C:\\Users\\Achariya\\project\\everything-gateway\\data\\tools.json",
+      "hash": "8e8feb41724892c5dcf48721ed742313",
+      "structure": {
+        "top_level_keys": [
+          "sections",
+          "metadata"
+        ],
+        "estimated_items": 6,
+        "data_types": {
+          "sections": "array[6]",
+          "metadata": "object[5]"
+        }
+      }
+    }
+  ],
+  "resources_discovered": []
+}
