@@ -54,7 +54,7 @@
             --ai-transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        /* Remove tap highlight on all AI elements */
+        /* Remove tap highlight on all AI elements AND prevent pull-to-refresh */
         .ai-fab *,
         .ai-modal-overlay *,
         .ai-container * {
@@ -64,6 +64,18 @@
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+        }
+        
+        /* Prevent pull-to-refresh when modal is open */
+        body.ai-modal-open {
+            overflow: hidden;
+            overscroll-behavior: none;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .ai-modal-overlay.active {
+            overscroll-behavior: contain;
+            -webkit-overflow-scrolling: touch;
         }
         
         /* Enhanced Floating Action Button */
@@ -1434,6 +1446,9 @@ What would you like to discover? 🌟`;
             this.modal.classList.add('active');
             this.fab.style.transform = 'scale(0.8)';
             
+            // Prevent pull-to-refresh when modal is open
+            document.body.classList.add('ai-modal-open');
+            
             setTimeout(() => {
                 if (this.messages.style.display === 'flex') {
                     this.input?.focus();
@@ -1445,6 +1460,9 @@ What would you like to discover? 🌟`;
             this.isOpen = false;
             this.modal.classList.remove('active');
             this.fab.style.transform = '';
+            
+            // Remove pull-to-refresh prevention when modal closes
+            document.body.classList.remove('ai-modal-open');
             
             this.container.style.transform = '';
             this.container.style.opacity = '';
