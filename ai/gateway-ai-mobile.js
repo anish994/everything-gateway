@@ -84,8 +84,15 @@
             color: white;
             box-shadow: var(--ai-shadow-lg);
             transition: var(--ai-transition);
-            z-index: 10001;
+            z-index: 9999;
             overflow: hidden;
+        }
+        
+        /* Hide FAB when modal is open */
+        .ai-modal-overlay.active ~ .ai-fab {
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.8);
         }
         
         .ai-fab:before {
@@ -802,9 +809,9 @@
         initializeEventListeners() {
             // FAB and close
             this.fab?.addEventListener('click', () => this.open());
-            this.close?.addEventListener('click', () => this.close());
+            this.close?.addEventListener('click', () => this.closeModal());
             this.modal?.addEventListener('click', (e) => {
-                if (e.target === this.modal) this.close();
+                if (e.target === this.modal) this.closeModal();
             });
             
             // Category selection
@@ -1310,6 +1317,10 @@ What would you like to discover? 🌟`;
             this.container.style.opacity = '';
             
             this.hideMessages();
+        }
+        
+        closeModal() {
+            this.close();
         }
     }
     
