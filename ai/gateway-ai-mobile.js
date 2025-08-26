@@ -676,6 +676,48 @@
         .ai-haptic:active {
             transform: scale(0.96);
         }
+        
+        /* Mobile Debug Panel */
+        .ai-debug-panel {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.9);
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            padding: 10px;
+            border-radius: 8px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 99999;
+            border: 1px solid #333;
+            display: none;
+        }
+        
+        .ai-debug-panel.active {
+            display: block;
+        }
+        
+        .ai-debug-log {
+            margin: 2px 0;
+            word-break: break-all;
+        }
+        
+        .ai-debug-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            z-index: 999999;
+            cursor: pointer;
+        }
         `;
         
         const styleSheet = document.createElement('style');
@@ -690,6 +732,12 @@
         if (document.getElementById(htmlId)) return;
         
         const htmlContent = `
+        <!-- Mobile Debug Panel -->
+        <button class="ai-debug-toggle" id="debugToggle">DEBUG</button>
+        <div class="ai-debug-panel" id="debugPanel">
+            <div class="ai-debug-log">🟡 Debug Panel Ready</div>
+        </div>
+        
         <!-- Enhanced Floating Action Button -->
         <button class="ai-fab" id="aiFab" aria-label="Open Gateway AI 2.0">
             <span class="ai-fab-icon">🧠</span>
@@ -858,19 +906,25 @@
         
         initializeEventListeners() {
             console.log('🔧 Initializing event listeners...');
+            this.debugLog('🔧 Initializing event listeners...');
+            
+            // Initialize debug panel
+            this.initializeDebugPanel();
             
             // FAB and close - Add both click and touch events for mobile
             if (this.fab) {
                 this.fab.addEventListener('click', (e) => {
                     e.preventDefault();
                     e.stopPropagation();
-                    console.log('🟢 FAB clicked');
+                    console.log('�︢ FAB clicked');
+                    this.debugLog('�︢ FAB clicked');
                     this.open();
                 });
                 this.fab.addEventListener('touchend', (e) => {
                     e.preventDefault();
                     e.stopPropagation();
-                    console.log('🟢 FAB touched');
+                    console.log('�︢ FAB touched');
+                    this.debugLog('�︢ FAB touched');
                     this.open();
                 });
                 console.log('✅ FAB events attached');
@@ -1854,6 +1908,43 @@ What would you like to discover? 🌟`;
             } catch (error) {
                 console.warn('Failed to save user preferences:', error);
             }
+        }
+        
+        // Debug Panel Methods
+        initializeDebugPanel() {
+            const debugToggle = document.getElementById('debugToggle');
+            const debugPanel = document.getElementById('debugPanel');
+            
+            if (debugToggle && debugPanel) {
+                debugToggle.addEventListener('click', () => {
+                    debugPanel.classList.toggle('active');
+                    this.debugLog('🔧 Debug panel toggled');
+                });
+                this.debugLog('✅ Debug panel initialized');
+            } else {
+                console.warn('⚠️ Debug panel elements not found');
+            }
+        }
+        
+        debugLog(message) {
+            const debugPanel = document.getElementById('debugPanel');
+            if (debugPanel) {
+                const logDiv = document.createElement('div');
+                logDiv.className = 'ai-debug-log';
+                const timestamp = new Date().toLocaleTimeString();
+                logDiv.textContent = `[${timestamp}] ${message}`;
+                debugPanel.appendChild(logDiv);
+                
+                // Keep only last 20 logs
+                const logs = debugPanel.querySelectorAll('.ai-debug-log');
+                if (logs.length > 20) {
+                    logs[0].remove();
+                }
+                
+                // Auto scroll
+                debugPanel.scrollTop = debugPanel.scrollHeight;
+            }
+            console.log(message);
         }
     }
     
