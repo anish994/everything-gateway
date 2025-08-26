@@ -857,28 +857,44 @@
         }
         
         initializeEventListeners() {
-            // FAB and close - Add both click and touch events for mobile
-            this.fab?.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                this.open();
-            });
-            this.fab?.addEventListener('touchend', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                this.open();
-            });
+            console.log('🔧 Initializing event listeners...');
             
-            this.close?.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                this.closeModal();
-            });
-            this.close?.addEventListener('touchend', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                this.closeModal();
-            });
+            // FAB and close - Add both click and touch events for mobile
+            if (this.fab) {
+                this.fab.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('🟢 FAB clicked');
+                    this.open();
+                });
+                this.fab.addEventListener('touchend', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('🟢 FAB touched');
+                    this.open();
+                });
+                console.log('✅ FAB events attached');
+            } else {
+                console.error('❌ FAB element not found!');
+            }
+            
+            if (this.close) {
+                this.close.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('❌ X button clicked');
+                    this.closeModal();
+                });
+                this.close.addEventListener('touchend', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('❌ X button touched');
+                    this.closeModal();
+                });
+                console.log('✅ X button events attached');
+            } else {
+                console.error('❌ Close button element not found!');
+            }
             
             this.modal?.addEventListener('click', (e) => {
                 if (e.target === this.modal) {
@@ -945,11 +961,20 @@
         
         initializeTouchGestures() {
             const dragHandle = document.querySelector('.ai-drag-handle');
-            if (!dragHandle) return;
+            if (!dragHandle) {
+                console.log('⚠️ Drag handle not found!');
+                return;
+            }
+            
+            console.log('🎯 Drag handle initialized');
             
             dragHandle.addEventListener('touchstart', (e) => {
                 this.touchStartY = e.touches[0].clientY;
                 this.isDragging = true;
+                
+                // Disable transitions during drag
+                this.container.style.transition = 'none';
+                console.log('🟢 Drag started');
             });
             
             dragHandle.addEventListener('touchmove', (e) => {
@@ -972,9 +997,16 @@
                 const currentY = e.changedTouches[0].clientY;
                 const diff = currentY - this.touchStartY;
                 
+                console.log('🔴 Drag ended, diff:', diff);
+                
+                // Re-enable transitions
+                this.container.style.transition = '';
+                
                 if (diff > 100) {
+                    console.log('✅ Closing modal');
                     this.close();
                 } else {
+                    console.log('🔄 Snapping back');
                     this.container.style.transform = '';
                     this.container.style.opacity = '';
                 }
