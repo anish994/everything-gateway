@@ -829,22 +829,59 @@
         }
         
         initializeEventListeners() {
-            // FAB and close
-            this.fab?.addEventListener('click', () => this.open());
-            this.close?.addEventListener('click', () => this.closeModal());
-            this.modal?.addEventListener('click', (e) => {
-                if (e.target === this.modal) this.closeModal();
+            // FAB and close - Add both click and touch events for mobile
+            this.fab?.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.open();
+            });
+            this.fab?.addEventListener('touchend', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.open();
             });
             
-            // Category selection
+            this.close?.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.closeModal();
+            });
+            this.close?.addEventListener('touchend', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.closeModal();
+            });
+            
+            this.modal?.addEventListener('click', (e) => {
+                if (e.target === this.modal) {
+                    e.preventDefault();
+                    this.closeModal();
+                }
+            });
+            this.modal?.addEventListener('touchend', (e) => {
+                if (e.target === this.modal) {
+                    e.preventDefault();
+                    this.closeModal();
+                }
+            });
+            
+            // Category selection - Enhanced mobile support
             this.categoryChips.forEach(chip => {
-                chip.addEventListener('click', () => {
+                chip.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    this.selectCategory(chip.dataset.category);
+                    this.addHapticFeedback();
+                });
+                chip.addEventListener('touchend', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
                     this.selectCategory(chip.dataset.category);
                     this.addHapticFeedback();
                 });
             });
             
-            // Input and send
+            // Input and send - Enhanced mobile support
             this.input?.addEventListener('input', () => this.autoResize());
             this.input?.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' && !e.shiftKey) {
@@ -852,7 +889,17 @@
                     this.sendMessage();
                 }
             });
-            this.send?.addEventListener('click', () => this.sendMessage());
+            
+            this.send?.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.sendMessage();
+            });
+            this.send?.addEventListener('touchend', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.sendMessage();
+            });
             
             // Keyboard shortcuts
             document.addEventListener('keydown', (e) => {
@@ -1020,7 +1067,7 @@
             const commands = this.commands[this.currentCategory] || [];
             
             this.commandsGrid.innerHTML = commands.map(cmd => `
-                <div class="ai-command-card ai-haptic" onclick="window.gatewayAI.executeCommand('${cmd.id}')">
+                <div class="ai-command-card ai-haptic" data-command-id="${cmd.id}">
                     ${cmd.badge ? `<div class="ai-command-badge ${cmd.badge}">${cmd.badge}</div>` : ''}
                     <div class="ai-command-content">
                         <div class="ai-command-icon">${cmd.icon}</div>
@@ -1029,6 +1076,31 @@
                     </div>
                 </div>
             `).join('');
+            
+            // Add mobile-friendly event listeners to command cards
+            this.initializeCommandCardEvents();
+        }
+        
+        initializeCommandCardEvents() {
+            // Remove old event listeners and add new ones for command cards
+            const commandCards = document.querySelectorAll('.ai-command-card');
+            commandCards.forEach(card => {
+                const commandId = card.dataset.commandId;
+                if (!commandId) return;
+                
+                // Add both click and touchend events for maximum compatibility
+                card.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    this.executeCommand(commandId);
+                });
+                
+                card.addEventListener('touchend', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    this.executeCommand(commandId);
+                });
+            });
         }
         
         executeCommand(commandId) {
