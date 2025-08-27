@@ -1718,42 +1718,104 @@ ${timeBasedSuggestions}
                 }
             }
             
-            // Fallback to standard processing
+            // ENHANCED CONVERSATION PROCESSING - Actually handle what we say we can!
+            
             // Quick exit commands - highest priority
             if (msgLower === 'exit' || msgLower === 'home' || msgLower === 'back' || 
                 msgLower === 'gateway' || msgLower.includes('back to gateway')) {
                 this.executeCommand('back-to-gateway');
-            } else if (msgLower.includes('categories') || msgLower.includes('list')) {
+                return;
+            }
+            
+            // PRIVACY & SECURITY QUESTIONS
+            if (msgLower.includes('search engines') && (msgLower.includes('track') || msgLower.includes('privacy') || msgLower.includes('private'))) {
+                this.addMessage('🔒 **Privacy Search Engines - No Tracking Guaranteed!**\n\n🏆 **Top Privacy Champions:**\n• **DuckDuckGo** - Most popular, zero tracking, clean results\n• **Brave Search** - Independent index, crypto rewards, ad-blocking\n• **Startpage** - Google results without the tracking\n• **Swisscows** - Family-safe, Swiss privacy laws protection\n• **Searx** - Open-source, self-hostable, ultimate privacy\n• **MetaGer** - German engineering, proxy protection\n• **Kagi** - Premium service, zero ads, AI summaries\n• **Mojeek** - UK-based, independent crawler\n\n🛡️ **Privacy Features:**\n• No user profiling or tracking\n• No search history storage\n• No behavioral targeting\n• Encrypted connections\n• Anonymous proxy options\n\n💡 **Quick Comparison:** DuckDuckGo for ease, Brave for rewards, Startpage for Google results, Kagi for premium experience!\n\nWhich privacy features matter most to you?', 'assistant');
+                return;
+            }
+            
+            if (msgLower.includes('duckduckgo') && msgLower.includes('startpage')) {
+                this.addMessage('⚖️ **DuckDuckGo vs Startpage - Privacy Showdown!**\n\n🦆 **DuckDuckGo:**\n✅ Independent search index\n✅ !Bang shortcuts (!w for Wikipedia, !yt for YouTube)\n✅ Instant answers and calculators\n✅ Dark web search via .onion\n✅ Simple, clean interface\n❌ Smaller search index than Google\n\n🎯 **Startpage:**\n✅ Google search results without tracking\n✅ Anonymous View feature\n✅ Custom URL generator\n✅ European privacy laws protection\n✅ Proxy image/video viewing\n❌ Relies on Google\'s index\n\n🏆 **Verdict:**\n• **DuckDuckGo** if you want true independence\n• **Startpage** if you need Google-quality results\n• Both are excellent for privacy!\n\nWant me to show you Brave Search too?', 'assistant');
+                return;
+            }
+            
+            if (msgLower.includes('secure') && msgLower.includes('search')) {
+                this.addMessage('🔐 **Most Secure Search Engines for Sensitive Research:**\n\n🥇 **Maximum Security Tier:**\n• **Searx** - Open-source, self-hostable, no logs\n• **MetaGer** - German servers, proxy protection\n• **Swisscows** - Swiss privacy laws, no data retention\n\n🥈 **High Security Tier:**\n• **DuckDuckGo** - Tor .onion available, no tracking\n• **Startpage** - Anonymous proxy viewing\n• **Brave Search** - Independent, privacy-first\n\n🛡️ **Security Features to Look For:**\n• HTTPS encryption (all listed have this)\n• No logging policies\n• Onion/Tor support\n• Proxy viewing options\n• Open-source code\n\n🌍 **For Different Regions:**\n• **Europe:** MetaGer, Swisscows (GDPR protection)\n• **Global:** Searx instances worldwide\n• **Tor Users:** DuckDuckGo .onion version\n\nNeed specific security features explained?', 'assistant');
+                return;
+            }
+            
+            // ACADEMIC & RESEARCH QUESTIONS
+            if (msgLower.includes('scientific papers') || msgLower.includes('research papers') || msgLower.includes('academic')) {
+                this.addMessage('📚 **Best Search Engines for Scientific Papers:**\n\n🏆 **Academic Powerhouses:**\n• **Google Scholar** - Largest database, 200M+ papers, free\n• **Semantic Scholar** - AI-powered insights, 200M+ papers\n• **Microsoft Academic** - Research graph analysis\n• **PubMed** - 30M+ biomedical literature\n• **arXiv** - Physics, math, CS preprints\n• **ResearchGate** - 20M+ researchers, collaboration\n\n📖 **By Subject Area:**\n• **Medicine/Health:** PubMed, Cochrane Library\n• **Physics/Math:** arXiv, MathSciNet\n• **Computer Science:** DBLP, ACM Digital Library\n• **Engineering:** IEEE Xplore\n• **Social Sciences:** JSTOR, SSRN\n\n🔍 **Advanced Features:**\n• Citation tracking\n• Impact factor analysis\n• Full-text access\n• Research collaboration tools\n• Alert systems for new papers\n\n💡 **Pro Tips:**\n• Start with Google Scholar for broad searches\n• Use subject-specific databases for deep research\n• Check university library access for paywalled content\n\nWhat research field are you working in?', 'assistant');
+                return;
+            }
+            
+            if (msgLower.includes('research databases')) {
+                this.addMessage('🗃️ **Research Databases vs Regular Search Engines:**\n\n🎓 **Research Databases:**\n✅ Peer-reviewed, quality-controlled content\n✅ Advanced citation tracking\n✅ Subject-specific organization\n✅ Academic credibility indicators\n✅ Full metadata (authors, institutions, etc.)\n❌ Often paywalled\n❌ Smaller scope per database\n\n🌐 **Regular Search Engines:**\n✅ Massive content volume\n✅ Free and instant access\n✅ Real-time information\n✅ Diverse content types\n❌ Quality varies widely\n❌ No peer review guarantee\n\n🎯 **When to Use Each:**\n• **Academic Research:** Use specialized databases\n• **Literature Reviews:** Start with Google Scholar\n• **Current Events:** Regular search engines\n• **Background Info:** Mix of both\n\n🔥 **Best of Both Worlds:**\n• **Google Scholar** - Academic + accessible\n• **Semantic Scholar** - AI insights + free\n• **ResearchGate** - Papers + networking\n\nNeed help accessing paywalled research?', 'assistant');
+                return;
+            }
+            
+            // DEVELOPER & TECH QUESTIONS
+            if (msgLower.includes('code search') || (msgLower.includes('search') && msgLower.includes('code'))) {
+                this.addMessage('💻 **Code Search Engines - Developer Paradise!**\n\n🏆 **Essential Code Platforms:**\n• **GitHub** - 100M+ repositories, world\'s largest\n• **GitLab** - DevOps integration, CI/CD pipelines\n• **Bitbucket** - Atlassian ecosystem integration\n• **SourceForge** - Open-source project hosting\n\n🔍 **Specialized Code Search:**\n• **Searchcode** - 7M+ repositories, syntax highlighting\n• **Sourcegraph** - Universal code search, enterprise\n• **OpenGrok** - Source code cross-referencing\n• **Hound** - Lightning-fast code search\n\n💡 **Q&A Platforms:**\n• **Stack Overflow** - 21M+ programming questions\n• **Stack Exchange** - Specialized programming communities\n• **Dev.to** - Developer articles and discussions\n• **Reddit** - r/programming communities\n\n🎨 **Code Sharing & Demos:**\n• **CodePen** - Frontend playground, live demos\n• **JSFiddle** - JavaScript testing environment\n• **Repl.it** - Online IDE, collaborative coding\n• **CodeSandbox** - Web development playground\n\n🚀 **Pro Developer Tips:**\n• Use GitHub search operators: language:javascript stars:>100\n• Stack Overflow for specific error solutions\n• CodePen for UI/UX inspiration\n\nWhat programming language or problem are you working on?', 'assistant');
+                return;
+            }
+            
+            if (msgLower.includes('github') && (msgLower.includes('repository') || msgLower.includes('documentation'))) {
+                this.addMessage('🐙 **GitHub Search & Documentation Mastery:**\n\n🔍 **Advanced GitHub Search:**\n• `language:python stars:>1000` - Popular Python projects\n• `topic:machine-learning` - ML repositories\n• `filename:package.json` - Find Node.js projects\n• `extension:md readme` - Find good documentation\n• `user:microsoft language:typescript` - Microsoft TS repos\n\n📚 **Documentation Discovery:**\n• **GitHub Pages** - Project documentation sites\n• **README files** - Quick project overviews\n• **Wiki sections** - Detailed guides\n• **Issues/Discussions** - Community knowledge\n\n🏆 **Top Documentation Platforms:**\n• **GitBook** - Beautiful documentation\n• **Notion** - Collaborative docs\n• **Confluence** - Enterprise documentation\n• **Read the Docs** - Python ecosystem docs\n• **Gitiles** - Google\'s Git documentation\n\n💡 **Documentation Search Tips:**\n• Search within repositories: `in:readme api documentation`\n• Find examples: `filename:example language:javascript`\n• Discover tutorials: `tutorial getting-started language:python`\n\n🚀 **Quick Actions:**\n• Press `/` on any GitHub page for search\n• Use browser extensions like Octotree\n• Star repositories for easy access later\n\nNeed help with specific GitHub search queries?', 'assistant');
+                return;
+            }
+            
+            // VISUAL & CREATIVE QUESTIONS
+            if (msgLower.includes('free') && (msgLower.includes('images') || msgLower.includes('photos') || msgLower.includes('pictures'))) {
+                this.addMessage('🎨 **Free Image Search Engines - Creative Goldmine!**\n\n🏆 **Premium Free Photo Platforms:**\n• **Unsplash** - 3M+ high-res photos, commercial use OK\n• **Pexels** - Curated collection, excellent quality\n• **Pixabay** - 2.4M+ images, vectors, videos\n• **Burst by Shopify** - Business-focused photos\n\n🎭 **Creative Commons & Open Source:**\n• **Flickr Creative Commons** - Massive variety\n• **Wikimedia Commons** - Educational images\n• **Openverse** - Cross-platform CC search\n• **Free Images** - Large collection, easy search\n\n🎯 **Specialized Visual Search:**\n• **StockVault** - Graphics, textures, backgrounds\n• **Freepik** - Vectors, PSD files (attribution required)\n• **Vecteezy** - Vector graphics and illustrations\n• **Gratisography** - Quirky, unique photos\n\n⚡ **Vector & Graphics:**\n• **Heroicons** - Beautiful SVG icons\n• **Feather Icons** - Simple, clean icon set\n• **Illustration Gallery** - Free illustrations\n• **DrawKit** - Hand-drawn illustrations\n\n📋 **Usage Rights Guide:**\n• ✅ **Commercial use** - Can use for business\n• ✅ **No attribution** - No credit required\n• ⚠️ **Attribution required** - Must credit creator\n• ❌ **Editorial only** - No commercial use\n\nWhat type of images are you looking for?', 'assistant');
+                return;
+            }
+            
+            if (msgLower.includes('copyright') && msgLower.includes('free')) {
+                this.addMessage('⚖️ **Copyright-Free Media Sources - Safe & Legal!**\n\n🛡️ **100% Copyright-Free Platforms:**\n• **Unsplash** - All photos free for any use\n• **Pixabay** - Images, videos, music all copyright-free\n• **Pexels** - Commercial use, no attribution needed\n• **StockVault** - Completely free stock media\n\n📜 **Creative Commons Licenses:**\n• **CC0** - No rights reserved, public domain\n• **CC BY** - Attribution required only\n• **CC BY-SA** - Attribution + share-alike\n• **CC BY-NC** - Non-commercial use only\n\n🎵 **Copyright-Free Audio:**\n• **Freesound** - Sound effects, CC licensed\n• **Incompetech** - Royalty-free music by Kevin MacLeod\n• **YouTube Audio Library** - Free music for videos\n• **Zapsplat** - Professional sound effects\n\n🎬 **Video & Motion:**\n• **Pixabay Videos** - HD stock footage\n• **Pexels Videos** - Professional video clips\n• **Coverr** - Homepage background videos\n• **Mazwai** - Artistic video clips\n\n🔍 **How to Verify Rights:**\n• Check the license clearly stated\n• Look for CC0 or public domain marks\n• Download from reputable platforms only\n• When in doubt, contact the creator\n\n💡 **Pro Legal Tip:** Always keep a record of where you downloaded media and what license it had!\n\nNeed help finding specific types of copyright-free content?', 'assistant');
+                return;
+            }
+            
+            // COMPARISON QUESTIONS
+            if ((msgLower.includes('google') && msgLower.includes('bing') && msgLower.includes('duckduckgo')) || 
+                (msgLower.includes('compare') && msgLower.includes('search engines'))) {
+                this.addMessage('⚖️ **Google vs Bing vs DuckDuckGo - Complete Comparison:**\n\n🔵 **Google:**\n✅ Largest search index (billions of pages)\n✅ Advanced AI and machine learning\n✅ Integrated services (Maps, Images, News)\n✅ Local search excellence\n✅ Voice search and mobile optimization\n❌ Heavy tracking and data collection\n❌ Filter bubbles and personalized results\n❌ Privacy concerns\n\n🟦 **Bing:**\n✅ Microsoft integration (Office, Windows)\n✅ Rewards program for searches\n✅ Better for video search\n✅ Visual search capabilities\n✅ Chat integration with GPT\n❌ Smaller market share\n❌ Less comprehensive than Google\n❌ Still tracks users\n\n🦆 **DuckDuckGo:**\n✅ Zero tracking, complete privacy\n✅ Clean, unbiased results\n✅ !Bang shortcuts for quick searches\n✅ No filter bubbles\n✅ Tor browser compatible\n❌ Smaller search index\n❌ Fewer advanced features\n❌ Less local search capability\n\n🏆 **Best Use Cases:**\n• **Google:** Research, local search, comprehensive results\n• **Bing:** Microsoft users, visual search, rewards\n• **DuckDuckGo:** Privacy, unbiased results, quick searches\n\n💡 **Pro Strategy:** Use DuckDuckGo as default, Google for specific research, Bing for rewards!\n\nWhich search engine features matter most to you?', 'assistant');
+                return;
+            }
+            
+            // INTERNATIONAL QUESTIONS
+            if (msgLower.includes('search engines') && (msgLower.includes('country') || msgLower.includes('countries') || msgLower.includes('international'))) {
+                this.addMessage('🌍 **Search Engines Popular in Different Countries:**\n\n🇷🇺 **Russia - Yandex (65% market share):**\n• Superior Cyrillic language support\n• Local services integration (Maps, Taxi, Mail)\n• Machine learning and AI features\n• Popular across former Soviet states\n\n🇨🇳 **China - Baidu (70% market share):**\n• Optimized for Chinese language and culture\n• AI-powered features and voice search\n• Integrated with Chinese digital ecosystem\n• Dominant in mainland China\n\n🇰🇷 **South Korea - Naver (60% market share):**\n• Korean language optimization\n• Blog and cafe integration\n• Visual search capabilities\n• Local services and shopping\n\n🇨🇿 **Czech Republic - Seznam (50% market share):**\n• Czech language specialization\n• Local news and services integration\n• Weather and email services\n• Strong local presence\n\n🇺🇸🇪🇺 **Global Leaders:**\n• **Google** - Dominant worldwide (90%+ in most countries)\n• **Bing** - Strong in US, growing globally\n• **Yahoo** - Still popular in Japan, Taiwan\n\n🔍 **Regional Preferences:**\n• **Europe:** DuckDuckGo gaining privacy-conscious users\n• **Middle East:** Google dominant, local engines emerging\n• **Africa:** Google mobile search leading\n• **Latin America:** Google, with regional players\n\n💡 **Why Local Engines Matter:**\n• Better language understanding\n• Cultural relevance\n• Local business integration\n• Government compliance\n\nInterested in a specific region\'s search landscape?', 'assistant');
+                return;
+            }
+            
+            // SPECIALIZED QUESTIONS
+            if (msgLower.includes('shopping') || msgLower.includes('price comparison')) {
+                this.addMessage('🛒 **Shopping & Price Comparison Engines:**\n\n💰 **Price Comparison Giants:**\n• **Google Shopping** - Largest product database\n• **Amazon** - Product search and reviews\n• **Bing Shopping** - Microsoft\'s shopping platform\n• **Shopping.com** - eBay\'s comparison engine\n\n🔍 **Specialized Price Hunters:**\n• **PriceGrabber** - Deal finding and coupons\n• **Nextag** - Price comparison and reviews\n• **Shopzilla** - Product discovery platform\n• **BizRate** - Shopping with reviews\n\n🏪 **Niche Shopping Search:**\n• **Etsy** - Handmade and vintage items\n• **eBay** - Auctions and unique finds\n• **AliExpress** - International wholesale\n• **Reverb** - Musical instruments\n• **StockX** - Sneakers and streetwear\n\n📱 **Mobile Shopping Apps:**\n• **Honey** - Automatic coupon finding\n• **Rakuten** - Cashback rewards\n• **RetailMeNot** - Deals and coupons\n• **Flipp** - Local store flyers\n\n💡 **Smart Shopping Tips:**\n• Use multiple comparison engines\n• Check for coupon codes before buying\n• Read reviews across platforms\n• Compare total cost (including shipping)\n• Set up price alerts for big purchases\n\n🎯 **Quick Strategy:** Start with Google Shopping for overview, use specialized engines for deals, always check reviews!\n\nLooking for deals on something specific?', 'assistant');
+                return;
+            }
+            
+            // BASIC COMMAND FALLBACKS
+            if (msgLower.includes('categories') || msgLower.includes('list')) {
                 this.executeCommand('list-categories');
+                return;
             } else if (msgLower.includes('stats') || msgLower.includes('statistics')) {
                 this.executeCommand('site-stats');
+                return;
             } else if (msgLower.includes('trending') || msgLower.includes('popular')) {
                 this.executeCommand('trending-resources');
+                return;
             } else if (msgLower.includes('favorites') || msgLower.includes('saved')) {
                 this.executeCommand('my-favorites');
+                return;
             } else if (msgLower.includes('voice') || msgLower.includes('speak')) {
                 this.executeCommand('voice-command');
-            } else {
-                const intelligenceNote = this.isEnhanced ? ' (Enhanced with SuperBrain 2.5)' : '';
-                const response = `🎯 I understand: "${message}"${intelligenceNote}
-
-💡 **Try These Actions:**
-• Swipe categories above to explore
-• Tap command cards for instant results
-• Ask about trending or your favorites  
-• Use voice commands: /voice-command
-• Type /help to see all options
-
-🚀 **Mobile Tips:**
-• Drag the handle to close
-• Swipe categories left/right
-• Feel the haptic feedback on taps
-• Long press for quick actions (soon!)
-
-What would you like to discover? 🌟`;
-                
-                this.addMessage(response, 'assistant');
+                return;
             }
+            
+            // INTELLIGENT FALLBACK - Now much smarter!
+            const intelligentResponse = this.getSmartFallbackResponse(message, msgLower);
+            this.addMessage(intelligentResponse, 'assistant');
         }
         
         updateHeaderWithIntelligence() {
@@ -2151,6 +2213,66 @@ What would you like to discover? 🌟`;
             } catch (error) {
                 console.warn('Failed to save user preferences:', error);
             }
+        }
+        
+        getSmartFallbackResponse(message, msgLower) {
+            // Analyze the message for intent
+            const userType = this.determineUserType();
+            const categoriesVisited = this.sessionData.categoriesVisited.size;
+            const interactionCount = this.sessionData.interactionCount;
+            
+            // Determine the tone based on user behavior
+            let responseIntro = '';
+            if (userType === 'newbie') {
+                responseIntro = '🌟 **Welcome to Gateway AI!** ';
+            } else if (userType === 'explorer') {
+                responseIntro = `🔍 **Great exploring!** (${categoriesVisited} categories visited) `;
+            } else {
+                responseIntro = '🎯 **I understand your question:** ';
+            }
+            
+            // Suggest relevant actions based on the message content
+            let smartSuggestions = [];
+            
+            if (msgLower.includes('search') || msgLower.includes('find') || msgLower.includes('look')) {
+                smartSuggestions.push('• Try the "Explore Search Engines" card for 39 different search platforms');
+                smartSuggestions.push('• Ask me specific questions like "privacy search engines" or "academic search"');
+            }
+            
+            if (msgLower.includes('privacy') || msgLower.includes('secure') || msgLower.includes('track')) {
+                smartSuggestions.push('• Ask: "Which search engines don\'t track me?"');
+                smartSuggestions.push('• Try: "DuckDuckGo vs Startpage comparison"');
+            }
+            
+            if (msgLower.includes('academic') || msgLower.includes('research') || msgLower.includes('paper')) {
+                smartSuggestions.push('• Ask: "Best search engines for scientific papers"');
+                smartSuggestions.push('• Try: "Research databases vs regular search engines"');
+            }
+            
+            if (msgLower.includes('code') || msgLower.includes('programming') || msgLower.includes('developer')) {
+                smartSuggestions.push('• Ask: "Code search engines for programmers"');
+                smartSuggestions.push('• Try: "GitHub vs Stack Overflow for finding code"');
+            }
+            
+            if (msgLower.includes('image') || msgLower.includes('photo') || msgLower.includes('picture')) {
+                smartSuggestions.push('• Ask: "Free image search engines"');
+                smartSuggestions.push('• Try: "Copyright-free image sources"');
+            }
+            
+            // If no specific suggestions, provide general ones
+            if (smartSuggestions.length === 0) {
+                smartSuggestions = [
+                    '• Tap the "What Can I Ask?" card for conversation examples',
+                    '• Try asking about specific search engine types',
+                    '• Use the category tabs to explore different areas',
+                    '• Ask comparison questions like "X vs Y search engines"'
+                ];
+            }
+            
+            // Build the response
+            const response = `${responseIntro}"${message}"\n\n💡 **Here are some ways I can help:**\n${smartSuggestions.join('\n')}\n\n📱 **Quick Actions:**\n• Swipe categories above to explore\n• Tap command cards for instant results\n• Ask natural questions about search engines\n• Use the "Smart Recommendations" for personalized suggestions\n\n🌟 **Remember:** I specialize in search engines and can answer detailed questions about privacy, features, comparisons, and recommendations!`;
+            
+            return response;
         }
         
         // Debug Panel Methods
