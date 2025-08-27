@@ -746,9 +746,6 @@
         <!-- Enhanced Modal -->
         <div class="ai-modal-overlay" id="aiModal">
             <div class="ai-container">
-                <!-- Drag Handle -->
-                <div class="ai-drag-handle"></div>
-                
                 <!-- Enhanced Header -->
                 <div class="ai-header">
                     <div class="ai-header-content">
@@ -1628,56 +1625,50 @@ What would you like to discover? 🌟`;
         getSuperchargedCommands() {
             return {
                 navigation: [
+                    { id: 'back-to-gateway', icon: '🏠', title: 'Back to Gateway', desc: 'Return to main site', badge: 'exit' },
                     { id: 'list-categories', icon: '📋', title: 'All Categories', desc: 'Complete list of 13 categories', badge: '' },
                     { id: 'site-stats', icon: '📊', title: 'Gateway Stats', desc: '577+ resources overview', badge: '' },
                     { id: 'whats-new', icon: '🆕', title: "What's New", desc: 'Latest updates & features', badge: 'hot' },
                     { id: 'help-navigation', icon: '🧭', title: 'Navigation Help', desc: 'How to use the Gateway', badge: '' },
-                    { id: 'site-tour', icon: '🎯', title: 'Interactive Tour', desc: 'Guided exploration', badge: 'new' },
-                    { id: 'quick-start', icon: '⚡', title: 'Quick Start', desc: 'Get started instantly', badge: '' }
+                    { id: 'site-tour', icon: '🎯', title: 'Interactive Tour', desc: 'Guided exploration', badge: 'new' }
                 ],
                 explorer: [
+                    { id: 'back-to-gateway', icon: '🏠', title: 'Back to Gateway', desc: 'Return to main site', badge: 'exit' },
                     { id: 'explore-search', icon: '🔍', title: 'Search Engines', desc: '39 search platforms', badge: '' },
                     { id: 'explore-tools', icon: '🛠️', title: 'Tools & Utilities', desc: '52 productivity tools', badge: '' },
                     { id: 'explore-entertainment', icon: '🎭', title: 'Entertainment', desc: '51 media platforms', badge: '' },
                     { id: 'explore-knowledge', icon: '📚', title: 'Learning Hub', desc: '53 educational resources', badge: '' },
                     { id: 'explore-more', icon: '➡️', title: 'More Categories', desc: 'All remaining categories', badge: '' },
-                    { id: 'trending-resources', icon: '📈', title: 'Trending Now', desc: 'Popular this week', badge: 'hot' },
-                    { id: 'discover-hidden', icon: '💎', title: 'Hidden Gems', desc: 'Secret tools & resources', badge: 'new' },
-                    { id: 'category-deep-dive', icon: '🕳️', title: 'Deep Dive', desc: 'Explore category in detail', badge: '' }
+                    { id: 'trending-resources', icon: '📈', title: 'Trending Now', desc: 'Popular this week', badge: 'hot' }
                 ],
                 actions: [
+                    { id: 'back-to-gateway', icon: '🏠', title: 'Back to Gateway', desc: 'Return to main site', badge: 'exit' },
                     { id: 'find-ai-tools', icon: '🤖', title: 'AI Tools', desc: 'Discover AI platforms', badge: '' },
                     { id: 'find-design-tools', icon: '🎨', title: 'Design Tools', desc: 'Creative resources', badge: '' },
                     { id: 'search-tips', icon: '💡', title: 'Search Tips', desc: 'Power user tricks', badge: '' },
                     { id: 'random-resource', icon: '🎲', title: 'Surprise Me', desc: 'Random discovery', badge: '' },
-                    { id: 'quick-compare', icon: '⚖️', title: 'Compare Tools', desc: 'Side-by-side analysis', badge: 'new' },
-                    { id: 'workflow-builder', icon: '🔗', title: 'Build Workflow', desc: 'Create tool chains', badge: 'new' },
-                    { id: 'batch-bookmark', icon: '📚', title: 'Batch Bookmark', desc: 'Save multiple resources', badge: 'new' },
-                    { id: 'smart-recommendations', icon: '🎯', title: 'Smart Suggest', desc: 'AI-powered recommendations', badge: 'hot' }
+                    { id: 'quick-compare', icon: '⚖️', title: 'Compare Tools', desc: 'Side-by-side analysis', badge: 'new' }
                 ],
                 personal: [
+                    { id: 'back-to-gateway', icon: '🏠', title: 'Back to Gateway', desc: 'Return to main site', badge: 'exit' },
                     { id: 'my-favorites', icon: '❤️', title: 'My Favorites', desc: 'Your saved resources', badge: 'new' },
                     { id: 'recent-visits', icon: '🕒', title: 'Recent Activity', desc: 'Recently viewed', badge: 'new' },
                     { id: 'personalized-feed', icon: '🎯', title: 'For You', desc: 'AI recommendations', badge: 'new' },
-                    { id: 'usage-stats', icon: '📊', title: 'My Analytics', desc: 'Your activity insights', badge: 'new' },
-                    { id: 'learning-path', icon: '🛤️', title: 'Learning Path', desc: 'Personalized learning journey', badge: 'new' },
-                    { id: 'productivity-insights', icon: '💡', title: 'Insights', desc: 'Usage patterns & tips', badge: 'hot' }
+                    { id: 'usage-stats', icon: '📊', title: 'My Analytics', desc: 'Your activity insights', badge: 'new' }
                 ],
                 advanced: [
+                    { id: 'back-to-gateway', icon: '🏠', title: 'Back to Gateway', desc: 'Return to main site', badge: 'exit' },
                     { id: 'semantic-search', icon: '🔮', title: 'Smart Search', desc: 'AI-powered discovery', badge: 'new' },
                     { id: 'voice-command', icon: '🎙️', title: 'Voice Control', desc: 'Speak your commands', badge: 'new' },
                     { id: 'bulk-actions', icon: '📦', title: 'Bulk Actions', desc: 'Multiple operations', badge: 'new' },
-                    { id: 'api-access', icon: '🔌', title: 'API Access', desc: 'Developer integration', badge: 'new' },
-                    { id: 'automation-rules', icon: '⚙️', title: 'Automation', desc: 'Set up smart rules', badge: 'new' },
-                    { id: 'custom-categories', icon: '🎨', title: 'Custom Categories', desc: 'Create your own groups', badge: 'hot' }
+                    { id: 'api-access', icon: '🔌', title: 'API Access', desc: 'Developer integration', badge: 'new' }
                 ],
                 system: [
+                    { id: 'back-to-gateway', icon: '🏠', title: 'Back to Gateway', desc: 'Return to main site', badge: 'exit' },
                     { id: 'clear-chat', icon: '🧹', title: 'Clear Chat', desc: 'Reset conversation', badge: '' },
                     { id: 'show-commands', icon: '📜', title: 'All Commands', desc: 'Complete command list', badge: '' },
                     { id: 'settings', icon: '⚙️', title: 'Settings', desc: 'Customize experience', badge: 'new' },
-                    { id: 'feedback', icon: '💬', title: 'Feedback', desc: 'Share your thoughts', badge: 'new' },
-                    { id: 'export-data', icon: '📤', title: 'Export Data', desc: 'Download your data', badge: '' },
-                    { id: 'keyboard-shortcuts', icon: '⌨️', title: 'Shortcuts', desc: 'Keyboard commands', badge: '' }
+                    { id: 'feedback', icon: '💬', title: 'Feedback', desc: 'Share your thoughts', badge: 'new' }
                 ]
             };
         }
