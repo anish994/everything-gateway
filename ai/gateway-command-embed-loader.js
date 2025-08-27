@@ -10,7 +10,7 @@
     const loadGatewayAI2 = () => {
         // First, try to load the mobile version
         const script = document.createElement('script');
-        script.src = 'ai/gateway-ai-mobile.js';
+        script.src = `ai/gateway-ai-mobile.js?v=${Date.now()}`;
         script.onload = () => {
             console.log('🚀 Gateway AI 2.0 Mobile Revolution Loaded Successfully!');
         };
