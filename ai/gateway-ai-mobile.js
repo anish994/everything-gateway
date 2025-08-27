@@ -1621,6 +1621,15 @@ What would you like to discover? 🌟`;
                     { id: 'help-navigation', icon: '🧭', title: 'Navigation Help', desc: 'How to use the Gateway', badge: '' },
                     { id: 'site-tour', icon: '🎯', title: 'Interactive Tour', desc: 'Guided exploration', badge: 'new' }
                 ],
+                conversation: [
+                    { id: 'back-to-gateway', icon: '🏠', title: 'Back to Gateway', desc: 'Return to main site', badge: 'exit' },
+                    { id: 'chat-search-overview', icon: '🔍', title: 'About Search Engines', desc: '"Tell me about search engines"', badge: 'try' },
+                    { id: 'chat-privacy', icon: '🔒', title: 'Privacy Search', desc: '"Show me private search engines"', badge: 'try' },
+                    { id: 'chat-academic', icon: '📚', title: 'Academic Research', desc: '"Best for research papers"', badge: 'try' },
+                    { id: 'chat-compare', icon: '⚖️', title: 'Compare Engines', desc: '"DuckDuckGo vs Google"', badge: 'try' },
+                    { id: 'chat-developer', icon: '💻', title: 'Code Search', desc: '"Code search engines"', badge: 'try' },
+                    { id: 'chat-visual', icon: '🎨', title: 'Visual Search', desc: '"Find free images"', badge: 'try' }
+                ],
                 explorer: [
                     { id: 'back-to-gateway', icon: '🏠', title: 'Back to Gateway', desc: 'Return to main site', badge: 'exit' },
                     { id: 'explore-search', icon: '🔍', title: 'Search Engines', desc: '39 search platforms', badge: '' },
