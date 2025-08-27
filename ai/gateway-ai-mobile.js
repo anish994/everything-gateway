@@ -1475,7 +1475,11 @@ Full settings panel launching soon! 🌟`;
             }
             
             // Fallback to standard processing
-            if (msgLower.includes('categories') || msgLower.includes('list')) {
+            // Quick exit commands - highest priority
+            if (msgLower === 'exit' || msgLower === 'home' || msgLower === 'back' || 
+                msgLower === 'gateway' || msgLower.includes('back to gateway')) {
+                this.executeCommand('back-to-gateway');
+            } else if (msgLower.includes('categories') || msgLower.includes('list')) {
                 this.executeCommand('list-categories');
             } else if (msgLower.includes('stats') || msgLower.includes('statistics')) {
                 this.executeCommand('site-stats');
