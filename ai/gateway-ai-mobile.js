@@ -753,7 +753,6 @@
                             <div class="ai-status"></div>
                             Gateway AI 2.0
                         </div>
-                        <button class="ai-close" id="aiClose" aria-label="Close AI Assistant">×</button>
                     </div>
                     <div class="ai-subtitle">Mobile-first intelligent assistant</div>
                 </div>
@@ -929,54 +928,7 @@
                 console.error('❌ FAB element not found!');
             }
             
-                if (this.close) {
-                    // Direct assignment for maximum compatibility
-                    this.close.onclick = (e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        console.log('❌ X button clicked');
-                        this.debugLog('❌ X button clicked via onclick');
-                        
-                        // ABSOLUTE OVERRIDE - directly manipulate DOM
-                        const modal = document.getElementById('aiModal');
-                        if (modal) {
-                            modal.classList.remove('active');
-                            document.body.classList.remove('ai-modal-open');
-                            console.log('🔴 DIRECT modal close executed');
-                            this.debugLog('🔴 DIRECT modal close executed');
-                            this.isOpen = false;
-                        }
-                    };
-                    
-                    // Still try the regular event listeners as backup
-                    this.close.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        console.log('❌ X button clicked via addEventListener');
-                        this.debugLog('❌ X button clicked via addEventListener');
-                        this.closeModal();
-                    });
-                    this.close.addEventListener('touchend', (e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        console.log('❌ X button touched');
-                        this.debugLog('❌ X button touched');
-                        this.closeModal();
-                    });
-                    
-                    // Make the X button VERY visible
-                    this.close.style.fontSize = '32px';
-                    this.close.style.fontWeight = 'bold';
-                    this.close.style.width = '50px';
-                    this.close.style.height = '50px';
-                    this.close.style.border = '2px solid white';
-                    
-                    console.log('✅ X button events attached with DIRECT override');
-                    this.debugLog('✅ X button events attached with DIRECT override');
-                } else {
-                    console.error('❌ Close button element not found!');
-                    this.debugLog('❌ ERROR: Close button element not found!');
-                }
+// X button removed - users should use 'Back to Gateway' command
             
             this.modal?.addEventListener('click', (e) => {
                 if (e.target === this.modal) {
@@ -1036,8 +988,7 @@
                 }
             });
             
-            // Mobile gestures
-            this.initializeTouchGestures();
+            // Mobile gestures - Only category swipe enabled
             this.initializeCategorySwipe();
         }
         
