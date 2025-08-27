@@ -907,20 +907,13 @@
             // Initialize debug panel
             this.initializeDebugPanel();
             
-            // FAB and close - Add both click and touch events for mobile
+            // FAB - Use click events only for better scrolling experience
             if (this.fab) {
                 this.fab.addEventListener('click', (e) => {
                     e.preventDefault();
                     e.stopPropagation();
-                    console.log('�︢ FAB clicked');
-                    this.debugLog('�︢ FAB clicked');
-                    this.open();
-                });
-                this.fab.addEventListener('touchend', (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    console.log('�︢ FAB touched');
-                    this.debugLog('�︢ FAB touched');
+                    console.log('🎯 FAB clicked');
+                    this.debugLog('🎯 FAB clicked');
                     this.open();
                 });
                 console.log('✅ FAB events attached');
@@ -943,15 +936,9 @@
                 }
             });
             
-            // Category selection - Enhanced mobile support
+            // Category selection - Use click events only for better scrolling
             this.categoryChips.forEach(chip => {
                 chip.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    this.selectCategory(chip.dataset.category);
-                    this.addHapticFeedback();
-                });
-                chip.addEventListener('touchend', (e) => {
                     e.preventDefault();
                     e.stopPropagation();
                     this.selectCategory(chip.dataset.category);
@@ -969,11 +956,6 @@
             });
             
             this.send?.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                this.sendMessage();
-            });
-            this.send?.addEventListener('touchend', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
                 this.sendMessage();
@@ -1189,14 +1171,8 @@
                 const commandId = card.dataset.commandId;
                 if (!commandId) return;
                 
-                // Add both click and touchend events for maximum compatibility
+                // Use click events only for better scrolling experience
                 card.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    this.executeCommand(commandId);
-                });
-                
-                card.addEventListener('touchend', (e) => {
                     e.preventDefault();
                     e.stopPropagation();
                     this.executeCommand(commandId);
