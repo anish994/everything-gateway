@@ -1159,6 +1159,8 @@
                 activeChip.scrollIntoView({ behavior: 'smooth', inline: 'center' });
             }
             
+            // Always show commands grid when switching categories
+            this.hideMessages();
             this.renderCommands();
         }
         
