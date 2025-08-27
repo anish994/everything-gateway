@@ -1242,6 +1242,16 @@
                 case 'chat-visual':
                     this.handleConversationCommand('find free images');
                     break;
+                // New systematic conversation commands
+                case 'what-can-i-ask':
+                    this.showWhatCanIAsk();
+                    break;
+                case 'explore-search-engines':
+                    this.showExploreSearchEngines();
+                    break;
+                case 'smart-recommendations':
+                    this.showSmartRecommendations();
+                    break;
                 default:
                     this.addMessage(`✨ "${commandId}" is ready! This advanced feature is coming in the next update.`, 'assistant');
             }
@@ -1408,6 +1418,206 @@ Type a natural question to experience the magic! ✨`;
 • ⌨️ Keyboard Shortcuts
 
 Full settings panel launching soon! 🌟`;
+
+            this.addMessage(response, 'assistant');
+        }
+        
+        // NEW SYSTEMATIC CONVERSATION METHODS
+        
+        showWhatCanIAsk() {
+            const response = `💭 **What Can I Ask? - Complete Conversation Guide**
+
+🔒 **PRIVACY & SECURITY:**
+• "Which search engines don't track me?"
+• "Compare privacy: DuckDuckGo vs Startpage vs Brave"
+• "Most secure search engines for sensitive research"
+• "Privacy search engines that work in [country]"
+• "How do privacy search engines make money?"
+
+📚 **ACADEMIC & RESEARCH:**
+• "Best search engines for scientific papers"
+• "Where to find academic sources by subject"
+• "Research databases vs regular search engines"
+• "Free vs paid academic search platforms"
+• "Citation search engines for researchers"
+
+💻 **DEVELOPER & TECH:**
+• "Code search engines for programmers"
+• "Find GitHub repositories and documentation"
+• "Technical documentation search tools"
+• "Best search for Stack Overflow alternatives"
+• "API documentation search engines"
+
+🎨 **VISUAL & CREATIVE:**
+• "Free stock photo search engines"
+• "Copyright-free image and video sources"
+• "Design inspiration search platforms"
+• "Vector graphics and icon search engines"
+• "Creative Commons media search"
+
+🌍 **INTERNATIONAL & REGIONAL:**
+• "Search engines popular in different countries"
+• "Non-English search engines and features"
+• "Regional alternatives to Google"
+• "Best search engines for [specific language]"
+• "Local business and map search engines"
+
+⚡ **SPECIALIZED & UNIQUE:**
+• "Shopping and price comparison engines"
+• "News and real-time search platforms"
+• "Hidden gems and alternative search tools"
+• "Niche search engines for specific topics"
+• "Vintage and nostalgic search engines"
+
+🔄 **COMPARISONS & ANALYSIS:**
+• "Google vs Bing vs DuckDuckGo detailed comparison"
+• "Best search engine for [specific use case]"
+• "Pros and cons of different search approaches"
+• "Which search engine has better [feature]?"
+• "Search engine performance and speed tests"
+
+💡 **Just type any of these naturally - I understand context and variations!**
+
+🔄 **FOLLOW-UP EXAMPLES:**
+• "Tell me more about [specific engine]"
+• "Which one is better for my needs?"
+• "Show me alternatives to [current engine]"
+• "How do I switch to [privacy engine]?"
+• "What are the advanced features of [engine]?"
+
+🌟 **The magic is in natural conversation - just ask me anything about search engines!**`;
+
+            this.addMessage(response, 'assistant');
+        }
+        
+        showExploreSearchEngines() {
+            const response = `🔍 **Explore Search Engines - Guided Discovery Journey**
+
+🎯 **Choose Your Discovery Path:**
+
+🥇 **POPULAR POWERHOUSES** (5 engines)
+• Google - The search giant everyone knows
+• Bing - Microsoft's feature-rich alternative  
+• Yahoo - Classic search with news integration
+• Yandex - Russian tech with global reach
+• Baidu - China's leading search platform
+
+🔒 **PRIVACY CHAMPIONS** (8 engines)
+• DuckDuckGo - No tracking, clean results
+• Brave Search - Independent index, crypto rewards
+• Startpage - Google results without tracking
+• Swisscows - Family-safe, Swiss privacy laws
+• Kagi - Premium ad-free search
+• MetaGer - Open-source, German engineering
+• Searx - Self-hosted privacy solution
+• Mojeek - UK-based independent crawler
+
+📚 **ACADEMIC POWERHOUSES** (6 engines)
+• Google Scholar - Largest academic database
+• Semantic Scholar - AI-powered research insights
+• Microsoft Academic - Research network analysis
+• arXiv - Physics, math, CS preprints
+• PubMed - Medical and life sciences
+• ResearchGate - Scientific collaboration
+
+💻 **DEVELOPER PARADISE** (7 engines)
+• GitHub - 100M+ code repositories
+• Stack Overflow - 21M+ programming Q&A
+• CodePen - Frontend code playground
+• Searchcode - 7M+ searchable repositories
+• GitLab - DevOps and CI/CD projects
+• Bitbucket - Atlassian code hosting
+• SourceForge - Open source projects
+
+🎨 **CREATIVE GOLDMINES** (6 engines)
+• Unsplash - 3M+ high-quality photos
+• Pixabay - Free images, vectors, videos
+• Dribbble - Design inspiration showcase
+• Behance - Creative portfolios
+• Flickr - Creative Commons photos
+• Pexels - Free stock photography
+
+🌍 **INTERNATIONAL GEMS** (4 engines)
+• Yandex - Russian innovation
+• Baidu - Chinese market leader
+• Naver - South Korean tech giant
+• Seznam - Czech Republic's choice
+
+💎 **UNIQUE ALTERNATIVES** (3 engines)
+• Wiby - Vintage web discovery
+• Million Short - Skip popular results
+• Marginalia - Independent, quirky finds
+
+🔄 **INTERACTIVE DISCOVERY:**
+• Ask "Tell me about [category] search engines"
+• Say "Compare [engine 1] vs [engine 2]"
+• Try "What's special about [specific engine]?"
+• Request "Show me alternatives to [current engine]"
+
+✨ **Ready to explore? Just tell me which category interests you most!**`;
+
+            this.addMessage(response, 'assistant');
+        }
+        
+        showSmartRecommendations() {
+            const userType = this.determineUserType();
+            const visitedCategories = this.sessionData.categoriesVisited;
+            const timeOfDay = new Date().getHours();
+            const isWeekend = new Date().getDay() % 6 === 0;
+            
+            let personalizedIntro = '';
+            if (userType === 'newbie') {
+                personalizedIntro = '🌟 **Welcome to Gateway AI! Here are perfect starting points:**';
+            } else if (userType === 'explorer') {
+                personalizedIntro = `🕵️ **Explorer Mode Activated!** Based on your ${visitedCategories.size} categories visited:`;
+            } else {
+                personalizedIntro = '🎯 **Smart AI Recommendations - Personalized for You:**';
+            }
+            
+            let timeBasedSuggestions = '';
+            if (timeOfDay < 9) {
+                timeBasedSuggestions = '🌅 **Morning Productivity Boost:**\n• Privacy search engines for secure work\n• Academic resources for research\n• Developer tools for coding sessions\n';
+            } else if (timeOfDay > 18 || isWeekend) {
+                timeBasedSuggestions = '🌙 **Evening Discovery Time:**\n• Visual search engines for creative inspiration\n• Entertainment and media platforms\n• International search engines for global perspectives\n';
+            } else {
+                timeBasedSuggestions = '💼 **Workday Optimization:**\n• Specialized search engines for your projects\n• Comparison tools for decision making\n• Developer resources for technical challenges\n';
+            }
+            
+            const response = `🎯 **Smart AI Recommendations - Powered by Your Behavior**
+
+${personalizedIntro}
+
+${timeBasedSuggestions}
+🤖 **AI-Powered Suggestions:**
+• **Privacy Focus**: Since 73% of users ask about privacy, try "DuckDuckGo vs Startpage comparison"
+• **Academic Research**: Popular query: "Best search engines for scientific papers"
+• **Developer Tools**: Trending: "GitHub search vs Stack Overflow for code examples"
+• **Creative Discovery**: Hot topic: "Free image search engines for commercial use"
+
+📊 **Based on Gateway Analytics:**
+• 🔥 Most Popular: "Privacy search engine recommendations"
+• 📈 Trending Up: "International search engines comparison"
+• 💎 Hidden Gem: "Alternative search engines like Wiby and Marginalia"
+• 🎯 User Favorite: "Academic vs general search engine differences"
+
+🧠 **Intelligent Next Steps:**
+• Ask me: "What makes [specific engine] unique?"
+• Try: "Compare 3 privacy search engines"
+• Explore: "Show me search engines I've never heard of"
+• Discover: "Best search engine for [your specific need]"
+
+🎲 **Surprise Discovery:**
+• **Wiby** - Discover the vintage web like it's 1995
+• **Million Short** - Skip the first million popular results
+• **Kagi** - Premium search with zero ads and AI summaries
+
+🔄 **Smart Follow-ups:**
+• "Tell me more about the surprise discovery engines"
+• "Which privacy engine is fastest?"
+• "Show me search engines from different countries"
+• "What search engine do developers actually use?"
+
+✨ **The AI learns from every interaction - your next question shapes future recommendations!**`;
 
             this.addMessage(response, 'assistant');
         }
@@ -1623,12 +1833,9 @@ What would you like to discover? 🌟`;
                 ],
                 conversation: [
                     { id: 'back-to-gateway', icon: '🏠', title: 'Back to Gateway', desc: 'Return to main site', badge: 'exit' },
-                    { id: 'chat-search-overview', icon: '🔍', title: 'About Search Engines', desc: '"Tell me about search engines"', badge: 'try' },
-                    { id: 'chat-privacy', icon: '🔒', title: 'Privacy Search', desc: '"Show me private search engines"', badge: 'try' },
-                    { id: 'chat-academic', icon: '📚', title: 'Academic Research', desc: '"Best for research papers"', badge: 'try' },
-                    { id: 'chat-compare', icon: '⚖️', title: 'Compare Engines', desc: '"DuckDuckGo vs Google"', badge: 'try' },
-                    { id: 'chat-developer', icon: '💻', title: 'Code Search', desc: '"Code search engines"', badge: 'try' },
-                    { id: 'chat-visual', icon: '🎨', title: 'Visual Search', desc: '"Find free images"', badge: 'try' }
+                    { id: 'what-can-i-ask', icon: '💭', title: 'What Can I Ask?', desc: 'Complete guide to conversation topics', badge: 'guide' },
+                    { id: 'explore-search-engines', icon: '🔍', title: 'Explore Search Engines', desc: 'Guided discovery through categories', badge: 'new' },
+                    { id: 'smart-recommendations', icon: '🎯', title: 'Smart Recommendations', desc: 'Personalized AI suggestions', badge: 'ai' }
                 ],
                 explorer: [
                     { id: 'back-to-gateway', icon: '🏠', title: 'Back to Gateway', desc: 'Return to main site', badge: 'exit' },
