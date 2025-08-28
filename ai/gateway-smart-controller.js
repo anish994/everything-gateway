@@ -334,6 +334,69 @@ class GatewaySmartController {
             'wave motion cannon': { url: 'https://wavemotioncannon.com', name: 'Wave Motion Cannon', category: 'News & Industry' }
         };
         
+        // 💰 Crypto & Blockchain Database - Digital assets ecosystem mapped by keywords
+        this.cryptoDatabase = {
+            // Trading Exchanges
+            'coinbase': { url: 'https://coinbase.com', name: 'Coinbase', category: 'Trading Exchanges' },
+            'binance': { url: 'https://binance.com', name: 'Binance', category: 'Trading Exchanges' },
+            'kraken': { url: 'https://kraken.com', name: 'Kraken', category: 'Trading Exchanges' },
+            'gemini': { url: 'https://gemini.com', name: 'Gemini', category: 'Trading Exchanges' },
+            'ftx': { url: 'https://ftx.com', name: 'FTX', category: 'Trading Exchanges' },
+            'kucoin': { url: 'https://kucoin.com', name: 'KuCoin', category: 'Trading Exchanges' },
+            'huobi': { url: 'https://huobi.com', name: 'Huobi', category: 'Trading Exchanges' },
+            'crypto.com': { url: 'https://crypto.com', name: 'Crypto.com', category: 'Trading Exchanges' },
+            'bitfinex': { url: 'https://bitfinex.com', name: 'Bitfinex', category: 'Trading Exchanges' },
+            'okx': { url: 'https://okx.com', name: 'OKX', category: 'Trading Exchanges' },
+            'bybit': { url: 'https://bybit.com', name: 'Bybit', category: 'Trading Exchanges' },
+            'bittrex': { url: 'https://bittrex.com', name: 'Bittrex', category: 'Trading Exchanges' },
+            
+            // DeFi Protocols
+            'uniswap': { url: 'https://uniswap.org', name: 'Uniswap', category: 'DeFi Protocols' },
+            'aave': { url: 'https://aave.com', name: 'Aave', category: 'DeFi Protocols' },
+            'compound': { url: 'https://compound.finance', name: 'Compound', category: 'DeFi Protocols' },
+            'sushiswap': { url: 'https://sushi.com', name: 'SushiSwap', category: 'DeFi Protocols' },
+            'pancakeswap': { url: 'https://pancakeswap.finance', name: 'PancakeSwap', category: 'DeFi Protocols' },
+            'curve finance': { url: 'https://curve.fi', name: 'Curve Finance', category: 'DeFi Protocols' },
+            'curve': { url: 'https://curve.fi', name: 'Curve Finance', category: 'DeFi Protocols' },
+            'makerdao': { url: 'https://makerdao.com', name: 'MakerDAO', category: 'DeFi Protocols' },
+            'maker dao': { url: 'https://makerdao.com', name: 'MakerDAO', category: 'DeFi Protocols' },
+            'yearn finance': { url: 'https://yearn.finance', name: 'Yearn Finance', category: 'DeFi Protocols' },
+            'yearn': { url: 'https://yearn.finance', name: 'Yearn Finance', category: 'DeFi Protocols' },
+            '1inch': { url: 'https://1inch.io', name: '1inch', category: 'DeFi Protocols' },
+            'balancer': { url: 'https://balancer.fi', name: 'Balancer', category: 'DeFi Protocols' },
+            'synthetix': { url: 'https://synthetix.io', name: 'Synthetix', category: 'DeFi Protocols' },
+            
+            // NFT Marketplaces
+            'opensea': { url: 'https://opensea.io', name: 'OpenSea', category: 'NFT Marketplaces' },
+            'blur': { url: 'https://blur.io', name: 'Blur', category: 'NFT Marketplaces' },
+            'magic eden': { url: 'https://magiceden.io', name: 'Magic Eden', category: 'NFT Marketplaces' },
+            'superrare': { url: 'https://superrare.com', name: 'SuperRare', category: 'NFT Marketplaces' },
+            'foundation': { url: 'https://foundation.app', name: 'Foundation', category: 'NFT Marketplaces' },
+            'rarible': { url: 'https://rarible.com', name: 'Rarible', category: 'NFT Marketplaces' },
+            'nifty gateway': { url: 'https://niftygateway.com', name: 'Nifty Gateway', category: 'NFT Marketplaces' },
+            'async art': { url: 'https://async.art', name: 'Async Art', category: 'NFT Marketplaces' },
+            'looksrare': { url: 'https://looksrare.org', name: 'LooksRare', category: 'NFT Marketplaces' },
+            'x2y2': { url: 'https://x2y2.io', name: 'X2Y2', category: 'NFT Marketplaces' },
+            
+            // Analytics & Tools
+            'etherscan': { url: 'https://etherscan.io', name: 'Etherscan', category: 'Analytics & Tools' },
+            'blockchain.info': { url: 'https://blockchain.info', name: 'Blockchain.info', category: 'Analytics & Tools' },
+            'blockchain info': { url: 'https://blockchain.info', name: 'Blockchain.info', category: 'Analytics & Tools' },
+            'coingecko': { url: 'https://coingecko.com', name: 'CoinGecko', category: 'Analytics & Tools' },
+            'coinmarketcap': { url: 'https://coinmarketcap.com', name: 'CoinMarketCap', category: 'Analytics & Tools' },
+            'defipulse': { url: 'https://defipulse.com', name: 'DeFiPulse', category: 'Analytics & Tools' },
+            'defi pulse': { url: 'https://defipulse.com', name: 'DeFiPulse', category: 'Analytics & Tools' },
+            'dune analytics': { url: 'https://dune.com', name: 'Dune Analytics', category: 'Analytics & Tools' },
+            'dune': { url: 'https://dune.com', name: 'Dune Analytics', category: 'Analytics & Tools' },
+            'messari': { url: 'https://messari.io', name: 'Messari', category: 'Analytics & Tools' },
+            'the graph': { url: 'https://thegraph.com', name: 'The Graph', category: 'Analytics & Tools' },
+            'nansen': { url: 'https://nansen.ai', name: 'Nansen', category: 'Analytics & Tools' },
+            'chainalysis': { url: 'https://chainalysis.com', name: 'Chainalysis', category: 'Analytics & Tools' },
+            'solscan': { url: 'https://solscan.io', name: 'Solscan', category: 'Analytics & Tools' },
+            'defillama': { url: 'https://defillama.com', name: 'DeFiLlama', category: 'Analytics & Tools' },
+            'defi llama': { url: 'https://defillama.com', name: 'DeFiLlama', category: 'Analytics & Tools' }
+        };
+        
         // 📰 News & Trends Database - News sources mapped by keywords
         this.newsDatabase = {
             // Global News
@@ -778,7 +841,8 @@ class GatewaySmartController {
         console.log('🏃 Loaded', Object.keys(this.healthDatabase).length, 'health & fitness platforms');
         console.log('🌍 Loaded', Object.keys(this.socialDatabase).length, 'social media & community platforms');
         console.log('🛍️ Loaded', Object.keys(this.lifestyleDatabase).length, 'lifestyle & shopping platforms');
-        console.log('🗾 Loaded', Object.keys(this.animeDatabase).length, 'anime & manga platforms');
+        console.log('🇾 Loaded', Object.keys(this.animeDatabase).length, 'anime & manga platforms');
+        console.log('💰 Loaded', Object.keys(this.cryptoDatabase).length, 'crypto & blockchain platforms');
         this.initialize();
     }
     
@@ -1141,6 +1205,11 @@ class GatewaySmartController {
         
         // 🗾 ANIME & MANGA COMMANDS - Handle anime platforms
         if (this.handleAnimeCommand(lowercaseCommand)) {
+            return;
+        }
+        
+        // 💰 CRYPTO & BLOCKCHAIN COMMANDS - Handle crypto platforms
+        if (this.handleCryptoCommand(lowercaseCommand)) {
             return;
         }
         
@@ -2291,6 +2360,122 @@ class GatewaySmartController {
             window.open(platform.url, '_blank');
             
             this.addMessage(`🗾 Opening ${platform.name}! Perfect for ${platform.category.toLowerCase()} activities. Enjoy your otaku journey! ✨`, 'ai');
+            this.updateStatus(`Opened ${platform.name}!`);
+        }
+        
+        // 💰 CRYPTO & BLOCKCHAIN SMART CONTROLLER METHODS
+        
+        handleCryptoCommand(command) {
+            const lowercaseCommand = command.toLowerCase().trim();
+            
+            // Check if it's a request for the crypto category
+            if (this.isCryptoCategoryRequest(lowercaseCommand)) {
+                this.openCryptoCategory();
+                return true;
+            }
+            
+            // Check if it's a specific crypto platform request
+            const cryptoMatch = this.findCryptoPlatform(lowercaseCommand);
+            if (cryptoMatch) {
+                this.openCryptoPlatform(cryptoMatch);
+                return true;
+            }
+            
+            return false; // Not a crypto command
+        }
+        
+        isCryptoCategoryRequest(command) {
+            const categoryPhrases = [
+                'crypto category',
+                'crypto & blockchain',
+                'crypto and blockchain',
+                'cryptocurrency',
+                'crypto',
+                'blockchain category',
+                'blockchain',
+                'show me crypto',
+                'open crypto',
+                'go to crypto',
+                'take me to crypto',
+                'digital assets',
+                'defi',
+                'decentralized finance',
+                'nft',
+                'non-fungible tokens',
+                'web3',
+                'bitcoin',
+                'ethereum',
+                'trading platforms',
+                'crypto exchanges'
+            ];
+            
+            return categoryPhrases.some(phrase => command.includes(phrase));
+        }
+        
+        findCryptoPlatform(command) {
+            // Direct match
+            if (this.cryptoDatabase[command]) {
+                return this.cryptoDatabase[command];
+            }
+            
+            // Partial match (for "open coinbase", "launch uniswap", etc.)
+            for (const [key, platform] of Object.entries(this.cryptoDatabase)) {
+                if (command.includes(key)) {
+                    return platform;
+                }
+            }
+            
+            // Special handling for common crypto queries
+            if (command.includes('trading') || command.includes('exchange') || command.includes('buy crypto') || command.includes('sell crypto')) {
+                return this.cryptoDatabase['coinbase'] || this.cryptoDatabase['binance'];
+            }
+            if (command.includes('defi') || command.includes('decentralized finance') || command.includes('dex') || command.includes('swap')) {
+                return this.cryptoDatabase['uniswap'] || this.cryptoDatabase['aave'];
+            }
+            if (command.includes('nft') || command.includes('non-fungible token') || command.includes('digital art') || command.includes('collectibles')) {
+                return this.cryptoDatabase['opensea'] || this.cryptoDatabase['blur'];
+            }
+            if (command.includes('analytics') || command.includes('price tracking') || command.includes('market data') || command.includes('crypto data')) {
+                return this.cryptoDatabase['coingecko'] || this.cryptoDatabase['coinmarketcap'];
+            }
+            if (command.includes('blockchain explorer') || command.includes('transaction') || command.includes('wallet address')) {
+                return this.cryptoDatabase['etherscan'] || this.cryptoDatabase['blockchain.info'];
+            }
+            if (command.includes('lending') || command.includes('borrowing') || command.includes('yield farming') || command.includes('staking')) {
+                return this.cryptoDatabase['aave'] || this.cryptoDatabase['compound'];
+            }
+            if (command.includes('portfolio') || command.includes('portfolio tracking') || command.includes('crypto portfolio')) {
+                return this.cryptoDatabase['coingecko'] || this.cryptoDatabase['defillama'];
+            }
+            if (command.includes('bitcoin') || command.includes('btc')) {
+                return this.cryptoDatabase['coinbase'] || this.cryptoDatabase['blockchain.info'];
+            }
+            if (command.includes('ethereum') || command.includes('eth') || command.includes('smart contract')) {
+                return this.cryptoDatabase['etherscan'] || this.cryptoDatabase['uniswap'];
+            }
+            if (command.includes('solana') || command.includes('sol')) {
+                return this.cryptoDatabase['solscan'] || this.cryptoDatabase['magic eden'];
+            }
+            if (command.includes('binance smart chain') || command.includes('bsc') || command.includes('pancake')) {
+                return this.cryptoDatabase['pancakeswap'] || this.cryptoDatabase['binance'];
+            }
+            
+            return null;
+        }
+        
+        openCryptoCategory() {
+            console.log('🎯 Opening Crypto & Blockchain category page');
+            window.location.href = 'categories/crypto/';
+            
+            this.addMessage('💰 Opening Crypto & Blockchain with 45 cutting-edge platforms! From Coinbase and Binance to Uniswap, OpenSea, and advanced DeFi protocols. Welcome to the future of finance! 🚀', 'ai');
+            this.updateStatus('Opening crypto category...');
+        }
+        
+        openCryptoPlatform(platform) {
+            console.log('🚀 Opening crypto platform:', platform.name);
+            window.open(platform.url, '_blank');
+            
+            this.addMessage(`💰 Opening ${platform.name}! Perfect for ${platform.category.toLowerCase()} activities. Let's explore the crypto universe! 🌟`, 'ai');
             this.updateStatus(`Opened ${platform.name}!`);
         }
         
