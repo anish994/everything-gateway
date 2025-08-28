@@ -334,6 +334,344 @@ class GatewaySmartController {
             'wave motion cannon': { url: 'https://wavemotioncannon.com', name: 'Wave Motion Cannon', category: 'News & Industry' }
         };
         
+        // 👨‍💻 Developers Database - Developer tools ecosystem mapped by keywords
+        this.developersDatabase = {
+            // IDEs & Code Editors
+            'visual studio code': { url: 'https://code.visualstudio.com', name: 'Visual Studio Code', category: 'IDEs & Code Editors' },
+            'vscode': { url: 'https://code.visualstudio.com', name: 'Visual Studio Code', category: 'IDEs & Code Editors' },
+            'vs code': { url: 'https://code.visualstudio.com', name: 'Visual Studio Code', category: 'IDEs & Code Editors' },
+            'visual studio': { url: 'https://visualstudio.microsoft.com', name: 'Visual Studio', category: 'IDEs & Code Editors' },
+            'intellij idea': { url: 'https://jetbrains.com/idea', name: 'IntelliJ IDEA', category: 'IDEs & Code Editors' },
+            'intellij': { url: 'https://jetbrains.com/idea', name: 'IntelliJ IDEA', category: 'IDEs & Code Editors' },
+            'pycharm': { url: 'https://jetbrains.com/pycharm', name: 'PyCharm', category: 'IDEs & Code Editors' },
+            'webstorm': { url: 'https://jetbrains.com/webstorm', name: 'WebStorm', category: 'IDEs & Code Editors' },
+            'sublime text': { url: 'https://sublimetext.com', name: 'Sublime Text', category: 'IDEs & Code Editors' },
+            'atom': { url: 'https://atom.io', name: 'Atom', category: 'IDEs & Code Editors' },
+            'notepad++': { url: 'https://notepad-plus-plus.org', name: 'Notepad++', category: 'IDEs & Code Editors' },
+            'notepad plus': { url: 'https://notepad-plus-plus.org', name: 'Notepad++', category: 'IDEs & Code Editors' },
+            'vim': { url: 'https://vim.org', name: 'Vim', category: 'IDEs & Code Editors' },
+            'neovim': { url: 'https://neovim.io', name: 'Neovim', category: 'IDEs & Code Editors' },
+            'emacs': { url: 'https://gnu.org/software/emacs', name: 'Emacs', category: 'IDEs & Code Editors' },
+            
+            // Version Control & Repositories
+            'github': { url: 'https://github.com', name: 'GitHub', category: 'Version Control & Repositories' },
+            'gitlab': { url: 'https://gitlab.com', name: 'GitLab', category: 'Version Control & Repositories' },
+            'bitbucket': { url: 'https://bitbucket.org', name: 'Bitbucket', category: 'Version Control & Repositories' },
+            'sourceforge': { url: 'https://sourceforge.net', name: 'SourceForge', category: 'Version Control & Repositories' },
+            'codeberg': { url: 'https://codeberg.org', name: 'Codeberg', category: 'Version Control & Repositories' },
+            'git': { url: 'https://git-scm.com', name: 'Git SCM', category: 'Version Control & Repositories' },
+            'git scm': { url: 'https://git-scm.com', name: 'Git SCM', category: 'Version Control & Repositories' },
+            
+            // Cloud Platforms & Deployment
+            'aws': { url: 'https://aws.amazon.com', name: 'Amazon Web Services', category: 'Cloud Platforms & Deployment' },
+            'amazon web services': { url: 'https://aws.amazon.com', name: 'Amazon Web Services', category: 'Cloud Platforms & Deployment' },
+            'azure': { url: 'https://azure.microsoft.com', name: 'Microsoft Azure', category: 'Cloud Platforms & Deployment' },
+            'microsoft azure': { url: 'https://azure.microsoft.com', name: 'Microsoft Azure', category: 'Cloud Platforms & Deployment' },
+            'google cloud': { url: 'https://cloud.google.com', name: 'Google Cloud Platform', category: 'Cloud Platforms & Deployment' },
+            'gcp': { url: 'https://cloud.google.com', name: 'Google Cloud Platform', category: 'Cloud Platforms & Deployment' },
+            'heroku': { url: 'https://heroku.com', name: 'Heroku', category: 'Cloud Platforms & Deployment' },
+            'vercel': { url: 'https://vercel.com', name: 'Vercel', category: 'Cloud Platforms & Deployment' },
+            'netlify': { url: 'https://netlify.com', name: 'Netlify', category: 'Cloud Platforms & Deployment' },
+            'digitalocean': { url: 'https://digitalocean.com', name: 'DigitalOcean', category: 'Cloud Platforms & Deployment' },
+            'digital ocean': { url: 'https://digitalocean.com', name: 'DigitalOcean', category: 'Cloud Platforms & Deployment' },
+            'linode': { url: 'https://linode.com', name: 'Linode', category: 'Cloud Platforms & Deployment' },
+            'cloudflare': { url: 'https://cloudflare.com', name: 'Cloudflare', category: 'Cloud Platforms & Deployment' },
+            'firebase': { url: 'https://firebase.google.com', name: 'Firebase', category: 'Cloud Platforms & Deployment' },
+            'supabase': { url: 'https://supabase.com', name: 'Supabase', category: 'Cloud Platforms & Deployment' },
+            
+            // API Development & Testing
+            'postman': { url: 'https://postman.com', name: 'Postman', category: 'API Development & Testing' },
+            'insomnia': { url: 'https://insomnia.rest', name: 'Insomnia', category: 'API Development & Testing' },
+            'swagger': { url: 'https://swagger.io', name: 'Swagger', category: 'API Development & Testing' },
+            'openapi': { url: 'https://openapis.org', name: 'OpenAPI', category: 'API Development & Testing' },
+            'rapidapi': { url: 'https://rapidapi.com', name: 'RapidAPI', category: 'API Development & Testing' },
+            'rapid api': { url: 'https://rapidapi.com', name: 'RapidAPI', category: 'API Development & Testing' },
+            'restful api': { url: 'https://restfulapi.net', name: 'RESTful API', category: 'API Development & Testing' },
+            'graphql': { url: 'https://graphql.org', name: 'GraphQL', category: 'API Development & Testing' },
+            
+            // Developer Communities & Learning
+            'stack overflow': { url: 'https://stackoverflow.com', name: 'Stack Overflow', category: 'Developer Communities & Learning' },
+            'stackoverflow': { url: 'https://stackoverflow.com', name: 'Stack Overflow', category: 'Developer Communities & Learning' },
+            'dev.to': { url: 'https://dev.to', name: 'Dev.to', category: 'Developer Communities & Learning' },
+            'dev to': { url: 'https://dev.to', name: 'Dev.to', category: 'Developer Communities & Learning' },
+            'hashnode': { url: 'https://hashnode.com', name: 'Hashnode', category: 'Developer Communities & Learning' },
+            'reddit programming': { url: 'https://reddit.com/r/programming', name: 'r/programming', category: 'Developer Communities & Learning' },
+            'r/programming': { url: 'https://reddit.com/r/programming', name: 'r/programming', category: 'Developer Communities & Learning' },
+            'hacker news': { url: 'https://news.ycombinator.com', name: 'Hacker News', category: 'Developer Communities & Learning' },
+            'hackernews': { url: 'https://news.ycombinator.com', name: 'Hacker News', category: 'Developer Communities & Learning' },
+            'freecodecamp': { url: 'https://freecodecamp.org', name: 'FreeCodeCamp', category: 'Developer Communities & Learning' },
+            'free code camp': { url: 'https://freecodecamp.org', name: 'FreeCodeCamp', category: 'Developer Communities & Learning' },
+            'codecademy': { url: 'https://codecademy.com', name: 'Codecademy', category: 'Developer Communities & Learning' },
+            'codewars': { url: 'https://codewars.com', name: 'Codewars', category: 'Developer Communities & Learning' },
+            'leetcode': { url: 'https://leetcode.com', name: 'LeetCode', category: 'Developer Communities & Learning' },
+            'leet code': { url: 'https://leetcode.com', name: 'LeetCode', category: 'Developer Communities & Learning' },
+            'hackerrank': { url: 'https://hackerrank.com', name: 'HackerRank', category: 'Developer Communities & Learning' },
+            'hacker rank': { url: 'https://hackerrank.com', name: 'HackerRank', category: 'Developer Communities & Learning' },
+            
+            // Online Code Editors & Sandboxes
+            'codepen': { url: 'https://codepen.io', name: 'CodePen', category: 'Online Code Editors & Sandboxes' },
+            'jsfiddle': { url: 'https://jsfiddle.net', name: 'JSFiddle', category: 'Online Code Editors & Sandboxes' },
+            'js fiddle': { url: 'https://jsfiddle.net', name: 'JSFiddle', category: 'Online Code Editors & Sandboxes' },
+            'codesandbox': { url: 'https://codesandbox.io', name: 'CodeSandbox', category: 'Online Code Editors & Sandboxes' },
+            'code sandbox': { url: 'https://codesandbox.io', name: 'CodeSandbox', category: 'Online Code Editors & Sandboxes' },
+            'replit': { url: 'https://replit.com', name: 'Replit', category: 'Online Code Editors & Sandboxes' },
+            'glitch': { url: 'https://glitch.com', name: 'Glitch', category: 'Online Code Editors & Sandboxes' },
+            'stackblitz': { url: 'https://stackblitz.com', name: 'StackBlitz', category: 'Online Code Editors & Sandboxes' },
+            'stack blitz': { url: 'https://stackblitz.com', name: 'StackBlitz', category: 'Online Code Editors & Sandboxes' },
+            'gitpod': { url: 'https://gitpod.io', name: 'Gitpod', category: 'Online Code Editors & Sandboxes' },
+            'github codespaces': { url: 'https://github.com/features/codespaces', name: 'GitHub Codespaces', category: 'Online Code Editors & Sandboxes' },
+            'codespaces': { url: 'https://github.com/features/codespaces', name: 'GitHub Codespaces', category: 'Online Code Editors & Sandboxes' },
+            
+            // Developer Tools & Utilities
+            'regex101': { url: 'https://regex101.com', name: 'Regex101', category: 'Developer Tools & Utilities' },
+            'jsonlint': { url: 'https://jsonlint.com', name: 'JSONLint', category: 'Developer Tools & Utilities' },
+            'json lint': { url: 'https://jsonlint.com', name: 'JSONLint', category: 'Developer Tools & Utilities' },
+            'caniuse': { url: 'https://caniuse.com', name: 'Can I Use', category: 'Developer Tools & Utilities' },
+            'can i use': { url: 'https://caniuse.com', name: 'Can I Use', category: 'Developer Tools & Utilities' },
+            'w3c validator': { url: 'https://validator.w3.org', name: 'W3C Markup Validator', category: 'Developer Tools & Utilities' },
+            'w3c': { url: 'https://w3.org', name: 'W3C', category: 'Developer Tools & Utilities' },
+            'mdn': { url: 'https://developer.mozilla.org', name: 'MDN Web Docs', category: 'Developer Tools & Utilities' },
+            'mozilla developer': { url: 'https://developer.mozilla.org', name: 'MDN Web Docs', category: 'Developer Tools & Utilities' },
+            'chrome devtools': { url: 'https://developers.google.com/web/tools/chrome-devtools', name: 'Chrome DevTools', category: 'Developer Tools & Utilities' },
+            'devtools': { url: 'https://developers.google.com/web/tools/chrome-devtools', name: 'Chrome DevTools', category: 'Developer Tools & Utilities' }
+        };
+        
+        // 🎵 Music Database - Music streaming, discovery, and creation ecosystem mapped by keywords
+        this.musicDatabase = {
+            // Music Streaming Platforms
+            'spotify': { url: 'https://spotify.com', name: 'Spotify', category: 'Music Streaming' },
+            'apple music': { url: 'https://music.apple.com', name: 'Apple Music', category: 'Music Streaming' },
+            'youtube music': { url: 'https://music.youtube.com', name: 'YouTube Music', category: 'Music Streaming' },
+            'amazon music': { url: 'https://music.amazon.com', name: 'Amazon Music', category: 'Music Streaming' },
+            'tidal': { url: 'https://tidal.com', name: 'Tidal', category: 'Music Streaming' },
+            'deezer': { url: 'https://deezer.com', name: 'Deezer', category: 'Music Streaming' },
+            'pandora': { url: 'https://pandora.com', name: 'Pandora', category: 'Music Streaming' },
+            'qobuz': { url: 'https://qobuz.com', name: 'Qobuz', category: 'Music Streaming' },
+            'iheartradio': { url: 'https://iheart.com', name: 'iHeartRadio', category: 'Music Streaming' },
+            'tunein': { url: 'https://tunein.com', name: 'TuneIn', category: 'Music Streaming' },
+            
+            // Music Discovery & Social
+            'soundcloud': { url: 'https://soundcloud.com', name: 'SoundCloud', category: 'Music Discovery & Social' },
+            'bandcamp': { url: 'https://bandcamp.com', name: 'Bandcamp', category: 'Music Discovery & Social' },
+            'last.fm': { url: 'https://last.fm', name: 'Last.fm', category: 'Music Discovery & Social' },
+            'lastfm': { url: 'https://last.fm', name: 'Last.fm', category: 'Music Discovery & Social' },
+            'discogs': { url: 'https://discogs.com', name: 'Discogs', category: 'Music Discovery & Social' },
+            'rateyourmusic': { url: 'https://rateyourmusic.com', name: 'Rate Your Music', category: 'Music Discovery & Social' },
+            'rate your music': { url: 'https://rateyourmusic.com', name: 'Rate Your Music', category: 'Music Discovery & Social' },
+            'musicbrainz': { url: 'https://musicbrainz.org', name: 'MusicBrainz', category: 'Music Discovery & Social' },
+            'genius': { url: 'https://genius.com', name: 'Genius', category: 'Music Discovery & Social' },
+            'allmusic': { url: 'https://allmusic.com', name: 'AllMusic', category: 'Music Discovery & Social' },
+            'pitchfork': { url: 'https://pitchfork.com', name: 'Pitchfork', category: 'Music Discovery & Social' },
+            'songkick': { url: 'https://songkick.com', name: 'Songkick', category: 'Music Discovery & Social' },
+            
+            // Music Creation & Production
+            'ableton live': { url: 'https://ableton.com/live', name: 'Ableton Live', category: 'Music Creation & Production' },
+            'ableton': { url: 'https://ableton.com', name: 'Ableton', category: 'Music Creation & Production' },
+            'pro tools': { url: 'https://avid.com/pro-tools', name: 'Pro Tools', category: 'Music Creation & Production' },
+            'logic pro': { url: 'https://apple.com/logic-pro', name: 'Logic Pro', category: 'Music Creation & Production' },
+            'fl studio': { url: 'https://image-line.com/flstudio', name: 'FL Studio', category: 'Music Creation & Production' },
+            'cubase': { url: 'https://steinberg.net/cubase', name: 'Cubase', category: 'Music Creation & Production' },
+            'reaper': { url: 'https://reaper.fm', name: 'REAPER', category: 'Music Creation & Production' },
+            'garageband': { url: 'https://apple.com/mac/garageband', name: 'GarageBand', category: 'Music Creation & Production' },
+            'bandlab': { url: 'https://bandlab.com', name: 'BandLab', category: 'Music Creation & Production' },
+            'soundtrap': { url: 'https://soundtrap.com', name: 'Soundtrap', category: 'Music Creation & Production' },
+            'splice': { url: 'https://splice.com', name: 'Splice', category: 'Music Creation & Production' },
+            'loopmasters': { url: 'https://loopmasters.com', name: 'Loopmasters', category: 'Music Creation & Production' },
+            
+            // Podcasts & Audio Content
+            'podcast addict': { url: 'https://podcastaddict.com', name: 'Podcast Addict', category: 'Podcasts & Audio Content' },
+            'overcast': { url: 'https://overcast.fm', name: 'Overcast', category: 'Podcasts & Audio Content' },
+            'pocket casts': { url: 'https://pocketcasts.com', name: 'Pocket Casts', category: 'Podcasts & Audio Content' },
+            'castro': { url: 'https://castro.fm', name: 'Castro', category: 'Podcasts & Audio Content' },
+            'stitcher': { url: 'https://stitcher.com', name: 'Stitcher', category: 'Podcasts & Audio Content' },
+            'audible': { url: 'https://audible.com', name: 'Audible', category: 'Podcasts & Audio Content' },
+            'scribd': { url: 'https://scribd.com', name: 'Scribd', category: 'Podcasts & Audio Content' },
+            'libby': { url: 'https://libbyapp.com', name: 'Libby', category: 'Podcasts & Audio Content' },
+            
+            // Radio & Live Audio
+            'radio.com': { url: 'https://radio.com', name: 'Radio.com', category: 'Radio & Live Audio' },
+            'radio': { url: 'https://radio.com', name: 'Radio.com', category: 'Radio & Live Audio' },
+            'bbc sounds': { url: 'https://bbc.co.uk/sounds', name: 'BBC Sounds', category: 'Radio & Live Audio' },
+            'npr': { url: 'https://npr.org', name: 'NPR', category: 'Radio & Live Audio' },
+            'radiolab': { url: 'https://radiolab.org', name: 'Radiolab', category: 'Radio & Live Audio' },
+            'this american life': { url: 'https://thisamericanlife.org', name: 'This American Life', category: 'Radio & Live Audio' },
+            'serial': { url: 'https://serialpodcast.org', name: 'Serial', category: 'Radio & Live Audio' },
+            'clubhouse': { url: 'https://clubhouse.com', name: 'Clubhouse', category: 'Radio & Live Audio' },
+            'twitter spaces': { url: 'https://help.twitter.com/en/using-twitter/spaces', name: 'Twitter Spaces', category: 'Radio & Live Audio' },
+            
+            // Music Learning & Education
+            'yousician': { url: 'https://yousician.com', name: 'Yousician', category: 'Music Learning & Education' },
+            'simply piano': { url: 'https://simplypianoapp.com', name: 'Simply Piano', category: 'Music Learning & Education' },
+            'fender play': { url: 'https://fender.com/play', name: 'Fender Play', category: 'Music Learning & Education' },
+            'flowkey': { url: 'https://flowkey.com', name: 'Flowkey', category: 'Music Learning & Education' },
+            'rocksmith': { url: 'https://rocksmith.ubisoft.com', name: 'Rocksmith+', category: 'Music Learning & Education' },
+            'ultimate guitar': { url: 'https://ultimate-guitar.com', name: 'Ultimate Guitar', category: 'Music Learning & Education' },
+            'chordify': { url: 'https://chordify.net', name: 'Chordify', category: 'Music Learning & Education' },
+            'teoria': { url: 'https://teoria.com', name: 'Teoria', category: 'Music Learning & Education' },
+            'musictheory.net': { url: 'https://musictheory.net', name: 'MusicTheory.net', category: 'Music Learning & Education' },
+            
+            // Music Shopping & Gear
+            'reverb': { url: 'https://reverb.com', name: 'Reverb', category: 'Music Shopping & Gear' },
+            'guitar center': { url: 'https://guitarcenter.com', name: 'Guitar Center', category: 'Music Shopping & Gear' },
+            'sweetwater': { url: 'https://sweetwater.com', name: 'Sweetwater', category: 'Music Shopping & Gear' },
+            'musicians friend': { url: 'https://musiciansfriend.com', name: 'Musicians Friend', category: 'Music Shopping & Gear' },
+            'sam ash': { url: 'https://samash.com', name: 'Sam Ash', category: 'Music Shopping & Gear' },
+            'thomann': { url: 'https://thomann.de', name: 'Thomann', category: 'Music Shopping & Gear' },
+            'vintage king': { url: 'https://vintageking.com', name: 'Vintage King', category: 'Music Shopping & Gear' },
+            'zzounds': { url: 'https://zzounds.com', name: 'zZounds', category: 'Music Shopping & Gear' }
+        };
+        
+        // 💎 Hidden Treasures Database - Secret tools and underground gems mapped by keywords
+        this.hiddenTreasuresDatabase = {
+            // Power User Secrets
+            'regex101': { url: 'https://regex101.com', name: 'Regex101', category: 'Power User Secrets' },
+            'carbon': { url: 'https://carbon.now.sh', name: 'Carbon', category: 'Power User Secrets' },
+            'carbon now': { url: 'https://carbon.now.sh', name: 'Carbon', category: 'Power User Secrets' },
+            'excalidraw': { url: 'https://excalidraw.com', name: 'Excalidraw', category: 'Power User Secrets' },
+            'json crack': { url: 'https://jsoncrack.com', name: 'JSON Crack', category: 'Power User Secrets' },
+            'jsoncrack': { url: 'https://jsoncrack.com', name: 'JSON Crack', category: 'Power User Secrets' },
+            'ray so': { url: 'https://ray.so', name: 'Ray.so', category: 'Power User Secrets' },
+            'ray.so': { url: 'https://ray.so', name: 'Ray.so', category: 'Power User Secrets' },
+            'codeshot': { url: 'https://codeshot.app', name: 'Codeshot', category: 'Power User Secrets' },
+            'chalk it': { url: 'https://chalk.ist', name: 'Chalk.ist', category: 'Power User Secrets' },
+            'chalk.ist': { url: 'https://chalk.ist', name: 'Chalk.ist', category: 'Power User Secrets' },
+            
+            // Developer Underground
+            'hoppscotch': { url: 'https://hoppscotch.io', name: 'Hoppscotch', category: 'Developer Underground' },
+            'httpie': { url: 'https://httpie.io', name: 'HTTPie', category: 'Developer Underground' },
+            'json formatter': { url: 'https://jsonformatter.org', name: 'JSONFormatter', category: 'Developer Underground' },
+            'jsonformatter': { url: 'https://jsonformatter.org', name: 'JSONFormatter', category: 'Developer Underground' },
+            'mockaroo': { url: 'https://mockaroo.com', name: 'Mockaroo', category: 'Developer Underground' },
+            'webhook site': { url: 'https://webhook.site', name: 'Webhook.site', category: 'Developer Underground' },
+            'webhook.site': { url: 'https://webhook.site', name: 'Webhook.site', category: 'Developer Underground' },
+            'requestbin': { url: 'https://requestbin.com', name: 'RequestBin', category: 'Developer Underground' },
+            'ngrok': { url: 'https://ngrok.com', name: 'ngrok', category: 'Developer Underground' },
+            'localtunnel': { url: 'https://localtunnel.github.io', name: 'LocalTunnel', category: 'Developer Underground' },
+            'json generator': { url: 'https://json-generator.com', name: 'JSON Generator', category: 'Developer Underground' },
+            'jwt.io': { url: 'https://jwt.io', name: 'JWT.io', category: 'Developer Underground' },
+            'jwt io': { url: 'https://jwt.io', name: 'JWT.io', category: 'Developer Underground' },
+            'base64 decode': { url: 'https://base64decode.org', name: 'Base64 Decode', category: 'Developer Underground' },
+            'url encoder': { url: 'https://urlencoder.org', name: 'URL Encoder', category: 'Developer Underground' },
+            
+            // Creative Black Market
+            'remove bg': { url: 'https://remove.bg', name: 'Remove.bg', category: 'Creative Black Market' },
+            'remove.bg': { url: 'https://remove.bg', name: 'Remove.bg', category: 'Creative Black Market' },
+            'unscreen': { url: 'https://unscreen.com', name: 'Unscreen', category: 'Creative Black Market' },
+            'photopea': { url: 'https://photopea.com', name: 'Photopea', category: 'Creative Black Market' },
+            'figma community': { url: 'https://figma.com/community', name: 'Figma Community', category: 'Creative Black Market' },
+            'coolors': { url: 'https://coolors.co', name: 'Coolors', category: 'Creative Black Market' },
+            'coolors.co': { url: 'https://coolors.co', name: 'Coolors', category: 'Creative Black Market' },
+            'imagecolorpicker': { url: 'https://imagecolorpicker.com', name: 'ImageColorPicker', category: 'Creative Black Market' },
+            'color hunt': { url: 'https://colorhunt.co', name: 'ColorHunt', category: 'Creative Black Market' },
+            'colorhunt': { url: 'https://colorhunt.co', name: 'ColorHunt', category: 'Creative Black Market' },
+            'tinypng': { url: 'https://tinypng.com', name: 'TinyPNG', category: 'Creative Black Market' },
+            'squoosh': { url: 'https://squoosh.app', name: 'Squoosh', category: 'Creative Black Market' },
+            'pfpmaker': { url: 'https://pfpmaker.com', name: 'PFPMaker', category: 'Creative Black Market' },
+            'avatarmaker': { url: 'https://avatarmaker.com', name: 'AvatarMaker', category: 'Creative Black Market' },
+            
+            // Data Alchemy
+            'csv to json': { url: 'https://csvjson.com', name: 'CSV to JSON', category: 'Data Alchemy' },
+            'csvjson': { url: 'https://csvjson.com', name: 'CSV to JSON', category: 'Data Alchemy' },
+            'json editor online': { url: 'https://jsoneditoronline.org', name: 'JSON Editor Online', category: 'Data Alchemy' },
+            'tableconvert': { url: 'https://tableconvert.com', name: 'TableConvert', category: 'Data Alchemy' },
+            'table convert': { url: 'https://tableconvert.com', name: 'TableConvert', category: 'Data Alchemy' },
+            'json to csv': { url: 'https://json-csv.com', name: 'JSON to CSV', category: 'Data Alchemy' },
+            'data.world': { url: 'https://data.world', name: 'Data.world', category: 'Data Alchemy' },
+            'dataworld': { url: 'https://data.world', name: 'Data.world', category: 'Data Alchemy' },
+            'regex crossword': { url: 'https://regexcrossword.com', name: 'Regex Crossword', category: 'Data Alchemy' },
+            'regexpal': { url: 'https://regexpal.com', name: 'RegexPal', category: 'Data Alchemy' },
+            'sql formatter': { url: 'https://sqlformat.org', name: 'SQL Formatter', category: 'Data Alchemy' },
+            'sqlformat': { url: 'https://sqlformat.org', name: 'SQL Formatter', category: 'Data Alchemy' },
+            
+            // Automation Arsenal
+            'zapier': { url: 'https://zapier.com', name: 'Zapier', category: 'Automation Arsenal' },
+            'ifttt': { url: 'https://ifttt.com', name: 'IFTTT', category: 'Automation Arsenal' },
+            'n8n': { url: 'https://n8n.io', name: 'n8n', category: 'Automation Arsenal' },
+            'automate.io': { url: 'https://automate.io', name: 'Automate.io', category: 'Automation Arsenal' },
+            'automate io': { url: 'https://automate.io', name: 'Automate.io', category: 'Automation Arsenal' },
+            'integromat': { url: 'https://make.com', name: 'Make (Integromat)', category: 'Automation Arsenal' },
+            'make': { url: 'https://make.com', name: 'Make (Integromat)', category: 'Automation Arsenal' },
+            'microsoft power automate': { url: 'https://powerautomate.microsoft.com', name: 'Microsoft Power Automate', category: 'Automation Arsenal' },
+            'power automate': { url: 'https://powerautomate.microsoft.com', name: 'Microsoft Power Automate', category: 'Automation Arsenal' },
+            'pabbly connect': { url: 'https://connect.pabbly.com', name: 'Pabbly Connect', category: 'Automation Arsenal' },
+            'workato': { url: 'https://workato.com', name: 'Workato', category: 'Automation Arsenal' },
+            
+            // Research Vault
+            'semantic scholar': { url: 'https://semanticscholar.org', name: 'Semantic Scholar', category: 'Research Vault' },
+            'connected papers': { url: 'https://connectedpapers.com', name: 'Connected Papers', category: 'Research Vault' },
+            'research rabbit': { url: 'https://researchrabbit.ai', name: 'Research Rabbit', category: 'Research Vault' },
+            'researchrabbit': { url: 'https://researchrabbit.ai', name: 'Research Rabbit', category: 'Research Vault' },
+            'elicit': { url: 'https://elicit.org', name: 'Elicit', category: 'Research Vault' },
+            'scite': { url: 'https://scite.ai', name: 'Scite', category: 'Research Vault' },
+            'inciteful': { url: 'https://inciteful.xyz', name: 'Inciteful', category: 'Research Vault' },
+            'paperpile': { url: 'https://paperpile.com', name: 'Paperpile', category: 'Research Vault' },
+            'zotero': { url: 'https://zotero.org', name: 'Zotero', category: 'Research Vault' },
+            'mendeley': { url: 'https://mendeley.com', name: 'Mendeley', category: 'Research Vault' },
+            'sci hub': { url: 'https://sci-hub.se', name: 'Sci-Hub', category: 'Research Vault' },
+            'scihub': { url: 'https://sci-hub.se', name: 'Sci-Hub', category: 'Research Vault' },
+            'libgen': { url: 'https://libgen.li', name: 'LibGen', category: 'Research Vault' },
+            'library genesis': { url: 'https://libgen.li', name: 'LibGen', category: 'Research Vault' },
+            
+            // Free Premium
+            'temp mail': { url: 'https://temp-mail.org', name: 'Temp Mail', category: 'Free Premium' },
+            'temp-mail': { url: 'https://temp-mail.org', name: 'Temp Mail', category: 'Free Premium' },
+            '10minutemail': { url: 'https://10minutemail.com', name: '10 Minute Mail', category: 'Free Premium' },
+            '10 minute mail': { url: 'https://10minutemail.com', name: '10 Minute Mail', category: 'Free Premium' },
+            'guerrilla mail': { url: 'https://guerrillamail.com', name: 'Guerrilla Mail', category: 'Free Premium' },
+            'guerrillamail': { url: 'https://guerrillamail.com', name: 'Guerrilla Mail', category: 'Free Premium' },
+            'mailinator': { url: 'https://mailinator.com', name: 'Mailinator', category: 'Free Premium' },
+            'protonmail': { url: 'https://protonmail.com', name: 'ProtonMail', category: 'Free Premium' },
+            'proton mail': { url: 'https://protonmail.com', name: 'ProtonMail', category: 'Free Premium' },
+            'tutanota': { url: 'https://tutanota.com', name: 'Tutanota', category: 'Free Premium' },
+            'duckduckgo email': { url: 'https://duckduckgo.com/email', name: 'DuckDuckGo Email Protection', category: 'Free Premium' },
+            'bitwarden': { url: 'https://bitwarden.com', name: 'Bitwarden', category: 'Free Premium' },
+            '1password': { url: 'https://1password.com', name: '1Password', category: 'Free Premium' },
+            'lastpass': { url: 'https://lastpass.com', name: 'LastPass', category: 'Free Premium' },
+            
+            // Future Tech
+            'hugging face': { url: 'https://huggingface.co', name: 'Hugging Face', category: 'Future Tech' },
+            'huggingface': { url: 'https://huggingface.co', name: 'Hugging Face', category: 'Future Tech' },
+            'replicate': { url: 'https://replicate.com', name: 'Replicate', category: 'Future Tech' },
+            'runwayml': { url: 'https://runwayml.com', name: 'RunwayML', category: 'Future Tech' },
+            'runway ml': { url: 'https://runwayml.com', name: 'RunwayML', category: 'Future Tech' },
+            'synthesia': { url: 'https://synthesia.io', name: 'Synthesia', category: 'Future Tech' },
+            'loom ai': { url: 'https://loom.com', name: 'Loom AI', category: 'Future Tech' },
+            'notion ai': { url: 'https://notion.so/product/ai', name: 'Notion AI', category: 'Future Tech' },
+            'gamma': { url: 'https://gamma.app', name: 'Gamma', category: 'Future Tech' },
+            'beautiful ai': { url: 'https://beautiful.ai', name: 'Beautiful.ai', category: 'Future Tech' },
+            'beautiful.ai': { url: 'https://beautiful.ai', name: 'Beautiful.ai', category: 'Future Tech' },
+            'tome': { url: 'https://tome.app', name: 'Tome', category: 'Future Tech' },
+            'pitch': { url: 'https://pitch.com', name: 'Pitch', category: 'Future Tech' },
+            'descript': { url: 'https://descript.com', name: 'Descript', category: 'Future Tech' },
+            'otter ai': { url: 'https://otter.ai', name: 'Otter.ai', category: 'Future Tech' },
+            'otter.ai': { url: 'https://otter.ai', name: 'Otter.ai', category: 'Future Tech' },
+            'copy ai': { url: 'https://copy.ai', name: 'Copy.ai', category: 'Future Tech' },
+            'copy.ai': { url: 'https://copy.ai', name: 'Copy.ai', category: 'Future Tech' },
+            'jasper ai': { url: 'https://jasper.ai', name: 'Jasper AI', category: 'Future Tech' },
+            'writesonic': { url: 'https://writesonic.com', name: 'Writesonic', category: 'Future Tech' },
+            
+            // Underground Utilities
+            'file.io': { url: 'https://file.io', name: 'File.io', category: 'Underground Utilities' },
+            'file io': { url: 'https://file.io', name: 'File.io', category: 'Underground Utilities' },
+            'wetransfer': { url: 'https://wetransfer.com', name: 'WeTransfer', category: 'Underground Utilities' },
+            'we transfer': { url: 'https://wetransfer.com', name: 'WeTransfer', category: 'Underground Utilities' },
+            'transfer.sh': { url: 'https://transfer.sh', name: 'Transfer.sh', category: 'Underground Utilities' },
+            'transfer sh': { url: 'https://transfer.sh', name: 'Transfer.sh', category: 'Underground Utilities' },
+            '0x0.st': { url: 'https://0x0.st', name: '0x0.st', category: 'Underground Utilities' },
+            'hastebin': { url: 'https://hastebin.com', name: 'Hastebin', category: 'Underground Utilities' },
+            'pastebin': { url: 'https://pastebin.com', name: 'Pastebin', category: 'Underground Utilities' },
+            'paste bin': { url: 'https://pastebin.com', name: 'Pastebin', category: 'Underground Utilities' },
+            'ghostbin': { url: 'https://ghostbin.com', name: 'Ghostbin', category: 'Underground Utilities' },
+            'ghost bin': { url: 'https://ghostbin.com', name: 'Ghostbin', category: 'Underground Utilities' },
+            'dpaste': { url: 'https://dpaste.com', name: 'dPaste', category: 'Underground Utilities' },
+            'privatebin': { url: 'https://privatebin.net', name: 'PrivateBin', category: 'Underground Utilities' },
+            'private bin': { url: 'https://privatebin.net', name: 'PrivateBin', category: 'Underground Utilities' },
+            'bin.sh': { url: 'https://bin.sh', name: 'bin.sh', category: 'Underground Utilities' },
+            'termbin': { url: 'http://termbin.com', name: 'termbin', category: 'Underground Utilities' },
+            'ix.io': { url: 'http://ix.io', name: 'ix.io', category: 'Underground Utilities' },
+            'sprunge': { url: 'http://sprunge.us', name: 'sprunge', category: 'Underground Utilities' }
+        };
+        
         // 💰 Crypto & Blockchain Database - Digital assets ecosystem mapped by keywords
         this.cryptoDatabase = {
             // Trading Exchanges
@@ -842,6 +1180,9 @@ class GatewaySmartController {
         console.log('🌍 Loaded', Object.keys(this.socialDatabase).length, 'social media & community platforms');
         console.log('🛍️ Loaded', Object.keys(this.lifestyleDatabase).length, 'lifestyle & shopping platforms');
         console.log('🇾 Loaded', Object.keys(this.animeDatabase).length, 'anime & manga platforms');
+        console.log('👨‍💻 Loaded', Object.keys(this.developersDatabase).length, 'developer tools & platforms');
+        console.log('🎵 Loaded', Object.keys(this.musicDatabase).length, 'music & audio platforms');
+        console.log('💎 Loaded', Object.keys(this.hiddenTreasuresDatabase).length, 'hidden treasures & secret tools');
         console.log('💰 Loaded', Object.keys(this.cryptoDatabase).length, 'crypto & blockchain platforms');
         this.initialize();
     }
@@ -1205,6 +1546,16 @@ class GatewaySmartController {
         
         // 🗾 ANIME & MANGA COMMANDS - Handle anime platforms
         if (this.handleAnimeCommand(lowercaseCommand)) {
+            return;
+        }
+        
+        // 👨‍💻 DEVELOPERS COMMANDS - Handle developer platforms
+        if (this.handleDevelopersCommand(lowercaseCommand)) {
+            return;
+        }
+        
+        // 💎 HIDDEN TREASURES COMMANDS - Handle secret tools and underground gems
+        if (this.handleHiddenTreasuresCommand(lowercaseCommand)) {
             return;
         }
         
@@ -2476,6 +2827,334 @@ class GatewaySmartController {
             window.open(platform.url, '_blank');
             
             this.addMessage(`💰 Opening ${platform.name}! Perfect for ${platform.category.toLowerCase()} activities. Let's explore the crypto universe! 🌟`, 'ai');
+            this.updateStatus(`Opened ${platform.name}!`);
+        }
+        
+        // 💎 HIDDEN TREASURES SMART CONTROLLER METHODS
+        
+        handleHiddenTreasuresCommand(command) {
+            const lowercaseCommand = command.toLowerCase().trim();
+            
+            // Check if it's a request for the hidden treasures category
+            if (this.isHiddenTreasuresCategoryRequest(lowercaseCommand)) {
+                this.openHiddenTreasuresCategory();
+                return true;
+            }
+            
+            // Check if it's a specific hidden treasure request
+            const treasureMatch = this.findHiddenTreasure(lowercaseCommand);
+            if (treasureMatch) {
+                this.openHiddenTreasure(treasureMatch);
+                return true;
+            }
+            
+            return false; // Not a hidden treasures command
+        }
+        
+        isHiddenTreasuresCategoryRequest(command) {
+            const categoryPhrases = [
+                'hidden treasures',
+                'hidden treasures category',
+                'secret tools',
+                'underground gems',
+                'power user secrets',
+                'developer underground',
+                'creative black market',
+                'data alchemy',
+                'automation arsenal',
+                'research vault',
+                'free premium',
+                'future tech',
+                'underground utilities',
+                'show me hidden treasures',
+                'open hidden treasures',
+                'go to hidden treasures',
+                'take me to hidden treasures',
+                'show me secrets',
+                'secret category',
+                'underground tools',
+                'insider tools',
+                'power user tools',
+                'hidden gems',
+                'secret arsenal',
+                'underground category',
+                'treasure vault'
+            ];
+            
+            return categoryPhrases.some(phrase => command.includes(phrase));
+        }
+        
+        findHiddenTreasure(command) {
+            // Direct match
+            if (this.hiddenTreasuresDatabase[command]) {
+                return this.hiddenTreasuresDatabase[command];
+            }
+            
+            // Partial match (for "open regex101", "launch carbon", etc.)
+            for (const [key, treasure] of Object.entries(this.hiddenTreasuresDatabase)) {
+                if (command.includes(key)) {
+                    return treasure;
+                }
+            }
+            
+            // Special handling for common treasure hunting queries
+            if (command.includes('code screenshot') || command.includes('code image') || command.includes('code to image')) {
+                return this.hiddenTreasuresDatabase['carbon'] || this.hiddenTreasuresDatabase['ray.so'];
+            }
+            if (command.includes('visual json') || command.includes('json visualizer') || command.includes('json diagram')) {
+                return this.hiddenTreasuresDatabase['json crack'];
+            }
+            if (command.includes('remove video background') || command.includes('video background removal')) {
+                return this.hiddenTreasuresDatabase['unscreen'];
+            }
+            if (command.includes('photoshop alternative') || command.includes('free photoshop') || command.includes('online photoshop')) {
+                return this.hiddenTreasuresDatabase['photopea'];
+            }
+            if (command.includes('csv converter') || command.includes('convert csv') || command.includes('csv to json')) {
+                return this.hiddenTreasuresDatabase['csv to json'];
+            }
+            if (command.includes('table converter') || command.includes('markdown table') || command.includes('convert table')) {
+                return this.hiddenTreasuresDatabase['tableconvert'];
+            }
+            if (command.includes('temporary email') || command.includes('disposable email') || command.includes('fake email')) {
+                return this.hiddenTreasuresDatabase['temp mail'] || this.hiddenTreasuresDatabase['10minutemail'];
+            }
+            if (command.includes('password manager') || command.includes('free password manager')) {
+                return this.hiddenTreasuresDatabase['bitwarden'];
+            }
+            if (command.includes('file sharing') || command.includes('anonymous file sharing') || command.includes('temporary file sharing')) {
+                return this.hiddenTreasuresDatabase['file.io'] || this.hiddenTreasuresDatabase['wetransfer'];
+            }
+            if (command.includes('pastebin') || command.includes('text sharing') || command.includes('temporary text')) {
+                return this.hiddenTreasuresDatabase['hastebin'] || this.hiddenTreasuresDatabase['privatebin'];
+            }
+            if (command.includes('api testing') || command.includes('postman alternative') || command.includes('rest client')) {
+                return this.hiddenTreasuresDatabase['hoppscotch'] || this.hiddenTreasuresDatabase['httpie'];
+            }
+            if (command.includes('test data') || command.includes('fake data') || command.includes('mock data')) {
+                return this.hiddenTreasuresDatabase['mockaroo'];
+            }
+            if (command.includes('webhook testing') || command.includes('webhook inspector') || command.includes('webhook debug')) {
+                return this.hiddenTreasuresDatabase['webhook.site'] || this.hiddenTreasuresDatabase['requestbin'];
+            }
+            if (command.includes('tunnel') || command.includes('local tunnel') || command.includes('localhost public')) {
+                return this.hiddenTreasuresDatabase['ngrok'] || this.hiddenTreasuresDatabase['localtunnel'];
+            }
+            if (command.includes('research papers') || command.includes('academic papers') || command.includes('scientific papers')) {
+                return this.hiddenTreasuresDatabase['semantic scholar'] || this.hiddenTreasuresDatabase['connected papers'];
+            }
+            if (command.includes('free papers') || command.includes('paper access') || command.includes('research access')) {
+                return this.hiddenTreasuresDatabase['sci hub'] || this.hiddenTreasuresDatabase['libgen'];
+            }
+            if (command.includes('automation') || command.includes('workflow automation') || command.includes('no code automation')) {
+                return this.hiddenTreasuresDatabase['zapier'] || this.hiddenTreasuresDatabase['n8n'];
+            }
+            if (command.includes('ai models') || command.includes('machine learning models') || command.includes('hugging face')) {
+                return this.hiddenTreasuresDatabase['hugging face'] || this.hiddenTreasuresDatabase['replicate'];
+            }
+            if (command.includes('ai video') || command.includes('video ai') || command.includes('ai avatar')) {
+                return this.hiddenTreasuresDatabase['synthesia'] || this.hiddenTreasuresDatabase['runwayml'];
+            }
+            if (command.includes('ai presentation') || command.includes('presentation ai') || command.includes('smart slides')) {
+                return this.hiddenTreasuresDatabase['gamma'] || this.hiddenTreasuresDatabase['beautiful.ai'];
+            }
+            if (command.includes('transcription') || command.includes('voice to text') || command.includes('meeting transcription')) {
+                return this.hiddenTreasuresDatabase['otter.ai'] || this.hiddenTreasuresDatabase['descript'];
+            }
+            if (command.includes('ai writing') || command.includes('writing assistant') || command.includes('content generation')) {
+                return this.hiddenTreasuresDatabase['copy.ai'] || this.hiddenTreasuresDatabase['jasper ai'];
+            }
+            if (command.includes('drawing') || command.includes('sketching') || command.includes('whiteboard')) {
+                return this.hiddenTreasuresDatabase['excalidraw'];
+            }
+            if (command.includes('color picker') || command.includes('image color') || command.includes('extract colors')) {
+                return this.hiddenTreasuresDatabase['imagecolorpicker'] || this.hiddenTreasuresDatabase['colorhunt'];
+            }
+            if (command.includes('image compression') || command.includes('compress image') || command.includes('optimize image')) {
+                return this.hiddenTreasuresDatabase['tinypng'] || this.hiddenTreasuresDatabase['squoosh'];
+            }
+            if (command.includes('profile picture') || command.includes('pfp maker') || command.includes('avatar generator')) {
+                return this.hiddenTreasuresDatabase['pfpmaker'] || this.hiddenTreasuresDatabase['avatarmaker'];
+            }
+            
+            return null;
+        }
+        
+        openHiddenTreasuresCategory() {
+            console.log('🎯 Opening Hidden Treasures category page');
+            window.location.href = 'categories/hidden-treasures/';
+            
+            this.addMessage('💎 Opening Hidden Treasures - the secret vault of 88+ underground gems and power user tools! From Carbon and Excalidraw to Sci-Hub, n8n, and exclusive tools that insiders use but rarely share. Welcome to the treasure hunt! ✨🗝️', 'ai');
+            this.updateStatus('Opening hidden treasures...');
+        }
+        
+        openHiddenTreasure(treasure) {
+            console.log('🚀 Opening hidden treasure:', treasure.name);
+            window.open(treasure.url, '_blank');
+            
+            // Special treasure discovery messages based on category
+            let treasureMessage = '';
+            switch (treasure.category) {
+                case 'Power User Secrets':
+                    treasureMessage = `💎 Discovered a Power User Secret: ${treasure.name}! This is one of those tools that separates the pros from the amateurs. 🎯`;
+                    break;
+                case 'Developer Underground':
+                    treasureMessage = `⚡ Unlocked from the Developer Underground: ${treasure.name}! The kind of tool that makes other developers wonder how you work so fast. 🛠️`;
+                    break;
+                case 'Creative Black Market':
+                    treasureMessage = `🎨 Found in the Creative Black Market: ${treasure.name}! Premium creative power without the premium price tag. ✨`;
+                    break;
+                case 'Data Alchemy':
+                    treasureMessage = `🧪 Unearthed from Data Alchemy: ${treasure.name}! Transform data like a wizard with this hidden gem. 📊`;
+                    break;
+                case 'Automation Arsenal':
+                    treasureMessage = `🤖 Deployed from the Automation Arsenal: ${treasure.name}! Let the machines do the work while you sip coffee. ⚙️`;
+                    break;
+                case 'Research Vault':
+                    treasureMessage = `📚 Accessed from the Research Vault: ${treasure.name}! Knowledge is power, and this is your key to unlimited research. 🔓`;
+                    break;
+                case 'Free Premium':
+                    treasureMessage = `🆓 Liberated from Free Premium: ${treasure.name}! All the premium features, none of the premium prices. 💰`;
+                    break;
+                case 'Future Tech':
+                    treasureMessage = `🚀 Beamed from Future Tech: ${treasure.name}! You're now using tomorrow's technology today. 🌟`;
+                    break;
+                case 'Underground Utilities':
+                    treasureMessage = `🔧 Retrieved from Underground Utilities: ${treasure.name}! The Swiss Army knife of the digital underground. ⚡`;
+                    break;
+                default:
+                    treasureMessage = `💎 Discovered hidden treasure: ${treasure.name}! Another secret weapon for your digital arsenal. 🗝️`;
+            }
+            
+            this.addMessage(treasureMessage, 'ai');
+            this.updateStatus(`Treasure unlocked: ${treasure.name}!`);
+        }
+        
+        // 👨‍💻 DEVELOPERS SMART CONTROLLER METHODS
+        
+        handleDevelopersCommand(command) {
+            const lowercaseCommand = command.toLowerCase().trim();
+            
+            // Check if it's a request for the developers category
+            if (this.isDevelopersCategoryRequest(lowercaseCommand)) {
+                this.openDevelopersCategory();
+                return true;
+            }
+            
+            // Check if it's a specific developer platform request
+            const developerMatch = this.findDeveloperPlatform(lowercaseCommand);
+            if (developerMatch) {
+                this.openDeveloperPlatform(developerMatch);
+                return true;
+            }
+            
+            return false; // Not a developers command
+        }
+        
+        isDevelopersCategoryRequest(command) {
+            const categoryPhrases = [
+                'developers category',
+                'developers',
+                'developer tools',
+                'dev tools',
+                'development tools',
+                'coding tools',
+                'programming tools',
+                'show me developers',
+                'open developers',
+                'go to developers',
+                'take me to developers',
+                'development category',
+                'programming category',
+                'software development',
+                'code tools',
+                'development platforms',
+                'developer platforms',
+                'developer resources'
+            ];
+            
+            return categoryPhrases.some(phrase => command.includes(phrase));
+        }
+        
+        findDeveloperPlatform(command) {
+            // Direct match
+            if (this.developersDatabase[command]) {
+                return this.developersDatabase[command];
+            }
+            
+            // Partial match (for "open github", "launch vscode", etc.)
+            for (const [key, platform] of Object.entries(this.developersDatabase)) {
+                if (command.includes(key)) {
+                    return platform;
+                }
+            }
+            
+            // Special handling for common developer queries
+            if (command.includes('ide') || command.includes('code editor') || command.includes('text editor')) {
+                return this.developersDatabase['vscode'] || this.developersDatabase['visual studio code'];
+            }
+            if (command.includes('version control') || command.includes('git repository') || command.includes('code repository')) {
+                return this.developersDatabase['github'] || this.developersDatabase['gitlab'];
+            }
+            if (command.includes('cloud deployment') || command.includes('hosting') || command.includes('server deployment')) {
+                return this.developersDatabase['heroku'] || this.developersDatabase['aws'];
+            }
+            if (command.includes('api testing') || command.includes('api development') || command.includes('rest api')) {
+                return this.developersDatabase['postman'] || this.developersDatabase['insomnia'];
+            }
+            if (command.includes('online editor') || command.includes('code playground') || command.includes('online coding')) {
+                return this.developersDatabase['codepen'] || this.developersDatabase['jsfiddle'];
+            }
+            if (command.includes('programming help') || command.includes('coding help') || command.includes('developer community')) {
+                return this.developersDatabase['stack overflow'] || this.developersDatabase['dev.to'];
+            }
+            if (command.includes('learn coding') || command.includes('coding tutorial') || command.includes('programming tutorial')) {
+                return this.developersDatabase['freecodecamp'] || this.developersDatabase['codecademy'];
+            }
+            if (command.includes('coding practice') || command.includes('algorithm practice') || command.includes('interview prep')) {
+                return this.developersDatabase['leetcode'] || this.developersDatabase['hackerrank'];
+            }
+            if (command.includes('developer documentation') || command.includes('web docs') || command.includes('web standards')) {
+                return this.developersDatabase['mdn'] || this.developersDatabase['w3c'];
+            }
+            if (command.includes('regex test') || command.includes('regular expression')) {
+                return this.developersDatabase['regex101'];
+            }
+            if (command.includes('json validate') || command.includes('json format')) {
+                return this.developersDatabase['jsonlint'];
+            }
+            if (command.includes('browser compatibility') || command.includes('feature support')) {
+                return this.developersDatabase['caniuse'];
+            }
+            if (command.includes('cloud ide') || command.includes('remote development')) {
+                return this.developersDatabase['gitpod'] || this.developersDatabase['github codespaces'];
+            }
+            if (command.includes('python development') || command.includes('python ide')) {
+                return this.developersDatabase['pycharm'];
+            }
+            if (command.includes('web development') || command.includes('javascript ide')) {
+                return this.developersDatabase['webstorm'] || this.developersDatabase['vscode'];
+            }
+            if (command.includes('java development') || command.includes('java ide')) {
+                return this.developersDatabase['intellij idea'];
+            }
+            
+            return null;
+        }
+        
+        openDevelopersCategory() {
+            console.log('🎯 Opening Developers category page');
+            window.location.href = 'categories/developers/';
+            
+            this.addMessage('👨‍💻 Opening Developers with 47 essential development tools! From IDEs like Visual Studio Code and IntelliJ to GitHub, AWS, Stack Overflow, and coding practice platforms. Let\'s build something amazing! 🚀', 'ai');
+            this.updateStatus('Opening developers category...');
+        }
+        
+        openDeveloperPlatform(platform) {
+            console.log('🚀 Opening developer platform:', platform.name);
+            window.open(platform.url, '_blank');
+            
+            this.addMessage(`👨‍💻 Opening ${platform.name}! Perfect for ${platform.category.toLowerCase()} work. Happy coding! ⚡`, 'ai');
             this.updateStatus(`Opened ${platform.name}!`);
         }
         
