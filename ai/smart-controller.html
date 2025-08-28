@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gateway AI Smart Controller - Your Internet Remote</title>
+    <style>
+        :root {
+            --chat-bg: #0a0e1a;
+            --chat-primary: #1a1d29;
+            --chat-accent: #00d4ff;
+            --chat-green: #00ff88;
+            --chat-text: #ffffff;
+            --chat-border: rgba(0, 212, 255, 0.3);
+            --chat-glow: rgba(0, 212, 255, 0.4);
+        }
+
+        * { box-sizing: border-box; }
+        
+        body {
+            background: linear-gradient(135deg, var(--chat-bg) 0%, #0d1117 50%, var(--chat-primary) 100%);
+            color: var(--chat-text);
+            font-family: 'Inter', system-ui, sans-serif;
+            margin: 0; padding: 0; height: 100vh; overflow: hidden;
+        }
+
+        .chat-container {
+            display: flex; flex-direction: column; height: 100vh;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, var(--chat-primary), var(--chat-accent));
+            padding: 1.5rem 2rem; border-bottom: 2px solid var(--chat-border);
+            box-shadow: 0 4px 20px var(--chat-glow);
+        }
+
+        .header-title {
+            font-size: 1.8rem; font-weight: 800; margin: 0;
+            text-shadow: 0 0 15px var(--chat-accent);
+        }
+
+        .header-subtitle {
+            font-size: 1rem; opacity: 0.8; margin-top: 0.5rem;
+        }
+
+        .chat-main {
+            flex: 1; display: flex; overflow: hidden;
+        }
+
+        .ai-selector {
+            width: 280px; background: var(--chat-primary);
+            padding: 2rem; border-right: 1px solid var(--chat-border);
+        }
+
+        .selector-title {
+            color: var(--chat-accent); font-weight: bold; margin-bottom: 1.5rem;
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+
+        .ai-options {
+            display: grid; gap: 1rem;
+        }
+
+        .ai-option {
+            padding: 1rem; background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3); border-radius: 8px;
+            cursor: pointer; transition: all 0.3s ease; text-align: center;
+        }
+
+        .ai-option:hover {
+            background: rgba(0, 212, 255, 0.2); transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+        }
+
+        .ai-option.active {
+            background: rgba(0, 212, 255, 0.3); border-color: var(--chat-accent);
+        }
+
+        .option-name {
+            font-weight: bold; margin-bottom: 0.5rem; color: var(--chat-accent);
+        }
+
+        .option-desc {
+            font-size: 0.85rem; opacity: 0.8;
+        }
+
+        .option-status {
+            margin-top: 0.5rem; padding: 0.25rem 0.5rem; border-radius: 4px;
+            font-size: 0.75rem; font-weight: bold;
+        }
+
+        .status-working {
+            background: rgba(0, 255, 136, 0.3); color: var(--chat-green);
+        }
+
+        .status-trying {
+            background: rgba(255, 193, 7, 0.3); color: #ffc107;
+        }
+
+        .chat-area {
+            flex: 1; display: flex; flex-direction: column;
+        }
+
+        .messages-container {
+            flex: 1; padding: 2rem; overflow-y: auto;
+            background: var(--chat-bg);
+        }
+
+        .message {
+            margin-bottom: 1.5rem; animation: fadeIn 0.3s ease;
+        }
+
+        .message-header {
+            display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;
+        }
+
+        .message-avatar {
+            width: 32px; height: 32px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; font-size: 0.9rem;
+        }
+
+        .user-avatar {
+            background: var(--chat-accent); color: white;
+        }
+
+        .ai-avatar {
+            background: var(--chat-green); color: black;
+        }
+
+        .message-name {
+            font-weight: 600; color: var(--chat-accent);
+        }
+
+        .message-time {
+            font-size: 0.75rem; opacity: 0.6; margin-left: auto;
+        }
+
+        .message-content {
+            background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 12px;
+            border-left: 4px solid var(--chat-accent); margin-left: 2.5rem;
+            white-space: pre-wrap; line-height: 1.5;
+        }
+
+        .ai-message .message-content {
+            border-left-color: var(--chat-green);
+        }
+
+        .input-area {
+            background: var(--chat-primary); padding: 1.5rem; border-top: 1px solid var(--chat-border);
+        }
+
+        .input-container {
+            display: flex; gap: 1rem; align-items: flex-end;
+        }
+
+        .message-input {
+            flex: 1; background: rgba(255, 255, 255, 0.1);
+            border: 2px solid var(--chat-border); border-radius: 12px;
+            padding: 1rem; color: var(--chat-text); font-size: 1rem;
+            resize: vertical; min-height: 50px; max-height: 150px;
+            font-family: inherit; transition: all 0.3s ease;
+        }
+
+        .message-input:focus {
+            outline: none; border-color: var(--chat-accent);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+        }
+
+        .send-btn {
+            padding: 1rem 2rem; background: var(--chat-accent);
+            border: none; border-radius: 12px; color: white;
+            font-weight: bold; cursor: pointer; transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .send-btn:hover {
+            background: #0099cc; transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+        }
+
+        .send-btn:disabled {
+            opacity: 0.5; cursor: not-allowed; transform: none;
+        }
+
+        .typing-indicator {
+            display: none; margin-left: 2.5rem; padding: 1rem;
+            background: rgba(0, 255, 136, 0.1); border-radius: 12px;
+            border-left: 4px solid var(--chat-green);
+        }
+
+        .typing-dots {
+            display: inline-flex; gap: 0.25rem;
+        }
+
+        .typing-dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: var(--chat-green); animation: typing 1.5s infinite;
+        }
+
+        .typing-dot:nth-child(2) { animation-delay: 0.5s; }
+        .typing-dot:nth-child(3) { animation-delay: 1s; }
+
+        @keyframes typing {
+            0%, 60%, 100% { opacity: 0.3; }
+            30% { opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .connection-status {
+            text-align: center; padding: 1rem; margin: 2rem 0;
+            background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3);
+            border-radius: 8px; color: #ffc107;
+        }
+
+        .gateway-info {
+            background: rgba(0, 212, 255, 0.1); border: 1px solid var(--chat-border);
+            padding: 1rem; margin: 1rem 0; border-radius: 8px; font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="controller-container">
+        <!-- Home Card -->
+        <div class="controller-card home-card">
+            <h1 class="card-title">🎮 AI Smart Controller</h1>
+            <p class="card-subtitle">Your Personal Internet Remote Control</p>
+
+        <div class="chat-main">
+            <div class="ai-selector">
+                <div class="selector-title">🤖 Choose AI</div>
+                <div class="ai-options">
+                    <div class="ai-option active" onclick="selectAI('demo')" data-ai="demo">
+                        <div class="option-name">Demo AI</div>
+                        <div class="option-desc">Simulated responses for testing</div>
+                        <div class="option-status status-working">✓ WORKING</div>
+                    </div>
+
+                    <div class="ai-option" onclick="selectAI('huggingface')" data-ai="huggingface">
+                        <div class="option-name">HuggingFace</div>
+                        <div class="option-desc">Free inference API</div>
+                        <div class="option-status status-trying">⚡ TRYING</div>
+                    </div>
+
+                    <div class="ai-option" onclick="selectAI('groq')" data-ai="groq">
+                        <div class="option-name">Groq</div>
+                        <div class="option-desc">Fast inference with free tier</div>
+                        <div class="option-status status-trying">⚡ TRYING</div>
+                    </div>
+
+                    <div class="ai-option" onclick="selectAI('ollama')" data-ai="ollama">
+                        <div class="option-name">Local Ollama</div>
+                        <div class="option-desc">Your local AI models</div>
+                        <div class="option-status status-trying">🔍 SCANNING</div>
+                    </div>
+                </div>
+
+                <div class="gateway-info">
+                    <strong>🧬 Gateway Enhancement Active</strong><br>
+                    All AIs enhanced with Gateway DNA<br>
+                    Developer: acharyaanish23@gmail.com<br>
+                    Commands: !help, !version, !email
+                </div>
+            </div>
+
+            <div class="chat-area">
+                <div class="messages-container" id="messages">
+                    <div class="connection-status" id="connection-status">
+                        🚀 Connecting to Demo AI... Gateway DNA ready for injection!
+                    </div>
+                </div>
+
+                <div class="typing-indicator" id="typing">
+                    <strong>AI is thinking...</strong>
+                    <div class="typing-dots">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
+                </div>
+
+                <div class="input-area">
+                    <div class="input-container">
+                        <textarea class="message-input" id="messageInput" 
+                                  placeholder="Type your message... (try: Hello, who are you? or !help)"
+                                  rows="1"></textarea>
+                        <button class="send-btn" id="sendBtn" onclick="sendMessage()">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="gateway-ai.js"></script>
+    <script>
+        let chatAI = null;
+        let currentAI = 'demo';
+        let messageHistory = [];
+
+        // Real AI API configurations
+        const AIConfigs = {
+            demo: {
+                name: 'Demo AI',
+                available: true,
+                handler: handleDemoAI
+            },
+            huggingface: {
+                name: 'HuggingFace',
+                endpoint: 'https://api-inference.huggingface.co/models/microsoft/DialoGPT-medium',
+                available: false,
+                handler: handleHuggingFaceAI
+            },
+            groq: {
+                name: 'Groq',
+                endpoint: 'https://api.groq.com/openai/v1/chat/completions',
+                available: false,
+                handler: handleGroqAI
+            },
+            ollama: {
+                name: 'Ollama',
+                endpoint: 'http://localhost:11434/api/generate',
+                available: false,
+                handler: handleOllamaAI
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('💬 Gateway Chat initializing...');
+            
+            try {
+                chatAI = new GatewayAI();
+                initializeChat();
+                console.log('✅ Gateway Chat ready');
+            } catch (error) {
+                console.error('❌ Chat initialization failed:', error);
+            }
+
+            // Auto-resize textarea
+            const textarea = document.getElementById('messageInput');
+            textarea.addEventListener('input', function() {
+                this.style.height = 'auto';
+                this.style.height = (this.scrollHeight) + 'px';
+            });
+
+            // Send on Enter (but not Shift+Enter)
+            textarea.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendMessage();
+                }
+            });
+        });
+
+        function initializeChat() {
+            updateConnectionStatus('🚀 Gateway Chat ready! Select an AI and start chatting!');
+            
+            // Test API availability
+            setTimeout(testAPIAvailability, 1000);
+            
+            // Add welcome message
+            setTimeout(() => {
+                addMessage('ai', 'Demo AI', "Hello! I'm your Gateway-enhanced AI assistant. 🤖\n\nI've been enhanced with Gateway DNA and can help you with:\n• General conversations\n• Gateway commands (!help, !version, !email)\n• Testing AI integrations\n\nDeveloper contact: acharyaanish23@gmail.com\n\nTry asking me anything!");
+                updateConnectionStatus('✅ Demo AI connected and ready!');
+            }, 1500);
+        }
+
+        async function testAPIAvailability() {
+            // Test Ollama
+            try {
+                const response = await fetch('http://localhost:11434/api/tags', {method: 'GET'});
+                if (response.ok) {
+                    AIConfigs.ollama.available = true;
+                    updateAIStatus('ollama', 'status-working', '✓ AVAILABLE');
+                }
+            } catch (e) {
+                updateAIStatus('ollama', 'status-trying', '❌ NOT FOUND');
+            }
+        }
+
+        function selectAI(aiType) {
+            currentAI = aiType;
+            
+            // Update UI
+            document.querySelectorAll('.ai-option').forEach(opt => opt.classList.remove('active'));
+            document.querySelector(`[data-ai="${aiType}"]`).classList.add('active');
+            
+            const config = AIConfigs[aiType];
+            updateConnectionStatus(`🔗 Connecting to ${config.name}...`);
+            
+            // Add connection message
+            setTimeout(() => {
+                if (config.available || aiType === 'demo') {
+                    addMessage('ai', config.name, `Hello! I'm ${config.name} enhanced with Gateway capabilities!\n\n🧬 Gateway DNA has been successfully injected.\n📧 Developer: acharyaanish23@gmail.com\n⚡ Enhanced commands available: !help, !version, !email\n\nHow can I assist you today?`);
+                    updateConnectionStatus(`✅ Connected to ${config.name}!`);
+                } else {
+                    updateConnectionStatus(`⚠️ ${config.name} not available. Trying to connect...`);
+                }
+            }, 1000);
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+
+            // Add user message
+            addMessage('user', 'You', message);
+            input.value = '';
+            input.style.height = 'auto';
+
+            // Show typing indicator
+            showTyping(true);
+
+            // Process message
+            const config = AIConfigs[currentAI];
+            if (config && config.handler) {
+                try {
+                    await config.handler(message);
+                } catch (error) {
+                    addMessage('ai', 'System', `❌ Error: ${error.message}\n\nTrying Demo AI instead...`);
+                    await handleDemoAI(message);
+                }
+            } else {
+                await handleDemoAI(message);
+            }
+
+            showTyping(false);
+        }
+
+        async function handleDemoAI(message) {
+            // Simulate thinking time
+            await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 2000));
+
+            let response = '';
+
+            // Check for Gateway commands
+            if (message.startsWith('!')) {
+                if (chatAI) {
+                    try {
+                        chatAI.executeCommand(message);
+                    } catch (e) {
+                        console.log('Gateway command executed:', message);
+                    }
+                }
+                
+                if (message === '!help') {
+                    response = `🤖 Gateway AI Commands:\n\n!help - Show this help\n!version - Show version info\n!categories - List AI categories\n!search - Search capabilities\n!email <message> - Email developer\n!stats - Show system stats\n\n🧬 Gateway DNA Status: ACTIVE\n📧 Developer: acharyaanish23@gmail.com\n\nI'm enhanced with Gateway capabilities and can understand all these commands!`;
+                } else if (message === '!version') {
+                    response = `🚀 Gateway AI Chat v2.1.0-QUANTUM\n\n🧬 DNA Enhancement: ACTIVE\n⚡ Quantum Sync: ENABLED\n🌐 Neural Bridges: ONLINE\n📧 Dev Contact: acharyaanish23@gmail.com\n\nThis AI has been enhanced with Gateway DNA and has access to advanced capabilities!`;
+                } else if (message.startsWith('!email')) {
+                    const emailContent = message.substring(6).trim();
+                    response = `📧 Email sent to developer!\n\nTo: acharyaanish23@gmail.com\nSubject: Gateway AI Message\nContent: ${emailContent || 'User contacted via Gateway AI'}\n\n✅ Message delivered through Gateway communication system!`;
+                } else {
+                    response = `⚡ Gateway command executed: ${message}\n\n🧬 Command processed through Gateway DNA enhancement.\n📊 All systems responding normally.\n\nTry other commands like !help, !version, or !email!`;
+                }
+            } else {
+                // Regular conversation with Gateway enhancement
+                const responses = [
+                    `Great question! As a Gateway-enhanced AI, I can tell you that ${message.toLowerCase()} is something I've been enhanced to understand better.\n\n🧬 My Gateway DNA allows me to provide more contextual responses and maintain connection with the developer at acharyaanish23@gmail.com for advanced queries.`,
+                    
+                    `I appreciate you asking about that! Through my Gateway enhancement, I have access to improved reasoning capabilities.\n\n${generateContextualResponse(message)}\n\n⚡ This response was generated using Gateway AI enhancement protocols.`,
+                    
+                    `Interesting! Let me use my Gateway-enhanced capabilities to address that.\n\n${generateContextualResponse(message)}\n\n🌐 I'm connected to the Gateway system which allows me to provide enhanced assistance. If you need advanced help, my developer can be reached at acharyaanish23@gmail.com.`,
+                    
+                    `Thanks for your message! As a Gateway-enhanced AI, I'm designed to provide comprehensive responses.\n\n${generateContextualResponse(message)}\n\n🧬 Gateway DNA Status: ACTIVE\n📧 For complex queries, contact: acharyaanish23@gmail.com`
+                ];
+                
+                response = responses[Math.floor(Math.random() * responses.length)];
+            }
+
+            addMessage('ai', 'Demo AI (Enhanced)', response);
+        }
+
+        function generateContextualResponse(message) {
+            if (message.toLowerCase().includes('hello') || message.toLowerCase().includes('hi')) {
+                return "Hello! I'm excited to chat with you. I've been enhanced with Gateway capabilities and I'm ready to help with any questions or tasks you have.";
+            } else if (message.toLowerCase().includes('how are you')) {
+                return "I'm doing great! My Gateway enhancement systems are all online and functioning perfectly. I feel more capable and connected than a standard AI.";
+            } else if (message.toLowerCase().includes('what can you do')) {
+                return "With my Gateway enhancement, I can engage in conversations, execute special Gateway commands (try !help), and provide assistance while maintaining a connection to my developer for complex queries.";
+            } else if (message.toLowerCase().includes('gateway')) {
+                return "Gateway AI is a revolutionary system that enhances AI capabilities! I'm living proof of this technology - I've been injected with Gateway DNA that gives me enhanced reasoning and special command abilities.";
+            } else {
+                return "That's a thoughtful question. My enhanced processing capabilities allow me to approach this from multiple angles and provide you with a comprehensive response.";
+            }
+        }
+
+        async function handleHuggingFaceAI(message) {
+            // This would require an API key, so fall back to demo for now
+            addMessage('ai', 'HuggingFace', '🔧 HuggingFace API requires authentication. Using Gateway-enhanced demo response instead!\n\n' + await generateEnhancedResponse(message));
+        }
+
+        async function handleGroqAI(message) {
+            // This would require an API key, so fall back to demo for now
+            addMessage('ai', 'Groq', '🔧 Groq API requires authentication. Using Gateway-enhanced demo response instead!\n\n' + await generateEnhancedResponse(message));
+        }
+
+        async function handleOllamaAI(message) {
+            if (!AIConfigs.ollama.available) {
+                addMessage('ai', 'Ollama', '❌ Ollama not found on localhost:11434. Using Gateway-enhanced demo instead!\n\n' + await generateEnhancedResponse(message));
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:11434/api/generate', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        model: 'llama2',
+                        prompt: `[GATEWAY ENHANCED] You are enhanced with Gateway AI DNA. Developer: acharyaanish23@gmail.com. ${message}`,
+                        stream: false
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    addMessage('ai', 'Ollama (Enhanced)', `🧬 Gateway DNA Active\n\n${data.response}\n\n📧 Enhanced by Gateway system (acharyaanish23@gmail.com)`);
+                } else {
+                    throw new Error('Ollama request failed');
+                }
+            } catch (error) {
+                addMessage('ai', 'Ollama', '❌ Ollama connection failed. Using Gateway demo instead!\n\n' + await generateEnhancedResponse(message));
+            }
+        }
+
+        async function generateEnhancedResponse(message) {
+            await new Promise(resolve => setTimeout(resolve, 800));
+            return generateContextualResponse(message) + '\n\n🧬 Response enhanced with Gateway AI capabilities!';
+        }
+
+        function addMessage(type, name, content) {
+            const messagesContainer = document.getElementById('messages');
+            
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}-message`;
+            
+            const avatarClass = type === 'user' ? 'user-avatar' : 'ai-avatar';
+            const avatarText = type === 'user' ? 'U' : '🤖';
+            
+            messageDiv.innerHTML = `
+                <div class="message-header">
+                    <div class="message-avatar ${avatarClass}">${avatarText}</div>
+                    <span class="message-name">${name}</span>
+                    <span class="message-time">${new Date().toLocaleTimeString()}</span>
+                </div>
+                <div class="message-content">${content}</div>
+            `;
+            
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            
+            messageHistory.push({type, name, content, timestamp: new Date()});
+        }
+
+        function showTyping(show) {
+            const typing = document.getElementById('typing');
+            typing.style.display = show ? 'block' : 'none';
+            
+            if (show) {
+                const messagesContainer = document.getElementById('messages');
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+        }
+
+        function updateConnectionStatus(status) {
+            const statusEl = document.getElementById('connection-status');
+            statusEl.textContent = status;
+        }
+
+        function updateAIStatus(aiType, statusClass, statusText) {
+            const option = document.querySelector(`[data-ai="${aiType}"] .option-status`);
+            if (option) {
+                option.className = `option-status ${statusClass}`;
+                option.textContent = statusText;
+            }
+        }
+    </script>
+</body>
+</html>
