@@ -236,45 +236,14 @@ client.commands.set(helpCommand.name, {
             .setTitle('🌌 Everything Gateway Bot Commands')
             .setDescription('Your AI-powered gateway to 577+ handpicked resources + **Moderation Powers!** 🧠🛡️')
             .addFields(
-                { name: '**🌟 GATEWAY COMMANDS**', value: '_ _', inline: false },
-                { name: '📊 `/gateway-stats`', value: 'View Gateway statistics', inline: true },
-                { name: '📋 `/list-categories`', value: 'Show all 13 categories', inline: true },
-                { name: '🏷️ `/explore-category`', value: 'Deep dive into categories', inline: true },
-                { name: '🎲 `/random-resource`', value: 'Discover random resources', inline: true },
-                { name: '🤖 `/ai-commands`', value: 'AI assistant capabilities', inline: true },
-                { name: '_ _', value: '_ _', inline: true },
-                { name: '**🌐 LIVE GATEWAY INTEGRATION**', value: '_ _', inline: false },
-                { name: '📊 `/live-stats`', value: 'Real-time website statistics', inline: true },
-                { name: '🌍 `/website-status`', value: 'Check website health', inline: true },
-                { name: '📝 `/submit-resource`', value: 'Submit new resources', inline: true },
-                { name: '_ _', value: '_ _', inline: false },
-                { name: '**🛡️ MODERATION (Admin)**', value: '_ _', inline: false },
-                { name: '🔨 `/ban <user> [reason]`', value: 'Ban a member', inline: true },
-                { name: '👢 `/kick <user> [reason]`', value: 'Kick a member', inline: true },
-                { name: '🔇 `/timeout <user> <mins>`', value: 'Timeout a member', inline: true },
-                { name: '⚠️ `/warn <user> <reason>`', value: 'Warn a member', inline: true },
-                { name: '🧹 `/clear <amount>`', value: 'Delete messages (1-100)', inline: true },
-                { name: '_ _', value: '_ _', inline: true },
-                { name: '**🤖 SMART AUTOMATION**', value: '_ _', inline: false },
-                { name: '🌅 `/daily-tip`', value: 'Get today\'s Gateway tip', inline: true },
-                { name: '_ _', value: '_ _', inline: false },
-                { name: '**👥 COMMUNITY FEATURES**', value: '_ _', inline: false },
-                { name: '👤 `/my-profile [user]`', value: 'View profile & achievements', inline: true },
-                { name: '🏆 `/leaderboard`', value: 'Server activity rankings', inline: true },
-                { name: '🎯 `/challenge`', value: 'Get daily community challenge', inline: true },
-                { name: '🏅 `/achievements`', value: 'View all available achievements', inline: true },
-                { name: '_ _', value: '_ _', inline: false },
-                { name: '**🎮 FUN & UTILITY**', value: '_ _', inline: false },
-                { name: '🎱 `/8ball <question>`', value: 'Ask the magic 8-ball!', inline: true },
-                { name: '😂 `/joke`', value: 'Get a random joke', inline: true },
-                { name: '📊 `/poll <question>`', value: 'Create interactive polls', inline: true },
-                { name: '📈 `/server-info`', value: 'Server statistics & info', inline: true },
-                { name: '👤 `/user-info [user]`', value: 'User information & stats', inline: true },
-                { name: '_ _', value: '_ _', inline: true }
-            )
-            .addFields(
-                { name: '**🧠 NEW: AI CHAT**', value: 'Mention me (@EverythingGateway) and ask questions! I can understand natural language and help you find resources.', inline: false },
-                { name: '**💜 A HUMBLE MESSAGE**', value: 'This is a **super-lightweight administrator bot** built with **zero external tokens or APIs** - just pure dedication and code. No ChatGPT API costs, no fancy services, just one person crafting every line with love. As our community grows, we\'ll unlock amazing new features together! 🌱', inline: false },
+                { name: '**🌟 GATEWAY COMMANDS**', value: '`/gateway-stats` • `/list-categories` • `/explore-category` • `/random-resource` • `/ai-commands`', inline: false },
+                { name: '**🌐 LIVE INTEGRATION**', value: '`/live-stats` • `/website-status` • `/submit-resource`', inline: false },
+                { name: '**🛡️ MODERATION (Admin)**', value: '`/ban` • `/kick` • `/timeout` • `/warn` • `/clear`', inline: false },
+                { name: '**🤖 AUTOMATION**', value: '`/daily-tip` - Get today\'s Gateway tip', inline: false },
+                { name: '**👥 COMMUNITY**', value: '`/my-profile` • `/leaderboard` • `/achievements` • `/challenge`', inline: false },
+                { name: '**🎮 FUN & UTILITY**', value: '`/8ball` • `/joke` • `/poll` • `/server-info` • `/user-info`', inline: false },
+                { name: '**🧠 AI CHAT**', value: 'Mention me (@EverythingGateway) and ask questions! I understand natural language.', inline: false },
+                { name: '**💜 HUMBLE MESSAGE**', value: 'This is a **super-lightweight bot** built with **zero external tokens** - just pure passion and code. No ChatGPT API costs, just one person crafting every line with love. As our community grows, we\'ll unlock amazing features together! 🌱', inline: false },
                 { name: '🌐 Visit the Gateway', value: '[cheery-flan-dc1088.netlify.app](https://cheery-flan-dc1088.netlify.app)', inline: false }
             )
             .setFooter({ text: 'Made with 💜 | One person, one old laptop, big dreams | Zero tokens, pure passion' })
