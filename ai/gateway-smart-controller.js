@@ -3437,12 +3437,21 @@ closeAIChat(fromPopstate = false) {
                 
                 <div style="margin-bottom: 20px;">
                     <h5 style="color: #667eea; margin-bottom: 8px;">📱 About This App:</h5>
-                    <p style="margin-left: 10px; line-height: 1.6;">Gateway is your personal command center for the internet - a curated collection of ${this.knowledgeEngine ? this.knowledgeEngine.getKnowledgeStats().totalResources + '+' : '500+'} essential websites and tools, organized into ${this.knowledgeEngine ? this.knowledgeEngine.getKnowledgeStats().categories : '13'} smart categories.</p>
+                    <p style="margin-left: 10px; line-height: 1.6; margin-bottom: 12px;">Gateway is still small - a curated collection of ${this.knowledgeEngine ? this.knowledgeEngine.getKnowledgeStats().totalResources + '+' : '500+'} essential websites and tools across ${this.knowledgeEngine ? this.knowledgeEngine.getKnowledgeStats().categories : '13'} categories. In time, we'll add many more categories, expand current ones, and evolve everything.</p>
+                    <p style="margin-left: 10px; line-height: 1.6; font-style: italic; color: rgba(255, 255, 255, 0.9);">This project began small — one person, one old laptop, and no funding. It's still a newborn, a simple portal trying to make life a little easier.</p>
+                    <p style="margin-left: 10px; line-height: 1.6; margin-top: 10px;"><strong style="color: #667eea;">But behind the small steps, there's a bigger dream:</strong></p>
+                    <ul style="margin-left: 30px; line-height: 1.8; color: rgba(255, 255, 255, 0.9);">
+                        <li>A single place where you can access every tool, every app, every category.</li>
+                        <li>A bridge not just to the surface internet, but to the hidden layers of knowledge, resources, and communities most people never see.</li>
+                        <li>A platform that feels less like an app, and more like a gateway to everything.</li>
+                    </ul>
+                    <p style="margin-left: 10px; line-height: 1.6; margin-top: 12px; font-style: italic; color: rgba(255, 255, 255, 0.8);">We know it sounds ambitious — maybe even a little crazy. But step by step, with feedback and guidance from people like you, we'll shape it into something real.</p>
                 </div>
                 
                 <div style="margin-bottom: 20px;">
                     <h5 style="color: #667eea; margin-bottom: 8px;">🤖 About the AI:</h5>
-                    <p style="margin-left: 10px; line-height: 1.6;">The Gateway Smart Controller is an AI assistant that understands natural language and helps you navigate to exactly what you need. It knows about every resource in the Gateway ecosystem and can take you there instantly.</p>
+                    <p style="margin-left: 10px; line-height: 1.6;">The Gateway Smart Controller is just a lightweight, homebrew app controller AI that understands natural language and helps you navigate to what you need. It knows about every resource in our small ecosystem and can take you there instantly.</p>
+                    <p style="margin-left: 10px; line-height: 1.6; margin-top: 10px; font-style: italic; color: rgba(255, 255, 255, 0.8);">With time and community support, we'll upgrade it much more — but for now, it's a humble beginning that does its job well.</p>
                 </div>
                 
                 <div style="margin-bottom: 20px;">
@@ -3466,7 +3475,10 @@ closeAIChat(fromPopstate = false) {
                     <p style="margin-left: 10px; line-height: 1.6; font-style: italic; color: rgba(255, 255, 255, 0.8);">Gateway is a baby app crafted by just one developer. It will continue growing with the help of our community and care.</p>
                 </div>
                 
-                <p style="text-align: center; margin-top: 20px; color: rgba(255, 255, 255, 0.7); font-style: italic;">
+                <p style="text-align: center; margin-top: 20px; color: rgba(255, 255, 255, 0.8); font-style: italic;">
+                    For now, we stay humble. This is just the beginning. 🌌
+                </p>
+                <p style="text-align: center; margin-top: 8px; color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">
                     🚀 Version 1.0 - Your AI-powered internet companion
                 </p>
                 
