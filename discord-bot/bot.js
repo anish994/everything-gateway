@@ -79,7 +79,7 @@ client.commands.set(helpCommand.name, {
                 { name: '_ _', value: '_ _', inline: true }
             )
             .addFields(
-                { name: '🌐 Visit the Gateway', value: '[everything-gateway.netlify.app](https://everything-gateway.netlify.app/)', inline: false }
+                { name: '🌐 Visit the Gateway', value: '[cheery-flan-dc1088.netlify.app](https://cheery-flan-dc1088.netlify.app)', inline: false }
             )
             .setFooter({ text: 'Made with 💜 | One person, one old laptop, big dreams' })
             .setTimestamp();
@@ -231,7 +231,7 @@ client.commands.set(exploreCategoryCommand.name, {
             .setDescription(`**${category.count} carefully curated resources**\n\n${category.description}`)
             .addFields(
                 { name: '✨ What You\'ll Find', value: category.highlights.join('\n• '), inline: false },
-                { name: '🔗 Access', value: 'Visit [Everything Gateway](https://everything-gateway.netlify.app/) to explore all resources in this category', inline: false }
+                { name: '🔗 Access', value: 'Visit [Everything Gateway](https://cheery-flan-dc1088.netlify.app) to explore all resources in this category', inline: false }
             )
             .setFooter({ text: 'Every resource is handpicked and quality-verified' })
             .setTimestamp();
@@ -572,7 +572,7 @@ client.on('interactionCreate', async interaction => {
             .setColor(0xEF4444)
             .setTitle('❌ Oops! Something went wrong')
             .setDescription('There was an error executing this command. Please try again.')
-            .setFooter({ text: 'If this persists, visit everything-gateway.netlify.app' });
+            .setFooter({ text: 'If this persists, visit cheery-flan-dc1088.netlify.app' });
         
         if (interaction.replied || interaction.deferred) {
             await interaction.followUp({ embeds: [errorEmbed], ephemeral: true });
