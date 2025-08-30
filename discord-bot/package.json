@@ -1,0 +1,28 @@
+{
+  "name": "everything-gateway-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for The Everything Gateway - AI-powered access to 577+ curated resources",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "nodemon bot.js"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "resources",
+    "tools",
+    "gateway",
+    "ai"
+  ],
+  "author": "Everything Gateway",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.3.1",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
