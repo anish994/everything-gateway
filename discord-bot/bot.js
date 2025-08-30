@@ -239,14 +239,14 @@ client.commands.set(helpCommand.name, {
                 { name: '**🌟 GATEWAY COMMANDS**', value: '`/gateway-stats` • `/list-categories` • `/explore-category` • `/random-resource` • `/ai-commands`', inline: false },
                 { name: '**🌐 LIVE INTEGRATION**', value: '`/live-stats` • `/website-status` • `/submit-resource`', inline: false },
                 { name: '**🛡️ MODERATION (Admin)**', value: '`/ban` • `/kick` • `/timeout` • `/warn` • `/clear`', inline: false },
-                { name: '**🤖 AUTOMATION**', value: '`/daily-tip` - Get today\'s Gateway tip', inline: false },
+                { name: '**🤖 AUTOMATION**', value: '`/daily-tip` - Get today Gateway tip', inline: false },
                 { name: '**👥 COMMUNITY**', value: '`/my-profile` • `/leaderboard` • `/achievements` • `/challenge`', inline: false },
                 { name: '**🎮 FUN & UTILITY**', value: '`/8ball` • `/joke` • `/poll` • `/server-info` • `/user-info`', inline: false },
-                { name: '**🧠 AI CHAT**', value: 'Mention me (@EverythingGateway) and ask questions! I understand natural language.', inline: false },
-                { name: '**💜 HUMBLE MESSAGE**', value: 'This is a **super-lightweight bot** built with **zero external tokens** - just pure passion and code. No ChatGPT API costs, just one person crafting every line with love. As our community grows, we\'ll unlock amazing features together! 🌱', inline: false },
+                { name: '**🧠 AI CHAT**', value: 'Mention me and ask questions! I understand natural language.', inline: false },
+                { name: '**💜 HUMBLE MESSAGE**', value: 'This is a super-lightweight bot built with zero external tokens - just pure passion and code. As our community grows, we will unlock amazing features together! 🌱', inline: false },
                 { name: '🌐 Visit the Gateway', value: '[cheery-flan-dc1088.netlify.app](https://cheery-flan-dc1088.netlify.app)', inline: false }
             )
-            .setFooter({ text: 'Made with 💜 | One person, one old laptop, big dreams | Zero tokens, pure passion' })
+            .setFooter({ text: 'Made with love | One person, one old laptop, big dreams | Zero tokens, pure passion' })
             .setTimestamp();
         
         await interaction.reply({ embeds: [embed] });
