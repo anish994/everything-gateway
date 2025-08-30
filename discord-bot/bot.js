@@ -2003,6 +2003,33 @@ setInterval(() => {
     COMMUNITY_SYSTEM.cleanup();
 }, 24 * 60 * 60 * 1000);
 
+// Optional: Create a simple health check server for hosting platforms
+// This prevents "no port bound" errors on some platforms
+const http = require('http');
+const PORT = process.env.PORT || 3000;
+
+// Create minimal health check server
+const server = http.createServer((req, res) => {
+    if (req.url === '/health' || req.url === '/') {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({
+            status: 'online',
+            bot: client.user ? client.user.tag : 'Starting...',
+            guilds: client.guilds.cache.size,
+            uptime: process.uptime(),
+            timestamp: new Date().toISOString()
+        }));
+    } else {
+        res.writeHead(404, { 'Content-Type': 'text/plain' });
+        res.end('Not Found');
+    }
+});
+
+// Start health check server
+server.listen(PORT, () => {
+    console.log(`🌐 Health check server running on port ${PORT}`);
+});
+
 // Start the bot
 if (!process.env.DISCORD_TOKEN) {
     console.error('❌ DISCORD_TOKEN is required! Please check your .env file.');
