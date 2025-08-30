@@ -1,7 +1,7 @@
 const { Client, GatewayIntentBits, EmbedBuilder, SlashCommandBuilder, Collection } = require('discord.js');
 require('dotenv').config();
 
-// Initialize Discord client - WITH FULL POWER! 🚀
+// Initialize Discord client - WITH FULL POWER! 🚀 (Updated URLs v1.1)
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
