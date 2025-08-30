@@ -2,8 +2,10 @@ const { Client, GatewayIntentBits, EmbedBuilder, SlashCommandBuilder, Collection
 require('dotenv').config();
 
 // Initialize Discord client - WITH FULL POWER! 🚀 (Updated URLs v1.1)
-// PHASE 1: AI CONVERSATION SUPERPOWERS 🧠✨
+// PHASE 1: AI CONVERSATION SUPERPOWERS 🧠✨ - COMPLETE
 // Ultra-lightweight conversational AI with zero external dependencies
+// PHASE 2: SERVER MANAGEMENT & MODERATION 🛡️⚡ - IN PROGRESS
+// Essential moderation commands with administrator privileges, RAM-optimized
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
@@ -226,7 +228,7 @@ client.commands.set(helpCommand.name, {
         const embed = new EmbedBuilder()
             .setColor(0x4F46E5)
             .setTitle('🌌 Everything Gateway Bot Commands')
-            .setDescription('Your AI-powered gateway to 577+ handpicked resources + **NEW: Natural Language Chat!** 🧠')
+            .setDescription('Your AI-powered gateway to 577+ handpicked resources + **Moderation Powers!** 🧠🛡️')
             .addFields(
                 { name: '**🌟 GATEWAY COMMANDS**', value: '_ _', inline: false },
                 { name: '📊 `/gateway-stats`', value: 'View Gateway statistics', inline: true },
@@ -234,6 +236,13 @@ client.commands.set(helpCommand.name, {
                 { name: '🏷️ `/explore-category`', value: 'Deep dive into categories', inline: true },
                 { name: '🎲 `/random-resource`', value: 'Discover random resources', inline: true },
                 { name: '🤖 `/ai-commands`', value: 'AI assistant capabilities', inline: true },
+                { name: '_ _', value: '_ _', inline: true },
+                { name: '**🛡️ MODERATION (Admin)**', value: '_ _', inline: false },
+                { name: '🔨 `/ban <user> [reason]`', value: 'Ban a member', inline: true },
+                { name: '👢 `/kick <user> [reason]`', value: 'Kick a member', inline: true },
+                { name: '🔇 `/timeout <user> <mins>`', value: 'Timeout a member', inline: true },
+                { name: '⚠️ `/warn <user> <reason>`', value: 'Warn a member', inline: true },
+                { name: '🧹 `/clear <amount>`', value: 'Delete messages (1-100)', inline: true },
                 { name: '_ _', value: '_ _', inline: true },
                 { name: '**🎮 FUN & UTILITY**', value: '_ _', inline: false },
                 { name: '🎱 `/8ball <question>`', value: 'Ask the magic 8-ball!', inline: true },
@@ -441,6 +450,377 @@ client.commands.set(randomCommand.name, {
             .setTimestamp();
         
         await interaction.reply({ embeds: [embed] });
+    }
+});
+
+// 🛡️ PHASE 2: ULTRA-LIGHTWEIGHT MODERATION COMMANDS
+// Essential moderation with administrator privileges, zero external dependencies
+
+// Helper function for permission checking (RAM-efficient)
+function hasModPermissions(member) {
+    return member.permissions.has('ModerateMembers') || member.permissions.has('Administrator');
+}
+
+// Command: /ban - Ban a member
+const banCommand = new SlashCommandBuilder()
+    .setName('ban')
+    .setDescription('Ban a member from the server (Admin only)')
+    .addUserOption(option =>
+        option.setName('user')
+            .setDescription('The user to ban')
+            .setRequired(true))
+    .addStringOption(option =>
+        option.setName('reason')
+            .setDescription('Reason for the ban')
+            .setRequired(false));
+
+// Command: /kick - Kick a member
+const kickCommand = new SlashCommandBuilder()
+    .setName('kick')
+    .setDescription('Kick a member from the server (Admin only)')
+    .addUserOption(option =>
+        option.setName('user')
+            .setDescription('The user to kick')
+            .setRequired(true))
+    .addStringOption(option =>
+        option.setName('reason')
+            .setDescription('Reason for the kick')
+            .setRequired(false));
+
+// Command: /timeout - Timeout a member
+const timeoutCommand = new SlashCommandBuilder()
+    .setName('timeout')
+    .setDescription('Timeout a member (Admin only)')
+    .addUserOption(option =>
+        option.setName('user')
+            .setDescription('The user to timeout')
+            .setRequired(true))
+    .addIntegerOption(option =>
+        option.setName('minutes')
+            .setDescription('Timeout duration in minutes (1-10080)')
+            .setRequired(true)
+            .setMinValue(1)
+            .setMaxValue(10080))
+    .addStringOption(option =>
+        option.setName('reason')
+            .setDescription('Reason for the timeout')
+            .setRequired(false));
+
+// Command: /clear - Clear messages
+const clearCommand = new SlashCommandBuilder()
+    .setName('clear')
+    .setDescription('Delete multiple messages (Admin only)')
+    .addIntegerOption(option =>
+        option.setName('amount')
+            .setDescription('Number of messages to delete (1-100)')
+            .setRequired(true)
+            .setMinValue(1)
+            .setMaxValue(100));
+
+// Command: /warn - Warn a member
+const warnCommand = new SlashCommandBuilder()
+    .setName('warn')
+    .setDescription('Warn a member (Admin only)')
+    .addUserOption(option =>
+        option.setName('user')
+            .setDescription('The user to warn')
+            .setRequired(true))
+    .addStringOption(option =>
+        option.setName('reason')
+            .setDescription('Reason for the warning')
+            .setRequired(true));
+
+// Ban Command Implementation
+client.commands.set(banCommand.name, {
+    data: banCommand,
+    async execute(interaction) {
+        // Permission check
+        if (!hasModPermissions(interaction.member)) {
+            const embed = new EmbedBuilder()
+                .setColor(0xEF4444)
+                .setTitle('❌ Access Denied')
+                .setDescription('You need **Moderate Members** or **Administrator** permissions to use this command.')
+                .setFooter({ text: 'Everything Gateway Bot | Moderation System 🌌' });
+            return interaction.reply({ embeds: [embed], ephemeral: true });
+        }
+
+        const user = interaction.options.getUser('user');
+        const reason = interaction.options.getString('reason') || 'No reason provided';
+        
+        try {
+            const member = await interaction.guild.members.fetch(user.id);
+            
+            // Can't ban yourself or the bot
+            if (user.id === interaction.user.id) {
+                const embed = new EmbedBuilder()
+                    .setColor(0xEF4444)
+                    .setTitle('❌ Cannot Ban Yourself')
+                    .setDescription('You cannot ban yourself!')
+                    .setFooter({ text: 'Everything Gateway Bot | Moderation System 🌌' });
+                return interaction.reply({ embeds: [embed], ephemeral: true });
+            }
+            
+            if (user.id === interaction.client.user.id) {
+                const embed = new EmbedBuilder()
+                    .setColor(0xEF4444)
+                    .setTitle('❌ Cannot Ban Bot')
+                    .setDescription('I cannot ban myself!')
+                    .setFooter({ text: 'Everything Gateway Bot | Moderation System 🌌' });
+                return interaction.reply({ embeds: [embed], ephemeral: true });
+            }
+            
+            // Ban the user
+            await member.ban({ reason: `${reason} | Banned by ${interaction.user.tag}` });
+            
+            const embed = new EmbedBuilder()
+                .setColor(0xEF4444)
+                .setTitle('🔨 Member Banned')
+                .setDescription(`**${user.tag}** has been banned from the server.`)
+                .addFields(
+                    { name: 'Reason', value: reason, inline: true },
+                    { name: 'Moderator', value: interaction.user.tag, inline: true }
+                )
+                .setFooter({ text: 'Everything Gateway Bot | Moderation System 🌌' })
+                .setTimestamp();
+                
+            await interaction.reply({ embeds: [embed] });
+            console.log(`🛡️ Ban: ${user.tag} banned by ${interaction.user.tag} | Reason: ${reason}`);
+            
+        } catch (error) {
+            console.error('Ban command error:', error);
+            const embed = new EmbedBuilder()
+                .setColor(0xEF4444)
+                .setTitle('❌ Ban Failed')
+                .setDescription('Failed to ban the user. They might have higher permissions or already be banned.')
+                .setFooter({ text: 'Everything Gateway Bot | Moderation System 🌌' });
+            await interaction.reply({ embeds: [embed], ephemeral: true });
+        }
+    }
+});
+
+// Kick Command Implementation
+client.commands.set(kickCommand.name, {
+    data: kickCommand,
+    async execute(interaction) {
+        // Permission check
+        if (!hasModPermissions(interaction.member)) {
+            const embed = new EmbedBuilder()
+                .setColor(0xEF4444)
+                .setTitle('❌ Access Denied')
+                .setDescription('You need **Moderate Members** or **Administrator** permissions to use this command.')
+                .setFooter({ text: 'Everything Gateway Bot | Moderation System 🌌' });
+            return interaction.reply({ embeds: [embed], ephemeral: true });
+        }
+
+        const user = interaction.options.getUser('user');
+        const reason = interaction.options.getString('reason') || 'No reason provided';
+        
+        try {
+            const member = await interaction.guild.members.fetch(user.id);
+            
+            // Can't kick yourself or the bot
+            if (user.id === interaction.user.id) {
+                const embed = new EmbedBuilder()
+                    .setColor(0xEF4444)
+                    .setTitle('❌ Cannot Kick Yourself')
+                    .setDescription('You cannot kick yourself!')
+                    .setFooter({ text: 'Everything Gateway Bot | Moderation System 🌌' });
+                return interaction.reply({ embeds: [embed], ephemeral: true });
+            }
+            
+            // Kick the user
+            await member.kick(`${reason} | Kicked by ${interaction.user.tag}`);
+            
+            const embed = new EmbedBuilder()
+                .setColor(0xF59E0B)
+                .setTitle('👢 Member Kicked')
+                .setDescription(`**${user.tag}** has been kicked from the server.`)
+                .addFields(
+                    { name: 'Reason', value: reason, inline: true },
+                    { name: 'Moderator', value: interaction.user.tag, inline: true }
+                )
+                .setFooter({ text: 'Everything Gateway Bot | Moderation System 🌌' })
+                .setTimestamp();
+                
+            await interaction.reply({ embeds: [embed] });
+            console.log(`🛡️ Kick: ${user.tag} kicked by ${interaction.user.tag} | Reason: ${reason}`);
+            
+        } catch (error) {
+            console.error('Kick command error:', error);
+            const embed = new EmbedBuilder()
+                .setColor(0xEF4444)
+                .setTitle('❌ Kick Failed')
+                .setDescription('Failed to kick the user. They might have higher permissions.')
+                .setFooter({ text: 'Everything Gateway Bot | Moderation System 🌌' });
+            await interaction.reply({ embeds: [embed], ephemeral: true });
+        }
+    }
+});
+
+// Timeout Command Implementation
+client.commands.set(timeoutCommand.name, {
+    data: timeoutCommand,
+    async execute(interaction) {
+        // Permission check
+        if (!hasModPermissions(interaction.member)) {
+            const embed = new EmbedBuilder()
+                .setColor(0xEF4444)
+                .setTitle('❌ Access Denied')
+                .setDescription('You need **Moderate Members** or **Administrator** permissions to use this command.')
+                .setFooter({ text: 'Everything Gateway Bot | Moderation System 🌌' });
+            return interaction.reply({ embeds: [embed], ephemeral: true });
+        }
+
+        const user = interaction.options.getUser('user');
+        const minutes = interaction.options.getInteger('minutes');
+        const reason = interaction.options.getString('reason') || 'No reason provided';
+        
+        try {
+            const member = await interaction.guild.members.fetch(user.id);
+            
+            // Can't timeout yourself or the bot
+            if (user.id === interaction.user.id) {
+                const embed = new EmbedBuilder()
+                    .setColor(0xEF4444)
+                    .setTitle('❌ Cannot Timeout Yourself')
+                    .setDescription('You cannot timeout yourself!')
+                    .setFooter({ text: 'Everything Gateway Bot | Moderation System 🌌' });
+                return interaction.reply({ embeds: [embed], ephemeral: true });
+            }
+            
+            // Timeout the user
+            const timeoutUntil = new Date(Date.now() + minutes * 60000);
+            await member.timeout(minutes * 60000, `${reason} | Timeout by ${interaction.user.tag}`);
+            
+            const embed = new EmbedBuilder()
+                .setColor(0x6366F1)
+                .setTitle('🔇 Member Timed Out')
+                .setDescription(`**${user.tag}** has been timed out.`)
+                .addFields(
+                    { name: 'Duration', value: `${minutes} minutes`, inline: true },
+                    { name: 'Ends', value: `<t:${Math.floor(timeoutUntil.getTime() / 1000)}:R>`, inline: true },
+                    { name: 'Reason', value: reason, inline: false },
+                    { name: 'Moderator', value: interaction.user.tag, inline: true }
+                )
+                .setFooter({ text: 'Everything Gateway Bot | Moderation System 🌌' })
+                .setTimestamp();
+                
+            await interaction.reply({ embeds: [embed] });
+            console.log(`🛡️ Timeout: ${user.tag} timed out for ${minutes}m by ${interaction.user.tag} | Reason: ${reason}`);
+            
+        } catch (error) {
+            console.error('Timeout command error:', error);
+            const embed = new EmbedBuilder()
+                .setColor(0xEF4444)
+                .setTitle('❌ Timeout Failed')
+                .setDescription('Failed to timeout the user. They might have higher permissions.')
+                .setFooter({ text: 'Everything Gateway Bot | Moderation System 🌌' });
+            await interaction.reply({ embeds: [embed], ephemeral: true });
+        }
+    }
+});
+
+// Clear Command Implementation
+client.commands.set(clearCommand.name, {
+    data: clearCommand,
+    async execute(interaction) {
+        // Permission check
+        if (!hasModPermissions(interaction.member)) {
+            const embed = new EmbedBuilder()
+                .setColor(0xEF4444)
+                .setTitle('❌ Access Denied')
+                .setDescription('You need **Moderate Members** or **Administrator** permissions to use this command.')
+                .setFooter({ text: 'Everything Gateway Bot | Moderation System 🌌' });
+            return interaction.reply({ embeds: [embed], ephemeral: true });
+        }
+
+        const amount = interaction.options.getInteger('amount');
+        
+        try {
+            const messages = await interaction.channel.bulkDelete(amount, true);
+            
+            const embed = new EmbedBuilder()
+                .setColor(0x10B981)
+                .setTitle('🧹 Messages Cleared')
+                .setDescription(`Successfully deleted **${messages.size}** messages.`)
+                .addFields(
+                    { name: 'Moderator', value: interaction.user.tag, inline: true },
+                    { name: 'Channel', value: interaction.channel.name, inline: true }
+                )
+                .setFooter({ text: 'Everything Gateway Bot | Moderation System 🌌' })
+                .setTimestamp();
+                
+            await interaction.reply({ embeds: [embed] });
+            console.log(`🛡️ Clear: ${messages.size} messages deleted by ${interaction.user.tag} in #${interaction.channel.name}`);
+            
+            // Auto-delete the confirmation after 5 seconds
+            setTimeout(async () => {
+                try {
+                    await interaction.deleteReply();
+                } catch (error) {
+                    // Ignore errors if already deleted
+                }
+            }, 5000);
+            
+        } catch (error) {
+            console.error('Clear command error:', error);
+            const embed = new EmbedBuilder()
+                .setColor(0xEF4444)
+                .setTitle('❌ Clear Failed')
+                .setDescription('Failed to delete messages. They might be too old (over 2 weeks).')
+                .setFooter({ text: 'Everything Gateway Bot | Moderation System 🌌' });
+            await interaction.reply({ embeds: [embed], ephemeral: true });
+        }
+    }
+});
+
+// Warn Command Implementation
+client.commands.set(warnCommand.name, {
+    data: warnCommand,
+    async execute(interaction) {
+        // Permission check
+        if (!hasModPermissions(interaction.member)) {
+            const embed = new EmbedBuilder()
+                .setColor(0xEF4444)
+                .setTitle('❌ Access Denied')
+                .setDescription('You need **Moderate Members** or **Administrator** permissions to use this command.')
+                .setFooter({ text: 'Everything Gateway Bot | Moderation System 🌌' });
+            return interaction.reply({ embeds: [embed], ephemeral: true });
+        }
+
+        const user = interaction.options.getUser('user');
+        const reason = interaction.options.getString('reason');
+        
+        const embed = new EmbedBuilder()
+            .setColor(0xF59E0B)
+            .setTitle('⚠️ Member Warned')
+            .setDescription(`**${user.tag}** has been warned.`)
+            .addFields(
+                { name: 'Reason', value: reason, inline: false },
+                { name: 'Moderator', value: interaction.user.tag, inline: true }
+            )
+            .setFooter({ text: 'Everything Gateway Bot | Moderation System 🌌' })
+            .setTimestamp();
+            
+        await interaction.reply({ embeds: [embed] });
+        console.log(`🛡️ Warn: ${user.tag} warned by ${interaction.user.tag} | Reason: ${reason}`);
+        
+        // Try to DM the user (optional)
+        try {
+            const dmEmbed = new EmbedBuilder()
+                .setColor(0xF59E0B)
+                .setTitle(`⚠️ You've been warned in ${interaction.guild.name}`)
+                .addFields(
+                    { name: 'Reason', value: reason, inline: false },
+                    { name: 'Moderator', value: interaction.user.tag, inline: true }
+                )
+                .setFooter({ text: 'Everything Gateway Bot | Please follow server rules 🌌' })
+                .setTimestamp();
+                
+            await user.send({ embeds: [dmEmbed] });
+        } catch (error) {
+            // User has DMs disabled or blocked the bot, ignore
+        }
     }
 });
 
