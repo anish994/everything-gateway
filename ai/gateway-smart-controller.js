@@ -3392,21 +3392,16 @@ closeAIChat(fromPopstate = false) {
                 <div style="margin-bottom: 20px;">
                     <h5 style="color: #667eea; margin-bottom: 8px;">🔍 Quick Commands:</h5>
                     <ul style="margin-left: 20px; line-height: 1.6;">
-                        <li><strong>"Open Netflix"</strong> - Opens Netflix directly</li>
-                        <li><strong>"Take me to gaming"</strong> - Opens the Gaming category</li>
-                        <li><strong>"Entertainment category"</strong> - Browse entertainment platforms</li>
-                        <li><strong>"I need to code"</strong> - Smart suggestions for developers</li>
-                        <li><strong>"Search engines"</strong> - Browse all search options</li>
+                        <li>Open any category or app by typing its name or typing "open so and so".</li>
                     </ul>
                 </div>
                 
                 <div style="margin-bottom: 20px;">
                     <h5 style="color: #667eea; margin-bottom: 8px;">✨ Smart Features:</h5>
                     <ul style="margin-left: 20px; line-height: 1.6;">
-                        <li><strong>Context-aware:</strong> I understand what you need</li>
-                        <li><strong>Category navigation:</strong> Browse by type of resource</li>
-                        <li><strong>Direct access:</strong> Jump straight to any platform</li>
-                        <li><strong>Intelligent search:</strong> Find exactly what you're looking for</li>
+                        <li>Just type open so and so category or app or simply type the app's name.</li>
+                        <li>You will be redirected to a separate clean page with the app so this app page stays untouched.</li>
+                        <li>Just come back here and open another app on another page if you want.</li>
                     </ul>
                 </div>
                 
@@ -3468,7 +3463,7 @@ closeAIChat(fromPopstate = false) {
                 
                 <div style="margin-bottom: 20px;">
                     <h5 style="color: #667eea; margin-bottom: 8px;">💝 Made with Care:</h5>
-                    <p style="margin-left: 10px; line-height: 1.6; font-style: italic; color: rgba(255, 255, 255, 0.8);">Gateway is crafted by developers who believe the web should be more organized, accessible, and delightful to navigate. Every feature is designed to save you time and help you discover amazing resources.</p>
+                    <p style="margin-left: 10px; line-height: 1.6; font-style: italic; color: rgba(255, 255, 255, 0.8);">Gateway is a baby app crafted by just one developer. It will continue growing with the help of our community and care.</p>
                 </div>
                 
                 <p style="text-align: center; margin-top: 20px; color: rgba(255, 255, 255, 0.7); font-style: italic;">
