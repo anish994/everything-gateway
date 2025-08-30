@@ -1410,6 +1410,47 @@ class GatewaySmartController {
             font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.7);
         }
+        
+        .ai-cards-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            padding: 10px;
+        }
+        
+        .ai-card {
+            background: rgba(102, 126, 234, 0.1);
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            color: white;
+        }
+        
+        .ai-card:hover {
+            background: rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+        
+        .ai-card-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+        
+        .ai-card-title {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 4px;
+            color: #667eea;
+        }
+        
+        .ai-card-desc {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
         `;
         
         const styleSheet = document.createElement('style');
@@ -1435,21 +1476,21 @@ class GatewaySmartController {
         modal.innerHTML = `
             <div class="ai-chat-container">
                 <div class="ai-chat-header">
-                    <h3 class="ai-chat-title">🧠 Gateway AI</h3>
+                    <h3 class="ai-chat-title">🧠 Gateway Smart Controller</h3>
                     <button class="ai-chat-close" onclick="gatewaySmartController.closeAIChat()">×</button>
                 </div>
                 <div class="ai-chat-messages" id="aiMessages">
-                    <div class="ai-message">
-                        Hello! I'm your Gateway AI controller. I know everything about your ${this.knowledgeEngine ? this.knowledgeEngine.getKnowledgeStats().categories : '13'} categories and ${this.knowledgeEngine ? this.knowledgeEngine.getKnowledgeStats().totalResources : '561+'} resources.
-                        <br><br>
-                        Try saying:
-                        <br>• "Open Figma" or "ChatGPT"
-                        <br>• "Netflix" or "Spotify" 
-                        <br>• "Google" or "DuckDuckGo" 
-                        <br>• "Tools category" or "Entertainment category"
-                        <br>• "I need to code" or "I want to relax"
-                        <br><br>
-                        🎆 <strong>New!</strong> I can open entertainment platforms, tools, and search engines directly!
+                    <div class="ai-cards-container">
+                        <div class="ai-card" onclick="gatewaySmartController.showInstructions()">
+                            <div class="ai-card-icon">📋</div>
+                            <div class="ai-card-title">Instructions</div>
+                            <div class="ai-card-desc">How to use the controller</div>
+                        </div>
+                        <div class="ai-card" onclick="gatewaySmartController.showInfo()">
+                            <div class="ai-card-icon">ℹ️</div>
+                            <div class="ai-card-title">Info</div>
+                            <div class="ai-card-desc">About this app</div>
+                        </div>
                     </div>
                 </div>
                 <div class="ai-status" id="aiStatus">
@@ -3336,6 +3377,133 @@ closeAIChat(fromPopstate = false) {
         if (this.knowledgeEngine) {
             await this.knowledgeEngine.saveUserMemory('preferences', this.currentSession.preferences);
         }
+    }
+    
+    showInstructions() {
+        const messagesContainer = document.getElementById('aiMessages');
+        if (!messagesContainer) return;
+        
+        messagesContainer.innerHTML = `
+            <div class="ai-message">
+                <h4 style="color: #667eea; margin-bottom: 12px; font-size: 1.1rem;">🎮 Gateway Smart Controller - Instructions</h4>
+                
+                <p style="margin-bottom: 15px;"><strong>Welcome to your AI-powered navigation assistant!</strong> Here's how to use the Gateway Smart Controller:</p>
+                
+                <div style="margin-bottom: 20px;">
+                    <h5 style="color: #667eea; margin-bottom: 8px;">🔍 Quick Commands:</h5>
+                    <ul style="margin-left: 20px; line-height: 1.6;">
+                        <li><strong>"Open Netflix"</strong> - Opens Netflix directly</li>
+                        <li><strong>"Take me to gaming"</strong> - Opens the Gaming category</li>
+                        <li><strong>"Entertainment category"</strong> - Browse entertainment platforms</li>
+                        <li><strong>"I need to code"</strong> - Smart suggestions for developers</li>
+                        <li><strong>"Search engines"</strong> - Browse all search options</li>
+                    </ul>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <h5 style="color: #667eea; margin-bottom: 8px;">✨ Smart Features:</h5>
+                    <ul style="margin-left: 20px; line-height: 1.6;">
+                        <li><strong>Context-aware:</strong> I understand what you need</li>
+                        <li><strong>Category navigation:</strong> Browse by type of resource</li>
+                        <li><strong>Direct access:</strong> Jump straight to any platform</li>
+                        <li><strong>Intelligent search:</strong> Find exactly what you're looking for</li>
+                    </ul>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <h5 style="color: #667eea; margin-bottom: 8px;">⌨️ Keyboard Shortcuts:</h5>
+                    <ul style="margin-left: 20px; line-height: 1.6;">
+                        <li><strong>Ctrl/Cmd + G:</strong> Open this AI controller</li>
+                        <li><strong>Escape:</strong> Close the AI controller</li>
+                        <li><strong>Enter:</strong> Send your command</li>
+                    </ul>
+                </div>
+                
+                <p style="text-align: center; margin-top: 20px; color: rgba(255, 255, 255, 0.7); font-style: italic;">
+                    💡 Try typing naturally - I understand human language!
+                </p>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <button onclick="gatewaySmartController.showMainCards()" style="background: #667eea; border: none; padding: 8px 16px; border-radius: 8px; color: white; cursor: pointer;">← Back to Main</button>
+                </div>
+            </div>
+        `;
+        
+        this.updateStatus('Showing instructions');
+    }
+    
+    showInfo() {
+        const messagesContainer = document.getElementById('aiMessages');
+        if (!messagesContainer) return;
+        
+        messagesContainer.innerHTML = `
+            <div class="ai-message">
+                <h4 style="color: #667eea; margin-bottom: 12px; font-size: 1.1rem;">ℹ️ About Gateway Smart Controller</h4>
+                
+                <div style="margin-bottom: 20px;">
+                    <h5 style="color: #667eea; margin-bottom: 8px;">📱 About This App:</h5>
+                    <p style="margin-left: 10px; line-height: 1.6;">Gateway is your personal command center for the internet - a curated collection of ${this.knowledgeEngine ? this.knowledgeEngine.getKnowledgeStats().totalResources + '+' : '500+'} essential websites and tools, organized into ${this.knowledgeEngine ? this.knowledgeEngine.getKnowledgeStats().categories : '13'} smart categories.</p>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <h5 style="color: #667eea; margin-bottom: 8px;">🤖 About the AI:</h5>
+                    <p style="margin-left: 10px; line-height: 1.6;">The Gateway Smart Controller is an AI assistant that understands natural language and helps you navigate to exactly what you need. It knows about every resource in the Gateway ecosystem and can take you there instantly.</p>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <h5 style="color: #667eea; margin-bottom: 8px;">🎯 Our Mission:</h5>
+                    <p style="margin-left: 10px; line-height: 1.6;">To make the web more accessible and organized. Instead of bookmarking chaos, Gateway provides a thoughtfully curated, AI-powered portal to the internet's best resources.</p>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <h5 style="color: #667eea; margin-bottom: 8px;">🔧 Technical Details:</h5>
+                    <ul style="margin-left: 20px; line-height: 1.6; font-size: 0.9rem; color: rgba(255, 255, 255, 0.8);">
+                        <li>Built with vanilla JavaScript for speed and reliability</li>
+                        <li>Uses intelligent pattern matching for command understanding</li>
+                        <li>Knowledge engine with ${this.knowledgeEngine ? Object.keys(this.searchEngines).length + Object.keys(this.toolsDatabase).length + Object.keys(this.entertainmentDatabase).length + Object.keys(this.newsDatabase).length + Object.keys(this.knowledgeDatabase).length + Object.keys(this.gamingDatabase).length + Object.keys(this.designDatabase).length + Object.keys(this.healthDatabase).length + Object.keys(this.socialDatabase).length + Object.keys(this.lifestyleDatabase).length + Object.keys(this.animeDatabase).length + Object.keys(this.developersDatabase).length + Object.keys(this.musicDatabase).length + Object.keys(this.hiddenTreasuresDatabase).length + Object.keys(this.cryptoDatabase).length + '+' : '1000+'} keyword mappings</li>
+                        <li>Contextual command processing with smart suggestions</li>
+                        <li>Privacy-focused: all processing happens locally</li>
+                    </ul>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <h5 style="color: #667eea; margin-bottom: 8px;">💝 Made with Care:</h5>
+                    <p style="margin-left: 10px; line-height: 1.6; font-style: italic; color: rgba(255, 255, 255, 0.8);">Gateway is crafted by developers who believe the web should be more organized, accessible, and delightful to navigate. Every feature is designed to save you time and help you discover amazing resources.</p>
+                </div>
+                
+                <p style="text-align: center; margin-top: 20px; color: rgba(255, 255, 255, 0.7); font-style: italic;">
+                    🚀 Version 1.0 - Your AI-powered internet companion
+                </p>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <button onclick="gatewaySmartController.showMainCards()" style="background: #667eea; border: none; padding: 8px 16px; border-radius: 8px; color: white; cursor: pointer;">← Back to Main</button>
+                </div>
+            </div>
+        `;
+        
+        this.updateStatus('Showing app information');
+    }
+    
+    showMainCards() {
+        const messagesContainer = document.getElementById('aiMessages');
+        if (!messagesContainer) return;
+        
+        messagesContainer.innerHTML = `
+            <div class="ai-cards-container">
+                <div class="ai-card" onclick="gatewaySmartController.showInstructions()">
+                    <div class="ai-card-icon">📋</div>
+                    <div class="ai-card-title">Instructions</div>
+                    <div class="ai-card-desc">How to use the controller</div>
+                </div>
+                <div class="ai-card" onclick="gatewaySmartController.showInfo()">
+                    <div class="ai-card-icon">ℹ️</div>
+                    <div class="ai-card-title">Info</div>
+                    <div class="ai-card-desc">About this app</div>
+                </div>
+            </div>
+        `;
+        
+        this.updateStatus('AI ready - Type your command below');
     }
 }
 
