@@ -16,6 +16,26 @@ class GatewaySmartController {
             patterns: []
         };
         
+        // Track AI chat history/back-button integration state
+        this.aiHistoryPushed = false;
+        this._ignoreNextPopstate = false;
+        this._aiPopstateHandler = (ev) => {
+            const state = ev.state || {};
+            // If we programmatically popped the AI state, ignore once
+            if (this._ignoreNextPopstate) {
+                this._ignoreNextPopstate = false;
+                return;
+            }
+            // If AI chat is open, close it on back without exiting the app
+            if (this.chatModal && this.chatModal.style.display === 'flex') {
+                // Step back within AI layers in future if needed
+                this.closeAIChat(/*fromPopstate=*/true);
+                return;
+            }
+            // Otherwise, allow normal navigation
+        };
+        window.addEventListener('popstate', this._aiPopstateHandler);
+        
         // 🔍 Search Engine Database - Core search engines mapped by keywords
         this.searchEngines = {
             // Mainstream
@@ -1448,8 +1468,17 @@ class GatewaySmartController {
         this.chatModal = modal;
     }
     
-    openAIChat() {
+openAIChat() {
         if (this.chatModal) {
+            // Push a lightweight history state so hardware back closes AI first
+            if (!this.aiHistoryPushed) {
+                try {
+                    history.pushState({ gatewayAI: true, layer: 'ai-root' }, '', location.href);
+                    this.aiHistoryPushed = true;
+                } catch (e) {
+                    console.warn('History pushState failed for AI chat:', e);
+                }
+            }
             this.chatModal.style.display = 'flex';
             const input = document.getElementById('aiInput');
             if (input) {
@@ -1458,9 +1487,19 @@ class GatewaySmartController {
         }
     }
     
-    closeAIChat() {
+closeAIChat(fromPopstate = false) {
         if (this.chatModal) {
             this.chatModal.style.display = 'none';
+            // If we manually closed the AI (not from popstate), clean the pushed AI state
+            if (this.aiHistoryPushed && !fromPopstate) {
+                try {
+                    this._ignoreNextPopstate = true; // prevent handler from re-closing
+                    history.back(); // pop the ai-root state we pushed
+                } catch (e) {
+                    console.warn('History back failed when closing AI chat:', e);
+                }
+            }
+            this.aiHistoryPushed = false;
         }
     }
     
