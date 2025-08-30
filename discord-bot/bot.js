@@ -243,7 +243,7 @@ client.commands.set(helpCommand.name, {
                 { name: '**👥 COMMUNITY**', value: '`/my-profile` • `/leaderboard` • `/achievements` • `/challenge`', inline: false },
                 { name: '**🎮 FUN & UTILITY**', value: '`/8ball` • `/joke` • `/poll` • `/server-info` • `/user-info`', inline: false },
                 { name: '**🧠 AI CHAT**', value: 'Mention me and ask questions! I understand natural language.', inline: false },
-                { name: '**💜 HUMBLE MESSAGE**', value: 'This is a super-lightweight bot built with zero external tokens - just pure passion and code. As our community grows, we will unlock amazing features together! 🌱', inline: false },
+                { name: '**💜 OUR STORY**', value: 'This is a super-lightweight bot built with zero external tokens - just pure passion and code. As our community grows, we will unlock amazing features together! 🌱', inline: false },
                 { name: '🌐 Visit the Gateway', value: '[cheery-flan-dc1088.netlify.app](https://cheery-flan-dc1088.netlify.app)', inline: false }
             )
             .setFooter({ text: 'Made with love | One person, one old laptop, big dreams | Zero tokens, pure passion' })
