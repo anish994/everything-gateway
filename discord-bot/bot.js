@@ -12,6 +12,8 @@ require('dotenv').config();
 // Automated announcements, resource updates, smart alerts, scheduled tasks
 // PHASE 5: ADVANCED COMMUNITY FEATURES 👥🎉 - COMPLETE
 // Leaderboards, achievements, user profiles, community challenges
+// PHASE 6: DISCORD SERVER AUTOMATION 🏗️⚡ - IN PROGRESS
+// Automated server setup, channel creation, content management
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
@@ -2003,26 +2005,381 @@ setInterval(() => {
     COMMUNITY_SYSTEM.cleanup();
 }, 24 * 60 * 60 * 1000);
 
-// Optional: Create a simple health check server for hosting platforms
-// This prevents "no port bound" errors on some platforms
+// 🎮 PHASE 6: REMOTE CONTROL SYSTEM
+// Allow external control of Discord bot for server management
 const http = require('http');
+const url = require('url');
 const PORT = process.env.PORT || 3000;
 
-// Create minimal health check server
-const server = http.createServer((req, res) => {
-    if (req.url === '/health' || req.url === '/') {
+// Remote Control API System
+const REMOTE_CONTROL = {
+    // Security token for API access (should be in .env)
+    apiToken: process.env.REMOTE_API_TOKEN || 'gateway-remote-2024',
+    
+    // Action queue for processing commands
+    actionQueue: [],
+    
+    // Execute Discord actions remotely
+    async executeAction(action) {
+        try {
+            console.log(`🎮 Remote action: ${action.type}`);
+            
+            switch (action.type) {
+                case 'create_channel':
+                    return await this.createChannel(action);
+                
+                case 'send_message':
+                    return await this.sendMessage(action);
+                
+                case 'pin_message':
+                    return await this.pinMessage(action);
+                
+                case 'set_channel_topic':
+                    return await this.setChannelTopic(action);
+                
+                case 'create_category':
+                    return await this.createCategory(action);
+                
+                case 'get_guild_info':
+                    return await this.getGuildInfo(action);
+                
+                case 'list_channels':
+                    return await this.listChannels(action);
+                
+                case 'bulk_create_channels':
+                    return await this.bulkCreateChannels(action);
+                
+                default:
+                    throw new Error(`Unknown action type: ${action.type}`);
+            }
+        } catch (error) {
+            console.error('🎮 Remote action error:', error);
+            return { success: false, error: error.message };
+        }
+    },
+    
+    // Create a new channel
+    async createChannel(action) {
+        const { guildId, name, type = 'GUILD_TEXT', parentId, topic } = action.data;
+        const guild = client.guilds.cache.get(guildId);
+        
+        if (!guild) throw new Error('Guild not found');
+        
+        const channelData = {
+            name: name,
+            type: type,
+            topic: topic || undefined,
+            parent: parentId || undefined
+        };
+        
+        const channel = await guild.channels.create(channelData);
+        
+        return {
+            success: true,
+            channel: {
+                id: channel.id,
+                name: channel.name,
+                type: channel.type,
+                url: `https://discord.com/channels/${guildId}/${channel.id}`
+            }
+        };
+    },
+    
+    // Send a message to a channel
+    async sendMessage(action) {
+        const { channelId, content, embed } = action.data;
+        const channel = client.channels.cache.get(channelId);
+        
+        if (!channel) throw new Error('Channel not found');
+        
+        const messageData = {};
+        if (content) messageData.content = content;
+        if (embed) messageData.embeds = [embed];
+        
+        const message = await channel.send(messageData);
+        
+        return {
+            success: true,
+            message: {
+                id: message.id,
+                url: message.url
+            }
+        };
+    },
+    
+    // Pin a message
+    async pinMessage(action) {
+        const { channelId, messageId } = action.data;
+        const channel = client.channels.cache.get(channelId);
+        
+        if (!channel) throw new Error('Channel not found');
+        
+        const message = await channel.messages.fetch(messageId);
+        await message.pin();
+        
+        return { success: true };
+    },
+    
+    // Set channel topic/description
+    async setChannelTopic(action) {
+        const { channelId, topic } = action.data;
+        const channel = client.channels.cache.get(channelId);
+        
+        if (!channel) throw new Error('Channel not found');
+        
+        await channel.setTopic(topic);
+        
+        return { success: true };
+    },
+    
+    // Create a category
+    async createCategory(action) {
+        const { guildId, name } = action.data;
+        const guild = client.guilds.cache.get(guildId);
+        
+        if (!guild) throw new Error('Guild not found');
+        
+        const category = await guild.channels.create({
+            name: name,
+            type: 'GUILD_CATEGORY'
+        });
+        
+        return {
+            success: true,
+            category: {
+                id: category.id,
+                name: category.name
+            }
+        };
+    },
+    
+    // Get guild information
+    async getGuildInfo(action) {
+        const { guildId } = action.data;
+        const guild = client.guilds.cache.get(guildId);
+        
+        if (!guild) throw new Error('Guild not found');
+        
+        return {
+            success: true,
+            guild: {
+                id: guild.id,
+                name: guild.name,
+                memberCount: guild.memberCount,
+                channels: guild.channels.cache.size,
+                categories: guild.channels.cache.filter(c => c.type === 'GUILD_CATEGORY').size
+            }
+        };
+    },
+    
+    // List all channels
+    async listChannels(action) {
+        const { guildId } = action.data;
+        const guild = client.guilds.cache.get(guildId);
+        
+        if (!guild) throw new Error('Guild not found');
+        
+        const channels = guild.channels.cache.map(channel => ({
+            id: channel.id,
+            name: channel.name,
+            type: channel.type,
+            parentId: channel.parentId,
+            topic: channel.topic
+        }));
+        
+        return {
+            success: true,
+            channels: channels
+        };
+    },
+    
+    // Bulk create channels (for setting up entire server structure)
+    async bulkCreateChannels(action) {
+        const { guildId, structure } = action.data;
+        const guild = client.guilds.cache.get(guildId);
+        
+        if (!guild) throw new Error('Guild not found');
+        
+        const results = [];
+        
+        for (const item of structure) {
+            try {
+                if (item.type === 'category') {
+                    const category = await guild.channels.create({
+                        name: item.name,
+                        type: 'GUILD_CATEGORY'
+                    });
+                    
+                    results.push({
+                        type: 'category',
+                        name: item.name,
+                        id: category.id,
+                        success: true
+                    });
+                    
+                    // Create channels under this category
+                    if (item.channels) {
+                        for (const channelData of item.channels) {
+                            const channel = await guild.channels.create({
+                                name: channelData.name,
+                                type: channelData.type || 'GUILD_TEXT',
+                                parent: category.id,
+                                topic: channelData.topic
+                            });
+                            
+                            results.push({
+                                type: 'channel',
+                                name: channelData.name,
+                                id: channel.id,
+                                parent: category.name,
+                                success: true
+                            });
+                        }
+                    }
+                } else {
+                    // Standalone channel
+                    const channel = await guild.channels.create({
+                        name: item.name,
+                        type: item.type || 'GUILD_TEXT',
+                        topic: item.topic
+                    });
+                    
+                    results.push({
+                        type: 'channel',
+                        name: item.name,
+                        id: channel.id,
+                        success: true
+                    });
+                }
+                
+                // Small delay to avoid rate limits
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+            } catch (error) {
+                results.push({
+                    type: item.type,
+                    name: item.name,
+                    success: false,
+                    error: error.message
+                });
+            }
+        }
+        
+        return {
+            success: true,
+            results: results
+        };
+    }
+};
+
+// Enhanced HTTP server with remote control API
+const server = http.createServer(async (req, res) => {
+    const parsedUrl = url.parse(req.url, true);
+    const pathname = parsedUrl.pathname;
+    
+    // CORS headers for API access
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    
+    if (req.method === 'OPTIONS') {
+        res.writeHead(200);
+        res.end();
+        return;
+    }
+    
+    // Health check endpoint
+    if (pathname === '/health' || pathname === '/') {
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({
             status: 'online',
             bot: client.user ? client.user.tag : 'Starting...',
             guilds: client.guilds.cache.size,
             uptime: process.uptime(),
-            timestamp: new Date().toISOString()
+            timestamp: new Date().toISOString(),
+            remoteControl: 'active'
         }));
-    } else {
-        res.writeHead(404, { 'Content-Type': 'text/plain' });
-        res.end('Not Found');
+        return;
     }
+    
+    // Remote control API endpoint
+    if (pathname === '/api/remote' && req.method === 'POST') {
+        let body = '';
+        
+        req.on('data', chunk => {
+            body += chunk.toString();
+        });
+        
+        req.on('end', async () => {
+            try {
+                const data = JSON.parse(body);
+                
+                // Check API token
+                if (data.token !== REMOTE_CONTROL.apiToken) {
+                    res.writeHead(401, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ success: false, error: 'Invalid token' }));
+                    return;
+                }
+                
+                // Execute the action
+                const result = await REMOTE_CONTROL.executeAction(data.action);
+                
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify(result));
+                
+            } catch (error) {
+                console.error('🎮 API error:', error);
+                res.writeHead(500, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ 
+                    success: false, 
+                    error: error.message 
+                }));
+            }
+        });
+        return;
+    }
+    
+    // API documentation endpoint
+    if (pathname === '/api/docs') {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.end(`
+            <html>
+            <head><title>Gateway Bot Remote Control API</title></head>
+            <body style="font-family: Arial; max-width: 800px; margin: 0 auto; padding: 20px;">
+                <h1>🎮 Gateway Bot Remote Control API</h1>
+                <h2>Endpoint: POST /api/remote</h2>
+                <h3>Available Actions:</h3>
+                <ul>
+                    <li><strong>create_channel</strong> - Create a new channel</li>
+                    <li><strong>send_message</strong> - Send a message to a channel</li>
+                    <li><strong>pin_message</strong> - Pin a message</li>
+                    <li><strong>set_channel_topic</strong> - Set channel description</li>
+                    <li><strong>create_category</strong> - Create a channel category</li>
+                    <li><strong>get_guild_info</strong> - Get server information</li>
+                    <li><strong>list_channels</strong> - List all channels</li>
+                    <li><strong>bulk_create_channels</strong> - Create multiple channels/categories</li>
+                </ul>
+                <h3>Example Request:</h3>
+                <pre>{
+    "token": "${REMOTE_CONTROL.apiToken}",
+    "action": {
+        "type": "create_channel",
+        "data": {
+            "guildId": "your-guild-id",
+            "name": "new-channel",
+            "topic": "Channel description"
+        }
+    }
+}</pre>
+            </body>
+            </html>
+        `);
+        return;
+    }
+    
+    // 404 for other paths
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
+    res.end('Not Found');
 });
 
 // Start health check server
