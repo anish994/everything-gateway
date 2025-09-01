@@ -2007,7 +2007,6 @@ setInterval(() => {
 
 // 🎮 PHASE 6: REMOTE CONTROL SYSTEM
 // Allow external control of Discord bot for server management
-const http = require('http');
 const url = require('url');
 const PORT = process.env.PORT || 3000;
 
