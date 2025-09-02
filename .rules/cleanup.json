@@ -1,0 +1,114 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-09-02T11:48:15Z",
+  "description": "Guidelines for cleaning up project clutter and maintaining lightweight structure",
+
+  "files_to_remove": {
+    "documentation_clutter": [
+      "AI-INTEGRATION-GUIDE.md",
+      "CATEGORY_POLISH_SUMMARY.md", 
+      "DEPLOYMENT_CHECKLIST_V2.md",
+      "DEPLOYMENT_GUIDE.md",
+      "DEPLOYMENT_STATUS.md",
+      "DEPLOYMENT_SUCCESS.md",
+      "DEPLOYMENT_SUCCESS_FINAL.md",
+      "DEPLOYMENT_SUCCESS_LOG.md",
+      "DEVELOPMENT_LOG.md",
+      "GATEWAY_AI_DEVELOPMENT_LOG.md",
+      "GATEWAY_AI_ROADMAP.md",
+      "KNOWLEDGE_CATEGORY_DEMO.md",
+      "LESSONS_LEARNED.md",
+      "POLISH_SUMMARY.md",
+      "PROJECT_LOG.md",
+      "PROJECT_OVERVIEW.md", 
+      "PROJECT_PROGRESS.md",
+      "SESSION_2025-08-12_SUMMARY.md",
+      "SHARE_READY.md",
+      "SOCIAL_INTEGRATION_SUMMARY.md",
+      "SYNC_SYSTEM_COMPLETE.md",
+      "VERIFICATION_CHECKLIST.md",
+      "WARP.md"
+    ],
+    
+    "unused_scripts": [
+      "create-discord-theme-channel.js",
+      "create-themes-channel.js"
+    ],
+    
+    "ai_folder_cleanup": [
+      "ai/demo.html",
+      "ai/simple-test.html", 
+      "ai/test-gateway-ai.html",
+      "ai/working-chat.html",
+      "ai/controller.html",
+      "ai/ai-bridge.html",
+      "ai/ninja-hub.html",
+      "ai/real-ai-hub.html",
+      "ai/stealth-hub.html",
+      "ai/smart-controller.html",
+      "ai/search-engine-test.html",
+      "ai/GATEWAY_AI_SYSTEM_SUMMARY.md",
+      "ai/GATEWAY_DISCOVERY_LOG.md",
+      "ai/gateway-conversational-ai-project.md"
+    ]
+  },
+
+  "files_to_keep": {
+    "core_functionality": [
+      "index.html",
+      "categories/*/index.html", 
+      "data/*.json",
+      "js/*.js",
+      "css/*.css"
+    ],
+    
+    "essential_docs": [
+      "README.md",
+      "LICENSE", 
+      "PROJECT-PROGRESS-LOG.md",
+      "CATEGORY_SCHEMA.md"
+    ],
+    
+    "ai_essentials": [
+      "ai/gateway_knowledge.json",
+      "ai/intelligence_log.json",
+      "ai/site_map.json",
+      "ai/gateway-command-embed-v2.js",
+      "ai/assistant_rules.json"
+    ],
+    
+    "discord_management": [
+      "discord-bot/*.js"
+    ],
+    
+    "new_rules_system": [
+      ".rules/*.json"
+    ]
+  },
+
+  "cleanup_process": {
+    "phase_1": {
+      "action": "Archive old documentation",
+      "target": "Move documentation clutter to archive folder",
+      "safety": "Keep README.md and core schema files"
+    },
+    
+    "phase_2": {
+      "action": "Remove unused AI files", 
+      "target": "Delete experimental and demo files in ai/ folder",
+      "safety": "Preserve essential AI functionality and rules"
+    },
+    
+    "phase_3": {
+      "action": "Clean root directory",
+      "target": "Remove scattered scripts and redundant files",
+      "safety": "Maintain deployment and core functionality"
+    }
+  },
+
+  "maintenance_schedule": {
+    "weekly": "Review and remove temporary files",
+    "monthly": "Audit entire project structure",
+    "quarterly": "Major cleanup and reorganization"
+  }
+}

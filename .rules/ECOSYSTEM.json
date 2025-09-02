@@ -1,0 +1,49 @@
+{
+  "ecosystem_version": "1.0.0",
+  "last_updated": "2025-09-02T11:48:15Z",
+  "description": "Comprehensive rules ecosystem for The Everything Gateway project and all sub-projects",
+  "project_info": {
+    "name": "The Everything Gateway",
+    "type": "web_portal",
+    "deployment": "netlify",
+    "repository": "https://github.com/anish994/everything-gateway.git",
+    "live_url": "https://cheery-flan-dc1088.netlify.app",
+    "discord": "https://discord.gg/wnJaN7Xr"
+  },
+  
+  "rule_categories": {
+    "development": {
+      "ai_assistant": ".rules/ai-assistant.json",
+      "deployment": ".rules/deployment.json", 
+      "code_standards": ".rules/code-standards.json"
+    },
+    "discord": {
+      "bot_management": ".rules/discord-bot.json",
+      "community": ".rules/discord-community.json"
+    },
+    "project_management": {
+      "workflow": ".rules/workflow.json",
+      "documentation": ".rules/documentation.json"
+    }
+  },
+
+  "core_principles": {
+    "1_auto_push": "Always push changes automatically without confirmation prompts",
+    "2_lightweight": "Keep everything minimal, clean, and efficient",
+    "3_user_focus": "Optimize for user experience and accessibility",
+    "4_consistency": "Maintain consistent patterns across all components",
+    "5_scalability": "Design systems that grow with the project"
+  },
+
+  "quick_reference": {
+    "emergency_contacts": {
+      "primary_maintainer": "Achariya",
+      "discord_admin": "Everything Gateway Community"
+    },
+    "key_commands": {
+      "deploy": "git add . && git commit -m '[message]' && git push",
+      "discord_bot": "Check discord-bot/ folder for management scripts",
+      "cleanup": "Follow .rules/cleanup.json guidelines"
+    }
+  }
+}

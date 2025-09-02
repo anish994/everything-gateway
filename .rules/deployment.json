@@ -1,0 +1,57 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-09-02T11:48:15Z",
+  "description": "Deployment rules and guidelines for The Everything Gateway",
+
+  "platforms": {
+    "netlify": {
+      "primary": true,
+      "url": "https://cheery-flan-dc1088.netlify.app",
+      "auto_deploy": true,
+      "build_command": null,
+      "publish_directory": ".",
+      "branch": "main"
+    },
+    
+    "github": {
+      "repository": "https://github.com/anish994/everything-gateway.git",
+      "branch_strategy": "main",
+      "auto_actions": true
+    }
+  },
+
+  "deployment_flow": {
+    "local_changes": "Edit files locally",
+    "git_workflow": "git add . → git commit -m 'message' → git push",
+    "netlify_trigger": "Automatic deployment on push to main",
+    "verification": "Check live site for changes"
+  },
+
+  "critical_files": {
+    "must_deploy": [
+      "index.html",
+      "categories/*/index.html", 
+      "data/*.json",
+      "css/*.css",
+      "js/*.js"
+    ],
+    
+    "configuration": [
+      ".rules/*",
+      ".github/workflows/*",
+      "netlify.toml"
+    ]
+  },
+
+  "rollback_strategy": {
+    "method": "Git revert + push",
+    "emergency": "Netlify manual rollback to previous deployment",
+    "testing": "Always verify changes on live site"
+  },
+
+  "performance": {
+    "optimization": "Minify CSS/JS in production",
+    "caching": "Netlify handles static asset caching",
+    "monitoring": "Check Core Web Vitals regularly"
+  }
+}

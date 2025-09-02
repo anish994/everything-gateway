@@ -1,0 +1,57 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-09-02T11:48:15Z",
+  "description": "Discord bot management and community integration rules",
+  
+  "server_info": {
+    "invite_link": "https://discord.gg/wnJaN7Xr",
+    "server_purpose": "Community hub for Everything Gateway users and contributors",
+    "bot_scripts_location": "discord-bot/"
+  },
+
+  "bot_management": {
+    "script_functions": {
+      "cleanup-and-permissions.js": "Clean up server and set proper permissions",
+      "create-theme-channel.js": "Create themed discussion channels",
+      "force-readonly.js": "Set channels to read-only mode",
+      "make-admin.js": "Grant admin permissions to users",
+      "make-moderator.js": "Grant moderator permissions to users",
+      "send-update.js": "Send announcements to channels",
+      "view-react-only.js": "Set channels to view and react only"
+    },
+    
+    "maintenance_schedule": {
+      "daily": "Check for spam and inappropriate content",
+      "weekly": "Review permissions and channel activity",
+      "monthly": "Clean up inactive channels and update bot scripts"
+    }
+  },
+
+  "community_guidelines": {
+    "channel_structure": {
+      "announcements": "Project updates and major releases",
+      "general": "Open community discussion",
+      "feature-requests": "User suggestions and feature ideas",
+      "support": "Help and troubleshooting",
+      "themes": "UI theme discussions and sharing"
+    },
+    
+    "moderation_rules": {
+      "auto_mod": "Enabled for spam and inappropriate content",
+      "manual_review": "Human review for complex issues",
+      "escalation": "Admin intervention for serious violations"
+    }
+  },
+
+  "integration_points": {
+    "website_to_discord": {
+      "community_card": "Prominently featured on main page",
+      "direct_invite": "Single-click join from website"
+    },
+    
+    "discord_to_website": {
+      "update_announcements": "New features and categories",
+      "theme_sharing": "User-created themes and customizations"
+    }
+  }
+}

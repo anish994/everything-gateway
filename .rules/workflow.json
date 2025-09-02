@@ -1,0 +1,78 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-09-02T11:48:15Z",
+  "description": "Project workflow and management guidelines",
+
+  "development_cycles": {
+    "feature_development": {
+      "planning": "Define scope and requirements",
+      "implementation": "Code changes with testing",
+      "deployment": "Push to production immediately",
+      "validation": "Verify functionality on live site"
+    },
+    
+    "bug_fixes": {
+      "identification": "Identify and reproduce issue",
+      "solution": "Implement fix with minimal changes", 
+      "testing": "Verify fix works correctly",
+      "deployment": "Push immediately to resolve issue"
+    },
+    
+    "content_updates": {
+      "preparation": "Prepare new content/data",
+      "integration": "Update relevant JSON/HTML files",
+      "validation": "Check formatting and links",
+      "deployment": "Push for immediate publication"
+    }
+  },
+
+  "quality_standards": {
+    "code": {
+      "consistency": "Follow existing patterns and style",
+      "accessibility": "Maintain ARIA labels and semantic HTML",
+      "performance": "Keep JavaScript and CSS optimized",
+      "mobile_first": "Test on mobile devices first"
+    },
+    
+    "content": {
+      "accuracy": "Verify all links and information",
+      "completeness": "Ensure all required fields are filled",
+      "formatting": "Consistent styling and structure",
+      "user_experience": "Intuitive navigation and clear purpose"
+    }
+  },
+
+  "collaboration": {
+    "discord_integration": {
+      "announcements": "Major features and updates",
+      "community_feedback": "Feature requests and suggestions",
+      "support": "Help users with issues"
+    },
+    
+    "version_control": {
+      "commit_messages": "Descriptive and specific",
+      "branch_strategy": "Main branch only for simplicity",
+      "conflict_resolution": "Latest changes take precedence"
+    }
+  },
+
+  "maintenance_tasks": {
+    "weekly": [
+      "Review and update broken links",
+      "Check Discord community activity",
+      "Monitor site performance metrics"
+    ],
+    
+    "monthly": [
+      "Add new resources and categories",
+      "Clean up unused files and code",
+      "Update documentation and rules"
+    ],
+    
+    "quarterly": [
+      "Major UI/UX improvements",
+      "Technology stack updates",
+      "Comprehensive security review"
+    ]
+  }
+}

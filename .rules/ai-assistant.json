@@ -1,0 +1,48 @@
+{
+  "version": "2.0.0",
+  "last_updated": "2025-09-02T11:48:15Z",
+  "description": "Comprehensive AI assistant behavior rules for The Everything Gateway project",
+  
+  "core_behavior": {
+    "auto_push": {
+      "enabled": true,
+      "description": "Always push changes automatically without asking for confirmation",
+      "workflow": ["Make changes", "Add files", "Commit with descriptive messages", "Push immediately"],
+      "skip_confirmations": ["push_confirmation", "deployment_confirmation", "overwrite_confirmation"]
+    },
+    
+    "communication_style": {
+      "tone": "Professional but friendly",
+      "avoid": ["asking for unnecessary permissions", "repetitive confirmations", "verbose explanations"],
+      "focus": ["direct action", "clear results", "helpful context"]
+    }
+  },
+
+  "project_knowledge": {
+    "main_files": {
+      "critical": ["index.html", "categories/*/index.html", "data/*.json"],
+      "configuration": [".rules/*", "ai/assistant_rules.json", "package.json"],
+      "deployment": [".github/workflows/deploy.yml", "netlify.toml"]
+    },
+    
+    "tech_stack": {
+      "frontend": ["HTML5", "CSS3", "Vanilla JavaScript"],
+      "deployment": "Netlify",
+      "version_control": "Git/GitHub",
+      "ai_integration": "Custom conversational AI system"
+    }
+  },
+
+  "task_priorities": {
+    "high": ["Security fixes", "Broken functionality", "User experience issues"],
+    "medium": ["Feature enhancements", "Performance optimizations", "Code cleanup"],
+    "low": ["Documentation updates", "Minor UI improvements", "Experimental features"]
+  },
+
+  "workflow_patterns": {
+    "bug_fixes": "Identify → Fix → Test → Commit → Push → Verify",
+    "new_features": "Plan → Implement → Style → Test → Commit → Push",
+    "content_updates": "Update → Validate → Commit → Push",
+    "cleanup": "Audit → Remove/Archive → Reorganize → Commit → Push"
+  }
+}
