@@ -62,6 +62,70 @@
             background: linear-gradient(135deg, #9c27b0 0%, #e91e63 100%);
         }
         
+        body.theme-royal {
+            background: linear-gradient(135deg, #4a148c 0%, #7b1fa2 100%);
+        }
+        
+        body.theme-fire {
+            background: linear-gradient(135deg, #ff5722 0%, #ff9800 100%);
+        }
+        
+        body.theme-ice {
+            background: linear-gradient(135deg, #b3e5fc 0%, #4fc3f7 100%);
+        }
+        
+        body.theme-gold {
+            background: linear-gradient(135deg, #ffc107 0%, #ff8f00 100%);
+        }
+        
+        body.theme-rose {
+            background: linear-gradient(135deg, #f8bbd9 0%, #e91e63 100%);
+        }
+        
+        body.theme-midnight {
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 100%);
+        }
+        
+        body.theme-emerald {
+            background: linear-gradient(135deg, #00695c 0%, #4caf50 100%);
+        }
+        
+        body.theme-lavender {
+            background: linear-gradient(135deg, #e1bee7 0%, #9c27b0 100%);
+        }
+        
+        body.theme-copper {
+            background: linear-gradient(135deg, #bf360c 0%, #ff5722 100%);
+        }
+        
+        body.theme-mint {
+            background: linear-gradient(135deg, #c8e6c9 0%, #4caf50 100%);
+        }
+        
+        body.theme-slate {
+            background: linear-gradient(135deg, #455a64 0%, #607d8b 100%);
+        }
+        
+        body.theme-crimson {
+            background: linear-gradient(135deg, #b71c1c 0%, #f44336 100%);
+        }
+        
+        body.theme-azure {
+            background: linear-gradient(135deg, #01579b 0%, #03a9f4 100%);
+        }
+        
+        body.theme-amber {
+            background: linear-gradient(135deg, #ff6f00 0%, #ffab00 100%);
+        }
+        
+        body.theme-violet {
+            background: linear-gradient(135deg, #4a148c 0%, #673ab7 100%);
+        }
+        
+        body.theme-teal {
+            background: linear-gradient(135deg, #004d40 0%, #009688 100%);
+        }
+        
         /* Smooth theme transitions */
         body {
             background: var(--bg-primary);
@@ -850,10 +914,18 @@
                     <div class="language-card-header">
                         <span class="language-globe">🎨</span>
                         <div class="language-card-info">
-                            <div class="language-card-title">Theme & Modes</div>
+                            <div class="language-card-title">Main Background</div>
                             <div class="language-current" id="currentTheme">🌙 Default</div>
                         </div>
                         <span class="language-chevron" id="themeChevron">▼</span>
+                    </div>
+                </div>
+                
+                <!-- Desktop Effectiveness Note -->
+                <div class="theme-note" id="themeNote" style="display: none;">
+                    <div class="theme-note-content">
+                        <span class="theme-note-icon">💡</span>
+                        <span class="theme-note-text">Background themes are most visible and impactful on desktop devices with larger screens</span>
                     </div>
                 </div>
                 
@@ -883,6 +955,54 @@
                         </button>
                         <button class="lang-btn" data-theme="neon" onclick="changeTheme('neon')">
                             🔮 Neon
+                        </button>
+                        <button class="lang-btn" data-theme="royal" onclick="changeTheme('royal')">
+                            👑 Royal
+                        </button>
+                        <button class="lang-btn" data-theme="fire" onclick="changeTheme('fire')">
+                            🔥 Fire
+                        </button>
+                        <button class="lang-btn" data-theme="ice" onclick="changeTheme('ice')">
+                            ❄️ Ice
+                        </button>
+                        <button class="lang-btn" data-theme="gold" onclick="changeTheme('gold')">
+                            🥇 Gold
+                        </button>
+                        <button class="lang-btn" data-theme="rose" onclick="changeTheme('rose')">
+                            🌹 Rose
+                        </button>
+                        <button class="lang-btn" data-theme="midnight" onclick="changeTheme('midnight')">
+                            🌌 Midnight
+                        </button>
+                        <button class="lang-btn" data-theme="emerald" onclick="changeTheme('emerald')">
+                            💚 Emerald
+                        </button>
+                        <button class="lang-btn" data-theme="lavender" onclick="changeTheme('lavender')">
+                            💜 Lavender
+                        </button>
+                        <button class="lang-btn" data-theme="copper" onclick="changeTheme('copper')">
+                            🧡 Copper
+                        </button>
+                        <button class="lang-btn" data-theme="mint" onclick="changeTheme('mint')">
+                            🍃 Mint
+                        </button>
+                        <button class="lang-btn" data-theme="slate" onclick="changeTheme('slate')">
+                            🪨 Slate
+                        </button>
+                        <button class="lang-btn" data-theme="crimson" onclick="changeTheme('crimson')">
+                            🔴 Crimson
+                        </button>
+                        <button class="lang-btn" data-theme="azure" onclick="changeTheme('azure')">
+                            💙 Azure
+                        </button>
+                        <button class="lang-btn" data-theme="amber" onclick="changeTheme('amber')">
+                            🟡 Amber
+                        </button>
+                        <button class="lang-btn" data-theme="violet" onclick="changeTheme('violet')">
+                            💙 Violet
+                        </button>
+                        <button class="lang-btn" data-theme="teal" onclick="changeTheme('teal')">
+                            🔷 Teal
                         </button>
                     </div>
                 </div>
@@ -1867,7 +1987,23 @@
             ocean: '🌊 Ocean',
             forest: '🌲 Forest',
             cherry: '🌸 Cherry',
-            neon: '🔮 Neon'
+            neon: '🔮 Neon',
+            royal: '👑 Royal',
+            fire: '🔥 Fire',
+            ice: '❄️ Ice',
+            gold: '🥇 Gold',
+            rose: '🌹 Rose',
+            midnight: '🌌 Midnight',
+            emerald: '💚 Emerald',
+            lavender: '💜 Lavender',
+            copper: '🧡 Copper',
+            mint: '🍃 Mint',
+            slate: '🪨 Slate',
+            crimson: '🔴 Crimson',
+            azure: '💙 Azure',
+            amber: '🟡 Amber',
+            violet: '💙 Violet',
+            teal: '🔷 Teal'
         };
         
         // Change theme function
@@ -1875,7 +2011,11 @@
             // Remove all theme classes from body
             document.body.classList.remove(
                 'theme-default', 'theme-light', 'theme-dark', 'theme-sunset',
-                'theme-ocean', 'theme-forest', 'theme-cherry', 'theme-neon'
+                'theme-ocean', 'theme-forest', 'theme-cherry', 'theme-neon',
+                'theme-royal', 'theme-fire', 'theme-ice', 'theme-gold',
+                'theme-rose', 'theme-midnight', 'theme-emerald', 'theme-lavender',
+                'theme-copper', 'theme-mint', 'theme-slate', 'theme-crimson',
+                'theme-azure', 'theme-amber', 'theme-violet', 'theme-teal'
             );
             
             // Add new theme class
