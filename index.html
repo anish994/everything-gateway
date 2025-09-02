@@ -333,6 +333,44 @@
             background-attachment: fixed;
         }
         
+        /* SHIVAKALI ASHRAM Spiritual Card Styling */
+        .category-card.spiritual,
+        .category-card.spiritual-services {
+            background: linear-gradient(135deg, #DC143C 0%, #FFD700 100%) !important;
+            border: 2px solid rgba(255, 215, 0, 0.3) !important;
+            box-shadow: 0 8px 25px rgba(220, 20, 60, 0.3), 0 0 20px rgba(255, 215, 0, 0.2) !important;
+        }
+        
+        .category-card.spiritual:hover,
+        .category-card.spiritual-services:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 35px rgba(220, 20, 60, 0.4), 0 0 30px rgba(255, 215, 0, 0.3) !important;
+        }
+        
+        .category-card.spiritual .sacred-badge,
+        .category-card.spiritual .divine-badge,
+        .category-card.spiritual-services .sacred-badge,
+        .category-card.spiritual-services .divine-badge {
+            background: rgba(255, 255, 255, 0.25) !important;
+            border: 1px solid rgba(255, 255, 255, 0.3) !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+        }
+        
+        .category-card.spiritual .category-emoji,
+        .category-card.spiritual-services .category-emoji {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
+        }
+        
+        .category-card.spiritual .category-title,
+        .category-card.spiritual-services .category-title {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+            font-weight: 800 !important;
+        }
+        
         /* Discord Community Card Animations */
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
@@ -1070,17 +1108,17 @@
                         </div>
                     </a>
                     
-                    <!-- Hidden Treasures - EXCLUSIVE! -->
-                    <a href="categories/hidden-treasures/index.html" class="category-card treasure focus-outline"
-                       aria-label="Hidden Treasures category with 50+ secret tools and exclusive resources">
-                        <span class="category-emoji" aria-hidden="true">💎</span>
-                        <div class="category-title">Hidden Treasures</div>
+                    <!-- SHIVAKALI ASHRAM - DIVINE SERVICES -->
+                    <a href="https://shivakali-ashram.netlify.app" class="category-card spiritual-services focus-outline" target="_blank"
+                       aria-label="SHIVAKALI ASHRAM Divine Services - Vedic astrology, spiritual guidance, and sacred rituals">
+                        <span class="category-emoji" aria-hidden="true">🔱</span>
+                        <div class="category-title">SHIVAKALI ASHRAM</div>
                         <div class="category-description">
-                            The internet's best-kept secrets. Powerful tools and hidden gems that insiders use but rarely share. Welcome to the underground.
+                            Divine Services & Sacred Rituals. Authentic Vedic astrology consultations, spiritual guidance, and traditional ceremonies from our ancestral lineage.
                         </div>
                         <div class="category-meta">
-                            <span class="category-status">Exclusive!</span>
-                            <span class="category-count">50+ secrets</span>
+                            <span class="category-status divine-badge">Divine Services</span>
+                            <span class="category-count">Sacred Rituals</span>
                         </div>
                     </a>
                 </div>
