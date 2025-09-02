@@ -1073,62 +1073,56 @@
             </section>
             
             <!-- Discord Community Card -->
-            <section class="discord-community-section" style="margin-top: var(--spacing-3xl); padding: var(--spacing-xl) 0;">
+            <section class="discord-community-section" style="margin-top: var(--spacing-2xl); padding: var(--spacing-lg) 0;">
                 <div class="container">
                     <a href="https://discord.gg/VYpEyqxz" target="_blank" class="discord-community-card" 
                        style="display: block; text-decoration: none; background: linear-gradient(135deg, #5865F2 0%, #3B82F6 100%); 
-                              border-radius: 20px; padding: var(--spacing-xl); color: white; position: relative; 
-                              overflow: hidden; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(88, 101, 242, 0.3);"
-                       onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(88, 101, 242, 0.4)'"
-                       onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 10px 30px rgba(88, 101, 242, 0.3)'">
+                              border-radius: 16px; padding: var(--spacing-lg); color: white; position: relative; 
+                              overflow: hidden; transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(88, 101, 242, 0.3); max-width: 800px; margin: 0 auto;"
+                       onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 30px rgba(88, 101, 242, 0.4)'"
+                       onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 8px 25px rgba(88, 101, 242, 0.3)'">
                        
                         <!-- Animated Background Pattern -->
                         <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; 
-                                    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-                                    background-size: 30px 30px; animation: float 6s ease-in-out infinite;"></div>
+                                    background: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+                                    background-size: 25px 25px; animation: float 8s ease-in-out infinite;"></div>
                         
                         <div style="position: relative; z-index: 2;">
-                            <div style="display: flex; align-items: center; gap: var(--spacing-lg); margin-bottom: var(--spacing-md);">
-                                <div style="font-size: 3rem; animation: pulse 2s ease-in-out infinite;">💬</div>
+                            <!-- Header -->
+                            <div style="display: flex; align-items: center; gap: var(--spacing-md); margin-bottom: var(--spacing-md);">
+                                <div style="font-size: 2.5rem; animation: pulse 3s ease-in-out infinite;">💬</div>
                                 <div>
-                                    <h3 style="margin: 0; font-size: 1.8rem; font-weight: 700; 
+                                    <h3 style="margin: 0; font-size: 1.5rem; font-weight: 700; 
                                                background: linear-gradient(45deg, #FFFFFF, #E0E7FF); 
                                                -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
                                                background-clip: text;">Join Our Inner Circle</h3>
-                                    <p style="margin: 5px 0 0 0; color: rgba(255,255,255,0.9); font-weight: 500;">Where ideas become reality</p>
+                                    <p style="margin: 2px 0 0 0; color: rgba(255,255,255,0.85); font-weight: 500; font-size: 0.9rem;">Where ideas become reality</p>
                                 </div>
                             </div>
                             
-                            <p style="color: rgba(255,255,255,0.95); line-height: 1.6; margin-bottom: var(--spacing-lg); font-size: 1.1rem;">
-                                🎯 <strong>Here's the thing:</strong> Most people just <em>use</em> apps. But you? You're different. <br>
-                                You see potential where others see "good enough." That's exactly who we need.<br><br>
-                                
-                                ✨ <strong>Every single suggestion gets implemented.</strong> No bureaucracy, no "we'll consider it" - if it's brilliant, it goes live. <br>
-                                Your fingerprints will be all over this app's evolution.<br><br>
-                                
-                                🔥 You're not just joining a Discord server. You're joining the <strong>architect team</strong> of something that could become the internet's favorite gateway.
-                            </p>
+                            <!-- Compact Main Message -->
+                            <div style="background: rgba(255,255,255,0.08); padding: var(--spacing-md); border-radius: 12px; margin-bottom: var(--spacing-md);">
+                                <p style="color: rgba(255,255,255,0.95); line-height: 1.5; margin: 0; font-size: 0.95rem;">
+                                    🎯 <strong>You see potential where others see "good enough."</strong> Every suggestion gets implemented instantly. <br>
+                                    🔥 You're joining the <strong>architect team</strong> shaping the internet's favorite gateway.
+                                </p>
+                            </div>
                             
-                            <div style="display: flex; align-items: center; justify-content: space-between; 
-                                        background: rgba(255,255,255,0.1); padding: var(--spacing-md); 
-                                        border-radius: 12px; backdrop-filter: blur(10px);">
+                            <!-- Bottom CTA Section -->
+                            <div style="display: flex; align-items: center; justify-content: space-between;">
                                 <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
-                                    <span style="font-size: 1.2rem;">🚀</span>
+                                    <span style="font-size: 1.1rem;">🚀</span>
                                     <div>
-                                        <div style="font-weight: 600; font-size: 0.95rem;">Real-time Updates & Behind-the-Scenes</div>
-                                        <div style="color: rgba(255,255,255,0.8); font-size: 0.85rem;">See every feature before anyone else</div>
+                                        <div style="font-weight: 600; font-size: 0.9rem;">Real-time Updates</div>
+                                        <div style="color: rgba(255,255,255,0.8); font-size: 0.8rem;">See features before anyone else</div>
                                     </div>
                                 </div>
-                                <div style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; 
-                                           font-weight: 600; font-size: 0.9rem; animation: glow 2s ease-in-out infinite alternate;">
+                                <div style="background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 25px; 
+                                           font-weight: 600; font-size: 0.9rem; animation: glow 2s ease-in-out infinite alternate;
+                                           border: 1px solid rgba(255,255,255,0.1);">
                                     JOIN FREE →
                                 </div>
                             </div>
-                            
-                            <p style="margin-top: var(--spacing-md); color: rgba(255,255,255,0.7); font-size: 0.9rem; 
-                                      text-align: center; font-style: italic;">
-                                💡 Warning: Once you see how fast we implement ideas, other apps will feel painfully slow
-                            </p>
                         </div>
                     </a>
                 </div>
