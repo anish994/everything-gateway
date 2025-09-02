@@ -1,0 +1,35 @@
+{
+  "created_at": "2025-09-02T11:34:43Z",
+  "version": "1.0.0",
+  "rules": {
+    "deployment": {
+      "auto_push": true,
+      "description": "Automatically push changes to the repository without asking for confirmation",
+      "reason": "User preference - avoiding repetitive confirmation prompts",
+      "applies_to": ["code_changes", "content_updates", "style_modifications", "bug_fixes"]
+    },
+    "workflow": {
+      "preferred_actions": [
+        "Make changes",
+        "Commit changes automatically with descriptive messages",
+        "Push to repository immediately"
+      ],
+      "skip_confirmations": [
+        "push_confirmation",
+        "deployment_confirmation"
+      ]
+    },
+    "git_preferences": {
+      "commit_message_style": "descriptive",
+      "auto_add_files": true,
+      "branch_strategy": "main"
+    }
+  },
+  "context": {
+    "project_name": "The Everything Gateway",
+    "project_type": "web_portal",
+    "deployment_platform": "netlify",
+    "primary_files": ["index.html", "categories/*", "data/*"],
+    "user_preference_note": "User wants immediate deployment without confirmation prompts"
+  }
+}
