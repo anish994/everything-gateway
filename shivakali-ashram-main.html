@@ -380,34 +380,306 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
+        /* Mobile-First Responsive Design - Inspired by Everything Gateway */
+        
+        /* Mobile Base Styles (Default - Mobile First) */
+        .main-container {
+            padding: 1rem;
+        }
+        
+        .ashram-title {
+            font-size: 2.2rem;
+        }
+        
+        .hero-section {
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .hero-title {
+            font-size: 1.8rem;
+            line-height: 1.3;
+        }
+        
+        .hero-description {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        .sanskrit-blessing {
+            font-size: 1.2rem;
+            padding: 0.8rem;
+        }
+        
+        .exclusive-services-card {
+            margin: 0 0 2rem 0;
+            padding: 3px;
+        }
+        
+        .exclusive-services-card > * {
+            padding: 2rem 1.5rem;
+        }
+        
+        .exclusive-title {
+            font-size: 1.8rem;
+            line-height: 1.3;
+        }
+        
+        .exclusive-description {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .consultation-inner {
+            padding: 1.5rem;
+        }
+        
+        .consultation-title {
+            font-size: 1.6rem;
+            line-height: 1.3;
+        }
+        
+        .footer {
+            padding: 2rem 1rem;
+        }
+        
+        .services-modal-content {
+            width: 98%;
+            max-height: 95vh;
+            margin: 0;
+            border-radius: 15px;
+        }
+        
+        .services-modal-header {
+            padding: 1.5rem;
+        }
+        
+        .services-modal-body {
+            padding: 1.5rem;
+        }
+        
+        .modal-services-grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        
+        .modal-contact-grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        
+        .modal-contact-section {
+            padding: 1.5rem;
+        }
+        
+        /* Touch-Friendly Improvements */
+        .exclusive-services-card {
+            min-height: 140px;
+            cursor: pointer;
+            -webkit-tap-highlight-color: rgba(220, 20, 60, 0.2);
+            touch-action: manipulation;
+        }
+        
+        .contact-copy-btn {
+            min-height: 44px;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            touch-action: manipulation;
+        }
+        
+        .services-close-btn {
+            min-width: 44px;
+            min-height: 44px;
+            font-size: 1.3rem;
+            touch-action: manipulation;
+        }
+        
+        .contact-email {
+            min-height: 50px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            touch-action: manipulation;
+        }
+        
+        /* Enhanced Visual Hierarchy for Mobile */
+        .om-symbol {
+            font-size: 3rem;
+        }
+        
+        .ashram-subtitle {
+            font-size: 1.1rem;
+        }
+        
+        .ashram-location {
+            font-size: 1rem;
+            padding: 0.8rem 1.5rem;
+        }
+        
+        /* Focus States for Accessibility */
+        .exclusive-services-card:focus {
+            outline: 3px solid var(--sacred-gold);
+            outline-offset: 2px;
+        }
+        
+        .contact-copy-btn:focus {
+            outline: 2px solid var(--sacred-gold);
+            outline-offset: 2px;
+        }
+        
+        /* Tablet Styles (768px+) */
+        @media (min-width: 768px) {
             .main-container {
-                padding: 1rem;
+                padding: 2rem;
             }
             
             .ashram-title {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
             
             .hero-section {
-                padding: 2rem;
+                padding: 2.5rem;
+                margin: 2rem 0;
             }
             
             .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-description {
+                font-size: 1.15rem;
+            }
+            
+            .sanskrit-blessing {
+                font-size: 1.4rem;
+                padding: 1rem;
+            }
+            
+            .exclusive-services-card {
+                max-width: 700px;
+                margin: 0 auto 3rem;
+            }
+            
+            .exclusive-services-card > * {
+                padding: 2.5rem 2rem;
+            }
+            
+            .exclusive-title {
                 font-size: 2rem;
             }
             
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .consultation-inner {
-                padding: 2rem;
+                padding: 2.5rem;
             }
             
             .consultation-title {
-                font-size: 1.8rem;
+                font-size: 2rem;
+            }
+            
+            .modal-services-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+            
+            .modal-contact-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+            
+            .services-modal-content {
+                width: 90%;
+                border-radius: 20px;
+            }
+        }
+        
+        /* Desktop Styles (1024px+) */
+        @media (min-width: 1024px) {
+            .main-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 2rem;
+            }
+            
+            .ashram-title {
+                font-size: 3.5rem;
+            }
+            
+            .hero-section {
+                padding: 3rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .consultation-inner {
+                padding: 3rem;
+            }
+            
+            .consultation-title {
+                font-size: 2.2rem;
+            }
+            
+            .exclusive-title {
+                font-size: 2.2rem;
+            }
+            
+            .services-modal-content {
+                max-width: 900px;
+                width: 85%;
+            }
+            
+            .modal-services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            /* Desktop Hover Effects */
+            .exclusive-services-card:hover {
+                transform: translateY(-8px) scale(1.02);
+            }
+            
+            .contact-copy-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(255,255,255,0.3);
+            }
+        }
+        
+        /* Large Desktop (1280px+) */
+        @media (min-width: 1280px) {
+            .modal-services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+            
+            .services-modal-content {
+                max-width: 1000px;
+            }
+        }
+        
+        /* Reduce Motion for Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            .exclusive-services-card::before,
+            .om-symbol,
+            .consultation-card,
+            .exclusive-cta,
+            .cta-icon {
+                animation: none;
+            }
+            
+            .exclusive-services-card:hover {
+                transform: none;
+            }
+        }
+        
+        /* High Contrast Mode Support */
+        @media (prefers-contrast: high) {
+            .exclusive-services-card {
+                border: 3px solid var(--sacred-red);
+            }
+            
+            .contact-copy-btn {
+                border: 2px solid var(--sacred-gold);
             }
         }
 

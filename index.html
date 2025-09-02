@@ -334,13 +334,6 @@
         }
         
         /* SHIVAKALI ASHRAM Spiritual Card Styling */
-        :root {
-            --sacred-red: #DC143C;
-            --sacred-gold: #FFD700;
-            --sacred-deep-red: #8B0000;
-            --sacred-cream: #FFF8DC;
-        }
-        
         .category-card.spiritual,
         .category-card.spiritual-services {
             background: linear-gradient(135deg, #DC143C 0%, #FFD700 100%) !important;
@@ -370,88 +363,12 @@
         .category-card.spiritual-services .category-emoji {
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
             filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
-            animation: float 3s ease-in-out infinite;
         }
         
         .category-card.spiritual .category-title,
         .category-card.spiritual-services .category-title {
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
             font-weight: 800 !important;
-        }
-        
-        /* SHIVAKALI ASHRAM Expandable Modal Styles */
-        .shivakali-modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(5px);
-            z-index: 2000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .shivakali-modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .shivakali-modal-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.8);
-            max-width: 900px;
-            width: 95%;
-            max-height: 90vh;
-            overflow-y: auto;
-            background: var(--sacred-cream);
-            border-radius: 20px;
-            padding: 0;
-            box-shadow: 
-                0 30px 60px rgba(220, 20, 60, 0.4),
-                0 0 100px rgba(255, 215, 0, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .shivakali-modal-overlay.active .shivakali-modal-content {
-            transform: translate(-50%, -50%) scale(1);
-        }
-        
-        .shivakali-modal-header {
-            background: linear-gradient(135deg, var(--sacred-red) 0%, var(--sacred-gold) 100%);
-            padding: 2rem;
-            border-radius: 20px 20px 0 0;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-        
-        .shivakali-close-btn {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .shivakali-close-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.1);
-        }
-        
-        .shivakali-modal-body {
-            padding: 2rem;
         }
         
         /* Hidden Treasures Card Styling - Dark Mystery Theme */
@@ -1214,20 +1131,19 @@
                         </div>
                     </a>
                     
-                    <!-- SHIVAKALI ASHRAM - Expandable Experience Card -->
-                    <div class="category-card spiritual focus-outline shivakali-expandable-experience" onclick="openShivakaliModal()" style="cursor: pointer;"
-                         aria-label="SHIVAKALI ASHRAM - Premium spiritual consultations and authentic Vedic wisdom">
+                    <!-- SHIVAKALI ASHRAM - SACRED WISDOM! -->
+                    <a href="https://shivakali-ashram.netlify.app" class="category-card spiritual focus-outline" target="_blank"
+                       aria-label="SHIVAKALI ASHRAM - 500+ years of authentic Vedic astrology and spiritual wisdom">
                         <span class="category-emoji" aria-hidden="true">🕉️</span>
-                        <div class="exclusive-badge" style="display: inline-block; background: rgba(255, 255, 255, 0.25); border: 1px solid rgba(255, 255, 255, 0.3); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.7rem; margin-bottom: 0.8rem;">Exclusive Experience</div>
                         <div class="category-title">SHIVAKALI ASHRAM</div>
                         <div class="category-description">
-                            500+ Years of Authentic Vedic Wisdom<br>Premium Spiritual Consultations
+                            500+ years of authentic Vedic astrology and spiritual wisdom from ancestral lineage. Ancient knowledge meets modern seekers.
                         </div>
                         <div class="category-meta">
-                            <span class="category-status sacred-badge">Premium Services</span>
-                            <span class="category-count" style="color: var(--sacred-gold); font-weight: bold; animation: pulse 2s infinite;">✨ Click to Explore ✨</span>
+                            <span class="category-status sacred-badge">Sacred Wisdom</span>
+                            <span class="category-count">Ancient Lineage</span>
                         </div>
-                    </div>
+                    </a>
                     
                     <!-- Hidden Treasures - SPECIAL CATEGORY -->
                     <a href="categories/hidden-treasures/index.html" class="category-card hidden-treasures focus-outline"
@@ -2928,224 +2844,6 @@
         
         console.log('🚀 Enhanced sidebar controls initialized');
         console.log('📱 Mobile back button handling active');
-        
-        // ============================= SHIVAKALI ASHRAM MODAL FUNCTIONALITY ============================= 
-        
-        // Open SHIVAKALI ASHRAM modal
-        function openShivakaliModal() {
-            // Check if modal already exists, if not create it
-            let modalOverlay = document.getElementById('shivakaliModalOverlay');
-            if (!modalOverlay) {
-                createShivakaliModal();
-                modalOverlay = document.getElementById('shivakaliModalOverlay');
-            }
-            
-            // Show the modal
-            modalOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            
-            console.log('🕉️ SHIVAKALI ASHRAM modal opened');
-        }
-        
-        // Close SHIVAKALI ASHRAM modal
-        function closeShivakaliModal() {
-            const modalOverlay = document.getElementById('shivakaliModalOverlay');
-            if (modalOverlay) {
-                modalOverlay.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-            console.log('🕉️ SHIVAKALI ASHRAM modal closed');
-        }
-        
-        // Create SHIVAKALI ASHRAM modal dynamically
-        function createShivakaliModal() {
-            const modalHTML = `
-                <!-- SHIVAKALI ASHRAM Modal -->
-                <div class="shivakali-modal-overlay" id="shivakaliModalOverlay" onclick="closeShivakaliModal()">
-                    <div class="shivakali-modal-content" onclick="event.stopPropagation()">
-                        <div class="shivakali-modal-header">
-                            <button class="shivakali-close-btn" onclick="closeShivakaliModal()" aria-label="Close modal">×</button>
-                            <div style="text-align: center;">
-                                <div style="font-size: 3rem; margin-bottom: 0.5rem; animation: float 3s ease-in-out infinite;">🕉️</div>
-                                <h2 style="margin: 0; font-size: 2.2rem; font-weight: 800; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">SHIVAKALI ASHRAM</h2>
-                                <p style="margin: 0.5rem 0 0 0; font-size: 1.1rem; opacity: 0.95; font-weight: 500;">500+ Years of Authentic Vedic Wisdom</p>
-                            </div>
-                        </div>
-                        
-                        <div class="shivakali-modal-body">
-                            <!-- Introduction -->
-                            <div style="text-align: center; margin-bottom: 2.5rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(220, 20, 60, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%); border-radius: 15px; border: 1px solid rgba(220, 20, 60, 0.2);">
-                                <h3 style="color: var(--sacred-deep-red); margin: 0 0 1rem 0; font-size: 1.5rem; font-weight: 700;">Transform Your Life Through Ancient Wisdom</h3>
-                                <p style="color: #5a4e42; font-size: 1.1rem; line-height: 1.6; margin: 0;">What if the keys to unlocking your true potential have been waiting for you for over 500 years? Discover the psychological transformation that has empowered countless seekers on their spiritual journey.</p>
-                            </div>
-                            
-                            <!-- Services Grid -->
-                            <div style="display: grid; gap: 2rem; margin-bottom: 2.5rem;">
-                                
-                                <!-- Service 1: Personal Birth Chart Analysis -->
-                                <div style="background: white; padding: 1.8rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(220, 20, 60, 0.1); border-left: 5px solid var(--sacred-red);">
-                                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
-                                        <div style="font-size: 2.5rem; flex-shrink: 0;">📊</div>
-                                        <div style="flex: 1;">
-                                            <h4 style="color: var(--sacred-deep-red); margin: 0 0 0.8rem 0; font-size: 1.3rem; font-weight: 700;">Personal Birth Chart Analysis</h4>
-                                            <ul style="color: #5a4e42; margin: 0; padding-left: 1.2rem; line-height: 1.7;">
-                                                <li>Deep psychological profiling through Vedic astrology</li>
-                                                <li>Life purpose and spiritual path identification</li>
-                                                <li>Karmic patterns and soul lessons revealed</li>
-                                                <li>Personalized mantras and spiritual practices</li>
-                                                <li>Timing guidance for major life decisions</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Service 2: Spiritual Counseling & Life Guidance -->
-                                <div style="background: white; padding: 1.8rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(220, 20, 60, 0.1); border-left: 5px solid var(--sacred-gold);">
-                                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
-                                        <div style="font-size: 2.5rem; flex-shrink: 0;">🧘</div>
-                                        <div style="flex: 1;">
-                                            <h4 style="color: var(--sacred-deep-red); margin: 0 0 0.8rem 0; font-size: 1.3rem; font-weight: 700;">Spiritual Counseling & Life Guidance</h4>
-                                            <ul style="color: #5a4e42; margin: 0; padding-left: 1.2rem; line-height: 1.7;">
-                                                <li>One-on-one sessions with Acharya Anish</li>
-                                                <li>Ancient wisdom applied to modern challenges</li>
-                                                <li>Meditation and mindfulness techniques</li>
-                                                <li>Relationship and family harmony guidance</li>
-                                                <li>Career and financial abundance coaching</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Service 3: Vedic Remedies & Healing -->
-                                <div style="background: white; padding: 1.8rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(220, 20, 60, 0.1); border-left: 5px solid var(--sacred-red);">
-                                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
-                                        <div style="font-size: 2.5rem; flex-shrink: 0;">🔮</div>
-                                        <div style="flex: 1;">
-                                            <h4 style="color: var(--sacred-deep-red); margin: 0 0 0.8rem 0; font-size: 1.3rem; font-weight: 700;">Vedic Remedies & Healing</h4>
-                                            <ul style="color: #5a4e42; margin: 0; padding-left: 1.2rem; line-height: 1.7;">
-                                                <li>Customized gemstone recommendations</li>
-                                                <li>Powerful Vedic rituals and ceremonies</li>
-                                                <li>Energy cleansing and protection methods</li>
-                                                <li>Yantra and sacred geometry guidance</li>
-                                                <li>Planetary remedies for life obstacles</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Service 4: Advanced Spiritual Training -->
-                                <div style="background: white; padding: 1.8rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(220, 20, 60, 0.1); border-left: 5px solid var(--sacred-gold);">
-                                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
-                                        <div style="font-size: 2.5rem; flex-shrink: 0;">⚡</div>
-                                        <div style="flex: 1;">
-                                            <h4 style="color: var(--sacred-deep-red); margin: 0 0 0.8rem 0; font-size: 1.3rem; font-weight: 700;">Advanced Spiritual Training</h4>
-                                            <ul style="color: #5a4e42; margin: 0; padding-left: 1.2rem; line-height: 1.7;">
-                                                <li>Kundalini awakening and chakra activation</li>
-                                                <li>Ancient tantric and yogic practices</li>
-                                                <li>Psychic abilities development</li>
-                                                <li>Sacred sound healing and mantras</li>
-                                                <li>Direct transmission of spiritual energy</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            
-                            <!-- Contact Information -->
-                            <div style="background: linear-gradient(135deg, var(--sacred-red) 0%, var(--sacred-gold) 100%); padding: 2rem; border-radius: 15px; text-align: center; color: white; margin-bottom: 1.5rem;">
-                                <h3 style="margin: 0 0 1.5rem 0; font-size: 1.6rem; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Begin Your Spiritual Transformation</h3>
-                                
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 1.5rem;">
-                                    <!-- Email Contact -->
-                                    <div style="background: rgba(255,255,255,0.15); padding: 1.2rem; border-radius: 12px; backdrop-filter: blur(10px);">
-                                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">📧</div>
-                                        <h4 style="margin: 0 0 0.8rem 0; font-size: 1.1rem; font-weight: 600;">Email Consultation</h4>
-                                        <p style="margin: 0 0 1rem 0; font-size: 0.9rem; opacity: 0.9; line-height: 1.4;">Get personalized guidance via email</p>
-                                        <button onclick="copyEmailToClipboard('anish.acharya@shivalikalashram.org')" style="background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 0.6rem 1.2rem; border-radius: 25px; cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.3)';" onmouseout="this.style.background='rgba(255,255,255,0.2)';">Copy Email Address</button>
-                                    </div>
-                                    
-                                    <!-- Location -->
-                                    <div style="background: rgba(255,255,255,0.15); padding: 1.2rem; border-radius: 12px; backdrop-filter: blur(10px);">
-                                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏛️</div>
-                                        <h4 style="margin: 0 0 0.8rem 0; font-size: 1.1rem; font-weight: 600;">Sacred Location</h4>
-                                        <p style="margin: 0 0 1rem 0; font-size: 0.9rem; opacity: 0.9; line-height: 1.4;">Visit our ancient ashram</p>
-                                        <button onclick="copyLocationToClipboard('Rishikesh, Uttarakhand, India - Sacred Ganges Riverside')" style="background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 0.6rem 1.2rem; border-radius: 25px; cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.3)';" onmouseout="this.style.background='rgba(255,255,255,0.2)';">Copy Location</button>
-                                    </div>
-                                </div>
-                                
-                                <p style="margin: 0; font-size: 1rem; opacity: 0.95; font-style: italic; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">"The divine within you recognizes the divine within me. Namaste."</p>
-                                <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; opacity: 0.8;">- Acharya Anish</p>
-                            </div>
-                            
-                            <!-- Disclaimer -->
-                            <div style="text-align: center; padding: 1rem; background: rgba(220, 20, 60, 0.05); border-radius: 10px; border: 1px solid rgba(220, 20, 60, 0.1);">
-                                <p style="margin: 0; font-size: 0.85rem; color: #666; line-height: 1.5;">All consultations are provided for spiritual guidance purposes. Individual results may vary. Please consult appropriate professionals for medical, legal, or financial matters.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-            
-            // Insert modal into body
-            document.body.insertAdjacentHTML('beforeend', modalHTML);
-        }
-        
-        // Copy email to clipboard
-        function copyEmailToClipboard(email) {
-            navigator.clipboard.writeText(email).then(function() {
-                // Show success feedback
-                const button = event.target;
-                const originalText = button.textContent;
-                button.textContent = '✓ Email Copied!';
-                button.style.background = 'rgba(76, 175, 80, 0.3)';
-                
-                setTimeout(() => {
-                    button.textContent = originalText;
-                    button.style.background = 'rgba(255,255,255,0.2)';
-                }, 2000);
-                
-                console.log('📧 Email copied to clipboard:', email);
-            }).catch(function() {
-                // Fallback for older browsers
-                alert(`Email: ${email}`);
-            });
-        }
-        
-        // Copy location to clipboard  
-        function copyLocationToClipboard(location) {
-            navigator.clipboard.writeText(location).then(function() {
-                // Show success feedback
-                const button = event.target;
-                const originalText = button.textContent;
-                button.textContent = '✓ Location Copied!';
-                button.style.background = 'rgba(76, 175, 80, 0.3)';
-                
-                setTimeout(() => {
-                    button.textContent = originalText;
-                    button.style.background = 'rgba(255,255,255,0.2)';
-                }, 2000);
-                
-                console.log('🏛️ Location copied to clipboard:', location);
-            }).catch(function() {
-                // Fallback for older browsers
-                alert(`Location: ${location}`);
-            });
-        }
-        
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeShivakaliModal();
-                closeSidebar();
-            }
-        });
-        
-        // Make openShivakaliModal globally available
-        window.openShivakaliModal = openShivakaliModal;
-        window.closeShivakaliModal = closeShivakaliModal;
-        window.copyEmailToClipboard = copyEmailToClipboard;
-        window.copyLocationToClipboard = copyLocationToClipboard;
         
         // ============================= CATEGORY BACKGROUND FUNCTIONALITY ============================= 
         
