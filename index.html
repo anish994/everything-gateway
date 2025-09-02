@@ -720,11 +720,11 @@
     </button>
 
     <!-- Settings Sidebar -->
-    <div class="settings-overlay" id="settingsOverlay" onclick="closeSettings()"></div>
+    <div class="settings-overlay" id="settingsOverlay" onclick="closeSidebar()"></div>
     <div class="settings-sidebar" id="settingsSidebar">
         <div class="settings-header">
             <h2>Settings</h2>
-            <button class="settings-close" onclick="closeSettings()" aria-label="Close settings">×</button>
+            <button class="settings-close" onclick="closeSidebar()" aria-label="Close settings">×</button>
         </div>
         
         <div class="settings-content">
@@ -862,6 +862,11 @@
         
         // ============================= SETTINGS FUNCTIONALITY ============================= 
         
+        let sidebarState = {
+            isOpen: false,
+            historyPushed: false
+        };
+        
         // Sliding sidebar functionality
         function toggleSidebar() {
             const pageContainer = document.querySelector('.page-container');
@@ -869,23 +874,58 @@
             const settingsOverlay = document.getElementById('settingsOverlay');
             const settingsSidebar = document.getElementById('settingsSidebar');
             
-            const isOpen = pageContainer.classList.contains('sidebar-open');
-            
-            if (isOpen) {
-                // Close sidebar
-                pageContainer.classList.remove('sidebar-open');
-                sidebarTrigger.classList.remove('active');
-                settingsOverlay.classList.remove('active');
-                settingsSidebar.classList.remove('active');
-                document.body.style.overflow = 'auto';
+            if (sidebarState.isOpen) {
+                closeSidebar();
             } else {
-                // Open sidebar
-                pageContainer.classList.add('sidebar-open');
-                sidebarTrigger.classList.add('active');
-                settingsOverlay.classList.add('active');
-                settingsSidebar.classList.add('active');
-                document.body.style.overflow = 'hidden';
+                openSidebar();
             }
+        }
+        
+        function openSidebar() {
+            const pageContainer = document.querySelector('.page-container');
+            const sidebarTrigger = document.getElementById('sidebarTrigger');
+            const settingsOverlay = document.getElementById('settingsOverlay');
+            const settingsSidebar = document.getElementById('settingsSidebar');
+            
+            // Open sidebar
+            pageContainer.classList.add('sidebar-open');
+            sidebarTrigger.classList.add('active');
+            settingsOverlay.classList.add('active');
+            settingsSidebar.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            sidebarState.isOpen = true;
+            
+            // Push a state to handle mobile back button
+            if (history.pushState && !sidebarState.historyPushed) {
+                history.pushState({sidebar: true}, '', window.location.href);
+                sidebarState.historyPushed = true;
+            }
+            
+            console.log('📱 Sidebar opened');
+        }
+        
+        function closeSidebar() {
+            const pageContainer = document.querySelector('.page-container');
+            const sidebarTrigger = document.getElementById('sidebarTrigger');
+            const settingsOverlay = document.getElementById('settingsOverlay');
+            const settingsSidebar = document.getElementById('settingsSidebar');
+            
+            // Close sidebar with animation
+            pageContainer.classList.remove('sidebar-open');
+            sidebarTrigger.classList.remove('active');
+            settingsOverlay.classList.remove('active');
+            settingsSidebar.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            
+            sidebarState.isOpen = false;
+            
+            // Handle history state for mobile back button
+            if (sidebarState.historyPushed) {
+                sidebarState.historyPushed = false;
+            }
+            
+            console.log('📱 Sidebar closed');
         }
         
         // Settings sidebar functions (legacy support)
@@ -1207,12 +1247,45 @@
             }
         });
         
+        // Mobile back button handling for sidebar
+        window.addEventListener('popstate', function(e) {
+            if (sidebarState.isOpen) {
+                e.preventDefault();
+                closeSidebar();
+                return false;
+            }
+        });
+        
         // Close settings with Escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
-                closeSettings();
+                closeSidebar();
             }
         });
+        
+        // Enhanced touch and click outside handling
+        document.addEventListener('click', function(e) {
+            // Close sidebar if clicking outside of it (but not on the trigger)
+            if (sidebarState.isOpen && 
+                !document.getElementById('settingsSidebar').contains(e.target) &&
+                !document.getElementById('sidebarTrigger').contains(e.target)) {
+                closeSidebar();
+            }
+        });
+        
+        // Prevent body scrolling when sidebar is open (additional mobile fix)
+        document.addEventListener('touchmove', function(e) {
+            if (sidebarState.isOpen) {
+                // Allow scrolling within sidebar only
+                const sidebar = document.getElementById('settingsSidebar');
+                if (!sidebar.contains(e.target)) {
+                    e.preventDefault();
+                }
+            }
+        }, {passive: false});
+        
+        console.log('🚀 Enhanced sidebar controls initialized');
+        console.log('📱 Mobile back button handling active');
     </script>
 </body>
 </html>
