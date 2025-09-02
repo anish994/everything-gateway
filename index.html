@@ -564,6 +564,33 @@
             padding-top: 15px;
         }
         
+        /* Theme Note Styles */
+        .theme-note {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px 0;
+            display: block !important;
+        }
+        
+        .theme-note-content {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .theme-note-icon {
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        
+        .theme-note-text {
+            font-size: 13px;
+            color: #92400e;
+            line-height: 1.4;
+        }
+        
         /* Mobile adjustments */
         @media (max-width: 480px) {
             .settings-sidebar {
@@ -922,7 +949,7 @@
                 </div>
                 
                 <!-- Desktop Effectiveness Note -->
-                <div class="theme-note" id="themeNote" style="display: none;">
+                <div class="theme-note" id="themeNote">
                     <div class="theme-note-content">
                         <span class="theme-note-icon">💡</span>
                         <span class="theme-note-text">Background themes are most visible and impactful on desktop devices with larger screens</span>
