@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -202,162 +202,6 @@
             letter-spacing: 0.5px;
             margin-top: var(--spacing-xs);
         }
-        
-        /* ============================= SETTINGS SIDEBAR ============================= */
-        .settings-btn {
-            position: fixed !important;
-            top: 20px !important;
-            right: 20px !important;
-            z-index: 1000 !important;
-            background: rgba(255, 255, 255, 0.9) !important;
-            border: none !important;
-            border-radius: 50% !important;
-            width: 50px !important;
-            height: 50px !important;
-            font-size: 24px !important;
-            cursor: pointer !important;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-            backdrop-filter: blur(10px) !important;
-            transition: all 0.3s ease !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-        }
-        
-        .settings-btn:hover {
-            background: rgba(255, 255, 255, 1);
-            transform: scale(1.1);
-        }
-        
-        .settings-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
-            z-index: 1500;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .settings-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .settings-sidebar {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 350px;
-            height: 100%;
-            background: white;
-            box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
-            z-index: 1600;
-            transform: translateX(100%);
-            transition: transform 0.3s ease;
-            overflow-y: auto;
-        }
-        
-        .settings-sidebar.active {
-            transform: translateX(0);
-        }
-        
-        .settings-header {
-            padding: 20px;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        
-        .settings-header h2 {
-            margin: 0;
-            font-size: 24px;
-            font-weight: 600;
-        }
-        
-        .settings-close {
-            background: none;
-            border: none;
-            font-size: 32px;
-            cursor: pointer;
-            color: white;
-            opacity: 0.8;
-            transition: opacity 0.2s;
-        }
-        
-        .settings-close:hover {
-            opacity: 1;
-        }
-        
-        .settings-content {
-            padding: 20px;
-        }
-        
-        .settings-section {
-            margin-bottom: 30px;
-        }
-        
-        .settings-section h3 {
-            margin: 0 0 15px 0;
-            font-size: 18px;
-            font-weight: 600;
-            color: #333;
-        }
-        
-        .language-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-        
-        .lang-btn {
-            padding: 12px 16px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            background: white;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            text-align: center;
-        }
-        
-        .lang-btn:hover {
-            border-color: #667eea;
-            background: #f8f9ff;
-        }
-        
-        .lang-btn.active {
-            border-color: #667eea;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        
-        /* Mobile adjustments */
-        @media (max-width: 480px) {
-            .settings-sidebar {
-                width: 100%;
-            }
-            
-            .language-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .settings-btn {
-                top: 15px;
-                right: 15px;
-                width: 45px;
-                height: 45px;
-                font-size: 20px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -370,7 +214,7 @@
             <section class="hero">
                 <h1 class="heading-primary">The Everything Gateway</h1>
                 <div class="hero-subtitle collapsible-content" id="heroSubtitle">
-                    <p>Your single portal to the entire internet. Discover search engines, productivity tools, entertainment platforms, and knowledge resources — all organized, curated, and accessible in one beautiful interface.</p>
+                    <p>Your single portal to the entire internet. Discover search engines, productivity tools, entertainment platforms, and knowledge resources ΓÇö all organized, curated, and accessible in one beautiful interface.</p>
                 </div>
                 <button class="expand-toggle" id="heroToggle" onclick="toggleHeroContent()">Read more</button>
             </section>
@@ -392,7 +236,7 @@
                         <span class="stat-label">Free Access</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">∞</span>
+                        <span class="stat-number">Γê₧</span>
                         <span class="stat-label">Possibilities</span>
                     </div>
                 </div>
@@ -406,7 +250,7 @@
                     <!-- Search Engines - Active -->
                     <a href="categories/search-engines/index.html" class="category-card mainstream focus-outline"
                        aria-label="Search Engines category with 39 search engines available">
-                        <span class="category-emoji" aria-hidden="true">🔍</span>
+                        <span class="category-emoji" aria-hidden="true">≡ƒöì</span>
                         <div class="category-title">Search Engines</div>
                         <div class="category-description">
                             Your gateway to the entire search universe - mainstream, privacy-focused, academic, and hidden gems
@@ -420,7 +264,7 @@
                     <!-- Tools & Utilities - Active -->
                     <a href="categories/tools/index.html" class="category-card academic focus-outline"
                        aria-label="Tools & Utilities category with 52 productivity tools available">
-                        <span class="category-emoji" aria-hidden="true">🛠️</span>
+                        <span class="category-emoji" aria-hidden="true">≡ƒ¢á∩╕Å</span>
                         <div class="category-title">Tools & Utilities</div>
                         <div class="category-description">
                             52 curated tools across 6 categories: AI tools, PDF utilities, creative design, developer resources, productivity apps, and file conversion
@@ -434,7 +278,7 @@
                     <!-- Entertainment & Media - Active -->
                     <a href="categories/entertainment/index.html" class="category-card international focus-outline"
                        aria-label="Entertainment & Media category with 51 streaming and gaming platforms available">
-                        <span class="category-emoji" aria-hidden="true">🎭</span>
+                        <span class="category-emoji" aria-hidden="true">≡ƒÄ¡</span>
                         <div class="category-title">Entertainment & Media</div>
                         <div class="category-description">
                             Your gateway to streaming, music, gaming, and entertainment platforms
@@ -448,7 +292,7 @@
                     <!-- Knowledge & Learning - Active -->
                     <a href="categories/knowledge/index.html" class="category-card privacy focus-outline"
                        aria-label="Knowledge & Learning category with 53 educational platforms available">
-                        <span class="category-emoji" aria-hidden="true">📚</span>
+                        <span class="category-emoji" aria-hidden="true">≡ƒôÜ</span>
                         <div class="category-title">Knowledge & Learning</div>
                         <div class="category-description">
                             Educational resources, online courses, and learning platforms from Harvard and MIT to Wikipedia and Khan Academy
@@ -462,7 +306,7 @@
                     <!-- News & Trends - Active -->
                     <a href="categories/news/index.html" class="category-card creative focus-outline"
                        aria-label="News & Trends category with 48 news sources available">
-                        <span class="category-emoji" aria-hidden="true">📰</span>
+                        <span class="category-emoji" aria-hidden="true">≡ƒô░</span>
                         <div class="category-title">News & Trends</div>
                         <div class="category-description">
                             Stay informed with trusted news sources, tech blogs, and trend tracking platforms from BBC to TechCrunch
@@ -476,7 +320,7 @@
                     <!-- Social Networks - Active -->
                     <a href="categories/social/index.html" class="category-card developer focus-outline"
                        aria-label="Social Networks category with 39 social platforms available">
-                        <span class="category-emoji" aria-hidden="true">🌐</span>
+                        <span class="category-emoji" aria-hidden="true">≡ƒîÉ</span>
                         <div class="category-title">Social Networks</div>
                         <div class="category-description">
                             Connect and engage with communities worldwide through social media, professional networks, forums, and communication tools
@@ -490,7 +334,7 @@
                     <!-- Gaming & Esports - Active -->
                     <a href="categories/gaming/index.html" class="category-card gaming focus-outline"
                        aria-label="Gaming & Esports category with 42 gaming platforms available">
-                        <span class="category-emoji" aria-hidden="true">🎮</span>
+                        <span class="category-emoji" aria-hidden="true">≡ƒÄ«</span>
                         <div class="category-title">Gaming & Esports</div>
                         <div class="category-description">
                             Level up your gaming experience! Game stores, streaming platforms, esports communities, and everything for PC, console, and competitive gaming
@@ -504,7 +348,7 @@
                     <!-- Anime & Manga - Active -->
                     <a href="categories/anime/index.html" class="category-card anime focus-outline"
                        aria-label="Anime & Manga category with 48 anime and manga platforms available">
-                        <span class="category-emoji" aria-hidden="true">🗾</span>
+                        <span class="category-emoji" aria-hidden="true">≡ƒù╛</span>
                         <div class="category-title">Anime & Manga</div>
                         <div class="category-description">
                             Immerse yourself in Japanese animation and comics! Streaming platforms, manga readers, databases, and otaku communities
@@ -518,7 +362,7 @@
                     <!-- Crypto & Blockchain - NEW! -->
                     <a href="categories/crypto/index.html" class="category-card crypto focus-outline"
                        aria-label="Crypto & Blockchain category with 45 cryptocurrency and DeFi platforms available">
-                        <span class="category-emoji" aria-hidden="true">₿</span>
+                        <span class="category-emoji" aria-hidden="true">Γé┐</span>
                         <div class="category-title">Crypto & Blockchain</div>
                         <div class="category-description">
                             Navigate the digital economy! Trading platforms, DeFi protocols, NFT marketplaces, and blockchain analytics tools
@@ -532,7 +376,7 @@
                     <!-- Design & Creativity - NEW! -->
                     <a href="categories/design/index.html" class="category-card design focus-outline"
                        aria-label="Design & Creativity category with 40 design tools and creative platforms available">
-                        <span class="category-emoji" aria-hidden="true">🎨</span>
+                        <span class="category-emoji" aria-hidden="true">≡ƒÄ¿</span>
                         <div class="category-title">Design & Creativity</div>
                         <div class="category-description">
                             Unleash your creative potential! Professional design tools, stock resources, inspiration platforms, and collaboration spaces
@@ -546,7 +390,7 @@
                     <!-- Health & Fitness - NEW! -->
                     <a href="categories/health/index.html" class="category-card health focus-outline"
                        aria-label="Health & Fitness category with 43 wellness and fitness platforms available">
-                        <span class="category-emoji" aria-hidden="true">💪</span>
+                        <span class="category-emoji" aria-hidden="true">≡ƒÆ¬</span>
                         <div class="category-title">Health & Fitness</div>
                         <div class="category-description">
                             Transform your wellness journey! Fitness apps, nutrition tracking, mental health resources, and workout platforms
@@ -560,7 +404,7 @@
                     <!-- Lifestyle & Shopping - NEW! -->
                     <a href="categories/lifestyle/index.html" class="category-card lifestyle focus-outline"
                        aria-label="Lifestyle & Shopping category with 44 e-commerce and lifestyle platforms available">
-                        <span class="category-emoji" aria-hidden="true">🛍️</span>
+                        <span class="category-emoji" aria-hidden="true">≡ƒ¢ì∩╕Å</span>
                         <div class="category-title">Lifestyle & Shopping</div>
                         <div class="category-description">
                             Transform your daily life! E-commerce giants, travel platforms, food delivery, and home services for modern living
@@ -574,7 +418,7 @@
                     <!-- Hidden Treasures - EXCLUSIVE! -->
                     <a href="categories/hidden-treasures/index.html" class="category-card treasure focus-outline"
                        aria-label="Hidden Treasures category with 50+ secret tools and exclusive resources">
-                        <span class="category-emoji" aria-hidden="true">💎</span>
+                        <span class="category-emoji" aria-hidden="true">≡ƒÆÄ</span>
                         <div class="category-title">Hidden Treasures</div>
                         <div class="category-description">
                             The internet's best-kept secrets. Powerful tools and hidden gems that insiders use but rarely share. Welcome to the underground.
@@ -597,57 +441,10 @@
         </main>
     </div>
     
-    <!-- Settings Button -->
-    <button class="settings-btn" id="settingsBtn" onclick="openSettings()"
-            aria-label="Open settings">
-        ⚙️
-    </button>
-
-    <!-- Settings Sidebar -->
-    <div class="settings-overlay" id="settingsOverlay" onclick="closeSettings()"></div>
-    <div class="settings-sidebar" id="settingsSidebar">
-        <div class="settings-header">
-            <h2>Settings</h2>
-            <button class="settings-close" onclick="closeSettings()" aria-label="Close settings">×</button>
-        </div>
-        
-        <div class="settings-content">
-            <div class="settings-section">
-                <h3>🌍 Language</h3>
-                <div class="language-grid">
-                    <button class="lang-btn active" data-lang="en" onclick="changeLanguage('en')">
-                        🇺🇸 English
-                    </button>
-                    <button class="lang-btn" data-lang="es" onclick="changeLanguage('es')">
-                        🇪🇸 Español
-                    </button>
-                    <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')">
-                        🇫🇷 Français
-                    </button>
-                    <button class="lang-btn" data-lang="de" onclick="changeLanguage('de')">
-                        🇩🇪 Deutsch
-                    </button>
-                    <button class="lang-btn" data-lang="hi" onclick="changeLanguage('hi')">
-                        🇮🇳 हिन्दी
-                    </button>
-                    <button class="lang-btn" data-lang="ja" onclick="changeLanguage('ja')">
-                        🇯🇵 日本語
-                    </button>
-                    <button class="lang-btn" data-lang="ko" onclick="changeLanguage('ko')">
-                        🇰🇷 한국어
-                    </button>
-                    <button class="lang-btn" data-lang="pt" onclick="changeLanguage('pt')">
-                        🇧🇷 Português
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Mobile Search FAB -->
     <button class="search-fab" id="searchFab" onclick="window.universalSearch && window.universalSearch.openSearch()"
             aria-label="Open search across all platforms">
-        <span class="search-fab-icon">🔍</span>
+        <span class="search-fab-icon">≡ƒöì</span>
         <span class="search-fab-text">Search Everything</span>
     </button>
     
@@ -667,7 +464,7 @@
                     theme: 'mainstream',
                     placeholder: 'Search across all platforms...'
                 });
-                console.log('🌟 Main page universal search initialized');
+                console.log('≡ƒîƒ Main page universal search initialized');
             } else {
                 console.error('UniversalSearchEngine not found!');
             }
@@ -705,148 +502,6 @@
         }
         
         setMobileViewport();
-        
-        // ============================= SETTINGS FUNCTIONALITY ============================= 
-        
-        // Settings sidebar functions
-        function openSettings() {
-            document.getElementById('settingsOverlay').classList.add('active');
-            document.getElementById('settingsSidebar').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function closeSettings() {
-            document.getElementById('settingsOverlay').classList.remove('active');
-            document.getElementById('settingsSidebar').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-        
-        // Language translations
-        const translations = {
-            en: {
-                title: "The Everything Gateway",
-                subtitle: "Your single portal to the entire internet. Discover search engines, productivity tools, entertainment platforms, and knowledge resources — all organized, curated, and accessible in one beautiful interface.",
-                overview: "Gateway Overview",
-                categories: "Categories",
-                resources: "Total Resources",
-                access: "Free Access",
-                possibilities: "Possibilities",
-                choose: "Choose Your Gateway"
-            },
-            es: {
-                title: "La Puerta de Entrada Universal",
-                subtitle: "Tu portal único a toda la internet. Descubre motores de búsqueda, herramientas de productividad, plataformas de entretenimiento y recursos de conocimiento — todo organizado, curado y accesible en una hermosa interfaz.",
-                overview: "Resumen del Portal",
-                categories: "Categorías",
-                resources: "Recursos Totales",
-                access: "Acceso Gratuito",
-                possibilities: "Posibilidades",
-                choose: "Elige Tu Portal"
-            },
-            fr: {
-                title: "La Passerelle Universelle",
-                subtitle: "Votre portail unique vers tout l'internet. Découvrez des moteurs de recherche, des outils de productivité, des plateformes de divertissement et des ressources de connaissances — le tout organisé, sélectionné et accessible dans une belle interface.",
-                overview: "Aperçu de la Passerelle",
-                categories: "Catégories",
-                resources: "Ressources Totales",
-                access: "Accès Gratuit",
-                possibilities: "Possibilités",
-                choose: "Choisissez Votre Passerelle"
-            },
-            de: {
-                title: "Das Universelle Gateway",
-                subtitle: "Ihr einziger Zugang zum gesamten Internet. Entdecken Sie Suchmaschinen, Produktivitätstools, Unterhaltungsplattformen und Wissensressourcen — alles organisiert, kuratiert und zugänglich in einer schönen Benutzeroberfläche.",
-                overview: "Gateway-Übersicht",
-                categories: "Kategorien",
-                resources: "Gesamtressourcen",
-                access: "Kostenloser Zugang",
-                possibilities: "Möglichkeiten",
-                choose: "Wählen Sie Ihr Gateway"
-            },
-            hi: {
-                title: "सब कुछ गेटवे",
-                subtitle: "पूरे इंटरनेट के लिए आपका एकल पोर्टल। खोज इंजन, उत्पादकता उपकरण, मनोरंजन प्लेटफॉर्म और ज्ञान संसाधनों की खोज करें — सभी व्यवस्थित, क्यूरेटेड और एक सुंदर इंटरफेस में सुलभ।",
-                overview: "गेटवे अवलोकन",
-                categories: "श्रेणियां",
-                resources: "कुल संसाधन",
-                access: "मुफ्त पहुंच",
-                possibilities: "संभावनाएं",
-                choose: "अपना गेटवे चुनें"
-            },
-            ja: {
-                title: "エブリシング・ゲートウェイ",
-                subtitle: "インターネット全体への単一ポータル。検索エンジン、生産性ツール、エンターテイメントプラットフォーム、知識リソースを発見 — すべて整理され、厳選され、美しいインターフェースでアクセス可能。",
-                overview: "ゲートウェイ概要",
-                categories: "カテゴリー",
-                resources: "総リソース",
-                access: "無料アクセス",
-                possibilities: "可能性",
-                choose: "ゲートウェイを選択"
-            },
-            ko: {
-                title: "에브리씽 게이트웨이",
-                subtitle: "전체 인터넷에 대한 단일 포털입니다. 검색 엔진, 생산성 도구, 엔터테인먼트 플랫폼 및 지식 리소스를 발견하세요 — 모두 체계적으로 정리되고 선별되어 아름다운 인터페이스에서 액세스할 수 있습니다.",
-                overview: "게이트웨이 개요",
-                categories: "카테고리",
-                resources: "총 리소스",
-                access: "무료 액세스",
-                possibilities: "가능성",
-                choose: "게이트웨이 선택"
-            },
-            pt: {
-                title: "O Gateway de Tudo",
-                subtitle: "Seu portal único para toda a internet. Descubra mecanismos de busca, ferramentas de produtividade, plataformas de entretenimento e recursos de conhecimento — tudo organizado, curado e acessível em uma bela interface.",
-                overview: "Visão Geral do Gateway",
-                categories: "Categorias",
-                resources: "Recursos Totais",
-                access: "Acesso Gratuito",
-                possibilities: "Possibilidades",
-                choose: "Escolha Seu Gateway"
-            }
-        };
-        
-        // Change language function
-        function changeLanguage(lang) {
-            // Update active language button
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
-            
-            // Update content
-            const t = translations[lang];
-            
-            // Update main content
-            document.querySelector('.heading-primary').textContent = t.title;
-            document.querySelector('#heroSubtitle p').textContent = t.subtitle;
-            document.querySelector('.heading-secondary').textContent = t.overview;
-            document.querySelectorAll('.stat-label')[0].textContent = t.categories;
-            document.querySelectorAll('.stat-label')[1].textContent = t.resources;
-            document.querySelectorAll('.stat-label')[2].textContent = t.access;
-            document.querySelectorAll('.stat-label')[3].textContent = t.possibilities;
-            document.querySelector('.categories-section .heading-secondary').textContent = t.choose;
-            
-            // Update HTML lang attribute
-            document.documentElement.lang = lang;
-            
-            // Save preference
-            localStorage.setItem('gateway-language', lang);
-            
-            console.log(`🌍 Language changed to ${lang}`);
-        }
-        
-        // Load saved language on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedLang = localStorage.getItem('gateway-language');
-            if (savedLang && translations[savedLang]) {
-                changeLanguage(savedLang);
-            }
-        });
-        
-        // Close settings with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeSettings();
-            }
-        });
     </script>
 </body>
 </html>
