@@ -162,6 +162,46 @@
             --main-container-text: white;
         }
         
+        body.category-bg-coral {
+            --main-container-bg: linear-gradient(135deg, rgba(255, 112, 67, 0.9) 0%, rgba(255, 138, 101, 0.9) 100%);
+            --main-container-text: white;
+        }
+        
+        body.category-bg-lime {
+            --main-container-bg: linear-gradient(135deg, rgba(104, 159, 56, 0.9) 0%, rgba(139, 195, 74, 0.9) 100%);
+            --main-container-text: white;
+        }
+        
+        body.category-bg-magenta {
+            --main-container-bg: linear-gradient(135deg, rgba(173, 20, 87, 0.9) 0%, rgba(233, 30, 99, 0.9) 100%);
+            --main-container-text: white;
+        }
+        
+        body.category-bg-turquoise {
+            --main-container-bg: linear-gradient(135deg, rgba(0, 105, 92, 0.9) 0%, rgba(38, 166, 154, 0.9) 100%);
+            --main-container-text: white;
+        }
+        
+        body.category-bg-indigo {
+            --main-container-bg: linear-gradient(135deg, rgba(40, 53, 147, 0.9) 0%, rgba(63, 81, 181, 0.9) 100%);
+            --main-container-text: white;
+        }
+        
+        body.category-bg-bronze {
+            --main-container-bg: linear-gradient(135deg, rgba(141, 110, 99, 0.9) 0%, rgba(161, 136, 127, 0.9) 100%);
+            --main-container-text: white;
+        }
+        
+        body.category-bg-peach {
+            --main-container-bg: linear-gradient(135deg, rgba(255, 171, 145, 0.9) 0%, rgba(255, 204, 2, 0.9) 100%);
+            --main-container-text: #1a202c;
+        }
+        
+        body.category-bg-navy {
+            --main-container-bg: linear-gradient(135deg, rgba(26, 35, 126, 0.9) 0%, rgba(48, 63, 159, 0.9) 100%);
+            --main-container-text: white;
+        }
+        
         body.theme-light {
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
         }
@@ -252,6 +292,38 @@
         
         body.theme-teal {
             background: linear-gradient(135deg, #004d40 0%, #009688 100%);
+        }
+        
+        body.theme-coral {
+            background: linear-gradient(135deg, #ff7043 0%, #ff8a65 100%);
+        }
+        
+        body.theme-lime {
+            background: linear-gradient(135deg, #689f38 0%, #8bc34a 100%);
+        }
+        
+        body.theme-magenta {
+            background: linear-gradient(135deg, #ad1457 0%, #e91e63 100%);
+        }
+        
+        body.theme-turquoise {
+            background: linear-gradient(135deg, #00695c 0%, #26a69a 100%);
+        }
+        
+        body.theme-indigo {
+            background: linear-gradient(135deg, #283593 0%, #3f51b5 100%);
+        }
+        
+        body.theme-bronze {
+            background: linear-gradient(135deg, #8d6e63 0%, #a1887f 100%);
+        }
+        
+        body.theme-peach {
+            background: linear-gradient(135deg, #ffab91 0%, #ffcc02 100%);
+        }
+        
+        body.theme-navy {
+            background: linear-gradient(135deg, #1a237e 0%, #303f9f 100%);
         }
         
         /* Smooth theme transitions */
@@ -702,9 +774,10 @@
         }
         
         .language-options.expanded {
-            max-height: 600px;
+            max-height: 800px; /* Increased for more colors */
             opacity: 1;
             padding-top: 15px;
+            overflow-y: auto; /* Allow scrolling within the expanded options */
         }
         
         /* Theme Note Styles */
@@ -1086,13 +1159,6 @@
                         <div class="language-card-info">
                             <div class="language-card-title">Main Background</div>
                             <div class="language-current" id="currentTheme">🌙 Default</div>
-                            <!-- Desktop Effectiveness Note -->
-                            <div class="theme-note" id="themeNote">
-                                <div class="theme-note-content">
-                                    <span class="theme-note-icon">💡</span>
-                                    <span class="theme-note-text">Most effective on desktop devices</span>
-                                </div>
-                            </div>
                         </div>
                         <span class="language-chevron" id="themeChevron">▼</span>
                     </div>
@@ -1100,6 +1166,13 @@
                 
                 <!-- Collapsible Theme Options -->
                 <div class="language-options" id="themeOptions">
+                    <!-- Desktop Effectiveness Note -->
+                    <div class="theme-note" id="themeNote" style="background: #fef3c7; border: 1px solid #f59e0b; margin-bottom: 15px;">
+                        <div class="theme-note-content">
+                            <span class="theme-note-icon">💡</span>
+                            <span class="theme-note-text" style="color: #92400e;">Most effective on desktop devices</span>
+                        </div>
+                    </div>
                     <div class="language-grid">
                         <button class="lang-btn active" data-theme="default" onclick="changeTheme('default')">
                             🌙 Default
@@ -1172,6 +1245,30 @@
                         </button>
                         <button class="lang-btn" data-theme="teal" onclick="changeTheme('teal')">
                             🔷 Teal
+                        </button>
+                        <button class="lang-btn" data-theme="coral" onclick="changeTheme('coral')">
+                            🪸 Coral
+                        </button>
+                        <button class="lang-btn" data-theme="lime" onclick="changeTheme('lime')">
+                            🍋 Lime
+                        </button>
+                        <button class="lang-btn" data-theme="magenta" onclick="changeTheme('magenta')">
+                            🌺 Magenta
+                        </button>
+                        <button class="lang-btn" data-theme="turquoise" onclick="changeTheme('turquoise')">
+                            🦚 Turquoise
+                        </button>
+                        <button class="lang-btn" data-theme="indigo" onclick="changeTheme('indigo')">
+                            🔮 Indigo
+                        </button>
+                        <button class="lang-btn" data-theme="bronze" onclick="changeTheme('bronze')">
+                            🥉 Bronze
+                        </button>
+                        <button class="lang-btn" data-theme="peach" onclick="changeTheme('peach')">
+                            🍑 Peach
+                        </button>
+                        <button class="lang-btn" data-theme="navy" onclick="changeTheme('navy')">
+                            ⚓ Navy
                         </button>
                     </div>
                 </div>
@@ -1269,6 +1366,30 @@
                         </button>
                         <button class="lang-btn" data-category-bg="teal" onclick="changeCategoryBackground('teal')">
                             🔷 Teal
+                        </button>
+                        <button class="lang-btn" data-category-bg="coral" onclick="changeCategoryBackground('coral')">
+                            🪸 Coral
+                        </button>
+                        <button class="lang-btn" data-category-bg="lime" onclick="changeCategoryBackground('lime')">
+                            🍋 Lime
+                        </button>
+                        <button class="lang-btn" data-category-bg="magenta" onclick="changeCategoryBackground('magenta')">
+                            🌺 Magenta
+                        </button>
+                        <button class="lang-btn" data-category-bg="turquoise" onclick="changeCategoryBackground('turquoise')">
+                            🦚 Turquoise
+                        </button>
+                        <button class="lang-btn" data-category-bg="indigo" onclick="changeCategoryBackground('indigo')">
+                            🔮 Indigo
+                        </button>
+                        <button class="lang-btn" data-category-bg="bronze" onclick="changeCategoryBackground('bronze')">
+                            🥉 Bronze
+                        </button>
+                        <button class="lang-btn" data-category-bg="peach" onclick="changeCategoryBackground('peach')">
+                            🍑 Peach
+                        </button>
+                        <button class="lang-btn" data-category-bg="navy" onclick="changeCategoryBackground('navy')">
+                            ⚓ Navy
                         </button>
                     </div>
                 </div>
@@ -2269,7 +2390,15 @@
             azure: '💙 Azure',
             amber: '🟡 Amber',
             violet: '💙 Violet',
-            teal: '🔷 Teal'
+            teal: '🔷 Teal',
+            coral: '🪸 Coral',
+            lime: '🍋 Lime',
+            magenta: '🌺 Magenta',
+            turquoise: '🦚 Turquoise',
+            indigo: '🔮 Indigo',
+            bronze: '🥉 Bronze',
+            peach: '🍑 Peach',
+            navy: '⚓ Navy'
         };
         
         // Change theme function
@@ -2281,7 +2410,9 @@
                 'theme-royal', 'theme-fire', 'theme-ice', 'theme-gold',
                 'theme-rose', 'theme-midnight', 'theme-emerald', 'theme-lavender',
                 'theme-copper', 'theme-mint', 'theme-slate', 'theme-crimson',
-                'theme-azure', 'theme-amber', 'theme-violet', 'theme-teal'
+                'theme-azure', 'theme-amber', 'theme-violet', 'theme-teal',
+                'theme-coral', 'theme-lime', 'theme-magenta', 'theme-turquoise',
+                'theme-indigo', 'theme-bronze', 'theme-peach', 'theme-navy'
             );
             
             // Add new theme class
@@ -2556,7 +2687,15 @@
             azure: '💙 Azure',
             amber: '🟡 Amber',
             violet: '💙 Violet',
-            teal: '🔷 Teal'
+            teal: '🔷 Teal',
+            coral: '🪸 Coral',
+            lime: '🍋 Lime',
+            magenta: '🌺 Magenta',
+            turquoise: '🦚 Turquoise',
+            indigo: '🔮 Indigo',
+            bronze: '🥉 Bronze',
+            peach: '🍑 Peach',
+            navy: '⚓ Navy'
         };
         
         // Change category background function
@@ -2569,8 +2708,10 @@
                 'category-bg-rose', 'category-bg-midnight', 'category-bg-emerald', 'category-bg-lavender',
                 'category-bg-copper', 'category-bg-mint', 'category-bg-slate', 'category-bg-crimson',
                 'category-bg-azure', 'category-bg-amber', 'category-bg-violet', 'category-bg-teal',
+                'category-bg-coral', 'category-bg-lime', 'category-bg-magenta', 'category-bg-turquoise',
+                'category-bg-indigo', 'category-bg-bronze', 'category-bg-peach', 'category-bg-navy',
                 'category-bg-blue', 'category-bg-purple', 'category-bg-green', 'category-bg-red',
-                'category-bg-orange', 'category-bg-pink', 'category-bg-indigo', 'category-bg-yellow', 'category-bg-gray'
+                'category-bg-orange', 'category-bg-pink', 'category-bg-yellow', 'category-bg-gray'
             );
             
             // Add new category background class
