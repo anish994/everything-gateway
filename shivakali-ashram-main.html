@@ -426,6 +426,309 @@
         .fade-in {
             animation: fadeInUp 0.8s ease forwards;
         }
+
+        /* Exclusive Services Card Styling */
+        .exclusive-services-card {
+            background: linear-gradient(135deg, var(--sacred-red) 0%, var(--sacred-gold) 100%);
+            border-radius: 25px;
+            padding: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            box-shadow: 
+                0 15px 35px rgba(220, 20, 60, 0.3),
+                0 0 60px rgba(255, 215, 0, 0.2);
+            animation: exclusiveGlow 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes exclusiveGlow {
+            0% { 
+                box-shadow: 
+                    0 15px 35px rgba(220, 20, 60, 0.3),
+                    0 0 60px rgba(255, 215, 0, 0.2);
+            }
+            100% { 
+                box-shadow: 
+                    0 20px 45px rgba(220, 20, 60, 0.4),
+                    0 0 80px rgba(255, 215, 0, 0.3);
+            }
+        }
+
+        .exclusive-services-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 
+                0 25px 50px rgba(220, 20, 60, 0.4),
+                0 0 100px rgba(255, 215, 0, 0.3);
+        }
+
+        .exclusive-services-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%);
+            transform: translateX(-100%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .exclusive-services-card > * {
+            background: var(--sacred-cream);
+            border-radius: 21px;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .exclusive-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--sacred-deep-red) 0%, var(--sacred-red) 100%);
+            color: var(--sacred-gold);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .exclusive-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: var(--sacred-deep-red);
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .exclusive-description {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .exclusive-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--sacred-deep-red);
+            animation: ctaPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes ctaPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .cta-icon {
+            animation: sparkle 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes sparkle {
+            0% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        /* Services Modal Styling */
+        .services-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .services-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .services-modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            max-width: 900px;
+            width: 95%;
+            max-height: 90vh;
+            overflow-y: auto;
+            background: var(--sacred-cream);
+            border-radius: 20px;
+            padding: 0;
+            box-shadow: 
+                0 30px 60px rgba(220, 20, 60, 0.4),
+                0 0 100px rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .services-modal-overlay.active .services-modal-content {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .services-modal-header {
+            background: linear-gradient(135deg, var(--sacred-red) 0%, var(--sacred-gold) 100%);
+            padding: 2rem;
+            border-radius: 20px 20px 0 0;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .services-close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .services-close-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .services-modal-body {
+            padding: 2rem;
+        }
+
+        .modal-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .modal-service-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(220, 20, 60, 0.1);
+            border-left: 5px solid var(--sacred-red);
+        }
+
+        .modal-service-card:nth-child(even) {
+            border-left-color: var(--sacred-gold);
+        }
+
+        .modal-service-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-service-title {
+            color: var(--sacred-deep-red);
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-service-description {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-service-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .modal-service-features li {
+            padding: 0.2rem 0;
+            color: #5a4e42;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .modal-service-features li::before {
+            content: '✨';
+            margin-right: 0.5rem;
+        }
+
+        .modal-contact-section {
+            background: linear-gradient(135deg, var(--sacred-red) 0%, var(--sacred-gold) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        .modal-contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .modal-contact-item {
+            background: rgba(255,255,255,0.15);
+            padding: 1.2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-copy-btn {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-copy-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .exclusive-services-card {
+                margin: 0 1rem 3rem;
+            }
+            
+            .exclusive-title {
+                font-size: 1.8rem;
+            }
+            
+            .modal-services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -458,67 +761,20 @@
 
         <!-- Services Section -->
         <section class="services-section">
-            <h2 class="section-title">🌟 Premium Spiritual Services</h2>
+            <h2 class="section-title">🌟 Exclusive SHIVAKALI ASHRAM Services</h2>
             
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <span class="service-icon">📊</span>
-                    <h3 class="service-title">Birth Chart Analysis</h3>
-                    <p class="service-description">
-                        Comprehensive 100+ page personalized Vedic astrology report with detailed planetary insights and life guidance.
-                    </p>
-                    <ul class="service-features">
-                        <li>Complete planetary analysis</li>
-                        <li>Life predictions and timing</li>
-                        <li>Career and relationship guidance</li>
-                        <li>Remedial measures and gemstones</li>
-                        <li>Personal consultation included</li>
-                    </ul>
-                </div>
-
-                <div class="service-card fade-in">
-                    <span class="service-icon">🔢</span>
-                    <h3 class="service-title">Numerology Reading</h3>
-                    <p class="service-description">
-                        Deep numerological analysis of your life path, destiny number, and karmic influences on your spiritual journey.
-                    </p>
-                    <ul class="service-features">
-                        <li>Life path number analysis</li>
-                        <li>Destiny and soul numbers</li>
-                        <li>Karmic debt calculation</li>
-                        <li>Name and date compatibility</li>
-                        <li>Spiritual growth guidance</li>
-                    </ul>
-                </div>
-
-                <div class="service-card fade-in">
-                    <span class="service-icon">💬</span>
-                    <h3 class="service-title">Online Consultation</h3>
-                    <p class="service-description">
-                        Direct one-on-one spiritual guidance session with personalized advice and answers to your life questions.
-                    </p>
-                    <ul class="service-features">
-                        <li>One-on-one guidance session</li>
-                        <li>Personalized spiritual advice</li>
-                        <li>Real-time Q&A</li>
-                        <li>Life purpose clarity</li>
-                        <li>Spiritual practice recommendations</li>
-                    </ul>
-                </div>
-
-                <div class="service-card fade-in">
-                    <span class="service-icon">🎯</span>
-                    <h3 class="service-title">Person-Specific Insights</h3>
-                    <p class="service-description">
-                        Tailored spiritual guidance based on your unique circumstances, challenges, and spiritual growth path.
-                    </p>
-                    <ul class="service-features">
-                        <li>Customized spiritual guidance</li>
-                        <li>Challenge-specific solutions</li>
-                        <li>Growth path mapping</li>
-                        <li>Meditation practices</li>
-                        <li>Sacred ritual recommendations</li>
-                    </ul>
+            <!-- Single Expandable Services Card -->
+            <div class="exclusive-services-card" onclick="toggleServicesModal()">
+                <div class="exclusive-badge">🕉️ EXCLUSIVE EXPERIENCE</div>
+                <h3 class="exclusive-title">Premium Spiritual Consultations</h3>
+                <p class="exclusive-description">
+                    500+ Years of Authentic Vedic Wisdom<br>
+                    Personalized Guidance from Acharya Anish
+                </p>
+                <div class="exclusive-cta">
+                    <span class="cta-icon">✨</span>
+                    <span class="cta-text">Click to Explore Our Sacred Services</span>
+                    <span class="cta-icon">✨</span>
                 </div>
             </div>
         </section>
@@ -689,6 +945,208 @@
             `;
             document.head.appendChild(style);
         });
+
+        // Services Modal Functionality
+        function toggleServicesModal() {
+            // Check if modal already exists, if not create it
+            let modalOverlay = document.getElementById('servicesModalOverlay');
+            if (!modalOverlay) {
+                createServicesModal();
+                modalOverlay = document.getElementById('servicesModalOverlay');
+            }
+            
+            // Show the modal
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            console.log('🕉️ Services modal opened');
+        }
+        
+        // Close Services modal
+        function closeServicesModal() {
+            const modalOverlay = document.getElementById('servicesModalOverlay');
+            if (modalOverlay) {
+                modalOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+            console.log('🕉️ Services modal closed');
+        }
+        
+        // Create Services modal dynamically
+        function createServicesModal() {
+            const modalHTML = `
+                <!-- Services Modal -->
+                <div class="services-modal-overlay" id="servicesModalOverlay" onclick="closeServicesModal()">
+                    <div class="services-modal-content" onclick="event.stopPropagation()">
+                        <div class="services-modal-header">
+                            <button class="services-close-btn" onclick="closeServicesModal()" aria-label="Close modal">×</button>
+                            <div style="text-align: center;">
+                                <div style="font-size: 3rem; margin-bottom: 0.5rem; animation: float 3s ease-in-out infinite;">🕉️</div>
+                                <h2 style="margin: 0; font-size: 2.2rem; font-weight: 800; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">SHIVAKALI ASHRAM</h2>
+                                <p style="margin: 0.5rem 0 0 0; font-size: 1.1rem; opacity: 0.95; font-weight: 500;">Premium Spiritual Services</p>
+                            </div>
+                        </div>
+                        
+                        <div class="services-modal-body">
+                            <!-- Services Grid -->
+                            <div class="modal-services-grid">
+                                
+                                <!-- Service 1: Birth Chart Analysis -->
+                                <div class="modal-service-card">
+                                    <div class="modal-service-icon">📊</div>
+                                    <h4 class="modal-service-title">Birth Chart Analysis</h4>
+                                    <p class="modal-service-description">Comprehensive 100+ page personalized Vedic astrology report with detailed planetary insights and life guidance.</p>
+                                    <ul class="modal-service-features">
+                                        <li>Complete planetary analysis</li>
+                                        <li>Life predictions and timing</li>
+                                        <li>Career and relationship guidance</li>
+                                        <li>Remedial measures and gemstones</li>
+                                        <li>Personal consultation included</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Service 2: Numerology Reading -->
+                                <div class="modal-service-card">
+                                    <div class="modal-service-icon">🔢</div>
+                                    <h4 class="modal-service-title">Numerology Reading</h4>
+                                    <p class="modal-service-description">Deep numerological analysis of your life path, destiny number, and karmic influences on your spiritual journey.</p>
+                                    <ul class="modal-service-features">
+                                        <li>Life path number analysis</li>
+                                        <li>Destiny and soul numbers</li>
+                                        <li>Karmic debt calculation</li>
+                                        <li>Name and date compatibility</li>
+                                        <li>Spiritual growth guidance</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Service 3: Online Consultation -->
+                                <div class="modal-service-card">
+                                    <div class="modal-service-icon">💬</div>
+                                    <h4 class="modal-service-title">Online Consultation</h4>
+                                    <p class="modal-service-description">Direct one-on-one spiritual guidance session with personalized advice and answers to your life questions.</p>
+                                    <ul class="modal-service-features">
+                                        <li>One-on-one guidance session</li>
+                                        <li>Personalized spiritual advice</li>
+                                        <li>Real-time Q&A</li>
+                                        <li>Life purpose clarity</li>
+                                        <li>Spiritual practice recommendations</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Service 4: Person-Specific Insights -->
+                                <div class="modal-service-card">
+                                    <div class="modal-service-icon">🎯</div>
+                                    <h4 class="modal-service-title">Person-Specific Insights</h4>
+                                    <p class="modal-service-description">Tailored spiritual guidance based on your unique circumstances, challenges, and spiritual growth path.</p>
+                                    <ul class="modal-service-features">
+                                        <li>Customized spiritual guidance</li>
+                                        <li>Challenge-specific solutions</li>
+                                        <li>Growth path mapping</li>
+                                        <li>Meditation practices</li>
+                                        <li>Sacred ritual recommendations</li>
+                                    </ul>
+                                </div>
+                                
+                            </div>
+                            
+                            <!-- Contact Information -->
+                            <div class="modal-contact-section">
+                                <h3 style="margin: 0 0 1.5rem 0; font-size: 1.6rem; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Begin Your Spiritual Transformation</h3>
+                                
+                                <div class="modal-contact-grid">
+                                    <!-- Email Contact -->
+                                    <div class="modal-contact-item">
+                                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">📧</div>
+                                        <h4 style="margin: 0 0 0.8rem 0; font-size: 1.1rem; font-weight: 600;">Email Consultation</h4>
+                                        <p style="margin: 0 0 1rem 0; font-size: 0.9rem; opacity: 0.9; line-height: 1.4;">Get personalized guidance via email</p>
+                                        <button class="contact-copy-btn" onclick="copyModalEmail('acharyaanish23@gmail.com')">Copy Email Address</button>
+                                    </div>
+                                    
+                                    <!-- Location -->
+                                    <div class="modal-contact-item">
+                                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏛️</div>
+                                        <h4 style="margin: 0 0 0.8rem 0; font-size: 1.1rem; font-weight: 600;">Sacred Location</h4>
+                                        <p style="margin: 0 0 1rem 0; font-size: 0.9rem; opacity: 0.9; line-height: 1.4;">Visit our ancient ashram</p>
+                                        <button class="contact-copy-btn" onclick="copyModalLocation('Tegharia Nishikanan SHIVAKALI ASHRAM, Kolkata - 700157, West Bengal, India')">Copy Location</button>
+                                    </div>
+                                </div>
+                                
+                                <p style="margin: 1rem 0 0 0; font-size: 1rem; opacity: 0.95; font-style: italic; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">"The divine within you recognizes the divine within me. Namaste."</p>
+                                <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; opacity: 0.8;">- Acharya Anish</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Insert modal into body
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+        }
+        
+        // Copy modal email to clipboard
+        function copyModalEmail(email) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(email).then(function() {
+                    // Show success feedback
+                    const button = event.target;
+                    const originalText = button.textContent;
+                    button.textContent = '✓ Email Copied!';
+                    button.style.background = 'rgba(76, 175, 80, 0.3)';
+                    
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                        button.style.background = 'rgba(255,255,255,0.2)';
+                    }, 2000);
+                    
+                    console.log('📧 Modal email copied to clipboard:', email);
+                }).catch(function() {
+                    // Fallback for older browsers
+                    alert(`Email: ${email}`);
+                });
+            } else {
+                // Fallback for older browsers
+                alert(`Email: ${email}`);
+            }
+        }
+        
+        // Copy modal location to clipboard  
+        function copyModalLocation(location) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(location).then(function() {
+                    // Show success feedback
+                    const button = event.target;
+                    const originalText = button.textContent;
+                    button.textContent = '✓ Location Copied!';
+                    button.style.background = 'rgba(76, 175, 80, 0.3)';
+                    
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                        button.style.background = 'rgba(255,255,255,0.2)';
+                    }, 2000);
+                    
+                    console.log('🏛️ Modal location copied to clipboard:', location);
+                }).catch(function() {
+                    // Fallback for older browsers
+                    alert(`Location: ${location}`);
+                });
+            } else {
+                // Fallback for older browsers
+                alert(`Location: ${location}`);
+            }
+        }
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeServicesModal();
+            }
+        });
+        
+        // Make modal functions globally available
+        window.toggleServicesModal = toggleServicesModal;
+        window.closeServicesModal = closeServicesModal;
+        window.copyModalEmail = copyModalEmail;
+        window.copyModalLocation = copyModalLocation;
     </script>
 </body>
 </html>
