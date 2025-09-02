@@ -235,6 +235,32 @@
             font-weight: bold;
             color: white;
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            user-select: none;
+        }
+        
+        /* Drag handle for vertical movement */
+        .sidebar-trigger::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+        }
+        
+        .sidebar-trigger::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
         }
         
         .sidebar-trigger:hover {
@@ -360,22 +386,92 @@
             color: white;
         }
         
+        /* Language Card Styles */
+        .language-main-card {
+            background: #f8f9ff;
+            border: 2px solid #e0e7ff;
+            border-radius: 12px;
+            padding: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+        }
+        
+        .language-main-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+        }
+        
+        .language-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .language-globe {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        
+        .language-card-info {
+            flex: 1;
+        }
+        
+        .language-card-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 4px;
+        }
+        
+        .language-current {
+            font-size: 14px;
+            color: #667eea;
+            font-weight: 500;
+        }
+        
+        .language-chevron {
+            font-size: 14px;
+            color: #9ca3af;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .language-chevron.expanded {
+            transform: rotate(180deg);
+        }
+        
+        .language-options {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            opacity: 0;
+        }
+        
+        .language-options.expanded {
+            max-height: 600px;
+            opacity: 1;
+            padding-top: 15px;
+        }
+        
         /* Mobile adjustments */
         @media (max-width: 480px) {
             .settings-sidebar {
-                width: 100%;
+                width: 95%; /* Slightly smaller to prevent interference */
             }
             
             .language-grid {
                 grid-template-columns: 1fr;
             }
             
-            .settings-btn {
-                top: 15px;
-                right: 15px;
+            .sidebar-trigger {
                 width: 45px;
-                height: 45px;
-                font-size: 20px;
+                height: 90px;
+                font-size: 18px;
+            }
+            
+            .page-container.sidebar-open {
+                transform: translateX(-95vw); /* Adjust for mobile */
             }
         }
     </style>
@@ -633,56 +729,70 @@
         
         <div class="settings-content">
             <div class="settings-section">
-                <h3>🌍 Language</h3>
-                <div class="language-grid">
-                    <button class="lang-btn active" data-lang="en" onclick="changeLanguage('en')">
-                        🇺🇸 English
-                    </button>
-                    <button class="lang-btn" data-lang="es" onclick="changeLanguage('es')">
-                        🇪🇸 Español
-                    </button>
-                    <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')">
-                        🇫🇷 Français
-                    </button>
-                    <button class="lang-btn" data-lang="de" onclick="changeLanguage('de')">
-                        🇩🇪 Deutsch
-                    </button>
-                    <button class="lang-btn" data-lang="zh" onclick="changeLanguage('zh')">
-                        🇨🇳 中文
-                    </button>
-                    <button class="lang-btn" data-lang="hi" onclick="changeLanguage('hi')">
-                        🇮🇳 हिन्दी
-                    </button>
-                    <button class="lang-btn" data-lang="ja" onclick="changeLanguage('ja')">
-                        🇯🇵 日本語
-                    </button>
-                    <button class="lang-btn" data-lang="ko" onclick="changeLanguage('ko')">
-                        🇰🇷 한국어
-                    </button>
-                    <button class="lang-btn" data-lang="pt" onclick="changeLanguage('pt')">
-                        🇧🇷 Português
-                    </button>
-                    <button class="lang-btn" data-lang="ru" onclick="changeLanguage('ru')">
-                        🇷🇺 Русский
-                    </button>
-                    <button class="lang-btn" data-lang="ar" onclick="changeLanguage('ar')">
-                        🇸🇦 العربية
-                    </button>
-                    <button class="lang-btn" data-lang="bn" onclick="changeLanguage('bn')">
-                        🇧🇩 বাংলা
-                    </button>
-                    <button class="lang-btn" data-lang="it" onclick="changeLanguage('it')">
-                        🇮🇹 Italiano
-                    </button>
-                    <button class="lang-btn" data-lang="tr" onclick="changeLanguage('tr')">
-                        🇹🇷 Türkçe
-                    </button>
-                    <button class="lang-btn" data-lang="nl" onclick="changeLanguage('nl')">
-                        🇳🇱 Nederlands
-                    </button>
-                    <button class="lang-btn" data-lang="pl" onclick="changeLanguage('pl')">
-                        🇵🇱 Polski
-                    </button>
+                <!-- Main Language Card -->
+                <div class="language-main-card" onclick="toggleLanguageCard()">
+                    <div class="language-card-header">
+                        <span class="language-globe">🌍</span>
+                        <div class="language-card-info">
+                            <div class="language-card-title">Language</div>
+                            <div class="language-current" id="currentLanguage">🇺🇸 English</div>
+                        </div>
+                        <span class="language-chevron" id="languageChevron">▼</span>
+                    </div>
+                </div>
+                
+                <!-- Collapsible Language Options -->
+                <div class="language-options" id="languageOptions">
+                    <div class="language-grid">
+                        <button class="lang-btn active" data-lang="en" onclick="changeLanguage('en')">
+                            🇺🇸 English
+                        </button>
+                        <button class="lang-btn" data-lang="es" onclick="changeLanguage('es')">
+                            🇪🇸 Español
+                        </button>
+                        <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')">
+                            🇫🇷 Français
+                        </button>
+                        <button class="lang-btn" data-lang="de" onclick="changeLanguage('de')">
+                            🇩🇪 Deutsch
+                        </button>
+                        <button class="lang-btn" data-lang="zh" onclick="changeLanguage('zh')">
+                            🇨🇳 中文
+                        </button>
+                        <button class="lang-btn" data-lang="hi" onclick="changeLanguage('hi')">
+                            🇮🇳 हिन्दी
+                        </button>
+                        <button class="lang-btn" data-lang="ja" onclick="changeLanguage('ja')">
+                            🇯🇵 日本語
+                        </button>
+                        <button class="lang-btn" data-lang="ko" onclick="changeLanguage('ko')">
+                            🇰🇷 한국어
+                        </button>
+                        <button class="lang-btn" data-lang="pt" onclick="changeLanguage('pt')">
+                            🇧🇷 Português
+                        </button>
+                        <button class="lang-btn" data-lang="ru" onclick="changeLanguage('ru')">
+                            🇷🇺 Русский
+                        </button>
+                        <button class="lang-btn" data-lang="ar" onclick="changeLanguage('ar')">
+                            🇸🇦 العربية
+                        </button>
+                        <button class="lang-btn" data-lang="bn" onclick="changeLanguage('bn')">
+                            🇧🇩 বাংলা
+                        </button>
+                        <button class="lang-btn" data-lang="it" onclick="changeLanguage('it')">
+                            🇮🇹 Italiano
+                        </button>
+                        <button class="lang-btn" data-lang="tr" onclick="changeLanguage('tr')">
+                            🇹🇷 Türkçe
+                        </button>
+                        <button class="lang-btn" data-lang="nl" onclick="changeLanguage('nl')">
+                            🇳🇱 Nederlands
+                        </button>
+                        <button class="lang-btn" data-lang="pl" onclick="changeLanguage('pl')">
+                            🇵🇱 Polski
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -799,6 +909,61 @@
             document.getElementById('settingsOverlay').classList.remove('active');
             document.getElementById('settingsSidebar').classList.remove('active');
             document.body.style.overflow = 'auto';
+        }
+        
+        // Vertical drag functionality for sidebar trigger
+        let isDragging = false;
+        let startY = 0;
+        let startTop = 0;
+        const sidebarTrigger = document.getElementById('sidebarTrigger');
+        
+        sidebarTrigger.addEventListener('mousedown', startDrag);
+        sidebarTrigger.addEventListener('touchstart', startDrag, {passive: false});
+        
+        function startDrag(e) {
+            // Only drag if clicking on the drag handles (top/bottom 20px)
+            const rect = sidebarTrigger.getBoundingClientRect();
+            const clickY = e.type === 'mousedown' ? e.clientY : e.touches[0].clientY;
+            const relativeY = clickY - rect.top;
+            
+            if (relativeY <= 20 || relativeY >= rect.height - 20) {
+                isDragging = true;
+                startY = e.type === 'mousedown' ? e.clientY : e.touches[0].clientY;
+                
+                const currentTop = parseInt(window.getComputedStyle(sidebarTrigger).top) || window.innerHeight / 2;
+                startTop = currentTop;
+                
+                e.preventDefault();
+                document.addEventListener('mousemove', drag);
+                document.addEventListener('mouseup', stopDrag);
+                document.addEventListener('touchmove', drag, {passive: false});
+                document.addEventListener('touchend', stopDrag);
+            }
+        }
+        
+        function drag(e) {
+            if (!isDragging) return;
+            e.preventDefault();
+            
+            const currentY = e.type === 'mousemove' ? e.clientY : e.touches[0].clientY;
+            const deltaY = currentY - startY;
+            const newTop = startTop + deltaY;
+            
+            // Constrain within viewport
+            const minTop = 60; // 60px from top
+            const maxTop = window.innerHeight - 160; // 160px from bottom (100px height + 60px margin)
+            
+            const constrainedTop = Math.max(minTop, Math.min(maxTop, newTop));
+            sidebarTrigger.style.top = `${constrainedTop}px`;
+            sidebarTrigger.style.transform = 'translateY(0)'; // Override the -50% transform
+        }
+        
+        function stopDrag() {
+            isDragging = false;
+            document.removeEventListener('mousemove', drag);
+            document.removeEventListener('mouseup', stopDrag);
+            document.removeEventListener('touchmove', drag);
+            document.removeEventListener('touchend', stopDrag);
         }
         
         // Language translations
@@ -965,11 +1130,52 @@
             }
         };
         
+        // Language card toggle functionality
+        function toggleLanguageCard() {
+            const languageOptions = document.getElementById('languageOptions');
+            const languageChevron = document.getElementById('languageChevron');
+            
+            if (languageOptions.classList.contains('expanded')) {
+                languageOptions.classList.remove('expanded');
+                languageChevron.classList.remove('expanded');
+            } else {
+                languageOptions.classList.add('expanded');
+                languageChevron.classList.add('expanded');
+            }
+        }
+        
+        // Language display mapping
+        const languageFlags = {
+            en: '🇺🇸 English',
+            es: '🇪🇸 Español',
+            fr: '🇫🇷 Français',
+            de: '🇩🇪 Deutsch',
+            zh: '🇨🇳 中文',
+            hi: '🇮🇳 हिन्दी',
+            ja: '🇯🇵 日本語',
+            ko: '🇰🇷 한국어',
+            pt: '🇧🇷 Português',
+            ru: '🇷🇺 Русский',
+            ar: '🇸🇦 العربية',
+            bn: '🇧🇩 বাংলা',
+            it: '🇮🇹 Italiano',
+            tr: '🇹🇷 Türkçe',
+            nl: '🇳🇱 Nederlands',
+            pl: '🇵🇱 Polski'
+        };
+        
         // Change language function
         function changeLanguage(lang) {
             // Update active language button
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+            
+            // Update current language display in the card
+            document.getElementById('currentLanguage').textContent = languageFlags[lang];
+            
+            // Close language options after selection
+            document.getElementById('languageOptions').classList.remove('expanded');
+            document.getElementById('languageChevron').classList.remove('expanded');
             
             // Update content
             const t = translations[lang];
