@@ -1073,7 +1073,42 @@
                 resources: "Recursos Totales",
                 access: "Acceso Gratuito",
                 possibilities: "Posibilidades",
-                choose: "Elige Tu Portal"
+                choose: "Elige Tu Portal",
+                settings: "Configuración",
+                language: "Idioma",
+                readMore: "Leer más",
+                readLess: "Leer menos",
+                searchEnginesTitle: "Motores de Búsqueda",
+                searchEnginesDesc: "Tu portal al universo completo de búsqueda - mainstream, enfocado en privacidad, académico y gemas ocultas",
+                toolsTitle: "Herramientas y Utilidades",
+                toolsDesc: "52 herramientas curadas en 6 categorías: herramientas de IA, utilidades PDF, diseño creativo, recursos para desarrolladores, apps de productividad y conversión de archivos",
+                entertainmentTitle: "Entretenimiento y Medios",
+                entertainmentDesc: "Tu portal a plataformas de streaming, música, gaming y entretenimiento",
+                knowledgeTitle: "Conocimiento y Aprendizaje",
+                knowledgeDesc: "Recursos educativos, cursos online y plataformas de aprendizaje desde Harvard y MIT hasta Wikipedia y Khan Academy",
+                newsTitle: "Noticias y Tendencias",
+                newsDesc: "Mantente informado con fuentes de noticias confiables, blogs tech y plataformas de seguimiento de tendencias desde BBC hasta TechCrunch",
+                socialTitle: "Redes Sociales",
+                socialDesc: "Conecta e interactúa con comunidades mundiales a través de redes sociales, redes profesionales, foros y herramientas de comunicación",
+                gamingTitle: "Gaming y Esports",
+                gamingDesc: "¡Sube de nivel tu experiencia gaming! Tiendas de juegos, plataformas de streaming, comunidades esports y todo para PC, consola y gaming competitivo",
+                animeTitle: "Anime y Manga",
+                animeDesc: "¡Sumérgete en la animación y cómics japoneses! Plataformas de streaming, lectores de manga, bases de datos y comunidades otaku",
+                cryptoTitle: "Crypto y Blockchain",
+                cryptoDesc: "¡Navega la economía digital! Plataformas de trading, protocolos DeFi, marketplaces NFT y herramientas de análisis blockchain",
+                designTitle: "Diseño y Creatividad",
+                designDesc: "¡Libera tu potencial creativo! Herramientas de diseño profesional, recursos stock, plataformas de inspiración y espacios de colaboración",
+                healthTitle: "Salud y Fitness",
+                healthDesc: "¡Transforma tu viaje de bienestar! Apps de fitness, seguimiento nutricional, recursos de salud mental y plataformas de ejercicio",
+                lifestyleTitle: "Estilo de Vida y Compras",
+                lifestyleDesc: "¡Transforma tu vida diaria! Gigantes del e-commerce, plataformas de viajes, delivery de comida y servicios para el hogar para la vida moderna",
+                treasuresTitle: "Tesoros Ocultos",
+                treasuresDesc: "Los secretos mejor guardados del internet. Herramientas poderosas y gemas ocultas que los expertos usan pero rara vez comparten. Bienvenido al underground.",
+                statusActive: "Activo",
+                statusNew: "¡Nuevo!",
+                statusExclusive: "¡Exclusivo!",
+                footerText1: "Haciendo el internet organizado y accesible.",
+                footerText2: "Se agregan regularmente nuevas categorías y características. Marca esta página y nunca pierdas el rastro de grandes recursos."
             },
             fr: {
                 title: "La Passerelle Universelle",
@@ -1277,13 +1312,111 @@
             document.querySelectorAll('.stat-label')[3].textContent = t.possibilities;
             document.querySelector('.categories-section .heading-secondary').textContent = t.choose;
             
+            // Update settings panel
+            document.getElementById('settingsTitle').textContent = t.settings;
+            document.querySelector('.language-card-title').textContent = t.language;
+            
+            // Update expand/collapse button
+            const heroToggle = document.getElementById('heroToggle');
+            if (heroToggle) {
+                const heroSubtitle = document.getElementById('heroSubtitle');
+                if (heroSubtitle && heroSubtitle.classList.contains('expanded')) {
+                    heroToggle.textContent = t.readLess;
+                } else {
+                    heroToggle.textContent = t.readMore;
+                }
+            }
+            
+            // Update all category cards
+            const categoryCards = document.querySelectorAll('.category-card');
+            categoryCards.forEach((card, index) => {
+                const titleElement = card.querySelector('.category-title');
+                const descElement = card.querySelector('.category-description');
+                const statusElement = card.querySelector('.category-status');
+                
+                // Map each category by its position/class
+                switch(index) {
+                    case 0: // Search Engines
+                        if (titleElement) titleElement.textContent = t.searchEnginesTitle;
+                        if (descElement) descElement.textContent = t.searchEnginesDesc;
+                        if (statusElement) statusElement.textContent = t.statusActive;
+                        break;
+                    case 1: // Tools & Utilities  
+                        if (titleElement) titleElement.textContent = t.toolsTitle;
+                        if (descElement) descElement.textContent = t.toolsDesc;
+                        if (statusElement) statusElement.textContent = t.statusActive;
+                        break;
+                    case 2: // Entertainment & Media
+                        if (titleElement) titleElement.textContent = t.entertainmentTitle;
+                        if (descElement) descElement.textContent = t.entertainmentDesc;
+                        if (statusElement) statusElement.textContent = t.statusActive;
+                        break;
+                    case 3: // Knowledge & Learning
+                        if (titleElement) titleElement.textContent = t.knowledgeTitle;
+                        if (descElement) descElement.textContent = t.knowledgeDesc;
+                        if (statusElement) statusElement.textContent = t.statusActive;
+                        break;
+                    case 4: // News & Trends
+                        if (titleElement) titleElement.textContent = t.newsTitle;
+                        if (descElement) descElement.textContent = t.newsDesc;
+                        if (statusElement) statusElement.textContent = t.statusActive;
+                        break;
+                    case 5: // Social Networks
+                        if (titleElement) titleElement.textContent = t.socialTitle;
+                        if (descElement) descElement.textContent = t.socialDesc;
+                        if (statusElement) statusElement.textContent = t.statusActive;
+                        break;
+                    case 6: // Gaming & Esports
+                        if (titleElement) titleElement.textContent = t.gamingTitle;
+                        if (descElement) descElement.textContent = t.gamingDesc;
+                        if (statusElement) statusElement.textContent = t.statusActive;
+                        break;
+                    case 7: // Anime & Manga
+                        if (titleElement) titleElement.textContent = t.animeTitle;
+                        if (descElement) descElement.textContent = t.animeDesc;
+                        if (statusElement) statusElement.textContent = t.statusActive;
+                        break;
+                    case 8: // Crypto & Blockchain
+                        if (titleElement) titleElement.textContent = t.cryptoTitle;
+                        if (descElement) descElement.textContent = t.cryptoDesc;
+                        if (statusElement) statusElement.textContent = t.statusNew;
+                        break;
+                    case 9: // Design & Creativity
+                        if (titleElement) titleElement.textContent = t.designTitle;
+                        if (descElement) descElement.textContent = t.designDesc;
+                        if (statusElement) statusElement.textContent = t.statusNew;
+                        break;
+                    case 10: // Health & Fitness
+                        if (titleElement) titleElement.textContent = t.healthTitle;
+                        if (descElement) descElement.textContent = t.healthDesc;
+                        if (statusElement) statusElement.textContent = t.statusNew;
+                        break;
+                    case 11: // Lifestyle & Shopping
+                        if (titleElement) titleElement.textContent = t.lifestyleTitle;
+                        if (descElement) descElement.textContent = t.lifestyleDesc;
+                        if (statusElement) statusElement.textContent = t.statusNew;
+                        break;
+                    case 12: // Hidden Treasures
+                        if (titleElement) titleElement.textContent = t.treasuresTitle;
+                        if (descElement) descElement.textContent = t.treasuresDesc;
+                        if (statusElement) statusElement.textContent = t.statusExclusive;
+                        break;
+                }
+            });
+            
+            // Update footer
+            const footerSection = document.querySelector('.footer-section .description');
+            if (footerSection) {
+                footerSection.innerHTML = `<strong>The Everything Gateway</strong> - ${t.footerText1}<br>${t.footerText2}`;
+            }
+            
             // Update HTML lang attribute
             document.documentElement.lang = lang;
             
             // Save preference
             localStorage.setItem('gateway-language', lang);
             
-            console.log(`🌍 Language changed to ${lang}`);
+            console.log(`🌍 Language changed to ${lang} - All elements updated`);
         }
         
         // Load saved language on page load
