@@ -723,8 +723,12 @@
     <div class="settings-overlay" id="settingsOverlay" onclick="closeSidebar()"></div>
     <div class="settings-sidebar" id="settingsSidebar">
         <div class="settings-header">
-            <h2>Settings</h2>
-            <button class="settings-close" onclick="closeSidebar()" aria-label="Close settings">×</button>
+            <h2 id="settingsTitle">Settings</h2>
+            <!-- Sidebar trigger inside sidebar -->
+            <button class="sidebar-trigger" id="sidebarTriggerInside" onclick="toggleSidebar()"
+                    aria-label="Close settings">
+                <
+            </button>
         </div>
         
         <div class="settings-content">
@@ -953,6 +957,7 @@
         
         // Vertical drag functionality for sidebar trigger
         let isDragging = false;
+        let dragStartTime = 0;
         let startY = 0;
         let startTop = 0;
         const sidebarTrigger = document.getElementById('sidebarTrigger');
@@ -961,24 +966,29 @@
         sidebarTrigger.addEventListener('touchstart', startDrag, {passive: false});
         
         function startDrag(e) {
-            // Only drag if clicking on the drag handles (top/bottom 20px)
-            const rect = sidebarTrigger.getBoundingClientRect();
-            const clickY = e.type === 'mousedown' ? e.clientY : e.touches[0].clientY;
-            const relativeY = clickY - rect.top;
+            // Start drag timer for click vs hold detection
+            dragStartTime = Date.now();
             
-            if (relativeY <= 20 || relativeY >= rect.height - 20) {
-                isDragging = true;
-                startY = e.type === 'mousedown' ? e.clientY : e.touches[0].clientY;
-                
-                const currentTop = parseInt(window.getComputedStyle(sidebarTrigger).top) || window.innerHeight / 2;
-                startTop = currentTop;
-                
-                e.preventDefault();
-                document.addEventListener('mousemove', drag);
-                document.addEventListener('mouseup', stopDrag);
-                document.addEventListener('touchmove', drag, {passive: false});
-                document.addEventListener('touchend', stopDrag);
-            }
+            // Set timeout to start dragging after 200ms hold
+            setTimeout(() => {
+                if (Date.now() - dragStartTime >= 200) {
+                    isDragging = true;
+                    startY = e.type === 'mousedown' ? e.clientY : (e.touches ? e.touches[0].clientY : e.clientY);
+                    
+                    const currentTop = parseInt(window.getComputedStyle(sidebarTrigger).top) || window.innerHeight / 2;
+                    startTop = currentTop;
+                    
+                    e.preventDefault();
+                    document.addEventListener('mousemove', drag);
+                    document.addEventListener('mouseup', stopDrag);
+                    document.addEventListener('touchmove', drag, {passive: false});
+                    document.addEventListener('touchend', stopDrag);
+                    
+                    // Visual feedback for drag mode
+                    sidebarTrigger.style.opacity = '0.7';
+                    console.log('🔄 Drag mode activated');
+                }
+            }, 200);
         }
         
         function drag(e) {
@@ -1000,10 +1010,12 @@
         
         function stopDrag() {
             isDragging = false;
+            sidebarTrigger.style.opacity = '1'; // Restore opacity
             document.removeEventListener('mousemove', drag);
             document.removeEventListener('mouseup', stopDrag);
             document.removeEventListener('touchmove', drag);
             document.removeEventListener('touchend', stopDrag);
+            console.log('🔄 Drag mode deactivated');
         }
         
         // Language translations
@@ -1016,7 +1028,42 @@
                 resources: "Total Resources",
                 access: "Free Access",
                 possibilities: "Possibilities",
-                choose: "Choose Your Gateway"
+                choose: "Choose Your Gateway",
+                settings: "Settings",
+                language: "Language",
+                readMore: "Read more",
+                readLess: "Read less",
+                searchEnginesTitle: "Search Engines",
+                searchEnginesDesc: "Your gateway to the entire search universe - mainstream, privacy-focused, academic, and hidden gems",
+                toolsTitle: "Tools & Utilities",
+                toolsDesc: "52 curated tools across 6 categories: AI tools, PDF utilities, creative design, developer resources, productivity apps, and file conversion",
+                entertainmentTitle: "Entertainment & Media",
+                entertainmentDesc: "Your gateway to streaming, music, gaming, and entertainment platforms",
+                knowledgeTitle: "Knowledge & Learning",
+                knowledgeDesc: "Educational resources, online courses, and learning platforms from Harvard and MIT to Wikipedia and Khan Academy",
+                newsTitle: "News & Trends",
+                newsDesc: "Stay informed with trusted news sources, tech blogs, and trend tracking platforms from BBC to TechCrunch",
+                socialTitle: "Social Networks",
+                socialDesc: "Connect and engage with communities worldwide through social media, professional networks, forums, and communication tools",
+                gamingTitle: "Gaming & Esports",
+                gamingDesc: "Level up your gaming experience! Game stores, streaming platforms, esports communities, and everything for PC, console, and competitive gaming",
+                animeTitle: "Anime & Manga",
+                animeDesc: "Immerse yourself in Japanese animation and comics! Streaming platforms, manga readers, databases, and otaku communities",
+                cryptoTitle: "Crypto & Blockchain",
+                cryptoDesc: "Navigate the digital economy! Trading platforms, DeFi protocols, NFT marketplaces, and blockchain analytics tools",
+                designTitle: "Design & Creativity",
+                designDesc: "Unleash your creative potential! Professional design tools, stock resources, inspiration platforms, and collaboration spaces",
+                healthTitle: "Health & Fitness",
+                healthDesc: "Transform your wellness journey! Fitness apps, nutrition tracking, mental health resources, and workout platforms",
+                lifestyleTitle: "Lifestyle & Shopping",
+                lifestyleDesc: "Transform your daily life! E-commerce giants, travel platforms, food delivery, and home services for modern living",
+                treasuresTitle: "Hidden Treasures",
+                treasuresDesc: "The internet's best-kept secrets. Powerful tools and hidden gems that insiders use but rarely share. Welcome to the underground.",
+                statusActive: "Active",
+                statusNew: "New!",
+                statusExclusive: "Exclusive!",
+                footerText1: "Making the internet organized and accessible.",
+                footerText2: "New categories and features are added regularly. Bookmark this page and never lose track of great resources again."
             },
             es: {
                 title: "La Puerta de Entrada Universal",
