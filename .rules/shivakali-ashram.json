@@ -1,0 +1,67 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-09-02T12:34:17Z",
+  "description": "Rules and guidelines for SHIVAKALI ASHRAM spiritual platform development",
+  
+  "project_info": {
+    "name": "SHIVAKALI ASHRAM", 
+    "type": "spiritual_wisdom_platform",
+    "lineage": "500+ years of Vedic astrology tradition",
+    "repository": "https://github.com/anish994/shivakali-ashram.git",
+    "deployment": "shivakali-ashram.netlify.app",
+    "integration_point": "Gateway category card"
+  },
+
+  "content_strategy": {
+    "primary_focus": "Ancient Vedic wisdom and astrological guidance",
+    "content_types": ["images", "spiritual_texts", "astrological_charts", "wisdom_cards"],
+    "structure": "Deep hierarchical card system (cards → sub-cards → sub-sub-cards)",
+    "visual_approach": "Image-heavy with mild edits for page fitting"
+  },
+
+  "technical_architecture": {
+    "independence": "Completely separate from Gateway codebase",
+    "styling": "Sacred aesthetics - saffron, gold, traditional motifs",
+    "navigation": "Intuitive card-based hierarchy for spiritual exploration",
+    "performance": "Optimized for rich media and deep content browsing"
+  },
+
+  "development_workflow": {
+    "from_gateway_directory": "Work on both projects simultaneously from same workspace", 
+    "dual_deployment": "Independent repos, separate Netlify deployments",
+    "integration_method": "Gateway category card links to spiritual site",
+    "update_sync": "Each project deploys independently but maintains connection"
+  },
+
+  "sacred_content_categories": {
+    "astrology": {
+      "birth_charts": "Personalized Vedic chart analysis",
+      "predictions": "Time-based astrological guidance", 
+      "cosmic_calendar": "Spiritual timing and auspicious moments",
+      "planetary_remedies": "Traditional solutions for planetary influences"
+    },
+    "lineage_wisdom": {
+      "family_traditions": "500+ years of accumulated knowledge",
+      "sacred_practices": "Traditional rituals and ceremonies",
+      "ancient_texts": "Scriptural interpretations and teachings"
+    },
+    "spiritual_guidance": {
+      "personal_consultations": "One-on-one spiritual counseling",
+      "meditation_practices": "Traditional techniques and guidance",
+      "life_path_analysis": "Dharmic purpose and spiritual direction"
+    }
+  },
+
+  "integration_with_gateway": {
+    "discovery_method": "Category card on Gateway main page",
+    "user_journey": "Gateway → Spiritual Category → SHIVAKALI ASHRAM site", 
+    "return_navigation": "Clear path back to Gateway from spiritual site",
+    "cross_promotion": "Gateway users discover authentic spiritual wisdom"
+  },
+
+  "mobile_app_integration": {
+    "wrapper_inclusion": "Accessible through Gateway Play Store wrapper app",
+    "seamless_experience": "No distinction between Gateway and spiritual content in app",
+    "trust_enhancement": "Play Store credibility benefits both platforms"
+  }
+}

@@ -24,6 +24,10 @@
     "project_management": {
       "workflow": ".rules/workflow.json",
       "documentation": ".rules/documentation.json"
+    },
+    "dual_project_management": {
+      "shivakali_ashram": ".rules/shivakali-ashram.json",
+      "mobile_strategy": ".rules/mobile-wrapper.json"
     }
   },
 

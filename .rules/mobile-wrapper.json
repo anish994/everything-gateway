@@ -1,0 +1,60 @@
+{
+  "version": "1.0.0", 
+  "last_updated": "2025-09-02T12:34:17Z",
+  "description": "Mobile app wrapper strategy for Play Store deployment",
+
+  "app_concept": {
+    "name": "The Everything Gateway",
+    "type": "WebView wrapper app",
+    "primary_url": "https://cheery-flan-dc1088.netlify.app",
+    "secondary_integration": "https://shivakali-ashram.netlify.app",
+    "store_presence": "Google Play Store (future: Apple App Store)"
+  },
+
+  "wrapper_architecture": {
+    "technology": "WebView-based hybrid app",
+    "main_container": "Gateway website as primary interface",
+    "navigation": "Seamless between Gateway and SHIVAKALI ASHRAM",
+    "offline_handling": "Graceful offline message and cached splash screen",
+    "native_features": "Push notifications, splash screen, app icon"
+  },
+
+  "user_experience": {
+    "app_launch": "Opens to Gateway main page",
+    "spiritual_access": "Click SHIVAKALI ASHRAM card → navigates within app",
+    "back_navigation": "Android back button returns to Gateway",
+    "seamless_feel": "No indication user is switching between different sites",
+    "trust_factor": "Play Store presence legitimizes both platforms"
+  },
+
+  "technical_benefits": {
+    "single_maintenance": "Update web apps → mobile app updates automatically",
+    "unified_ecosystem": "Both projects benefit from single app store presence", 
+    "cost_effective": "One app submission covers both platforms",
+    "instant_updates": "Web deployment immediately reflects in mobile app",
+    "cross_promotion": "Gateway traffic naturally discovers spiritual content"
+  },
+
+  "play_store_optimization": {
+    "app_title": "The Everything Gateway",
+    "description": "Your single portal to the entire internet + authentic spiritual wisdom",
+    "keywords": ["gateway", "portal", "resources", "spiritual", "astrology", "wisdom"],
+    "screenshots": ["Gateway main page", "Category browsing", "Spiritual section preview"],
+    "native_touches": ["Custom splash screen", "Offline detection", "Share functionality"]
+  },
+
+  "development_phases": {
+    "phase_1": "Complete SHIVAKALI ASHRAM website development",
+    "phase_2": "Finalize Gateway-to-Spiritual integration", 
+    "phase_3": "Create WebView wrapper app with native touches",
+    "phase_4": "Play Store submission and approval process",
+    "phase_5": "Marketing both web and mobile presence"
+  },
+
+  "compliance_considerations": {
+    "google_policies": "Ensure wrapper adds value beyond simple web browser",
+    "native_features": "Include push notifications and offline handling",
+    "content_guidelines": "Both Gateway and spiritual content meet store standards",
+    "privacy_policy": "Unified policy covering both platforms"
+  }
+}
