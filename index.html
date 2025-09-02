@@ -203,30 +203,50 @@
             margin-top: var(--spacing-xs);
         }
         
-        /* ============================= SETTINGS SIDEBAR ============================= */
-        .settings-btn {
-            position: fixed !important;
-            top: 20px !important;
-            right: 20px !important;
-            z-index: 1000 !important;
-            background: rgba(255, 255, 255, 0.9) !important;
-            border: none !important;
-            border-radius: 50% !important;
-            width: 50px !important;
-            height: 50px !important;
-            font-size: 24px !important;
-            cursor: pointer !important;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-            backdrop-filter: blur(10px) !important;
-            transition: all 0.3s ease !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
+        /* ============================= ELEGANT SLIDING SIDEBAR ============================= */
+        .page-container {
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            min-height: 100vh;
         }
         
-        .settings-btn:hover {
-            background: rgba(255, 255, 255, 1);
-            transform: scale(1.1);
+        .page-container.sidebar-open {
+            transform: translateX(-300px);
+        }
+        
+        .sidebar-trigger {
+            position: fixed;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            z-index: 1000;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%);
+            border: none;
+            border-radius: 12px 0 0 12px;
+            width: 50px;
+            height: 100px;
+            cursor: pointer;
+            box-shadow: -3px 0 20px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .sidebar-trigger:hover {
+            width: 55px;
+            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 1) 0%, rgba(118, 75, 162, 1) 100%);
+        }
+        
+        .sidebar-trigger.active {
+            right: 300px;
+            border-radius: 0 12px 12px 0;
+            transform: translateY(-50%) rotate(180deg);
         }
         
         .settings-overlay {
@@ -597,10 +617,10 @@
         </main>
     </div>
     
-    <!-- Settings Button -->
-    <button class="settings-btn" id="settingsBtn" onclick="openSettings()"
+    <!-- Elegant Sidebar Trigger -->
+    <button class="sidebar-trigger" id="sidebarTrigger" onclick="toggleSidebar()"
             aria-label="Open settings">
-        ⚙️
+        >
     </button>
 
     <!-- Settings Sidebar -->
@@ -627,6 +647,9 @@
                     <button class="lang-btn" data-lang="de" onclick="changeLanguage('de')">
                         🇩🇪 Deutsch
                     </button>
+                    <button class="lang-btn" data-lang="zh" onclick="changeLanguage('zh')">
+                        🇨🇳 中文
+                    </button>
                     <button class="lang-btn" data-lang="hi" onclick="changeLanguage('hi')">
                         🇮🇳 हिन्दी
                     </button>
@@ -638,6 +661,27 @@
                     </button>
                     <button class="lang-btn" data-lang="pt" onclick="changeLanguage('pt')">
                         🇧🇷 Português
+                    </button>
+                    <button class="lang-btn" data-lang="ru" onclick="changeLanguage('ru')">
+                        🇷🇺 Русский
+                    </button>
+                    <button class="lang-btn" data-lang="ar" onclick="changeLanguage('ar')">
+                        🇸🇦 العربية
+                    </button>
+                    <button class="lang-btn" data-lang="bn" onclick="changeLanguage('bn')">
+                        🇧🇩 বাংলা
+                    </button>
+                    <button class="lang-btn" data-lang="it" onclick="changeLanguage('it')">
+                        🇮🇹 Italiano
+                    </button>
+                    <button class="lang-btn" data-lang="tr" onclick="changeLanguage('tr')">
+                        🇹🇷 Türkçe
+                    </button>
+                    <button class="lang-btn" data-lang="nl" onclick="changeLanguage('nl')">
+                        🇳🇱 Nederlands
+                    </button>
+                    <button class="lang-btn" data-lang="pl" onclick="changeLanguage('pl')">
+                        🇵🇱 Polski
                     </button>
                 </div>
             </div>
@@ -708,14 +752,50 @@
         
         // ============================= SETTINGS FUNCTIONALITY ============================= 
         
-        // Settings sidebar functions
+        // Sliding sidebar functionality
+        function toggleSidebar() {
+            const pageContainer = document.querySelector('.page-container');
+            const sidebarTrigger = document.getElementById('sidebarTrigger');
+            const settingsOverlay = document.getElementById('settingsOverlay');
+            const settingsSidebar = document.getElementById('settingsSidebar');
+            
+            const isOpen = pageContainer.classList.contains('sidebar-open');
+            
+            if (isOpen) {
+                // Close sidebar
+                pageContainer.classList.remove('sidebar-open');
+                sidebarTrigger.classList.remove('active');
+                settingsOverlay.classList.remove('active');
+                settingsSidebar.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            } else {
+                // Open sidebar
+                pageContainer.classList.add('sidebar-open');
+                sidebarTrigger.classList.add('active');
+                settingsOverlay.classList.add('active');
+                settingsSidebar.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        // Settings sidebar functions (legacy support)
         function openSettings() {
+            const pageContainer = document.querySelector('.page-container');
+            const sidebarTrigger = document.getElementById('sidebarTrigger');
+            
+            pageContainer.classList.add('sidebar-open');
+            sidebarTrigger.classList.add('active');
             document.getElementById('settingsOverlay').classList.add('active');
             document.getElementById('settingsSidebar').classList.add('active');
             document.body.style.overflow = 'hidden';
         }
         
         function closeSettings() {
+            const pageContainer = document.querySelector('.page-container');
+            const sidebarTrigger = document.getElementById('sidebarTrigger');
+            
+            pageContainer.classList.remove('sidebar-open');
+            sidebarTrigger.classList.remove('active');
             document.getElementById('settingsOverlay').classList.remove('active');
             document.getElementById('settingsSidebar').classList.remove('active');
             document.body.style.overflow = 'auto';
@@ -763,6 +843,16 @@
                 possibilities: "Möglichkeiten",
                 choose: "Wählen Sie Ihr Gateway"
             },
+            zh: {
+                title: "万物之门",
+                subtitle: "您通向整个互联网的单一门户。发现搜索引擎、生产力工具、娱乐平台和知识资源 — 所有这些都在一个美丽的界面中得到组织、策划和访问。",
+                overview: "门户概览",
+                categories: "类别",
+                resources: "总资源",
+                access: "免费访问",
+                possibilities: "可能性",
+                choose: "选择您的门户"
+            },
             hi: {
                 title: "सब कुछ गेटवे",
                 subtitle: "पूरे इंटरनेट के लिए आपका एकल पोर्टल। खोज इंजन, उत्पादकता उपकरण, मनोरंजन प्लेटफॉर्म और ज्ञान संसाधनों की खोज करें — सभी व्यवस्थित, क्यूरेटेड और एक सुंदर इंटरफेस में सुलभ।",
@@ -802,6 +892,76 @@
                 access: "Acesso Gratuito",
                 possibilities: "Possibilidades",
                 choose: "Escolha Seu Gateway"
+            },
+            ru: {
+                title: "Универсальный Шлюз",
+                subtitle: "Ваш единый портал во весь интернет. Откройте для себя поисковые системы, инструменты для повышения производительности, развлекательные платформы и информационные ресурсы — все организовано, отобрано и доступно в одном красивом интерфейсе.",
+                overview: "Обзор Шлюза",
+                categories: "Категории",
+                resources: "Всего Ресурсов",
+                access: "Свободный Доступ",
+                possibilities: "Возможности",
+                choose: "Выберите Свой Шлюз"
+            },
+            ar: {
+                title: "بوابة كل شيء",
+                subtitle: "بوابتك الوحيدة إلى الإنترنت بأكمله. اكتشف محركات البحث وأدوات الإنتاجية ومنصات الترفيه وموارد المعرفة - كلها منظمة ومنسقة ويمكن الوصول إليها في واجهة جميلة واحدة.",
+                overview: "نظرة عامة على البوابة",
+                categories: "الفئات",
+                resources: "إجمالي الموارد",
+                access: "وصول مجاني",
+                possibilities: "الإمكانيات",
+                choose: "اختر بوابتك"
+            },
+            bn: {
+                title: "সর্বময় গেটওয়ে",
+                subtitle: "সম্পূর্ণ ইন্টারনেটের জন্য আপনার একক পোর্টাল। সার্চ ইঞ্জিন, উৎপাদনশীলতা টুল, বিনোদন প্ল্যাটফর্ম এবং জ্ঞান সম্পদ আবিষ্কার করুন — সবকিছু সংগঠিত, কিউরেটেড এবং একটি সুন্দর ইন্টারফেসে অ্যাক্সেসযোগ্য।",
+                overview: "গেটওয়ে ওভারভিউ",
+                categories: "বিভাগসমূহ",
+                resources: "মোট সম্পদ",
+                access: "ফ্রি অ্যাকসেস",
+                possibilities: "সম্ভাবনা",
+                choose: "আপনার গেটওয়ে বেছে নিন"
+            },
+            it: {
+                title: "Il Gateway Universale",
+                subtitle: "Il tuo portale unico per l'intero internet. Scopri motori di ricerca, strumenti di produttività, piattaforme di intrattenimento e risorse di conoscenza — tutto organizzato, curato e accessibile in un'unica bellissima interfaccia.",
+                overview: "Panoramica del Gateway",
+                categories: "Categorie",
+                resources: "Risorse Totali",
+                access: "Accesso Gratuito",
+                possibilities: "Possibilità",
+                choose: "Scegli il Tuo Gateway"
+            },
+            tr: {
+                title: "Her Şeyin Geçidi",
+                subtitle: "Tüm internete açılan tek portalınız. Arama motorlarını, üretkenlik araçlarını, eğlence platformlarını ve bilgi kaynaklarını keşfedin — hepsi düzenlenmiş, özenle seçilmiş ve tek bir güzel arayüzde erişilebilir.",
+                overview: "Geçit Genel Bakışı",
+                categories: "Kategoriler",
+                resources: "Toplam Kaynaklar",
+                access: "Ücretsiz Erişim",
+                possibilities: "Olasılıklar",
+                choose: "Geçidinizi Seçin"
+            },
+            nl: {
+                title: "De Alles Gateway",
+                subtitle: "Uw enige portaal naar het hele internet. Ontdek zoekmachines, productiviteitstools, entertainmentplatforms en kennisbronnen — allemaal georganiseerd, samengesteld en toegankelijk in één mooie interface.",
+                overview: "Gateway Overzicht",
+                categories: "Categorieën",
+                resources: "Totaal Bronnen",
+                access: "Gratis Toegang",
+                possibilities: "Mogelijkheden",
+                choose: "Kies Uw Gateway"
+            },
+            pl: {
+                title: "Brama do Wszystkiego",
+                subtitle: "Twój jedyny portal do całego internetu. Odkryj wyszukiwarki, narzędzia zwiększające produktywność, platformy rozrywkowe i zasoby wiedzy — wszystko zorganizowane, wyselekcjonowane i dostępne w jednym pięknym interfejsie.",
+                overview: "Przegląd Bramy",
+                categories: "Kategorie",
+                resources: "Całkowite Zasoby",
+                access: "Darmowy Dostęp",
+                possibilities: "Możliwości",
+                choose: "Wybierz Swoją Bramę"
             }
         };
         
