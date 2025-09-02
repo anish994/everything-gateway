@@ -1841,11 +1841,14 @@
                 healthDesc: "Transform your wellness journey! Fitness apps, nutrition tracking, mental health resources, and workout platforms",
                 lifestyleTitle: "Lifestyle & Shopping",
                 lifestyleDesc: "Transform your daily life! E-commerce giants, travel platforms, food delivery, and home services for modern living",
+                ashramTitle: "SHIVAKALI ASHRAM",
+                ashramDesc: "What if ancient wisdom held the keys to unlocking your true potential? Discover the psychological transformation that has empowered seekers for 500+ years.",
                 treasuresTitle: "Hidden Treasures",
                 treasuresDesc: "The internet's best-kept secrets. Powerful tools and hidden gems that insiders use but rarely share. Welcome to the underground.",
                 statusActive: "Active",
                 statusNew: "New!",
                 statusExclusive: "Exclusive!",
+                statusSacred: "Sacred Wisdom",
                 footerText1: "Making the internet organized and accessible.",
                 footerText2: "New categories and features are added regularly. Bookmark this page and never lose track of great resources again."
             },
@@ -1886,6 +1889,8 @@
                 healthDesc: "¡Transforma tu viaje de bienestar! Apps de fitness, seguimiento nutricional, recursos de salud mental y plataformas de ejercicio",
                 lifestyleTitle: "Estilo de Vida y Compras",
                 lifestyleDesc: "¡Transforma tu vida diaria! Gigantes del e-commerce, plataformas de viajes, delivery de comida y servicios para el hogar para la vida moderna",
+                ashramTitle: "SHIVAKALI ASHRAM",
+                ashramDesc: "¿Y si la sabiduría ancestral tuviera las claves para desbloquear tu verdadero potencial? Descubre la transformación psicológica que ha empoderado a buscadores por 500+ años.",
                 treasuresTitle: "Tesoros Ocultos",
                 treasuresDesc: "Los secretos mejor guardados del internet. Herramientas poderosas y gemas ocultas que los expertos usan pero rara vez comparten. Bienvenido al underground.",
                 statusActive: "Activo",
@@ -2754,7 +2759,12 @@
                         if (descElement) descElement.textContent = t.lifestyleDesc;
                         if (statusElement) statusElement.textContent = t.statusNew;
                         break;
-                    case 12: // Hidden Treasures
+                    case 12: // SHIVAKALI ASHRAM
+                        if (titleElement) titleElement.textContent = t.ashramTitle;
+                        if (descElement) descElement.textContent = t.ashramDesc;
+                        if (statusElement) statusElement.textContent = t.statusSacred;
+                        break;
+                    case 13: // Hidden Treasures
                         if (titleElement) titleElement.textContent = t.treasuresTitle;
                         if (descElement) descElement.textContent = t.treasuresDesc;
                         if (statusElement) statusElement.textContent = t.statusExclusive;
