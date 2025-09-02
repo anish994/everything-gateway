@@ -23,6 +23,52 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/search.css">
     <style>
+        /* ============================= THEME SYSTEM ============================= */
+        /* Default Theme (Current Blue-Purple) */
+        :root {
+            --bg-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        /* Theme Classes */
+        body.theme-default {
+            background: var(--bg-primary);
+        }
+        
+        body.theme-light {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        
+        body.theme-dark {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+        }
+        
+        body.theme-sunset {
+            background: linear-gradient(135deg, #ff7b7b 0%, #ff9a56 100%);
+        }
+        
+        body.theme-ocean {
+            background: linear-gradient(135deg, #2196f3 0%, #00bcd4 100%);
+        }
+        
+        body.theme-forest {
+            background: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%);
+        }
+        
+        body.theme-cherry {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+        }
+        
+        body.theme-neon {
+            background: linear-gradient(135deg, #9c27b0 0%, #e91e63 100%);
+        }
+        
+        /* Smooth theme transitions */
+        body {
+            background: var(--bg-primary);
+            transition: background 0.5s ease;
+            background-attachment: fixed;
+        }
+        
         /* Page-specific styles - Mobile-first */
         .hero {
             text-align: center;
@@ -795,6 +841,48 @@
                         </button>
                         <button class="lang-btn" data-lang="pl" onclick="changeLanguage('pl')">
                             🇵🇱 Polski
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Main Theme Card -->
+                <div class="language-main-card" onclick="toggleThemeCard()">
+                    <div class="language-card-header">
+                        <span class="language-globe">🎨</span>
+                        <div class="language-card-info">
+                            <div class="language-card-title">Theme & Modes</div>
+                            <div class="language-current" id="currentTheme">🌙 Default</div>
+                        </div>
+                        <span class="language-chevron" id="themeChevron">▼</span>
+                    </div>
+                </div>
+                
+                <!-- Collapsible Theme Options -->
+                <div class="language-options" id="themeOptions">
+                    <div class="language-grid">
+                        <button class="lang-btn active" data-theme="default" onclick="changeTheme('default')">
+                            🌙 Default
+                        </button>
+                        <button class="lang-btn" data-theme="light" onclick="changeTheme('light')">
+                            ☀️ Light Mode
+                        </button>
+                        <button class="lang-btn" data-theme="dark" onclick="changeTheme('dark')">
+                            🌚 Dark Mode
+                        </button>
+                        <button class="lang-btn" data-theme="sunset" onclick="changeTheme('sunset')">
+                            🌅 Sunset
+                        </button>
+                        <button class="lang-btn" data-theme="ocean" onclick="changeTheme('ocean')">
+                            🌊 Ocean
+                        </button>
+                        <button class="lang-btn" data-theme="forest" onclick="changeTheme('forest')">
+                            🌲 Forest
+                        </button>
+                        <button class="lang-btn" data-theme="cherry" onclick="changeTheme('cherry')">
+                            🌸 Cherry
+                        </button>
+                        <button class="lang-btn" data-theme="neon" onclick="changeTheme('neon')">
+                            🔮 Neon
                         </button>
                     </div>
                 </div>
@@ -1756,6 +1844,60 @@
             }
         }
         
+        // Theme card toggle functionality
+        function toggleThemeCard() {
+            const themeOptions = document.getElementById('themeOptions');
+            const themeChevron = document.getElementById('themeChevron');
+            
+            if (themeOptions.classList.contains('expanded')) {
+                themeOptions.classList.remove('expanded');
+                themeChevron.classList.remove('expanded');
+            } else {
+                themeOptions.classList.add('expanded');
+                themeChevron.classList.add('expanded');
+            }
+        }
+        
+        // Theme display mapping
+        const themeFlags = {
+            default: '🌙 Default',
+            light: '☀️ Light Mode',
+            dark: '🌚 Dark Mode',
+            sunset: '🌅 Sunset',
+            ocean: '🌊 Ocean',
+            forest: '🌲 Forest',
+            cherry: '🌸 Cherry',
+            neon: '🔮 Neon'
+        };
+        
+        // Change theme function
+        function changeTheme(theme) {
+            // Remove all theme classes from body
+            document.body.classList.remove(
+                'theme-default', 'theme-light', 'theme-dark', 'theme-sunset',
+                'theme-ocean', 'theme-forest', 'theme-cherry', 'theme-neon'
+            );
+            
+            // Add new theme class
+            document.body.classList.add(`theme-${theme}`);
+            
+            // Update active theme button
+            document.querySelectorAll('[data-theme]').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[data-theme="${theme}"]`).classList.add('active');
+            
+            // Update current theme display in the card
+            document.getElementById('currentTheme').textContent = themeFlags[theme];
+            
+            // Close theme options after selection
+            document.getElementById('themeOptions').classList.remove('expanded');
+            document.getElementById('themeChevron').classList.remove('expanded');
+            
+            // Save preference
+            localStorage.setItem('gateway-theme', theme);
+            
+            console.log(`🎨 Theme changed to ${theme} - Theme class applied: theme-${theme}`);
+        }
+        
         // Language display mapping
         const languageFlags = {
             en: '🇺🇸 English',
@@ -1909,11 +2051,21 @@
             console.log(`🌍 Language changed to ${lang} - All elements updated`);
         }
         
-        // Load saved language on page load
+        // Load saved preferences on page load
         document.addEventListener('DOMContentLoaded', function() {
+            // Load saved language
             const savedLang = localStorage.getItem('gateway-language');
             if (savedLang && translations[savedLang]) {
                 changeLanguage(savedLang);
+            }
+            
+            // Load saved theme
+            const savedTheme = localStorage.getItem('gateway-theme');
+            if (savedTheme && themeFlags[savedTheme]) {
+                changeTheme(savedTheme);
+            } else {
+                // Apply default theme if no saved theme
+                changeTheme('default');
             }
         });
         
