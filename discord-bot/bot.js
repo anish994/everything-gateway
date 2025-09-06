@@ -62,14 +62,14 @@ const AI_CONVERSATION_ENGINE = {
     // Smart responses (contextual and helpful)
     responses: {
         greeting: [
-            '🌌 Hey there! I\'m your Everything Gateway AI assistant. I know about 611+ amazing resources across 14 categories!',
+            '🌌 Hey there! I\'m your Everything Gateway AI assistant. I know about 577+ amazing resources across 13 categories!',
             '👋 Hello! Welcome to your personal gateway to the internet\'s best tools and resources!',
             '✨ Hi! Ready to discover some incredible resources? I\'m here to help you navigate our collection!'
         ],
         help: [
             '🤖 I can help you discover resources, explore categories, and find exactly what you need! Try asking me about categories, tools, or use `/gateway-help` for commands.',
             '💡 I\'m your resource discovery companion! Ask me about any category, search for tools, or let me surprise you with `/random-resource`!',
-            '🌟 Here to assist! I can guide you through our 611+ resources. Try saying "show me design tools" or "I need AI platforms"!'
+            '🌟 Here to assist! I can guide you through our 577+ resources. Try saying "show me design tools" or "I need AI platforms"!'
         ],
         search: [
             '🔍 I\'d love to help you find what you\'re looking for! What category or type of tool interests you?',
@@ -77,7 +77,7 @@ const AI_CONVERSATION_ENGINE = {
             '✨ Ready to help you discover! What kind of tools or platforms are you searching for?'
         ],
         category: [
-            '📂 We have 14 amazing categories! Use `/list-categories` to see them all, or tell me which one interests you!',
+            '📂 We have 13 amazing categories! Use `/list-categories` to see them all, or tell me which one interests you!',
             '🏷️ Categories are my specialty! From AI tools to entertainment, design to developer resources - what catches your interest?',
             '📋 I know every category inside and out! Try `/explore-category` or just tell me what you\'re curious about!'
         ],
@@ -88,7 +88,7 @@ const AI_CONVERSATION_ENGINE = {
         ],
         goodbye: [
             '👋 See you later! Come back anytime to discover more amazing resources!',
-            '🌌 Goodbye for now! The gateway to 611+ resources will be here when you return!',
+            '🌌 Goodbye for now! The gateway to 577+ resources will be here when you return!',
             '✨ Until next time! Keep exploring and discovering new tools!'
         ],
         fallback: [

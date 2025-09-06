@@ -85,21 +85,6 @@
       "featured": true
     },
     {
-      "id": "fcube",
-      "name": "F³ CUBE",
-      "emoji": "🧊💰",
-      "description": "Financial Freedom Fortress! Master your money with banking, international payments, crypto, investment platforms, and wealth-building tools",
-      "longDescription": "Ultimate financial sovereignty ecosystem covering traditional banking, digital payments, cryptocurrency, investment platforms, trading tools, and wealth management solutions for complete financial freedom.",
-      "color": "gold",
-      "gradient": "linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF6B35 100%)",
-      "status": "legendary",
-      "path": "/categories/f-cube/",
-      "count": 50,
-      "tags": ["banking", "payments", "crypto", "investments", "wealth", "financial", "freedom", "money"],
-      "featured": true,
-      "special": true
-    },
-    {
       "id": "gaming",
       "name": "Gaming & Esports",
       "emoji": "🎮",
@@ -200,11 +185,11 @@
     }
   ],
   "metadata": {
-    "version": "2.2",
-    "lastUpdated": "2025-09-06",
-    "totalCategories": 14,
-    "activeCategories": 14,
-    "totalPlatforms": 611,
+    "version": "2.1",
+    "lastUpdated": "2025-08-19",
+    "totalCategories": 13,
+    "activeCategories": 13,
+    "totalPlatforms": 561,
     "description": "The Everything Gateway - Your complete portal to the entire internet, beautifully organized and instantly accessible. Now featuring Hidden Treasures - exclusive tools that insiders don't want you to know about."
   }
 }
