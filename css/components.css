@@ -235,6 +235,7 @@
 .category-card.lifestyle { background: var(--gradient-lifestyle); }
 .category-card.news { background: var(--gradient-news); }
 .category-card.treasure { background: var(--gradient-treasure); }
+.category-card.fcube { background: var(--gradient-fcube); }
 
 .category-emoji {
   font-size: 3rem;
