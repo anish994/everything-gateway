@@ -1095,5 +1095,172 @@
             <a href="../../index.html" class="back-button" style="position: relative; top: 0; left: 0;">← Return to Gateway</a>
         </div>
     </section>
+    
+    <!-- Elegant Sidebar Trigger -->
+    <button class="sidebar-trigger" id="sidebarTrigger" onclick="toggleSidebar()"
+            aria-label="Open settings" style="position: fixed; top: 50%; right: 0; transform: translateY(-50%); background: var(--fcube-premium); color: white; border: none; width: 40px; height: 80px; border-radius: 20px 0 0 20px; font-size: 18px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; z-index: 999; box-shadow: 0 4px 15px var(--fcube-shadow);">
+        >
+    </button>
+
+    <!-- Settings Sidebar -->
+    <div class="settings-overlay" id="settingsOverlay" onclick="closeSidebar()" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 9998; opacity: 0; visibility: hidden; transition: all 0.3s ease;"></div>
+    <div class="settings-sidebar" id="settingsSidebar" style="position: fixed; top: 0; right: -400px; width: 380px; height: 100%; background: linear-gradient(135deg, rgba(15, 15, 15, 0.98), rgba(26, 26, 26, 0.95)); backdrop-filter: blur(20px); border-left: 2px solid rgba(255, 215, 0, 0.3); transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); z-index: 9999; overflow-y: auto;">
+        <div class="settings-header" style="display: flex; align-items: center; justify-content: space-between; padding: 2rem 1.5rem 1rem; border-bottom: 1px solid rgba(255, 215, 0, 0.2);">
+            <h2 id="settingsTitle" style="margin: 0; font-size: 1.5rem; font-weight: 700; background: var(--fcube-premium); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Settings</h2>
+            <button class="sidebar-trigger" id="sidebarTriggerInside" onclick="toggleSidebar()"
+                    aria-label="Close settings" style="background: transparent; color: var(--fcube-gold); border: none; font-size: 20px; cursor: pointer; padding: 5px;">
+                <
+            </button>
+        </div>
+        
+        <div class="settings-content" style="padding: 1rem;">
+            <div class="settings-section">
+                <!-- Main Language Card -->
+                <div class="language-main-card" onclick="toggleLanguageCard()" style="background: rgba(255, 215, 0, 0.1); border: 1px solid rgba(255, 215, 0, 0.3); border-radius: 12px; padding: 1rem; margin-bottom: 1rem; cursor: pointer; transition: all 0.3s ease;">
+                    <div class="language-card-header" style="display: flex; align-items: center; gap: 12px;">
+                        <span class="language-globe" style="font-size: 24px;">🌍</span>
+                        <div class="language-card-info" style="flex: 1;">
+                            <div class="language-card-title" style="font-size: 16px; font-weight: 600; color: var(--fcube-text); margin-bottom: 4px;">Language</div>
+                            <div class="language-current" id="currentLanguage" style="font-size: 14px; color: var(--fcube-gold); font-weight: 500;">🇺🇸 English</div>
+                        </div>
+                        <span class="language-chevron" id="languageChevron" style="font-size: 14px; color: var(--fcube-text-dim); transition: transform 0.3s ease;">▼</span>
+                    </div>
+                </div>
+                
+                <!-- Collapsible Language Options -->
+                <div class="language-options" id="languageOptions" style="max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); opacity: 0;">
+                    <div class="language-grid" style="display: grid; grid-template-columns: 1fr; gap: 0.5rem; padding: 0 1rem;">
+                        <button class="lang-btn active" data-lang="en" onclick="changeLanguage('en')" style="background: rgba(255, 215, 0, 0.2); color: var(--fcube-text); border: 1px solid rgba(255, 215, 0, 0.3); padding: 0.75rem; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; font-size: 14px; text-align: left;">
+                            🇺🇸 English
+                        </button>
+                        <button class="lang-btn" data-lang="es" onclick="changeLanguage('es')" style="background: transparent; color: var(--fcube-text-dim); border: 1px solid rgba(255, 215, 0, 0.1); padding: 0.75rem; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; font-size: 14px; text-align: left;">
+                            🇪🇸 Español
+                        </button>
+                        <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')" style="background: transparent; color: var(--fcube-text-dim); border: 1px solid rgba(255, 215, 0, 0.1); padding: 0.75rem; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; font-size: 14px; text-align: left;">
+                            🇫🇷 Français
+                        </button>
+                        <button class="lang-btn" data-lang="de" onclick="changeLanguage('de')" style="background: transparent; color: var(--fcube-text-dim); border: 1px solid rgba(255, 215, 0, 0.1); padding: 0.75rem; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; font-size: 14px; text-align: left;">
+                            🇩🇪 Deutsch
+                        </button>
+                        <button class="lang-btn" data-lang="zh" onclick="changeLanguage('zh')" style="background: transparent; color: var(--fcube-text-dim); border: 1px solid rgba(255, 215, 0, 0.1); padding: 0.75rem; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; font-size: 14px; text-align: left;">
+                            🇨🇳 中文
+                        </button>
+                        <button class="lang-btn" data-lang="hi" onclick="changeLanguage('hi')" style="background: transparent; color: var(--fcube-text-dim); border: 1px solid rgba(255, 215, 0, 0.1); padding: 0.75rem; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; font-size: 14px; text-align: left;">
+                            🇮🇳 हिन्दी
+                        </button>
+                        <button class="lang-btn" data-lang="ja" onclick="changeLanguage('ja')" style="background: transparent; color: var(--fcube-text-dim); border: 1px solid rgba(255, 215, 0, 0.1); padding: 0.75rem; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; font-size: 14px; text-align: left;">
+                            🇯🇵 日本語
+                        </button>
+                        <button class="lang-btn" data-lang="ko" onclick="changeLanguage('ko')" style="background: transparent; color: var(--fcube-text-dim); border: 1px solid rgba(255, 215, 0, 0.1); padding: 0.75rem; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; font-size: 14px; text-align: left;">
+                            🇰🇷 한국어
+                        </button>
+                        <button class="lang-btn" data-lang="pt" onclick="changeLanguage('pt')" style="background: transparent; color: var(--fcube-text-dim); border: 1px solid rgba(255, 215, 0, 0.1); padding: 0.75rem; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; font-size: 14px; text-align: left;">
+                            🇧🇷 Português
+                        </button>
+                        <button class="lang-btn" data-lang="ru" onclick="changeLanguage('ru')" style="background: transparent; color: var(--fcube-text-dim); border: 1px solid rgba(255, 215, 0, 0.1); padding: 0.75rem; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; font-size: 14px; text-align: left;">
+                            🇷🇺 Русский
+                        </button>
+                        <button class="lang-btn" data-lang="ar" onclick="changeLanguage('ar')" style="background: transparent; color: var(--fcube-text-dim); border: 1px solid rgba(255, 215, 0, 0.1); padding: 0.75rem; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; font-size: 14px; text-align: left;">
+                            🇸🇦 العربية
+                        </button>
+                        <button class="lang-btn" data-lang="bn" onclick="changeLanguage('bn')" style="background: transparent; color: var(--fcube-text-dim); border: 1px solid rgba(255, 215, 0, 0.1); padding: 0.75rem; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; font-size: 14px; text-align: left;">
+                            🇧🇩 বাংলা
+                        </button>
+                        <button class="lang-btn" data-lang="it" onclick="changeLanguage('it')" style="background: transparent; color: var(--fcube-text-dim); border: 1px solid rgba(255, 215, 0, 0.1); padding: 0.75rem; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; font-size: 14px; text-align: left;">
+                            🇮🇹 Italiano
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Language and Settings Functions for F³ CUBE
+        function toggleSidebar() {
+            const sidebar = document.getElementById('settingsSidebar');
+            const overlay = document.getElementById('settingsOverlay');
+            const isOpen = sidebar.style.right === '0px';
+            
+            if (isOpen) {
+                closeSidebar();
+            } else {
+                sidebar.style.right = '0px';
+                overlay.style.opacity = '1';
+                overlay.style.visibility = 'visible';
+            }
+        }
+        
+        function closeSidebar() {
+            const sidebar = document.getElementById('settingsSidebar');
+            const overlay = document.getElementById('settingsOverlay');
+            sidebar.style.right = '-400px';
+            overlay.style.opacity = '0';
+            overlay.style.visibility = 'hidden';
+        }
+        
+        function toggleLanguageCard() {
+            const options = document.getElementById('languageOptions');
+            const chevron = document.getElementById('languageChevron');
+            const isExpanded = options.style.maxHeight !== '0px' && options.style.maxHeight !== '';
+            
+            if (isExpanded) {
+                options.style.maxHeight = '0px';
+                options.style.opacity = '0';
+                chevron.style.transform = 'rotate(0deg)';
+                chevron.classList.remove('expanded');
+            } else {
+                options.style.maxHeight = '800px';
+                options.style.opacity = '1';
+                options.style.paddingTop = '15px';
+                chevron.style.transform = 'rotate(180deg)';
+                chevron.classList.add('expanded');
+            }
+        }
+        
+        function changeLanguage(lang) {
+            // Update active language button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.style.background = 'transparent';
+                btn.style.color = 'var(--fcube-text-dim)';
+            });
+            
+            const selectedBtn = document.querySelector(`[data-lang="${lang}"]`);
+            selectedBtn.classList.add('active');
+            selectedBtn.style.background = 'rgba(255, 215, 0, 0.2)';
+            selectedBtn.style.color = 'var(--fcube-text)';
+            
+            // Update current language display
+            const langNames = {
+                'en': '🇺🇸 English',
+                'es': '🇪🇸 Español', 
+                'fr': '🇫🇷 Français',
+                'de': '🇩🇪 Deutsch',
+                'zh': '🇨🇳 中文',
+                'hi': '🇮🇳 हिन्दी',
+                'ja': '🇯🇵 日本語',
+                'ko': '🇰🇷 한국어',
+                'pt': '🇧🇷 Português',
+                'ru': '🇷🇺 Русский',
+                'ar': '🇸🇦 العربية',
+                'bn': '🇧🇩 বাংলা',
+                'it': '🇮🇹 Italiano'
+            };
+            
+            document.getElementById('currentLanguage').textContent = langNames[lang] || langNames['en'];
+            
+            // Store language preference
+            localStorage.setItem('fcube_language', lang);
+            
+            console.log(`🧊💰 F³ CUBE: Language changed to ${langNames[lang]}`);
+        }
+        
+        // Load saved language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('fcube_language') || 'en';
+            changeLanguage(savedLang);
+        });
+    </script>
 </body>
 </html>
